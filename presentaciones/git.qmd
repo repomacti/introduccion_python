@@ -1,0 +1,744 @@
+---
+title: "Gestión de versiones"
+title-slide-attributes:
+  data-background-image: ./figuras/python_image.jpg
+  data-background-size: cover
+  data-background-opacity: "0.10"
+subtitle: "Introducción a Python"
+author: "Luis Miguel de la Cruz Salas"
+institute: "Depto. de Recursos Naturales, IGEF-UNAM"
+date: "9/30/24"
+format:
+  revealjs:
+    incremental: false
+    theme: solarized_mod.scss
+    code-block-height: 250px
+    preview-links: true
+    transition: none
+    slide-number: c/t
+    show-slide-number: all
+    css: math.scss
+    footer: "Gestión de versiones [Introducción a Python]"
+    logo: ./figuras/macti_R.png
+---
+
+
+## Motivación.{.scrollable}
+
+::::{.columns}
+:::{.column width="55%"}
+![](./figuras/el_proceso_tesis.png){fig-align="center"  width=80%}
+:::
+:::{.column width="45%"}
+:::{.incremental}
+
+<font style="font-size:30px;">
+
+* **Git** proporciona una mejor manera de gestionar los archivos:
+    - es un sistema de control de versiones de software o de documentos en general,
+    - monitorea los archivos de un proyecto,
+    - los archivos conforman un **repositorio de información**,
+    - es abierto y gratuito.
+
+</font>
+
+:::
+
+:::
+::::
+
+. . .
+
+![](./figuras/git_giving_clue.jpg){fig-align="center"  width=85% .lightbox}
+
+## {.scrollable}
+
+* Git gestiona los documentos de un repositorio como un sistema de archivos miniatura.
+
+* Se almacenan los estados de los archivos en ciertos instantes (*snapshots*), cada vez que se hace una confirmación (*commit*).
+
+
+![Diagrama basado en la **figura 5** de *Chacon, Scott, and Straub, Ben. Pro Git. Apress, 2014.* Disponible en línea [Pro Git book](https://git-scm.com/book/en/v2).)](./figuras/git_file_sys.png){fig-align="center"  width=40% .lightbox}
+
+## Ejemplo. {.scrollable}
+
+* Considera el siguiente directorio de archivos:
+
+::::{.columns}
+:::{.column width="50%"}
+| ![](./figuras/folder.png){width=15%} Proyecto |   |
+|---:|---|
+| file1.txt |  |
+| file2.py |  |
+| file3.ipynb |  |
+| | |
+
+:::
+:::{.column width="50%"}
+:::
+::::
+
+## Inicialización. {.scrollable}
+
+::::{.columns}
+:::{.column width="60%"}
+| ![](./figuras/folder.png){width=15%} Proyecto |  |
+|---:|---|
+| file1.txt | <font style="color:red">Untracked</font> |
+| file2.py  | <font style="color:red">Untracked</font> |
+| file3.ipynb | <font style="color:red">Untracked</font> |
+| **.git/** | Info del repo |
+| | |
+:::
+:::{.column width="40%"}
+* <font style="font-size:30px;">Cambiar al dir:</font>
+
+    ```{.bash code-line-numbers="false"}
+    cd Proyecto
+    ```
+* <font style="font-size:30px;">Inicializar:</font>
+
+    ```{.bash code-line-numbers="false"}
+    git init
+    ```
+
+* <font style="font-size:30px;">Estado del repositorio:</font>
+
+    ```{.bash code-line-numbers="false"}
+    git status
+    ```
+:::
+::::
+
+. . . 
+
+![](./figuras/git_file_status_01.jpg){file-align="center" width=90%}
+
+## Preparar. {.scrollable}
+
+::::{.columns}
+:::{.column width="60%"}
+| ![](./figuras/folder.png){width=15%} Proyecto |   |
+|---:|---|
+| file1.txt | <font style="color:green">Staged</font> |
+| file2.py  | <font style="color:red">Untracked</font> |
+| file3.ipynb | <font style="color:red">Untracked</font> |
+| **.git/** | Info del repo |
+| | |
+
+:::
+:::{.column width="40%"}
+
+* <font style="font-size:30px;">Preparar:</font>
+
+```{.bash code-line-numbers="false"}
+git add file1.txt
+```
+
+* <font style="font-size:30px;">Estado del repositorio:</font>
+
+```{.bash code-line-numbers="false"}
+git status
+```
+:::
+::::
+
+. . .
+
+![](./figuras/git_file_status_02.jpg){file-align="center" width=90%}
+
+## Confirmar los cambios. {.scrollable}
+
+::::{.columns}
+:::{.column width="60%"}
+| ![](./figuras/folder.png){width=15%} Proyecto |   |
+|---:|---|
+| file1.txt | <font style="color:DarkSlateGray">Committed</font> |
+| file2.py  | <font style="color:red">Untracked</font> |
+| file3.ipynb | <font style="color:red">Untracked</font> |
+| **.git/** | Info del repo |
+| | |
+
+:::
+:::{.column width="40%"}
+
+* <font style="font-size:30px;">Confirmar:</font>
+
+```{.bash code-line-numbers="false"}
+git commit -m "comentarios"
+```
+
+* <font style="font-size:30px;">Estado del repositorio:</font>
+
+```{.bash code-line-numbers="false"}
+git status
+```
+:::
+::::
+
+. . .
+
+![](./figuras/git_file_status_03.jpg){file-align="center" width=90%}
+
+## Modificaciones. {.scrollable}
+
+::::{.columns}
+:::{.column width="60%"}
+| ![](./figuras/folder.png){width=15%} Proyecto |   |
+|---:|---|
+| file1.txt | <font style="color:red">Modified</font> |
+| file2.py  | <font style="color:red">Untracked</font> |
+| file3.ipynb | <font style="color:red">Untracked</font> |
+| **.git/** | Info del repo |
+| | |
+
+:::
+:::{.column width="40%"}
+
+* <font style="font-size:30px;">Estado del repositorio:</font>
+
+```{.bash code-line-numbers="false"}
+git status
+```
+
+:::
+::::
+
+. . . 
+
+![](./figuras/git_file_status_04.jpg){file-align="center" width=90%}
+
+:::{.callout-important title="Importante"}
+* Para confirmar los nuevos cambios, se debe repetir el proceso preparar + confirmar:
+
+```{.bash code-line-numbers="false"}
+git add file1.txt
+git commit -m "comentario 2"
+```
+
+* Alternativamente:
+
+```{.bash code-line-numbers="false"}
+git commit -am "comentario 2"
+```
+:::
+
+## Acciones en grupo. {.scrollable}
+
+::::{.columns}
+:::{.column width="60%"}
+| ![](./figuras/folder.png){width=15%} Proyecto |   |
+|---:|---|
+| file1.txt | <font style="color:DarkSlateGray">Committed</font> |
+| file2.py  | <font style="color:red">Untracked</font> |
+| file3.ipynb | <font style="color:red">Untracked</font> |
+| **.git/** | Info del repo |
+| | |
+
+:::
+:::{.column width="40%"}
+
+* <font style="font-size:30px;">Estado del repositorio:</font>
+
+```{.bash code-line-numbers="false"}
+git status
+```
+
+:::
+:::: 
+
+![](./figuras/git_file_status_03.jpg){file-align="center" width=90%}
+
+. . .
+
+* Preparar todos los archivos del directorio:
+
+::::{.columns}
+:::{.column width="60%"}
+| ![](./figuras/folder.png){width=15%} Proyecto |   |
+|---:|---|
+| file1.txt | <font style="color:DarkSlateGray">Committed</font> |
+| file2.py  | <font style="color:green">Staged</font> |
+| file3.ipynb | <font style="color:green">Staged</font> |
+| **.git/** | Info del repo |
+| | |
+
+:::
+:::{.column width="40%"}
+
+* <font style="font-size:30px;">Preparar todos:</font>
+
+```{.bash code-line-numbers="false"}
+git add .
+```
+
+* <font style="font-size:30px;">Estado del repositorio:</font>
+
+```{.bash code-line-numbers="false"}
+git status
+```
+
+:::
+::::
+
+![](./figuras/git_file_status_05.jpg){file-align="center" width=90%}
+
+. . .
+
+* Confirmación de los cambios:
+
+::::{.columns}
+:::{.column width="60%"}
+| ![](./figuras/folder.png){width=15%} Proyecto |   |
+|---:|---|
+| file1.txt | <font style="color:DarkSlateGray">Committed</font> |
+| file2.py  | <font style="color:DarkSlateGray">Committed</font> |
+| file3.ipynb | <font style="color:DarkSlateGray">Committed</font> |
+| **.git/** | Info del repo |
+| | |
+
+:::
+:::{.column width="40%"}
+
+* <font style="font-size:30px;">Preparar todos:</font>
+
+```{.bash code-line-numbers="false"}
+git commit -m "comentario 3"
+```
+
+* <font style="font-size:30px;">Estado del repositorio:</font>
+
+```{.bash code-line-numbers="false"}
+git status
+```
+
+:::
+::::
+
+![](./figuras/git_file_status_06.jpg){file-align="center" width=90%}
+
+## Estado de los archivos. {.scrollable}
+
+* **Modificado (modified)**. Se ha modificado el archivo pero este cambio aún no ha sido confirmado en la base de datos. 
+* **Preparado (staged)**. El archivo, en su versión actual, se ha marcado como modificado para que se agregue a la base de datos en la próxima confirmación.
+* **Confirmado (committed)**. El archivo se ha almacenado en la base de datos local de manera segura.
+
+<!--
+![Diagrama basado en la **figura 6** de *Chacon, Scott, and Straub, Ben. Pro Git. Apress, 2014.* Disponible en línea [Pro Git book](https://git-scm.com/book/en/v2).)](./figuras/git_file_status.png){fig-align="center"  width=30% .lightbox}
+-->
+
+# ¡Manos a la obra!
+
+## Abrir una terminal.
+
+::: {layout-nrow=2 layout-ncol="2"}
+![Abrir la terminal](./figuras/git_terminal01.png){fig-align="center" .lightbox}
+
+![Terminal en Jupyter Lab](./figuras/git_terminal02.png){fig-align="center" .lightbox}
+:::
+
+## Configuración inicial.{.scrollable}
+
+:::{.callout-important title="Importante"}
+Los comandos que siguen se deben teclear en una **Terminal** de **Jupyter Lab**. 
+:::
+
+
+* Configuración del nombre de usuario:
+
+```{.bash code-line-numbers="false"}
+git config --global user.name "tu_usuario"
+```
+
+* Configuración del correo electrónico:
+
+```{.bash code-line-numbers="false"}
+git config --global user.email "tu_correo"
+```
+* Verificar el resultado:
+
+```{.bash code-line-numbers="false"}
+git config --global --list
+```
+```
+user.name=luiggix
+user.email=luiggix@gmail.com
+```
+
+* Obtener ayuda:
+
+```{.bash code-line-numbers="false"}
+git config -h
+```
+```
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+...
+
+```
+
+##  Crear un repo^[Repositorio] local.{.scrollable}
+
+* Crear un directorio para almacenar los archivos con el siguiente comando:
+
+```{.bash code-line-numbers="false"}
+mkdir proyecto
+```
+
+* Cambiarse al nuevo directorio:
+
+```{.bash code-line-numbers="false"}
+cd proyecto
+```
+
+* Inicializar el repositorio:
+
+```{.bash code-line-numbers="false"}
+git init
+```
+```
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint:   git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint:   git branch -m <name>
+```
+::: {.callout-note title="Observación"}
+El comando `git init` genera un repositorio local vacío, creando un directorio dentro de la carpeta `proyecto` con el nombre `.git` en donde pone toda la información del repositorio para darle seguimiento a las diferentes versiones de los archivos.
+:::
+::: {.callout-important title="Importante"}
+La salida del comando `git init` nos da una recomendación (*hint*) para cambiar el nombre de la *rama principal* del repositorio. Por ahora no se hará ese cambio; lo haremos más adelante cuando se sincronice el repositorio con GitHub. 
+:::
+
+* Cómo debería quedar:
+
+![](./figuras/git_terminal03.png){fig-align="center" width=50% .lightbox}
+
+* Listar los archivos del directorio:
+
+```{.bash code-line-numbers="false"}
+ls -la
+```
+```
+total 0
+drwxr-xr-x 3 jovyan users  26 Dec 22 00:27 .
+drwxr-xr-x 3 jovyan users  27 Dec 22 00:27 ..
+drwxr-xr-x 7 jovyan users 155 Dec 22 00:27 .git
+```
+
+## Revisar el estado del repo.{.scrollable}
+
+* Checar el estado actual del repositorio:
+
+```{.bash code-line-numbers="false"}
+git status
+```
+```
+On branch main
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+```
+
+::: {.callout-note title="Observación"}
+Los mensajes que proporciona el comando anterior nos dicen lo siguiente:
+
+* primero se indica en qué rama del proyecto nos encontramos (*On branch main*); 
+* después se dice que no se ha realizado ninguna confirmación (*No commits yet*), es decir el proyecto está vacío actualmente; 
+* finalmente agrega que no hay nada que confirmar (*nothing to commit*) y nos da una sugerencia, entre paréntesis, para agregar archivos al proyecto. 
+* Casi siempre Git nos va a dar recomendaciones que estarán entre paréntesis.
+:::
+
+## Crear un archivo. {.scrollable}
+
+::: {layout-nrow=2 layout-ncol="2"}
+![Seleccionar el subdir del proyecto](./figuras/git_terminal03.png){fig-align="left" width=50% .lightbox}
+
+![Vista del proyecto](./figuras/git_terminal04.png){fig-align="left" width=50% .lightbox}
+
+![Seleccionar archivo de texto](./figuras/git_terminal05.png){fig-align="left" width=50% .lightbox}
+
+![Escribir el siguiente texto](./figuras/git_terminal06.png){fig-align="left" width=50% .lightbox}
+:::
+
+* Texto del archivo.
+
+```{.bash code-line-numbers="false"}
+Este repositorio contiene los archivos del proyecto.
+
+Curso: Introducción a Python
+Autor: Tu Nombre
+```
+
+* Guardar el archivo (`Ctrl+S`) con el nombre: `README.md`.
+
+![](./figuras/git_terminal07.png){fig-align="center" width=25% .lightbox}
+
+* Checar el estado del repositorio.
+
+```{.bash code-line-numbers="false"}
+ls -la
+```
+```
+total 12
+drwxr-xr-x  4 jovyan users   99 Sep 16 02:25 .
+drwxrwxrwx 24 root   root  4096 Sep 16 02:14 ..
+drwxr-xr-x  7 jovyan users  155 Sep 16 02:19 .git
+drwxr-xr-x  2 jovyan users   77 Sep 16 02:24 .ipynb_checkpoints
+-rw-r--r--  1 jovyan users  100 Sep 16 02:18 README.md
+```
+
+```{.bash code-line-numbers="false"}
+git status
+```
+```
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .ipynb_checkpoints/
+        Readme.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+* Cómo debería quedar:
+
+![](./figuras/git_terminal08.png){fig-align="center" width=25% .lightbox}
+
+
+::: {.callout-note title="Observación"}
+Git identifica a los nuevos elementos como *Untracked files*. El archivo `README.md` contiene información que puede cambiar en el futuro y es necesario monitorearlo. 
+El directorio `.ipynb_checkpoints/` contiene el último estado de las notebooks y no es necesario monitorearlo. 
+:::
+
+## Ignorar archivos.{.scrollable}
+
+* Vamos a ignorar el directorio `.ipynb_checkpoints/`. 
+* Creamos otro archivo de texto con el siguiente contenido:
+
+```{.bash code-line-numbers="false"}
+# Jupyter Notebook
+.ipynb_checkpoints
+```
+
+* Siguiendo los mismos pasos que antes, deberías obtener lo siguiente:
+
+![](./figuras/git_terminal09.png){fig-align="center" width=50% .lightbox}
+
+* Guardar el archivo con el nombre que tiene (`untitled.txt`). 
+
+* La lista de archivos debe ser la siguiente:
+
+```{.bash code-line-numbers="false"}
+ls -la
+```
+```
+total 12
+drwxr-xr-x  4 jovyan users  101 Sep 16 02:24 .
+drwxrwxrwx 24 root   root  4096 Sep 16 02:14 ..
+drwxr-xr-x  7 jovyan users  155 Sep 16 02:19 .git
+drwxr-xr-x  2 jovyan users   77 Sep 16 02:24 .ipynb_checkpoints
+-rw-r--r--  1 jovyan users  100 Sep 16 02:18 README.md
+-rw-r--r--  1 jovyan users   37 Sep 16 02:24 untitled.txt
+```
+
+* Cambiar el nombre de `untitled.txt` a `.gitignore` con el siguiente comando:
+
+```{.bash code-line-numbers="false"}
+mv untitled.txt .gitignore
+```
+
+* Ahora la lista de archivos debe ser:
+
+```{.bash code-line-numbers="false"}
+ls -la
+```
+```
+total 12
+drwxr-xr-x  4 jovyan users   99 Sep 16 02:25 .
+drwxrwxrwx 24 root   root  4096 Sep 16 02:14 ..
+drwxr-xr-x  7 jovyan users  155 Sep 16 02:19 .git
+-rw-r--r--  1 jovyan users   37 Sep 16 02:24 .gitignore
+drwxr-xr-x  2 jovyan users   77 Sep 16 02:24 .ipynb_checkpoints
+-rw-r--r--  1 jovyan users  100 Sep 16 02:18 README.md
+```
+
+* Checamos el estado del repositorio:
+
+```{.bash code-line-numbers="false"}
+git status
+```
+```
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+::: {.callout-note title="Observación"}
+Observa que ya no se está monitoreando el directorio `.ipynb_checkpoints/`. En cambio, ahora Git detecta el archivo `.gitignore` el cual es importante para el repositorio. 
+:::
+
+* Cómo debería quedar:
+
+![](./figuras/git_terminal10.png){fig-align="center" width=50% .lightbox}
+
+## Preparando los archivos.{.scrollable}
+
+* Vamos a pasar al archivo `README.md` al área de espera (*staged*) con el siguiente comando:
+
+```{.bash code-line-numbers="false"}
+git add README.md
+```
+
+* Checamos el estado del repositorio:
+ 
+```{.bash code-line-numbers="false"}
+git status
+```
+```
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+```
+
+::: {.callout-note title="Observación"}
+Git nos indica que el archivo `README.md` está listo para ser confirmado en la siguiente versión del proyecto (*Changes to be commited*).
+Mientras que el archivo `.gitignore` aún no es monitoreado (*Untracked files*).
+:::
+
+* Hacemos lo mismo con el archivo `.gitignore`:
+
+```{.bash code-line-numbers="false"}
+git add .gitignore
+git status
+```
+```
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   .gitignore
+        new file:   README.md
+```
+
+::: {.callout-note appearance="simple"}
+Ahora ambos archivos están listos para ser confirmados.
+:::
+
+::: {.callout-tip title="Recomendación"}
+Es común que el número de archivos que se deben enviar al área de espera sean muchos y estén en diferentes subdirectorios. En esos casos no es conveniente hacer el `git add ` uno por uno. Para preparar todos los archivos en un solo paso se utiliza el comando: 
+
+```{.bash code-line-numbers="false"}
+git add .
+```
+
+Este comando debe ejecutarse desde el directorio principal del repositorio.
+:::
+
+## Confirmar los cambios.{.scrollable}
+
+* Ya que se tienen los archivos `README.md` y `.gitignore` preparados, los confirmamos usando el siguiente comando:
+
+```{.bash code-line-numbers="false"}
+git commit -m "Agregamos el README.md y el .gitignore; en este último indicamos no monitorear el directorio .ipynb_checkpoints/" 
+```
+```
+[master (root-commit) f31e453] Agregamos el README.md y el .gitignore; en este último indicamos no monitorear el directorio .ipynb_checkpoints/
+ 2 files changed, 6 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 README.
+ ```
+
+* Checamos el estado del repositorio:
+
+```{.bash code-line-numbers="false"}
+git status
+```
+```
+On branch master
+nothing to commit, working tree clean
+```
+
+## En resumen. {.scrollable}
+
+**La primera vez**.
+
+1. Crear el directorio del `proyecto`.
+
+```{.bash code-line-numbers="false"}
+mkdir proyecto
+```
+
+2. Cambiarse al directorio `proyecto`.
+
+```{.bash code-line-numbers="false"}
+cd proyecto
+```
+
+3. Inicializar el repositorio.
+
+```{.bash code-line-numbers="false"}
+git init
+```
+
+. . .
+
+**Posteriormente**.
+
+1. Cambiarse al directorio `proyecto`.
+
+```{.bash code-line-numbers="false"}
+cd proyecto
+```
+
+2. Crear y/o modificar archivos del proyecto.
+
+3. Revisar el estado del repositorio.
+
+```{.bash code-line-numbers="false"}
+git status
+```
+
+4. Preparar los archivos (enviarlos al área de espera *staged*).
+
+```{.bash code-line-numbers="false"}
+git add .
+```
+
+5. Confirmar los cambios (*commit*).
+
+```{.bash code-line-numbers="false"}
+git commit -m "Un mensaje descriptivo" 
+```
+

@@ -1,0 +1,130 @@
+---
+title: "Sincronización con GitHub"
+title-slide-attributes:
+  data-background-image: ./figuras/python_image.jpg
+  data-background-size: cover
+  data-background-opacity: "0.10"
+subtitle: "Introducción a Python"
+author: "Luis Miguel de la Cruz Salas"
+institute: "Depto. de Recursos Naturales, IGEF-UNAM"
+date: "9/30/24"
+format:
+  revealjs:
+    incremental: false
+    theme: solarized_mod.scss
+    code-block-height: 250px
+    preview-links: true
+    transition: none
+    slide-number: c/t
+    show-slide-number: all
+    css: math.scss
+    footer: "GitHub [Introducción a Python]"
+    logo: ./figuras/macti_R.png
+---
+
+## GitHub. {.scrollable}
+
+::::{.columns}
+:::{.column width="50%"}
+
+![](./figuras/github_meme.jpg){fig-align="center"  width=75% .lightbox}
+
+:::
+:::{.column width="50%"}
+
+* GitHub es una plataforma de desarrollo colaborativo en web en donde se alojan y se da seguimiento a proyectos usando el software Git. 
+* Tiene opciones gratuitas y de paga.
+* Es administrado por Microsoft.
+
+:::
+::::
+
+## Llave pública y privada.{.scrollable}
+
+. . . 
+
+En la ventana de comandos de JupyterLab teclea lo siguiente:
+
+* Cambiarse al directorio raíz:
+```{.bash code-line-numbers="false"}
+cd
+```
+
+* Crear las llaves pública y privada:
+
+```{.bash code-line-numbers="false"}
+ssh-keygen -t ed25519 -C "tucorreo@mail.com"
+```
+
+**Ojo**. Debes poner tu correo electrónico al final.
+
+* Tu llaves se crearon en el directorio `.ssh/`, para revisarlas teclea:
+
+```{.bash code-line-numbers="false"}
+ls -l .ssh/
+```
+```
+total 32
+-rw------- 1 jovyan users  452 Jan 16  2024 id_ed25519
+-rw-r--r-- 1 jovyan users  128 Jan 16  2024 id_ed25519.pub
+jovyan@jupyter-luiggi-40igeofisica-2eunam-2emx:~$ 
+```
+
+Tu llave pública tiene el nombre `id_ed25519.pub`.
+
+* Para ver el contenido debes teclear:
+```{.bash code-line-numbers="false"}
+cat .ssh/id_ed25519.pub
+```
+
+El resultado debe ser algo similar a lo siguiente:
+
+```
+ssh-ed25519 AAAAC3N ... jovyan@jupyter-luiggi-40igeofisica-2eunam-2emx
+```
+
+* Esta llave pública es la que debes colocar en GitHub como se explica a continuación.
+
+## GitHub.{.scrollable}
+
+* Agregar llaves SSH.
+
+* Crear un repositorio en GitHub
+
+* Sincronizar el repositorio en GitHub con el local.
+
+{{< video github.mp4 >}}
+
+## En resumen.{.scrollable}
+
+1. Cambiarse al directorio `proyecto`.
+
+```{.bash code-line-numbers="false"}
+cd proyecto
+```
+
+2. Crear y/o modificar archivos del proyecto.
+
+3. Revisar el estado del repositorio.
+
+```{.bash code-line-numbers="false"}
+git status
+```
+
+4. Preparar los archivos (enviarlos al área de espera *staged*).
+
+```{.bash code-line-numbers="false"}
+git add .
+```
+
+5. Confirmar los cambios (*commit*).
+
+```{.bash code-line-numbers="false"}
+git commit -m "Un mensaje descriptivo" 
+```
+
+6. Subir los cambios a GitHub.
+
+```{.bash code-line-numbers="false"}
+git push -u origin main
+```

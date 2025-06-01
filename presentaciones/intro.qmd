@@ -1,0 +1,365 @@
+---
+title: "Presentación y encuadre"
+title-slide-attributes:
+  data-background-image: ./figuras/python_image.jpg
+  data-background-size: cover
+  data-background-opacity: "0.10"
+subtitle: "Introducción a Python"
+author: "Luis Miguel de la Cruz Salas"
+institute: "Depto. de Recursos Naturales, IGEF-UNAM"
+date: "9/30/24"
+format:
+  revealjs:
+    incremental: false
+    theme: solarized_mod.scss
+    code-block-height: 250px
+    preview-links: true
+    transition: none
+    slide-number: c/t
+    show-slide-number: all
+    css: math.scss
+    footer: "Presentación y encuadre [Introducción a Python]"
+    logo: ./figuras/macti_R.png
+---
+
+## Objetivo del curso.{.scrollable}
+
+Capacitar a los participantes en el uso de las 
+<font color="DarkSlateGray"><b>herramientas básicas</b></font> del lenguaje de programación <font color="DarkSlateGray"><b>Python</b></font>.
+
+. . .
+
+::::{.columns}
+:::{.column width="45%"}
+<font style="font-size:27px; color:DarkSlateGray">
+<ul>
+<li>Variables y objetos.</li>
+<li>Tipos básicos (numéricos y lógicos).</li>
+<li>Operadores.</li>
+<li>Conversión entre tipos.</li>
+<li>Expresiones y declaraciones.</li>
+<li>Control de flujo (*while, if, elif, else, for, break, continue, else, pass*).</li>
+</ul>
+</b></font>
+:::
+:::{.column width="10%"}
+:::
+:::{.column width="45%"}
+<font style="font-size:27px; color:DarkSlateGray">
+<ul>
+<li>Estructura de datos (*list, tuple, set, dict*).</li>
+<li>Recorriendo las secuencias.</li>
+<li>Un primer vistazo a las funciones.</li>
+<li>Importando bibliotecas (math, random, statistics).</li>
+<li>Depuración de código.</li>
+</ul>
+</b></font>
+:::
+::::
+
+. . .
+
+* Bonus: acelerando tu aprendizaje con IA Generativa.
+
+## Diferenciadores 1. {.scrollable}
+
+Empezaremos con <font color="DarkSlateGray"><b>aplicaciones simples</b></font> y las resolveremos con los elementos del lenguaje.
+
+. . .
+
+::::{.columns}
+
+**Por ejemplo:**
+
+:::{.column width="50%"}
+$$
+\begin{eqnarray}
+\text{peso} & = & 80 \;\; \text{kg} \\
+\text{estatura} & = & 1.78 \;\; \text{m}
+\end{eqnarray}
+$$
+:::
+:::{.column width="50%"}
+$$
+\text{IMC} = \frac{\text{peso}}{\text{estatura}^2}
+$$
+:::
+::::
+
+. . .
+
+::::{.columns}
+
+:::{.column width="50%"}
+**Implementación:**
+
+```{.python}
+peso = 80 # [kg]
+estatura = 1.78 # [m]
+
+IMC = peso / estatura**2
+
+print("IMC = ", IMC)
+
+```
+:::
+:::{.column width="50%"}
+
+**Resultado:**
+
+```
+
+
+IMC =  25.24933720489837
+```
+:::
+::::
+
+## Diferenciadores 2. {.scrollable}
+
+Los elementos del lenguaje los introduciremos <font color="DarkSlateGray"><b>conforme se vayan requiriendo</b></font>.
+
+. . . 
+
+
+::::{.columns}
+
+:::{.column width="50%"}
+**Por ejemplo:**
+
+```{.python}
+peso = 80 # [kg]
+estatura = 1.78 # [m]
+
+IMC = peso / estatura**2
+
+print("IMC = ", IMC)
+
+```
+:::
+:::{.column width="50%"}
+**Elementos importantes:**
+
+<font style="font-size:30px; color:DarkSlateGray">
+<ul>
+<li>Variables.</li>
+<li>Tipos y Tipado dinámico.</li>
+<li>Operadores.</li>
+<li>Funciones incorporadas.</li>
+<li>Comentarios.</li>
+</ul>
+</font>
+:::
+
+::::
+
+## Diferenciadores 3. {.scrollable}
+
+* Iremos desde un nivel básico hasta uno en donde los problemas tengan alguna aplicación real.
+
+. . .
+
+::::{.columns}
+:::{.column width="35%"}
+**Por ejemplo**:
+
+<font style="font-size:30px; color:DarkSlateGray">
+Contar las palabras y letras del primer capítulo del libro "El ingenioso Hidalgo Don Quijote de la Mancha". Contar las vocales y calcular su porcentaje de aparición con respecto del total.
+</font>
+
+:::
+:::{.column width="2%"}
+:::
+:::{.column width="63%"}
+
+<font style="font-size:20px; color:DarkSlateGray">
+**Capítulo primero. Que trata de la condición y ejercicio del famoso y valiente hidalgo don Quijote de la Mancha.**
+En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de 
+los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor. Una olla de algo más vaca que 
+carnero, salpicón las más noches, duelos y quebrantos los sábados, lantejas los viernes, algún palomino 
+de añadidura los domingos, consumían las tres partes de su hacienda. El resto della concluían sayo de 
+velarte, calzas de velludo para las fiestas, con sus pantuflos de lo mesmo, y los días de entresemana se 
+honraba con su vellorí de lo más fino. ...
+</font>
+:::
+::::
+
+. . .
+
+**Implementación:**
+
+```{.python}
+archivo = open("Don_Quijote.txt")           # Archivo
+total_palabras = 0                          # Número entero
+total_letras = 0                            # Número entero
+vocal = {'a':0, 'e':0, 'i':0, 'o':0, 'u':0} # Diccionario
+texto = []                                  # Lista vacía
+
+# Lee línea por línea
+for línea in archivo:
+    # Cuenta las palabras
+    for palabra in línea.split():
+        total_palabras += 1
+        # Cuenta las letras
+        for letra in palabra:
+            total_letras += 1
+            # Cuenta vocales
+            vocal['a'] += 1 if letra == 'a' else 0
+            vocal['e'] += 1 if letra == 'e' else 0
+            vocal['i'] += 1 if letra == 'i' else 0
+            vocal['o'] += 1 if letra == 'o' else 0
+            vocal['u'] += 1 if letra == 'u' else 0
+    texto.append(línea)
+
+print("-"*40 + "\n{:^40s}\n".format("Resultado") + "-"*40)
+print(f'Total palabras = {total_palabras}')
+print(f'Total letras = {total_letras}')
+
+# Imprime el total de vocales y calcula el porcentaje
+[print(f'{k} = {vocal[k]}, ({vocal[k] / total_letras:5.3%})') for k in vocal]
+print("-"*40 + "\n{:^40s}\n".format("Texto") + "-"*40)
+# Imprime el texto
+[print(línea, end="") for línea in texto]
+ 
+archivo.close()
+```
+. . .
+
+**Resultado**:
+```
+----------------------------------------
+               Resultado                
+----------------------------------------
+Total palabras = 919
+Total letras = 4239
+a = 524, (12.361%)
+e = 531, (12.527%)
+i = 180, (4.246%)
+o = 361, (8.516%)
+u = 184, (4.341%)
+----------------------------------------
+                 Texto                  
+----------------------------------------
+Capítulo primero
+
+Que trata de la condición y ejercicio del famoso y valiente hidalgo don Quijote de la Mancha
+
+En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo ...
+
+...
+
+Diera él, por dar una mano de coces al traidor de Galalón, al ama que tenía, y aun a su sobrina de añadidura.
+
+```
+## Diferenciadores 4. {.scrollable}
+
+* De inicio no requieres instalar nada en tu computadora, pues haremos uso de la plataforma <font style="color:DarkSlateGray"><b>MACTI</b></font>.
+
+. . .
+
+::: {layout-nrow=2 layout-ncol="3"}
+![MACTI main](./figuras/macti01.png){fig-align="left"  width=75% .lightbox}
+
+![MACTI menú](./figuras/macti02.png){fig-align="left"  width=75% .lightbox}
+
+![MACTI IGEF](./figuras/macti03.png){fig-align="left"  width=75% .lightbox}
+
+![MACTI Moodle](./figuras/macti_moodle_igf.png){fig-align="left"  width=75% .lightbox}
+
+![MACTI Jupyterhub](./figuras/macti_jupyterhub_igf.png){fig-align="left"  width=75% .lightbox}
+
+![MACTI Forgejo](./figuras/macti_forgejo.png){fig-align="left"  width=75% .lightbox}
+:::
+
+## Diferenciadores 5. {.scrollable}
+
+* En esta plataforma podrás realizar algunos ejercicios, los cuales te darán retroalimentación inmediata cuando algo no salga correctamente.
+
+. . .
+
+**Evaluación formativa**.
+
+::: {layout-nrow=2 layout-ncol="4"}
+![](./figuras/macti_evaluacion_01.png){fig-align="center"  width=50% .lightbox}
+
+![](./figuras/macti_evaluacion_02.png){fig-align="center"  width=50% .lightbox}
+
+![](./figuras/macti_evaluacion_03.png){fig-align="center"  width=50% .lightbox}
+
+![](./figuras/macti_evaluacion_04.png){fig-align="center"  width=50% .lightbox}
+
+![](./figuras/macti_evaluacion_05.png){fig-align="center"  width=50% .lightbox}
+
+![](./figuras/macti_evaluacion_06.png){fig-align="center"  width=50% .lightbox}
+
+![](./figuras/macti_evaluacion_07.png){fig-align="center"  width=50% .lightbox}
+
+![](./figuras/macti_evaluacion_08.png){fig-align="center"  width=50% .lightbox}
+:::
+
+## Diferenciadores 6. {.scrollable}
+
+* Te proporcionaremos mucho material para practicar, pues solo practicando es como se aprende un nuevo lenguaje.
+
+. . .
+
+**Notebooks**.
+
+![](./figuras/macti_material_introPython.png){fig-align="center"  width=50% .lightbox}
+
+## Diferenciadores 7. {.scrollable}
+
+::: {.incremental}
+* Será un curso muy interactivo centrado en los participantes, el instructor será un facilitador que resolverá dudas e irá llevando el ritmo de cada clase.
+
+* Haremos una breve introducción a [Git](https://git-scm.com/) y [GitHub](https://github.com/) para gestionar software.
+
+* Al final del curso te diremos como instalar Python en tu computadora usando [Anaconda](https://www.anaconda.com/download).
+:::
+
+
+## Otros objetivos.{.scrollable}
+
+. . .
+
+![](./figuras/thinking_writing.jpg){fig-align="center"  width=75% .lightbox}
+
+![](./figuras/1st_rule_programming.jpg){fig-align="center"  width=50% .lightbox}
+
+![](./figuras/my_own_code.jpg){fig-align="center"  width=65% .lightbox}
+
+. . .
+
+::::{.columns}
+:::{.column width="50%"}
+![](./figuras/chat_gpt_add.jpg){fig-align="center"  width=85% .lightbox}
+:::
+:::{.column width="50%"}
+
+![](./figuras/AI_more_original_than_researchers.jpg){fig-align="center"  width=85% .lightbox}
+
+:::
+::::
+
+<font style="font-size:30px;">
+
+[Do AI models produce more original ideas than researchers?^[1]](https://www.nature.com/articles/d41586-024-03070-5)
+
+[1] [Si, C., Yang, D. & Hashimoto, T. Preprint at arXiv (2024)](https://doi.org/10.48550/arXiv.2409.04109).
+
+</font>
+
+# <font style="font-size:100px; color:DarkSlateGray">¡¡Empecemos!!</font>
+
+## Tour por MACTI
+
+* Checar las cuentas en:
+  - MACTI
+  - GitHub
+  - ChatGPT
+  - Clonar el repositorio
+    ```{.bash code-line-numbers="false"}
+    git clone https://github.com/repomacti/introduccion_python.git
+    
+    ```
+  - Git y GitHub

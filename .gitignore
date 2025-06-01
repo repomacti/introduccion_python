@@ -128,10 +128,3 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# FOR RELEASE IGNORE THE FOLLOWING
-nbg/
-evaluacion/
-assignments_creation.csv
-assignments_update.csv
-macti_nbg_qs.py
-.nbgex
