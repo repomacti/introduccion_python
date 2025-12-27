@@ -138,3 +138,6 @@ macti_nbg_qs.py
 proyecto/
 presentaciones/
 
+
+/.quarto/
+**/*.quarto_ipynb

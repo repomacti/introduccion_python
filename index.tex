@@ -1,0 +1,2912 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  spanish,
+  letterpaper,
+]{scrbook}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Tabla de contenidos}
+\else
+  \newcommand\contentsname{Tabla de contenidos}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{Listado de Figuras}
+\else
+  \newcommand\listfigurename{Listado de Figuras}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{Listado de Tablas}
+\else
+  \newcommand\listtablename{Listado de Tablas}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figura}
+\else
+  \newcommand\figurename{Figura}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Tabla}
+\else
+  \newcommand\tablename{Tabla}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listado}
+\newcommand*\listoflistings{\listof{codelisting}{Listado de Listados}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\definecolor{QuartoInternalColor2}{rgb}{0,0,0}
+\definecolor{QuartoInternalColor3}{rgb}{0.15,0.56,0.56}
+\definecolor{QuartoInternalColor1}{rgb}{0.70,0.17,0.19}
+\definecolor{QuartoInternalColor4}{rgb}{0.00,0.45,0.15}
+\definecolor{QuartoInternalColor6}{rgb}{0.20,0.40,0.40}
+\definecolor{QuartoInternalColor5}{rgb}{0.00,0.40,0.00}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Introducción a Python},
+  pdfauthor={Luis Miguel De la Cruz Salas},
+  pdflang={es},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Introducción a Python}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{ejemplos \ldots{}}
+\author{Luis Miguel De la Cruz Salas}
+\date{2025-12-26}
+\begin{document}
+\frontmatter
+\maketitle
+
+\renewcommand*\contentsname{Tabla de contenidos}
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+
+\mainmatter
+\bookmarksetup{startatroot}
+
+\chapter*{Python básico}\label{python-buxe1sico}
+\addcontentsline{toc}{chapter}{Python básico}
+
+\markboth{Python básico}{Python básico}
+
+\section*{Descripción}\label{descripciuxf3n}
+\addcontentsline{toc}{section}{Descripción}
+
+\markright{Descripción}
+
+Python es uno de los lenguajes de programación más demandados en la
+industria tecnológica actual. Su versatilidad y potencia lo hacen ideal
+para una amplia variedad de aplicaciones, desde el desarrollo de
+aplicaciones web hasta el análisis de datos y la inteligencia
+artificial. Aprender Python no solo mejorará tus habilidades técnicas,
+sino que también te abrirá puertas a nuevas oportunidades profesionales.
+Creado por Guido van Rossum en 1991, Python es un lenguaje de
+programación de alto nivel, interpretado, de propósito general y con una
+sintaxis muy clara y legible, además de ser portable entre diferentes
+sistemas operativos. Este curso está diseñado para proporcionarte una
+base inicial sobre la cual serás capaz de desarrollar algoritmos
+sencillos y entenderás muchos de los códigos que son usados en
+diferentes áreas de la ciencia y la tecnología.
+
+\section*{¿Qué aprenderás?}\label{quuxe9-aprenderuxe1s}
+\addcontentsline{toc}{section}{¿Qué aprenderás?}
+
+\markright{¿Qué aprenderás?}
+
+Fundamentos de Python: Comenzaremos con los conceptos básicos,
+incluyendo variables, tipos de datos y estructuras de control como
+ciclos y condicionales. Estructuras de Datos: Aprenderás a trabajar con
+listas, tuplas, diccionarios y conjuntos, herramientas esenciales para
+manejar y organizar datos.
+
+\section*{¿A quién está dirigido?}\label{a-quiuxe9n-estuxe1-dirigido}
+\addcontentsline{toc}{section}{¿A quién está dirigido?}
+
+\markright{¿A quién está dirigido?}
+
+Principiantes: No se requiere experiencia previa en programación.
+Programadores de otros lenguajes: Aquellos que deseen aprender Python
+para ampliar su conjunto de habilidades. Profesionales y estudiantes:
+Personas que buscan utilizar Python en campos como la ciencia de datos,
+el análisis de datos, la automatización y el desarrollo web.
+
+\section*{Objetivo.}\label{objetivo.}
+\addcontentsline{toc}{section}{Objetivo.}
+
+\markright{Objetivo.}
+
+Capacitar a los participantes en el uso de las herramientas básicas del
+lenguaje de programación Python.
+
+\section*{Temario}\label{temario}
+\addcontentsline{toc}{section}{Temario}
+
+\markright{Temario}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Introducción Encuadre y presentación del curso. Visita guiada a la
+  plataforma MACTI.\\
+  ¿Cómo registrarse? Ambiente de Moodle. Ambiente de JupyterLab. Breve
+  introducción al manejo de versiones. Comandos básicos. Git y Github.
+  Quiz 1.
+\item
+  Herramientas básicas de Python. Variables y objetos. Tipos básicos y
+  sus operadores. Tipos numéricos. Tipos lógicos. Operadores aritméticos
+  Operadores relacionales Operaciones lógicas. Conversión entre tipos.
+  Expresiones y declaraciones. Quiz 2. Proyecto: parte 1. Cadenas
+  Entrada y salida estándar: input, print Control de flujo: while if,
+  elif, else for break, continue, else, pass. Quiz 3. Estructura de
+  datos: Listas Tuplas Conjuntos Diccionarios. Recorriendo las
+  secuencias. Un primer vistazo a las funciones. Importando bibliotecas
+  (math, random, statistics). Quiz 4. Proyecto: parte 2.
+\end{enumerate}
+
+\section*{Licencia}\label{licencia}
+\addcontentsline{toc}{section}{Licencia}
+
+\markright{Licencia}
+
+Introducción a Python by Luis Miguel de la Cruz Salas is licensed under
+CC BY-SA 4.0
+
+\bookmarksetup{startatroot}
+
+\chapter{Variables y objetos.}\label{sec-var_y_obj}
+
+\textbf{Objetivo.} Explicar los conceptos de variables y objetos, cómo
+es que se declaran y cómo se usan mediante algunos ejemplos.
+
+En Python las variables:
+
+\begin{itemize}
+\tightlist
+\item
+  son \textbf{símbolos} que permiten identificar la información que se
+  almacena en la memoria de la computadora,
+\item
+  son \textbf{nombres} o \textbf{etiquetas} para los objetos que se
+  crean en Python,
+\item
+  se crean con ayuda del operador de asignación \texttt{=},
+\item
+  no se tiene que establecer explícitamente el tipo de dato de la
+  variable, pues esto se realiza de manera dinámica (\textbf{tipado
+  dinámico}).
+\end{itemize}
+
+\section{Reglas para definir los nombres de las
+variables.}\label{sec-reglas_nombres}
+
+Los nombres de las variables:
+
+\begin{itemize}
+\tightlist
+\item
+  pueden contener \textbf{letras}, \textbf{números} y \textbf{guiones
+  bajos} (\texttt{\_}),
+\item
+  deben comenzar con una letra o un guion bajo,
+\item
+  se distingue entre mayúsculas y minúsculas, por ejemplo,
+  \texttt{variable} y \texttt{Variable} serán nombres diferentes.
+\item
+  puede contener caracteres Unicode (véase sección
+  sección~\ref{sec-unicode} ).
+\end{itemize}
+
+\section{Variables básicas.}\label{sec-var_basicas}
+
+Los siguientes ejemplos son definiciones de variables con nombres
+válidos:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# el nombre de la variable con minúsculas, }
+\CommentTok{\# el valor es de tipo cadena (usamos comillas dobles para definir una cadena)}
+\NormalTok{gabo }\OperatorTok{=} \StringTok{"Gabriel García Márquez"}   
+
+\CommentTok{\# el nombre de la variable contiene un número, }
+\CommentTok{\# el valor es de tipo entero}
+\NormalTok{gabo25 }\OperatorTok{=} \DecValTok{25}  
+
+\CommentTok{\# el nombre de la variable comienza con \_,}
+\CommentTok{\# el valor es de tipo flotante}
+\NormalTok{\_gabo }\OperatorTok{=} \FloatTok{3.1416}  
+
+\CommentTok{\# el nombre nombre de la variable contiene mayúsculas y minúsculas, }
+\CommentTok{\# el valor es de tipo número complejo: parte real + parte imaginaria (con j)}
+\NormalTok{GaboComplejo }\OperatorTok{=} \DecValTok{3} \OperatorTok{+} \OtherTok{2j}  
+
+\CommentTok{\# el nombre de la variable contiene un \_, }
+\CommentTok{\# el valor es de tipo Lógico}
+\NormalTok{gabo\_logico }\OperatorTok{=} \VariableTok{True} 
+\end{Highlighting}
+\end{Shaded}
+
+Para imprimir el contenido de las variables definidas en la celda
+anterior usamos la función \texttt{print()} como sigue:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(gabo)}
+\BuiltInTok{print}\NormalTok{(gabo25)}
+\BuiltInTok{print}\NormalTok{(\_gabo)}
+\BuiltInTok{print}\NormalTok{(GaboComplejo)}
+\BuiltInTok{print}\NormalTok{(gabo\_logico)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Gabriel García Márquez
+25
+3.1416
+(3+2j)
+True
+\end{verbatim}
+
+El tipo de cada variable se obtiene usando la función \texttt{type()}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{type}\NormalTok{(gabo)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+str
+\end{verbatim}
+
+Observa que la variable gabo es de tipo \texttt{str}.
+
+Python proporciona los siguientes tipos de variables básicas:
+
+\begin{itemize}
+\tightlist
+\item
+  numéricos: \texttt{int}, \texttt{float}, \texttt{complex},
+\item
+  cadenas: \texttt{str} y
+\item
+  lógicos: \texttt{True} y \texttt{False}.
+\end{itemize}
+
+En el capítulo \ref{sec-tipos_basicos} se describen estos tipos básicos
+en detalle.
+
+\section{\texorpdfstring{Funciones incorporadas (\emph{Built-in
+functions}).}{Funciones incorporadas (Built-in functions).}}\label{sec-fun_incorporadas}
+
+La función \texttt{print()} y \texttt{type()} son dos ejemplos de
+\textbf{Funciones incorporadas} (\emph{Built-in functions}) en Python,
+las cuales siempre están disponibles para usarse en cualquier código. Se
+puede consultar la lista de estas funciones en
+https://docs.python.org/3/library/functions.html.
+
+A lo largo de este texto se introducirán algunas de estas funciones con
+ejemplos sencillos. En este capítulo particularmente veremos el uso de
+las funciones: \texttt{print()}, \texttt{type()}, \texttt{id()},
+\texttt{chr()}, \texttt{ord()}, \texttt{del()}.
+
+La función \texttt{print()} imprime el contenido de una variable y puede
+recibir varios argumentos a la vez:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(gabo, gabo25)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Gabriel García Márquez 25
+\end{verbatim}
+
+Se puede imprimir el resultado de una operación:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\DecValTok{3} \OperatorTok{*} \DecValTok{4}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+12
+\end{verbatim}
+
+También imprime el resultado de otras funciones por ejemplo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\BuiltInTok{type}\NormalTok{(gabo))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+<class 'str'>
+\end{verbatim}
+
+En este caso se imprime el tipo de la variable \texttt{gabo}. Observa
+que se obtiene más información, particulamente nos dice que
+\texttt{gabo} es un \textbf{objeto} de la clase
+\texttt{\textquotesingle{}str\textquotesingle{}}. Hablaremos un poco más
+de objetos y clases en la sección \ref{sec-objetos_nombres}.
+
+\section{Variables con mayúsculas y
+minúsculas.}\label{sec-var_mayusculas_minusculas}
+
+Python es sensitivo a mayúsculas y minúsculas en los nombres de las
+variables. En el ejemplo que sigue se definen tres variables distintas:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pi }\OperatorTok{=} \FloatTok{3.14}     
+\NormalTok{PI }\OperatorTok{=} \FloatTok{31416e{-}4} 
+\NormalTok{Pi }\OperatorTok{=} \FloatTok{3.141592}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  La variable \texttt{pi} identifica al número flotante \(3.14\).
+\item
+  La variable \texttt{PI} identifica al número flotante
+  \(31416 \times 10^{-4}\) (se usa notación científica
+  \texttt{31416e-4}) que es equivalente a \(3.1416\).
+\item
+  La variable \texttt{Pi} identifica al número flotante \(3.141592\).
+\end{itemize}
+
+Estas tres variables son diferentes y se almacenan en lugares diferentes
+en la memoria de la computadora. La siguiente tabla muestra de manera
+esquemática los conceptos de nombre, valor de la variable e
+identificador en memoria:
+
+\begin{longtable}[]{@{}rllc@{}}
+\toprule\noalign{}
+Nombre & & Valor & id en memoria \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{pi} & \(\rightarrow\) & 3.14 & 140425110809872 \\
+\texttt{PI} & \(\rightarrow\) & 3.1416 & 140425110112240 \\
+\texttt{Pi} & \(\rightarrow\) & 3.141592 & 140425110112016 \\
+\end{longtable}
+
+El identificador en memoria de cada variable es un número entero, el
+cual puede cambiar en cada ejecución. La función \texttt{id()} permite
+conocer el identificador en la memoria de cada variable:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{id}\NormalTok{(pi)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+2124418474032
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{id}\NormalTok{(PI)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+2124422132240
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{id}\NormalTok{(Pi)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+2124422132368
+\end{verbatim}
+
+Observa que cada variable tiene un número de identificador diferente.
+
+Es posible imprimir el valor de la variable, su tipo y su identificador
+en una sola línea de código como sigue:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(pi, }\BuiltInTok{type}\NormalTok{(pi), }\BuiltInTok{id}\NormalTok{(pi))}
+\BuiltInTok{print}\NormalTok{(PI, }\BuiltInTok{type}\NormalTok{(PI), }\BuiltInTok{id}\NormalTok{(PI))}
+\BuiltInTok{print}\NormalTok{(Pi, }\BuiltInTok{type}\NormalTok{(Pi), }\BuiltInTok{id}\NormalTok{(Pi))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+3.14 <class 'float'> 2124418474032
+3.1416 <class 'float'> 2124422132240
+3.141592 <class 'float'> 2124422132368
+\end{verbatim}
+
+\section{Objetos y sus nombres.}\label{sec-objetos_nombres}
+
+Python es un lenguaje \textbf{Orientado a Objetos}.
+
+\begin{itemize}
+\tightlist
+\item
+  Todo lo que definimos será un objeto de una clase determinada.
+\item
+  Una clase define atributos y métodos para los objetos.
+\item
+  Python tiene definidas clases de las cuales es posible construir
+  objetos.
+\end{itemize}
+
+En los ejemplos anteriores, en donde se han definido algunas variables,
+lo que realmente está pasando es que se están creando objetos de
+diferente tipo (o clase) y se les da un nombre. Por ejemplo, la
+siguiente declaración:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a }\OperatorTok{=} \DecValTok{1}
+\end{Highlighting}
+\end{Shaded}
+
+crea el objeto \texttt{1} de tipo entero
+(\texttt{\textless{}class\ \textquotesingle{}int\textquotesingle{}\textgreater{}})
+cuyo nombre es \texttt{a}.
+
+Si hacemos lo siguiente:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{b }\OperatorTok{=}\NormalTok{ a}
+\end{Highlighting}
+\end{Shaded}
+
+se crea otro nombre para el mismo objeto \texttt{1}, \textbf{NO se crea
+otro objeto}.
+
+Veamos lo anterior en la siguiente celda de código:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a }\OperatorTok{=} \DecValTok{1}
+\NormalTok{b }\OperatorTok{=}\NormalTok{ a}
+\BuiltInTok{print}\NormalTok{(a, }\BuiltInTok{type}\NormalTok{(a), }\BuiltInTok{id}\NormalTok{(a))}
+\BuiltInTok{print}\NormalTok{(b, }\BuiltInTok{type}\NormalTok{(b), }\BuiltInTok{id}\NormalTok{(b))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+1 <class 'int'> 140730842948520
+1 <class 'int'> 140730842948520
+\end{verbatim}
+
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, colback=white, bottomtitle=1mm, rightrule=.15mm, opacityback=0, toprule=.15mm, colframe=quarto-callout-note-color-frame, breakable, opacitybacktitle=0.6, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota.}, leftrule=.75mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
+\textbf{En otros lenguajes}, por ejemplo en \textbf{lenguaje C}, un
+código equivalente al mostrado anteriormente podría ser como sigue:
+
+\begin{verbatim}
+int a = 1;
+int b = a;
+\end{verbatim}
+
+En este caso, se genera el valor \texttt{1} para \texttt{a} y luego se
+crea otro valor \texttt{1} para \texttt{b} que es copiado de \texttt{a},
+de tal manera que estas dos variables, \texttt{a} y \texttt{b} hacen
+referencia a lugares diferentes en la memoria.
+
+\end{tcolorbox}
+
+Ahora observa y ejecuta el siguiente código:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a }\OperatorTok{=} \DecValTok{1}
+\NormalTok{b }\OperatorTok{=}\NormalTok{ a}
+\BuiltInTok{print}\NormalTok{(a, }\BuiltInTok{id}\NormalTok{(a), }\BuiltInTok{type}\NormalTok{(a))}
+\BuiltInTok{print}\NormalTok{(b, }\BuiltInTok{id}\NormalTok{(b), }\BuiltInTok{type}\NormalTok{(b))}
+
+\NormalTok{b }\OperatorTok{=} \FloatTok{5.0}
+\BuiltInTok{print}\NormalTok{(a, }\BuiltInTok{id}\NormalTok{(a), }\BuiltInTok{type}\NormalTok{(a))}
+\BuiltInTok{print}\NormalTok{(b, }\BuiltInTok{id}\NormalTok{(b), }\BuiltInTok{type}\NormalTok{(b))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+1 140730842948520 <class 'int'>
+1 140730842948520 <class 'int'>
+1 140730842948520 <class 'int'>
+5.0 2124422131056 <class 'float'>
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Nota que inicialmente \texttt{a} y \texttt{b} tienen el mismo
+  identificador en memoria, por lo que son dos nombres para el mismo
+  objeto \texttt{1} que es de tipo entero.
+\item
+  Posteriormente, se crea el nuevo objeto \texttt{5.0}, un flotante, y
+  se le da el nombre \texttt{b}; en ese momento \texttt{a} y \texttt{b}
+  hacen referencia a dos objetos diferentes y sucede que:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    el contenido de \texttt{b} es \texttt{5.0},
+  \item
+    \texttt{b} tiene un identificador diferente al de \texttt{a}
+  \item
+    y \texttt{b} ahora es de tipo flotante.
+  \end{itemize}
+\end{itemize}
+
+Esta conceptualización de objetos y sus nombres es muy importante cuando
+se manejan estructuras de datos más complejas.
+
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, colback=white, bottomtitle=1mm, rightrule=.15mm, opacityback=0, toprule=.15mm, colframe=quarto-callout-note-color-frame, breakable, opacitybacktitle=0.6, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota.}, leftrule=.75mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
+Usaremos el término \textbf{variable} para referirnos a los nombres de
+los \textbf{objetos}. Cuando sea conveniente usaremos el término
+\textbf{objeto}.
+
+\end{tcolorbox}
+
+\section{Definición de varios nombres a la
+vez.}\label{sec-varios_nombres}
+
+La siguiente declaración genera tres nombres para el mismo valor
+\texttt{25}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OperatorTok{=}\NormalTok{ y }\OperatorTok{=}\NormalTok{ z }\OperatorTok{=} \DecValTok{25}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(x, }\BuiltInTok{type}\NormalTok{(x), }\BuiltInTok{id}\NormalTok{(x))}
+\BuiltInTok{print}\NormalTok{(y, }\BuiltInTok{type}\NormalTok{(y), }\BuiltInTok{id}\NormalTok{(y))}
+\BuiltInTok{print}\NormalTok{(z, }\BuiltInTok{type}\NormalTok{(z), }\BuiltInTok{id}\NormalTok{(z))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+25 <class 'int'> 140730842949288
+25 <class 'int'> 140730842949288
+25 <class 'int'> 140730842949288
+\end{verbatim}
+
+Observa que se creó el objeto \texttt{25} de tipo
+\texttt{\textless{}class\ \textquotesingle{}int\textquotesingle{}\textgreater{}}
+y los nombres \texttt{x}, \texttt{y} y \texttt{z} son nombres diferentes
+para el mismo objeto, lo cual se verifica observando que el
+identificador de cada variable es el mismo.
+
+Hagamos ahora lo siguiente:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{y }\OperatorTok{=} \FloatTok{2.7182}
+\BuiltInTok{print}\NormalTok{(x, }\BuiltInTok{type}\NormalTok{(x), }\BuiltInTok{id}\NormalTok{(x))}
+\BuiltInTok{print}\NormalTok{(y, }\BuiltInTok{type}\NormalTok{(y), }\BuiltInTok{id}\NormalTok{(y))}
+\BuiltInTok{print}\NormalTok{(z, }\BuiltInTok{type}\NormalTok{(z), }\BuiltInTok{id}\NormalTok{(z))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+25 <class 'int'> 140730842949288
+2.7182 <class 'float'> 2124422132432
+25 <class 'int'> 140730842949288
+\end{verbatim}
+
+Observa que la variable \texttt{y} es de tipo flotante cuyo valor es
+\texttt{2.7182}.
+
+Podemos eliminar el nombre \texttt{x} con la función \texttt{del()}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{del}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+Ahora ya no es posible hacer referencia al objeto \texttt{25} usando el
+nombre \texttt{x}. Si intentamos imprimir \texttt{x} se generará un
+error indicando lo anterior:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Highlighting}
+\textcolor{black}{NameError: name 'x' is not defined}
+\textcolor{black}{}\textcolor{QuartoInternalColor1}{---------------------------------------------------------------------------}\textcolor{QuartoInternalColor2}{}
+\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor1}{NameError}\textcolor{QuartoInternalColor2}{                                 Traceback (most recent call last)}
+\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor3}{Cell}\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor3}{ }\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor4}{In[46]}\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor4}{, line 1}\textcolor{QuartoInternalColor2}{}
+\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor4}{----> }\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor4}{1}\textcolor{QuartoInternalColor2}{ }\textcolor{QuartoInternalColor5}{print}\textcolor{QuartoInternalColor2}{(}\textcolor{QuartoInternalColor2}{x}\textcolor{QuartoInternalColor2}{)}
+\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor1}{NameError}\textcolor{QuartoInternalColor2}{: name 'x' is not defined}
+\end{Highlighting}
+
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, colback=white, bottomtitle=1mm, rightrule=.15mm, opacityback=0, toprule=.15mm, colframe=quarto-callout-note-color-frame, breakable, opacitybacktitle=0.6, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota.}, leftrule=.75mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
+Observa que Python nos proporciona mucha información acerca del error.
+En este caso el error es de tipo \texttt{NameError}. Más información al
+respecto la puedes encontrar en el capítulo
+\ref{sec-errores_excepciones}.
+
+\end{tcolorbox}
+
+Sin embargo, aún es posible hacer referencia al objeto \texttt{25}
+usando el nombre \texttt{z}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(z, }\BuiltInTok{type}\NormalTok{(z), }\BuiltInTok{id}\NormalTok{(z))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+25 <class 'int'> 140730842949288
+\end{verbatim}
+
+El objeto \texttt{25} será eliminado de la memoria cuando ya no exista
+un nombre que haga referencia a él. Entonces, si eliminamos \texttt{z}
+se elimina también el objeto \texttt{25} pues ya no habrá ningún nombre
+que haga referencia a él:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{del}\NormalTok{(z)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Esto dará un error}
+\BuiltInTok{print}\NormalTok{(z, }\BuiltInTok{type}\NormalTok{(z), }\BuiltInTok{id}\NormalTok{(z))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Highlighting}
+\textcolor{black}{NameError: name 'z' is not defined}
+\textcolor{black}{}\textcolor{QuartoInternalColor1}{---------------------------------------------------------------------------}\textcolor{QuartoInternalColor2}{}
+\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor1}{NameError}\textcolor{QuartoInternalColor2}{                                 Traceback (most recent call last)}
+\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor3}{Cell}\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor3}{ }\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor4}{In[49]}\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor4}{, line 2}\textcolor{QuartoInternalColor2}{}
+\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor4}{      1}\textcolor{QuartoInternalColor2}{ }\textcolor{QuartoInternalColor6}{# Esto dará un error}\textcolor{QuartoInternalColor2}{}
+\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor4}{----> }\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor4}{2}\textcolor{QuartoInternalColor2}{ }\textcolor{QuartoInternalColor5}{print}\textcolor{QuartoInternalColor2}{(}\textcolor{QuartoInternalColor2}{z}\textcolor{QuartoInternalColor2}{, }\textcolor{QuartoInternalColor5}{type}\textcolor{QuartoInternalColor2}{(z), }\textcolor{QuartoInternalColor5}{id}\textcolor{QuartoInternalColor2}{(z))}
+\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor1}{NameError}\textcolor{QuartoInternalColor2}{: name 'z' is not defined}
+\end{Highlighting}
+
+\section{Asignación múltiple.}\label{sec-asignacion_mult}
+
+Podemos hacer una asignación múltiple de objetos diferentes a variables
+diferentes, por ejemplo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x, y, z }\OperatorTok{=} \StringTok{"una cadena"}\NormalTok{, }\FloatTok{3.141592}\NormalTok{, }\DecValTok{50}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(x, }\BuiltInTok{type}\NormalTok{(x), }\BuiltInTok{id}\NormalTok{(x))}
+\BuiltInTok{print}\NormalTok{(y, }\BuiltInTok{type}\NormalTok{(y), }\BuiltInTok{id}\NormalTok{(y))}
+\BuiltInTok{print}\NormalTok{(z, }\BuiltInTok{type}\NormalTok{(z), }\BuiltInTok{id}\NormalTok{(z))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+una cadena <class 'str'> 2124429436656
+3.141592 <class 'float'> 2124422124976
+50 <class 'int'> 140730842950088
+\end{verbatim}
+
+Como se observa, las variables \texttt{x}, \texttt{y} y~\texttt{z} hacen
+referencia a diferentes objetos de distinto tipo.
+
+\section{Nombres de variables Unicode}\label{sec-unicode}
+
+\textbf{Unicode} es un estándar para la codificación de caracteres, que
+permite el tratamiento informático, la transmisión y visualización de
+textos de muchos idiomas y disciplinas técnicas. Unicode intenta tener
+universalidad, uniformidad y unicidad.
+
+Unicode define tres formas de codificación bajo el nombre UTF (Unicode
+Transformation Format): UTF8, UTF16, UTF32. Véase
+https://es.wikipedia.org/wiki/Unicode para más información.
+
+Python utiliza la codificación unicode y podemos saber el tipo de
+codificación como sigue:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Importamos el módulo sys}
+\ImportTok{import}\NormalTok{ sys}
+
+\CommentTok{\# Imprimimos el tipo de codificación}
+\NormalTok{sys.stdout.encoding }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+'UTF-8'
+\end{verbatim}
+
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, colback=white, bottomtitle=1mm, rightrule=.15mm, opacityback=0, toprule=.15mm, colframe=quarto-callout-note-color-frame, breakable, opacitybacktitle=0.6, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota.}, leftrule=.75mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
+En la celda anterior estamos usando \texttt{import}. Esta declaración
+importa las bibliotecas que se requieran para realizar alguna tarea. En
+este caso se importa \texttt{sys} que contiene módulos, funciones y
+variables para acceder a información del sistema. Una explicación
+detallada de cómo funciona \texttt{import} la puedes encontrar en el
+capítulo \ref{sec-import}.
+
+\end{tcolorbox}
+
+La compatibilidad con UTF-8 en Python significa que se puede leer,
+escribir y manipular archivos de datos provenientes de fuentes diversas
+como archivos binarios, bases de datos, APIs web, entre muchas otras;
+estas fuentes pueden contener texto en diferentes idiomas y
+codificaciones.
+
+A continuación se muestran algunos ejemplos.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Acentos y caracteres de idiomas en el nombre de variables}
+\NormalTok{México }\OperatorTok{=} \StringTok{"en el ombligo de la luna"}
+\NormalTok{español }\OperatorTok{=} \StringTok{"lengua romance"}
+\NormalTok{français }\OperatorTok{=} \StringTok{"langues romanes"}
+\NormalTok{Ελληνικά }\OperatorTok{=} \StringTok{"Griego"}
+\NormalTok{Русский }\OperatorTok{=} \StringTok{"Ruso"}
+
+\CommentTok{\# Símbolos matemáticos}
+\NormalTok{𝜋 }\OperatorTok{=} \FloatTok{3.1416}
+\NormalTok{ℏ }\OperatorTok{=} \FloatTok{6.626e{-}34}
+\end{Highlighting}
+\end{Shaded}
+
+Estas variables se pueden usar como cualquier otra, por ejemplo podemos
+imprimir su contenido, determinar su tipo y su identificador en memoria,
+y las podemos usar en operaciones:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(México, }\BuiltInTok{type}\NormalTok{(México), }\BuiltInTok{id}\NormalTok{(México))}
+\BuiltInTok{print}\NormalTok{(𝜋, }\BuiltInTok{type}\NormalTok{(𝜋), }\BuiltInTok{id}\NormalTok{(𝜋))}
+\BuiltInTok{print}\NormalTok{(}\DecValTok{2} \OperatorTok{*}\NormalTok{ 𝜋)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+en el ombligo de la luna <class 'str'> 2124429492432
+3.1416 <class 'float'> 2124422130800
+6.2832
+\end{verbatim}
+
+También es posible imprimir el caracter unicode y su valor como sigue:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Imprimimos el valor de la variable Ελληνικά}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Ελληνικά = "}\NormalTok{, Ελληνικά)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Ελληνικά =  Griego
+\end{verbatim}
+
+Los códigos Unicode de cada caracter se pueden dar en decimal o
+hexadecimal, por ejemplo para el símbolo \(\pi\) se tiene el código
+decimal \texttt{120587} y hexadecimal \texttt{0x1D70B}. La función
+\texttt{chr()} convierte el código unicode en el caracter
+correspondiente:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Código hexadecimal del caracter 𝜋}
+\BuiltInTok{chr}\NormalTok{(}\BaseNTok{0x1D70B}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+'𝜋'
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Código decimal del caracter 𝜋}
+\BuiltInTok{chr}\NormalTok{(}\DecValTok{120587}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+'𝜋'
+\end{verbatim}
+
+La función \texttt{ord()} obtiene el código Unicode de un caracter y lo
+regresa en decimal:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{ord}\NormalTok{(}\StringTok{"𝜋"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+120587
+\end{verbatim}
+
+También es posible obtener más información de los códigos unicode como
+sigue:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Importamos el módulo unicodedata}
+\ImportTok{import}\NormalTok{ unicodedata }
+
+\BuiltInTok{print}\NormalTok{(}\StringTok{"𝜋"}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(}\BuiltInTok{ord}\NormalTok{(}\StringTok{"𝜋"}\NormalTok{))}
+\BuiltInTok{print}\NormalTok{(unicodedata.category(}\StringTok{"𝜋"}\NormalTok{))}
+\BuiltInTok{print}\NormalTok{(unicodedata.name(}\StringTok{"𝜋"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+𝜋
+120587
+Ll
+MATHEMATICAL ITALIC SMALL PI
+\end{verbatim}
+
+Para más información véase: https://docs.python.org/3/howto/unicode.html
+
+También en los siguientes dos enlaces se pueden obtener los códigos UTF8
+de diferentes caracteres especiales:
+
+\begin{itemize}
+\tightlist
+\item
+  HTML Entities
+\item
+  Unicode 17.0 Character Code Charts
+\end{itemize}
+
+\section{Nombres inválidos para variables.}\label{sec-nombres_invalidos}
+
+Los siguientes ejemplos \textbf{NO SON VÁLIDOS} para el nombre de
+variables. Al ejecutar las celdas se obtendrá un error en cada una de
+ellas.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1l}\ErrorTok{uis} \OperatorTok{=} \DecValTok{20}      \CommentTok{\# No se puede iniciar con un número}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Highlighting}
+\textcolor{black}{SyntaxError: invalid decimal literal (953519616.py, line 1)}
+\textcolor{black}{  }\textcolor{QuartoInternalColor3}{Cell}\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor3}{ }\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor4}{In[60]}\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor4}{, line 1}\textcolor{QuartoInternalColor2}{}
+\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor1}{    }\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor1}{1luis = 20      # No se puede iniciar con un número}\textcolor{QuartoInternalColor2}{}
+\textcolor{QuartoInternalColor2}{    \textasciicaret{}}
+\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor1}{SyntaxError}\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor1}{:}\textcolor{QuartoInternalColor2}{ invalid decimal literal}
+\end{Highlighting}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{luis$ }\OperatorTok{=} \FloatTok{8.2323}  \CommentTok{\# No puede contener caracteres especiales}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Highlighting}
+\textcolor{black}{SyntaxError: invalid syntax (3857869541.py, line 1)}
+\textcolor{black}{  }\textcolor{QuartoInternalColor3}{Cell}\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor3}{ }\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor4}{In[61]}\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor4}{, line 1}\textcolor{QuartoInternalColor2}{}
+\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor1}{    }\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor1}{luis\$ = 8.2323  # No puede contener caracteres especiales}\textcolor{QuartoInternalColor2}{}
+\textcolor{QuartoInternalColor2}{        \textasciicaret{}}
+\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor1}{SyntaxError}\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor1}{:}\textcolor{QuartoInternalColor2}{ invalid syntax}
+\end{Highlighting}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{for} \OperatorTok{=} \DecValTok{35}        \CommentTok{\# Algunos nombres ya están reservados}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Highlighting}
+\textcolor{black}{SyntaxError: invalid syntax (2521306807.py, line 1)}
+\textcolor{black}{  }\textcolor{QuartoInternalColor3}{Cell}\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor3}{ }\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor4}{In[62]}\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor4}{, line 1}\textcolor{QuartoInternalColor2}{}
+\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor1}{    }\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor1}{for = 35        # Algunos nombres ya están reservados}\textcolor{QuartoInternalColor2}{}
+\textcolor{QuartoInternalColor2}{        \textasciicaret{}}
+\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor1}{SyntaxError}\textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor1}{:}\textcolor{QuartoInternalColor2}{ invalid syntax}
+\end{Highlighting}
+
+\subsection{Palabras reservadas.}\label{sec-palabras_reservadas}
+
+Como vimos en la celda anterior, no es posible usar las palabras
+reservadas de Python para nombrar variables. La lista de palabras
+reservadas se puede consultar con la siguiente expresión:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{help}\NormalTok{(}\StringTok{"keywords"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Here is a list of the Python keywords.  Enter any keyword to get more help.
+
+False               class               from                or
+None                continue            global              pass
+True                def                 if                  raise
+and                 del                 import              return
+as                  elif                in                  try
+assert              else                is                  while
+async               except              lambda              with
+await               finally             nonlocal            yield
+break               for                 not                 
+\end{verbatim}
+
+\bookmarksetup{startatroot}
+
+\chapter{Tipos de datos básicos.}\label{sec-tipos_basicos}
+
+\textbf{Objetivo.} Explicar con el uso de ejemplos los tipos de
+variables básicas que existen en Python.
+
+\section{Introducción}\label{introducciuxf3n}
+
+En Python se tienen tres tipos de datos básicos:
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+Tipo & Ejemplo \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Númerico & 13, 3.1416, 1+5j \\
+Lógico & True, False \\
+Cadena & ``Frida'', ``Diego'' \\
+\end{longtable}
+
+\section{Tipos númericos}\label{tipos-nuxfamericos}
+
+En Python los tipos de datos númericos son: 1. Enteros 2. Reales 3.
+Complejos
+
+A continuación se realiza una descripción de estos tipos numéricos. Más
+información se puede encontrar aquí: Numeric types.
+
+\textbf{1. Enteros}
+
+Son aquellos que carecen de parte decimal. Para definir un entero
+hacemos lo siguiente:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{entero }\OperatorTok{=} \DecValTok{13}
+\end{Highlighting}
+\end{Shaded}
+
+Cuando se ejecuta la celda anterior, se crea el objeto \texttt{13} cuyo
+nombre es \texttt{entero}. Podemos imprimir el valor de \texttt{entero}
+y su tipo como sigue:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(entero, }\BuiltInTok{type}\NormalTok{(entero))}
+\end{Highlighting}
+\end{Shaded}
+
+Es posible obtener más información del tipo \texttt{int} usando la
+biblioteca \texttt{sys}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Importamos el módulo sys}
+\ImportTok{import}\NormalTok{ sys}
+
+\CommentTok{\# Revisamos la información del tipo entero}
+\BuiltInTok{print}\NormalTok{(sys.int\_info)}
+\end{Highlighting}
+\end{Shaded}
+
+Cuando tenemos números enteros muy grandes, por ejemplo:
+\(21,346,765,890\) se puede usar el formato: \texttt{21\_346\_765\_890}
+para hacer más claro el número:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Este es un formato de número entero que usa \_ para separar los miles}
+\NormalTok{entero\_grande }\OperatorTok{=} \DecValTok{21\_346\_765\_890}
+\BuiltInTok{print}\NormalTok{(entero\_grande, }\BuiltInTok{type}\NormalTok{(entero\_grande))}
+\end{Highlighting}
+\end{Shaded}
+
+Los números enteros también se pueden escribir en formato binario, octal
+y hexadecimal como sigue:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{num\_b }\OperatorTok{=} \BaseNTok{0b01110} \CommentTok{\# Binario, debe iniciar con 0b}
+\NormalTok{num\_o }\OperatorTok{=} \BaseNTok{0o12376} \CommentTok{\# Octal, debe iniciar con 0o}
+\NormalTok{num\_h }\OperatorTok{=} \BaseNTok{0x12323} \CommentTok{\# Hexadecimal, debe iniciar con 0x}
+
+\BuiltInTok{print}\NormalTok{(num\_b, }\BuiltInTok{type}\NormalTok{(num\_b))}
+\BuiltInTok{print}\NormalTok{(num\_o, }\BuiltInTok{type}\NormalTok{(num\_o))}
+\BuiltInTok{print}\NormalTok{(num\_h, }\BuiltInTok{type}\NormalTok{(num\_h))}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{2. Reales}
+
+Son aquellos que tienen una parte decimal. Para definir un número real
+(flotante) se hace como sigue:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pi }\OperatorTok{=} \FloatTok{3.141592}
+\end{Highlighting}
+\end{Shaded}
+
+Cuando se ejecuta la celda anterior, se crea el objeto \texttt{3.141592}
+cuyo nombre es \texttt{pi}. Podemos imprimir el valor de \texttt{pi} y
+su tipo como sigue:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(pi, }\BuiltInTok{type}\NormalTok{(pi))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Revisamos la información del tipo flotante}
+\BuiltInTok{print}\NormalTok{(sys.float\_info)}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{3. Complejos}
+
+Son aquellos que tienen una parte real y una parte imaginaria, y ambas
+partes son números reales. Por ejemplo:
+
+\[
+c = a + b \; j
+\]
+
+donde \(a\) es la parte real y \(b\) es la parte imaginaria identificada
+con la letra \(j\).
+
+Para definir un número complejo en Python se hace como sigue:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{complejo }\OperatorTok{=} \DecValTok{12} \OperatorTok{+} \OtherTok{5j} \CommentTok{\# La parte imaginaria lleva una j al final}
+\end{Highlighting}
+\end{Shaded}
+
+Cuando se ejecuta la celda anterior, se crea el objeto
+\texttt{12\ +\ 5j} cuyo nombre es \texttt{complejo}. En este caso, el
+contenido de \texttt{complejo} tiene dos partes: la real y la
+imaginaria. Podemos imprimir el valor de \texttt{complejo} y su tipo
+como sigue:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(complejo, }\BuiltInTok{type}\NormalTok{(complejo))}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Atributos y métodos}\label{atributos-y-muxe9todos}
+
+Los tipos numéricos básicos se crean a partir de las clases: * enteros:
+\texttt{\textless{}class\ \textquotesingle{}int\textquotesingle{}\textgreater{}}
+* flontates:
+\texttt{\textless{}class\ \textquotesingle{}float\textquotesingle{}\textgreater{}}
+* complejos:
+\texttt{\textless{}class\ \textquotesingle{}complex\textquotesingle{}\textgreater{}}
+
+Una clase define \textbf{atributos} y \textbf{métodos} para los objetos:
+* Los atributos definen el estado interno de los objetos (su contenido).
+* Los métodos definen el comportamiento de los objetos (qué pueden
+hacer).
+
+Para conocer los atributos y métodos de los tipos numéricos básicos
+escribimos el nombre del objeto, agregamos un punto y enseguida
+presionamos la tecla tabulador (↹), obtendremos algo similar a la
+siguiente figura:
+
+Los métodos están etiquetados como \texttt{function} y los atributos
+como \texttt{instance}.
+
+En la siguiente celda realiza lo siguiente:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Teclea \texttt{entero.} (incluye el punto al final) y luego presiona
+  la tecla TAB (↹). Deberás obtener la lista de atributos y métodos como
+  en la figura anterior.
+\item
+  Elige el método \texttt{as\_integer\_ratio}.
+\item
+  Con el cursor al final de \texttt{as\_integer\_ratio} teclea SHIFT(⇧)
+  + TAB(↹). Deberás obtener la documentación de la función como se
+  muestra en la siguiente figura:
+\end{enumerate}
+
+Para ejecutar el método deberás primero agregar paréntesis al final del
+nombre:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{entero.as\_integer\_ratio()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Escribe entero. y luego teclea TAB (↹)}
+\end{Highlighting}
+\end{Shaded}
+
+El resultado deberá ser una pareja de enteros cuya división es
+exactamente igual al número entero original.
+
+Podemos hacer exactamente lo mismo con el objeto \texttt{pi}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pi.as\_integer\_ratio()}
+\end{Highlighting}
+\end{Shaded}
+
+Podemos comprobar el resultado dividiendo los enteros que resultan:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{3537118140137533} \OperatorTok{/} \DecValTok{1125899906842624}
+\end{Highlighting}
+\end{Shaded}
+
+Para el caso de números complejos, vamos a elegir los atributos
+\texttt{imag} y \texttt{real} que proporcionan la parte imaginaria y la
+parte real del número complejo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{complejo.imag }\CommentTok{\# accedemos a la parte imaginaria}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{complejo.real }\CommentTok{\# accedemos a la parte real}
+\end{Highlighting}
+\end{Shaded}
+
+Observa que en este caso no se agregaron paréntesis debido a que se
+trata de atributos y no de métodos.
+
+Finalmente, elegimos \texttt{conjugate()} y vemos el resultado:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{complejo.conjugate() }\CommentTok{\# calculamos el conjugado del número complejo.}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Tipos lógicos}\label{tipos-luxf3gicos}
+
+Es un tipo utilizado para realizar operaciones lógicas y puede tomar dos
+valores: \texttt{True} o \texttt{False}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bandera }\OperatorTok{=} \VariableTok{True}
+\BuiltInTok{print}\NormalTok{(bandera, }\BuiltInTok{type}\NormalTok{(bandera))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bandera }\OperatorTok{=} \VariableTok{False}
+\BuiltInTok{print}\NormalTok{(bandera, }\BuiltInTok{type}\NormalTok{(bandera))}
+\end{Highlighting}
+\end{Shaded}
+
+Las variables lógicas aparecen de manera natural en operaciones
+relacionales o lógicas, que se verán más adelante, por ejemplo:
+
+¿Qué valor es mayor \(3^5\) o \(5^3\)?
+
+Esto lo podemos preguntar como sigue:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{3}\OperatorTok{**}\DecValTok{5} \OperatorTok{\textgreater{}} \DecValTok{5}\OperatorTok{**}\DecValTok{3}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{3}\OperatorTok{**}\DecValTok{5} \OperatorTok{\textless{}} \DecValTok{5}\OperatorTok{**}\DecValTok{3}
+\end{Highlighting}
+\end{Shaded}
+
+Lo anterior lo podemos verificar imprimiendo los valores de \(3^5\) y
+\(5^3\)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\DecValTok{3}\OperatorTok{**}\DecValTok{5}\NormalTok{, }\DecValTok{5}\OperatorTok{**}\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\section{\texorpdfstring{Conversión entre tipos
+(\emph{casting})}{Conversión entre tipos (casting)}}\label{conversiuxf3n-entre-tipos-casting}
+
+Es posible transformar un tipo en otro tipo compatible; a esta operación
+se lo conoce como \emph{casting}.
+
+\subsection{\texorpdfstring{Función
+\texttt{int()}}{Función int()}}\label{funciuxf3n-int}
+
+Transforma objetos en enteros, siempre y cuando haya compatibilidad.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cadena }\OperatorTok{=} \StringTok{\textquotesingle{}1000\textquotesingle{}}
+\BuiltInTok{print}\NormalTok{(cadena, }\BuiltInTok{type}\NormalTok{(cadena))}
+
+\NormalTok{entero }\OperatorTok{=} \BuiltInTok{int}\NormalTok{(cadena) }\CommentTok{\# Transformación}
+\BuiltInTok{print}\NormalTok{(entero, }\BuiltInTok{type}\NormalTok{(entero))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flotante }\OperatorTok{=} \FloatTok{3.141592}
+\BuiltInTok{print}\NormalTok{(flotante, }\BuiltInTok{type}\NormalTok{(flotante))}
+
+\NormalTok{entero  }\OperatorTok{=} \BuiltInTok{int}\NormalTok{(flotante) }\CommentTok{\# Trunca la parte decimal}
+\BuiltInTok{print}\NormalTok{(entero, }\BuiltInTok{type}\NormalTok{(entero))}
+\end{Highlighting}
+\end{Shaded}
+
+Si los objetos no son compatibles se genera un error al intentar
+realizar la conversión:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{complejo}\OperatorTok{=} \DecValTok{4}\OperatorTok{{-}}\OtherTok{4j}
+\NormalTok{entero }\OperatorTok{=} \BuiltInTok{int}\NormalTok{(complejo) }\CommentTok{\# Tipos NO COMPATIBLES}
+\end{Highlighting}
+\end{Shaded}
+
+Los valores lógicos \texttt{True} y \texttt{False} equivalen a
+\texttt{1} y \texttt{0} respectivamente:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{entero }\OperatorTok{=} \BuiltInTok{int}\NormalTok{(}\VariableTok{True}\NormalTok{) }
+\BuiltInTok{print}\NormalTok{(entero)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{entero }\OperatorTok{=} \BuiltInTok{int}\NormalTok{(}\VariableTok{False}\NormalTok{) }
+\BuiltInTok{print}\NormalTok{(entero)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{\texorpdfstring{Función
+\texttt{str()}}{Función str()}}\label{funciuxf3n-str}
+
+Transforma objetos en cadenas, siempre y cuando haya compatibilidad.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{entero }\OperatorTok{=} \DecValTok{1000}
+\BuiltInTok{print}\NormalTok{(entero, }\BuiltInTok{type}\NormalTok{(entero))}
+
+\NormalTok{cadena }\OperatorTok{=} \BuiltInTok{str}\NormalTok{(entero) }
+\BuiltInTok{print}\NormalTok{(cadena, }\BuiltInTok{type}\NormalTok{(cadena))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{complejo }\OperatorTok{=} \DecValTok{5}\OperatorTok{+}\OtherTok{1j}
+\BuiltInTok{print}\NormalTok{(complejo, }\BuiltInTok{type}\NormalTok{(complejo))}
+
+\NormalTok{cadena }\OperatorTok{=} \BuiltInTok{str}\NormalTok{(complejo)}
+\BuiltInTok{print}\NormalTok{(cadena, }\BuiltInTok{type}\NormalTok{(cadena))}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{\texorpdfstring{Función
+\texttt{float()}}{Función float()}}\label{funciuxf3n-float}
+
+Transforma objetos en flotantes, siempre y cuando haya compatibilidad.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cadena }\OperatorTok{=} \StringTok{\textquotesingle{}3.141592\textquotesingle{}}
+\BuiltInTok{print}\NormalTok{(cadena, }\BuiltInTok{type}\NormalTok{(cadena))}
+
+\NormalTok{real }\OperatorTok{=} \BuiltInTok{float}\NormalTok{(cadena)}
+\BuiltInTok{print}\NormalTok{(real, }\BuiltInTok{type}\NormalTok{(real))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{float}\NormalTok{(}\DecValTok{33}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{float}\NormalTok{(}\VariableTok{False}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{float}\NormalTok{(}\DecValTok{3}\OperatorTok{+}\OtherTok{3j}\NormalTok{) }\CommentTok{\# NO hay compatibilidad}
+\end{Highlighting}
+\end{Shaded}
+
+\section{\texorpdfstring{Función
+\texttt{isinstance()}}{Función isinstance()}}\label{funciuxf3n-isinstance}
+
+Permite saber si un objeto es de un tipo determinado. Por ejemplo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{entero }\OperatorTok{=} \DecValTok{13}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\BuiltInTok{isinstance}\NormalTok{(entero, }\BuiltInTok{int}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\BuiltInTok{isinstance}\NormalTok{(}\DecValTok{3}\OperatorTok{/}\DecValTok{4}\NormalTok{, }\BuiltInTok{int}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\BuiltInTok{isinstance}\NormalTok{(}\DecValTok{3}\OperatorTok{/}\DecValTok{4}\NormalTok{, }\BuiltInTok{float}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\BuiltInTok{isinstance}\NormalTok{(}\VariableTok{True}\NormalTok{, }\BuiltInTok{bool}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\BuiltInTok{isinstance}\NormalTok{(}\DecValTok{3}\OperatorTok{+}\OtherTok{5j}\NormalTok{, }\BuiltInTok{complex}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+Esta función se puede usar con cualquier tipo definido en Python o tipos
+definidos por el usuario.
+
+\section{Constantes}\label{constantes}
+
+Python contiene una serie de constantes integradas a las que no se les
+puede cambiar su valor. Más detalles se pueden encontrar en:
+\href{https://docs.python.org/3/library/constants.html}{\emph{Built-in
+Constants}}
+
+Las principales constantes son las siguientes:
+
+\begin{itemize}
+\item
+  \texttt{False}: de tipo Booleano.
+\item
+  \texttt{True}: de tipo Booleano.
+\item
+  \texttt{None}: El único valor para el tipo NoneType. Es usado
+  frecuentemente para representar la ausencia de un valor, por ejemplo
+  cuando no se pasa un argumento a una función.
+\item
+  \texttt{NotImplemented}: es un valor especial que es regresado por
+  métodos binarios especiales (por ejemplo \texttt{\_\_eq\_\_()},
+  \texttt{\_\_lt\_\_()}, \texttt{\_\_add\_\_()},
+  \texttt{\_\_rsub\_\_()}, etc.) para indicar que la operación no está
+  implementada con respecto a otro tipo.
+\item
+  \texttt{Ellipsis}: equivalente a \texttt{...}, es un valor especial
+  usado mayormente en conjunción con la sintáxis de \emph{slicing} de
+  arreglos.
+\item
+  \texttt{\_\_debug\_\_} : Esta constante es verdadera si Python no se
+  inició con la opción -O.
+\end{itemize}
+
+Las siguiente constantes son usadas dentro del intérprete interactivo
+(no se pueden usar dentro de programas ejecutados fuera del intérprete).
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{quit}(code=None)
+\item
+  \texttt{exit}(code=None)
+\item
+  \texttt{copyright}
+\item
+  \texttt{credits}
+\item
+  \texttt{license}
+\end{itemize}
+
+Por ejemplo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{copyright()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{credits()}
+\end{Highlighting}
+\end{Shaded}
+
+\bookmarksetup{startatroot}
+
+\chapter{Gestión de errores y
+excepciones.}\label{sec-errores_excepciones}
+
+\textbf{Objetivo.} Revisar la forma de gestionar errores y excepciones
+
+\bookmarksetup{startatroot}
+
+\chapter{Tipos de errores:}\label{tipos-de-errores}
+
+En Python existen dos tipos de errores por los cuales un programa se
+detiene y no continua con su ejecución normal.
+
+\section{Errores de sintaxis.}\label{errores-de-sintaxis.}
+
+Ocurren cuando no se escriben correctamente las expresiones y
+declaraciones como lo especifica la interfaz de Python.
+
+Por ejemplo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Escribimos a propósito \textquotesingle{}printf\textquotesingle{} que es un nombre incorrecto.}
+\NormalTok{printf(}\StringTok{\textquotesingle{}Hola mundo!\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  Observa que el tipo de error se imprime cuando éste ocurre.
+\item
+  En el caso anterior el error fue de tipo \texttt{NameError}, por lo
+  que hay que revisar que todo esté correctamente escrito.
+\end{itemize}
+
+\section{Errores provocados por
+excepciones.}\label{errores-provocados-por-excepciones.}
+
+Son errores lógicos que detienen la ejecución de un programa aún cuando
+la sintaxis sea la correcta.
+
+Por ejemplo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ raizCuadrada(numero):}
+\NormalTok{    numero }\OperatorTok{=} \BuiltInTok{float}\NormalTok{(numero)}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{"La raíz cuadrada del número }\SpecialCharTok{\{\}}\StringTok{ es }\SpecialCharTok{\{\}}\StringTok{"}\NormalTok{.}\BuiltInTok{format}\NormalTok{(numero, numero }\OperatorTok{**} \FloatTok{0.5}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Ejemplo correcto que se ejecuta sin problemas.}
+\NormalTok{raizCuadrada(}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Ejemplo correcto, se calcula la raíz cuadrada de {-}1.}
+\CommentTok{\# El resultado es un número complejo. En este caso Python}
+\CommentTok{\# se encarga de realizar las conversiones necesarias.}
+\NormalTok{raizCuadrada(}\OperatorTok{{-}}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Ejemplo incorrecto. No es posible calcular la raíz cuadrada}
+\CommentTok{\# de un número complejo, es una operación no definida.}
+\NormalTok{raizCuadrada(}\DecValTok{1}\OperatorTok{+}\OtherTok{1j}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+En el ejemplo anterior se produce un error de tipo \texttt{TypeError},
+es decir hay incompatibilidad con los tipos de datos que se están
+manipulando.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Ejemplo incorrecto. No se puede calcular la raíz cuadrada}
+\CommentTok{\# de una cadena.}
+\NormalTok{raizCuadrada(}\StringTok{"hola"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+En el ejemplo anterior se produce un error de tipo \texttt{ValueError},
+es decir es decir hay un problema con el contenido del objeto.
+
+\bookmarksetup{startatroot}
+
+\chapter{\texorpdfstring{Gestión de excepciones con: \texttt{try},
+\texttt{except},
+\texttt{finally}}{Gestión de excepciones con: try, except, finally}}\label{gestiuxf3n-de-excepciones-con-try-except-finally}
+
+Los errores que se pueden manejar son aquellos errores lógicos como los
+presentados anteriormente en donde es posible ``predecir'' el tipo de
+error que puede ocurrir de acuerdo con la implementación que estamos
+realizando.
+
+Todas las excepciones en Python son objetos de una clase que se derivan
+de la clase principal BaseExcepcion. Más detalles se pueden consultar
+aquí.
+
+Las excepciones se pueden capturar y manejar adecuadamente. Para ello se
+tienen las siguientes herramientas:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{try}
+\item
+  \texttt{except}
+\item
+  \texttt{else}
+\item
+  \texttt{finally}
+\end{itemize}
+
+Cuando se identifica una sección de código susceptible de errores, ésta
+puede ser delimitada con la expresión \texttt{try}. Cualquier excepción
+que ocurra dentro de esta sección de código podrá ser capturada y
+gestionada.
+
+La expresión \texttt{except} es la encargada de gestionar las
+excepciones que se capturan. Si se utiliza sin mayor información, ésta
+ejecutará el código que contiene para todas las excepciones que ocurran.
+
+En el ejemplo de la función \texttt{raizCuadrada()} podemos manejar las
+excepciones como sigue:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ raizCuadrada(numero):}
+    \CommentTok{"""}
+\CommentTok{    Función que calcula la raíz cuadrada de un número.}
+
+\CommentTok{    Parameters}
+\CommentTok{    {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\CommentTok{    numero: int o float}
+\CommentTok{        Valor al que se le desea calcular la raíz cuadrada.}
+\CommentTok{    }
+\CommentTok{    """}
+    \CommentTok{\# Intenta realizar el cálculo que está dentro de try}
+    \ControlFlowTok{try}\NormalTok{:}
+\NormalTok{        numero }\OperatorTok{=} \BuiltInTok{float}\NormalTok{(numero)}
+        \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"La raíz cuadrada del número }\SpecialCharTok{\{}\NormalTok{numero}\SpecialCharTok{\}}\SpecialStringTok{ es }\SpecialCharTok{\{}\NormalTok{numero}\OperatorTok{**}\FloatTok{0.5}\SpecialCharTok{\}}\SpecialStringTok{"}\NormalTok{)}
+
+    \CommentTok{\# Si ocurre una excepción se captura aquí}
+    \ControlFlowTok{except}\NormalTok{:}
+        \CommentTok{\# No se hace nada con la excepción (por el momento)}
+        \ControlFlowTok{pass}
+
+    \BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}Gracias por usar Python!.\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Usando la nueva versión de la función \texttt{raizCuadrada()} intentemos
+ejecutarla con los siguientes ejemplos:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{raizCuadrada(}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{raizCuadrada(}\OperatorTok{{-}}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{raizCuadrada(}\DecValTok{1}\OperatorTok{+}\OtherTok{1j}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{raizCuadrada(}\StringTok{"hola"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Observa que aún con argumentos erróneos no se genera ningún mensaje de
+error. Esto se debe a que la cláusula \texttt{except} captura todas las
+posibles excepciones, pero no hace nada.
+
+\subsection{Gestión general de las
+excepciones}\label{gestiuxf3n-general-de-las-excepciones}
+
+Ya que sabemos como capturar las excepciones, veamos cómo pueden ser
+tratadas para dar retroalimentación al usuario.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ raizCuadrada(numero):}
+    \CommentTok{"""}
+\CommentTok{    Función que calcula la raíz cuadrada de un número.}
+
+\CommentTok{    Parameters}
+\CommentTok{    {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\CommentTok{    numero: int o float}
+\CommentTok{        Valor al que se le desea calcular la raíz cuadrada.}
+\CommentTok{    }
+\CommentTok{    """}
+    \CommentTok{\# Variable Booleana para manejar las excepciones.}
+\NormalTok{    ocurre\_error }\OperatorTok{=} \VariableTok{False}
+    
+    \CommentTok{\# Intenta realizar el cálculo que está dentro de try    }
+    \ControlFlowTok{try}\NormalTok{:}
+\NormalTok{        numero }\OperatorTok{=} \BuiltInTok{float}\NormalTok{(numero)}
+        \BuiltInTok{print}\NormalTok{(}\StringTok{"La raíz cuadrada del número }\SpecialCharTok{\{\}}\StringTok{ es }\SpecialCharTok{\{\}}\StringTok{"}\NormalTok{.}\BuiltInTok{format}\NormalTok{(numero, numero }\OperatorTok{**} \FloatTok{0.5}\NormalTok{))}
+
+    \CommentTok{\# Si ocurre una excepción se captura en el except}
+    \ControlFlowTok{except}\NormalTok{:}
+\NormalTok{        ocurre\_error }\OperatorTok{=} \VariableTok{True}
+
+    \CommentTok{\# Cuando ocurre un error se hace lo siguiente:}
+    \ControlFlowTok{if}\NormalTok{ ocurre\_error:}
+        \BuiltInTok{print}\NormalTok{(}\StringTok{"Cuidado, hubo una falla en el programa, no se pudo realizar el cálculo"}\NormalTok{)}
+    \ControlFlowTok{else}\NormalTok{:}
+        \BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}Gracias por usar Python!.\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{raizCuadrada(}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{raizCuadrada(}\OperatorTok{{-}}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{raizCuadrada(}\DecValTok{1}\OperatorTok{+}\OtherTok{1j}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{raizCuadrada(}\StringTok{"hola"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Observa que ahora se avisa al usuario que hubo un error al ejecutar la
+función por lo que el cálculo no se realizó. Sin embargo hace falta más
+información.
+
+\subsection{Gestión de las excepciones por su
+tipo.}\label{gestiuxf3n-de-las-excepciones-por-su-tipo.}
+
+La expresión \texttt{except} puede ser utilizada de forma tal que
+ejecute código dependiendo del tipo de error que ocurra. En este caso
+sabemos que pueden ocurrir dos tipos de errores: \texttt{TypeError} y
+\texttt{ValueError}. Entonces la nueva versión de la función
+\texttt{raizCuadrada()} es como sigue:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ raizCuadrada(numero):}
+    \CommentTok{"""}
+\CommentTok{    Función que calcula la raíz cuadrada de un número.}
+
+\CommentTok{    Parameters}
+\CommentTok{    {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\CommentTok{    numero: int o float}
+\CommentTok{        Valor al que se le desea calcular la raíz cuadrada.}
+\CommentTok{    }
+\CommentTok{    """}
+    \CommentTok{\# Variable Booleana para manejar las excepciones.}
+\NormalTok{    ocurre\_error }\OperatorTok{=} \VariableTok{False}
+    
+    \CommentTok{\# Intenta realizar el cálculo que está dentro de try}
+    \ControlFlowTok{try}\NormalTok{:}
+\NormalTok{        numero }\OperatorTok{=} \BuiltInTok{float}\NormalTok{(numero)}
+        \BuiltInTok{print}\NormalTok{(}\StringTok{"La raíz cuadrada del número }\SpecialCharTok{\{\}}\StringTok{ es }\SpecialCharTok{\{\}}\StringTok{"}\NormalTok{.}\BuiltInTok{format}\NormalTok{(numero, numero }\OperatorTok{**} \FloatTok{0.5}\NormalTok{))}
+
+    \CommentTok{\# En esta sección se trata la excepción de tipo TypeError}
+    \ControlFlowTok{except} \PreprocessorTok{TypeError}\NormalTok{:}
+\NormalTok{        ocurre\_error }\OperatorTok{=} \VariableTok{True}
+        \BuiltInTok{print}\NormalTok{(}\StringTok{"Ocurrió un error de tipo: TypeError. }\CharTok{\textbackslash{}n}\StringTok{ Verifique que los tipos sean compatibles."}\NormalTok{)}
+
+    \CommentTok{\# En esta sección se trata la excepción de tipo ValueError}
+    \ControlFlowTok{except} \PreprocessorTok{ValueError}\NormalTok{:}
+\NormalTok{        ocurre\_error }\OperatorTok{=} \VariableTok{True}
+        \BuiltInTok{print}\NormalTok{(}\StringTok{"Ocurrió un error de tipo ValueError. }\CharTok{\textbackslash{}n}\StringTok{ Verifique el contenido de los argumentos."}\NormalTok{)}
+
+    \CommentTok{\# En esta sección se tratan todas las otras posible excepciones}
+    \ControlFlowTok{except}\NormalTok{:}
+\NormalTok{        ocurre\_error }\OperatorTok{=} \VariableTok{True}
+        \BuiltInTok{print}\NormalTok{(}\StringTok{"Ocurrió algo misterioso"}\NormalTok{)}
+        
+    \CommentTok{\# Cuando ocurre un error se hace lo siguiente:}
+    \ControlFlowTok{if}\NormalTok{ ocurre\_error:}
+        \BuiltInTok{print}\NormalTok{(}\StringTok{"Hubo una falla en el programa, no se pudo realizar el cálculo"}\NormalTok{)}
+    \ControlFlowTok{else}\NormalTok{:}
+        \BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}Gracias por usar Python!.\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{raizCuadrada(}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{raizCuadrada(}\OperatorTok{{-}}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{raizCuadrada(}\DecValTok{1}\OperatorTok{+}\OtherTok{4j}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{raizCuadrada(}\StringTok{"hola"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Observa que ya se da mayor información sobre el tipo de error que
+ocurrió y el usuario puede saber que hacer para corregir los errores.
+
+Todos los tipos de errores que existen en Python se pueden consultar en
+Concrete exceptions .
+
+\subsection{Información del error}\label{informaciuxf3n-del-error}
+
+Se puede capturar toda la información del error para pasarla al usuario.
+Esto se hace como sigue:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ raizCuadrada(numero): }
+    \CommentTok{"""}
+\CommentTok{    Función que calcula la raíz cuadrada de un número.}
+
+\CommentTok{    Parameters}
+\CommentTok{    {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\CommentTok{    numero: int o float}
+\CommentTok{        Valor al que se le desea calcular la raíz cuadrada.}
+\CommentTok{    }
+\CommentTok{    """}
+    \CommentTok{\# Variable Booleana para manejar las excepciones.}
+\NormalTok{    ocurre\_error }\OperatorTok{=} \VariableTok{False}
+    
+    \CommentTok{\# Intenta realizar el cálculo que está dentro de try}
+    \ControlFlowTok{try}\NormalTok{:}
+\NormalTok{        numero }\OperatorTok{=} \BuiltInTok{float}\NormalTok{(numero)}
+        \BuiltInTok{print}\NormalTok{(}\StringTok{"La raíz cuadrada del número }\SpecialCharTok{\{\}}\StringTok{ es }\SpecialCharTok{\{\}}\StringTok{"}\NormalTok{.}\BuiltInTok{format}\NormalTok{(numero, numero }\OperatorTok{**} \FloatTok{0.5}\NormalTok{))}
+
+    \CommentTok{\# En esta sección se trata la excepción de tipo TypeError y se obtienen los detalles  }
+    \ControlFlowTok{except} \PreprocessorTok{TypeError} \ImportTok{as}\NormalTok{ info:}
+\NormalTok{        ocurre\_error }\OperatorTok{=} \VariableTok{True}
+        \BuiltInTok{print}\NormalTok{(}\StringTok{"Ocurrió un error (TypeError):}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, info)}
+
+    \CommentTok{\# En esta sección se trata la excepción de tipo ValueError y se obtienen los detalles  }
+    \ControlFlowTok{except} \PreprocessorTok{ValueError} \ImportTok{as}\NormalTok{ info:}
+\NormalTok{        ocurre\_error }\OperatorTok{=} \VariableTok{True}
+        \BuiltInTok{print}\NormalTok{(}\StringTok{"Ocurrió un error (ValueError):}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, info)}
+
+    \CommentTok{\# En esta sección se tratan todas las otras posible excepciones}
+    \ControlFlowTok{except}\NormalTok{:}
+\NormalTok{        ocurre\_error }\OperatorTok{=} \VariableTok{True}
+        \BuiltInTok{print}\NormalTok{(}\StringTok{"Ocurrió algo misterioso"}\NormalTok{)}
+
+    \CommentTok{\# Cuando ocurre un error se hace lo siguiente:}
+    \ControlFlowTok{if}\NormalTok{ ocurre\_error:}
+        \BuiltInTok{print}\NormalTok{(}\StringTok{"Hubo una falla en el programa, no se pudo realizar el cálculo"}\NormalTok{)}
+    \ControlFlowTok{else}\NormalTok{:}
+        \BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}Gracias por usar Python!.\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{raizCuadrada(}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{raizCuadrada(}\OperatorTok{{-}}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{raizCuadrada(}\DecValTok{1}\OperatorTok{+}\OtherTok{4j}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{raizCuadrada(}\StringTok{"hola"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Observa que ahora además de conocer el tipo de error, también se muestra
+toda la información del error para que el usuario tome las acciones
+pertinentes.
+
+\subsection{\texorpdfstring{\texttt{finally}}{finally}}\label{finally}
+
+Esta sección se ejecuta siempre, sin importar si hubo una excepción o
+no.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ raizCuadrada(numero):}
+    \CommentTok{"""}
+\CommentTok{    Función que calcula la raíz cuadrada de un número.}
+
+\CommentTok{    Parameters}
+\CommentTok{    {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\CommentTok{    numero: int o float}
+\CommentTok{    Valor al que se le desea calcular la raíz cuadrada.}
+\CommentTok{    }
+\CommentTok{    """}
+    \CommentTok{\# Variable Booleana para manejar las excepciones.}
+\NormalTok{    ocurre\_error }\OperatorTok{=} \VariableTok{False}
+    
+    \CommentTok{\# Intenta realizar el cálculo que está dentro de try}
+    \ControlFlowTok{try}\NormalTok{:}
+\NormalTok{        numero }\OperatorTok{=} \BuiltInTok{float}\NormalTok{(numero)}
+        \BuiltInTok{print}\NormalTok{(}\StringTok{"La raíz cuadrada del número }\SpecialCharTok{\{\}}\StringTok{ es }\SpecialCharTok{\{\}}\StringTok{"}\NormalTok{.}\BuiltInTok{format}\NormalTok{(numero, numero }\OperatorTok{**} \FloatTok{0.5}\NormalTok{))}
+
+    \CommentTok{\# En esta sección se trata la excepción de tipo TypeError y se obtienen los detalles  }
+    \ControlFlowTok{except} \PreprocessorTok{TypeError} \ImportTok{as}\NormalTok{ info:}
+\NormalTok{        ocurre\_error }\OperatorTok{=} \VariableTok{True}
+        \BuiltInTok{print}\NormalTok{(}\StringTok{"Ocurrió un error (TypeError):}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, info)}
+
+    \CommentTok{\# En esta sección se trata la excepción de tipo ValueError y se obtienen los detalles  }
+    \ControlFlowTok{except} \PreprocessorTok{ValueError} \ImportTok{as}\NormalTok{ info:}
+\NormalTok{        ocurre\_error }\OperatorTok{=} \VariableTok{True}
+        \BuiltInTok{print}\NormalTok{(}\StringTok{"Ocurrió un error (ValueError):}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, info)}
+
+    \CommentTok{\# En esta sección se tratan todas las otras posible excepciones}
+    \ControlFlowTok{except}\NormalTok{:}
+\NormalTok{        ocurre\_error }\OperatorTok{=} \VariableTok{True}
+        \BuiltInTok{print}\NormalTok{(}\StringTok{"Ocurrió algo misterioso"}\NormalTok{)}
+
+    \CommentTok{\# Cuando ocurre un error se hace lo siguiente:}
+    \ControlFlowTok{finally}\NormalTok{:}
+        \ControlFlowTok{if}\NormalTok{ ocurre\_error:}
+            \BuiltInTok{print}\NormalTok{(}\StringTok{"Hubo una falla en el programa, no se pudo realizar el cálculo"}\NormalTok{)}
+        \ControlFlowTok{else}\NormalTok{:}
+            \BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}Gracias por usar Python!.\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{raizCuadrada(}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{raizCuadrada(}\OperatorTok{{-}}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{raizCuadrada(}\DecValTok{1}\OperatorTok{+}\OtherTok{4j}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{raizCuadrada(}\StringTok{"hola"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Lanzar excepciones
+controladas.}\label{lanzar-excepciones-controladas.}
+
+Es posible presentar toda la información que genera la excepción y
+agregarle notas para el usuario. Para agregar notas usamos le método
+\texttt{add\_note()} y para lanzar la excepción una vez controlada
+usamos \texttt{raise}. La siguiente versión de la función
+\texttt{raizCuadrada()} tiene al final una cláusula \texttt{else}, la
+cual se ejecuta cuando no ocurre ninguna excepción. En este caso, dentro
+del \texttt{try} realizamo el cálculo de la raíz cuadrada y en el
+\texttt{else} hacemos la impresión del resultado.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ raizCuadrada(numero):}
+    \CommentTok{"""}
+\CommentTok{    Función que calcula la raíz cuadrada de un número.}
+
+\CommentTok{    Parameters}
+\CommentTok{    {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\CommentTok{    numero: int o float}
+\CommentTok{        Valor al que se le desea calcular la raíz cuadrada.}
+\CommentTok{    }
+\CommentTok{    """}
+    
+    \CommentTok{\# Intenta realizar el cálculo que está dentro de try}
+    \ControlFlowTok{try}\NormalTok{:}
+\NormalTok{        numero\_cuadrado }\OperatorTok{=} \BuiltInTok{float}\NormalTok{(numero) }\OperatorTok{**} \FloatTok{0.5}
+
+    \CommentTok{\# En esta sección se trata la excepción de tipo TypeError y se obtienen los detalles  }
+    \ControlFlowTok{except} \PreprocessorTok{TypeError} \ImportTok{as}\NormalTok{ info:}
+\NormalTok{        info.add\_note(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{"} \OperatorTok{+} \StringTok{"{-}"}\OperatorTok{*}\DecValTok{20}\NormalTok{)}
+\NormalTok{        info.add\_note(}\SpecialStringTok{f"raizCuadrada}\SpecialCharTok{\{}\NormalTok{numero}\SpecialCharTok{\}}\SpecialStringTok{: Para calcular una raíz cuadrada, el argumento \textquotesingle{}numero\textquotesingle{} debe ser compatible con un int o un float"}\NormalTok{)}
+\NormalTok{        info.add\_note(}\StringTok{"{-}"}\OperatorTok{*}\DecValTok{20}\NormalTok{)}
+        \ControlFlowTok{raise} \CommentTok{\# Lanzamos la excepción con toda la información}
+
+    \CommentTok{\# En esta sección se trata la excepción de tipo ValueError y se obtienen los detalles  }
+    \ControlFlowTok{except} \PreprocessorTok{ValueError} \ImportTok{as}\NormalTok{ info:}
+\NormalTok{        info.add\_note(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{"} \OperatorTok{+} \StringTok{"{-}"}\OperatorTok{*}\DecValTok{20}\NormalTok{)}
+\NormalTok{        info.add\_note(}\SpecialStringTok{f"raizCuadrada(\textquotesingle{}}\SpecialCharTok{\{}\NormalTok{numero}\SpecialCharTok{\}}\SpecialStringTok{\textquotesingle{}): Para calcular una raíz cuadrada, el valor del argumento \textquotesingle{}numero\textquotesingle{} debe ser compatible con un int o un float"}\NormalTok{)}
+\NormalTok{        info.add\_note(}\StringTok{"{-}"}\OperatorTok{*}\DecValTok{20}\NormalTok{)}
+        \ControlFlowTok{raise} \CommentTok{\# Lanzamos la excepción con toda la información}
+        
+    \CommentTok{\# En esta sección se tratan todas las otras posible excepciones}
+    \ControlFlowTok{except}\NormalTok{:}
+        \BuiltInTok{print}\NormalTok{(}\StringTok{"Ocurrió algo misterioso"}\NormalTok{)}
+
+    \ControlFlowTok{else}\NormalTok{:}
+        \BuiltInTok{print}\NormalTok{(}\StringTok{"La raíz cuadrada del número }\SpecialCharTok{\{\}}\StringTok{ es }\SpecialCharTok{\{\}}\StringTok{"}\NormalTok{.}\BuiltInTok{format}\NormalTok{(numero, numero\_cuadrado))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{raizCuadrada(}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{raizCuadrada(}\OperatorTok{{-}}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{raizCuadrada(}\DecValTok{1}\OperatorTok{+}\OtherTok{4j}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{raizCuadrada(}\StringTok{"hola"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\bookmarksetup{startatroot}
+
+\chapter{Importando bibliotecas.}\label{sec-import}
+
+\textbf{Objetivo.} Mostrar como importar módulos de la biblioteca
+estándar y algunos ejemplos de su uso.
+
+\bookmarksetup{startatroot}
+
+\chapter{La biblioteca estándar de
+Python}\label{la-biblioteca-estuxe1ndar-de-python}
+
+La \textbf{biblioteca estándar} de Python está compuesta por módulos con
+funcionalidades adicionales y que se distribuyen con la instalación de
+básica del lenguaje, por lo que no es necesaria una instalación
+adicional. El conjunto de funciones y herramientas de esta biblioteca es
+muy extensa y ofrece una amplia gama de aplicaciones.
+
+Estos módulos o bibliotecas permiten, entre otras cosas, tener una
+interfaz con el sistema operativo, manejo de archivos, medición de
+tiempos, fechas, matemáticas y pruebas unitarias.
+
+La forma de incorporar y usar de estas herramientas es simple y
+estándar. En esta notebook veremos algunos ejemplos.
+
+\bookmarksetup{startatroot}
+
+\chapter{Importando las bibliotecas.}\label{importando-las-bibliotecas.}
+
+Las bibliotecas se pueden importar varias formas:
+
+\textbf{1. Importando usando el nombre:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ nombre\_de\_la\_biblioteca}
+\end{Highlighting}
+\end{Shaded}
+
+En este caso, para usar una función se debe anteponer el nombre completo
+de la biblioteca:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nombre\_de\_la\_biblioteca.funcion\_x()}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{2. Importando usando el nombre y un alias:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ nombre\_de\_la\_biblioteca }\ImportTok{as}\NormalTok{ nb}
+\end{Highlighting}
+\end{Shaded}
+
+En este caso, para usar una función se debe anteponer el alias de la
+biblioteca:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nb.funcion\_x()}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{3. Importando todas las funciones de la biblioteca con
+\texttt{*}:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{from}\NormalTok{ nombre\_de\_la\_biblioteca }\ImportTok{import} \OperatorTok{*}
+\end{Highlighting}
+\end{Shaded}
+
+En este caso, para usar una función se puede usar el nombre de la misma
+sin anteponer nada:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{funcion\_x()}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{4. Importando solo una función de la biblioteca :}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{from}\NormalTok{ nombre\_de\_la\_biblioteca }\ImportTok{import}\NormalTok{ funcion\_x}
+\end{Highlighting}
+\end{Shaded}
+
+En este caso, para usar la función solo es necesario el nombre de la
+misma:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{funcion\_x()}
+\end{Highlighting}
+\end{Shaded}
+
+Por cada función que se requiera, se debe agregar el nombre en la
+importación separada por coma:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{from}\NormalTok{ nombre\_de\_la\_biblioteca }\ImportTok{import}\NormalTok{ funcion\_x, funcion\_y}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{5. Importando solo una función de la biblioteca y un alias:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{from}\NormalTok{ nombre\_de\_la\_biblioteca }\ImportTok{import}\NormalTok{ funcion\_x }\ImportTok{as}\NormalTok{ fx}
+\end{Highlighting}
+\end{Shaded}
+
+En este caso, para usar la función se usa el alias \texttt{fx} y se
+puede ejecutar como sigue:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fx()}
+\end{Highlighting}
+\end{Shaded}
+
+\bookmarksetup{startatroot}
+
+\chapter{Funciones matemáticas}\label{funciones-matemuxe1ticas}
+
+\section{\texorpdfstring{\texttt{math} y
+\texttt{cmath}}{math y cmath}}\label{math-y-cmath}
+
+\begin{itemize}
+\item
+  El módulo \texttt{math} provee de las funciones matemáticas definida
+  en la biblioteca estándar de C para números \textbf{reales}. Más
+  información: https://docs.python.org/3.0/library/math.html.
+\item
+  El módulo \texttt{cmath} provee de las funciones matemáticas para
+  números \textbf{complejos}. Más información:
+  https://docs.python.org/3.0/library/cmath.html
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ math}
+\BuiltInTok{print}\NormalTok{(math.sqrt(}\DecValTok{4}\NormalTok{))}
+\BuiltInTok{print}\NormalTok{(math.pi)}
+\BuiltInTok{print}\NormalTok{(math.sin(math.pi }\OperatorTok{/} \DecValTok{2}\NormalTok{))}
+\BuiltInTok{print}\NormalTok{(math.cos(}\DecValTok{0}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ cmath}
+
+\NormalTok{complejo }\OperatorTok{=} \DecValTok{1} \OperatorTok{+} \OtherTok{4j}
+\BuiltInTok{print}\NormalTok{(complejo)}
+\BuiltInTok{print}\NormalTok{(cmath.sin(complejo))}
+\end{Highlighting}
+\end{Shaded}
+
+\section{\texorpdfstring{\texttt{random}}{random}}\label{random}
+
+Este módulo implementa generadores de números pseudoaleatorios para
+varias distribuciones. Más información:
+https://docs.python.org/3/library/random.html
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ random}
+
+\CommentTok{\# randint(): Elige un número entre 0 y 5}
+\BuiltInTok{print}\NormalTok{(random.randint(}\DecValTok{0}\NormalTok{, }\DecValTok{5}\NormalTok{))}
+
+\CommentTok{\# random(): Genera un número entre 0 y 1}
+\BuiltInTok{print}\NormalTok{(random.random())}
+
+\CommentTok{\# choice(): Selecciona entre varios elementos de una secuencia}
+\NormalTok{myList }\OperatorTok{=}\NormalTok{ [}\DecValTok{2}\NormalTok{, }\DecValTok{109}\NormalTok{, }\VariableTok{False}\NormalTok{, }\DecValTok{10}\NormalTok{, }\StringTok{"Lorem"}\NormalTok{, }\DecValTok{482}\NormalTok{, }\StringTok{"Ipsum"}\NormalTok{]}
+\BuiltInTok{print}\NormalTok{(random.choice(myList))}
+
+\CommentTok{\# suffle(): Ordena una lista de manera pseudoaleatoria}
+\NormalTok{x }\OperatorTok{=}\NormalTok{ [[i] }\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\DecValTok{10}\NormalTok{)]}
+\NormalTok{random.shuffle(x)}
+\BuiltInTok{print}\NormalTok{(x)}
+
+\CommentTok{\# randrange(): Elige un valor en un rango}
+\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\DecValTok{3}\NormalTok{):}
+    \BuiltInTok{print}\NormalTok{(random.randrange(}\DecValTok{0}\NormalTok{, }\DecValTok{101}\NormalTok{, }\DecValTok{5}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\section{\texorpdfstring{\texttt{statistics}}{statistics}}\label{statistics}
+
+Este módulo proporciona funciones para calcular estadísticas matemáticas
+de datos numéricos (valores reales). Más información:
+https://docs.python.org/3/library/statistics.html
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ statistics}
+
+\NormalTok{example\_list }\OperatorTok{=}\NormalTok{ [}\DecValTok{5}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{]}
+
+\NormalTok{x }\OperatorTok{=}\NormalTok{ statistics.mean(example\_list)}
+\BuiltInTok{print}\NormalTok{(x)}
+
+\NormalTok{y }\OperatorTok{=}\NormalTok{ statistics.median(example\_list)}
+\BuiltInTok{print}\NormalTok{(y)}
+
+\NormalTok{z }\OperatorTok{=}\NormalTok{ statistics.mode(example\_list)}
+\BuiltInTok{print}\NormalTok{(z)}
+
+\NormalTok{a }\OperatorTok{=}\NormalTok{ statistics.stdev(example\_list)}
+\BuiltInTok{print}\NormalTok{(a)}
+
+\NormalTok{b }\OperatorTok{=}\NormalTok{ statistics.variance(example\_list)}
+\BuiltInTok{print}\NormalTok{(b)}
+\end{Highlighting}
+\end{Shaded}
+
+\bookmarksetup{startatroot}
+
+\chapter{Sistema operativo.}\label{sistema-operativo.}
+
+\section{\texorpdfstring{\texttt{os}}{os}}\label{os}
+
+Este módulo provee una manera portable de interactuar con el sistema
+operativo. Más información: https://docs.python.org/3/library/os.html.
+
+Se puede por ejemplo, crear, eliminar y mover carpetas/archivos,
+cambiarse de directorio, acceder a los nombres de archivos dentro de una
+ruta, etc.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ os}
+
+\NormalTok{directorio\_actual }\OperatorTok{=}\NormalTok{ os.getcwd()}
+\BuiltInTok{print}\NormalTok{(directorio\_actual)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{os.mkdir(}\StringTok{\textquotesingle{}nueva\_carpeta\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{os.chdir(}\StringTok{\textquotesingle{}nueva\_carpeta\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(os.getcwd())}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{os.chdir(}\StringTok{\textquotesingle{}../\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(os.getcwd())}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{os.rename(}\StringTok{\textquotesingle{}nueva\_carpeta\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}nueva\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{os.listdir()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{os.rmdir(}\StringTok{\textquotesingle{}nueva\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{os.listdir()}
+\end{Highlighting}
+\end{Shaded}
+
+\section{\texorpdfstring{\texttt{platform}}{platform}}\label{platform}
+
+Para acceso a los datos identificativos de la plataforma subyacente. Más
+información: https://docs.python.org/3/library/platform.html.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ platform}
+
+\NormalTok{SO }\OperatorTok{=}\NormalTok{ platform.system()}
+
+\ControlFlowTok{if}\NormalTok{ SO }\OperatorTok{==} \StringTok{"Windows"}\NormalTok{:}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{"Sistema operativo : Windows 11"}\NormalTok{)}
+\ControlFlowTok{elif}\NormalTok{ SO }\OperatorTok{==} \StringTok{"Linux"}\NormalTok{:}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{"Sistema operativo : Linux 11"}\NormalTok{)}
+\ControlFlowTok{elif}\NormalTok{ SO }\OperatorTok{==} \StringTok{"Darwin"}\NormalTok{:}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{"Sistema operativo : MacOS"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\section{\texorpdfstring{\texttt{shutil}}{shutil}}\label{shutil}
+
+El módulo \texttt{shutil} ofrece una serie de operaciones de alto nivel
+en archivos y colecciones de archivos. En particular, se proporcionan
+funciones que admiten la copia y eliminación de archivos. Más
+información: https://docs.python.org/3/library/shutil.html.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ os, shutil}
+
+\CommentTok{\# Obtenemos el directorio original}
+\NormalTok{dir\_original }\OperatorTok{=}\NormalTok{ os.getcwd()}
+
+\CommentTok{\# Obtenemos la lista de archivos}
+\NormalTok{lista\_archivos }\OperatorTok{=}\NormalTok{ os.listdir(dir\_original)}
+
+\CommentTok{\# Creamos una carpeta}
+\NormalTok{os.mkdir(}\StringTok{\textquotesingle{}BORRAME\textquotesingle{}}\NormalTok{)}
+
+\CommentTok{\# Creamos una cadena con la ruta a la nueva carpeta}
+\NormalTok{dir\_destino }\OperatorTok{=}\NormalTok{ os.path.join(dir\_original, }\StringTok{\textquotesingle{}BORRAME\textquotesingle{}}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Ruta:"}\NormalTok{, dir\_destino)}
+
+\CommentTok{\# Recorremos la lista de archivos}
+\ControlFlowTok{for}\NormalTok{ files }\KeywordTok{in}\NormalTok{ lista\_archivos:}
+    \CommentTok{\# Si el nombre termina con ".txt" lo copiamos a la carpeta}
+    \ControlFlowTok{if}\NormalTok{ files.endswith(}\StringTok{".txt"}\NormalTok{):}
+\NormalTok{        shutil.copy(files, dir\_destino)}
+        
+\CommentTok{\# Listamos los archivos en la carpeta}
+\NormalTok{os.listdir(}\StringTok{\textquotesingle{}./BORRAME/\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Eliminamos la carpeta}
+\NormalTok{shutil.rmtree(}\StringTok{"./BORRAME/"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\section{\texorpdfstring{\texttt{sys}}{sys}}\label{sys}
+
+Provee información acerca de las constantes, funciones y métodos del
+interprete de Python. Más información:
+https://docs.python.org/3/library/sys.html.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ sys}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sys.version}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sys.float\_info}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sys.path}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Impresión a la salida estándar"}\NormalTok{)}
+
+\CommentTok{\# Salvamos la salida estándar }
+\NormalTok{save\_stdout }\OperatorTok{=}\NormalTok{ sys.stdout}
+
+\NormalTok{fh }\OperatorTok{=} \BuiltInTok{open}\NormalTok{(}\StringTok{"test\_salida\_estandar.txt"}\NormalTok{,}\StringTok{"w"}\NormalTok{)}
+
+\CommentTok{\# Cambiamos la salida estándar}
+\NormalTok{sys.stdout }\OperatorTok{=}\NormalTok{ fh}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Esta línea va hacia el archivo test\_salida\_estandar.txt"}\NormalTok{)}
+
+\CommentTok{\# Regresamos la salida estandar a la normalidad}
+\NormalTok{sys.stdout }\OperatorTok{=}\NormalTok{ save\_stdout}
+
+\CommentTok{\# Cerramos el archivo}
+\NormalTok{fh.close()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Eliminamos el archivo}
+\NormalTok{os.remove(}\StringTok{"test\_salida\_estandar.txt"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sys.stderr}
+\end{Highlighting}
+\end{Shaded}
+
+\section{\texorpdfstring{\texttt{time} y
+\texttt{datetime}}{time y datetime}}\label{time-y-datetime}
+
+\begin{itemize}
+\item
+  \texttt{time} : Acceso al tiempo del sistema y conversiones. Más
+  información: https://docs.python.org/3/library/time.html.
+\item
+  \texttt{datetime} Tipos básicos para el tiempo y la fecha. Más
+  información: https://docs.python.org/3/library/datetime.html.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ time}
+\ImportTok{import}\NormalTok{ datetime}
+
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Time in seconds since the epoch: }\SpecialCharTok{\%s}\StringTok{"} \OperatorTok{\%}\NormalTok{time.time())}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Current date and time: "}\NormalTok{ , datetime.datetime.now())}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Or like this: "}\NormalTok{ ,datetime.datetime.now().strftime(}\StringTok{"\%y{-}\%m{-}}\SpecialCharTok{\%d}\StringTok{{-}\%H{-}\%M"}\NormalTok{))}
+
+
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Current year: "}\NormalTok{, datetime.date.today().strftime(}\StringTok{"\%Y"}\NormalTok{))}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Month of year: "}\NormalTok{, datetime.date.today().strftime(}\StringTok{"\%B"}\NormalTok{))}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Week number of the year: "}\NormalTok{, datetime.date.today().strftime(}\StringTok{"\%W"}\NormalTok{))}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Weekday of the week: "}\NormalTok{, datetime.date.today().strftime(}\StringTok{"\%w"}\NormalTok{))}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Day of year: "}\NormalTok{, datetime.date.today().strftime(}\StringTok{"\%j"}\NormalTok{))}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Day of the month : "}\NormalTok{, datetime.date.today().strftime(}\StringTok{"}\SpecialCharTok{\%d}\StringTok{"}\NormalTok{))}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Day of week: "}\NormalTok{, datetime.date.today().strftime(}\StringTok{"\%A"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{hoy }\OperatorTok{=}\NormalTok{ datetime.date.today()}
+\NormalTok{nacimiento }\OperatorTok{=}\NormalTok{ datetime.date(}\DecValTok{1970}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{13}\NormalTok{)}
+\NormalTok{edad }\OperatorTok{=}\NormalTok{ hoy }\OperatorTok{{-}}\NormalTok{ nacimiento}
+\NormalTok{edad.days}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{from}\NormalTok{ timeit }\ImportTok{import}\NormalTok{ Timer}
+\BuiltInTok{print}\NormalTok{(Timer(}\StringTok{\textquotesingle{}t=a; a=b; b=t\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}a=1; b=2\textquotesingle{}}\NormalTok{).timeit())}
+\BuiltInTok{print}\NormalTok{(Timer(}\StringTok{\textquotesingle{}a,b = b,a\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}a=1; b=2\textquotesingle{}}\NormalTok{).timeit())}
+\end{Highlighting}
+\end{Shaded}
+
+\section{\texorpdfstring{\texttt{glob}}{glob}}\label{glob}
+
+El módulo \texttt{glob} encuentra todos los nombres de ruta que
+coinciden con un patrón específico de acuerdo con las reglas utilizadas
+por el shell de Unix, aunque los resultados se devuelven en orden
+arbitrario. Más información:
+https://docs.python.org/3/library/glob.html.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ os, glob}
+\NormalTok{metadata }\OperatorTok{=}\NormalTok{ [(f) }\ControlFlowTok{for}\NormalTok{ f }\KeywordTok{in}\NormalTok{ glob.glob(}\StringTok{\textquotesingle{}*.ipynb\textquotesingle{}}\NormalTok{)]}
+
+\NormalTok{metadata}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{metadata\_dict }\OperatorTok{=}\NormalTok{ \{f:os.stat(f) }\ControlFlowTok{for}\NormalTok{ f }\KeywordTok{in}\NormalTok{ glob.glob(}\StringTok{\textquotesingle{}*.ipynb\textquotesingle{}}\NormalTok{)\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{metadata\_dict.keys()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{metadata\_dict.values()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{metadata\_dict[}\StringTok{\textquotesingle{}23\_import.ipynb\textquotesingle{}}\NormalTok{].st\_size}
+\end{Highlighting}
+\end{Shaded}
+
+\section{\texorpdfstring{\texttt{urllib}}{urllib}}\label{urllib}
+
+Recopila varios módulos para trabajar con URL. Más información:
+https://docs.python.org/3/library/urllib.html.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ urllib.request}
+
+\NormalTok{x }\OperatorTok{=}\NormalTok{ urllib.request.urlopen(}\StringTok{\textquotesingle{}https://www.macti.unam.mx/\textquotesingle{}}\NormalTok{)}
+
+\BuiltInTok{print}\NormalTok{(x.read())}
+\end{Highlighting}
+\end{Shaded}
+
+\bookmarksetup{startatroot}
+
+\chapter{Misceláneos.}\label{misceluxe1neos.}
+
+\section{\texorpdfstring{\texttt{doctest}}{doctest}}\label{doctest}
+
+El módulo \texttt{doctest} busca fragmentos de texto que parecen
+sesiones interactivas de Python y luego ejecuta esas sesiones para
+verificar que funcionan exactamente como se muestra. Hay varias formas
+comunes de utilizar doctest:
+
+Más información: https://docs.python.org/3/library/doctest.html.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ promedio(valores):}
+    \CommentTok{"""Calcula la media aritmética de una lista de números.}
+
+\CommentTok{    \textgreater{}\textgreater{}\textgreater{} print(promedio([20, 30, 70]))}
+\CommentTok{    40.0}
+
+\CommentTok{    \textgreater{}\textgreater{}\textgreater{} print(promedio([1.0, 3.0, 2.0]))}
+\CommentTok{    10.0    }
+\CommentTok{    """}
+    \ControlFlowTok{return} \BuiltInTok{sum}\NormalTok{(valores) }\OperatorTok{/} \BuiltInTok{len}\NormalTok{(valores)}
+
+\ImportTok{import}\NormalTok{ doctest}
+\NormalTok{doctest.testmod()   }\CommentTok{\# valida automáticamente las pruebas integradas}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ fib(n):}
+    \CommentTok{""" }
+\CommentTok{    Calculates the n{-}th Fibonacci number iteratively  }
+
+\CommentTok{    \textgreater{}\textgreater{}\textgreater{} fib(0)}
+\CommentTok{    0}
+\CommentTok{    \textgreater{}\textgreater{}\textgreater{} fib(1)}
+\CommentTok{    1}
+\CommentTok{    \textgreater{}\textgreater{}\textgreater{} fib(10) }
+\CommentTok{    55}
+\CommentTok{    \textgreater{}\textgreater{}\textgreater{} fib(15)}
+\CommentTok{    610}
+\CommentTok{    """}
+\NormalTok{    a, b }\OperatorTok{=} \DecValTok{0}\NormalTok{, }\DecValTok{1}
+    \ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(n):}
+\NormalTok{        a, b }\OperatorTok{=}\NormalTok{ b, a }\OperatorTok{+}\NormalTok{ b}
+    \ControlFlowTok{return}\NormalTok{ a}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{doctest.testmod()}
+\end{Highlighting}
+\end{Shaded}
+
+\section{\texorpdfstring{\texttt{zlib}}{zlib}}\label{zlib}
+
+Las funciones de este módulo permiten la compresión y descompresión
+utilizando la biblioteca \texttt{zlib}. Más información:
+https://docs.python.org/3/library/zlib.html.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ zlib}
+\NormalTok{s }\OperatorTok{=} \StringTok{b\textquotesingle{}witch which has which witches wrist watch\textquotesingle{}}
+\BuiltInTok{len}\NormalTok{(s)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{t }\OperatorTok{=}\NormalTok{ zlib.compress(s)}
+\BuiltInTok{len}\NormalTok{(t)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{zlib.decompress(t)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Abrimos el archivo }
+\NormalTok{f }\OperatorTok{=} \BuiltInTok{open}\NormalTok{(}\StringTok{\textquotesingle{}./poema20.txt\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}rb\textquotesingle{}}\NormalTok{)}
+
+\CommentTok{\# Leemos el archivo}
+\NormalTok{original\_data }\OperatorTok{=}\NormalTok{ f.read()}
+
+\CommentTok{\# Cerramos el archivo}
+\NormalTok{f.close()}
+
+\CommentTok{\# Imprimimos el contenido del archivo}
+\BuiltInTok{print}\NormalTok{(original\_data)}
+
+\CommentTok{\# Comprimimos el contenido}
+\NormalTok{compressed\_data }\OperatorTok{=}\NormalTok{ zlib.compress(original\_data, zlib.Z\_BEST\_COMPRESSION)}
+
+\CommentTok{\# Calculamos la razón de compresión}
+\NormalTok{compress\_ratio }\OperatorTok{=}\NormalTok{ (}\BuiltInTok{float}\NormalTok{(}\BuiltInTok{len}\NormalTok{(original\_data)) }\OperatorTok{{-}} \BuiltInTok{float}\NormalTok{(}\BuiltInTok{len}\NormalTok{(compressed\_data))) }\OperatorTok{/} \BuiltInTok{float}\NormalTok{(}\BuiltInTok{len}\NormalTok{(original\_data))}
+
+\CommentTok{\# Imprimimos los resultados}
+\BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}}\CharTok{\textbackslash{}n}\StringTok{Compressed: }\SpecialCharTok{\{:3.1f\}}\StringTok{\%\textquotesingle{}}\NormalTok{.}\BuiltInTok{format}\NormalTok{(}\FloatTok{100.0} \OperatorTok{*}\NormalTok{ compress\_ratio))}
+
+\CommentTok{\# Guardamos el contenido comprimido en un archivo}
+\NormalTok{f }\OperatorTok{=} \BuiltInTok{open}\NormalTok{(}\StringTok{\textquotesingle{}poema20.zip\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}wb\textquotesingle{}}\NormalTok{)}
+\NormalTok{f.write(compressed\_data)}
+\NormalTok{f.close()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Abrimos el archivo comprimido}
+\NormalTok{f }\OperatorTok{=} \BuiltInTok{open}\NormalTok{(}\StringTok{\textquotesingle{}./poema20.zip\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}rb\textquotesingle{}}\NormalTok{)}
+
+\CommentTok{\# Leemos el contenido}
+\NormalTok{original\_data }\OperatorTok{=}\NormalTok{ f.read()}
+
+\CommentTok{\# Cerramos y eliminamos el archivo comprimido}
+\NormalTok{f.close()}
+\NormalTok{os.remove(}\StringTok{"poema20.zip"}\NormalTok{)}
+
+\CommentTok{\# Descomprimimos el contenido}
+\NormalTok{decompressed\_data }\OperatorTok{=}\NormalTok{ zlib.decompress(original\_data)}
+
+\CommentTok{\# Imprimimos el contenido}
+\BuiltInTok{print}\NormalTok{(decompressed\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+
+
+\backmatter
+
+
+\end{document}

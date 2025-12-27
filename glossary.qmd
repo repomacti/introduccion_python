@@ -1,0 +1,7 @@
+# Glosario {.unnumbered}
+
+**Overfitting**  
+Fenómeno donde un modelo se ajusta demasiado a los datos de entrenamiento.
+
+**Notebook**  
+Documento interactivo que combina texto, código y resultados.

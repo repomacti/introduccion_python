@@ -1,0 +1,49 @@
+project:
+  type: book
+
+
+crossref:
+#  fig-prefix: figure     # (default is "Figure")
+#  tbl-prefix: tableau    # (default is "Table")
+  sec-prefix: sección    # (default is "Section")
+  
+lang: es
+
+book:
+  title: "Introducción a Python"
+  subtitle: "ejemplos ..."
+  author:
+    - name: "Luis Miguel De la Cruz Salas"
+      affiliation: "Instituto de Geofísica, UNAM"
+  favicon: figuras/python1.png
+  sidebar: 
+#    background: "#F5F5F5"
+    logo: figuras/python1.png
+    search: true
+  cover-image: figuras/python1.png
+  sharing: [twitter, facebook, linkedin]
+  reader-mode: true
+  date: today
+  chapters:
+    - index.qmd
+    - notebooks/01_variables_objetos.ipynb
+    - notebooks/02_tipos_basicos.ipynb
+    - notebooks/16_excepciones.ipynb
+    - notebooks/23_import.ipynb
+#    - glossary.qmd
+#    - 5-appendices/A-instalacion.ipynb
+#    - references.qmd
+
+#bibliography: references.bib
+#csl: apa.csl
+
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme: united
+    code-fold: false
+    highlight-style: arrow
+  pdf:
+    documentclass: scrbook
+    number-sections: true
