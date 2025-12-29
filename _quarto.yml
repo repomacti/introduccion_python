@@ -1,23 +1,22 @@
 project:
   type: book
 
-
 crossref:
+  sec-prefix: sección    # (default is "Section")
 #  fig-prefix: figure     # (default is "Figure")
 #  tbl-prefix: tableau    # (default is "Table")
-  sec-prefix: sección    # (default is "Section")
-  
+
 lang: es
 
 book:
-  title: "Introducción a Python"
-  subtitle: "ejemplos ..."
+  title: "Notas de Python"
+  subtitle: "Ejemplos y aplicaciones."
   author:
     - name: "Luis Miguel De la Cruz Salas"
       affiliation: "Instituto de Geofísica, UNAM"
   favicon: figuras/python1.png
   sidebar: 
-#    background: "#F5F5F5"
+##    background: "#F5F5F5"
     logo: figuras/python1.png
     search: true
   cover-image: figuras/python1.png
@@ -41,9 +40,12 @@ format:
   html:
     toc: true
     number-sections: true
-    theme: united
+    theme: 
+      light: [minty, estilos/light.scss]
+      dark: [cyborg, estilos/dark.scss]
     code-fold: false
     highlight-style: arrow
+    css: estilos/code-blocks.css
   pdf:
     documentclass: scrbook
     number-sections: true
