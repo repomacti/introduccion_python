@@ -27,6 +27,7 @@ book:
     - index.qmd
     - notebooks/01_variables_objetos.ipynb
     - notebooks/02_tipos_basicos.ipynb
+    - notebooks/03_operadores.ipynb
     - notebooks/16_excepciones.ipynb
     - notebooks/23_import.ipynb
 #    - glossary.qmd

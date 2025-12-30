@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Gestión de errores y excepciones. – Notas de Python</title>
+<title>4&nbsp; Gestión de errores y excepciones. – Notas de Python</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -66,7 +66,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../notebooks/23_import.html" rel="next">
-<link href="../notebooks/02_tipos_basicos.html" rel="prev">
+<link href="../notebooks/03_operadores.html" rel="prev">
 <link href="../figuras/python1.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -286,7 +286,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/16_excepciones.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Gestión de errores y excepciones.</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/16_excepciones.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Gestión de errores y excepciones.</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -366,14 +366,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../notebooks/03_operadores.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operadores.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../notebooks/16_excepciones.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Gestión de errores y excepciones.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Gestión de errores y excepciones.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/23_import.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Importando bibliotecas.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Importando bibliotecas.</span></span></a>
   </div>
 </li>
     </ul>
@@ -386,18 +392,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#tipos-de-errores" id="toc-tipos-de-errores" class="nav-link active" data-scroll-target="#tipos-de-errores"><span class="header-section-number">4</span> Tipos de errores:</a>
+  <li><a href="#tipos-de-errores" id="toc-tipos-de-errores" class="nav-link active" data-scroll-target="#tipos-de-errores"><span class="header-section-number">5</span> Tipos de errores:</a>
   <ul class="collapse">
-  <li><a href="#errores-de-sintaxis." id="toc-errores-de-sintaxis." class="nav-link" data-scroll-target="#errores-de-sintaxis."><span class="header-section-number">4.1</span> Errores de sintaxis.</a></li>
-  <li><a href="#errores-provocados-por-excepciones." id="toc-errores-provocados-por-excepciones." class="nav-link" data-scroll-target="#errores-provocados-por-excepciones."><span class="header-section-number">4.2</span> Errores provocados por excepciones.</a></li>
+  <li><a href="#errores-de-sintaxis." id="toc-errores-de-sintaxis." class="nav-link" data-scroll-target="#errores-de-sintaxis."><span class="header-section-number">5.1</span> Errores de sintaxis.</a></li>
+  <li><a href="#errores-provocados-por-excepciones." id="toc-errores-provocados-por-excepciones." class="nav-link" data-scroll-target="#errores-provocados-por-excepciones."><span class="header-section-number">5.2</span> Errores provocados por excepciones.</a></li>
   </ul></li>
-  <li><a href="#gestión-de-excepciones-con-try-except-finally" id="toc-gestión-de-excepciones-con-try-except-finally" class="nav-link" data-scroll-target="#gestión-de-excepciones-con-try-except-finally"><span class="header-section-number">5</span> Gestión de excepciones con: <code>try</code>, <code>except</code>, <code>finally</code></a>
+  <li><a href="#gestión-de-excepciones-con-try-except-finally" id="toc-gestión-de-excepciones-con-try-except-finally" class="nav-link" data-scroll-target="#gestión-de-excepciones-con-try-except-finally"><span class="header-section-number">6</span> Gestión de excepciones con: <code>try</code>, <code>except</code>, <code>finally</code></a>
   <ul class="collapse">
-  <li><a href="#gestión-general-de-las-excepciones" id="toc-gestión-general-de-las-excepciones" class="nav-link" data-scroll-target="#gestión-general-de-las-excepciones"><span class="header-section-number">5.0.1</span> Gestión general de las excepciones</a></li>
-  <li><a href="#gestión-de-las-excepciones-por-su-tipo." id="toc-gestión-de-las-excepciones-por-su-tipo." class="nav-link" data-scroll-target="#gestión-de-las-excepciones-por-su-tipo."><span class="header-section-number">5.0.2</span> Gestión de las excepciones por su tipo.</a></li>
-  <li><a href="#información-del-error" id="toc-información-del-error" class="nav-link" data-scroll-target="#información-del-error"><span class="header-section-number">5.0.3</span> Información del error</a></li>
-  <li><a href="#finally" id="toc-finally" class="nav-link" data-scroll-target="#finally"><span class="header-section-number">5.0.4</span> <code>finally</code></a></li>
-  <li><a href="#lanzar-excepciones-controladas." id="toc-lanzar-excepciones-controladas." class="nav-link" data-scroll-target="#lanzar-excepciones-controladas."><span class="header-section-number">5.0.5</span> Lanzar excepciones controladas.</a></li>
+  <li><a href="#gestión-general-de-las-excepciones" id="toc-gestión-general-de-las-excepciones" class="nav-link" data-scroll-target="#gestión-general-de-las-excepciones"><span class="header-section-number">6.0.1</span> Gestión general de las excepciones</a></li>
+  <li><a href="#gestión-de-las-excepciones-por-su-tipo." id="toc-gestión-de-las-excepciones-por-su-tipo." class="nav-link" data-scroll-target="#gestión-de-las-excepciones-por-su-tipo."><span class="header-section-number">6.0.2</span> Gestión de las excepciones por su tipo.</a></li>
+  <li><a href="#información-del-error" id="toc-información-del-error" class="nav-link" data-scroll-target="#información-del-error"><span class="header-section-number">6.0.3</span> Información del error</a></li>
+  <li><a href="#finally" id="toc-finally" class="nav-link" data-scroll-target="#finally"><span class="header-section-number">6.0.4</span> <code>finally</code></a></li>
+  <li><a href="#lanzar-excepciones-controladas." id="toc-lanzar-excepciones-controladas." class="nav-link" data-scroll-target="#lanzar-excepciones-controladas."><span class="header-section-number">6.0.5</span> Lanzar excepciones controladas.</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -408,7 +414,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-errores_excepciones" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Gestión de errores y excepciones.</span></span></h1>
+<h1 class="title"><span id="sec-errores_excepciones" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Gestión de errores y excepciones.</span></span></h1>
 </div>
 
 
@@ -426,11 +432,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p><strong>Objetivo.</strong> Revisar la forma de gestionar errores y excepciones</p>
-<section id="tipos-de-errores" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Tipos de errores:</h1>
+<section id="tipos-de-errores" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Tipos de errores:</h1>
 <p>En Python existen dos tipos de errores por los cuales un programa se detiene y no continua con su ejecución normal.</p>
-<section id="errores-de-sintaxis." class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="errores-de-sintaxis."><span class="header-section-number">4.1</span> Errores de sintaxis.</h2>
+<section id="errores-de-sintaxis." class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="errores-de-sintaxis."><span class="header-section-number">5.1</span> Errores de sintaxis.</h2>
 <p>Ocurren cuando no se escriben correctamente las expresiones y declaraciones como lo especifica la interfaz de Python.</p>
 <p>Por ejemplo:</p>
 <div id="cell-2" class="cell">
@@ -442,8 +448,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>En el caso anterior el error fue de tipo <code>NameError</code>, por lo que hay que revisar que todo esté correctamente escrito.</li>
 </ul>
 </section>
-<section id="errores-provocados-por-excepciones." class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="errores-provocados-por-excepciones."><span class="header-section-number">4.2</span> Errores provocados por excepciones.</h2>
+<section id="errores-provocados-por-excepciones." class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="errores-provocados-por-excepciones."><span class="header-section-number">5.2</span> Errores provocados por excepciones.</h2>
 <p>Son errores lógicos que detienen la ejecución de un programa aún cuando la sintaxis sea la correcta.</p>
 <p>Por ejemplo:</p>
 <div id="cell-5" class="cell">
@@ -475,8 +481,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>En el ejemplo anterior se produce un error de tipo <code>ValueError</code>, es decir es decir hay un problema con el contenido del objeto.</p>
 </section>
 </section>
-<section id="gestión-de-excepciones-con-try-except-finally" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Gestión de excepciones con: <code>try</code>, <code>except</code>, <code>finally</code></h1>
+<section id="gestión-de-excepciones-con-try-except-finally" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Gestión de excepciones con: <code>try</code>, <code>except</code>, <code>finally</code></h1>
 <p>Los errores que se pueden manejar son aquellos errores lógicos como los presentados anteriormente en donde es posible “predecir” el tipo de error que puede ocurrir de acuerdo con la implementación que estamos realizando.</p>
 <p>Todas las excepciones en Python son objetos de una clase que se derivan de la clase principal <a href="https://docs.python.org/3/library/exceptions.html#BaseException">BaseExcepcion</a>. Más detalles se pueden consultar <a href="http://docs.python.org/3/library/exceptions.html">aquí</a>.</p>
 <p>Las excepciones se pueden capturar y manejar adecuadamente. Para ello se tienen las siguientes herramientas:</p>
@@ -526,8 +532,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="st">"hola"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Observa que aún con argumentos erróneos no se genera ningún mensaje de error. Esto se debe a que la cláusula <code>except</code> captura todas las posibles excepciones, pero no hace nada.</p>
-<section id="gestión-general-de-las-excepciones" class="level3" data-number="5.0.1">
-<h3 data-number="5.0.1" class="anchored" data-anchor-id="gestión-general-de-las-excepciones"><span class="header-section-number">5.0.1</span> Gestión general de las excepciones</h3>
+<section id="gestión-general-de-las-excepciones" class="level3" data-number="6.0.1">
+<h3 data-number="6.0.1" class="anchored" data-anchor-id="gestión-general-de-las-excepciones"><span class="header-section-number">6.0.1</span> Gestión general de las excepciones</h3>
 <p>Ya que sabemos como capturar las excepciones, veamos cómo pueden ser tratadas para dar retroalimentación al usuario.</p>
 <div id="cell-21" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> raizCuadrada(numero):</span>
@@ -572,8 +578,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Observa que ahora se avisa al usuario que hubo un error al ejecutar la función por lo que el cálculo no se realizó. Sin embargo hace falta más información.</p>
 </section>
-<section id="gestión-de-las-excepciones-por-su-tipo." class="level3" data-number="5.0.2">
-<h3 data-number="5.0.2" class="anchored" data-anchor-id="gestión-de-las-excepciones-por-su-tipo."><span class="header-section-number">5.0.2</span> Gestión de las excepciones por su tipo.</h3>
+<section id="gestión-de-las-excepciones-por-su-tipo." class="level3" data-number="6.0.2">
+<h3 data-number="6.0.2" class="anchored" data-anchor-id="gestión-de-las-excepciones-por-su-tipo."><span class="header-section-number">6.0.2</span> Gestión de las excepciones por su tipo.</h3>
 <p>La expresión <code>except</code> puede ser utilizada de forma tal que ejecute código dependiendo del tipo de error que ocurra. En este caso sabemos que pueden ocurrir dos tipos de errores: <code>TypeError</code> y <code>ValueError</code>. Entonces la nueva versión de la función <code>raizCuadrada()</code> es como sigue:</p>
 <div id="cell-28" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> raizCuadrada(numero):</span>
@@ -630,8 +636,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Observa que ya se da mayor información sobre el tipo de error que ocurrió y el usuario puede saber que hacer para corregir los errores.</p>
 <p>Todos los tipos de errores que existen en Python se pueden consultar en <a href="https://docs.python.org/3/library/exceptions.html#concrete-exceptions"> Concrete exceptions </a>.</p>
 </section>
-<section id="información-del-error" class="level3" data-number="5.0.3">
-<h3 data-number="5.0.3" class="anchored" data-anchor-id="información-del-error"><span class="header-section-number">5.0.3</span> Información del error</h3>
+<section id="información-del-error" class="level3" data-number="6.0.3">
+<h3 data-number="6.0.3" class="anchored" data-anchor-id="información-del-error"><span class="header-section-number">6.0.3</span> Información del error</h3>
 <p>Se puede capturar toda la información del error para pasarla al usuario. Esto se hace como sigue:</p>
 <div id="cell-35" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> raizCuadrada(numero): </span>
@@ -687,8 +693,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Observa que ahora además de conocer el tipo de error, también se muestra toda la información del error para que el usuario tome las acciones pertinentes.</p>
 </section>
-<section id="finally" class="level3" data-number="5.0.4">
-<h3 data-number="5.0.4" class="anchored" data-anchor-id="finally"><span class="header-section-number">5.0.4</span> <code>finally</code></h3>
+<section id="finally" class="level3" data-number="6.0.4">
+<h3 data-number="6.0.4" class="anchored" data-anchor-id="finally"><span class="header-section-number">6.0.4</span> <code>finally</code></h3>
 <p>Esta sección se ejecuta siempre, sin importar si hubo una excepción o no.</p>
 <div id="cell-42" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> raizCuadrada(numero):</span>
@@ -744,8 +750,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="st">"hola"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="lanzar-excepciones-controladas." class="level3" data-number="5.0.5">
-<h3 data-number="5.0.5" class="anchored" data-anchor-id="lanzar-excepciones-controladas."><span class="header-section-number">5.0.5</span> Lanzar excepciones controladas.</h3>
+<section id="lanzar-excepciones-controladas." class="level3" data-number="6.0.5">
+<h3 data-number="6.0.5" class="anchored" data-anchor-id="lanzar-excepciones-controladas."><span class="header-section-number">6.0.5</span> Lanzar excepciones controladas.</h3>
 <p>Es posible presentar toda la información que genera la excepción y agregarle notas para el usuario. Para agregar notas usamos le método <code>add_note()</code> y para lanzar la excepción una vez controlada usamos <code>raise</code>. La siguiente versión de la función <code>raizCuadrada()</code> tiene al final una cláusula <code>else</code>, la cual se ejecuta cuando no ocurre ninguna excepción. En este caso, dentro del <code>try</code> realizamo el cálculo de la raíz cuadrada y en el <code>else</code> hacemos la impresión del resultado.</p>
 <div id="cell-48" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> raizCuadrada(numero):</span>
@@ -1217,13 +1223,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../notebooks/02_tipos_basicos.html" class="pagination-link" aria-label="Tipos de datos básicos.">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tipos de datos básicos.</span></span>
+      <a href="../notebooks/03_operadores.html" class="pagination-link" aria-label="Operadores.">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operadores.</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../notebooks/23_import.html" class="pagination-link" aria-label="Importando bibliotecas.">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Importando bibliotecas.</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Importando bibliotecas.</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

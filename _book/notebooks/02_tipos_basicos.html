@@ -418,7 +418,10 @@ window.Quarto = {
   <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción"><span class="header-section-number">2.1</span> Introducción</a></li>
   <li><a href="#tipos-númericos" id="toc-tipos-númericos" class="nav-link" data-scroll-target="#tipos-númericos"><span class="header-section-number">2.2</span> Tipos númericos</a>
   <ul class="collapse">
-  <li><a href="#atributos-y-métodos" id="toc-atributos-y-métodos" class="nav-link" data-scroll-target="#atributos-y-métodos"><span class="header-section-number">2.2.1</span> Atributos y métodos</a></li>
+  <li><a href="#enteros-int." id="toc-enteros-int." class="nav-link" data-scroll-target="#enteros-int."><span class="header-section-number">2.2.1</span> Enteros (<code>int</code>).</a></li>
+  <li><a href="#reales-float" id="toc-reales-float" class="nav-link" data-scroll-target="#reales-float"><span class="header-section-number">2.2.2</span> Reales (<code>float</code>)</a></li>
+  <li><a href="#complejos-complex" id="toc-complejos-complex" class="nav-link" data-scroll-target="#complejos-complex"><span class="header-section-number">2.2.3</span> Complejos (<code>complex</code>)</a></li>
+  <li><a href="#atributos-y-métodos" id="toc-atributos-y-métodos" class="nav-link" data-scroll-target="#atributos-y-métodos"><span class="header-section-number">2.2.4</span> Atributos y métodos</a></li>
   </ul></li>
   <li><a href="#tipos-lógicos" id="toc-tipos-lógicos" class="nav-link" data-scroll-target="#tipos-lógicos"><span class="header-section-number">2.3</span> Tipos lógicos</a></li>
   <li><a href="#conversión-entre-tipos-casting" id="toc-conversión-entre-tipos-casting" class="nav-link" data-scroll-target="#conversión-entre-tipos-casting"><span class="header-section-number">2.4</span> Conversión entre tipos (<em>casting</em>)</a>
@@ -455,274 +458,435 @@ window.Quarto = {
 </header>
 
 
-<p><strong>Objetivo.</strong> Explicar con el uso de ejemplos los tipos de variables básicas que existen en Python.</p>
+<p><strong>Objetivo.</strong> Explicar los tipos de variables básicas que existen en Python.</p>
 <section id="introducción" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="introducción"><span class="header-section-number">2.1</span> Introducción</h2>
 <p>En Python se tienen tres tipos de datos básicos:</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Tipo</th>
-<th>Ejemplo</th>
+<th style="text-align: right;">Tipo de dato</th>
+<th style="text-align: left;">Ejemplo</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Númerico</td>
-<td>13, 3.1416, 1+5j</td>
+<td style="text-align: right;">Númerico</td>
+<td style="text-align: left;"><code>13</code>, <code>3.1416</code>, <code>1+5j</code></td>
 </tr>
 <tr class="even">
-<td>Lógico</td>
-<td>True, False</td>
+<td style="text-align: right;">Lógico</td>
+<td style="text-align: left;"><code>True</code>, <code>False</code></td>
 </tr>
 <tr class="odd">
-<td>Cadena</td>
-<td>“Frida”, “Diego”</td>
+<td style="text-align: right;">Cadena</td>
+<td style="text-align: left;"><code>"Frida"</code>, <code>"Diego"</code></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="tipos-númericos" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="tipos-númericos"><span class="header-section-number">2.2</span> Tipos númericos</h2>
-<p>En Python los tipos de datos númericos son: 1. Enteros 2. Reales 3. Complejos</p>
-<p>A continuación se realiza una descripción de estos tipos numéricos. Más información se puede encontrar aquí: <a href="https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex">Numeric types</a>.</p>
-<p><strong>1. Enteros</strong></p>
+<p>En Python los tipos de datos númericos son:</p>
+<ol type="1">
+<li>Enteros</li>
+<li>Reales</li>
+<li>Complejos</li>
+</ol>
+<p>A continuación se realiza una descripción de estos tipos numéricos. Más información se puede encontrar aquí: <a href="https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex" target="_blank" rel="noopener">Numeric types</a>.</p>
+<section id="enteros-int." class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="enteros-int."><span class="header-section-number">2.2.1</span> Enteros (<code>int</code>).</h3>
 <p>Son aquellos que carecen de parte decimal. Para definir un entero hacemos lo siguiente:</p>
-<div id="cell-5" class="cell">
+<div id="cell-5" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>entero <span class="op">=</span> <span class="dv">13</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Cuando se ejecuta la celda anterior, se crea el objeto <code>13</code> cuyo nombre es <code>entero</code>. Podemos imprimir el valor de <code>entero</code> y su tipo como sigue:</p>
-<div id="cell-7" class="cell">
+<p>Cuando se ejecuta la celda anterior se crea el objeto <code>13</code> cuyo nombre es <code>entero</code>. Podemos imprimir el valor de <code>entero</code> y su tipo como sigue:</p>
+<div id="cell-7" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(entero, <span class="bu">type</span>(entero))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>13 &lt;class 'int'&gt;</code></pre>
+</div>
 </div>
 <p>Es posible obtener más información del tipo <code>int</code> usando la biblioteca <code>sys</code>:</p>
-<div id="cell-9" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importamos el módulo sys</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Revisamos la información del tipo entero</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sys.int_info)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-9" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importamos el módulo sys</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Revisamos la información del tipo entero</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sys.int_info)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>sys.int_info(bits_per_digit=30, sizeof_digit=4, default_max_str_digits=4300, str_digits_check_threshold=640)</code></pre>
+</div>
 </div>
 <p>Cuando tenemos números enteros muy grandes, por ejemplo: <span class="math inline">\(21,346,765,890\)</span> se puede usar el formato: <code>21_346_765_890</code> para hacer más claro el número:</p>
-<div id="cell-11" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Este es un formato de número entero que usa _ para separar los miles</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>entero_grande <span class="op">=</span> <span class="dv">21_346_765_890</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(entero_grande, <span class="bu">type</span>(entero_grande))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-11" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Este es un formato de número entero que usa _ para separar los miles</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>entero_grande <span class="op">=</span> <span class="dv">21_346_765_890</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(entero_grande, <span class="bu">type</span>(entero_grande))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>21346765890 &lt;class 'int'&gt;</code></pre>
+</div>
 </div>
 <p>Los números enteros también se pueden escribir en formato binario, octal y hexadecimal como sigue:</p>
-<div id="cell-13" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>num_b <span class="op">=</span> <span class="bn">0b01110</span> <span class="co"># Binario, debe iniciar con 0b</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>num_o <span class="op">=</span> <span class="bn">0o12376</span> <span class="co"># Octal, debe iniciar con 0o</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>num_h <span class="op">=</span> <span class="bn">0x12323</span> <span class="co"># Hexadecimal, debe iniciar con 0x</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(num_b, <span class="bu">type</span>(num_b))</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(num_o, <span class="bu">type</span>(num_o))</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(num_h, <span class="bu">type</span>(num_h))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-13" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>num_b <span class="op">=</span> <span class="bn">0b01110</span> <span class="co"># Binario, debe iniciar con 0b</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>num_o <span class="op">=</span> <span class="bn">0o12376</span> <span class="co"># Octal, debe iniciar con 0o</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>num_h <span class="op">=</span> <span class="bn">0x12323</span> <span class="co"># Hexadecimal, debe iniciar con 0x</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(num_b, <span class="bu">type</span>(num_b))</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(num_o, <span class="bu">type</span>(num_o))</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(num_h, <span class="bu">type</span>(num_h))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>14 &lt;class 'int'&gt;
+5374 &lt;class 'int'&gt;
+74531 &lt;class 'int'&gt;</code></pre>
 </div>
-<p><strong>2. Reales</strong></p>
+</div>
+</section>
+<section id="reales-float" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="reales-float"><span class="header-section-number">2.2.2</span> Reales (<code>float</code>)</h3>
 <p>Son aquellos que tienen una parte decimal. Para definir un número real (flotante) se hace como sigue:</p>
-<div id="cell-15" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pi <span class="op">=</span> <span class="fl">3.141592</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-15" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>pi <span class="op">=</span> <span class="fl">3.141592</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Cuando se ejecuta la celda anterior, se crea el objeto <code>3.141592</code> cuyo nombre es <code>pi</code>. Podemos imprimir el valor de <code>pi</code> y su tipo como sigue:</p>
-<div id="cell-17" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pi, <span class="bu">type</span>(pi))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-17" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pi, <span class="bu">type</span>(pi))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>3.141592 &lt;class 'float'&gt;</code></pre>
 </div>
-<div id="cell-18" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Revisamos la información del tipo flotante</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sys.float_info)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p><strong>3. Complejos</strong></p>
+<div id="cell-18" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Revisamos la información del tipo flotante</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sys.float_info)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>sys.float_info(max=1.7976931348623157e+308, max_exp=1024, max_10_exp=308, min=2.2250738585072014e-308, min_exp=-1021, min_10_exp=-307, dig=15, mant_dig=53, epsilon=2.220446049250313e-16, radix=2, rounds=1)</code></pre>
+</div>
+</div>
+</section>
+<section id="complejos-complex" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="complejos-complex"><span class="header-section-number">2.2.3</span> Complejos (<code>complex</code>)</h3>
 <p>Son aquellos que tienen una parte real y una parte imaginaria, y ambas partes son números reales. Por ejemplo:</p>
 <p><span class="math display">\[
 c = a + b \; j
 \]</span></p>
 <p>donde <span class="math inline">\(a\)</span> es la parte real y <span class="math inline">\(b\)</span> es la parte imaginaria identificada con la letra <span class="math inline">\(j\)</span>.</p>
 <p>Para definir un número complejo en Python se hace como sigue:</p>
-<div id="cell-20" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>complejo <span class="op">=</span> <span class="dv">12</span> <span class="op">+</span> <span class="ot">5j</span> <span class="co"># La parte imaginaria lleva una j al final</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-20" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>complejo <span class="op">=</span> <span class="dv">12</span> <span class="op">+</span> <span class="ot">5j</span> <span class="co"># La parte imaginaria lleva una j al final</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Cuando se ejecuta la celda anterior, se crea el objeto <code>12 + 5j</code> cuyo nombre es <code>complejo</code>. En este caso, el contenido de <code>complejo</code> tiene dos partes: la real y la imaginaria. Podemos imprimir el valor de <code>complejo</code> y su tipo como sigue:</p>
-<div id="cell-22" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(complejo, <span class="bu">type</span>(complejo))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-22" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(complejo, <span class="bu">type</span>(complejo))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(12+5j) &lt;class 'complex'&gt;</code></pre>
 </div>
-<section id="atributos-y-métodos" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="atributos-y-métodos"><span class="header-section-number">2.2.1</span> Atributos y métodos</h3>
-<p>Los tipos numéricos básicos se crean a partir de las clases: * enteros: <code>&lt;class 'int'&gt;</code> * flontates: <code>&lt;class 'float'&gt;</code> * complejos: <code>&lt;class 'complex'&gt;</code></p>
-<p>Una clase define <strong>atributos</strong> y <strong>métodos</strong> para los objetos: * Los atributos definen el estado interno de los objetos (su contenido). * Los métodos definen el comportamiento de los objetos (qué pueden hacer).</p>
-<p>Para conocer los atributos y métodos de los tipos numéricos básicos escribimos el nombre del objeto, agregamos un punto y enseguida presionamos la tecla tabulador (↹), obtendremos algo similar a la siguiente figura:</p>
-<p><img src="../figuras/entero_python.png" width="300px"></p>
+</div>
+</section>
+<section id="atributos-y-métodos" class="level3" data-number="2.2.4">
+<h3 data-number="2.2.4" class="anchored" data-anchor-id="atributos-y-métodos"><span class="header-section-number">2.2.4</span> Atributos y métodos</h3>
+<p>Los tipos numéricos básicos se crean a partir de las siguientes clases:</p>
+<ul>
+<li>enteros: <code>&lt;class 'int'&gt;</code>,</li>
+<li>flontates: <code>&lt;class 'float'&gt;</code> y</li>
+<li>complejos: <code>&lt;class 'complex'&gt;</code>.</li>
+</ul>
+<p>Una clase define <strong>atributos</strong> y <strong>métodos</strong> para los objetos:</p>
+<ul>
+<li>Los atributos definen el estado interno de los objetos (su contenido).</li>
+<li>Los métodos definen el comportamiento de los objetos (qué pueden hacer).</li>
+</ul>
+<p>Para conocer los atributos y métodos de los tipos numéricos básicos escribimos el nombre del objeto, agregamos un punto y enseguida presionamos la tecla tabulador (↹), obtendremos algo similar lo mostrado en la <a href="#fig-metodos_atributos" class="quarto-xref">figura&nbsp;<span>2.1</span></a>.</p>
+<div id="fig-metodos_atributos" class="quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left" alt="Métodos y atributos de los objetos.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-metodos_atributos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figuras/entero_python.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:40.0%" alt="Métodos y atributos de los objetos.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-metodos_atributos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.1: Métodos y atributos de los objetos.
+</figcaption>
+</figure>
+</div>
 <p>Los métodos están etiquetados como <code>function</code> y los atributos como <code>instance</code>.</p>
 <p>En la siguiente celda realiza lo siguiente:</p>
 <ol type="1">
-<li>Teclea <code>entero.</code> (incluye el punto al final) y luego presiona la tecla TAB (↹). Deberás obtener la lista de atributos y métodos como en la figura anterior.</li>
+<li>Teclea <code>entero.</code> (incluye el punto al final) y luego presiona la tecla TAB (↹). Deberás obtener la lista de atributos y métodos como en la <a href="#fig-metodos_atributos" class="quarto-xref">figura&nbsp;<span>2.1</span></a>.</li>
 <li>Elige el método <code>as_integer_ratio</code>.</li>
-<li>Con el cursor al final de <code>as_integer_ratio</code> teclea SHIFT(⇧) + TAB(↹). Deberás obtener la documentación de la función como se muestra en la siguiente figura:</li>
+<li>Con el cursor al final de <code>as_integer_ratio</code> teclea SHIFT(⇧) + TAB(↹). Deberás obtener la documentación de los métodos como se muestra en la <a href="#fig-doc_funcion" class="quarto-xref">figura&nbsp;<span>2.2</span></a>.</li>
 </ol>
-<p><img src="../figuras/entero_python_doc.png" width="500px"></p>
-<p>Para ejecutar el método deberás primero agregar paréntesis al final del nombre:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>entero.as_integer_ratio()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="cell-24" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Escribe entero. y luego teclea TAB (↹)</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="fig-doc_funcion" class="quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left" alt="Documentación de los métodos">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-doc_funcion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figuras/entero_python_doc.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:80.0%" alt="Documentación de los métodos">
 </div>
-<p>El resultado deberá ser una pareja de enteros cuya división es exactamente igual al número entero original.</p>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-doc_funcion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.2: Documentación de los métodos (funciones) de los objetos.
+</figcaption>
+</figure>
+</div>
+<p>Para ejecutar el método deberás primero agregar paréntesis al final del nombre como sigue:</p>
+<div id="cell-28" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>entero.as_integer_ratio()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>(13, 1)</code></pre>
+</div>
+</div>
+<p>El resultado deberá ser una pareja de enteros cuya división es exactamente igual al número entero original. Recuerda que definimos <code>entero = 13</code> al principio de este capítulo.</p>
 <p>Podemos hacer exactamente lo mismo con el objeto <code>pi</code>:</p>
-<div id="cell-26" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>pi.as_integer_ratio()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-30" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>pi.as_integer_ratio()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>(3537118140137533, 1125899906842624)</code></pre>
+</div>
 </div>
 <p>Podemos comprobar el resultado dividiendo los enteros que resultan:</p>
-<div id="cell-28" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3537118140137533</span> <span class="op">/</span> <span class="dv">1125899906842624</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-32" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3537118140137533</span> <span class="op">/</span> <span class="dv">1125899906842624</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>3.141592</code></pre>
+</div>
 </div>
 <p>Para el caso de números complejos, vamos a elegir los atributos <code>imag</code> y <code>real</code> que proporcionan la parte imaginaria y la parte real del número complejo:</p>
-<div id="cell-30" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>complejo.imag <span class="co"># accedemos a la parte imaginaria</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-34" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>complejo.imag <span class="co"># accedemos a la parte imaginaria</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>5.0</code></pre>
 </div>
-<div id="cell-31" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>complejo.real <span class="co"># accedemos a la parte real</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-35" class="cell" data-execution_count="15">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>complejo.real <span class="co"># accedemos a la parte real</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<pre><code>12.0</code></pre>
+</div>
 </div>
 <p>Observa que en este caso no se agregaron paréntesis debido a que se trata de atributos y no de métodos.</p>
 <p>Finalmente, elegimos <code>conjugate()</code> y vemos el resultado:</p>
-<div id="cell-33" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>complejo.conjugate() <span class="co"># calculamos el conjugado del número complejo.</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-37" class="cell" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>complejo.conjugate() <span class="co"># calculamos el conjugado del número complejo.</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<pre><code>(12-5j)</code></pre>
+</div>
 </div>
 </section>
 </section>
 <section id="tipos-lógicos" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="tipos-lógicos"><span class="header-section-number">2.3</span> Tipos lógicos</h2>
 <p>Es un tipo utilizado para realizar operaciones lógicas y puede tomar dos valores: <code>True</code> o <code>False</code>.</p>
-<div id="cell-35" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>bandera <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(bandera, <span class="bu">type</span>(bandera))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-39" class="cell" data-execution_count="17">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>bandera <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(bandera, <span class="bu">type</span>(bandera))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>True &lt;class 'bool'&gt;</code></pre>
 </div>
-<div id="cell-36" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>bandera <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(bandera, <span class="bu">type</span>(bandera))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-40" class="cell" data-execution_count="18">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>bandera <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(bandera, <span class="bu">type</span>(bandera))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>False &lt;class 'bool'&gt;</code></pre>
+</div>
 </div>
 <p>Las variables lógicas aparecen de manera natural en operaciones relacionales o lógicas, que se verán más adelante, por ejemplo:</p>
 <p>¿Qué valor es mayor <span class="math inline">\(3^5\)</span> o <span class="math inline">\(5^3\)</span>?</p>
 <p>Esto lo podemos preguntar como sigue:</p>
-<div id="cell-38" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="op">**</span><span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">5</span><span class="op">**</span><span class="dv">3</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-42" class="cell" data-execution_count="19">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="op">**</span><span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">5</span><span class="op">**</span><span class="dv">3</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<pre><code>True</code></pre>
 </div>
-<div id="cell-39" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="op">**</span><span class="dv">5</span> <span class="op">&lt;</span> <span class="dv">5</span><span class="op">**</span><span class="dv">3</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-43" class="cell" data-execution_count="20">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="op">**</span><span class="dv">5</span> <span class="op">&lt;</span> <span class="dv">5</span><span class="op">**</span><span class="dv">3</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<pre><code>False</code></pre>
+</div>
 </div>
 <p>Lo anterior lo podemos verificar imprimiendo los valores de <span class="math inline">\(3^5\)</span> y <span class="math inline">\(5^3\)</span></p>
-<div id="cell-41" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">3</span><span class="op">**</span><span class="dv">5</span>, <span class="dv">5</span><span class="op">**</span><span class="dv">3</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-45" class="cell" data-execution_count="21">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">3</span><span class="op">**</span><span class="dv">5</span>, <span class="dv">5</span><span class="op">**</span><span class="dv">3</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>243 125</code></pre>
+</div>
 </div>
 </section>
 <section id="conversión-entre-tipos-casting" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="conversión-entre-tipos-casting"><span class="header-section-number">2.4</span> Conversión entre tipos (<em>casting</em>)</h2>
-<p>Es posible transformar un tipo en otro tipo compatible; a esta operación se lo conoce como <em>casting</em>.</p>
+<p>Es posible transformar un tipo en otro tipo compatible, a esta operación se lo conoce como <em>casting</em>.</p>
 <section id="función-int" class="level3" data-number="2.4.1">
 <h3 data-number="2.4.1" class="anchored" data-anchor-id="función-int"><span class="header-section-number">2.4.1</span> Función <code>int()</code></h3>
 <p>Transforma objetos en enteros, siempre y cuando haya compatibilidad.</p>
-<div id="cell-44" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>cadena <span class="op">=</span> <span class="st">'1000'</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cadena, <span class="bu">type</span>(cadena))</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>entero <span class="op">=</span> <span class="bu">int</span>(cadena) <span class="co"># Transformación</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(entero, <span class="bu">type</span>(entero))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-48" class="cell" data-execution_count="22">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>cadena <span class="op">=</span> <span class="st">'1000'</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cadena, <span class="bu">type</span>(cadena))</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>entero <span class="op">=</span> <span class="bu">int</span>(cadena) <span class="co"># Transformación</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(entero, <span class="bu">type</span>(entero))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1000 &lt;class 'str'&gt;
+1000 &lt;class 'int'&gt;</code></pre>
 </div>
-<div id="cell-45" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>flotante <span class="op">=</span> <span class="fl">3.141592</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(flotante, <span class="bu">type</span>(flotante))</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>entero  <span class="op">=</span> <span class="bu">int</span>(flotante) <span class="co"># Trunca la parte decimal</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(entero, <span class="bu">type</span>(entero))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-49" class="cell" data-execution_count="23">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>flotante <span class="op">=</span> <span class="fl">3.141592</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(flotante, <span class="bu">type</span>(flotante))</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>entero  <span class="op">=</span> <span class="bu">int</span>(flotante) <span class="co"># Trunca la parte decimal</span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(entero, <span class="bu">type</span>(entero))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>3.141592 &lt;class 'float'&gt;
+3 &lt;class 'int'&gt;</code></pre>
+</div>
 </div>
 <p>Si los objetos no son compatibles se genera un error al intentar realizar la conversión:</p>
-<div id="cell-47" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>complejo<span class="op">=</span> <span class="dv">4</span><span class="op">-</span><span class="ot">4j</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>entero <span class="op">=</span> <span class="bu">int</span>(complejo) <span class="co"># Tipos NO COMPATIBLES</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-51" class="cell" data-execution_count="24">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>complejo<span class="op">=</span> <span class="dv">4</span><span class="op">-</span><span class="ot">4j</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>entero <span class="op">=</span> <span class="bu">int</span>(complejo) <span class="co"># Tipos NO COMPATIBLES</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[24]</span><span class="ansi-green-fg">, line 2</span>
+<span class="ansi-green-fg">      1</span> complejo= <span class="ansi-green-fg">4</span>-<span class="ansi-green-fg">4</span>j
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">2</span> entero = <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">int</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">complejo</span><span class="ansi-yellow-bg">)</span> <span style="font-style:italic;color:rgb(95,135,135)"># Tipos NO COMPATIBLES</span>
+
+<span class="ansi-red-fg">TypeError</span>: int() argument must be a string, a bytes-like object or a real number, not 'complex'</pre>
+</div>
+</div>
 </div>
 <p>Los valores lógicos <code>True</code> y <code>False</code> equivalen a <code>1</code> y <code>0</code> respectivamente:</p>
-<div id="cell-49" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>entero <span class="op">=</span> <span class="bu">int</span>(<span class="va">True</span>) </span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(entero)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-53" class="cell" data-execution_count="25">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>entero <span class="op">=</span> <span class="bu">int</span>(<span class="va">True</span>) </span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(entero)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1</code></pre>
 </div>
-<div id="cell-50" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>entero <span class="op">=</span> <span class="bu">int</span>(<span class="va">False</span>) </span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(entero)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-54" class="cell" data-execution_count="26">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>entero <span class="op">=</span> <span class="bu">int</span>(<span class="va">False</span>) </span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(entero)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0</code></pre>
+</div>
 </div>
 </section>
 <section id="función-str" class="level3" data-number="2.4.2">
 <h3 data-number="2.4.2" class="anchored" data-anchor-id="función-str"><span class="header-section-number">2.4.2</span> Función <code>str()</code></h3>
 <p>Transforma objetos en cadenas, siempre y cuando haya compatibilidad.</p>
-<div id="cell-52" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>entero <span class="op">=</span> <span class="dv">1000</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(entero, <span class="bu">type</span>(entero))</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>cadena <span class="op">=</span> <span class="bu">str</span>(entero) </span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cadena, <span class="bu">type</span>(cadena))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-56" class="cell" data-execution_count="27">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>entero <span class="op">=</span> <span class="dv">1000</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(entero, <span class="bu">type</span>(entero))</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>cadena <span class="op">=</span> <span class="bu">str</span>(entero) </span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cadena, <span class="bu">type</span>(cadena))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1000 &lt;class 'int'&gt;
+1000 &lt;class 'str'&gt;</code></pre>
 </div>
-<div id="cell-53" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>complejo <span class="op">=</span> <span class="dv">5</span><span class="op">+</span><span class="ot">1j</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(complejo, <span class="bu">type</span>(complejo))</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>cadena <span class="op">=</span> <span class="bu">str</span>(complejo)</span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cadena, <span class="bu">type</span>(cadena))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-57" class="cell" data-execution_count="28">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>complejo <span class="op">=</span> <span class="dv">5</span><span class="op">+</span><span class="ot">1j</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(complejo, <span class="bu">type</span>(complejo))</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>cadena <span class="op">=</span> <span class="bu">str</span>(complejo)</span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cadena, <span class="bu">type</span>(cadena))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(5+1j) &lt;class 'complex'&gt;
+(5+1j) &lt;class 'str'&gt;</code></pre>
+</div>
 </div>
 </section>
 <section id="función-float" class="level3" data-number="2.4.3">
 <h3 data-number="2.4.3" class="anchored" data-anchor-id="función-float"><span class="header-section-number">2.4.3</span> Función <code>float()</code></h3>
 <p>Transforma objetos en flotantes, siempre y cuando haya compatibilidad.</p>
-<div id="cell-55" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>cadena <span class="op">=</span> <span class="st">'3.141592'</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cadena, <span class="bu">type</span>(cadena))</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>real <span class="op">=</span> <span class="bu">float</span>(cadena)</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(real, <span class="bu">type</span>(real))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-59" class="cell" data-execution_count="29">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>cadena <span class="op">=</span> <span class="st">'3.141592'</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cadena, <span class="bu">type</span>(cadena))</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>real <span class="op">=</span> <span class="bu">float</span>(cadena)</span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(real, <span class="bu">type</span>(real))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>3.141592 &lt;class 'str'&gt;
+3.141592 &lt;class 'float'&gt;</code></pre>
 </div>
-<div id="cell-56" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="bu">float</span>(<span class="dv">33</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-57" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="bu">float</span>(<span class="va">False</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-60" class="cell" data-execution_count="30">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="bu">float</span>(<span class="dv">33</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="30">
+<pre><code>33.0</code></pre>
 </div>
-<div id="cell-58" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="bu">float</span>(<span class="dv">3</span><span class="op">+</span><span class="ot">3j</span>) <span class="co"># NO hay compatibilidad</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-61" class="cell" data-execution_count="31">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="bu">float</span>(<span class="va">False</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="31">
+<pre><code>0.0</code></pre>
+</div>
+</div>
+<div id="cell-62" class="cell" data-execution_count="32">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="bu">float</span>(<span class="dv">3</span><span class="op">+</span><span class="ot">3j</span>) <span class="co"># NO hay compatibilidad</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[32]</span><span class="ansi-green-fg">, line 1</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">float</span><span class="ansi-yellow-bg">(</span><span class="ansi-green-fg ansi-yellow-bg">3</span><span class="ansi-yellow-bg">+</span><span class="ansi-green-fg ansi-yellow-bg">3</span><span class="ansi-yellow-bg">j</span><span class="ansi-yellow-bg">)</span> <span style="font-style:italic;color:rgb(95,135,135)"># NO hay compatibilidad</span>
+
+<span class="ansi-red-fg">TypeError</span>: float() argument must be a string or a real number, not 'complex'</pre>
+</div>
+</div>
 </div>
 </section>
 </section>
 <section id="función-isinstance" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="función-isinstance"><span class="header-section-number">2.5</span> Función <code>isinstance()</code></h2>
 <p>Permite saber si un objeto es de un tipo determinado. Por ejemplo:</p>
-<div id="cell-60" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>entero <span class="op">=</span> <span class="dv">13</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-64" class="cell" data-execution_count="33">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>entero <span class="op">=</span> <span class="dv">13</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-61" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">isinstance</span>(entero, <span class="bu">int</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-65" class="cell" data-execution_count="34">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">isinstance</span>(entero, <span class="bu">int</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>True</code></pre>
 </div>
-<div id="cell-62" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">isinstance</span>(<span class="dv">3</span><span class="op">/</span><span class="dv">4</span>, <span class="bu">int</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-63" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">isinstance</span>(<span class="dv">3</span><span class="op">/</span><span class="dv">4</span>, <span class="bu">float</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-66" class="cell" data-execution_count="35">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">isinstance</span>(<span class="dv">3</span><span class="op">/</span><span class="dv">4</span>, <span class="bu">int</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>False</code></pre>
 </div>
-<div id="cell-64" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">isinstance</span>(<span class="va">True</span>, <span class="bu">bool</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-65" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">isinstance</span>(<span class="dv">3</span><span class="op">+</span><span class="ot">5j</span>, <span class="bu">complex</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-67" class="cell" data-execution_count="36">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">isinstance</span>(<span class="dv">3</span><span class="op">/</span><span class="dv">4</span>, <span class="bu">float</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>True</code></pre>
+</div>
+</div>
+<div id="cell-68" class="cell" data-execution_count="37">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">isinstance</span>(<span class="va">True</span>, <span class="bu">bool</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>True</code></pre>
+</div>
+</div>
+<div id="cell-69" class="cell" data-execution_count="38">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">isinstance</span>(<span class="dv">3</span><span class="op">+</span><span class="ot">5j</span>, <span class="bu">complex</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>True</code></pre>
+</div>
 </div>
 <p>Esta función se puede usar con cualquier tipo definido en Python o tipos definidos por el usuario.</p>
 </section>
 <section id="constantes" class="level2" data-number="2.6">
 <h2 data-number="2.6" class="anchored" data-anchor-id="constantes"><span class="header-section-number">2.6</span> Constantes</h2>
-<p>Python contiene una serie de constantes integradas a las que no se les puede cambiar su valor. Más detalles se pueden encontrar en: <a href="https://docs.python.org/3/library/constants.html"><em>Built-in Constants</em></a></p>
+<p>Python contiene una serie de constantes integradas a las que no se les puede cambiar su valor. Más detalles se pueden encontrar en <a href="https://docs.python.org/3/library/constants.html" target="_blank" rel="noopener">Built-in Constants</a>.</p>
 <p>Las principales constantes son las siguientes:</p>
 <ul>
 <li><p><code>False</code>: de tipo Booleano.</p></li>
 <li><p><code>True</code>: de tipo Booleano.</p></li>
-<li><p><code>None</code>: El único valor para el tipo NoneType. Es usado frecuentemente para representar la ausencia de un valor, por ejemplo cuando no se pasa un argumento a una función.</p></li>
+<li><p><code>None</code>: El único valor para el tipo <code>NoneType</code>. Es usado frecuentemente para representar la ausencia de un valor, por ejemplo cuando no se pasa un argumento a una función.</p></li>
 <li><p><code>NotImplemented</code>: es un valor especial que es regresado por métodos binarios especiales (por ejemplo <code>__eq__()</code>, <code>__lt__()</code>, <code>__add__()</code>, <code>__rsub__()</code>, etc.) para indicar que la operación no está implementada con respecto a otro tipo.</p></li>
 <li><p><code>Ellipsis</code>: equivalente a <code>...</code>, es un valor especial usado mayormente en conjunción con la sintáxis de <em>slicing</em> de arreglos.</p></li>
-<li><p><code>__debug__</code> : Esta constante es verdadera si Python no se inició con la opción -O.</p></li>
+<li><p><code>__debug__</code> : Esta constante es verdadera si Python no se inició con la opción <code>-O</code>.</p></li>
 </ul>
-<p>Las siguiente constantes son usadas dentro del intérprete interactivo (no se pueden usar dentro de programas ejecutados fuera del intérprete).</p>
+<p>Las siguientes constantes son usadas dentro del intérprete interactivo (no se pueden usar dentro de programas ejecutados fuera del intérprete).</p>
 <ul>
 <li><code>quit</code>(code=None)</li>
 <li><code>exit</code>(code=None)</li>
@@ -731,11 +895,29 @@ c = a + b \; j
 <li><code>license</code></li>
 </ul>
 <p>Por ejemplo:</p>
-<div id="cell-68" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>copyright()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-72" class="cell" data-execution_count="39">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>copyright()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Copyright (c) 2001-2024 Python Software Foundation.
+All Rights Reserved.
+
+Copyright (c) 2000 BeOpen.com.
+All Rights Reserved.
+
+Copyright (c) 1995-2001 Corporation for National Research Initiatives.
+All Rights Reserved.
+
+Copyright (c) 1991-1995 Stichting Mathematisch Centrum, Amsterdam.
+All Rights Reserved.</code></pre>
 </div>
-<div id="cell-69" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>credits()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-73" class="cell" data-execution_count="40">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>credits()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    Thanks to CWI, CNRI, BeOpen, Zope Corporation, the Python Software
+    Foundation, and a cast of thousands for supporting Python
+    development.  See www.python.org for more information.</code></pre>
+</div>
 </div>
 
 
