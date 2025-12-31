@@ -1,0 +1,1803 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>9&nbsp; Estructura de datos: listas. – Notas de Python</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../notebooks/10_tuplas.html" rel="next">
+<link href="../notebooks/08_control_de_flujo.html" rel="prev">
+<link href="../figuras/python1.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-d9d7ed2c14390fa05efde32fc7ffca7f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../estilos/code-blocks.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/09_listas.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estructura de datos: listas.</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../figuras/python1.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../figuras/python1.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Notas de Python</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <div class="dropdown">
+      <a href="" title="Compartir" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Compartir"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Alternar modo lector">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python básico</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/01_variables_objetos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Variables y objetos.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/02_tipos_basicos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tipos de datos básicos.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/03_operadores.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operadores.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/04_expresiones_declaraciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Expresiones y declaraciones.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/05_cadenas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Cadenas.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/06_input.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Entrada estándar.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/07_archivos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Gestión de archivos.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/08_control_de_flujo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Control de flujo.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/09_listas.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estructura de datos: listas.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/10_tuplas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Estructura de datos: tuplas.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/11_conjuntos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Estructura de datos: conjuntos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/12_diccionarios.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Estructura de datos: diccionarios.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/13_ds_casting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Conversión entre estructura de datos.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/14_ds_traversing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Recorriendo las estructuras de datos.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/15_funciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Funciones: introducción.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/17_excepciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Gestión de errores y excepciones.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/23_import.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Importando bibliotecas.</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción"><span class="header-section-number">9.1</span> Introducción</a></li>
+  <li><a href="#listas" id="toc-listas" class="nav-link" data-scroll-target="#listas"><span class="header-section-number">9.2</span> Listas</a>
+  <ul class="collapse">
+  <li><a href="#ejemplo." id="toc-ejemplo." class="nav-link" data-scroll-target="#ejemplo."><span class="header-section-number">9.2.1</span> Ejemplo.</a></li>
+  </ul></li>
+  <li><a href="#indexado" id="toc-indexado" class="nav-link" data-scroll-target="#indexado"><span class="header-section-number">9.3</span> Indexado</a></li>
+  <li><a href="#mutabilidad-de-las-listas." id="toc-mutabilidad-de-las-listas." class="nav-link" data-scroll-target="#mutabilidad-de-las-listas."><span class="header-section-number">9.4</span> Mutabilidad de las listas.</a></li>
+  <li><a href="#nombres-e-identificadores" id="toc-nombres-e-identificadores" class="nav-link" data-scroll-target="#nombres-e-identificadores"><span class="header-section-number">9.5</span> Nombres e identificadores</a></li>
+  <li><a href="#funciones-incorporadas-que-operan-sobre-las-listas." id="toc-funciones-incorporadas-que-operan-sobre-las-listas." class="nav-link" data-scroll-target="#funciones-incorporadas-que-operan-sobre-las-listas."><span class="header-section-number">9.6</span> Funciones incorporadas que operan sobre las listas.</a>
+  <ul class="collapse">
+  <li><a href="#len-determina-la-longitud-de-la-lista." id="toc-len-determina-la-longitud-de-la-lista." class="nav-link" data-scroll-target="#len-determina-la-longitud-de-la-lista."><span class="header-section-number">9.6.1</span> <code>len()</code>: determina la longitud de la lista.</a></li>
+  <li><a href="#max-determina-el-máximo-elemento-de-la-lista." id="toc-max-determina-el-máximo-elemento-de-la-lista." class="nav-link" data-scroll-target="#max-determina-el-máximo-elemento-de-la-lista."><span class="header-section-number">9.6.2</span> <code>max()</code>: determina el máximo elemento de la lista.</a></li>
+  <li><a href="#min-determina-el-mínimo-elemento-de-la-lista." id="toc-min-determina-el-mínimo-elemento-de-la-lista." class="nav-link" data-scroll-target="#min-determina-el-mínimo-elemento-de-la-lista."><span class="header-section-number">9.6.3</span> <code>min()</code>: determina el mínimo elemento de la lista.</a></li>
+  <li><a href="#any-revisa-si-algún-elemento-es-true." id="toc-any-revisa-si-algún-elemento-es-true." class="nav-link" data-scroll-target="#any-revisa-si-algún-elemento-es-true."><span class="header-section-number">9.6.4</span> <code>any()</code>: revisa si ALGÚN elemento es <code>True</code>.</a></li>
+  <li><a href="#all-revisa-si-todos-los-elementos-son-true." id="toc-all-revisa-si-todos-los-elementos-son-true." class="nav-link" data-scroll-target="#all-revisa-si-todos-los-elementos-son-true."><span class="header-section-number">9.6.5</span> <code>all()</code>: revisa si TODOS los elementos son <code>True</code>.</a></li>
+  <li><a href="#sorted-ordena-los-elementos-de-la-lista." id="toc-sorted-ordena-los-elementos-de-la-lista." class="nav-link" data-scroll-target="#sorted-ordena-los-elementos-de-la-lista."><span class="header-section-number">9.6.6</span> <code>sorted()</code>: ordena los elementos de la lista.</a></li>
+  <li><a href="#sum-suma-los-elementos-de-la-lista." id="toc-sum-suma-los-elementos-de-la-lista." class="nav-link" data-scroll-target="#sum-suma-los-elementos-de-la-lista."><span class="header-section-number">9.6.7</span> <code>sum()</code>: suma los elementos de la lista.</a></li>
+  <li><a href="#enumerate-enumera-los-elementos-de-una-lista." id="toc-enumerate-enumera-los-elementos-de-una-lista." class="nav-link" data-scroll-target="#enumerate-enumera-los-elementos-de-una-lista."><span class="header-section-number">9.6.8</span> <code>enumerate()</code>: enumera los elementos de una lista.</a></li>
+  <li><a href="#zip-agrupa-los-elementos-de-dos-listas." id="toc-zip-agrupa-los-elementos-de-dos-listas." class="nav-link" data-scroll-target="#zip-agrupa-los-elementos-de-dos-listas."><span class="header-section-number">9.6.9</span> <code>zip()</code>: agrupa los elementos de dos listas.</a></li>
+  </ul></li>
+  <li><a href="#operadores-sobre-listas" id="toc-operadores-sobre-listas" class="nav-link" data-scroll-target="#operadores-sobre-listas"><span class="header-section-number">9.7</span> Operadores sobre listas</a>
+  <ul class="collapse">
+  <li><a href="#concatena-listas." id="toc-concatena-listas." class="nav-link" data-scroll-target="#concatena-listas."><span class="header-section-number">9.7.1</span> <code>+</code>: concatena listas.</a></li>
+  <li><a href="#hace-réplicas-de-las-listas." id="toc-hace-réplicas-de-las-listas." class="nav-link" data-scroll-target="#hace-réplicas-de-las-listas."><span class="header-section-number">9.7.2</span> <code>*</code>: hace réplicas de las listas.</a></li>
+  <li><a href="#in-revisa-si-un-elemento-está-en-la-lista." id="toc-in-revisa-si-un-elemento-está-en-la-lista." class="nav-link" data-scroll-target="#in-revisa-si-un-elemento-está-en-la-lista."><span class="header-section-number">9.7.3</span> <code>in</code>: revisa si un elemento está en la lista.</a></li>
+  </ul></li>
+  <li><a href="#métodos-de-las-listas." id="toc-métodos-de-las-listas." class="nav-link" data-scroll-target="#métodos-de-las-listas."><span class="header-section-number">9.8</span> Métodos de las listas.</a>
+  <ul class="collapse">
+  <li><a href="#agregar-elementos-a-la-lista." id="toc-agregar-elementos-a-la-lista." class="nav-link" data-scroll-target="#agregar-elementos-a-la-lista."><span class="header-section-number">9.8.1</span> Agregar elementos a la lista.</a></li>
+  <li><a href="#eliminar-elementos-de-la-lista." id="toc-eliminar-elementos-de-la-lista." class="nav-link" data-scroll-target="#eliminar-elementos-de-la-lista."><span class="header-section-number">9.8.2</span> Eliminar elementos de la lista.</a></li>
+  <li><a href="#insertar-elementos-en-la-lista." id="toc-insertar-elementos-en-la-lista." class="nav-link" data-scroll-target="#insertar-elementos-en-la-lista."><span class="header-section-number">9.8.3</span> Insertar elementos en la lista.</a></li>
+  <li><a href="#extraer-el-último-elemento-de-la-lista." id="toc-extraer-el-último-elemento-de-la-lista." class="nav-link" data-scroll-target="#extraer-el-último-elemento-de-la-lista."><span class="header-section-number">9.8.4</span> Extraer el último elemento de la lista.</a></li>
+  <li><a href="#ordenar-la-lista." id="toc-ordenar-la-lista." class="nav-link" data-scroll-target="#ordenar-la-lista."><span class="header-section-number">9.8.5</span> Ordenar la lista.</a></li>
+  <li><a href="#la-lista-con-los-elementos-en-reversa." id="toc-la-lista-con-los-elementos-en-reversa." class="nav-link" data-scroll-target="#la-lista-con-los-elementos-en-reversa."><span class="header-section-number">9.8.6</span> La lista con los elementos en reversa.</a></li>
+  <li><a href="#concatenar-dos-listas." id="toc-concatenar-dos-listas." class="nav-link" data-scroll-target="#concatenar-dos-listas."><span class="header-section-number">9.8.7</span> Concatenar dos listas.</a></li>
+  <li><a href="#contar-los-elementos-de-un-tipo." id="toc-contar-los-elementos-de-un-tipo." class="nav-link" data-scroll-target="#contar-los-elementos-de-un-tipo."><span class="header-section-number">9.8.8</span> Contar los elementos de un tipo.</a></li>
+  <li><a href="#ejemplo.-1" id="toc-ejemplo.-1" class="nav-link" data-scroll-target="#ejemplo.-1"><span class="header-section-number">9.8.9</span> Ejemplo.</a></li>
+  </ul></li>
+  <li><a href="#copiando-listas" id="toc-copiando-listas" class="nav-link" data-scroll-target="#copiando-listas"><span class="header-section-number">9.9</span> Copiando listas</a>
+  <ul class="collapse">
+  <li><a href="#copiando-con" id="toc-copiando-con" class="nav-link" data-scroll-target="#copiando-con"><span class="header-section-number">9.9.1</span> Copiando con <code>[:]</code></a></li>
+  <li><a href="#copiando-con-el-método-copy" id="toc-copiando-con-el-método-copy" class="nav-link" data-scroll-target="#copiando-con-el-método-copy"><span class="header-section-number">9.9.2</span> Copiando con el método <code>copy()</code></a></li>
+  <li><a href="#copiando-con-el-constructor" id="toc-copiando-con-el-constructor" class="nav-link" data-scroll-target="#copiando-con-el-constructor"><span class="header-section-number">9.9.3</span> Copiando con el constructor</a></li>
+  <li><a href="#copiando-con-la-biblioteca-copy" id="toc-copiando-con-la-biblioteca-copy" class="nav-link" data-scroll-target="#copiando-con-la-biblioteca-copy"><span class="header-section-number">9.9.4</span> Copiando con la biblioteca <code>copy</code></a></li>
+  </ul></li>
+  <li><a href="#listas-mas-complejas." id="toc-listas-mas-complejas." class="nav-link" data-scroll-target="#listas-mas-complejas."><span class="header-section-number">9.10</span> Listas mas complejas.</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-listas" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estructura de datos: listas.</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><strong>Objetivo.</strong> Describir la estructura de datos <code>list</code> mediante la exposición de ejemplos.</p>
+<section id="introducción" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="introducción"><span class="header-section-number">9.1</span> Introducción</h2>
+<p>En Python se tienen cuatro tipos de estructuras de datos básicas, también conocidas como <em>colecciones</em>. Cuando se selecciona un tipo de colección, es importante conocer sus propiedades para incrementar la eficiencia y/o la seguridad de los datos. La siguiente tabla resume estos cuatro tipos:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Tipo</th>
+<th style="text-align: center;">Ordenada</th>
+<th style="text-align: center;">Inmutable</th>
+<th style="text-align: center;">Indexable</th>
+<th style="text-align: center;">Duplicidad</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">List</td>
+<td style="text-align: center;">SI</td>
+<td style="text-align: center;">NO</td>
+<td style="text-align: center;">SI</td>
+<td style="text-align: center;">SI</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">Tuple</td>
+<td style="text-align: center;">SI</td>
+<td style="text-align: center;">SI</td>
+<td style="text-align: center;">SI</td>
+<td style="text-align: center;">SI</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">Sets</td>
+<td style="text-align: center;">NO</td>
+<td style="text-align: center;">NO</td>
+<td style="text-align: center;">NO</td>
+<td style="text-align: center;">NO</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">Dict</td>
+<td style="text-align: center;">NO</td>
+<td style="text-align: center;">NO</td>
+<td style="text-align: center;">SI</td>
+<td style="text-align: center;">NO</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="listas" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="listas"><span class="header-section-number">9.2</span> Listas</h2>
+<ul>
+<li>Consisten en una secuencia <strong>ordenada</strong> y <strong>mutable</strong> de elementos.
+<ul>
+<li><strong>Ordenadas</strong> significa que cada elemento dentro de la lista está indexado y mantiene su orden definido en su creación.</li>
+<li><strong>Mutable</strong> significa que los elementos de la lista se pueden modificar, y además que se pueden agregar o eliminar elementos.</li>
+</ul></li>
+<li>Las listas pueden tener elementos <strong>duplicados</strong>, es decir, <strong>elementos del mismo tipo y con el mismo contenido</strong>.</li>
+<li>Las listas se definen usando corchetes (<code>[]</code>) y comas (<code>,</code>) para separar sus elementos.</li>
+</ul>
+<section id="ejemplo." class="level3 alert alert-success" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="ejemplo."><span class="header-section-number">9.2.1</span> Ejemplo.</h3>
+<p>Vamos a crear las siguientes listas:</p>
+<ul>
+<li><code>gatos</code> : Razas de gatos.</li>
+<li><code>origen</code> : Origen de cada raza de gatos.</li>
+<li><code>pelo_largo</code>: Si tienen pelo largo o no.</li>
+<li><code>pelo_corto</code>: Si tienen pelo corto o no.</li>
+<li><code>peso_minimo</code>: El peso mínimo que pueden tener.</li>
+<li><code>peso_maximo</code>: El peso máximo que pueden tener.</li>
+</ul>
+</section>
+<div id="cell-3" class="cell" data-tags="[]" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Listas con elementos de tipo cadena (str)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>gatos <span class="op">=</span> [<span class="st">'Persa'</span>, <span class="st">'Sphynx'</span>, <span class="st">'Ragdoll'</span>,<span class="st">'Siamés'</span>]</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>origen <span class="op">=</span> [<span class="st">'Irán'</span>, <span class="st">'Toronto'</span>, <span class="st">'California'</span>, <span class="st">'Tailandia'</span>]</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Listas con elementos de tipo lógico (bool)</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>pelo_largo <span class="op">=</span> [<span class="va">True</span>, <span class="va">False</span>, <span class="va">True</span>, <span class="va">False</span>]</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>pelo_corto <span class="op">=</span> [<span class="va">False</span>, <span class="va">False</span>, <span class="va">False</span>, <span class="va">True</span>]</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Listas con elementos de tipo flotante</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>peso_minimo <span class="op">=</span> [<span class="fl">2.3</span>, <span class="fl">3.5</span>, <span class="fl">5.4</span>, <span class="fl">2.5</span>]</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>peso_maximo <span class="op">=</span> [<span class="fl">6.8</span>, <span class="fl">7.0</span>, <span class="fl">9.1</span>, <span class="fl">4.5</span>]</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-4" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Revisamos el tipo y contenido de cada lista</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(gatos), gatos)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(origen), origen)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(pelo_largo), pelo_largo)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(pelo_corto), pelo_corto)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(peso_minimo), peso_minimo)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(peso_maximo), peso_maximo)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'list'&gt; ['Persa', 'Sphynx', 'Ragdoll', 'Siamés']
+&lt;class 'list'&gt; ['Irán', 'Toronto', 'California', 'Tailandia']
+&lt;class 'list'&gt; [True, False, True, False]
+&lt;class 'list'&gt; [False, False, False, True]
+&lt;class 'list'&gt; [2.3, 3.5, 5.4, 2.5]
+&lt;class 'list'&gt; [6.8, 7.0, 9.1, 4.5]</code></pre>
+</div>
+</div>
+<p><strong>Observaciones</strong>:</p>
+<ul>
+<li>Cada lista contiene 4 elementos.</li>
+<li>Los elementos de cada lista son del mismo tipo. No obstante, es posible que las listas tengan elementos de tipos distintos.</li>
+<li>Los elementos son cadenas, flotantes y tipos lógicos.</li>
+</ul>
+</section>
+<section id="indexado" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="indexado"><span class="header-section-number">9.3</span> Indexado</h2>
+<p>Se puede acceder a cada elemento de las listas de manera similar a como se hace con las cadenas, veáse el tema <strong>Indexación de las cadenas</strong> en la <a href="05_cadenas.html#sec-indexacion_cadenas" class="quarto-xref"><span>Sección 5.3</span></a>.</p>
+<p>Por ejemplo:</p>
+<div id="cell-7" class="cell" data-tags="[]" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>gatos[<span class="dv">0</span>] <span class="co"># Primer elemento</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>'Persa'</code></pre>
+</div>
+</div>
+<div id="cell-8" class="cell" data-tags="[]" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>gatos[<span class="dv">1</span>:<span class="dv">4</span>] <span class="co"># Todos los elementos, desde el 1 hasta el 3</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>['Sphynx', 'Ragdoll', 'Siamés']</code></pre>
+</div>
+</div>
+<div id="cell-9" class="cell" data-tags="[]" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>gatos[<span class="op">-</span><span class="dv">1</span>] <span class="co"># Último elemento</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>'Siamés'</code></pre>
+</div>
+</div>
+<div id="cell-10" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>gatos[::<span class="dv">2</span>] <span class="co"># Todos los elementos en saltos de dos en dos</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>['Persa', 'Ragdoll']</code></pre>
+</div>
+</div>
+<div id="cell-11" class="cell" data-tags="[]" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>gatos[::<span class="op">-</span><span class="dv">1</span>] <span class="co"># Todos los elementos en reversa</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>['Siamés', 'Ragdoll', 'Sphynx', 'Persa']</code></pre>
+</div>
+</div>
+<p>Para conocer el contenido y tipo de alguno de los elementos podemos hacer lo siguiente:</p>
+<div id="cell-13" class="cell" data-tags="[]" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(gatos[<span class="dv">0</span>]), gatos[<span class="dv">0</span>])</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(pelo_largo[<span class="dv">2</span>]), pelo_largo[<span class="dv">2</span>])</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(peso_maximo[<span class="op">-</span><span class="dv">1</span>]), peso_maximo[<span class="op">-</span><span class="dv">1</span>])</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'str'&gt; Persa
+&lt;class 'bool'&gt; True
+&lt;class 'float'&gt; 4.5</code></pre>
+</div>
+</div>
+</section>
+<section id="mutabilidad-de-las-listas." class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="mutabilidad-de-las-listas."><span class="header-section-number">9.4</span> Mutabilidad de las listas.</h2>
+<p>Usando el indexado es posible cambiar el contenido de los elementos de una lista.</p>
+<p>Veamos los siguientes ejemplos:</p>
+<ul>
+<li>Modificamos el elemento 1 de la lista <code>peso_maximo</code>.</li>
+</ul>
+<div id="cell-15" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Original  :'</span>, peso_maximo) <span class="co"># Antes</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>peso_maximo[<span class="dv">1</span>] <span class="op">=</span> <span class="fl">100.5</span> </span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Modificado:'</span>, peso_maximo) <span class="co"># Después</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Original  : [6.8, 7.0, 9.1, 4.5]
+Modificado: [6.8, 100.5, 9.1, 4.5]</code></pre>
+</div>
+</div>
+<ul>
+<li>El tipo de los elementos puede ser diferente del original.</li>
+</ul>
+<div id="cell-17" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Original  :'</span>, peso_maximo) <span class="co"># Antes</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>peso_maximo[<span class="dv">1</span>] <span class="op">=</span> <span class="st">"una cadena"</span> </span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Modificado:'</span>, peso_maximo) <span class="co"># Después</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Original  : [6.8, 100.5, 9.1, 4.5]
+Modificado: [6.8, 'una cadena', 9.1, 4.5]</code></pre>
+</div>
+</div>
+<ul>
+<li>Incluso es posible agegar otra lista en uno de los elementos:</li>
+</ul>
+<div id="cell-19" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Original  :'</span>, peso_maximo) <span class="co"># Antes</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>peso_maximo[<span class="dv">1</span>] <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="st">'a'</span>,<span class="st">'b'</span>,<span class="st">'c'</span>] </span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Modificado:'</span>, peso_maximo) <span class="co"># Después</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Original  : [6.8, 'una cadena', 9.1, 4.5]
+Modificado: [6.8, [1, 2, 'a', 'b', 'c'], 9.1, 4.5]</code></pre>
+</div>
+</div>
+<ul>
+<li>Se pueden usar rangos para modificar varios elementos a la vez.</li>
+</ul>
+<div id="cell-21" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Original  :'</span>, peso_maximo) <span class="co"># Antes</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>peso_maximo[<span class="dv">1</span>:<span class="dv">3</span>] <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>] </span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Modificado:'</span>, peso_maximo) <span class="co"># Después</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Original  : [6.8, [1, 2, 'a', 'b', 'c'], 9.1, 4.5]
+Modificado: [6.8, 'a', 'b', 4.5]</code></pre>
+</div>
+</div>
+<ul>
+<li>Se pueden modificar elementos en saltos diferentes a uno.</li>
+</ul>
+<div id="cell-23" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Original  :'</span>, peso_maximo) <span class="co"># Antes</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>peso_maximo[::<span class="dv">2</span>] <span class="op">=</span> [<span class="fl">0.0</span>, <span class="fl">0.0</span>] </span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Modificado:'</span>, peso_maximo) <span class="co"># Después</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Original  : [6.8, 'a', 'b', 4.5]
+Modificado: [0.0, 'a', 0.0, 4.5]</code></pre>
+</div>
+</div>
+<div id="cell-24" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Regresamos a los valores originales de la lista peso_maximo</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>peso_maximo[<span class="dv">0</span>:<span class="dv">3</span>] <span class="op">=</span> [<span class="fl">6.8</span>, <span class="fl">7.0</span>, <span class="fl">9.1</span>]</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(peso_maximo)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[6.8, 7.0, 9.1, 4.5]</code></pre>
+</div>
+</div>
+</section>
+<section id="nombres-e-identificadores" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="nombres-e-identificadores"><span class="header-section-number">9.5</span> Nombres e identificadores</h2>
+<p>Es importante entender la forma en como están almacenados los elementos de la lista en memoria. Veamos el siguiente ejemplo.</p>
+<p>Generamos otro nombre para la lista (no se crea una copia):</p>
+<div id="cell-26" class="cell" data-execution_count="15">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>p_min <span class="op">=</span> peso_minimo</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Verificamos que sea la misma lista:</p>
+<div id="cell-28" class="cell" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(p_min), p_min)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(peso_minimo), peso_minimo)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2339996477760 [2.3, 3.5, 5.4, 2.5]
+2339996477760 [2.3, 3.5, 5.4, 2.5]</code></pre>
+</div>
+</div>
+<p>Podemos acceder a un elemento de la lista usando el indexado y ver su contenido y su identificador en memoria. Por ejemplo, para ver los elementos con índices <code>2</code> y <code>3</code> de la lista <code>p_min</code> hacemos lo siguiente:</p>
+<div id="cell-30" class="cell" data-execution_count="22">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(p_min[<span class="dv">2</span>]), p_min[<span class="dv">2</span>])</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(p_min[<span class="dv">3</span>]), p_min[<span class="dv">3</span>])</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2339991871280 5.4
+2339995659664 2.5</code></pre>
+</div>
+</div>
+<p>Hacemos lo mismo usando el nombre <code>peso_minimo</code>:</p>
+<div id="cell-32" class="cell" data-execution_count="23">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(peso_minimo[<span class="dv">2</span>]), peso_minimo[<span class="dv">2</span>])</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(peso_minimo[<span class="dv">3</span>]), peso_minimo[<span class="dv">3</span>])</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2339991871280 5.4
+2339995659664 2.5</code></pre>
+</div>
+</div>
+<p>Observa que la lista tiene su propio identificador y cada elemento de la lista tiene un identificador diferente.</p>
+<p>Eliminamos el nombre <code>peso_minimo</code>:</p>
+<div id="cell-34" class="cell" data-execution_count="24">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> peso_minimo </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Ya no existe el nombre <code>peso_minimo</code> por lo que la siguiente declaración dará un error:</p>
+<div id="cell-36" class="cell" data-execution_count="25">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(peso_minimo) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[25]</span><span class="ansi-green-fg">, line 1</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> <span style="color:rgb(0,135,0)">print</span>(<span class="ansi-yellow-bg">peso_minimo</span>) 
+
+<span class="ansi-red-fg">NameError</span>: name 'peso_minimo' is not defined</pre>
+</div>
+</div>
+</div>
+<p>Pero aún se puede acceder a la lista original a través del nombre <code>p_min</code>:</p>
+<div id="cell-38" class="cell" data-execution_count="26">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(p_min), p_min) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2339996477760 [2.3, 3.5, 5.4, 2.5]</code></pre>
+</div>
+</div>
+<p>Se puede eliminar un elemento de la lista:</p>
+<div id="cell-40" class="cell" data-execution_count="27">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> p_min[<span class="dv">2</span>] </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Veamos el estado actual de la lista:</p>
+<div id="cell-42" class="cell" data-execution_count="28">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(p_min), p_min) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2339996477760 [2.3, 3.5, 2.5]</code></pre>
+</div>
+</div>
+</section>
+<section id="funciones-incorporadas-que-operan-sobre-las-listas." class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="funciones-incorporadas-que-operan-sobre-las-listas."><span class="header-section-number">9.6</span> Funciones incorporadas que operan sobre las listas.</h2>
+<p>Existen muchas operaciones que se pueden realizar sobre las listas usando funciones incorporadas (<em>built-in functions</em>).</p>
+<section id="len-determina-la-longitud-de-la-lista." class="level3" data-number="9.6.1">
+<h3 data-number="9.6.1" class="anchored" data-anchor-id="len-determina-la-longitud-de-la-lista."><span class="header-section-number">9.6.1</span> <code>len()</code>: determina la longitud de la lista.</h3>
+<div id="cell-44" class="cell" data-tags="[]" data-execution_count="29">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(gatos) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="29">
+<pre><code>4</code></pre>
+</div>
+</div>
+</section>
+<section id="max-determina-el-máximo-elemento-de-la-lista." class="level3" data-number="9.6.2">
+<h3 data-number="9.6.2" class="anchored" data-anchor-id="max-determina-el-máximo-elemento-de-la-lista."><span class="header-section-number">9.6.2</span> <code>max()</code>: determina el máximo elemento de la lista.</h3>
+<div id="cell-46" class="cell" data-tags="[]" data-execution_count="30">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="bu">max</span>(peso_maximo) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="30">
+<pre><code>9.1</code></pre>
+</div>
+</div>
+</section>
+<section id="min-determina-el-mínimo-elemento-de-la-lista." class="level3" data-number="9.6.3">
+<h3 data-number="9.6.3" class="anchored" data-anchor-id="min-determina-el-mínimo-elemento-de-la-lista."><span class="header-section-number">9.6.3</span> <code>min()</code>: determina el mínimo elemento de la lista.</h3>
+<div id="cell-48" class="cell" data-tags="[]" data-execution_count="31">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="bu">min</span>(peso_maximo) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="31">
+<pre><code>4.5</code></pre>
+</div>
+</div>
+</section>
+<section id="any-revisa-si-algún-elemento-es-true." class="level3" data-number="9.6.4">
+<h3 data-number="9.6.4" class="anchored" data-anchor-id="any-revisa-si-algún-elemento-es-true."><span class="header-section-number">9.6.4</span> <code>any()</code>: revisa si ALGÚN elemento es <code>True</code>.</h3>
+<div id="cell-50" class="cell" data-execution_count="32">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="bu">any</span>(pelo_largo) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="32">
+<pre><code>True</code></pre>
+</div>
+</div>
+</section>
+<section id="all-revisa-si-todos-los-elementos-son-true." class="level3" data-number="9.6.5">
+<h3 data-number="9.6.5" class="anchored" data-anchor-id="all-revisa-si-todos-los-elementos-son-true."><span class="header-section-number">9.6.5</span> <code>all()</code>: revisa si TODOS los elementos son <code>True</code>.</h3>
+<div id="cell-52" class="cell" data-execution_count="33">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="bu">all</span>(pelo_corto)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="33">
+<pre><code>False</code></pre>
+</div>
+</div>
+</section>
+<section id="sorted-ordena-los-elementos-de-la-lista." class="level3" data-number="9.6.6">
+<h3 data-number="9.6.6" class="anchored" data-anchor-id="sorted-ordena-los-elementos-de-la-lista."><span class="header-section-number">9.6.6</span> <code>sorted()</code>: ordena los elementos de la lista.</h3>
+<div id="cell-54" class="cell" data-execution_count="34">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(peso_maximo) <span class="co"># Lista original antes del ordenamiento</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span>(peso_maximo) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[6.8, 7.0, 9.1, 4.5]</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="34">
+<pre><code>[4.5, 6.8, 7.0, 9.1]</code></pre>
+</div>
+</div>
+<p>La función <code>sorted()</code> genera una nueva lista ordenada, pero no modifica la lista original. Si se imprime la lista <code>peso_maximo</code> veremos que no ha cambiado:</p>
+<div id="cell-56" class="cell" data-execution_count="35">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(peso_maximo)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[6.8, 7.0, 9.1, 4.5]</code></pre>
+</div>
+</div>
+</section>
+<section id="sum-suma-los-elementos-de-la-lista." class="level3" data-number="9.6.7">
+<h3 data-number="9.6.7" class="anchored" data-anchor-id="sum-suma-los-elementos-de-la-lista."><span class="header-section-number">9.6.7</span> <code>sum()</code>: suma los elementos de la lista.</h3>
+<div id="cell-58" class="cell" data-execution_count="36">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># El operador suma debe estar definido para el tipo de los elementos de la lista</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="bu">sum</span>(peso_maximo) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="36">
+<pre><code>27.4</code></pre>
+</div>
+</div>
+</section>
+<section id="enumerate-enumera-los-elementos-de-una-lista." class="level3" data-number="9.6.8">
+<h3 data-number="9.6.8" class="anchored" data-anchor-id="enumerate-enumera-los-elementos-de-una-lista."><span class="header-section-number">9.6.8</span> <code>enumerate()</code>: enumera los elementos de una lista.</h3>
+<div id="cell-60" class="cell" data-execution_count="40">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Genera tuplas del tipo `(i, elemento)`.</span></span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(<span class="bu">enumerate</span>(origen)) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="40">
+<pre><code>[(0, 'Irán'), (1, 'Toronto'), (2, 'California'), (3, 'Tailandia')]</code></pre>
+</div>
+</div>
+<p>Observa que para el caso de <code>enumerate()</code> el resultado se debe convertir a un tipo que se pueda desplegar, en este caso se convierte a una lista usando <code>list()</code>.</p>
+</section>
+<section id="zip-agrupa-los-elementos-de-dos-listas." class="level3" data-number="9.6.9">
+<h3 data-number="9.6.9" class="anchored" data-anchor-id="zip-agrupa-los-elementos-de-dos-listas."><span class="header-section-number">9.6.9</span> <code>zip()</code>: agrupa los elementos de dos listas.</h3>
+<div id="cell-63" class="cell" data-execution_count="41">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Genera tuplas del tipo `(gatos[i], origen[i])`.</span></span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(<span class="bu">zip</span>(gatos, origen)) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="41">
+<pre><code>[('Persa', 'Irán'),
+ ('Sphynx', 'Toronto'),
+ ('Ragdoll', 'California'),
+ ('Siamés', 'Tailandia')]</code></pre>
+</div>
+</div>
+<p>Observa que para el caso de <code>zip()</code> el resultado se debe convertir a un tipo que se pueda desplegar, en este caso se convierte a una lista usando <code>list()</code>.</p>
+</section>
+</section>
+<section id="operadores-sobre-listas" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="operadores-sobre-listas"><span class="header-section-number">9.7</span> Operadores sobre listas</h2>
+<p>Se pueden usar los operadores <code>+</code>, <code>*</code> e <code>in</code> sobre las listas.</p>
+<section id="concatena-listas." class="level3" data-number="9.7.1">
+<h3 data-number="9.7.1" class="anchored" data-anchor-id="concatena-listas."><span class="header-section-number">9.7.1</span> <code>+</code>: concatena listas.</h3>
+<div id="cell-66" class="cell" data-tags="[]" data-execution_count="42">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>gatos <span class="op">+</span> peso_maximo <span class="co"># Concatenación de dos listas</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="42">
+<pre><code>['Persa', 'Sphynx', 'Ragdoll', 'Siamés', 6.8, 7.0, 9.1, 4.5]</code></pre>
+</div>
+</div>
+</section>
+<section id="hace-réplicas-de-las-listas." class="level3" data-number="9.7.2">
+<h3 data-number="9.7.2" class="anchored" data-anchor-id="hace-réplicas-de-las-listas."><span class="header-section-number">9.7.2</span> <code>*</code>: hace réplicas de las listas.</h3>
+<div id="cell-68" class="cell" data-tags="[]" data-execution_count="44">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>origen <span class="op">*</span> <span class="dv">3</span> <span class="co"># Duplicación de la lista</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="44">
+<pre><code>['Irán',
+ 'Toronto',
+ 'California',
+ 'Tailandia',
+ 'Irán',
+ 'Toronto',
+ 'California',
+ 'Tailandia',
+ 'Irán',
+ 'Toronto',
+ 'California',
+ 'Tailandia']</code></pre>
+</div>
+</div>
+</section>
+<section id="in-revisa-si-un-elemento-está-en-la-lista." class="level3" data-number="9.7.3">
+<h3 data-number="9.7.3" class="anchored" data-anchor-id="in-revisa-si-un-elemento-está-en-la-lista."><span class="header-section-number">9.7.3</span> <code>in</code>: revisa si un elemento está en la lista.</h3>
+<div id="cell-70" class="cell" data-tags="[]" data-execution_count="45">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co">'Siamés'</span> <span class="kw">in</span> gatos <span class="co"># ¿Está el elemento `Siamés` en la lista gatos?</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="45">
+<pre><code>True</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="métodos-de-las-listas." class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="métodos-de-las-listas."><span class="header-section-number">9.8</span> Métodos de las listas.</h2>
+<p>En términos de Programación Orientada a Objetos, la clase <code>&lt;class 'list'&gt;</code> define una serie de métodos que se pueden aplicar sobre los objetos del tipo <code>list</code>. Veamos algunos ejemplos:</p>
+<div id="cell-72" class="cell" data-tags="[]" data-execution_count="46">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gatos) <span class="co"># Imprimimos la lista original</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['Persa', 'Sphynx', 'Ragdoll', 'Siamés']</code></pre>
+</div>
+</div>
+<section id="agregar-elementos-a-la-lista." class="level3" data-number="9.8.1">
+<h3 data-number="9.8.1" class="anchored" data-anchor-id="agregar-elementos-a-la-lista."><span class="header-section-number">9.8.1</span> Agregar elementos a la lista.</h3>
+<div id="cell-74" class="cell" data-tags="[]" data-execution_count="47">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>gatos.append(<span class="st">'Siberiano'</span>) <span class="co"># Se agrega un elemento al final de la lista</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-75" class="cell" data-tags="[]" data-execution_count="48">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gatos)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['Persa', 'Sphynx', 'Ragdoll', 'Siamés', 'Siberiano']</code></pre>
+</div>
+</div>
+<div id="cell-76" class="cell" data-tags="[]" data-execution_count="49">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>gatos.append(<span class="st">'Persa'</span>) <span class="co"># Se agrega otro elemento al final de la lista, repetido</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-77" class="cell" data-tags="[]" data-execution_count="50">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gatos)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['Persa', 'Sphynx', 'Ragdoll', 'Siamés', 'Siberiano', 'Persa']</code></pre>
+</div>
+</div>
+</section>
+<section id="eliminar-elementos-de-la-lista." class="level3" data-number="9.8.2">
+<h3 data-number="9.8.2" class="anchored" data-anchor-id="eliminar-elementos-de-la-lista."><span class="header-section-number">9.8.2</span> Eliminar elementos de la lista.</h3>
+<div id="cell-79" class="cell" data-tags="[]" data-execution_count="51">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>gatos.remove(<span class="st">'Persa'</span>) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-80" class="cell" data-tags="[]" data-execution_count="52">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gatos) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['Sphynx', 'Ragdoll', 'Siamés', 'Siberiano', 'Persa']</code></pre>
+</div>
+</div>
+<p>Observa que solo se elimina el primer elemento <code>Persa</code> que encuentra.</p>
+</section>
+<section id="insertar-elementos-en-la-lista." class="level3" data-number="9.8.3">
+<h3 data-number="9.8.3" class="anchored" data-anchor-id="insertar-elementos-en-la-lista."><span class="header-section-number">9.8.3</span> Insertar elementos en la lista.</h3>
+<p>Podemos insertar un elemento en un lugar específico de la lista:</p>
+<div id="cell-82" class="cell" data-tags="[]" data-execution_count="53">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>gatos.insert(<span class="dv">0</span>,<span class="st">'Persa'</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-83" class="cell" data-tags="[]" data-execution_count="54">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb81"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gatos)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['Persa', 'Sphynx', 'Ragdoll', 'Siamés', 'Siberiano', 'Persa']</code></pre>
+</div>
+</div>
+</section>
+<section id="extraer-el-último-elemento-de-la-lista." class="level3" data-number="9.8.4">
+<h3 data-number="9.8.4" class="anchored" data-anchor-id="extraer-el-último-elemento-de-la-lista."><span class="header-section-number">9.8.4</span> Extraer el último elemento de la lista.</h3>
+<p>También es posible extraer el último elemento de la lista</p>
+<div id="cell-85" class="cell" data-tags="[]" data-execution_count="55">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb83"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>gatos.pop() </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="55">
+<pre><code>'Persa'</code></pre>
+</div>
+</div>
+<div id="cell-86" class="cell" data-tags="[]" data-execution_count="56">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb85"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gatos)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['Persa', 'Sphynx', 'Ragdoll', 'Siamés', 'Siberiano']</code></pre>
+</div>
+</div>
+</section>
+<section id="ordenar-la-lista." class="level3" data-number="9.8.5">
+<h3 data-number="9.8.5" class="anchored" data-anchor-id="ordenar-la-lista."><span class="header-section-number">9.8.5</span> Ordenar la lista.</h3>
+<div id="cell-88" class="cell" data-tags="[]" data-execution_count="57">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb87"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a>gatos.sort() </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-89" class="cell" data-tags="[]" data-execution_count="58">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gatos)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['Persa', 'Ragdoll', 'Siamés', 'Siberiano', 'Sphynx']</code></pre>
+</div>
+</div>
+</section>
+<section id="la-lista-con-los-elementos-en-reversa." class="level3" data-number="9.8.6">
+<h3 data-number="9.8.6" class="anchored" data-anchor-id="la-lista-con-los-elementos-en-reversa."><span class="header-section-number">9.8.6</span> La lista con los elementos en reversa.</h3>
+<div id="cell-91" class="cell" data-tags="[]" data-execution_count="59">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb90"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a>gatos.reverse() </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-92" class="cell" data-tags="[]" data-execution_count="60">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb91"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gatos)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['Sphynx', 'Siberiano', 'Siamés', 'Ragdoll', 'Persa']</code></pre>
+</div>
+</div>
+</section>
+<section id="concatenar-dos-listas." class="level3" data-number="9.8.7">
+<h3 data-number="9.8.7" class="anchored" data-anchor-id="concatenar-dos-listas."><span class="header-section-number">9.8.7</span> Concatenar dos listas.</h3>
+<div id="cell-94" class="cell" data-execution_count="61">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb93"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a>pelo_corto.extend(pelo_largo) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-95" class="cell" data-execution_count="62">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb94"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pelo_corto)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[False, False, False, True, True, False, True, False]</code></pre>
+</div>
+</div>
+</section>
+<section id="contar-los-elementos-de-un-tipo." class="level3" data-number="9.8.8">
+<h3 data-number="9.8.8" class="anchored" data-anchor-id="contar-los-elementos-de-un-tipo."><span class="header-section-number">9.8.8</span> Contar los elementos de un tipo.</h3>
+<div id="cell-97" class="cell" data-execution_count="63">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb96"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a>pelo_corto.count(<span class="va">False</span>) <span class="co"># Contar los elementos que tengan el valor 'False'</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="63">
+<pre><code>5</code></pre>
+</div>
+</div>
+<div id="cell-98" class="cell" data-execution_count="64">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb98"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a>pelo_corto.count(<span class="va">True</span>) <span class="co"># Contar los elementos que tengan el valor 'True'</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="64">
+<pre><code>3</code></pre>
+</div>
+</div>
+</section>
+<section id="ejemplo.-1" class="level3 alert alert-success" data-number="9.8.9">
+<h3 data-number="9.8.9" class="anchored" data-anchor-id="ejemplo.-1"><span class="header-section-number">9.8.9</span> Ejemplo.</h3>
+<p>Considera la lista original <code>peso_minimo = [2.3, 3.5, 5.4, 2.5]</code>. El nombre fue eliminado en un ejemplo anterior. Vamos a recuperar la lista a través del nombre <code>p_min</code> que aún existe:</p>
+</section>
+<p>Veamos el identificador y contenido de <code>p_min</code></p>
+<div id="cell-101" class="cell" data-execution_count="65">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb100"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(p_min), p_min)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2339996477760 [2.3, 3.5, 2.5]</code></pre>
+</div>
+</div>
+<p>Necesitamos insertar el valor 5.4 en el lugar 2 de la lista:</p>
+<div id="cell-103" class="cell" data-execution_count="66">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb102"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a>p_min.insert(<span class="dv">2</span>, <span class="fl">5.4</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Revisamos el identificador y contenido de <code>p_min</code></p>
+<div id="cell-105" class="cell" data-execution_count="67">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb103"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(p_min), p_min)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2339996477760 [2.3, 3.5, 5.4, 2.5]</code></pre>
+</div>
+</div>
+<p>Recuperamos el nombre original:</p>
+<div id="cell-107" class="cell" data-execution_count="68">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb105"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a>peso_minimo <span class="op">=</span> p_min</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Revisamos el identificador y contenido de <code>peso_minimo</code></p>
+<div id="cell-109" class="cell" data-execution_count="69">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb106"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(peso_minimo), peso_minimo)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2339996477760 [2.3, 3.5, 5.4, 2.5]</code></pre>
+</div>
+</div>
+<p>Eliminamos <code>p_min</code></p>
+<div id="cell-111" class="cell" data-execution_count="70">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb108"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> p_min</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Una descripción detallada de los métodos de la listas se puede ver en <a href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists" target="_blank" rel="noopener">More on Lists</a></p>
+</section>
+<section id="copiando-listas" class="level2" data-number="9.9">
+<h2 data-number="9.9" class="anchored" data-anchor-id="copiando-listas"><span class="header-section-number">9.9</span> Copiando listas</h2>
+<ul>
+<li>Una lista es un objeto que contiene varios elementos.</li>
+<li>Para crear una copia de una lista, se debe generar un espacio de memoria en donde se copien todos los elementos de la lista original y asignar un nuevo nombre para esta nueva lista.</li>
+<li>Lo anterior no se puede hacer simplemente con el operador de asignación <code>=</code>.</li>
+</ul>
+<p>Veamos un ejemplo:</p>
+<div id="cell-114" class="cell" data-tags="[]" data-execution_count="71">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb109"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a>gatitos <span class="op">=</span> gatos</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-115" class="cell" data-tags="[]" data-execution_count="72">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb110"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gatos)</span>
+<span id="cb110-2"><a href="#cb110-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gatitos)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['Sphynx', 'Siberiano', 'Siamés', 'Ragdoll', 'Persa']
+['Sphynx', 'Siberiano', 'Siamés', 'Ragdoll', 'Persa']</code></pre>
+</div>
+</div>
+<p>Podemos observar que al imprimir la lista mediante los nombres <code>gatos</code> y <code>gatitos</code> obtenemos el mismo resultado. Ahora, modifiquemos el primer elemento usando el nombre <code>gatitos</code>:</p>
+<div id="cell-117" class="cell" data-tags="[]" data-execution_count="73">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb112"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a>gatitos[<span class="dv">0</span>] <span class="op">=</span> <span class="st">'Singapur'</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-118" class="cell" data-tags="[]" data-execution_count="74">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb113"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gatos)</span>
+<span id="cb113-2"><a href="#cb113-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gatitos)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['Singapur', 'Siberiano', 'Siamés', 'Ragdoll', 'Persa']
+['Singapur', 'Siberiano', 'Siamés', 'Ragdoll', 'Persa']</code></pre>
+</div>
+</div>
+<p>Observamos que al imprimir la lista usando <code>gatos</code> y <code>gatitos</code> volvemos a obtener el mismo resultado. Lo anterior significa que el operador de asignación solamente creó un nuevo nombre para el mismo objeto en memoria, por lo que en realidad no hizo una copia de la lista. Lo anterior lo podemos verificar usando la función <code>id()</code> para ver la dirección en memoria del objeto:</p>
+<div id="cell-120" class="cell" data-tags="[]" data-execution_count="75">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb115"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(gatitos))</span>
+<span id="cb115-2"><a href="#cb115-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(gatos))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2339996503872
+2339996503872</code></pre>
+</div>
+</div>
+<section id="copiando-con" class="level3" data-number="9.9.1">
+<h3 data-number="9.9.1" class="anchored" data-anchor-id="copiando-con"><span class="header-section-number">9.9.1</span> Copiando con <code>[:]</code></h3>
+<p>Para crear una nueva lista copiando todos los elementos podemos hacer lo siguiente:</p>
+<div id="cell-122" class="cell" data-tags="[]" data-execution_count="76">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb117"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a>gatitos <span class="op">=</span> gatos[:]</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-123" class="cell" data-tags="[]" data-execution_count="77">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb118"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(gatitos))</span>
+<span id="cb118-2"><a href="#cb118-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(gatitos))</span>
+<span id="cb118-3"><a href="#cb118-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gatitos)</span>
+<span id="cb118-4"><a href="#cb118-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb118-5"><a href="#cb118-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(gatos))</span>
+<span id="cb118-6"><a href="#cb118-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(gatos))</span>
+<span id="cb118-7"><a href="#cb118-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gatos)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'list'&gt;
+2340003231168
+['Singapur', 'Siberiano', 'Siamés', 'Ragdoll', 'Persa']
+&lt;class 'list'&gt;
+2339996503872
+['Singapur', 'Siberiano', 'Siamés', 'Ragdoll', 'Persa']</code></pre>
+</div>
+</div>
+<p>Observa que el identificador en memoria de cada lista es diferente por lo que se trata de listas diferentes.</p>
+</section>
+<section id="copiando-con-el-método-copy" class="level3" data-number="9.9.2">
+<h3 data-number="9.9.2" class="anchored" data-anchor-id="copiando-con-el-método-copy"><span class="header-section-number">9.9.2</span> Copiando con el método <code>copy()</code></h3>
+<p>La clase <code>&lt;class 'list'&gt;</code> contiene un método llamado <code>copy()</code> que efectivamente realiza una copia de la lista:</p>
+<div id="cell-126" class="cell" data-tags="[]" data-execution_count="78">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb120"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a>gatitos <span class="op">=</span> gatos.copy()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-127" class="cell" data-tags="[]" data-execution_count="79">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb121"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb121-1"><a href="#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(gatitos))</span>
+<span id="cb121-2"><a href="#cb121-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(gatitos))</span>
+<span id="cb121-3"><a href="#cb121-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gatitos)</span>
+<span id="cb121-4"><a href="#cb121-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb121-5"><a href="#cb121-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(gatos))</span>
+<span id="cb121-6"><a href="#cb121-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(gatos))</span>
+<span id="cb121-7"><a href="#cb121-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gatos)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'list'&gt;
+2340003240960
+['Singapur', 'Siberiano', 'Siamés', 'Ragdoll', 'Persa']
+&lt;class 'list'&gt;
+2339996503872
+['Singapur', 'Siberiano', 'Siamés', 'Ragdoll', 'Persa']</code></pre>
+</div>
+</div>
+<p>Observa que el identificador en memoria de cada lista es diferente por lo que se trata de listas diferentes.</p>
+</section>
+<section id="copiando-con-el-constructor" class="level3" data-number="9.9.3">
+<h3 data-number="9.9.3" class="anchored" data-anchor-id="copiando-con-el-constructor"><span class="header-section-number">9.9.3</span> Copiando con el constructor</h3>
+<p>La función <code>list()</code> transforma un objeto <em>iterable</em> en una lista. La podemos usar para copiar una lista como sigue:</p>
+<div id="cell-130" class="cell" data-tags="[]" data-execution_count="80">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb123"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a>gatitos <span class="op">=</span> <span class="bu">list</span>(gatos)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-131" class="cell" data-tags="[]" data-execution_count="82">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb124"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(gatitos))</span>
+<span id="cb124-2"><a href="#cb124-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(gatitos))</span>
+<span id="cb124-3"><a href="#cb124-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gatitos)</span>
+<span id="cb124-4"><a href="#cb124-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb124-5"><a href="#cb124-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(gatos))</span>
+<span id="cb124-6"><a href="#cb124-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(gatos))</span>
+<span id="cb124-7"><a href="#cb124-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gatos)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'list'&gt;
+2340003294272
+['Singapur', 'Siberiano', 'Siamés', 'Ragdoll', 'Persa']
+&lt;class 'list'&gt;
+2339996503872
+['Singapur', 'Siberiano', 'Siamés', 'Ragdoll', 'Persa']</code></pre>
+</div>
+</div>
+<p>Observa que el identificador en memoria de cada lista es diferente por lo que se trata de listas diferentes.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Nota.
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Lo que sucede en este último caso, es que se ejecuta el constructor de la clase <code>&lt;class 'list'&gt;</code>, el cual recibe un objeto iterable (lista, tupla, diccionario, entre otros), copia todos los elementos de ese iterable y los pone en una lista que se almacena en un espacio en memoria diferente al iterable original. Esto lo realiza el constructor de la clase <code>list</code> y es una característica de la Programación Orientada a Objetos.</p>
+</div>
+</div>
+</section>
+<section id="copiando-con-la-biblioteca-copy" class="level3" data-number="9.9.4">
+<h3 data-number="9.9.4" class="anchored" data-anchor-id="copiando-con-la-biblioteca-copy"><span class="header-section-number">9.9.4</span> Copiando con la biblioteca <code>copy</code></h3>
+<p>La biblioteca <strong>copy</strong> de Python ofrece herramientas para copiado de objetos. Veamos un ejemplo:</p>
+<div id="cell-134" class="cell" data-tags="[]" data-execution_count="83">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb126"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importamos la biblioteca copy</span></span>
+<span id="cb126-2"><a href="#cb126-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> copy</span>
+<span id="cb126-3"><a href="#cb126-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb126-4"><a href="#cb126-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Usamos la función copy()</span></span>
+<span id="cb126-5"><a href="#cb126-5" aria-hidden="true" tabindex="-1"></a>gatitos <span class="op">=</span> copy.copy(gatos)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-135" class="cell" data-tags="[]" data-execution_count="84">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb127"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb127-1"><a href="#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(gatitos))</span>
+<span id="cb127-2"><a href="#cb127-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(gatitos))</span>
+<span id="cb127-3"><a href="#cb127-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gatitos)</span>
+<span id="cb127-4"><a href="#cb127-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb127-5"><a href="#cb127-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(gatos))</span>
+<span id="cb127-6"><a href="#cb127-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(gatos))</span>
+<span id="cb127-7"><a href="#cb127-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gatos)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'list'&gt;
+2340003010880
+['Singapur', 'Siberiano', 'Siamés', 'Ragdoll', 'Persa']
+&lt;class 'list'&gt;
+2339996503872
+['Singapur', 'Siberiano', 'Siamés', 'Ragdoll', 'Persa']</code></pre>
+</div>
+</div>
+<p>Observa que el identificador en memoria de cada lista es diferente por lo que se trata de listas diferentes.</p>
+<p>Más información sobre el uso de esta biblioteca se puede ver en <a href="https://docs.python.org/3/library/copy.html" target="_blank" rel="noopener">Shallow and deep copy operations</a></p>
+</section>
+</section>
+<section id="listas-mas-complejas." class="level2" data-number="9.10">
+<h2 data-number="9.10" class="anchored" data-anchor-id="listas-mas-complejas."><span class="header-section-number">9.10</span> Listas mas complejas.</h2>
+<p>Las listas pueden contener cualquier tipo de dato de Python e incluso tipos construidos por el usuario. Veamos el siguiente ejemplo:</p>
+<div id="cell-138" class="cell" data-execution_count="85">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb129"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], <span class="dv">5</span><span class="op">+</span><span class="ot">1j</span>, <span class="st">'lista muy compleja'</span>]</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Observa que: * los primeros tres elementos, <code>lst[0]</code>, <code>lst[1]</code> y <code>lst[2]</code> son de tipo <code>str</code>, * el cuarto elemento, <code>lst[3]</code>, es una lista, * el quinto elemento, <code>lst[4]</code>, es un número complejo, * y el último elemento, <code>lst[5]</code>, es una cadena.</p>
+<p>Podemos usar los nombres <code>lst[i]</code>, con <code>i</code> =0,1,2,3,4,5, como nombres de variables.</p>
+<p>El contenido y tipo de cada elemento se puede conocer usando esos nombres:</p>
+<div id="cell-140" class="cell" data-execution_count="86">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb130"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb130-1"><a href="#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lst[<span class="dv">0</span>], <span class="bu">type</span>(lst[<span class="dv">0</span>]))</span>
+<span id="cb130-2"><a href="#cb130-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lst[<span class="dv">1</span>], <span class="bu">type</span>(lst[<span class="dv">1</span>]))</span>
+<span id="cb130-3"><a href="#cb130-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lst[<span class="dv">2</span>], <span class="bu">type</span>(lst[<span class="dv">2</span>]))</span>
+<span id="cb130-4"><a href="#cb130-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lst[<span class="dv">3</span>], <span class="bu">type</span>(lst[<span class="dv">3</span>]))</span>
+<span id="cb130-5"><a href="#cb130-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lst[<span class="dv">4</span>], <span class="bu">type</span>(lst[<span class="dv">4</span>]))</span>
+<span id="cb130-6"><a href="#cb130-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lst[<span class="dv">5</span>], <span class="bu">type</span>(lst[<span class="dv">5</span>]))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>a &lt;class 'str'&gt;
+b &lt;class 'str'&gt;
+c &lt;class 'str'&gt;
+[1, 2, 3] &lt;class 'list'&gt;
+(5+1j) &lt;class 'complex'&gt;
+lista muy compleja &lt;class 'str'&gt;</code></pre>
+</div>
+</div>
+<p>Podemos acceder a los elementos individuales de los objetos que son más complejos. Por ejemplo, para <code>lst[3]</code> y <code>lst[5]</code> que son una lista y una cadena respectivamente, hacemos lo siguiente:</p>
+<div id="cell-142" class="cell" data-execution_count="88">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb132"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb132-1"><a href="#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Segundo elemento de la lista 'lst[3]'</span></span>
+<span id="cb132-2"><a href="#cb132-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lst[<span class="dv">3</span>][<span class="dv">1</span>], <span class="bu">type</span>(lst[<span class="dv">3</span>][<span class="dv">1</span>]))</span>
+<span id="cb132-3"><a href="#cb132-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-4"><a href="#cb132-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Cuarto elemento de la cadena 'lst[5]'</span></span>
+<span id="cb132-5"><a href="#cb132-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lst[<span class="dv">5</span>][<span class="dv">3</span>], <span class="bu">type</span>(lst[<span class="dv">5</span>][<span class="dv">3</span>]))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2 &lt;class 'int'&gt;
+t &lt;class 'str'&gt;</code></pre>
+</div>
+</div>
+<p>Otro ejemplo:</p>
+<div id="cell-144" class="cell" data-tags="[]" data-execution_count="89">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb134"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb134-1"><a href="#cb134-1" aria-hidden="true" tabindex="-1"></a>superlista <span class="op">=</span> [<span class="st">'México'</span>, <span class="fl">3.141592</span>, <span class="dv">20</span>, <span class="ot">1j</span>, [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="st">'lista'</span>]]</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-145" class="cell" data-tags="[]" data-execution_count="90">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb135"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb135-1"><a href="#cb135-1" aria-hidden="true" tabindex="-1"></a>superlista</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="90">
+<pre><code>['México', 3.141592, 20, 1j, [1, 2, 3, 'lista']]</code></pre>
+</div>
+</div>
+<div id="cell-146" class="cell" data-tags="[]" data-execution_count="91">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb137"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb137-1"><a href="#cb137-1" aria-hidden="true" tabindex="-1"></a>superlista[<span class="dv">0</span>] <span class="co"># El elemento 0 de la lista</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="91">
+<pre><code>'México'</code></pre>
+</div>
+</div>
+<div id="cell-147" class="cell" data-tags="[]" data-execution_count="92">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb139"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb139-1"><a href="#cb139-1" aria-hidden="true" tabindex="-1"></a>superlista[<span class="dv">4</span>] <span class="co"># El elemento 4 de la lista (este elemento es otra lista)</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="92">
+<pre><code>[1, 2, 3, 'lista']</code></pre>
+</div>
+</div>
+<div id="cell-148" class="cell" data-tags="[]" data-execution_count="93">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb141"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb141-1"><a href="#cb141-1" aria-hidden="true" tabindex="-1"></a>superlista[<span class="dv">4</span>][<span class="dv">2</span>] <span class="co"># El elemento 2 del elemento 4 de la lista original</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="93">
+<pre><code>3</code></pre>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../notebooks/08_control_de_flujo.html" class="pagination-link" aria-label="Control de flujo.">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Control de flujo.</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../notebooks/10_tuplas.html" class="pagination-link" aria-label="Estructura de datos: tuplas.">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Estructura de datos: tuplas.</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -644,7 +644,7 @@
     "href": "notebooks/05_cadenas.html#construcción-de-cadenas",
     "title": "5  Cadenas.",
     "section": "5.6 Construcción de cadenas",
-    "text": "5.6 Construcción de cadenas\nExisten varias maneras de construir cadenas, a continuación se revisan algunos ejemplos.\n\n5.6.1 Usando operaciones básicas.\nLos operadores: + y * están definidos para las cadenas.\nVeamos el siguiente ejemplo:\n\nfrase1 = \"Somos aquello en lo que creemos\"\nfrase2 = \"aún sin darnos cuenta\"\n\n# Concatenación de cadenas\nfrase_total = frase1 + ', ' + frase2 + '.'\n\nprint(frase_total)\n\nSomos aquello en lo que creemos, aún sin darnos cuenta.\n\n\nEn el siguiente ejemplo creamos una cadena de 60 guiones - usando el operador *:\n\nprint('-' * 60)\n\n------------------------------------------------------------\n\n\nEscribimos la frase_total centrada en 60 espacios y entre dos líneas:\n\nprint('-' * 60)\nprint(frase_total.center(60))\nprint('-' * 60)\n\n------------------------------------------------------------\n  Somos aquello en lo que creemos, aún sin darnos cuenta.   \n------------------------------------------------------------\n\n\nPodemos agregar al autor de la frase:\n\nprint('-' * 60)\nprint(frase_total.center(60))\nprint(\"Carlos Monsivais\".rjust(60))\nprint('-' * 60)\n\n------------------------------------------------------------\n  Somos aquello en lo que creemos, aún sin darnos cuenta.   \n                                            Carlos Monsivais\n------------------------------------------------------------\n\n\nObserva que aplicamos el método rjust() para justificar a la derecha, y lo hicimos directamente en el momento de la creación de la cadena \"Carlos Monsivais\" (al vuelo).\n\n\n5.6.2 Concatenación y casting\nVamos a crear la siguiente cadena: Pedro Páramo tiene 15 años y pesa 70.5 kg.\nUsaremos el operador + y contruiremos la cadena usando algunas variables; convertiremos algunas variables a tipo str:\n\n# Definimos las siguientes variables\nedad = 15\nnombre = 'Pedro'\napellido = 'Páramo'\npeso = 70.5\n\n# Construimos la cadena usando el operador '+' y la función 'str()' \ndatos = nombre + apellido + 'tiene' + str(15) + 'años y pesa' + str(70.5) + 'kg'\n\nprint(datos)\n\nPedroPáramotiene15años y pesa70.5kg\n\n\nPara agregar espacios es necesario hacerlo de manera explícita como sigue:\n\ndatos = nombre + ' ' + apellido + ' tiene ' + str(15) + ' años y pesa ' + str(70.5) + ' kg'\nprint(datos)\n\nPedro Páramo tiene 15 años y pesa 70.5 kg\n\n\n\n\n5.6.3 Método str.format()\nEste método permite sustituir variables en los lugares indicados por {}:\n\ndatos = '{} {} tiene {} años y pesa {} kg'.format(nombre, apellido, edad, peso)\nprint(datos)\n\nPedro Páramo tiene 15 años y pesa 70.5 kg\n\n\nObserva que aplicamos el método format() a la cadena en construcción.\n\n\n5.6.4 Cadenas formateadas (f-string, formatted string literals)\nEste tipo de cadenas permite sustituir variables en los lugares indicados:\n\ndatos = f'{nombre} {apellido} tiene {edad} años y pesa {peso} kg'\nprint(datos)\n\nPedro Páramo tiene 15 años y pesa 70.5 kg\n\n\nObserva que agregamos una f al principio de la definición de la cadena para indicar que se trata de una cadena formateada.\n\n\n5.6.5 Cadenas usando el método str.join()\nDada una cadena que funciona como separador, este método recibe una estructura de datos que contiene las cadenas que se van a unir y que estarán separados por la cadena inicial:\n\ndatos = \" \".join([nombre, apellido, 'tiene', str(15), 'años y pesa', str(70.5), 'kg'])\nprint(datos)\n\nPedro Páramo tiene 15 años y pesa 70.5 kg\n\n\nEn el ejemplo anterior la cadena inicial es un espacio \" \" y junta todos los elementos que se dan entre corchetes []. El uso de corchetes construye una lista, que es un tipo de dato que se describe en la Capítulo 7.",
+    "text": "5.6 Construcción de cadenas\nExisten varias maneras de construir cadenas, a continuación se revisan algunos ejemplos.\n\n5.6.1 Usando operaciones básicas.\nLos operadores: + y * están definidos para las cadenas.\nVeamos el siguiente ejemplo:\n\nfrase1 = \"Somos aquello en lo que creemos\"\nfrase2 = \"aún sin darnos cuenta\"\n\n# Concatenación de cadenas\nfrase_total = frase1 + ', ' + frase2 + '.'\n\nprint(frase_total)\n\nSomos aquello en lo que creemos, aún sin darnos cuenta.\n\n\nEn el siguiente ejemplo creamos una cadena de 60 guiones - usando el operador *:\n\nprint('-' * 60)\n\n------------------------------------------------------------\n\n\nEscribimos la frase_total centrada en 60 espacios y entre dos líneas:\n\nprint('-' * 60)\nprint(frase_total.center(60))\nprint('-' * 60)\n\n------------------------------------------------------------\n  Somos aquello en lo que creemos, aún sin darnos cuenta.   \n------------------------------------------------------------\n\n\nPodemos agregar al autor de la frase:\n\nprint('-' * 60)\nprint(frase_total.center(60))\nprint(\"Carlos Monsivais\".rjust(60))\nprint('-' * 60)\n\n------------------------------------------------------------\n  Somos aquello en lo que creemos, aún sin darnos cuenta.   \n                                            Carlos Monsivais\n------------------------------------------------------------\n\n\nObserva que aplicamos el método rjust() para justificar a la derecha, y lo hicimos directamente en el momento de la creación de la cadena \"Carlos Monsivais\" (al vuelo).\n\n\n5.6.2 Concatenación y casting\nVamos a crear la siguiente cadena: Pedro Páramo tiene 15 años y pesa 70.5 kg.\nUsaremos el operador + y contruiremos la cadena usando algunas variables; convertiremos algunas variables a tipo str:\n\n# Definimos las siguientes variables\nedad = 15\nnombre = 'Pedro'\napellido = 'Páramo'\npeso = 70.5\n\n# Construimos la cadena usando el operador '+' y la función 'str()' \ndatos = nombre + apellido + 'tiene' + str(15) + 'años y pesa' + str(70.5) + 'kg'\n\nprint(datos)\n\nPedroPáramotiene15años y pesa70.5kg\n\n\nPara agregar espacios es necesario hacerlo de manera explícita como sigue:\n\ndatos = nombre + ' ' + apellido + ' tiene ' + str(15) + ' años y pesa ' + str(70.5) + ' kg'\nprint(datos)\n\nPedro Páramo tiene 15 años y pesa 70.5 kg\n\n\n\n\n5.6.3 Método str.format()\nEste método permite sustituir variables en los lugares indicados por {}:\n\ndatos = '{} {} tiene {} años y pesa {} kg'.format(nombre, apellido, edad, peso)\nprint(datos)\n\nPedro Páramo tiene 15 años y pesa 70.5 kg\n\n\nObserva que aplicamos el método format() a la cadena en construcción.\n\n\n5.6.4 Cadenas formateadas (f-string, formatted string literals)\nEste tipo de cadenas permite sustituir variables en los lugares indicados:\n\ndatos = f'{nombre} {apellido} tiene {edad} años y pesa {peso} kg'\nprint(datos)\n\nPedro Páramo tiene 15 años y pesa 70.5 kg\n\n\nObserva que agregamos una f al principio de la definición de la cadena para indicar que se trata de una cadena formateada.\n\n\n5.6.5 Cadenas usando el método str.join()\nDada una cadena que funciona como separador, este método recibe una estructura de datos que contiene las cadenas que se van a unir y que estarán separados por la cadena inicial:\n\ndatos = \" \".join([nombre, apellido, 'tiene', str(15), 'años y pesa', str(70.5), 'kg'])\nprint(datos)\n\nPedro Páramo tiene 15 años y pesa 70.5 kg\n\n\nEn el ejemplo anterior la cadena inicial es un espacio \" \" y junta todos los elementos que se dan entre corchetes []. El uso de corchetes construye una lista, que es un tipo de dato que se describe en la Capítulo 9.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Cadenas.</span>"
     ]
@@ -654,7 +654,7 @@
     "href": "notebooks/05_cadenas.html#formato-de-la-salida.",
     "title": "5  Cadenas.",
     "section": "5.7 Formato de la salida.",
-    "text": "5.7 Formato de la salida.\nEs posible utilizar algunos modificadores en la definición de una cadena para que se imprima con un cierto formato. Esto aplica para cadenas formateadas y para el método format. Veamos algunos ejemplos.\n\n5.7.1 Texto.\n\n# Impresión del nombre en 30 espacios de texto\nsdef = f'{nombre:30s}'  # Alineación a la izq. por omisión\nsder = f'{nombre:&gt;30s}' # Alineación a la der.\nsizq = f'{nombre:&lt;30s}' # Alineación a la izq.\nscen = f'{nombre:^30s}' # Centrada\n\n\nprint(sdef)\nprint(sder)\nprint(sizq)\nprint(scen)\n\nPedro                         \n                         Pedro\nPedro                         \n            Pedro             \n\n\nAhora agregamos las cadenas ---| y |--- para delimitar los 30 espacios.\n\n# Impresión del nombre en 30 espacios de texto\nsdef = f'---|{nombre:30s}|---'  # Alineación a la izq. por omisión\nsder = f'---|{nombre:&gt;30s}|---' # Alineación a la der.\nsizq = f'---|{nombre:&lt;30s}|---' # Alineación a la izq.\nscen = f'---|{nombre:^30s}|---' # Centrada\n\nprint(sdef)\nprint(sder)\nprint(sizq)\nprint(scen)\n\n---|Pedro                         |---\n---|                         Pedro|---\n---|Pedro                         |---\n---|            Pedro             |---\n\n\n\n\n\n\n\n\nNotaNota.\n\n\n\nObserva que en el ejemplo anterior se usó una s al final del número 30, esto es para indicar que la variable nombre es de tipo cadena. Para enteros en base diez se usa una d y para flotantes una f. Estas terminaciones no son necesarias aunque es conveniente agregarlas para hacer el código más claro y que no haya errores de formato.\nMás información la puedes consultar en:  Format Specification Mini-Language \n\n\n\n\n5.7.2 Enteros\nPara números enteros podemos definir el número de espacios y alinear la salida:\n\n# Este es un formato de número entero que usa _ para separar los miles\nn1 = 5_521_345_678\nn2 = 7_712_932_143\nn3 = 8_123_535_098\n\nidef = f'---|{n1:15d}|---'  # alineación a la der. por omisión\nicen = f'---|{n1:^15d}|---' # centrado\niizq = f'---|{n2:&lt;15d}|---' # alineación a la izq.\nider = f'---|{n3:&gt;15d}|---' # alineación a la der.\n\nprint(idef, icen, iizq, ider, sep='\\n')\n\n---|     5521345678|---\n---|  5521345678   |---\n---|7712932143     |---\n---|     8123535098|---\n\n\nTambién es posible usar , como separador de los miles en la salida, veamos:\n\nidef = f'---|{n1:15,d}|---'  # alineación a la der. por omisión\nicen = f'---|{n1:^15,d}|---' # centrado\niizq = f'---|{n2:&lt;15,d}|---' # alineación a la izq.\nider = f'---|{n3:&gt;15,d}|---' # alineación a la der.\n\nprint(idef, icen, iizq, ider, sep='\\n')\n\n---|  5,521,345,678|---\n---| 5,521,345,678 |---\n---|7,712,932,143  |---\n---|  8,123,535,098|---\n\n\nY se puede completar con 0’s los espacios en blanco:\n\nidef = f'---|{n1:015,d}|---'  # alineación a la der. por omisión\nicen = f'---|{n1:^015,d}|---' # centrado\niizq = f'---|{n2:&lt;015,d}|---' # alineación a la izq.\nider = f'---|{n3:&gt;015,d}|---' # alineación a la der.\n\nprint(idef, icen, iizq, ider, sep='\\n')\n\n---|005,521,345,678|---\n---|05,521,345,6780|---\n---|7,712,932,14300|---\n---|008,123,535,098|---\n\n\nSe puede generar la salida de un entero en las bases decimal, hexadecimal, octal o binaria usando d, x, o y b respectivamente.\n\nejemplo = 16\nprint(f'int: {ejemplo:d}')\nprint(f'hex: {ejemplo:x}')\nprint(f'oct: {ejemplo:o}')\nprint(f'bin: {ejemplo:b}')\n\nint: 16\nhex: 10\noct: 20\nbin: 10000\n\n\n\n\n5.7.3 Flotantes\nEn el caso de números flotantes se puede definir el número de decimales en la salida:\n\n# Valor aproximado de pi\npi = 3 + 1/7\n\n# Cadena con 5 decimales de pi:\nspi = f'{pi:.5f}'\n\nprint('El valor de PI es aproximadamente', spi) \n\nEl valor de PI es aproximadamente 3.14286\n\n\nY también es posible definir el número total de espacios que incluyen la parte entera, el punto decimal y el número de decimales:\n\nnumero_flotante_grande = 213.2131255345435643\n\n# Cadena con 15 espacios totales y 3 decimales\nsnumero = f'{numero_flotante_grande:15.3f}'\n\nprint(f'---|{snumero}|---')\n\n---|        213.213|---\n\n\nAl igual que las cadenas y los enteros, también se puede usar una alineación en la salida y rellenar con ceros los espacios en blanco:\n\nsnum_cen = f'{numero_flotante_grande:^015.3f}'\nsnum_izq = f'{numero_flotante_grande:&lt;015.3f}'\nsnum_der = f'{numero_flotante_grande:&gt;015.3f}'\n\nprint(snum_cen)\nprint(snum_izq)\nprint(snum_der)\n\n0000213.2130000\n213.21300000000\n00000000213.213\n\n\n\n\n5.7.4 Usando el método format()\nUsando el método str.format(), también podemos formatear la salida. Aplica exactamente lo mismo que con las f-string. Por ejemplo:\n\n# Definimos dos números enteros\nvotos_a_favor = 42_572_654   \nvotos_en_contra = 43_132_495 \n\n# Realizamos algunas operaciones\ntotal_de_votos = votos_a_favor + votos_en_contra\nporcentaje = votos_a_favor / total_de_votos\n\n# Revisamos el contenido y tipo de los números\nprint(votos_a_favor, type(votos_a_favor))\nprint(votos_en_contra, type(votos_en_contra))\nprint(total_de_votos, type(total_de_votos))\nprint(porcentaje, type(porcentaje))\n\n# Realizamos la impresión usando un formato\nprint('{:^20d} votos a favor ({:^10.2%})'.format(votos_a_favor, porcentaje))\n\n42572654 &lt;class 'int'&gt;\n43132495 &lt;class 'int'&gt;\n85705149 &lt;class 'int'&gt;\n0.496733912684756 &lt;class 'float'&gt;\n      42572654       votos a favor (  49.67%  )\n\n\nObserva que se imprime votos_a_favor en 20 espacios y alineado al centro. También se imprime porcentaje, que es un número flotante, usando 10 espacios que incluyen el punto, dos decimales y el símbolo %. El uso de % convierte el número flotante en un porcentaje (multiplica por 100) automáticamente e imprime el símbolo.\nSe pueden usar números para identificar los argumentos de str.format():\n\nej1 = '{0} y {1}'.format('el huevo', 'la gallina')\nej2 = '{1} y {0:^20s}'.format('el huevo', 'la gallina')\n\nprint(ej1)\nprint(ej2)\n\nel huevo y la gallina\nla gallina y       el huevo      \n\n\nSe le puede dar nombre a los argumentos para que sea más fácil entender la salida\n\nej3 = \"Look {sujeto}, there's an {objeto} up in the sky\".format(sujeto='mummy', objeto='aeroplane')\n\nprint(ej3)\n\nLook mummy, there's an aeroplane up in the sky\n\n\nUsar un nombre en los argumentos de str.format() permite ponerlos en cualquier orden:\n\nej4 = \"Look {sujeto}, there's an {objeto} up in the sky\".format(objeto='aeroplane', sujeto='mummy')\n\nprint(ej4)\n\nLook mummy, there's an aeroplane up in the sky\n\n\nSe pueden combinar números con nombres de argumento:\n\nej5 = 'El {0}, el {1}, y el {otro}.'.format('Bueno', 'Malo', otro='Feo')\n\nprint(ej5)\n\nEl Bueno, el Malo, y el Feo.\n\n\nOtro ejemplo de alineación (la declaración for la revisaremos en la Capítulo 6:\n\nfor x in range(1, 11):\n    print('{0:2d} {1:3d} {2:4d}'.format(x, x*x, x*x*x))\n\n 1   1    1\n 2   4    8\n 3   9   27\n 4  16   64\n 5  25  125\n 6  36  216\n 7  49  343\n 8  64  512\n 9  81  729\n10 100 1000\n\n\nPara más información véase  Format String Syntax \n\n\n5.7.5 Método antiguo para formateo de la salida.\nSe puede seguir usando la forma antigua para formatearla salida, la cual es heredada del lengueaje C.\n\nviejo = 'El valor aproximado de pi es %10.6f.' % pi\n\nprint(viejo)\n\nEl valor aproximado de pi es   3.142857.",
+    "text": "5.7 Formato de la salida.\nEs posible utilizar algunos modificadores en la definición de una cadena para que se imprima con un cierto formato. Esto aplica para cadenas formateadas y para el método format. Veamos algunos ejemplos.\n\n5.7.1 Texto.\n\n# Impresión del nombre en 30 espacios de texto\nsdef = f'{nombre:30s}'  # Alineación a la izq. por omisión\nsder = f'{nombre:&gt;30s}' # Alineación a la der.\nsizq = f'{nombre:&lt;30s}' # Alineación a la izq.\nscen = f'{nombre:^30s}' # Centrada\n\n\nprint(sdef)\nprint(sder)\nprint(sizq)\nprint(scen)\n\nPedro                         \n                         Pedro\nPedro                         \n            Pedro             \n\n\nAhora agregamos las cadenas ---| y |--- para delimitar los 30 espacios.\n\n# Impresión del nombre en 30 espacios de texto\nsdef = f'---|{nombre:30s}|---'  # Alineación a la izq. por omisión\nsder = f'---|{nombre:&gt;30s}|---' # Alineación a la der.\nsizq = f'---|{nombre:&lt;30s}|---' # Alineación a la izq.\nscen = f'---|{nombre:^30s}|---' # Centrada\n\nprint(sdef)\nprint(sder)\nprint(sizq)\nprint(scen)\n\n---|Pedro                         |---\n---|                         Pedro|---\n---|Pedro                         |---\n---|            Pedro             |---\n\n\n\n\n\n\n\n\nNotaNota.\n\n\n\nObserva que en el ejemplo anterior se usó una s al final del número 30, esto es para indicar que la variable nombre es de tipo cadena. Para enteros en base diez se usa una d y para flotantes una f. Estas terminaciones no son necesarias aunque es conveniente agregarlas para hacer el código más claro y que no haya errores de formato.\nMás información la puedes consultar en:  Format Specification Mini-Language \n\n\n\n\n5.7.2 Enteros\nPara números enteros podemos definir el número de espacios y alinear la salida:\n\n# Este es un formato de número entero que usa _ para separar los miles\nn1 = 5_521_345_678\nn2 = 7_712_932_143\nn3 = 8_123_535_098\n\nidef = f'---|{n1:15d}|---'  # alineación a la der. por omisión\nicen = f'---|{n1:^15d}|---' # centrado\niizq = f'---|{n2:&lt;15d}|---' # alineación a la izq.\nider = f'---|{n3:&gt;15d}|---' # alineación a la der.\n\nprint(idef, icen, iizq, ider, sep='\\n')\n\n---|     5521345678|---\n---|  5521345678   |---\n---|7712932143     |---\n---|     8123535098|---\n\n\nTambién es posible usar , como separador de los miles en la salida, veamos:\n\nidef = f'---|{n1:15,d}|---'  # alineación a la der. por omisión\nicen = f'---|{n1:^15,d}|---' # centrado\niizq = f'---|{n2:&lt;15,d}|---' # alineación a la izq.\nider = f'---|{n3:&gt;15,d}|---' # alineación a la der.\n\nprint(idef, icen, iizq, ider, sep='\\n')\n\n---|  5,521,345,678|---\n---| 5,521,345,678 |---\n---|7,712,932,143  |---\n---|  8,123,535,098|---\n\n\nY se puede completar con 0’s los espacios en blanco:\n\nidef = f'---|{n1:015,d}|---'  # alineación a la der. por omisión\nicen = f'---|{n1:^015,d}|---' # centrado\niizq = f'---|{n2:&lt;015,d}|---' # alineación a la izq.\nider = f'---|{n3:&gt;015,d}|---' # alineación a la der.\n\nprint(idef, icen, iizq, ider, sep='\\n')\n\n---|005,521,345,678|---\n---|05,521,345,6780|---\n---|7,712,932,14300|---\n---|008,123,535,098|---\n\n\nSe puede generar la salida de un entero en las bases decimal, hexadecimal, octal o binaria usando d, x, o y b respectivamente.\n\nejemplo = 16\nprint(f'int: {ejemplo:d}')\nprint(f'hex: {ejemplo:x}')\nprint(f'oct: {ejemplo:o}')\nprint(f'bin: {ejemplo:b}')\n\nint: 16\nhex: 10\noct: 20\nbin: 10000\n\n\n\n\n5.7.3 Flotantes\nEn el caso de números flotantes se puede definir el número de decimales en la salida:\n\n# Valor aproximado de pi\npi = 3 + 1/7\n\n# Cadena con 5 decimales de pi:\nspi = f'{pi:.5f}'\n\nprint('El valor de PI es aproximadamente', spi) \n\nEl valor de PI es aproximadamente 3.14286\n\n\nY también es posible definir el número total de espacios que incluyen la parte entera, el punto decimal y el número de decimales:\n\nnumero_flotante_grande = 213.2131255345435643\n\n# Cadena con 15 espacios totales y 3 decimales\nsnumero = f'{numero_flotante_grande:15.3f}'\n\nprint(f'---|{snumero}|---')\n\n---|        213.213|---\n\n\nAl igual que las cadenas y los enteros, también se puede usar una alineación en la salida y rellenar con ceros los espacios en blanco:\n\nsnum_cen = f'{numero_flotante_grande:^015.3f}'\nsnum_izq = f'{numero_flotante_grande:&lt;015.3f}'\nsnum_der = f'{numero_flotante_grande:&gt;015.3f}'\n\nprint(snum_cen)\nprint(snum_izq)\nprint(snum_der)\n\n0000213.2130000\n213.21300000000\n00000000213.213\n\n\n\n\n5.7.4 Usando el método format()\nUsando el método str.format(), también podemos formatear la salida. Aplica exactamente lo mismo que con las f-string. Por ejemplo:\n\n# Definimos dos números enteros\nvotos_a_favor = 42_572_654   \nvotos_en_contra = 43_132_495 \n\n# Realizamos algunas operaciones\ntotal_de_votos = votos_a_favor + votos_en_contra\nporcentaje = votos_a_favor / total_de_votos\n\n# Revisamos el contenido y tipo de los números\nprint(votos_a_favor, type(votos_a_favor))\nprint(votos_en_contra, type(votos_en_contra))\nprint(total_de_votos, type(total_de_votos))\nprint(porcentaje, type(porcentaje))\n\n# Realizamos la impresión usando un formato\nprint('{:^20d} votos a favor ({:^10.2%})'.format(votos_a_favor, porcentaje))\n\n42572654 &lt;class 'int'&gt;\n43132495 &lt;class 'int'&gt;\n85705149 &lt;class 'int'&gt;\n0.496733912684756 &lt;class 'float'&gt;\n      42572654       votos a favor (  49.67%  )\n\n\nObserva que se imprime votos_a_favor en 20 espacios y alineado al centro. También se imprime porcentaje, que es un número flotante, usando 10 espacios que incluyen el punto, dos decimales y el símbolo %. El uso de % convierte el número flotante en un porcentaje (multiplica por 100) automáticamente e imprime el símbolo.\nSe pueden usar números para identificar los argumentos de str.format():\n\nej1 = '{0} y {1}'.format('el huevo', 'la gallina')\nej2 = '{1} y {0:^20s}'.format('el huevo', 'la gallina')\n\nprint(ej1)\nprint(ej2)\n\nel huevo y la gallina\nla gallina y       el huevo      \n\n\nSe le puede dar nombre a los argumentos para que sea más fácil entender la salida\n\nej3 = \"Look {sujeto}, there's an {objeto} up in the sky\".format(sujeto='mummy', objeto='aeroplane')\n\nprint(ej3)\n\nLook mummy, there's an aeroplane up in the sky\n\n\nUsar un nombre en los argumentos de str.format() permite ponerlos en cualquier orden:\n\nej4 = \"Look {sujeto}, there's an {objeto} up in the sky\".format(objeto='aeroplane', sujeto='mummy')\n\nprint(ej4)\n\nLook mummy, there's an aeroplane up in the sky\n\n\nSe pueden combinar números con nombres de argumento:\n\nej5 = 'El {0}, el {1}, y el {otro}.'.format('Bueno', 'Malo', otro='Feo')\n\nprint(ej5)\n\nEl Bueno, el Malo, y el Feo.\n\n\nOtro ejemplo de alineación (la declaración for la revisaremos en la Capítulo 8:\n\nfor x in range(1, 11):\n    print('{0:2d} {1:3d} {2:4d}'.format(x, x*x, x*x*x))\n\n 1   1    1\n 2   4    8\n 3   9   27\n 4  16   64\n 5  25  125\n 6  36  216\n 7  49  343\n 8  64  512\n 9  81  729\n10 100 1000\n\n\nPara más información véase  Format String Syntax \n\n\n5.7.5 Método antiguo para formateo de la salida.\nSe puede seguir usando la forma antigua para formatearla salida, la cual es heredada del lengueaje C.\n\nviejo = 'El valor aproximado de pi es %10.6f.' % pi\n\nprint(viejo)\n\nEl valor aproximado de pi es   3.142857.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Cadenas.</span>"
     ]
@@ -1184,7 +1184,7 @@
     "href": "notebooks/07_archivos.html#gestores-de-contexto.",
     "title": "7  Gestión de archivos.",
     "section": "7.9 Gestores de contexto.",
-    "text": "7.9 Gestores de contexto.\nLos gestores de contexto en Python son una manera de gestionar recursos de forma eficiente y segura.\nSe utilizan con la palabra clave with, que garantiza que ciertos recursos se inicialicen y liberen correctamente, incluso si ocurre una excepción.\nEstos recursos pueden incluir archivos, conexiones de red, bloqueos de threads, etc.\nPor ejemplo:\n\nwith open('contexto_ejemplo', 'w') as archivo_abierto:\n    archivo_abierto.write('En este ejemplo, todo se realiza con un gestor de contexto.')\n\nLo que realiza la operación anterior es:\n\nAbre el archivo contexto_ejemplo.\nEscribe algo en el archivo,\nCierra el archivo. Si ocurre algún error mientras se escribe en el archivo, entonces se intenta cerrar el archivo.\n\nEl código es equivalente a:\narchivo_abierto = open('contexto_ejemplo', 'w')\ntry:\n    archivo_abierto.write('En este ... contexto!')\nfinally:\n    archivo_abierto.close()\n\n\n\n\n\n\nTip\n\n\n\nEsta forma de abrir un archivo, manipular su información y cerrarlo, usando un gestor de contexto (with), es la más recomendada.\n\n\nEs posible implemetar nuestros propios gestores de contexto. Para ello se requiere un conocimiento más profundo de Programación Orientada a Objetos.\n\n\n\n\n\n\nNotaNota.\n\n\n\nEn el ejemplo anterior se usó la construcción try: … finally: que se usa para gestionar errores. Esto se revisará en detalle en la ?sec-errores_excepciones.\n\n\nEl propósito de un gestor de contexto es asegurarse de que las acciones de “entrada” y “salida” de un contexto se manejen adecuadamente. El contexto se refiere a cualquier bloque de código que necesita realizar alguna configuración al inicio (como abrir un archivo o adquirir un recurso) y luego limpiar al final (como cerrar el archivo o liberar el recurso).\nVentajas de los gestores de contexto.\n\nCódigo más limpio: No tienes que preocuparte por cerrar recursos manualmente.\nManejo seguro de excepciones: Incluso si ocurre una excepción dentro del bloque with, el recurso se libera correctamente.\nLegibilidad: El código es más claro en cuanto a cuándo comienza y termina el uso de un recurso.\n\n¿Cómo funcionan?\nLos gestores de contexto implementan los métodos especiales __enter__ y __exit__: - __enter__(): Este método es llamado al inicio del bloque with. Se utiliza para establecer el recurso o la configuración inicial. - __exit__(exc_type, exc_value, traceback): Este método es llamado al final del bloque with, independientemente de si se produjo una excepción. Se utiliza para liberar o limpiar el recurso.",
+    "text": "7.9 Gestores de contexto.\nLos gestores de contexto en Python son una manera de gestionar recursos de forma eficiente y segura.\nSe utilizan con la palabra clave with, que garantiza que ciertos recursos se inicialicen y liberen correctamente, incluso si ocurre una excepción.\nEstos recursos pueden incluir archivos, conexiones de red, bloqueos de threads, etc.\nPor ejemplo:\n\nwith open('contexto_ejemplo', 'w') as archivo_abierto:\n    archivo_abierto.write('En este ejemplo, todo se realiza con un gestor de contexto.')\n\nLo que realiza la operación anterior es:\n\nAbre el archivo contexto_ejemplo.\nEscribe algo en el archivo,\nCierra el archivo. Si ocurre algún error mientras se escribe en el archivo, entonces se intenta cerrar el archivo.\n\nEl código es equivalente a:\narchivo_abierto = open('contexto_ejemplo', 'w')\ntry:\n    archivo_abierto.write('En este ... contexto!')\nfinally:\n    archivo_abierto.close()\n\n\n\n\n\n\nTip\n\n\n\nEsta forma de abrir un archivo, manipular su información y cerrarlo, usando un gestor de contexto (with), es la más recomendada.\n\n\nEs posible implemetar nuestros propios gestores de contexto. Para ello se requiere un conocimiento más profundo de Programación Orientada a Objetos.\n\n\n\n\n\n\nNotaNota.\n\n\n\nEn el ejemplo anterior se usó la construcción try: … finally: que se usa para gestionar errores. Esto se revisará en detalle en la Capítulo 10.\n\n\nEl propósito de un gestor de contexto es asegurarse de que las acciones de “entrada” y “salida” de un contexto se manejen adecuadamente. El contexto se refiere a cualquier bloque de código que necesita realizar alguna configuración al inicio (como abrir un archivo o adquirir un recurso) y luego limpiar al final (como cerrar el archivo o liberar el recurso).\nVentajas de los gestores de contexto.\n\nCódigo más limpio: No tienes que preocuparte por cerrar recursos manualmente.\nManejo seguro de excepciones: Incluso si ocurre una excepción dentro del bloque with, el recurso se libera correctamente.\nLegibilidad: El código es más claro en cuanto a cuándo comienza y termina el uso de un recurso.\n\n¿Cómo funcionan?\nLos gestores de contexto implementan los métodos especiales __enter__ y __exit__: - __enter__(): Este método es llamado al inicio del bloque with. Se utiliza para establecer el recurso o la configuración inicial. - __exit__(exc_type, exc_value, traceback): Este método es llamado al final del bloque with, independientemente de si se produjo una excepción. Se utiliza para liberar o limpiar el recurso.",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Gestión de archivos.</span>"
     ]
@@ -1194,7 +1194,7 @@
     "href": "notebooks/08_control_de_flujo.html",
     "title": "8  Control de flujo.",
     "section": "",
-    "text": "9 while\nObjetivo. Revisar las declaraciones para control de flujo de un código y mostrar ejemplos de su uso.\nEn Python existen declaraciones que permiten controlar el flujo de un programa para realizar acciones complejas. Entre estas declaraciones tenemos las siguientes:\nJunto con estas declaraciones generalmente se utilizan las siguientes operaciones lógicas cuyo resultado puede ser True o False:\nSe utiliza para repetir un conjunto de instrucciones mientras una expresión sea verdadera:\n# Inicializamos a en 0\na = 0 \n\n# Vemos las condiciones antes del ciclo while\nprint(\"Antes del while: a = {}, ¿a &lt; 5? = {}\".format(a, a &lt; 5)) \n\nwhile a &lt; 5: # Mientras 'a' sea menor que 5 realiza lo siguiente:\n    a += 1   # Incrementamos el valor de 'a' en 1\n    print(\"a = {}, ¿a &lt; 5? = {}\".format(a, a &lt; 5)) # Revisamos las condiciones\n    \nprint('Finaliza while')  # Instrucción fuera del bloque while\nObservaciones.",
+    "text": "8.1 Declaraciones de control de flujo.\nObjetivo. Revisar las declaraciones para control de flujo de un código y mostrar ejemplos de su uso.\nEn Python existen declaraciones que permiten controlar el flujo de un programa para realizar acciones complejas. Entre estas declaraciones tenemos las siguientes:\nJunto con estas declaraciones generalmente se utilizan las siguientes operaciones lógicas cuyo resultado puede ser True o False:",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
     ]
@@ -1213,8 +1213,8 @@
     "objectID": "notebooks/08_control_de_flujo.html#ejemplo-2.",
     "href": "notebooks/08_control_de_flujo.html#ejemplo-2.",
     "title": "8  Control de flujo.",
-    "section": "10.1 Ejemplo 2.",
-    "text": "10.1 Ejemplo 2.\nEn los siguientes ejemplos de while el código dentro del bloque está alineado correctamente.",
+    "section": "8.4 Ejemplo 2.",
+    "text": "8.4 Ejemplo 2.\nEn los siguientes ejemplos de while el código dentro del bloque está alineado correctamente.",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
     ]
@@ -1223,8 +1223,8 @@
     "objectID": "notebooks/08_control_de_flujo.html#ejemplo-3.",
     "href": "notebooks/08_control_de_flujo.html#ejemplo-3.",
     "title": "8  Control de flujo.",
-    "section": "10.2 Ejemplo 3.",
-    "text": "10.2 Ejemplo 3.\nEn los siguientes ejemplos de while la líneas de código del bloque están incorrectamente alineadas, de tal manera que al ejecutarlos obtendrás un error como el siguiente:\nIndentationError: unexpected indent\ny te indicará el lugar donde la alineación no es correcta.",
+    "section": "8.5 Ejemplo 3.",
+    "text": "8.5 Ejemplo 3.\nEn los siguientes ejemplos de while la líneas de código del bloque están incorrectamente alineadas, de tal manera que al ejecutarlos obtendrás un error como el siguiente:\nIndentationError: unexpected indent\ny te indicará el lugar donde la alineación no es correcta.",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
     ]
@@ -1233,8 +1233,8 @@
     "objectID": "notebooks/08_control_de_flujo.html#función-range",
     "href": "notebooks/08_control_de_flujo.html#función-range",
     "title": "8  Control de flujo.",
-    "section": "11.1 Función range",
-    "text": "11.1 Función range\nUna secuencia que es muy usada en conjunto con el ciclo for es la que se genera con la función range(). Esta función genera una secuencia iterable con un inicio, un final y un salto:\nrange(start, stop, step)\nLa secuencia iniciará en start y terminará en stop-1 en pasos de step.",
+    "section": "9.1 Función range",
+    "text": "9.1 Función range\nUna secuencia que es muy usada en conjunto con el ciclo for es la que se genera con la función range(). Esta función genera una secuencia iterable con un inicio, un final y un salto:\nrange(start, stop, step)\nLa secuencia iniciará en start y terminará en stop-1 en pasos de step.",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
     ]
@@ -1243,8 +1243,8 @@
     "objectID": "notebooks/08_control_de_flujo.html#ejemplo-4.",
     "href": "notebooks/08_control_de_flujo.html#ejemplo-4.",
     "title": "8  Control de flujo.",
-    "section": "11.2 Ejemplo 4.",
-    "text": "11.2 Ejemplo 4.\nUsando un ciclo for y secuencias range():\n\nImprime los números del 1 al 20 .\nImprime los número impares del 1 al 19.\nImprime la secuencia de números: 20, 19, ..., 1.\nImprime la secuencia de números: -5, -3, -1, 1, 3,",
+    "section": "9.2 Ejemplo 4.",
+    "text": "9.2 Ejemplo 4.\nUsando un ciclo for y secuencias range():\n\nImprime los números del 1 al 20 .\nImprime los número impares del 1 al 19.\nImprime la secuencia de números: 20, 19, ..., 1.\nImprime la secuencia de números: -5, -3, -1, 1, 3,",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
     ]
@@ -1253,8 +1253,8 @@
     "objectID": "notebooks/08_control_de_flujo.html#ejemplo-5.",
     "href": "notebooks/08_control_de_flujo.html#ejemplo-5.",
     "title": "8  Control de flujo.",
-    "section": "12.1 Ejemplo 5.",
-    "text": "12.1 Ejemplo 5.\nImplementa un código que imprima los número impares en el rango (-N, N), donde N es un valor entero positivo que es ingresado por el usuario.",
+    "section": "10.1 Ejemplo 5.",
+    "text": "10.1 Ejemplo 5.\nImplementa un código que imprima los número impares en el rango (-N, N), donde N es un valor entero positivo que es ingresado por el usuario.",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
     ]
@@ -1263,8 +1263,8 @@
     "objectID": "notebooks/08_control_de_flujo.html#ejemplo-6.",
     "href": "notebooks/08_control_de_flujo.html#ejemplo-6.",
     "title": "8  Control de flujo.",
-    "section": "13.1 Ejemplo 6.",
-    "text": "13.1 Ejemplo 6.\n\nConsidera el siguiente código:\nN = 5\nfor n in range(-N, N+1, 1):\n    print(f\"\\nChecando el número {n} ...\")\n    np = abs(n)\n    if n % 2:\n        print(f\"{n} es impar\")\n        for i in range(-np, np+1):\n            print(f\"{i}\", end=\",\")\n    else:\n        print(f\"{n} es par\")\n        for i in range(-np, np+1):\n            print(f\"{i}\", end=\",\")\n    print(\"\\nTerminando el chequeo\")\n En el código anterior se tienen los siguientes bloques de código:\n\nNivel cero sangría:\n\nN = 5\nfor n in range(-N, N+1, 1): \n\nNivel uno: 4 espacios, bloque del ciclo for\n\n    print(f\"\\nChecando el número {n} ...\")\n    np = abs(n)\n    if n % 2:\n        ...\n    else:\n        ...\n    print(\"\\nTerminando el chequeo\")\n\nNivel dos: 8 espacios, bloque del condicional if ... else ...\n\n        print(f\"{n} es impar\")\n        for i in range(-np, np+1):\n        ...\n        print(f\"{n} es par\")\n        for i in range(-np, np+1):\n        ...\n\nNivel tres: 12 espacios, bloques de dos ciclos for\n\n            print(f\"{i}\", end=\",\")\n            ...\n            print(f\"{i}\", end=\",\")\n En la siguiente celda escribimos el código anterior respetando todos los espacios y sangrías. Observa el resultado y trata de explicar lo que hace.",
+    "section": "11.1 Ejemplo 6.",
+    "text": "11.1 Ejemplo 6.\n\nConsidera el siguiente código:\nN = 5\nfor n in range(-N, N+1, 1):\n    print(f\"\\nChecando el número {n} ...\")\n    np = abs(n)\n    if n % 2:\n        print(f\"{n} es impar\")\n        for i in range(-np, np+1):\n            print(f\"{i}\", end=\",\")\n    else:\n        print(f\"{n} es par\")\n        for i in range(-np, np+1):\n            print(f\"{i}\", end=\",\")\n    print(\"\\nTerminando el chequeo\")\n En el código anterior se tienen los siguientes bloques de código:\n\nNivel cero sangría:\n\nN = 5\nfor n in range(-N, N+1, 1): \n\nNivel uno: 4 espacios, bloque del ciclo for\n\n    print(f\"\\nChecando el número {n} ...\")\n    np = abs(n)\n    if n % 2:\n        ...\n    else:\n        ...\n    print(\"\\nTerminando el chequeo\")\n\nNivel dos: 8 espacios, bloque del condicional if ... else ...\n\n        print(f\"{n} es impar\")\n        for i in range(-np, np+1):\n        ...\n        print(f\"{n} es par\")\n        for i in range(-np, np+1):\n        ...\n\nNivel tres: 12 espacios, bloques de dos ciclos for\n\n            print(f\"{i}\", end=\",\")\n            ...\n            print(f\"{i}\", end=\",\")\n En la siguiente celda escribimos el código anterior respetando todos los espacios y sangrías. Observa el resultado y trata de explicar lo que hace.",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
     ]
@@ -1273,8 +1273,8 @@
     "objectID": "notebooks/08_control_de_flujo.html#break",
     "href": "notebooks/08_control_de_flujo.html#break",
     "title": "8  Control de flujo.",
-    "section": "15.1 break",
-    "text": "15.1 break\n\n# Recorremos una cadena\nfor letra in \"Hola mundo Pythonico\":\n    print(f\"letra: {letra}\")\n    if letra == \"u\":   # Si la letra es la 'u'\n        break          # entonces se termina el ciclo\n\nSe puede agregar un else alineado con el for. El código dentro del else será ejecutado cuando no se alcanzó a ejecutar la condición break.\nEn el ejemplo que sigue, prueba primero con la letra u y luego con r.\n\nc = input(\"Caracter a buscar: \")\n\nfor letra in \"Hola mundo Pythonico\":\n    print(f\"letra: {letra}\")\n    if letra == c:\n        print(f\"Letra '{c}' encontrada\")\n        break\nelse: # Se ejecuta cuando el ciclo termina sin llegar al break\n    print(f\"No encontré la letra: '{c}'\")",
+    "section": "13.1 break",
+    "text": "13.1 break\n\n# Recorremos una cadena\nfor letra in \"Hola mundo Pythonico\":\n    print(f\"letra: {letra}\")\n    if letra == \"u\":   # Si la letra es la 'u'\n        break          # entonces se termina el ciclo\n\nSe puede agregar un else alineado con el for. El código dentro del else será ejecutado cuando no se alcanzó a ejecutar la condición break.\nEn el ejemplo que sigue, prueba primero con la letra u y luego con r.\n\nc = input(\"Caracter a buscar: \")\n\nfor letra in \"Hola mundo Pythonico\":\n    print(f\"letra: {letra}\")\n    if letra == c:\n        print(f\"Letra '{c}' encontrada\")\n        break\nelse: # Se ejecuta cuando el ciclo termina sin llegar al break\n    print(f\"No encontré la letra: '{c}'\")",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
     ]
@@ -1283,8 +1283,8 @@
     "objectID": "notebooks/08_control_de_flujo.html#continue",
     "href": "notebooks/08_control_de_flujo.html#continue",
     "title": "8  Control de flujo.",
-    "section": "15.2 continue",
-    "text": "15.2 continue\nEsta declaración indica al código que no termine las instrucciones que siguen en el ciclo y que se salte a la siguiente iteración.\nPor ejemplo, podemos imprimir cuándo un número es par como sigue:\n\nfor n in range(0, 11):\n    if n % 2:  # Cuando n % 2 es diferente de cero, el número es impar\n        continue # no se hace nada, termina esta iteración y se pasa al siguiente número\n    print(f\"Número par {n}\") # Se ejecuta solo cuando el número es par",
+    "section": "13.2 continue",
+    "text": "13.2 continue\nEsta declaración indica al código que no termine las instrucciones que siguen en el ciclo y que se salte a la siguiente iteración.\nPor ejemplo, podemos imprimir cuándo un número es par como sigue:\n\nfor n in range(0, 11):\n    if n % 2:  # Cuando n % 2 es diferente de cero, el número es impar\n        continue # no se hace nada, termina esta iteración y se pasa al siguiente número\n    print(f\"Número par {n}\") # Se ejecuta solo cuando el número es par",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
     ]
@@ -1293,10 +1293,960 @@
     "objectID": "notebooks/08_control_de_flujo.html#pass",
     "href": "notebooks/08_control_de_flujo.html#pass",
     "title": "8  Control de flujo.",
-    "section": "15.3 pass",
-    "text": "15.3 pass\nEsta declaración no hace nada. Se usa principalmente para cuestiones de desarrollo de código a un nivel abstracto. Por ejemplo si aún no tenemos claro que se va a realizar dentro de un ciclo o de una función, podemos simplemente poner esta declaración y dejar la implemetación para más adelante:\n\ni = 0\n\n# Aún no sabemos el código que debemos implementar\nwhile i &lt; 10:\n    print(\"Aquí va el código del while\")\n    i = 11 # Para que solo se haga una vez el ciclo\n    pass\n\n\n# La siguiente función debe calcular la secuencia de Fibonacci\ndef fib(n):\n    print(\"Aquí va el código de la función: n = {}\".format(n))\n    pass\n\n# En este punto del programa requiero el uso de la función fib(n):\nfib(100000) # \n\n\nNota.\nObserva que en el último ejemplo estamos usando la declaración de una función usando def; más ejemplos sobre funciones los puedes encontrar en 14_funciones.ipynb.",
+    "section": "13.3 pass",
+    "text": "13.3 pass\nEsta declaración no hace nada. Se usa principalmente para cuestiones de desarrollo de código a un nivel abstracto. Por ejemplo si aún no tenemos claro que se va a realizar dentro de un ciclo o de una función, podemos simplemente poner esta declaración y dejar la implemetación para más adelante:\n\ni = 0\n\n# Aún no sabemos el código que debemos implementar\nwhile i &lt; 10:\n    print(\"Aquí va el código del while\")\n    i = 11 # Para que solo se haga una vez el ciclo\n    pass\n\n\n# La siguiente función debe calcular la secuencia de Fibonacci\ndef fib(n):\n    print(\"Aquí va el código de la función: n = {}\".format(n))\n    pass\n\n# En este punto del programa requiero el uso de la función fib(n):\nfib(100000) # \n\n\nNota.\nObserva que en el último ejemplo estamos usando la declaración de una función usando def; más ejemplos sobre funciones los puedes encontrar en 14_funciones.ipynb.",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/06_input.html",
+    "href": "notebooks/06_input.html",
+    "title": "6  Entrada estándar.",
+    "section": "",
+    "text": "6.1 Entrada estándar con input()\nObjetivo. Revisar el uso de la función input() para la entrada estándar.\nEn Python es posible que el usuario proporcione información a un código durante su ejecución, para que, con base en esta información, realice una acción.\nPara ello se usa la función input(). Por ejemplo:\n# Cuando se ejecuta esta celda, se espera a que el usuario \n# teclee la información y luego &lt;enter&gt;\ninput(\"Escribe tu nombre:\") \n\nEscribe tu nombre: Lola\n\n\n'Lola'\nObservaciones.\nLa información que se teclea se puede almacenar en una variable:\nnumero = input('Teclea un número entero:')\n\nTeclea un número entero: 13\nPosteriormente, se puede ver el contenido y el tipo de la variable numero:\nprint(numero, type(numero)) \n\n13 &lt;class 'str'&gt;\nObserva que el tipo de la variable es str. Entonces, si queremos usar el valor de un número para realizar un cálculo, lo debemos convertir al tipo numérico requerido. Por ejemplo:\nnumero = int(input('Teclea un número entero:'))\n\nTeclea un número entero: 13\n# Checamos el contenido y el tipo\nprint(numero, type(numero)) \n\n13 &lt;class 'int'&gt;\nObserva que ahora el tipo corresponde a un entero debido a que hicimos la conversión (casting) con la función int().\nTambién podemos convertir a tiplo flotante:\nnumero_f = float(input('Teclea un número flotante:'))\n\nTeclea un número flotante: 3.1416\nprint(numero_f, type(numero_f)) \n\n3.1416 &lt;class 'float'&gt;\n.\nPrimer intento.\nbase = input('Escribe la base del triángulo:')\naltura = input('Escribe la altura del triángulo:')\n\nArea = base * altura / 2\n\nEscribe la base del triángulo: 5\nEscribe la altura del triángulo: 10\n\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[10], line 4\n      1 base = input('Escribe la base del triángulo:')\n      2 altura = input('Escribe la altura del triángulo:')\n----&gt; 4 Area = base * altura / 2\n\nTypeError: can't multiply sequence by non-int of type 'str'\nComo puedes observar, hay un error de tipo TypeError: dado que la función input() transforma lo que lee en str, entonces no es posible multiplicar dos cadenas.\nPor lo tanto debemos realizar una conversión antes de usar la información obtenida por input():\nSegundo intento.\nbase = int(input('Escribe la base del triángulo:'))\naltura = int(input('Escribe la altura del triángulo:'))\narea = base * altura / 2\n\nprint(f\"El área del triángulo de base {base} y altura {altura} es {area}\")\n\nEscribe la base del triángulo: 5\nEscribe la altura del triángulo: 10\n\n\nEl área del triángulo de base 5 y altura 10 es 25.0\nObserva que aunque los datos de la base y la altura se transforman a tipo int el resultado del cálculo del área es de tipo flotante.\nSin embargo, se obtiene un error de tipo ValueError, como el que se muestra a continnuación, cuando se dan datos de tipo flotante por ejemplo base = 3.5 y altura = 2.3.\nEntonces, una implementación más robusta sería la siguiente:\nTercer intento.\nbase = float(input('Escribe la base del triángulo:'))\naltura = float(input('Escribe la altura del triángulo:'))\narea = base * altura / 2\n\nprint(f\"El área del triángulo de base {base} y altura {altura} es {area}\")\n\nEscribe la base del triángulo: 3.5\nEscribe la altura del triángulo: 2.5\n\n\nEl área del triángulo de base 3.5 y altura 2.5 es 4.375\nCuarto intento.\nEn esta versión solo cambiaremos la manera en que imprimimos la salida usando la función str.format():\nbase = float(input('Escribe la base del triángulo:'))\naltura = float(input('Escribe la altura del triángulo:'))\narea = base * altura / 2\n\nprint(\"El área del triángulo de base {b:^10.3f} y altura {a:^10.3f} es {area:^10.3f}\".format(b = base, a = altura, area = area))\n\nEscribe la base del triángulo: 3.5\nEscribe la altura del triángulo: 2.5\n\n\nEl área del triángulo de base   3.500    y altura   2.500    es   4.375",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Entrada estándar.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/06_input.html#entrada-estándar-con-input",
+    "href": "notebooks/06_input.html#entrada-estándar-con-input",
+    "title": "6  Entrada estándar.",
+    "section": "",
+    "text": "La cadena entre los paréntesis proporciona información para saber lo que se debe teclear. Esta cadena se conoce como prompt.\nEsta cadena se imprime cuando se ejecuta la función input() y luego se espera a que teclees alguna información.\nCuando se teclea &lt;enter&gt; la función input() lee la información proporcionada.\ninput() lee toda la información y la almacena una cadena (str).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n6.1.1 Ejemplo.\nCalcular el área de un triángulo cuyos datos de la base y la altura son proporcionados por el usuario.\n\n\n\n\n\n\n\n\n\n---------------------------------------------------------------------------\nValueError                                Traceback (most recent call last)\nCell In[13], line 1\n----&gt; 1 base = int(input('Escribe la base del triángulo:'))\n      2 altura = int(input('Escribe la altura del triángulo:'))\n      3 area = base * altura / 2\n\nValueError: invalid literal for int() with base 10: '3.5'",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Entrada estándar.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html",
+    "href": "notebooks/09_listas.html",
+    "title": "9  Estructura de datos: listas.",
+    "section": "",
+    "text": "9.1 Introducción\nObjetivo. Describir la estructura de datos list mediante la exposición de ejemplos.\nEn Python se tienen cuatro tipos de estructuras de datos básicas, también conocidas como colecciones. Cuando se selecciona un tipo de colección, es importante conocer sus propiedades para incrementar la eficiencia y/o la seguridad de los datos. La siguiente tabla resume estos cuatro tipos:",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#ejemplo-1.",
+    "href": "notebooks/09_listas.html#ejemplo-1.",
+    "title": "9  Estructura de datos: listas",
+    "section": "11.1 Ejemplo 1.",
+    "text": "11.1 Ejemplo 1.\nVamos a crear las siguientes listas:\n\ngatos : Razas de gatos.\norigen : Origen de cada raza de gatos.\npelo_largo: Si tienen pelo largo o no.\npelo_corto: Si tienen pelo corto o no.\npeso_minimo: El peso mínimo que pueden tener.\npeso_maximo: El peso máximo que pueden tener.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#len-determina-la-longitud-de-la-lista.",
+    "href": "notebooks/09_listas.html#len-determina-la-longitud-de-la-lista.",
+    "title": "9  Estructura de datos: listas",
+    "section": "10.1 len(): determina la longitud de la lista.",
+    "text": "10.1 len(): determina la longitud de la lista.\n\nlen(gatos)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#max-determina-el-máximo-elemento-de-la-lista.",
+    "href": "notebooks/09_listas.html#max-determina-el-máximo-elemento-de-la-lista.",
+    "title": "9  Estructura de datos: listas",
+    "section": "10.2 max(): determina el máximo elemento de la lista.",
+    "text": "10.2 max(): determina el máximo elemento de la lista.\n\nmax(peso_maximo)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#min-determina-el-mínimo-elemento-de-la-lista.",
+    "href": "notebooks/09_listas.html#min-determina-el-mínimo-elemento-de-la-lista.",
+    "title": "9  Estructura de datos: listas",
+    "section": "10.3 min(): determina el mínimo elemento de la lista.",
+    "text": "10.3 min(): determina el mínimo elemento de la lista.\n\nmin(peso_maximo)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#any-revisa-si-algún-elemento-es-true.",
+    "href": "notebooks/09_listas.html#any-revisa-si-algún-elemento-es-true.",
+    "title": "9  Estructura de datos: listas",
+    "section": "10.4 any(): revisa si ALGÚN elemento es True.",
+    "text": "10.4 any(): revisa si ALGÚN elemento es True.\n\nany(pelo_largo)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#all-revisa-si-todos-los-elementos-son-true.",
+    "href": "notebooks/09_listas.html#all-revisa-si-todos-los-elementos-son-true.",
+    "title": "9  Estructura de datos: listas",
+    "section": "10.5 all(): revisa si TODOS los elementos son True.",
+    "text": "10.5 all(): revisa si TODOS los elementos son True.\n\nall(pelo_corto)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#sorted-ordena-los-elementos-de-la-lista.",
+    "href": "notebooks/09_listas.html#sorted-ordena-los-elementos-de-la-lista.",
+    "title": "9  Estructura de datos: listas",
+    "section": "10.6 sorted(): ordena los elementos de la lista.",
+    "text": "10.6 sorted(): ordena los elementos de la lista.\n\nprint(peso_maximo) # Lista original antes del ordenamiento\nsorted(peso_maximo) \n\nLa función sorted() genera una nueva lista ordenada, pero no modifica la lista original. Si se imprime la lista peso_maximo veremos que no ha cambiado:\n\nprint(peso_maximo)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#sum-suma-los-elementos-de-la-lista.",
+    "href": "notebooks/09_listas.html#sum-suma-los-elementos-de-la-lista.",
+    "title": "9  Estructura de datos: listas",
+    "section": "10.7 sum(): suma los elementos de la lista.",
+    "text": "10.7 sum(): suma los elementos de la lista.\n\n# El operador suma debe estar definido para el tipo de los elementos de la lista\nsum(peso_maximo)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#enumerate-enumera-los-elementos-de-una-lista.",
+    "href": "notebooks/09_listas.html#enumerate-enumera-los-elementos-de-una-lista.",
+    "title": "9  Estructura de datos: listas",
+    "section": "10.8 enumerate(): enumera los elementos de una lista.",
+    "text": "10.8 enumerate(): enumera los elementos de una lista.\nGenera tuplas del tipo (i, elemento).\n\nlist(enumerate(origen)) \n\nObserva que para el caso de enumerate() el resultado se debe convertir a un tipo que se pueda desplegar, en este caso se convierte a una lista usando list().",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#zip-agrupa-los-elementos-de-dos-listas.",
+    "href": "notebooks/09_listas.html#zip-agrupa-los-elementos-de-dos-listas.",
+    "title": "9  Estructura de datos: listas",
+    "section": "10.9 zip(): agrupa los elementos de dos listas.",
+    "text": "10.9 zip(): agrupa los elementos de dos listas.\nGenera tuplas del tipo (gatos[i], origen[i]).\n\nlist(zip(gatos, origen)) \n\nObserva que para el caso de zip() el resultado se debe convertir a un tipo que se pueda desplegar, en este caso se convierte a una lista usando list().",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#concatena-listas.",
+    "href": "notebooks/09_listas.html#concatena-listas.",
+    "title": "9  Estructura de datos: listas",
+    "section": "10.1 +: concatena listas.",
+    "text": "10.1 +: concatena listas.\n\ngatos + peso_maximo # Concatenación de dos listas",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#replica-listas.",
+    "href": "notebooks/09_listas.html#replica-listas.",
+    "title": "9  Estructura de datos: listas",
+    "section": "10.2 *: replica listas.",
+    "text": "10.2 *: replica listas.\n\norigen * 2 # Duplicación de la lista",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#in-revisa-si-un-elemento-está-en-la-lista.",
+    "href": "notebooks/09_listas.html#in-revisa-si-un-elemento-está-en-la-lista.",
+    "title": "9  Estructura de datos: listas",
+    "section": "10.3 in: revisa si un elemento está en la lista.",
+    "text": "10.3 in: revisa si un elemento está en la lista.\n\n'Siamés' in gatos # ¿Está el elemento `Siamés` en la lista gatos?",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#agregar-elementos-a-la-lista.",
+    "href": "notebooks/09_listas.html#agregar-elementos-a-la-lista.",
+    "title": "9  Estructura de datos: listas",
+    "section": "11.1 Agregar elementos a la lista.",
+    "text": "11.1 Agregar elementos a la lista.\n\ngatos.append('Siberiano') # Se agrega un elemento al final de la lista\n\n\nprint(gatos)\n\n\ngatos.append('Persa') # Se agrega otro elemento al final de la lista, repetido\n\n\nprint(gatos)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#eliminar-elementos-de-la-lista.",
+    "href": "notebooks/09_listas.html#eliminar-elementos-de-la-lista.",
+    "title": "9  Estructura de datos: listas",
+    "section": "11.2 Eliminar elementos de la lista.",
+    "text": "11.2 Eliminar elementos de la lista.\n\ngatos.remove('Persa') \n\n\nprint(gatos) \n\nObserva que solo se elimina el primer elemento Persa que encuentra.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#insertar-elementos-en-la-lista.",
+    "href": "notebooks/09_listas.html#insertar-elementos-en-la-lista.",
+    "title": "9  Estructura de datos: listas",
+    "section": "9.9 Insertar elementos en la lista.",
+    "text": "9.9 Insertar elementos en la lista.\nPodemos insertar un elemento en un lugar específico de la lista:\n\ngatos.insert(0,'Persa')\n\n\nprint(gatos)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#extraer-el-último-elemento-de-la-lista.",
+    "href": "notebooks/09_listas.html#extraer-el-último-elemento-de-la-lista.",
+    "title": "9  Estructura de datos: listas",
+    "section": "9.10 Extraer el último elemento de la lista.",
+    "text": "9.10 Extraer el último elemento de la lista.\nTambién es posible extraer el último elemento de la lista\n\ngatos.pop() \n\n\nprint(gatos)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#ordenar-la-lista.",
+    "href": "notebooks/09_listas.html#ordenar-la-lista.",
+    "title": "9  Estructura de datos: listas",
+    "section": "9.11 Ordenar la lista.",
+    "text": "9.11 Ordenar la lista.\n\ngatos.sort() \n\n\nprint(gatos)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#la-lista-con-los-elementos-en-reversa.",
+    "href": "notebooks/09_listas.html#la-lista-con-los-elementos-en-reversa.",
+    "title": "9  Estructura de datos: listas",
+    "section": "9.12 La lista con los elementos en reversa.",
+    "text": "9.12 La lista con los elementos en reversa.\n\ngatos.reverse() \n\n\nprint(gatos)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#concatenar-dos-listas.",
+    "href": "notebooks/09_listas.html#concatenar-dos-listas.",
+    "title": "9  Estructura de datos: listas",
+    "section": "9.13 Concatenar dos listas.",
+    "text": "9.13 Concatenar dos listas.\n\npelo_corto.extend(pelo_largo) \n\n\nprint(pelo_corto)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#contar-los-elementos-de-un-tipo.",
+    "href": "notebooks/09_listas.html#contar-los-elementos-de-un-tipo.",
+    "title": "9  Estructura de datos: listas",
+    "section": "9.14 Contar los elementos de un tipo.",
+    "text": "9.14 Contar los elementos de un tipo.\n\npelo_corto.count(False) # Contar los elementos que tengan el valor 'False'\n\n\npelo_corto.count(True) # Contar los elementos que tengan el valor 'True'",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#ejemplo-2.",
+    "href": "notebooks/09_listas.html#ejemplo-2.",
+    "title": "9  Estructura de datos: listas",
+    "section": "9.15 Ejemplo 2.",
+    "text": "9.15 Ejemplo 2.\nConsidera la lista original peso_minimo = [2.3, 3.5, 5.4, 2.5]. El nombre fue eliminado en un ejemplo anterior. Vamos a recuperar la lista a través del nombre p_min que aún existe:",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#copiando-con",
+    "href": "notebooks/09_listas.html#copiando-con",
+    "title": "9  Estructura de datos: listas",
+    "section": "10.1 Copiando con [:]",
+    "text": "10.1 Copiando con [:]\nPara crear una nueva lista copiando todos los elementos podemos hacer lo siguiente:\n\ngatitos = gatos[:]\n\n\nprint(type(gatitos))\nprint(id(gatitos))\nprint(gatitos)\n\nprint(type(gatos))\nprint(id(gatos))\nprint(gatos)\n\nObserva que el identificador en memoria de cada lista es diferente por lo que se trata de listas diferentes.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#copiando-con-el-método-copy",
+    "href": "notebooks/09_listas.html#copiando-con-el-método-copy",
+    "title": "9  Estructura de datos: listas",
+    "section": "10.2 Copiando con el método copy()",
+    "text": "10.2 Copiando con el método copy()\nLa clase &lt;class 'list'&gt; contiene un método llamado copy() que efectivamente realiza una copia de la lista:\n\ngatitos = gatos.copy()\n\n\nprint(type(gatitos))\nprint(id(gatitos))\nprint(gatitos)\n\nprint(type(gatos))\nprint(id(gatos))\nprint(gatos)\n\nObserva que el identificador en memoria de cada lista es diferente por lo que se trata de listas diferentes.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#copiando-con-el-constructor",
+    "href": "notebooks/09_listas.html#copiando-con-el-constructor",
+    "title": "9  Estructura de datos: listas",
+    "section": "9.10 Copiando con el constructor",
+    "text": "9.10 Copiando con el constructor\nLa función list() transforma un objeto iterable en una lista. La podemos usar para copiar una lista como sigue:\n\ngatitos = list(gatos)\n\n\nprint(type(gatitos))\nprint(id(gatitos))\nprint(gatitos)\n\nprint(type(gatos))\nprint(id(gatos))\nprint(gatos)\n\nObserva que el identificador en memoria de cada lista es diferente por lo que se trata de listas diferentes.\n\nNota.\nLo que sucede en este último caso, es que se ejecuta el constructor de la clase &lt;class 'list'&gt;, el cual recibe un objeto iterable (lista, tupla, diccionario, entre otros), copia todos los elementos de ese iterable y los pone en una lista que se almacena en un espacio en memoria diferente al iterable original. Esto lo realiza el constructor de la clase list y es una característica de la Programación Orientada a Objetos.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#copiando-con-la-biblioteca-copy",
+    "href": "notebooks/09_listas.html#copiando-con-la-biblioteca-copy",
+    "title": "9  Estructura de datos: listas",
+    "section": "9.11 Copiando con la biblioteca copy",
+    "text": "9.11 Copiando con la biblioteca copy\nLa biblioteca copy de Python ofrece herramientas para copiado de objetos. Veamos un ejemplo:\n\n# Importamos la biblioteca copy\nimport copy\n\n# Usamos la función copy()\ngatitos = copy.copy(gatos)\n\n\nprint(type(gatitos))\nprint(id(gatitos))\nprint(gatitos)\n\nprint(type(gatos))\nprint(id(gatos))\nprint(gatos)\n\nObserva que el identificador en memoria de cada lista es diferente por lo que se trata de listas diferentes.\nMás información sobre el uso de esta biblioteca se puede ver en Shallow and deep copy operations.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/17_excepciones.html",
+    "href": "notebooks/17_excepciones.html",
+    "title": "16  Gestión de errores y excepciones.",
+    "section": "",
+    "text": "17 Tipos de errores:\nObjetivo. Revisar la forma de gestionar errores y excepciones\nEn Python existen dos tipos de errores por los cuales un programa se detiene y no continua con su ejecución normal.",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Gestión de errores y excepciones.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/17_excepciones.html#errores-de-sintaxis.",
+    "href": "notebooks/17_excepciones.html#errores-de-sintaxis.",
+    "title": "16  Gestión de errores y excepciones.",
+    "section": "17.1 Errores de sintaxis.",
+    "text": "17.1 Errores de sintaxis.\nOcurren cuando no se escriben correctamente las expresiones y declaraciones como lo especifica la interfaz de Python.\nPor ejemplo:\n\n# Escribimos a propósito 'printf' que es un nombre incorrecto.\nprintf('Hola mundo!')\n\n\nObserva que el tipo de error se imprime cuando éste ocurre.\nEn el caso anterior el error fue de tipo NameError, por lo que hay que revisar que todo esté correctamente escrito.",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Gestión de errores y excepciones.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/17_excepciones.html#errores-provocados-por-excepciones.",
+    "href": "notebooks/17_excepciones.html#errores-provocados-por-excepciones.",
+    "title": "16  Gestión de errores y excepciones.",
+    "section": "17.2 Errores provocados por excepciones.",
+    "text": "17.2 Errores provocados por excepciones.\nSon errores lógicos que detienen la ejecución de un programa aún cuando la sintaxis sea la correcta.\nPor ejemplo:\n\ndef raizCuadrada(numero):\n    numero = float(numero)\n    print(\"La raíz cuadrada del número {} es {}\".format(numero, numero ** 0.5))\n\n\n# Ejemplo correcto que se ejecuta sin problemas.\nraizCuadrada(2)\n\n\n# Ejemplo correcto, se calcula la raíz cuadrada de -1.\n# El resultado es un número complejo. En este caso Python\n# se encarga de realizar las conversiones necesarias.\nraizCuadrada(-1)\n\n\n# Ejemplo incorrecto. No es posible calcular la raíz cuadrada\n# de un número complejo, es una operación no definida.\nraizCuadrada(1+1j)\n\nEn el ejemplo anterior se produce un error de tipo TypeError, es decir hay incompatibilidad con los tipos de datos que se están manipulando.\n\n# Ejemplo incorrecto. No se puede calcular la raíz cuadrada\n# de una cadena.\nraizCuadrada(\"hola\")\n\nEn el ejemplo anterior se produce un error de tipo ValueError, es decir es decir hay un problema con el contenido del objeto.",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Gestión de errores y excepciones.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_control_de_flujo.html#declaraciones-de-control-de-flujo.",
+    "href": "notebooks/08_control_de_flujo.html#declaraciones-de-control-de-flujo.",
+    "title": "8  Control de flujo.",
+    "section": "",
+    "text": "while\nfor\nif\nmatch\n\n\n\n\n\n\n\n\n\nPython\nSignificado\n\n\n\n\na == b\n¿son iguales a y b?\n\n\na != b\n¿son diferentes a y b?\n\n\na &lt; b\n¿a es menor que b?:\n\n\na &lt;= b\n¿a es menor o igual que b?\n\n\na &gt; b\n¿a es mayor que b?\n\n\na &gt;= b\n¿a es mayor o igual que b?\n\n\nnot A\nEl inverso de la expresión A\n\n\nA and B\n¿La expresión A y la expresión B son verdaderas?\n\n\nA or B\n¿La expresión A o la expresión B es verdadera?:",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_control_de_flujo.html#while",
+    "href": "notebooks/08_control_de_flujo.html#while",
+    "title": "8  Control de flujo.",
+    "section": "8.2 while",
+    "text": "8.2 while\nSe utiliza para repetir un conjunto de instrucciones mientras una expresión sea verdadera:\nwhile expresión:\n    código ...\n\n8.2.1 Ejemplo.\nImprimir el valor de una variable a que inicia en 0 y que se va incrementando en 1 hasta que se cumple que a &lt; 5.\n\n\n# Inicializamos a en 0\na = 0 \n\n# Imprimimos las condiciones antes del ciclo while\nprint(\"Antes del while: a = {}, ¿a &lt; 5? = {}\".format(a, a &lt; 5)) \n\nwhile a &lt; 5: # Mientras 'a' sea menor que 5 realiza lo siguiente:\n    a += 1   # Incrementamos el valor de 'a' en 1\n    print(\"a = {}, ¿a &lt; 5? = {}\".format(a, a &lt; 5)) # Revisamos las condiciones\n    \nprint('Finaliza while')  # Instrucción fuera del bloque while\n\nAntes del while: a = 0, ¿a &lt; 5? = True\na = 1, ¿a &lt; 5? = True\na = 2, ¿a &lt; 5? = True\na = 3, ¿a &lt; 5? = True\na = 4, ¿a &lt; 5? = True\na = 5, ¿a &lt; 5? = False\nFinaliza while\n\n\nObservaciones.\n\nEn el código anterior, las dos líneas de código que están abajo del while se repiten 5 veces.\nEsta repetición se termina cuando la expresión a &lt; 5 ya no es verdadera.\nObserva que dentro del ciclo se encuentra la instrucción a += 1 que va incrementando el valor de a en cada iteración.\nTambién hay una instrucción para imprimir el resultado de cada iteración.\n\n\n8.2.2 Reglas de la sangría\n\nComo puedes observar en el Ejemplo 8.2.1, el código debajo de la instrucción while tiene una sangría (indentation): las líneas de código están recorridas hacia la derecha. Este espacio en blanco debe ser al menos de uno, pero pueden ser más.\nPor omisión, en JupyterLab (y algunos otros editores), se usan 4 espacios en blanco para cada línea de código dentro del bloque.\nEl número de espacios en blanco se debe mantener durante todo el bloque de código.\nCuando termina la sangría, es decir cuando las líneas de código ya no tienen ningún espacio en blanco al inicio, se cierra el bloque de código, en este caso el while.\nLas reglas de la sangría son iguales en otras declaraciones como for, if ... elif ... else, match, entre otras.\nEl uso de una sangría para organizar los bloques de código hace que los programas en Python sean más claros.\n\n\n\n8.2.3 Ejemplo.\nEn los siguientes ejemplos de while el código dentro del bloque está alineado correctamente.\n\n\na = 0\nwhile a &lt; 5: \n print(\"a =\",a)\n a += 1\n\na = 0\na = 1\na = 2\na = 3\na = 4\n\n\n\na = 0\nwhile a &lt; 5: \n        print(\"a =\",a)\n        a += 1\n\na = 0\na = 1\na = 2\na = 3\na = 4\n\n\n.\n\n8.2.4 Ejemplo.\nEn los siguientes ejemplos de while la líneas de código del bloque están incorrectamente alineadas, de tal manera que al ejecutarlos obtendrás un error como el siguiente:\nIndentationError: unexpected indent\ny te indicará el lugar donde la alineación no es correcta.\n\n\na = 0\nwhile a &lt; 5: \n print(\"a =\",a)\n   a += 1\n\n\n  Cell In[4], line 4\n    a += 1\n    ^\nIndentationError: unexpected indent\n\n\n\n\n\na = 0\nwhile a &lt; 5: \nprint(a)\na += 1\n\n\n  Cell In[5], line 3\n    print(a)\n    ^\nIndentationError: expected an indented block after 'while' statement on line 2",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_control_de_flujo.html#reglas-de-la-sangría",
+    "href": "notebooks/08_control_de_flujo.html#reglas-de-la-sangría",
+    "title": "8  Control de flujo.",
+    "section": "8.3 Reglas de la sangría",
+    "text": "8.3 Reglas de la sangría\n\nComo puedes observar en el Ejemplo 8.2.1, el código debajo de la instrucción while tiene una sangría (indentation): las líneas de código están recorridas hacia la derecha. Este espacio en blanco debe ser al menos de uno, pero pueden ser más.\nPor omisión, en JupyterLab (y algunos otros editores), se usan 4 espacios en blanco para cada línea de código dentro del bloque.\nEl número de espacios en blanco se debe mantener durante todo el bloque de código.\nCuando termina la sangría, es decir cuando las líneas de código ya no tienen ningún espacio en blanco al inicio, se cierra el bloque de código, en este caso el while.\nLas reglas de la sangría son iguales en otras declaraciones como for, if ... elif ... else, match, entre otras.\nEl uso de una sangría para organizar los bloques de código hace que los programas en Python sean más claros.\n\n\n8.3.1 Ejemplo 2.\nEn los siguientes ejemplos de while el código dentro del bloque está alineado correctamente.\n\n\na = 0\nwhile a &lt; 5: \n print(\"a =\",a)\n a += 1\n\na = 0\na = 1\na = 2\na = 3\na = 4\n\n\n\na = 0\nwhile a &lt; 5: \n        print(\"a =\",a)\n        a += 1\n\na = 0\na = 1\na = 2\na = 3\na = 4\n\n\n\n8.3.2 Ejemplo 3.\nEn los siguientes ejemplos de while la líneas de código del bloque están incorrectamente alineadas, de tal manera que al ejecutarlos obtendrás un error como el siguiente:\nIndentationError: unexpected indent\ny te indicará el lugar donde la alineación no es correcta.\n\n\na = 0\nwhile a &lt; 5: \n print(\"a =\",a)\n   a += 1\n\n\n  Cell In[4], line 4\n    a += 1\n    ^\nIndentationError: unexpected indent\n\n\n\n\n\na = 0\nwhile a &lt; 5: \nprint(a)\na += 1\n\n\n  Cell In[5], line 3\n    print(a)\n    ^\nIndentationError: expected an indented block after 'while' statement on line 2",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_control_de_flujo.html#for",
+    "href": "notebooks/08_control_de_flujo.html#for",
+    "title": "8  Control de flujo.",
+    "section": "8.3 for",
+    "text": "8.3 for\n\nEsta declaración permite iterar sobre el contenido de cualquier secuencia.\nLas secuencias son objetos que contienen varios elementos, un ejemplo es una cadena que contiene caracteres.\nEn Python se tienen varios tipos de secuencias como listas, tuplas, conjuntos, diccionarios, archivos, entre otros. Más adelante describiremos estas secuencias.\n\nEl for se declara como sigue:\nfor i in secuencia:\n    codigo ...\nLas reglas de la sangría que se deben seguir son las mismas que las descrita para la instrucción while.\nVeamos un ejemplo simple:\n\n# Definimos una cadena\ncadena = \"El objetivo de un viaje es sólo el inicio de otro viaje\"\n\n# Recorremos cada elemento de la 'cadena' y los imprimimos separados \n# por un guion usando un ciclo 'for':\nfor c in cadena:\n    print(c, end=\"-\")\n\nE-l- -o-b-j-e-t-i-v-o- -d-e- -u-n- -v-i-a-j-e- -e-s- -s-ó-l-o- -e-l- -i-n-i-c-i-o- -d-e- -o-t-r-o- -v-i-a-j-e-\n\n\n\nEl ciclo for recorre la secuencia, que en este caso es un str almacenado en la variable cadena;\nLa variable c, dentro de la declaración for, va tomando cada elemento de cadena (en este caso, cada caracter).\nLa única instrucción que se tiene en el bloque de código es imprimir cada caracter; se usa la opción end=\"-\" para separar cada caracter con un guion.\nObserva que los espacios se consideran también elementos de la cadena.\n\n\n8.3.1 Función range\nUna secuencia que es muy usada en conjunto con el ciclo for es la que se genera con la función range(). Esta función genera una secuencia iterable con un inicio, un final y un salto, su forma es la siguiente:\nrange(start, stop, step)\nLa secuencia iniciará en start y terminará en stop-1 en pasos de tamaño step.\n\n\n8.3.2 Ejemplo.\nUsando un ciclo for y secuencias range() realiza lo siguiente:\n\nImprime los números del 1 al 20 .\nImprime los número impares del 1 al 19.\nImprime la secuencia de números: 20, 19, ..., 1.\nImprime la secuencia de números: -5, -3, -1, 1, 3,\n\n\n\n# 1.\nfor i in range(1, 21): # Por omisión step = 1\n    print(i, end= ', ')\n\n1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, \n\n\nObserva que en el ejemplo anterior no se imprime el 21.\n\n# 2.\nfor i in range(1, 21, 2): # saltos de dos en dos\n    print(i, end= ', ')\n\n1, 3, 5, 7, 9, 11, 13, 15, 17, 19, \n\n\n\n# 3.\nfor i in range(20, 0, -1): # El paso puede ser negativo\n    print(i, end= ', ')\n\n20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, \n\n\nObserva que en el ejemplo anterior no se imprime el 0.\n\n# 4.\nfor i in range(-5,5,2):  # El rango puede comenzar en valores negativos \n    print(i, end= ', ')\n\n-5, -3, -1, 1, 3, \n\n\nObserva que en el ejemplo anterior no se imprime el 5.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_control_de_flujo.html#if-elif-else",
+    "href": "notebooks/08_control_de_flujo.html#if-elif-else",
+    "title": "8  Control de flujo.",
+    "section": "8.4 if, elif, else",
+    "text": "8.4 if, elif, else\nEsta declaración permite ejecutar bloques de código dependiendo del resultado de una o varias expresiones lógicas. La estructura es como sigue:\nif expresion1:\n    codigo1 \n    ...\nelif expresion2:\n    codigo2 \n    ...\nelif expresion3:\n    codigo3 \n    ...\nelse:\n    codigo4\n    ...\n\nSi la expresion1 es verdadera, entonces se ejecuta el codigo1.\nEn otro caso se evalúan las siguientes expresiones y dependiendo de cuál es verdadera se ejecuta el código correspondiente.\nCuando ninguna de las expresiones es verdadera, entonces se ejecuta el código de la sección else, es decir el codigo4.\n\nObserva que se siguen las mismas reglas de sangría que en el while.\nVeamos un ejemplo:\n\na = 30\nb = 10\nif a &lt; b:\n    print('a es menor que b')\nelif a &gt; b:\n    print('a es mayor que b')\nelse:\n    print('a es igual a b')\n\na es mayor que b\n\n\n\nUsando los valores originales a = 30 y b = 10 obtenemos el resultado a es mayor que b.\nAhora modifica los valores a los siguientes a = 10 y b = 30 y verifica que el resultado es a es menor que b.\nFinalmente usa los valores a = 10 y b = 10 y verifica que el resultado sea correcto.\n\nLas expresiones pueden ser más elaboradas:\n\na = 30\nb = 10\nprint(f'a = {a}, b = {b}')\n\nif (a &lt; b) or (a &gt; b):\n    print(f'¿a &lt; b? = {a &lt; b}, ¿a &gt; b? = {a &gt; b}')\nelse:\n    print(\"a y b son iguales\")\n\na = 30, b = 10\n¿a &lt; b? = False, ¿a &gt; b? = True\n\n\nCambia los valores de a y b de manera similar que en el ejemplo anterior y observa el resultado.\n\n8.4.1 Ejemplo.\nImplementa un código que imprima los número impares en el rango (-N, N), donde N es un valor entero positivo que es ingresado por el usuario.\n\n\n# Se obtiene el valor de N\nN = int(input(\"N =\"))\n\n# Se recorre el rango de números\nfor n in range(-N, N+1, 1):\n    if n % 2: # Se cumple cuando la operación módulo genera un residuo diferente de cero (n = impar)\n        print(n, end = \", \")\n\nN = 10\n\n\n-9, -7, -5, -3, -1, 1, 3, 5, 7, 9,",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_control_de_flujo.html#sangría-en-varios-bloques-de-código",
+    "href": "notebooks/08_control_de_flujo.html#sangría-en-varios-bloques-de-código",
+    "title": "8  Control de flujo.",
+    "section": "8.5 Sangría en varios bloques de código",
+    "text": "8.5 Sangría en varios bloques de código\nEn el ejemplo anterior, observa que se están anidando dos bloques de código:\n\nEl ciclo for n in range(-N, N+1, 1): contiene la instrucción if n % 2: dentro de su bloque de código y tiene 4 espacios a la izquierda para indicar que es parte del ciclo for.\nEl condicional if n % 2: contiene una llamada a la función print() dentro de su bloque de código que tiene 8 espacios a la izquierda para indicar que es parte del if.\nEs necesario mantener alineadas las instrucciones que pertenecen a cada bloque de código, de otra manera obtendrás resultados inesperados o incluso errores.\nSe pueden anidar tantos bloques de código como se requieran, solo se debe de ser muy consistente para definir la terminación de cada bloque de código. Veamos el siguiente ejemplo:\n\n\n8.5.1 Ejemplo.\nConsidera el siguiente código:\nN = 5\nfor n in range(-N, N+1, 1):\n    print(f\"\\nChecando el número {n} ...\")\n    np = abs(n)\n    if n % 2:\n        print(f\"{n} es impar\")\n        for i in range(-np, np+1):\n            print(f\"{i}\", end=\",\")\n    else:\n        print(f\"{n} es par\")\n        for i in range(-np, np+1):\n            print(f\"{i}\", end=\",\")\n    print(\"\\nTerminando el chequeo\")\n\nEn el código anterior se tienen los siguientes bloques de código:\n\nNivel cero sangría:\n\nN = 5\nfor n in range(-N, N+1, 1): \n\nNivel uno: 4 espacios, bloque del ciclo for\n\n    print(f\"\\nChecando el número {n} ...\")\n    np = abs(n)\n    if n % 2:\n        ...\n    else:\n        ...\n    print(\"\\nTerminando el chequeo\")\n\nNivel dos: 8 espacios, bloque del condicional if ... else ...\n\n        print(f\"{n} es impar\")\n        for i in range(-np, np+1):\n        ...\n        print(f\"{n} es par\")\n        for i in range(-np, np+1):\n        ...\n\nNivel tres: 12 espacios, bloques de dos ciclos for\n\n            print(f\"{i}\", end=\",\")\n            ...\n            print(f\"{i}\", end=\",\")\n En la siguiente celda escribimos el código anterior respetando todos los espacios y sangrías. Observa el resultado y trata de explicar lo que hace.\n\nN = 5\nfor n in range(-N, N+1, 1):\n    print(f\"\\nChecando el número {n} ...\")\n    np = abs(n)\n    if n % 2:\n        print(f\"{n} es impar. En el rango ({-np},{np}) tenemos:\")\n        for i in range(-np, np+1, 2):\n            print(f\"{i}\", end=\",\")\n    else:\n        print(f\"{n} es par. En el rango ({-np},{np}) tenemos:\")\n        for i in range(-np, np+1, 2):\n            print(f\"{i}\", end=\",\")\n    print(\"\\nTerminando el chequeo\")\n\n\nChecando el número -5 ...\n-5 es impar. En el rango (-5,5) tenemos:\n-5,-3,-1,1,3,5,\nTerminando el chequeo\n\nChecando el número -4 ...\n-4 es par. En el rango (-4,4) tenemos:\n-4,-2,0,2,4,\nTerminando el chequeo\n\nChecando el número -3 ...\n-3 es impar. En el rango (-3,3) tenemos:\n-3,-1,1,3,\nTerminando el chequeo\n\nChecando el número -2 ...\n-2 es par. En el rango (-2,2) tenemos:\n-2,0,2,\nTerminando el chequeo\n\nChecando el número -1 ...\n-1 es impar. En el rango (-1,1) tenemos:\n-1,1,\nTerminando el chequeo\n\nChecando el número 0 ...\n0 es par. En el rango (0,0) tenemos:\n0,\nTerminando el chequeo\n\nChecando el número 1 ...\n1 es impar. En el rango (-1,1) tenemos:\n-1,1,\nTerminando el chequeo\n\nChecando el número 2 ...\n2 es par. En el rango (-2,2) tenemos:\n-2,0,2,\nTerminando el chequeo\n\nChecando el número 3 ...\n3 es impar. En el rango (-3,3) tenemos:\n-3,-1,1,3,\nTerminando el chequeo\n\nChecando el número 4 ...\n4 es par. En el rango (-4,4) tenemos:\n-4,-2,0,2,4,\nTerminando el chequeo\n\nChecando el número 5 ...\n5 es impar. En el rango (-5,5) tenemos:\n-5,-3,-1,1,3,5,\nTerminando el chequeo",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_control_de_flujo.html#operador-ternario",
+    "href": "notebooks/08_control_de_flujo.html#operador-ternario",
+    "title": "8  Control de flujo.",
+    "section": "8.6 Operador ternario",
+    "text": "8.6 Operador ternario\nEste operador permite evaluar una expresión lógica y generar un valor para un resultado True y otro diferente para un resultado False; todo esto se logra en una sola línea de código como sigue:\nresultado = valor1 if expresion else valor2\nEn este código la variable resultado tendrá el valor valor1 si la expresion es verdadera o el valor2 si la expresión es falsa.\n\n8.6.1 Ejemplo.\nVerificar si el valor de la variable c es mayor que 5.\n\n\n# Inicializamos c\nc = 1\n\n# Evaluamos ¿c &gt; 5? y determinamos el valor de r\nr = c if c &gt; 5 else 0\n\n# Se imprime el valor de c\nprint(f\"c = {c}\") \n\n# Se imprime el resultado de la prueba: c &gt; 5 (puede ser False o True)\nprint(f\"¿c &gt; 5? {c &gt; 5}\")  \n\n# Se imprime el valor r (que depende del resultado de: c &lt; 5)\nprint(f\"r = {r}\") \n\nc = 1\n¿c &gt; 5? False\nr = 0\n\n\nEn la celda anterior modifica el valor de c a 6 y ve lo que sucede.\nPodemos probar para varios valores de c usando un ciclo for como se muestra a continuación:\n\nfor c in range(1,10):\n    r = c if c &gt; 5 else 0\n    print(f\"c = {c},\", f\"¿c &gt; 5? = {c &gt; 5},\", f\"r = {r}\")\n\nc = 1, ¿c &gt; 5? = False, r = 0\nc = 2, ¿c &gt; 5? = False, r = 0\nc = 3, ¿c &gt; 5? = False, r = 0\nc = 4, ¿c &gt; 5? = False, r = 0\nc = 5, ¿c &gt; 5? = False, r = 0\nc = 6, ¿c &gt; 5? = True, r = 6\nc = 7, ¿c &gt; 5? = True, r = 7\nc = 8, ¿c &gt; 5? = True, r = 8\nc = 9, ¿c &gt; 5? = True, r = 9",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_control_de_flujo.html#break-continue-else-pass",
+    "href": "notebooks/08_control_de_flujo.html#break-continue-else-pass",
+    "title": "8  Control de flujo.",
+    "section": "8.7 break, continue, else, pass",
+    "text": "8.7 break, continue, else, pass\nEstas son palabras clave que se pueden usar en ciclos while o for:\n\nbreak: terminar el ciclo más interno.\ncontinue: saltarse a la siguiente iteración sin terminar de ejecutar el código que sigue.\nelse: NO se ejecuta el código de esta cláusula si el ciclo es finalizado por el break. Si el ciclo no llega a la instrucción break entonces se ejecuta el código implementado dentro del else.\npass: no hacer nada y continuar.\n\nVeamos algunos ejemplos.\n\n8.7.1 Ejemplo break.\nRecorrer una cadena para encontrar una letra; una vez encontrada terminar el proceso.\n\n\n# Recorremos una cadena\nfor letra in \"Hola mundo Pythonico\":\n    print(f\"letra: {letra}\")\n    if letra == \"u\":   # Si la letra es la 'u'\n        break          # entonces se termina el ciclo\n\nletra: H\nletra: o\nletra: l\nletra: a\nletra:  \nletra: m\nletra: u\n\n\nSe puede agregar un else alineado con el for. El código dentro del else será ejecutado cuando no se alcanzó a ejecutar la condición break.\nEn el ejemplo que sigue, prueba primero con la letra u y luego con r.\n\nc = input(\"Caracter a buscar: \")\n\nfor letra in \"Hola mundo Pythonico\":\n    print(f\"letra: {letra}\")\n    if letra == c:\n        print(f\"Letra '{c}' encontrada\")\n        break\nelse: # Se ejecuta cuando el ciclo termina sin llegar al break\n    print(f\"No encontré la letra: '{c}'\")\n\nCaracter a buscar:  u\n\n\nletra: H\nletra: o\nletra: l\nletra: a\nletra:  \nletra: m\nletra: u\nLetra 'u' encontrada\n\n\n.\n\n8.7.2 Ejemplo continue.\nImprimir cuándo un número es par entre los números 0 a 11.\n\n\nfor n in range(0, 11):\n    if n % 2:  # Cuando n % 2 es diferente de cero, el número es impar\n        continue # no se hace nada, termina esta iteración y se pasa al siguiente número\n    print(f\"Número par {n}\") # Se ejecuta solo cuando el número es par\n\nNúmero par 0\nNúmero par 2\nNúmero par 4\nNúmero par 6\nNúmero par 8\nNúmero par 10\n\n\n.\n\n8.7.3 Ejemplo pass.\nEsta declaración no hace nada y generalmente se usa principalmente para cuestiones de desarrollo de código a un nivel abstracto. Por ejemplo si aún no tenemos claro que se va a realizar dentro de un ciclo o de una función, podemos simplemente poner esta declaración y dejar la implemetación para más adelante.\n\n\ni = 0\n\n# Aún no sabemos el código que debemos implementar\nwhile i &lt; 10:\n    print(\"Aquí va el código del while\")\n    i = 11 # Para que solo se haga una vez el ciclo\n    pass\n\nAquí va el código del while\n\n\n\n# La siguiente función debe calcular la secuencia de Fibonacci\ndef fib(n):\n    print(\"Aquí va el código de la función: n = {}\".format(n))\n    pass\n\n# En este punto del programa requiero el uso de la función fib(n):\nfib(100000) # \n\nAquí va el código de la función: n = 100000\n\n\n\n\n\n\n\n\nNotaNota.\n\n\n\nObserva que en el último ejemplo estamos usando la declaración de una función usando def; más ejemplos sobre funciones los puedes encontrar en el Capítulo 10.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_control_de_flujo.html#match-desde-la-versión-3.10",
+    "href": "notebooks/08_control_de_flujo.html#match-desde-la-versión-3.10",
+    "title": "8  Control de flujo.",
+    "section": "8.8 match (desde la versión 3.10)",
+    "text": "8.8 match (desde la versión 3.10)\nEsta declaración es parte de Python a partir de la versión 3.10. Permite buscar coincidencias de patrones de una manera similar a la instrucción switch-case de otros lenguajes de programación (C/C++, Java).\nVeamos algunos ejemplos:\n\nx = int(input(\"Teclea 1 o 0 por favor\"))\n\nmatch x:\n    case 0:\n        print(\"Tecleaste el número entero cero\")\n    case 1:\n        print(\"Tecleaste el número entero uno\")\n    case _:\n        print(\"Tecleaste algo diferente\")\n        \n\nTeclea 1 o 0 por favor 1\n\n\nTecleaste el número entero uno\n\n\n\n# Modifica los valores de la siguiente tupla y observa el resultado\npoint = (0, 0)\n\nmatch point:\n    case (0, 0): # Cuando ambas coordenadas son 0\n        print(\"Origen {}\".format(point))\n    case (0, y): # Cuando x = 0\n        print(f\"Y={y}\")\n    case (x, 0): # Cuando y = 0\n        print(f\"X={x}\")\n    case (x, y): # Cuando ambas son distintas de cero\n        print(f\"X={x}, Y={y}\")\n    case _: # Cuando no es una tupla con dos elementos\n        raise ValueError(\"No es un punto en el plano XY\")\n\nOrigen (0, 0)\n\n\n\nx = -1\nmatch x:\n    case x if x &lt; 0:\n        print(\"Número negativo\")\n    case x if x == 0:\n        print(\"Cero\")\n    case x if x &gt; 0:\n        print(\"Número positivo\")\n    case _:\n        print(\"Cero\")\n\nNúmero negativo\n\n\n\nstatus = 400\nmatch status:\n    case 400:\n        print(f\"{status} Bad request\")\n    case 404:\n        print(f\"{status} Not found\")\n    case 418:\n        print(f\"{status} Soy una tetera\")\n    case _:\n        print(f\"{status} Algo anda mal con el internet\")\n\n400 Bad request\n\n\nPara más detalles véase match Statements",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/15_funciones.html",
+    "href": "notebooks/15_funciones.html",
+    "title": "15  Funciones: introducción.",
+    "section": "",
+    "text": "16 Definición de funciones\nObjetivo. Hacer una descripción básica de las funciones y su uso mediante algunos ejemplos.\nUna vez definida la función, es posible ejecutarla (hacer una llamada a la función) como sigue:\nSi existe la declaración return dentro de la función, entonces regresa un resultado el cual puede ser asignado a una variable como sigue:\nObserva que: * Cuando se define la función, se definen los parámetros que recibirá, en este caso param1, param2, ... * Cuando se ejecuta la función, se pasan los valores arg1, arg2, ..., los cuales son los argumentos de la ejecución y serán sustituidos en los parámetros de la función. * El bloque de código de la función y el return deben tener una sangría. La definición de la función termina cuando termina la sangría.\nVeamos un ejemplo simple:\ndef imprimir_saludo():\n    saludo = \"Hola mundo desde la función 'imprimir_saludo()'\"\nVeamos:\nimprimir_saludo()\nSi intentamos asignar la función a un variable obtendremos lo siguiente:\nhola = imprimir_saludo()\nprint(hola)\nObserva que la variable hola no está definida y no contiene ningún valor (None).\nModifiquemos la función como sigue:\ndef imprimir_saludo():\n    return \"Hola mundo desde la función 'imprimir_saludo()'\"\nAhora la función no contiene bloque de código y solo tiene un return y lo que regresa es una cadena. Veamos lo que produce esta función:\nimprimir_saludo()\nEn esta versión, el resultado de ejecutar la función es la cadena que se regresa. Podemos asignarla a una varible e imprimirla como sigue:\nhola = imprimir_saludo()\nprint(hola)\nAhora la variable hola ya está definida con la cadena que regresa la función.\nVeamos otros ejemplos de funciones.\ndef squared(numero):         # Se recibe como parámetro el 'numero'\n    cuadrado = numero ** 2   # Se calcula el cuadrado del 'numero'\n    return cuadrado          # Se regresa el resultado\n# Se ejecuta la función con el argumento 2\nsquared(2)\n# Se ejecuta la función con el argumento 3 y el resultado se almacena \n# en la variable 'resultado'\nresultado = squared(3)\nprint(resultado)\ndef promedio(a, b):       # Se reciben dos argumentos 'a' y 'b'\n    prom = (a + b) / 2.0  # Se calcula el promedio \n    return prom           # Se regresa el valor del promedio\npromedio(5, 6)\nDada la secuencia de números \\(x_1, x_2, \\dots, x_N\\), la fórmula para calcular el promedio es:\n\\[\n\\bar{X} = \\frac{\\sum_{i=1}^{N} x_i}{N}\n\\]\nEsta fórmula tiene dos partes: 1. La suma de todos los números de la secuencia: \\(\\sum_{i=1}^{N} x_i\\). Esto requiere de definir una variable para almacenar la suma y recorrer la secuencia para sumar cada elemento. El siguiente pseudocódigo muestra estas acciones: \\[\n\\begin{array}{lcr}\n\\mbox{suma} \\leftarrow 0 \\\\\n\\mbox{FOR} \\;\\; i = 1, \\; N \\\\\n\\;\\;\\;\\; \\mbox{suma} \\leftarrow \\mbox{suma} + x_i  \\\\\n\\end{array}\n\\] 2. Un vez que se tiene la suma, se debe dividir entre el número total de elementos de la secuencia para obtener el promedio.\n\\[\n\\mbox{promedio} = \\frac{\\mbox{suma}}{N}\n\\]\nEn Python, se podría implementar como sigue:\ndef prom_sec(secuencia):  # Se recibe la 'secuencia' como parámetro\n    suma = 0              # Inicializamos la variable 'suma'\n    for xi in secuencia:  # Se realiza el ciclo para recorrer la 'secuencia'\n        suma += xi        # Sumamos los elementos de la secuencia\n    N = len(secuencia)    # Obtenemos N usando la función len()\n    prom = suma / N       # Dividimos entre el total de números\n    return prom           # Regresamos el valor del promedio\nEn Python se tienen varios tipos de secuencias como listas, tuplas, conjuntos, etcétera.\nProbemos la función con una lista:\nprom_sec([1,2,3,4,5])\nAhora con una tupla:\nprom_sec((1,2,3,4,5))\nGeneramos una secuencia con la función range():\nprom_sec(range(1,6))\nCon un conjunto:\nprom_sec({1,2,3,4,5})\n# La siguiente función calcula la secuencia de Fibonacci\ndef fib(n):         # Se recibe 'n' como parámetro\n    a, b = 0, 1     # Se inicializan 'a' y 'b'\n    while a &lt; n:    # Se inicia el ciclo 'while'\n        print(a, end=',')  # Se imprime el número de Fibonacci 'a'\n        a, b = b, a+b      # Se actualizan 'a' y 'b'\nObserva que esta función no regresa ningún valor, solo imprime en pantalla un valor conforme lo calcula.\nfib(150) # ejecutamos la función fib con el argumento 150\nLe podemos poner otro nombre a la función\nFibonacci = fib\nEjecutar la función usando el nuevo nombre:\nFibonacci(400)\nPodemos ver el tipo de la función:\nprint(type(fib))\nprint(type(Fibonacci))\nIncluso podemos ver el identificador en memoria de la función:\nprint(id(fib))\nprint(id(Fibonacci))\nObservamos que se puede ejecutar la función fib() a través de Fibonacci() y que ambos nombres hacen referencia a la misma función.",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Funciones: introducción.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/15_funciones.html#ejemplo-1.",
+    "href": "notebooks/15_funciones.html#ejemplo-1.",
+    "title": "15  Funciones: introducción.",
+    "section": "16.1 Ejemplo 1.",
+    "text": "16.1 Ejemplo 1.\nEscribir una función que calcule y regrese el cuadrado de un número con las siguientes características: * el número lo recibe como parámetro; * el nombre de la función debe ser squared.",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Funciones: introducción.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/15_funciones.html#ejemplo-2.",
+    "href": "notebooks/15_funciones.html#ejemplo-2.",
+    "title": "15  Funciones: introducción.",
+    "section": "16.2 Ejemplo 2.",
+    "text": "16.2 Ejemplo 2.\nEscribir una función que calcule el promedio de dos números. * Los dos números se reciben como parámetros. * La función regresa el valor del promedio.",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Funciones: introducción.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/15_funciones.html#ejemplo-3.",
+    "href": "notebooks/15_funciones.html#ejemplo-3.",
+    "title": "15  Funciones: introducción.",
+    "section": "16.3 Ejemplo 3.",
+    "text": "16.3 Ejemplo 3.\nEscribir una función que calcule el promedio de una secuencia de números que recibe como parámetros.",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Funciones: introducción.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/15_funciones.html#ejemplo-4.",
+    "href": "notebooks/15_funciones.html#ejemplo-4.",
+    "title": "15  Funciones: introducción.",
+    "section": "16.4 Ejemplo 4.",
+    "text": "16.4 Ejemplo 4.\nLos números de Fibonacci, denotados con \\(F_n\\) forman una secuencia tal que cada número es la suma de dos números precedentes e inicia con el 0 y el 1. Matemáticamente se escribe como:\n\\[\n\\begin{eqnarray}\nF_0 & = & 0 \\\\\nF_1 & = & 1 \\\\\nF_n & = & F_{n − 1} + F_{n − 2} \\;\\;\\; \\text{para} \\; n &gt; 1.\n\\end{eqnarray}\n\\] La secuencia es entonces: 0 , 1 , 1 , 2 , 3 , 5 , 8 , 13 , 21 , 34 , 55 , 89 , 144 , \\(\\ldots\\)",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Funciones: introducción.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#introducción",
+    "href": "notebooks/09_listas.html#introducción",
+    "title": "9  Estructura de datos: listas.",
+    "section": "",
+    "text": "Tipo\nOrdenada\nInmutable\nIndexable\nDuplicidad\n\n\n\n\nList\nSI\nNO\nSI\nSI\n\n\nTuple\nSI\nSI\nSI\nSI\n\n\nSets\nNO\nNO\nNO\nNO\n\n\nDict\nNO\nNO\nSI\nNO",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#listas",
+    "href": "notebooks/09_listas.html#listas",
+    "title": "9  Estructura de datos: listas.",
+    "section": "9.2 Listas",
+    "text": "9.2 Listas\n\nConsisten en una secuencia ordenada y mutable de elementos.\n\nOrdenadas significa que cada elemento dentro de la lista está indexado y mantiene su orden definido en su creación.\nMutable significa que los elementos de la lista se pueden modificar, y además que se pueden agregar o eliminar elementos.\n\nLas listas pueden tener elementos duplicados, es decir, elementos del mismo tipo y con el mismo contenido.\nLas listas se definen usando corchetes ([]) y comas (,) para separar sus elementos.\n\n\n9.2.1 Ejemplo.\nVamos a crear las siguientes listas:\n\ngatos : Razas de gatos.\norigen : Origen de cada raza de gatos.\npelo_largo: Si tienen pelo largo o no.\npelo_corto: Si tienen pelo corto o no.\npeso_minimo: El peso mínimo que pueden tener.\npeso_maximo: El peso máximo que pueden tener.\n\n\n\n# Listas con elementos de tipo cadena (str)\ngatos = ['Persa', 'Sphynx', 'Ragdoll','Siamés']\norigen = ['Irán', 'Toronto', 'California', 'Tailandia']\n\n# Listas con elementos de tipo lógico (bool)\npelo_largo = [True, False, True, False]\npelo_corto = [False, False, False, True]\n\n# Listas con elementos de tipo flotante\npeso_minimo = [2.3, 3.5, 5.4, 2.5]\npeso_maximo = [6.8, 7.0, 9.1, 4.5]\n\n\n# Revisamos el tipo y contenido de cada lista\nprint(type(gatos), gatos)\nprint(type(origen), origen)\nprint(type(pelo_largo), pelo_largo)\nprint(type(pelo_corto), pelo_corto)\nprint(type(peso_minimo), peso_minimo)\nprint(type(peso_maximo), peso_maximo)\n\n&lt;class 'list'&gt; ['Persa', 'Sphynx', 'Ragdoll', 'Siamés']\n&lt;class 'list'&gt; ['Irán', 'Toronto', 'California', 'Tailandia']\n&lt;class 'list'&gt; [True, False, True, False]\n&lt;class 'list'&gt; [False, False, False, True]\n&lt;class 'list'&gt; [2.3, 3.5, 5.4, 2.5]\n&lt;class 'list'&gt; [6.8, 7.0, 9.1, 4.5]\n\n\nObservaciones:\n\nCada lista contiene 4 elementos.\nLos elementos de cada lista son del mismo tipo. No obstante, es posible que las listas tengan elementos de tipos distintos.\nLos elementos son cadenas, flotantes y tipos lógicos.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#indexado",
+    "href": "notebooks/09_listas.html#indexado",
+    "title": "9  Estructura de datos: listas.",
+    "section": "9.3 Indexado",
+    "text": "9.3 Indexado\nSe puede acceder a cada elemento de las listas de manera similar a como se hace con las cadenas, veáse el tema Indexación de las cadenas en la Sección 5.3.\nPor ejemplo:\n\ngatos[0] # Primer elemento\n\n'Persa'\n\n\n\ngatos[1:4] # Todos los elementos, desde el 1 hasta el 3\n\n['Sphynx', 'Ragdoll', 'Siamés']\n\n\n\ngatos[-1] # Último elemento\n\n'Siamés'\n\n\n\ngatos[::2] # Todos los elementos en saltos de dos en dos\n\n['Persa', 'Ragdoll']\n\n\n\ngatos[::-1] # Todos los elementos en reversa\n\n['Siamés', 'Ragdoll', 'Sphynx', 'Persa']\n\n\nPara conocer el contenido y tipo de alguno de los elementos podemos hacer lo siguiente:\n\nprint(type(gatos[0]), gatos[0])\nprint(type(pelo_largo[2]), pelo_largo[2])\nprint(type(peso_maximo[-1]), peso_maximo[-1])\n\n&lt;class 'str'&gt; Persa\n&lt;class 'bool'&gt; True\n&lt;class 'float'&gt; 4.5",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/05_cadenas.html#sec-indexacion_cadenas",
+    "href": "notebooks/05_cadenas.html#sec-indexacion_cadenas",
+    "title": "5  Cadenas.",
+    "section": "5.3 Indexación de las cadenas.",
+    "text": "5.3 Indexación de las cadenas.\nLa indexación permite acceder a diferentes elementos o rangos de elementos de una cadena.\n\nLos elementos de una cadena de N elementos, se numeran empezando en 0 y terminando en N-1, el cual representa el último elemento de la cadena.\nTambién se pueden usar índices negativos donde -1 representa el último elemento y -N el primer elemento.\n\nVeamos el siguiente ejemplo:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nejemplo\n=\nM\nu\nr\nc\ni\né\nl\na\ng\no\n\n\níndice positivo\n\\(\\rightarrow\\)\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n\n\níndice negativo\n\\(\\rightarrow\\)\n-10\n-9\n-8\n-7\n-6\n-5\n-4\n-3\n-2\n-1\n\n\n\n\nLa cadena tiene N = 10 elementos.\nSus índices positivos van de 0 a 9.\nSus índices negativos van de -1 a -10.\n\nAhora veamos algunos ejemplos de acceso a ciertos elementos de la cadena.\n\n# Definimos la cadena\nejemplo = 'Murciélago'\nprint(ejemplo)\nprint(type(ejemplo))\n\nMurciélago\n&lt;class 'str'&gt;\n\n\n\n# Primer elemento de la cadena\nprint(ejemplo[0]) \n\nM\n\n\n\n# Elemento en la posición 5\nprint(ejemplo[5]) \n\né\n\n\n\n# Elemento en la posición 9 (en este caso es el último)\nprint(ejemplo[9]) \n\no\n\n\n\n# Último elemento de la cadena\nprint(ejemplo[-1]) \n\no\n\n\n\n# Elemento en la posición -6 o equivalentemente en la posición 4\nprint(ejemplo[-6]) \nprint(ejemplo[4])\n\ni\ni\n\n\n\n# Elemento en la posición -10, el primero en este caso\nprint(ejemplo[-10]) \n\nM\n\n\n\n5.3.1 Acceso a porciones de las cadenas (slicing)\nSe puede obtener una subcadena a partir de la cadena original, para ello usamos el siguiente formato: str[Start:End:Stride]\nStart :Índice del primer caracter para formar la subcadena. Se incluye el elemento con este índice.\nEnd : Índice que indica el caracter final de la subcadena. No se incluye el elemento con este índice.\nStride: Salto entre elementos.\nSi queremos obtener la subcadena urcié de la cadena original Murciélago podemos hacerlo como sigue:\n\ncon índices positivos:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nejemplo\n=\nM\nu\nr\nc\ni\né\nl\na\ng\no\n\n\níndice positivo\n\\(\\rightarrow\\)\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n\n\nejemplo[1:6]\n=\n\nu\nr\nc\ni\né\n\n\n\n\n\n\n\n\ncon índices negativos:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nejemplo\n=\nM\nu\nr\nc\ni\né\nl\na\ng\no\n\n\níndice negativo\n\\(\\rightarrow\\)\n-10\n-9\n-8\n-7\n-6\n-5\n-4\n-3\n-2\n-1\n\n\nejemplo[-9:-4]\n=\n\nu\nr\nc\ni\né\n\n\n\n\n\n\n\nVeamos los siguientes ejemplos\n\nprint(ejemplo[1:6])\n\nurcié\n\n\n\nprint(ejemplo[-9:-4])\n\nurcié\n\n\n\nprint(ejemplo[:]) # Cadena completa\n\nMurciélago\n\n\n\nprint(ejemplo[0:5]) # Elementos del 0 al 4 \n\nMurci\n\n\n\nprint(ejemplo[::2]) # Todos los elementos, con saltos de 2\n\nMrilg\n\n\n\nprint(ejemplo[1:8:2]) # Los elementos de 1 a 7, con saltos de 2\n\nucéa\n\n\n\nprint(ejemplo[::-1]) # La cadena en reversa\n\nogaléicruM",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Cadenas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#mutabilidad-de-las-listas.",
+    "href": "notebooks/09_listas.html#mutabilidad-de-las-listas.",
+    "title": "9  Estructura de datos: listas.",
+    "section": "9.4 Mutabilidad de las listas.",
+    "text": "9.4 Mutabilidad de las listas.\nUsando el indexado es posible cambiar el contenido de los elementos de una lista.\nVeamos los siguientes ejemplos:\n\nModificamos el elemento 1 de la lista peso_maximo.\n\n\nprint('Original  :', peso_maximo) # Antes\npeso_maximo[1] = 100.5 \nprint('Modificado:', peso_maximo) # Después\n\nOriginal  : [6.8, 7.0, 9.1, 4.5]\nModificado: [6.8, 100.5, 9.1, 4.5]\n\n\n\nEl tipo de los elementos puede ser diferente del original.\n\n\nprint('Original  :', peso_maximo) # Antes\npeso_maximo[1] = \"una cadena\" \nprint('Modificado:', peso_maximo) # Después\n\nOriginal  : [6.8, 100.5, 9.1, 4.5]\nModificado: [6.8, 'una cadena', 9.1, 4.5]\n\n\n\nIncluso es posible agegar otra lista en uno de los elementos:\n\n\nprint('Original  :', peso_maximo) # Antes\npeso_maximo[1] = [1,2,'a','b','c'] \nprint('Modificado:', peso_maximo) # Después\n\nOriginal  : [6.8, 'una cadena', 9.1, 4.5]\nModificado: [6.8, [1, 2, 'a', 'b', 'c'], 9.1, 4.5]\n\n\n\nSe pueden usar rangos para modificar varios elementos a la vez.\n\n\nprint('Original  :', peso_maximo) # Antes\npeso_maximo[1:3] = ['a', 'b'] \nprint('Modificado:', peso_maximo) # Después\n\nOriginal  : [6.8, [1, 2, 'a', 'b', 'c'], 9.1, 4.5]\nModificado: [6.8, 'a', 'b', 4.5]\n\n\n\nSe pueden modificar elementos en saltos diferentes a uno.\n\n\nprint('Original  :', peso_maximo) # Antes\npeso_maximo[::2] = [0.0, 0.0] \nprint('Modificado:', peso_maximo) # Después\n\nOriginal  : [6.8, 'a', 'b', 4.5]\nModificado: [0.0, 'a', 0.0, 4.5]\n\n\n\n# Regresamos a los valores originales de la lista peso_maximo\npeso_maximo[0:3] = [6.8, 7.0, 9.1]\nprint(peso_maximo)\n\n[6.8, 7.0, 9.1, 4.5]",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#nombres-e-identificadores",
+    "href": "notebooks/09_listas.html#nombres-e-identificadores",
+    "title": "9  Estructura de datos: listas.",
+    "section": "9.5 Nombres e identificadores",
+    "text": "9.5 Nombres e identificadores\nEs importante entender la forma en como están almacenados los elementos de la lista en memoria. Veamos el siguiente ejemplo.\nGeneramos otro nombre para la lista (no se crea una copia):\n\np_min = peso_minimo\n\nVerificamos que sea la misma lista:\n\nprint(id(p_min), p_min)\nprint(id(peso_minimo), peso_minimo)\n\n2339996477760 [2.3, 3.5, 5.4, 2.5]\n2339996477760 [2.3, 3.5, 5.4, 2.5]\n\n\nPodemos acceder a un elemento de la lista usando el indexado y ver su contenido y su identificador en memoria. Por ejemplo, para ver los elementos con índices 2 y 3 de la lista p_min hacemos lo siguiente:\n\nprint(id(p_min[2]), p_min[2])\nprint(id(p_min[3]), p_min[3])\n\n2339991871280 5.4\n2339995659664 2.5\n\n\nHacemos lo mismo usando el nombre peso_minimo:\n\nprint(id(peso_minimo[2]), peso_minimo[2])\nprint(id(peso_minimo[3]), peso_minimo[3])\n\n2339991871280 5.4\n2339995659664 2.5\n\n\nObserva que la lista tiene su propio identificador y cada elemento de la lista tiene un identificador diferente.\nEliminamos el nombre peso_minimo:\n\ndel peso_minimo \n\nYa no existe el nombre peso_minimo por lo que la siguiente declaración dará un error:\n\nprint(peso_minimo) \n\n\n---------------------------------------------------------------------------\nNameError                                 Traceback (most recent call last)\nCell In[25], line 1\n----&gt; 1 print(peso_minimo) \n\nNameError: name 'peso_minimo' is not defined\n\n\n\nPero aún se puede acceder a la lista original a través del nombre p_min:\n\nprint(id(p_min), p_min) \n\n2339996477760 [2.3, 3.5, 5.4, 2.5]\n\n\nSe puede eliminar un elemento de la lista:\n\ndel p_min[2] \n\nVeamos el estado actual de la lista:\n\nprint(id(p_min), p_min) \n\n2339996477760 [2.3, 3.5, 2.5]",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#funciones-incorporadas-que-operan-sobre-las-listas.",
+    "href": "notebooks/09_listas.html#funciones-incorporadas-que-operan-sobre-las-listas.",
+    "title": "9  Estructura de datos: listas.",
+    "section": "9.6 Funciones incorporadas que operan sobre las listas.",
+    "text": "9.6 Funciones incorporadas que operan sobre las listas.\nExisten muchas operaciones que se pueden realizar sobre las listas usando funciones incorporadas (built-in functions).\n\n9.6.1 len(): determina la longitud de la lista.\n\nlen(gatos) \n\n4\n\n\n\n\n9.6.2 max(): determina el máximo elemento de la lista.\n\nmax(peso_maximo) \n\n9.1\n\n\n\n\n9.6.3 min(): determina el mínimo elemento de la lista.\n\nmin(peso_maximo) \n\n4.5\n\n\n\n\n9.6.4 any(): revisa si ALGÚN elemento es True.\n\nany(pelo_largo) \n\nTrue\n\n\n\n\n9.6.5 all(): revisa si TODOS los elementos son True.\n\nall(pelo_corto)\n\nFalse\n\n\n\n\n9.6.6 sorted(): ordena los elementos de la lista.\n\nprint(peso_maximo) # Lista original antes del ordenamiento\nsorted(peso_maximo) \n\n[6.8, 7.0, 9.1, 4.5]\n\n\n[4.5, 6.8, 7.0, 9.1]\n\n\nLa función sorted() genera una nueva lista ordenada, pero no modifica la lista original. Si se imprime la lista peso_maximo veremos que no ha cambiado:\n\nprint(peso_maximo)\n\n[6.8, 7.0, 9.1, 4.5]\n\n\n\n\n9.6.7 sum(): suma los elementos de la lista.\n\n# El operador suma debe estar definido para el tipo de los elementos de la lista\nsum(peso_maximo) \n\n27.4\n\n\n\n\n9.6.8 enumerate(): enumera los elementos de una lista.\n\n# Genera tuplas del tipo `(i, elemento)`.\nlist(enumerate(origen)) \n\n[(0, 'Irán'), (1, 'Toronto'), (2, 'California'), (3, 'Tailandia')]\n\n\nObserva que para el caso de enumerate() el resultado se debe convertir a un tipo que se pueda desplegar, en este caso se convierte a una lista usando list().\n\n\n9.6.9 zip(): agrupa los elementos de dos listas.\n\n# Genera tuplas del tipo `(gatos[i], origen[i])`.\nlist(zip(gatos, origen)) \n\n[('Persa', 'Irán'),\n ('Sphynx', 'Toronto'),\n ('Ragdoll', 'California'),\n ('Siamés', 'Tailandia')]\n\n\nObserva que para el caso de zip() el resultado se debe convertir a un tipo que se pueda desplegar, en este caso se convierte a una lista usando list().",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#operadores-sobre-listas",
+    "href": "notebooks/09_listas.html#operadores-sobre-listas",
+    "title": "9  Estructura de datos: listas.",
+    "section": "9.7 Operadores sobre listas",
+    "text": "9.7 Operadores sobre listas\nSe pueden usar los operadores +, * e in sobre las listas.\n\n9.7.1 +: concatena listas.\n\ngatos + peso_maximo # Concatenación de dos listas\n\n['Persa', 'Sphynx', 'Ragdoll', 'Siamés', 6.8, 7.0, 9.1, 4.5]\n\n\n\n\n9.7.2 *: hace réplicas de las listas.\n\norigen * 3 # Duplicación de la lista\n\n['Irán',\n 'Toronto',\n 'California',\n 'Tailandia',\n 'Irán',\n 'Toronto',\n 'California',\n 'Tailandia',\n 'Irán',\n 'Toronto',\n 'California',\n 'Tailandia']\n\n\n\n\n9.7.3 in: revisa si un elemento está en la lista.\n\n'Siamés' in gatos # ¿Está el elemento `Siamés` en la lista gatos?\n\nTrue",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#métodos-de-las-listas-comportamiento.",
+    "href": "notebooks/09_listas.html#métodos-de-las-listas-comportamiento.",
+    "title": "9  Estructura de datos: listas.",
+    "section": "9.8 Métodos de las listas (comportamiento).",
+    "text": "9.8 Métodos de las listas (comportamiento).\nEn términos de Programación Orientada a Objetos, la clase &lt;class 'list'&gt; define una serie de métodos que se pueden aplicar sobre los objetos del tipo list. Veamos algunos ejemplos:\n\nprint(gatos) # Imprimimos la lista original\n\n['Persa', 'Sphynx', 'Ragdoll', 'Siamés']\n\n\n\n9.8.1 Agregar elementos a la lista.\n\ngatos.append('Siberiano') # Se agrega un elemento al final de la lista\n\n\nprint(gatos)\n\n['Persa', 'Sphynx', 'Ragdoll', 'Siamés', 'Siberiano']\n\n\n\ngatos.append('Persa') # Se agrega otro elemento al final de la lista, repetido\n\n\nprint(gatos)\n\n['Persa', 'Sphynx', 'Ragdoll', 'Siamés', 'Siberiano', 'Persa']\n\n\n\n\n9.8.2 Eliminar elementos de la lista.\n\ngatos.remove('Persa') \n\n\nprint(gatos) \n\n['Sphynx', 'Ragdoll', 'Siamés', 'Siberiano', 'Persa']\n\n\nObserva que solo se elimina el primer elemento Persa que encuentra.\n\n\n9.8.3 Insertar elementos en la lista.\nPodemos insertar un elemento en un lugar específico de la lista:\n\ngatos.insert(0,'Persa')\n\n\nprint(gatos)\n\n['Persa', 'Sphynx', 'Ragdoll', 'Siamés', 'Siberiano', 'Persa']\n\n\n\n\n9.8.4 Extraer el último elemento de la lista.\nTambién es posible extraer el último elemento de la lista\n\ngatos.pop() \n\n'Persa'\n\n\n\nprint(gatos)\n\n['Persa', 'Sphynx', 'Ragdoll', 'Siamés', 'Siberiano']\n\n\n\n\n9.8.5 Ordenar la lista.\n\ngatos.sort() \n\n\nprint(gatos)\n\n['Persa', 'Ragdoll', 'Siamés', 'Siberiano', 'Sphynx']\n\n\n\n\n9.8.6 La lista con los elementos en reversa.\n\ngatos.reverse() \n\n\nprint(gatos)\n\n['Sphynx', 'Siberiano', 'Siamés', 'Ragdoll', 'Persa']\n\n\n\n\n9.8.7 Concatenar dos listas.\n\npelo_corto.extend(pelo_largo) \n\n\nprint(pelo_corto)\n\n[False, False, False, True, True, False, True, False]\n\n\n\n\n9.8.8 Contar los elementos de un tipo.\n\npelo_corto.count(False) # Contar los elementos que tengan el valor 'False'\n\n5\n\n\n\npelo_corto.count(True) # Contar los elementos que tengan el valor 'True'\n\n3\n\n\n\n\n9.8.9 Ejemplo.\nConsidera la lista original peso_minimo = [2.3, 3.5, 5.4, 2.5]. El nombre fue eliminado en un ejemplo anterior. Vamos a recuperar la lista a través del nombre p_min que aún existe:\n\nVeamos el identificador y contenido de p_min\n\nprint(id(p_min), p_min)\n\n2339996477760 [2.3, 3.5, 2.5]\n\n\nNecesitamos insertar el valor 5.4 en el lugar 2 de la lista:\n\np_min.insert(2, 5.4)\n\nRevisamos el identificador y contenido de p_min\n\nprint(id(p_min), p_min)\n\n2339996477760 [2.3, 3.5, 5.4, 2.5]\n\n\nRecuperamos el nombre original:\n\npeso_minimo = p_min\n\nRevisamos el identificador y contenido de peso_minimo\n\nprint(id(peso_minimo), peso_minimo)\n\n2339996477760 [2.3, 3.5, 5.4, 2.5]\n\n\nEliminamos p_min\n\ndel p_min\n\nUna descripción detallada de los métodos de la listas se puede ver en More on Lists",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#copiando-listas",
+    "href": "notebooks/09_listas.html#copiando-listas",
+    "title": "9  Estructura de datos: listas.",
+    "section": "9.9 Copiando listas",
+    "text": "9.9 Copiando listas\n\nUna lista es un objeto que contiene varios elementos.\nPara crear una copia de una lista, se debe generar un espacio de memoria en donde se copien todos los elementos de la lista original y asignar un nuevo nombre para esta nueva lista.\nLo anterior no se puede hacer simplemente con el operador de asignación =.\n\nVeamos un ejemplo:\n\ngatitos = gatos\n\n\nprint(gatos)\nprint(gatitos)\n\n['Sphynx', 'Siberiano', 'Siamés', 'Ragdoll', 'Persa']\n['Sphynx', 'Siberiano', 'Siamés', 'Ragdoll', 'Persa']\n\n\nPodemos observar que al imprimir la lista mediante los nombres gatos y gatitos obtenemos el mismo resultado. Ahora, modifiquemos el primer elemento usando el nombre gatitos:\n\ngatitos[0] = 'Singapur'\n\n\nprint(gatos)\nprint(gatitos)\n\n['Singapur', 'Siberiano', 'Siamés', 'Ragdoll', 'Persa']\n['Singapur', 'Siberiano', 'Siamés', 'Ragdoll', 'Persa']\n\n\nObservamos que al imprimir la lista usando gatos y gatitos volvemos a obtener el mismo resultado. Lo anterior significa que el operador de asignación solamente creó un nuevo nombre para el mismo objeto en memoria, por lo que en realidad no hizo una copia de la lista. Lo anterior lo podemos verificar usando la función id() para ver la dirección en memoria del objeto:\n\nprint(id(gatitos))\nprint(id(gatos))\n\n2339996503872\n2339996503872\n\n\n\n9.9.1 Copiando con [:]\nPara crear una nueva lista copiando todos los elementos podemos hacer lo siguiente:\n\ngatitos = gatos[:]\n\n\nprint(type(gatitos))\nprint(id(gatitos))\nprint(gatitos)\n\nprint(type(gatos))\nprint(id(gatos))\nprint(gatos)\n\n&lt;class 'list'&gt;\n2340003231168\n['Singapur', 'Siberiano', 'Siamés', 'Ragdoll', 'Persa']\n&lt;class 'list'&gt;\n2339996503872\n['Singapur', 'Siberiano', 'Siamés', 'Ragdoll', 'Persa']\n\n\nObserva que el identificador en memoria de cada lista es diferente por lo que se trata de listas diferentes.\n\n\n9.9.2 Copiando con el método copy()\nLa clase &lt;class 'list'&gt; contiene un método llamado copy() que efectivamente realiza una copia de la lista:\n\ngatitos = gatos.copy()\n\n\nprint(type(gatitos))\nprint(id(gatitos))\nprint(gatitos)\n\nprint(type(gatos))\nprint(id(gatos))\nprint(gatos)\n\n&lt;class 'list'&gt;\n2340003240960\n['Singapur', 'Siberiano', 'Siamés', 'Ragdoll', 'Persa']\n&lt;class 'list'&gt;\n2339996503872\n['Singapur', 'Siberiano', 'Siamés', 'Ragdoll', 'Persa']\n\n\nObserva que el identificador en memoria de cada lista es diferente por lo que se trata de listas diferentes.\n\n\n9.9.3 Copiando con el constructor\nLa función list() transforma un objeto iterable en una lista. La podemos usar para copiar una lista como sigue:\n\ngatitos = list(gatos)\n\n\nprint(type(gatitos))\nprint(id(gatitos))\nprint(gatitos)\n\nprint(type(gatos))\nprint(id(gatos))\nprint(gatos)\n\n&lt;class 'list'&gt;\n2340003294272\n['Singapur', 'Siberiano', 'Siamés', 'Ragdoll', 'Persa']\n&lt;class 'list'&gt;\n2339996503872\n['Singapur', 'Siberiano', 'Siamés', 'Ragdoll', 'Persa']\n\n\nObserva que el identificador en memoria de cada lista es diferente por lo que se trata de listas diferentes.\n\n\n\n\n\n\nNotaNota.\n\n\n\nLo que sucede en este último caso, es que se ejecuta el constructor de la clase &lt;class 'list'&gt;, el cual recibe un objeto iterable (lista, tupla, diccionario, entre otros), copia todos los elementos de ese iterable y los pone en una lista que se almacena en un espacio en memoria diferente al iterable original. Esto lo realiza el constructor de la clase list y es una característica de la Programación Orientada a Objetos.\n\n\n\n\n9.9.4 Copiando con la biblioteca copy\nLa biblioteca copy de Python ofrece herramientas para copiado de objetos. Veamos un ejemplo:\n\n# Importamos la biblioteca copy\nimport copy\n\n# Usamos la función copy()\ngatitos = copy.copy(gatos)\n\n\nprint(type(gatitos))\nprint(id(gatitos))\nprint(gatitos)\n\nprint(type(gatos))\nprint(id(gatos))\nprint(gatos)\n\n&lt;class 'list'&gt;\n2340003010880\n['Singapur', 'Siberiano', 'Siamés', 'Ragdoll', 'Persa']\n&lt;class 'list'&gt;\n2339996503872\n['Singapur', 'Siberiano', 'Siamés', 'Ragdoll', 'Persa']\n\n\nObserva que el identificador en memoria de cada lista es diferente por lo que se trata de listas diferentes.\nMás información sobre el uso de esta biblioteca se puede ver en Shallow and deep copy operations",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#listas-mas-complejas.",
+    "href": "notebooks/09_listas.html#listas-mas-complejas.",
+    "title": "9  Estructura de datos: listas.",
+    "section": "9.10 Listas mas complejas.",
+    "text": "9.10 Listas mas complejas.\nLas listas pueden contener cualquier tipo de dato de Python e incluso tipos construidos por el usuario. Veamos el siguiente ejemplo:\n\nlst = ['a', 'b', 'c', [1, 2, 3], 5+1j, 'lista muy compleja']\n\nObserva que: * los primeros tres elementos, lst[0], lst[1] y lst[2] son de tipo str, * el cuarto elemento, lst[3], es una lista, * el quinto elemento, lst[4], es un número complejo, * y el último elemento, lst[5], es una cadena.\nPodemos usar los nombres lst[i], con i =0,1,2,3,4,5, como nombres de variables.\nEl contenido y tipo de cada elemento se puede conocer usando esos nombres:\n\nprint(lst[0], type(lst[0]))\nprint(lst[1], type(lst[1]))\nprint(lst[2], type(lst[2]))\nprint(lst[3], type(lst[3]))\nprint(lst[4], type(lst[4]))\nprint(lst[5], type(lst[5]))\n\na &lt;class 'str'&gt;\nb &lt;class 'str'&gt;\nc &lt;class 'str'&gt;\n[1, 2, 3] &lt;class 'list'&gt;\n(5+1j) &lt;class 'complex'&gt;\nlista muy compleja &lt;class 'str'&gt;\n\n\nPodemos acceder a los elementos individuales de los objetos que son más complejos. Por ejemplo, para lst[3] y lst[5] que son una lista y una cadena respectivamente, hacemos lo siguiente:\n\n# Segundo elemento de la lista 'lst[3]'\nprint(lst[3][1], type(lst[3][1]))\n\n# Cuarto elemento de la cadena 'lst[5]'\nprint(lst[5][3], type(lst[5][3]))\n\n2 &lt;class 'int'&gt;\nt &lt;class 'str'&gt;\n\n\nOtro ejemplo:\n\nsuperlista = ['México', 3.141592, 20, 1j, [1,2,3,'lista']]\n\n\nsuperlista\n\n['México', 3.141592, 20, 1j, [1, 2, 3, 'lista']]\n\n\n\nsuperlista[0] # El elemento 0 de la lista\n\n'México'\n\n\n\nsuperlista[4] # El elemento 4 de la lista (este elemento es otra lista)\n\n[1, 2, 3, 'lista']\n\n\n\nsuperlista[4][2] # El elemento 2 del elemento 4 de la lista original\n\n3",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/10_tuplas.html",
+    "href": "notebooks/10_tuplas.html",
+    "title": "10  Estructura de datos: tuplas.",
+    "section": "",
+    "text": "10.1 Introducción.\nObjetivo. Describir la estructura de datos tuple mediante la exposición de ejemplos.\nRecordemos los cuatro tipos de colecciones que se tienen en Python:",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Estructura de datos: tuplas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/10_tuplas.html#introducción.",
+    "href": "notebooks/10_tuplas.html#introducción.",
+    "title": "10  Estructura de datos: tuplas.",
+    "section": "",
+    "text": "Tipo\nOrdenada\nInmutable\nIndexable\nDuplicidad\n\n\n\n\nList\nSI\nNO\nSI\nSI\n\n\nTuple\nSI\nSI\nSI\nSI\n\n\nSets\nNO\nNO\nNO\nNO\n\n\nDict\nNO\nNO\nSI\nNO",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Estructura de datos: tuplas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/10_tuplas.html#tuplas.",
+    "href": "notebooks/10_tuplas.html#tuplas.",
+    "title": "10  Estructura de datos: tuplas.",
+    "section": "10.2 Tuplas.",
+    "text": "10.2 Tuplas.\n\nConsisten en una secuencia ordenada e inmutable de elementos.\n\nOrdenadas significa que cada elemento dentro de la tupla está indexado y mantiene su orden definido en su creación.\nInmutable significa que los elementos de la tupla NO se pueden modificar, tampoco que se pueden agregar o eliminar elementos.\n\nLas tuplas pueden tener elementos duplicados, es decir, elementos del mismo tipo y con el mismo contenido.\nLas tuplas se definen usando paréntesis (()) y comas (,) para separar sus elementos.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Estructura de datos: tuplas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/10_tuplas.html#ejemplo.",
+    "href": "notebooks/10_tuplas.html#ejemplo.",
+    "title": "10  Estructura de datos: tuplas.",
+    "section": "10.3 Ejemplo.",
+    "text": "10.3 Ejemplo.\nConstruiremos las siguientes tuplas:\nt1 = ('a', 'b', 'c', 'b', 'd', 'e', 'f', 'z')\nt2 = (1, 2, 3, 4, 5, 6, 7, 8)\nt3 = ('gatos', ['Persa', 'Sphynx'], [2.3, 3,5])",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Estructura de datos: tuplas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/10_tuplas.html#tuplas-de-un-solo-elemento.",
+    "href": "notebooks/10_tuplas.html#tuplas-de-un-solo-elemento.",
+    "title": "10  Estructura de datos: tuplas.",
+    "section": "10.4 Tuplas de un solo elemento.",
+    "text": "10.4 Tuplas de un solo elemento.\nSi deseamos una tupla de un solo elemento debemos realizar lo siguiente:\n\ntupla_un_elemento = (1,)\nprint(tupla_un_elemento, type(tupla_un_elemento))\n\n(1,) &lt;class 'tuple'&gt;\n\n\nLa siguiente expresión no construye una tupla, si no un entero:\n\ntupla_un_elemento = (1)\nprint(tupla_un_elemento, type(tupla_un_elemento))\n\n1 &lt;class 'int'&gt;",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Estructura de datos: tuplas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/10_tuplas.html#indexado.",
+    "href": "notebooks/10_tuplas.html#indexado.",
+    "title": "10  Estructura de datos: tuplas.",
+    "section": "10.5 Indexado.",
+    "text": "10.5 Indexado.\nEl indexado de las tuplas es similar al de las cadenas (veáse Sección 5.3). Por ejemplo, usando la tupla t1:\n\nprint(t1)\n\n('a', 'b', 'c', 'b', 'd', 'e', 'f', 'z')\n\n\n\nt1[0]  # Primer elemento\n\n'a'\n\n\n\nt1[-1] # Último elemento\n\n'z'\n\n\n\nt1[2:5] # Todos los elementos, desde el 2 hasta el 4\n\n('c', 'b', 'd')\n\n\n\nt1[::-1] # Todos los elementos en reversa\n\n('z', 'f', 'e', 'd', 'b', 'c', 'b', 'a')\n\n\nUsando el indexado, podemos ver el contenido y tipo de los elementos, por ejemplo:\n\nprint(type(t3[0]), t3[0]) # Elemento 1\nprint(type(t3[1]), t3[1]) # Elemento 2\nprint(type(t3[2]), t3[2]) # Elemento 3\n\n&lt;class 'str'&gt; gatos\n&lt;class 'list'&gt; ['Persa', 'Sphynx']\n&lt;class 'tuple'&gt; (2.3, 3.5)\n\n\n\nObserva que los elementos 2 y 3 son una lista y una tupla respectivamente.\nLa lista contiene cadenas, mientras que la tupla contiene flotantes.\nPodemos acceder a los elementos individuales de la lista y la tupla como sigue:\n\n\n# Primer elemento de la lista t3[1]\nprint(type(t3[1][0]), t3[1][0], )\n\n# Segundo elemento de la tupla t3[2]\nprint(type(t3[2][1]), t3[2][1])\n\n&lt;class 'str'&gt; Persa\n&lt;class 'float'&gt; 3.5\n\n\nLas tuplas son usadas, entre otras cosas, en funciones para regresar valores o enviar argumentos. Más acerca de funciones se describe en Capítulo 10.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Estructura de datos: tuplas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/10_tuplas.html#inmutabilidad.",
+    "href": "notebooks/10_tuplas.html#inmutabilidad.",
+    "title": "10  Estructura de datos: tuplas.",
+    "section": "10.6 Inmutabilidad.",
+    "text": "10.6 Inmutabilidad.\nLos elementos de las tuplas no se pueden modificar. Por ejemplo, si intentamos modificar el elemento tres de la tupla t1 obtendremos un error:\n\nt1[2] = 'h'\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[17], line 1\n----&gt; 1 t1[2] = 'h'\n\nTypeError: 'tuple' object does not support item assignment",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Estructura de datos: tuplas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/10_tuplas.html#funciones-incorporadas-que-operan-sobre-las-tuplas.",
+    "href": "notebooks/10_tuplas.html#funciones-incorporadas-que-operan-sobre-las-tuplas.",
+    "title": "10  Estructura de datos: tuplas.",
+    "section": "10.7 Funciones incorporadas que operan sobre las tuplas.",
+    "text": "10.7 Funciones incorporadas que operan sobre las tuplas.\nPrácticamente todas las funciones incorporadas que se aplican a las listas, se pueden aplicar a las tuplas, por ejemplo:\n\nprint(len(t1))\nprint(max(t1))\nprint(min(t1))\nprint(all(t2))\nprint(any(t2))\nprint(sorted(t1))\nprint(sum(t2))\n\n8\nz\na\nTrue\nTrue\n['a', 'b', 'b', 'c', 'd', 'e', 'f', 'z']\n36\n\n\n\n# Enumera los elementos de una tupla regresando tuplas (i, elemento)\ntuple(enumerate(t1)) \n\n((0, 'a'),\n (1, 'b'),\n (2, 'c'),\n (3, 'b'),\n (4, 'd'),\n (5, 'e'),\n (6, 'f'),\n (7, 'z'))\n\n\n\n# Agrupa los elementos de dos tuplas regresando tuplas: (t1[i], t2[i])\ntuple(zip(t1, t2)) \n\n(('a', 1),\n ('b', 2),\n ('c', 3),\n ('b', 4),\n ('d', 5),\n ('e', 6),\n ('f', 7),\n ('z', 8))\n\n\nObserva que para el caso de enumerate y zip el resultado se debe convertir a un tipo que se pueda desplegar. Podemos elegir convertir a una lista o a una tupla para desplegar el resultado.\nSe pueden agrupar dos tuplas con zip aunque sean de distinto tamaño:\n\ntuple(zip(t3, t2))\n\n(('gatos', 1), (['Persa', 'Sphynx'], 2), ((2.3, 3.5), 3))\n\n\nSe puede agrupar una tupla y una lista:\n\ntuple(zip((1,2,3,4,5),['a','b','c','d','e']))\n\n((1, 'a'), (2, 'b'), (3, 'c'), (4, 'd'), (5, 'e'))",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Estructura de datos: tuplas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/10_tuplas.html#operadores-sobre-tuplas.",
+    "href": "notebooks/10_tuplas.html#operadores-sobre-tuplas.",
+    "title": "10  Estructura de datos: tuplas.",
+    "section": "10.8 Operadores sobre tuplas.",
+    "text": "10.8 Operadores sobre tuplas.\nSe pueden usar los operadores +, * e in sobre las tuplas.\n\nt1 + t2\n\n('a', 'b', 'c', 'b', 'd', 'e', 'f', 'z', 1, 2, 3, 4, 5, 6, 7, 8)\n\n\n\nt3 * 2\n\n('gatos',\n ['Persa', 'Sphynx'],\n (2.3, 3.5),\n 'gatos',\n ['Persa', 'Sphynx'],\n (2.3, 3.5))\n\n\n\n'Persa' in t3\n\nFalse\n\n\n\n'Persa' in t3[1]\n\nTrue",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Estructura de datos: tuplas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/10_tuplas.html#métodos-de-las-listas.",
+    "href": "notebooks/10_tuplas.html#métodos-de-las-listas.",
+    "title": "10  Estructura de datos: tuplas.",
+    "section": "10.9 Métodos de las listas.",
+    "text": "10.9 Métodos de las listas.\nLa clase &lt;class 'tuple'&gt; define dos métodos que se pueden aplicar sobre los objetos del tipo tuple:\n\ntuple.index(o): regresa el índice donde está el objeto o dentro de la tupla\ntuple.count(o): cuenta las veces que aparece el objeto o en la tupla.\n\nPor ejemplo:\n\nt1.index('z')\n\n7\n\n\n\nt1.count('b')\n\n2",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Estructura de datos: tuplas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/10_tuplas.html#copiando-tuplas",
+    "href": "notebooks/10_tuplas.html#copiando-tuplas",
+    "title": "10  Estructura de datos: tuplas.",
+    "section": "10.10 ¿Copiando tuplas?",
+    "text": "10.10 ¿Copiando tuplas?\nNo es posible crear una copia de una tupla en otra. Lo que se recomienda es transformar la tupla en otra estructura de datos compatible (por ejemplo list o set).\nSi intentamos realizar una copia obtendremos el mismo objeto:\n\n# nueva tupla\nt1 =(1,3) \n\n# copiando todos los elementos de t1 en t2\nt2 = t1[:] \n\n# copiando usando el módulo copy\nimport copy\nt3 = copy.copy(t1)\n\n\nprint(t1, type(t1), id(t1))\nprint(t2, type(t2), id(t2))\nprint(t3, type(t3), id(t3))\n\n(1, 3) &lt;class 'tuple'&gt; 2226687724992\n(1, 3) &lt;class 'tuple'&gt; 2226687724992\n(1, 3) &lt;class 'tuple'&gt; 2226687724992\n\n\nObserva que las tres tuplas tienen el mismo identificador en memoria.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Estructura de datos: tuplas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/09_listas.html#métodos-de-las-listas.",
+    "href": "notebooks/09_listas.html#métodos-de-las-listas.",
+    "title": "9  Estructura de datos: listas.",
+    "section": "9.8 Métodos de las listas.",
+    "text": "9.8 Métodos de las listas.\nEn términos de Programación Orientada a Objetos, la clase &lt;class 'list'&gt; define una serie de métodos que se pueden aplicar sobre los objetos del tipo list. Veamos algunos ejemplos:\n\nprint(gatos) # Imprimimos la lista original\n\n['Persa', 'Sphynx', 'Ragdoll', 'Siamés']\n\n\n\n9.8.1 Agregar elementos a la lista.\n\ngatos.append('Siberiano') # Se agrega un elemento al final de la lista\n\n\nprint(gatos)\n\n['Persa', 'Sphynx', 'Ragdoll', 'Siamés', 'Siberiano']\n\n\n\ngatos.append('Persa') # Se agrega otro elemento al final de la lista, repetido\n\n\nprint(gatos)\n\n['Persa', 'Sphynx', 'Ragdoll', 'Siamés', 'Siberiano', 'Persa']\n\n\n\n\n9.8.2 Eliminar elementos de la lista.\n\ngatos.remove('Persa') \n\n\nprint(gatos) \n\n['Sphynx', 'Ragdoll', 'Siamés', 'Siberiano', 'Persa']\n\n\nObserva que solo se elimina el primer elemento Persa que encuentra.\n\n\n9.8.3 Insertar elementos en la lista.\nPodemos insertar un elemento en un lugar específico de la lista:\n\ngatos.insert(0,'Persa')\n\n\nprint(gatos)\n\n['Persa', 'Sphynx', 'Ragdoll', 'Siamés', 'Siberiano', 'Persa']\n\n\n\n\n9.8.4 Extraer el último elemento de la lista.\nTambién es posible extraer el último elemento de la lista\n\ngatos.pop() \n\n'Persa'\n\n\n\nprint(gatos)\n\n['Persa', 'Sphynx', 'Ragdoll', 'Siamés', 'Siberiano']\n\n\n\n\n9.8.5 Ordenar la lista.\n\ngatos.sort() \n\n\nprint(gatos)\n\n['Persa', 'Ragdoll', 'Siamés', 'Siberiano', 'Sphynx']\n\n\n\n\n9.8.6 La lista con los elementos en reversa.\n\ngatos.reverse() \n\n\nprint(gatos)\n\n['Sphynx', 'Siberiano', 'Siamés', 'Ragdoll', 'Persa']\n\n\n\n\n9.8.7 Concatenar dos listas.\n\npelo_corto.extend(pelo_largo) \n\n\nprint(pelo_corto)\n\n[False, False, False, True, True, False, True, False]\n\n\n\n\n9.8.8 Contar los elementos de un tipo.\n\npelo_corto.count(False) # Contar los elementos que tengan el valor 'False'\n\n5\n\n\n\npelo_corto.count(True) # Contar los elementos que tengan el valor 'True'\n\n3\n\n\n\n\n9.8.9 Ejemplo.\nConsidera la lista original peso_minimo = [2.3, 3.5, 5.4, 2.5]. El nombre fue eliminado en un ejemplo anterior. Vamos a recuperar la lista a través del nombre p_min que aún existe:\n\nVeamos el identificador y contenido de p_min\n\nprint(id(p_min), p_min)\n\n2339996477760 [2.3, 3.5, 2.5]\n\n\nNecesitamos insertar el valor 5.4 en el lugar 2 de la lista:\n\np_min.insert(2, 5.4)\n\nRevisamos el identificador y contenido de p_min\n\nprint(id(p_min), p_min)\n\n2339996477760 [2.3, 3.5, 5.4, 2.5]\n\n\nRecuperamos el nombre original:\n\npeso_minimo = p_min\n\nRevisamos el identificador y contenido de peso_minimo\n\nprint(id(peso_minimo), peso_minimo)\n\n2339996477760 [2.3, 3.5, 5.4, 2.5]\n\n\nEliminamos p_min\n\ndel p_min\n\nUna descripción detallada de los métodos de la listas se puede ver en More on Lists",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/11_conjuntos.html",
+    "href": "notebooks/11_conjuntos.html",
+    "title": "11  Estructura de datos: conjuntos",
+    "section": "",
+    "text": "11.1 Introducción\nObjetivo. Describir la estructura de datos set mediante la exposición de ejemplos.\nRecordemos los cuatro tipos de colecciones que se tienen en Python:",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Estructura de datos: conjuntos</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/11_conjuntos.html#introducción",
+    "href": "notebooks/11_conjuntos.html#introducción",
+    "title": "11  Estructura de datos: conjuntos",
+    "section": "",
+    "text": "Tipo\nOrdenada\nInmutable\nIndexable\nDuplicidad\n\n\n\n\nList\nSI\nNO\nSI\nSI\n\n\nTuple\nSI\nSI\nSI\nSI\n\n\nSets\nNO\nNO\nNO\nNO\n\n\nDict\nNO\nNO\nSI\nNO",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Estructura de datos: conjuntos</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/11_conjuntos.html#ejemplo.",
+    "href": "notebooks/11_conjuntos.html#ejemplo.",
+    "title": "11  Estructura de datos: conjuntos",
+    "section": "12.1 Ejemplo.",
+    "text": "12.1 Ejemplo.\nConstruiremos los siguientes conjuntos:\nc1 = {4, 1, 8, 0, 4, 20}\nc2 = {'z', 'x', 'g', 'a', 'k', 'x'}\nc3 = {'a', 1.5, 3, 5+4j, (1,2,3)}",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Estructura de datos: conjuntos</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/11_conjuntos.html#funciones-incorporadas-que-operan-sobre-conjuntos.",
+    "href": "notebooks/11_conjuntos.html#funciones-incorporadas-que-operan-sobre-conjuntos.",
+    "title": "11  Estructura de datos: conjuntos",
+    "section": "12.2 Funciones incorporadas que operan sobre conjuntos.",
+    "text": "12.2 Funciones incorporadas que operan sobre conjuntos.\nPrácticamente todas las funciones incorporadas que se aplican a las listas y tuplas, se pueden aplicar a los conjuntos, por ejemplo:\n\nprint(len(c1))\nprint(max(c1))\nprint(min(c1))\nprint(all(c1))\nprint(any(c1))\nprint(sorted(c1))\nprint(sum(c1))\n\n5\n20\n0\nFalse\nTrue\n[0, 1, 4, 8, 20]\n33\n\n\n\nlist(enumerate(c1)) \n\n[(0, 0), (1, 1), (2, 4), (3, 20), (4, 8)]\n\n\n\nlist(zip(c1, c2)) \n\n[(0, 'z'), (1, 'g'), (4, 'x'), (20, 'a'), (8, 'k')]",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Estructura de datos: conjuntos</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/11_conjuntos.html#métodos-de-los-conjuntos.",
+    "href": "notebooks/11_conjuntos.html#métodos-de-los-conjuntos.",
+    "title": "11  Estructura de datos: conjuntos",
+    "section": "12.3 Métodos de los conjuntos.",
+    "text": "12.3 Métodos de los conjuntos.\nEn términos de Programación Orientada a Objetos, la clase &lt;class 'set'&gt; define una serie de métodos que se pueden aplicar sobre los objetos del tipo set. Veamos algunos ejemplos:\n\nprint(c1)  # Conjunto original\nc1.add(-8) # Adiccionar un elemento\nprint(c1)  # Revisamo el estado del conjunto\n\n{0, 1, 4, 20, 8}\n{0, 1, 4, 20, 8, -8}\n\n\n\nprint(c1)    # Conjunto original\nc1.remove(4) # Eliminar un elemento del conjunto\nprint(c1)    # Revisamo el estado del conjunto\n\n{0, 1, 4, 20, 8, -8}\n{0, 1, 20, 8, -8}\n\n\nSi el elemento que se desea eliminar del conjunto no existe dentro del mismo, entonces se obtiene un error al tratar de eliminar dicho elemento:\n\nc1.remove(4)\n\n\n---------------------------------------------------------------------------\nKeyError                                  Traceback (most recent call last)\nCell In[10], line 1\n----&gt; 1 c1.remove(4)\n\nKeyError: 4\n\n\n\nA un conjunto que ya existe se le pueden eliminar todos sus elementos:\n\n# Estado inicial del conjunto\nprint(c1, type(c1), id(c1))\nc1.clear() # Limpiar todos los elementos del conjunto\nprint(c1, type(c1), id(c1))\n\n{0, 1, 20, 8, -8} &lt;class 'set'&gt; 1934565229280\nset() &lt;class 'set'&gt; 1934565229280\n\n\nObserva que el identificador no ha cambiado, solo se eliminaron todos los elementos.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Estructura de datos: conjuntos</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/11_conjuntos.html#ejemplo.-1",
+    "href": "notebooks/11_conjuntos.html#ejemplo.-1",
+    "title": "11  Estructura de datos: conjuntos",
+    "section": "12.4 Ejemplo.",
+    "text": "12.4 Ejemplo.\nEscribe un algoritmo que, usando el operador in, verifique si un elemento está en un conjunto. Si el elemento está en el conjunto entonces eliminarlo con el métodos set.remove() e imprimir un mensaje de que dicho elemento ha sido removido. Si el elemento no está en el conjunto, entonces imprimir un mensaje avisando que no se encontró el elemento.\nHacer una prueba con el siguiente conjunto: test = {1,2,3,'a','b','c'}.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Estructura de datos: conjuntos</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/11_conjuntos.html#operadores-sobre-conjuntos",
+    "href": "notebooks/11_conjuntos.html#operadores-sobre-conjuntos",
+    "title": "11  Estructura de datos: conjuntos",
+    "section": "12.5 Operadores sobre conjuntos",
+    "text": "12.5 Operadores sobre conjuntos\nSe pueden realizar las operaciones de conjuntos definidas en matemáticas en los objetos de tipo set.\n\n# Definimos dos conjuntos\nA = {'Taza', 'Vaso', 'Mesa'}\nB = {'Casa', 'Mesa', 'Silla'}\nprint(A)\nprint(B)\n\n{'Mesa', 'Vaso', 'Taza'}\n{'Mesa', 'Silla', 'Casa'}\n\n\n\n12.5.1 in: revisar si un elemento está en el conjunto.\n\n'Taza' in A\n\nTrue\n\n\n\n\n12.5.2 -: elementos en A, pero no en B.\n\nA - B \n\n{'Taza', 'Vaso'}\n\n\n\n\n12.5.3 |: elementos en A o en B o en ambos.\n\nA | B \n\n{'Casa', 'Mesa', 'Silla', 'Taza', 'Vaso'}\n\n\n\n\n12.5.4 &: elementos en ambos conjuntos.\n\nA & B \n\n{'Mesa'}\n\n\n\n\n12.5.5 ^ : elementos en A o en B, pero no en ambos.\n\nA ^ B \n\n{'Casa', 'Silla', 'Taza', 'Vaso'}",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Estructura de datos: conjuntos</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/11_conjuntos.html#copiando-conjuntos",
+    "href": "notebooks/11_conjuntos.html#copiando-conjuntos",
+    "title": "11  Estructura de datos: conjuntos",
+    "section": "12.6 Copiando conjuntos",
+    "text": "12.6 Copiando conjuntos\nPara crear un nuevo conjunto a partir de otro, usamos operaciones similares que para las listas:\n\n12.6.1 Copiando con el método copy()\n\nc4 = c2.copy()\n\nprint(c2, type(c2), id(c2))\nprint(c4, type(c4), id(c4))\n\n{'z', 'g', 'x', 'a', 'k'} &lt;class 'set'&gt; 1934565230176\n{'z', 'g', 'x', 'a', 'k'} &lt;class 'set'&gt; 1934571604224\n\n\n\n\n12.6.2 Copiando con la biblioteca copy()\n\nimport copy\nc5 = copy.copy(c2)\n\nprint(c2, type(c2), id(c2))\nprint(c5, type(c5), id(c5))\n\n{'z', 'g', 'x', 'a', 'k'} &lt;class 'set'&gt; 1934565230176\n{'z', 'g', 'x', 'a', 'k'} &lt;class 'set'&gt; 1934571605568",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Estructura de datos: conjuntos</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/12_diccionarios.html",
+    "href": "notebooks/12_diccionarios.html",
+    "title": "12  Estructura de datos: diccionarios.",
+    "section": "",
+    "text": "12.1 Introducción.\nObjetivo. Describir la estructura de datos dict mediante la exposición de ejemplos.\nRecordemos los cuatro tipos de colecciones que se tienen en Python:",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Estructura de datos: diccionarios.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/12_diccionarios.html#introducción.",
+    "href": "notebooks/12_diccionarios.html#introducción.",
+    "title": "12  Estructura de datos: diccionarios.",
+    "section": "",
+    "text": "Tipo\nOrdenada\nInmutable\nIndexable\nDuplicidad\n\n\n\n\nList\nSI\nNO\nSI\nSI\n\n\nTuple\nSI\nSI\nSI\nSI\n\n\nSets\nNO\nNO\nNO\nNO\n\n\nDict\nNO\nNO\nSI\nNO",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Estructura de datos: diccionarios.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/12_diccionarios.html#ejemplo.",
+    "href": "notebooks/12_diccionarios.html#ejemplo.",
+    "title": "12  Estructura de datos: diccionarios.",
+    "section": "13.1 Ejemplo.",
+    "text": "13.1 Ejemplo.\nUn diccionario se puede crear de tres maneras diferentes:\n\nDando los pares key:value separados por ,:\n\nd1 = {'Luis':20, 'Miguel':25, 'Pedro':31, 'Pablo':12}\n\nUsando el constructor dict() y dando los pares key = value separados por ,:\n\nd2 = dict(Luis=20, Miguel=25, Pedro=31, Pablo=12)\n\nUsando el constructor dict() y dando una lista de tuplas (key, value) separadas por ,:\n\nd3 = dict([('Luis', 20), \n           ('Miguel', 25), \n           ('Pedro', 31), \n           ('Pablo', 12)])\nLos tres diccionarios así creados, d1, d2 y d3, son equivalentes y contienen la misma información. Crear estos diccionarios.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Estructura de datos: diccionarios.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/12_diccionarios.html#indexado-mediante-la-clave",
+    "href": "notebooks/12_diccionarios.html#indexado-mediante-la-clave",
+    "title": "12  Estructura de datos: diccionarios.",
+    "section": "13.2 Indexado mediante la clave",
+    "text": "13.2 Indexado mediante la clave\nLos diccionarios se pueden indexar usando las claves de los elementos, por ejemplo:\n\nprint(d1['Luis'])\nprint(d1['Pedro'])\n\n20\n31\n\n\nSe puede modificar un valor de un cierto elemento:\n\nprint(d1)\nd1['Luis'] = 53\nprint(d1)\n\n{'Luis': 20, 'Miguel': 25, 'Pedro': 31, 'Pablo': 12}\n{'Luis': 53, 'Miguel': 25, 'Pedro': 31, 'Pablo': 12}\n\n\nCuando el elemento con la clave que se proporciona no existe, entonces se agrega un nuevo elemento:\n\nd1['fulano'] = 15\nprint(d1)\n\n{'Luis': 53, 'Miguel': 25, 'Pedro': 31, 'Pablo': 12, 'fulano': 15}",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Estructura de datos: diccionarios.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/12_diccionarios.html#métodos-de-los-diccionarios.",
+    "href": "notebooks/12_diccionarios.html#métodos-de-los-diccionarios.",
+    "title": "12  Estructura de datos: diccionarios.",
+    "section": "13.3 Métodos de los diccionarios.",
+    "text": "13.3 Métodos de los diccionarios.\nEn términos de Programación Orientada a Objetos, la clase &lt;class 'dict'&gt; define una serie de métodos que se pueden aplicar sobre los objetos del tipo dict. Veamos algunos ejemplos:\n\n13.3.1 Obtener todos los elementos del diccionario.\n\nd1.items() \n\ndict_items([('Luis', 53), ('Miguel', 25), ('Pedro', 31), ('Pablo', 12), ('fulano', 15)])\n\n\n\n\n13.3.2 Obtener todas las claves de los elementos del diccionario.\n\nd1.keys() \n\ndict_keys(['Luis', 'Miguel', 'Pedro', 'Pablo', 'fulano'])\n\n\n\n\n13.3.3 Obtener todos los valores de los elementos del diccionario.\n\nd1.values() \n\ndict_values([53, 25, 31, 12, 15])\n\n\n\n\n13.3.4 Obtener el valor de un elemento:\n\nd1.get('Luis') # Valor del elemento cuya clave es `'Luis'`.\n\n53\n\n\n\n\n13.3.5 Agregar un diccionario en otro.\n\nd4 = {'Azul':35, 'Cereza':45}\nd1.update(d4) # Agregamos el diccionario d4 al diccionario d1\nprint(d1)\n\n{'Luis': 53, 'Miguel': 25, 'Pedro': 31, 'Pablo': 12, 'fulano': 15, 'Azul': 35, 'Cereza': 45}\n\n\nSi los elementos ya existen, solo se actualizan los valores.\n\nd5 = {'Luis':512, 'fulano':10}\nd1.update(d5)\nprint(d1)\n\n{'Luis': 512, 'Miguel': 25, 'Pedro': 31, 'Pablo': 12, 'fulano': 10, 'Azul': 35, 'Cereza': 45}\n\n\n\n\n13.3.6 Extraer el último elemento del diccionario.\n\nprint(d1.popitem()) \nprint(d1)\n\n('Cereza', 45)\n{'Luis': 512, 'Miguel': 25, 'Pedro': 31, 'Pablo': 12, 'fulano': 10, 'Azul': 35}\n\n\n\n\n13.3.7 Extraer el elemento de una cierta clave.\n\nprint(d1.pop('Miguel')) # Elemento de clave `'Miguel'`.\nprint(d1)\n\n25\n{'Luis': 512, 'Pedro': 31, 'Pablo': 12, 'fulano': 10, 'Azul': 35}\n\n\n\n\n13.3.8 Eliminar todos los elementos del diccionario.\n\nprint(d1, id(d1)) # Antes de eliminar los elementos\nd1.clear() # elimina todos los elementos del diccionario\nprint(d1, id(d1)) # Después de eliminar los elementos\n\n{'Luis': 512, 'Pedro': 31, 'Pablo': 12, 'fulano': 10, 'Azul': 35} 2051985577088\n{} 2051985577088",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Estructura de datos: diccionarios.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/12_diccionarios.html#operaciones-y-funciones-sobre-diccionarios.",
+    "href": "notebooks/12_diccionarios.html#operaciones-y-funciones-sobre-diccionarios.",
+    "title": "12  Estructura de datos: diccionarios.",
+    "section": "13.4 Operaciones y funciones sobre diccionarios.",
+    "text": "13.4 Operaciones y funciones sobre diccionarios.\n\nImprimimos el diccionario d2.\n\n\nprint(d2)\n\n{'Luis': 20, 'Miguel': 25, 'Pedro': 31, 'Pablo': 12}\n\n\n\nEs posible usar las características de los diccionarios para imprimir la salida.\n\n\n# Usando la clave y cadenas formateadas\nprint(f\"Luis:{d2['Luis']}, Miguel:{d2['Miguel']}\")\n\nLuis:20, Miguel:25\n\n\n\n# Usando la clave, el método str.format() y pasando el diccionario como argumento\nprint(\"Luis:{d[Luis]}, Miguel:{d[Miguel]}\".format(d = d2))\n\nLuis:20, Miguel:25\n\n\n\n# Una forma más clara y concisa:\nprint(\"Luis:{Luis}, Miguel:{Miguel}\".format(**d2))\n\nLuis:20, Miguel:25\n\n\n\n¿Existe el elemento 'Miguel' en el diccionario?\n\n\n'Miguel' in d2\n\nTrue\n\n\n\n¿Existe el valor 25 en los valores del diccionario?\n\n\n25 in d2.values()\n\nTrue\n\n\n\n¿Existe la clave 'Luis' en las claves del diccionario?\n\n\n'Luis' in d2.keys()\n\nTrue\n\n\n\nAlgunas funciones comunes:\n\n\nprint(len(d2))\nprint(max(d2))\nprint(min(d2))\nprint(all(d2))\nprint(any(d2))\nprint(sorted(d2))\n\n# Suma de los valores del diccionario\nprint(sum(list(d2.values())))\n\n4\nPedro\nLuis\nTrue\nTrue\n['Luis', 'Miguel', 'Pablo', 'Pedro']\n88\n\n\n\nEliminar el elemento 'Miguel':25\n\n\ndel d2['Miguel'] \nprint(d2)\n\n{'Luis': 20, 'Pedro': 31, 'Pablo': 12}",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Estructura de datos: diccionarios.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/12_diccionarios.html#copiando-diccionarios",
+    "href": "notebooks/12_diccionarios.html#copiando-diccionarios",
+    "title": "12  Estructura de datos: diccionarios.",
+    "section": "13.5 Copiando diccionarios",
+    "text": "13.5 Copiando diccionarios\n\n# Imprimimos el contenido del diccionario\nprint(d3)\n\n{'Luis': 20, 'Miguel': 25, 'Pedro': 31, 'Pablo': 12}\n\n\n\n13.5.1 Copiando con el método copy()\n\nd3_copia = d3.copy()\n\nprint(d3, type(d3), id(d3))\nprint(d3_copia, type(d3_copia), id(d3_copia))\n\n{'Luis': 20, 'Miguel': 25, 'Pedro': 31, 'Pablo': 12} &lt;class 'dict'&gt; 2051985576128\n{'Luis': 20, 'Miguel': 25, 'Pedro': 31, 'Pablo': 12} &lt;class 'dict'&gt; 2051985589056\n\n\n\n\n13.5.2 Copiando con la biblioteca copy()\n\nimport copy\nd3_copia = copy.copy(d3)\n\nprint(d3, type(d3), id(d3))\nprint(d3_copia, type(d3_copia), id(d3_copia))\n\n{'Luis': 20, 'Miguel': 25, 'Pedro': 31, 'Pablo': 12} &lt;class 'dict'&gt; 2051985576128\n{'Luis': 20, 'Miguel': 25, 'Pedro': 31, 'Pablo': 12} &lt;class 'dict'&gt; 2051985587584",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Estructura de datos: diccionarios.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/13_ds_casting.html",
+    "href": "notebooks/13_ds_casting.html",
+    "title": "13  Conversión entre estructuras de datos.",
+    "section": "",
+    "text": "13.1 Transformación entre colecciones\nObjetivo. Describir cómo se pueden realizar conversiones entre estructuras de datos.\nEs posible convertir una estructura de datos en otra. Veamos varios ejemplos:",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Conversión entre estructuras de datos.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/13_ds_casting.html#transformación-entre-colecciones",
+    "href": "notebooks/13_ds_casting.html#transformación-entre-colecciones",
+    "title": "13  Conversión entre estructuras de datos.",
+    "section": "",
+    "text": "13.1.1 listas \\(\\to\\) tuplas\n\nlista = ['a', 'b', 'c'] # Definición de una lista\ntupla_l = tuple(lista)  # Conversión a tupla\n\nprint(lista, type(lista), id(lista))\nprint(tupla_l, type(tupla_l), id(tupla_l))\n\n['a', 'b', 'c'] &lt;class 'list'&gt; 1226050069440\n('a', 'b', 'c') &lt;class 'tuple'&gt; 1226049867136\n\n\n\n\n13.1.2 listas \\(\\to\\) conjuntos\n\nlista = ['a', 'b', 'c', 'a'] # Definición de una lista\nconj_l = set(lista)          # Conversión a conjunto\n\nprint(lista, type(lista), id(lista))\nprint(conj_l, type(conj_l), id(conj_l))\n\n['a', 'b', 'c', 'a'] &lt;class 'list'&gt; 1226050069056\n{'b', 'a', 'c'} &lt;class 'set'&gt; 1226050028256\n\n\nObserva que en esta transformación el conjunto elimina los elementos repetidos.\n\n\n13.1.3 listas \\(\\to\\) diccionarios\n\nkey_l = ['a','b','c','d', 'e'] # Lista de claves\nval_l = [1, 2, 3, 4, 5]        # Lista de valores\ndicc = dict(zip(key_l, val_l)) # Construcción de un diccionario\n\nprint(key_l)\nprint(val_l)\nprint(dicc, type(dicc), id(dicc))\n\n['a', 'b', 'c', 'd', 'e']\n[1, 2, 3, 4, 5]\n{'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5} &lt;class 'dict'&gt; 1226050079104\n\n\n\n\n13.1.4 tuplas \\(\\to\\) listas\n\ntupla = (1,2,3,4)     # Definición de una tupla\nlista_t = list(tupla) # Conversión a lista\n\nprint(tupla, type(tupla), id(tupla))\nprint(lista_t, type(lista_t), id(lista_t))\n\n(1, 2, 3, 4) &lt;class 'tuple'&gt; 1226049799968\n[1, 2, 3, 4] &lt;class 'list'&gt; 1226050079488\n\n\n\n\n13.1.5 tuplas \\(\\to\\) conjuntos\n\ntupla = (1,2,3,1,2) # Definición de una tupla\nconj_t = set(tupla) # Conversión a conjunto\n\nprint(tupla, type(tupla), id(tupla))\nprint(conj_t, type(conj_t), id(conj_t))\n\n(1, 2, 3, 1, 2) &lt;class 'tuple'&gt; 1226049806848\n{1, 2, 3} &lt;class 'set'&gt; 1226050029824\n\n\nObserva que en esta transformación el conjunto elimina los elementos repetidos.\n\n\n13.1.6 tuplas \\(\\to\\) diccionarios\n\nkey_t = ('a','b','c','d', 'e') # Una tupla de claves\nval_t = (1, 2, 3, 4, 5)        # Una tupla de valores\ndicc = dict(zip(key_t, val_t)) # Construcción de un diccionario\n\nprint(key_t)\nprint(val_t)\nprint(dicc, type(dicc), id(dicc))\n\n('a', 'b', 'c', 'd', 'e')\n(1, 2, 3, 4, 5)\n{'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5} &lt;class 'dict'&gt; 1226050087424\n\n\n\n\n13.1.7 conjunto \\(\\to\\) lista y tupla\n\nconj = {1,2,3,'a','b','c'} # Definición de un conjunto\nlista_s = list(conj)       # Conversión a lista\ntupla_s = tuple(conj)      # Conversińo a tupla\n\nprint(conj, type(conj), id(conj))\nprint(lista_s, type(lista_s), id(lista_s))\nprint(tupla_s, type(tupla_s), id(tupla_s))\n\n{1, 2, 3, 'b', 'a', 'c'} &lt;class 'set'&gt; 1226050028928\n[1, 2, 3, 'b', 'a', 'c'] &lt;class 'list'&gt; 1226050076992\n(1, 2, 3, 'b', 'a', 'c') &lt;class 'tuple'&gt; 1226008573312\n\n\n\n\n13.1.8 conjuntos \\(\\to\\) diccionarios\n\nconj1 = {'a','b','c'} # Definición de un conjunto\nconj2 = {1,2,3}       # Definición de otro conjunto\ndicc = dict(zip(conj1, conj2)) # Construcción de un diccionario\n\nprint(conj1)\nprint(conj2)\nprint(dicc, type(dicc), id(dicc))\n\n{'b', 'a', 'c'}\n{1, 2, 3}\n{'b': 1, 'a': 2, 'c': 3} &lt;class 'dict'&gt; 1226050091648\n\n\n\n\n13.1.9 diccionarios \\(\\to\\) listas, tuplas y conjuntos\n\ndicc = {'x':3, 'y':4, 'z':5} # Definición de un diccionario\n\nConversión directa:\n\nlista = list(dicc)   # Conversión a lista\ntupla = tuple(dicc)  # Conversión a tupla\nconj = set(dicc)     # Conversión a conjunto\n\nprint(dicc, type(dicc), id(dicc))\nprint(lista, type(lista), id(lista))\nprint(tupla, type(tupla), id(tupla))\nprint(conj, type(conj), id(conj))\n\n{'x': 3, 'y': 4, 'z': 5} &lt;class 'dict'&gt; 1226050082688\n['x', 'y', 'z'] &lt;class 'list'&gt; 1226050111232\n('x', 'y', 'z') &lt;class 'tuple'&gt; 1226050004928\n{'x', 'y', 'z'} &lt;class 'set'&gt; 1226050029376\n\n\nConversión desde las claves:\n\nlista = list(dicc.keys())  # Conversión a lista\ntupla = tuple(dicc.keys()) # Conversión a tupla\nconj = set(dicc.keys())    # Conversión a conjunto\n\nprint(dicc, type(dicc), id(dicc))\nprint(lista, type(lista), id(lista))\nprint(tupla, type(tupla), id(tupla))\nprint(conj, type(conj), id(conj))\n\n{'x': 3, 'y': 4, 'z': 5} &lt;class 'dict'&gt; 1226050082688\n['x', 'y', 'z'] &lt;class 'list'&gt; 1226050113088\n('x', 'y', 'z') &lt;class 'tuple'&gt; 1226050080640\n{'x', 'y', 'z'} &lt;class 'set'&gt; 1226050030496\n\n\nConversión desde las valores:\n\nlista = list(dicc.values())  # Conversión a lista\ntupla = tuple(dicc.values()) # Conversión a tupla\nconj = set(dicc.values())    # Conversión a conjunto\n\nprint(dicc, type(dicc), id(dicc))\nprint(lista, type(lista), id(lista))\nprint(tupla, type(tupla), id(tupla))\nprint(conj, type(conj), id(conj))\n\n{'x': 3, 'y': 4, 'z': 5} &lt;class 'dict'&gt; 1226050082688\n[3, 4, 5] &lt;class 'list'&gt; 1226050116224\n(3, 4, 5) &lt;class 'tuple'&gt; 1226050006784\n{3, 4, 5} &lt;class 'set'&gt; 1226050031392",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Conversión entre estructuras de datos.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/14_ds_traversing.html",
+    "href": "notebooks/14_ds_traversing.html",
+    "title": "14  Recorriendo las estructuras de datos.",
+    "section": "",
+    "text": "14.1 Iterables\nObjetivo. Describir como recorrer las secuencias (str, list, tuple, set, dict) de una forma óptima.\nObserva que en este caso solo aparece una vez el elemento con clave o. Su valor es el que se le asignó por última vez, en este caso 9.\nObserva que le conjunto no contiene elementos repetidos.\nLo anterior se puede hacer de forma más segura usando un gestor de contexto:",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Recorriendo las estructuras de datos.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/14_ds_traversing.html#iterables",
+    "href": "notebooks/14_ds_traversing.html#iterables",
+    "title": "14  Recorriendo las estructuras de datos.",
+    "section": "",
+    "text": "En Python existen objetos que contienen secuencias de otros objetos.\nEstos objetos pueden ser cadenas, listas, tuplas, diccionarios, conjuntos, archivos, entre otros.\nEstos objetos se pueden recorrer usando ciclos for . \nA estos objetos se les conoce también como iterables (objetos iterables, secuencias iterables, contenedores iterables, conjunto iterable).",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Recorriendo las estructuras de datos.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/14_ds_traversing.html#ejemplo.",
+    "href": "notebooks/14_ds_traversing.html#ejemplo.",
+    "title": "14  Recorriendo las estructuras de datos.",
+    "section": "14.2 Ejemplo.",
+    "text": "14.2 Ejemplo.\n\nCrear una cadena, una lista, una tupla, un diccionario, un conjunto y leer el archivo mi_archivo.txt.\nPosteriormente recorrer cada uno de estos iterables usando un ciclo for:",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Recorriendo las estructuras de datos.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/14_ds_traversing.html#recorriendo-secuencias-de-una-forma-típica.",
+    "href": "notebooks/14_ds_traversing.html#recorriendo-secuencias-de-una-forma-típica.",
+    "title": "14  Recorriendo las estructuras de datos.",
+    "section": "14.3 Recorriendo secuencias de una forma típica.",
+    "text": "14.3 Recorriendo secuencias de una forma típica.\nConsidera las siguientes dos listas de la misma longitud.\n\ngatos = ['Persa', 'Sphynx', 'Ragdoll','Siamés']\norigen = ['Irán', 'Toronto', 'California', 'Tailandia']\nprint(gatos)\nprint(origen)\n\n['Persa', 'Sphynx', 'Ragdoll', 'Siamés']\n['Irán', 'Toronto', 'California', 'Tailandia']\n\n\nDado que en las listas se puede usar el indexado para acceder a los elementos, podemos recorrer la lista como sigue:\n\nN = len(gatos) # Longitud de la lista gatos\n\nfor i in range(0, N):\n    print(i, gatos[i], origen[i])\n\n0 Persa Irán\n1 Sphynx Toronto\n2 Ragdoll California\n3 Siamés Tailandia\n\n\nLa anterior es una manera típica en cómo se recorren arreglos en otros lenguajes de programación. Python ofrece otras maneras que se muestran a continuación.",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Recorriendo las estructuras de datos.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/14_ds_traversing.html#función-zip",
+    "href": "notebooks/14_ds_traversing.html#función-zip",
+    "title": "14  Recorriendo las estructuras de datos.",
+    "section": "14.4 Función zip",
+    "text": "14.4 Función zip\nLa función zip(s1, s2, ...) permite combinar dos o más secuencias en una sola, genera tuplas con los elementos de las secuencias.\n\n# Combinamos las listas en una sola secuencia\nprint('\\n(Raza, Origen)\\n'+'-'*20)\nfor t in zip(gatos, origen):\n    print(t)\n\n\n(Raza, Origen)\n--------------------\n('Persa', 'Irán')\n('Sphynx', 'Toronto')\n('Ragdoll', 'California')\n('Siamés', 'Tailandia')\n\n\n\n# Se puede extraer la información de cada secuencia:\nfor g, o in zip(gatos, origen):\n    print('La raza {} proviene de {}'.format(g, o))\n\nLa raza Persa proviene de Irán\nLa raza Sphynx proviene de Toronto\nLa raza Ragdoll proviene de California\nLa raza Siamés proviene de Tailandia",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Recorriendo las estructuras de datos.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/14_ds_traversing.html#conversión-de-zip-a-list-tuple-set-dict",
+    "href": "notebooks/14_ds_traversing.html#conversión-de-zip-a-list-tuple-set-dict",
+    "title": "14  Recorriendo las estructuras de datos.",
+    "section": "14.5 Conversión de zip a list, tuple, set, dict",
+    "text": "14.5 Conversión de zip a list, tuple, set, dict\nEstrictamente zip es una clase que define un tipo dentro de Python, por lo que es posible convertir del tipo zip a alguna otra secuencia básica de datos de Python.\n\nz = zip(gatos, origen)\n\n# Verificar el tipo de zip\nprint(z, type(z))\n\n&lt;zip object at 0x0000020183D44D00&gt; &lt;class 'zip'&gt;\n\n\n\nlista = list(zip(gatos, origen))\ntupla = tuple(zip(gatos, origen))\nconj = set(zip(gatos, origen))\ndicc = dict(zip(gatos, origen)) # Solo funciona con dos secuencias\n\nprint(lista)\nprint(tupla)\nprint(conj)\nprint(dicc)\n\n[('Persa', 'Irán'), ('Sphynx', 'Toronto'), ('Ragdoll', 'California'), ('Siamés', 'Tailandia')]\n(('Persa', 'Irán'), ('Sphynx', 'Toronto'), ('Ragdoll', 'California'), ('Siamés', 'Tailandia'))\n{('Sphynx', 'Toronto'), ('Ragdoll', 'California'), ('Persa', 'Irán'), ('Siamés', 'Tailandia')}\n{'Persa': 'Irán', 'Sphynx': 'Toronto', 'Ragdoll': 'California', 'Siamés': 'Tailandia'}",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Recorriendo las estructuras de datos.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/14_ds_traversing.html#función-enumerate",
+    "href": "notebooks/14_ds_traversing.html#función-enumerate",
+    "title": "14  Recorriendo las estructuras de datos.",
+    "section": "14.6 Función enumerate",
+    "text": "14.6 Función enumerate\nPermite enumerar los elementos de una secuencia. Genera tuplas con el número del elemento y el elemento de la secuencia.\nPor ejemplo:\n\nprint(gatos)\n\n# Enumeramos la secuencia\nprint('\\n(Numero, Raza)\\n'+'-'*20)\nfor t in enumerate(gatos):\n    print(t)\n\n['Persa', 'Sphynx', 'Ragdoll', 'Siamés']\n\n(Numero, Raza)\n--------------------\n(0, 'Persa')\n(1, 'Sphynx')\n(2, 'Ragdoll')\n(3, 'Siamés')\n\n\n\nfor i, g in enumerate(gatos):\n    print(i, g)\n\n0 Persa\n1 Sphynx\n2 Ragdoll\n3 Siamés\n\n\nLo anterior permite usar el indexado para acceder a los elementos de una secuencia:\n\nfor i, g in enumerate(gatos):\n    print(i, gatos[i])\n\n0 Persa\n1 Sphynx\n2 Ragdoll\n3 Siamés",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Recorriendo las estructuras de datos.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/14_ds_traversing.html#conversión-de-enumerate-a-list-tuple-set-dict",
+    "href": "notebooks/14_ds_traversing.html#conversión-de-enumerate-a-list-tuple-set-dict",
+    "title": "14  Recorriendo las estructuras de datos.",
+    "section": "14.7 Conversión de enumerate a list, tuple, set, dict",
+    "text": "14.7 Conversión de enumerate a list, tuple, set, dict\nEstrictamente enumerate es una clase que define un tipo dentro de Python, por lo que es posible convertir del tipo enumerate a alguna otra secuencia básica de datos de Python:\n\ne = enumerate(gatos)\n\n# Verificar el tipo de enumerate\nprint(e, type(e))\n\n&lt;enumerate object at 0x0000020183CF7C90&gt; &lt;class 'enumerate'&gt;\n\n\n\nlista = list(enumerate(gatos))\ntupla = tuple(enumerate(gatos))\nconj = set(enumerate(gatos))\ndicc = dict(enumerate(gatos))\n\nprint(lista)\nprint(tupla)\nprint(conj)\nprint(dicc)\n\n[(0, 'Persa'), (1, 'Sphynx'), (2, 'Ragdoll'), (3, 'Siamés')]\n((0, 'Persa'), (1, 'Sphynx'), (2, 'Ragdoll'), (3, 'Siamés'))\n{(1, 'Sphynx'), (2, 'Ragdoll'), (3, 'Siamés'), (0, 'Persa')}\n{0: 'Persa', 1: 'Sphynx', 2: 'Ragdoll', 3: 'Siamés'}",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Recorriendo las estructuras de datos.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/14_ds_traversing.html#conversión-de-range-a-list-tuple-set",
+    "href": "notebooks/14_ds_traversing.html#conversión-de-range-a-list-tuple-set",
+    "title": "14  Recorriendo las estructuras de datos.",
+    "section": "14.8 Conversión de range a list, tuple, set",
+    "text": "14.8 Conversión de range a list, tuple, set\nEstrictamente range es una clase que define un tipo dentro de Python, por lo que es posible convertir del tipo range a alguna otra secuencia básica de datos de Python:\n\nN = len(gatos) # Longitud de la lista gatos\nr = range(0,N)\n\n# Verificar el tipo de range\nprint(r, type(r))\n\nrange(0, 4) &lt;class 'range'&gt;\n\n\n\nlista = list(range(0,N))\ntupla = tuple(range(0,N))\nconj = set(range(0,N))\n\nprint(lista)\nprint(tupla)\nprint(conj)\n\n[0, 1, 2, 3]\n(0, 1, 2, 3)\n{0, 1, 2, 3}",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Recorriendo las estructuras de datos.</span>"
     ]
   }
 ]

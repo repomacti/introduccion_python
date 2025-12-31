@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../notebooks/06_input_archivos.html" rel="next">
+<link href="../notebooks/06_input.html" rel="next">
 <link href="../notebooks/04_expresiones_declaraciones.html" rel="prev">
 <link href="../figuras/python1.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -413,32 +413,44 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/06_input_archivos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Entrada estándar <code>input</code> y gestión de archivos.</span></span></a>
+  <a href="../notebooks/06_input.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Entrada estándar.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/07_control_de_flujo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Control de flujo.</span></span></a>
+  <a href="../notebooks/07_archivos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Gestión de archivos.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/08_listas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Estructura de datos: listas</span></span></a>
+  <a href="../notebooks/08_control_de_flujo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Control de flujo.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/16_excepciones.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Gestión de errores y excepciones.</span></span></a>
+  <a href="../notebooks/09_listas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estructura de datos: listas</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/15_funciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Funciones: introducción.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/17_excepciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Gestión de errores y excepciones.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/23_import.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Importando bibliotecas.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Importando bibliotecas.</span></span></a>
   </div>
 </li>
     </ul>
@@ -458,7 +470,7 @@ window.Quarto = {
   <li><a href="#ejemplo-2." id="toc-ejemplo-2." class="nav-link" data-scroll-target="#ejemplo-2."><span class="header-section-number">5.2.2</span> Ejemplo 2.</a></li>
   <li><a href="#ejemplo-3." id="toc-ejemplo-3." class="nav-link" data-scroll-target="#ejemplo-3."><span class="header-section-number">5.2.3</span> Ejemplo 3.</a></li>
   </ul></li>
-  <li><a href="#indexación-de-las-cadenas." id="toc-indexación-de-las-cadenas." class="nav-link" data-scroll-target="#indexación-de-las-cadenas."><span class="header-section-number">5.3</span> Indexación de las cadenas.</a>
+  <li><a href="#sec-indexacion_cadenas" id="toc-sec-indexacion_cadenas" class="nav-link" data-scroll-target="#sec-indexacion_cadenas"><span class="header-section-number">5.3</span> Indexación de las cadenas.</a>
   <ul class="collapse">
   <li><a href="#acceso-a-porciones-de-las-cadenas-slicing" id="toc-acceso-a-porciones-de-las-cadenas-slicing" class="nav-link" data-scroll-target="#acceso-a-porciones-de-las-cadenas-slicing"><span class="header-section-number">5.3.1</span> Acceso a porciones de las cadenas (<em>slicing</em>)</a></li>
   </ul></li>
@@ -740,8 +752,8 @@ def funcion(N):
 </div>
 <p>Observa que cuando el texto es largo y de varias líneas, conviene usar triples comillas. Para agregar la sangría al principio de algunas líneas usamos el tabulador <code>\t</code>.</p>
 </section>
-<section id="indexación-de-las-cadenas." class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="indexación-de-las-cadenas."><span class="header-section-number">5.3</span> Indexación de las cadenas.</h2>
+<section id="sec-indexacion_cadenas" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="sec-indexacion_cadenas"><span class="header-section-number">5.3</span> Indexación de las cadenas.</h2>
 <p>La indexación permite acceder a diferentes elementos o rangos de elementos de una cadena.</p>
 <ul>
 <li>Los elementos de una cadena de <code>N</code> elementos, se numeran empezando en <code>0</code> y terminando en <code>N-1</code>, el cual representa el último elemento de la cadena.</li>
@@ -1360,7 +1372,7 @@ en reversa sin espacios: "anitalavalatina"
 <pre><code>Pedro Páramo tiene 15 años y pesa 70.5 kg</code></pre>
 </div>
 </div>
-<p>En el ejemplo anterior la cadena inicial es un espacio <code>" "</code> y junta todos los elementos que se dan entre corchetes <code>[]</code>. El uso de corchetes construye una lista, que es un tipo de dato que se describe en la <a href="08_listas.html" class="quarto-xref"><span>Capítulo 7</span></a>.</p>
+<p>En el ejemplo anterior la cadena inicial es un espacio <code>" "</code> y junta todos los elementos que se dan entre corchetes <code>[]</code>. El uso de corchetes construye una lista, que es un tipo de dato que se describe en la <a href="09_listas.html" class="quarto-xref"><span>Capítulo 9</span></a>.</p>
 </section>
 </section>
 <section id="formato-de-la-salida." class="level2" data-number="5.7">
@@ -1599,7 +1611,7 @@ la gallina y       el huevo      </code></pre>
 <pre><code>El Bueno, el Malo, y el Feo.</code></pre>
 </div>
 </div>
-<p>Otro ejemplo de alineación (la declaración <code>for</code> la revisaremos en la <a href="07_control_de_flujo.html" class="quarto-xref"><span>Capítulo 6</span></a>:</p>
+<p>Otro ejemplo de alineación (la declaración <code>for</code> la revisaremos en la <a href="08_control_de_flujo.html" class="quarto-xref"><span>Capítulo 8</span></a>:</p>
 <div id="cell-131" class="cell" data-execution_count="79">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb142"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb142-1"><a href="#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>):</span>
 <span id="cb142-2"><a href="#cb142-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'</span><span class="sc">{0:2d}</span><span class="st"> </span><span class="sc">{1:3d}</span><span class="st"> </span><span class="sc">{2:4d}</span><span class="st">'</span>.<span class="bu">format</span>(x, x<span class="op">*</span>x, x<span class="op">*</span>x<span class="op">*</span>x))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -2134,8 +2146,8 @@ largo
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../notebooks/06_input_archivos.html" class="pagination-link" aria-label="Entrada estándar `input` y gestión de archivos.">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Entrada estándar <code>input</code> y gestión de archivos.</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../notebooks/06_input.html" class="pagination-link" aria-label="Entrada estándar.">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Entrada estándar.</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

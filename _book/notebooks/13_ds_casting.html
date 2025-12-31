@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Gestión de archivos. – Notas de Python</title>
+<title>13&nbsp; Conversión entre estructuras de datos. – Notas de Python</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../notebooks/08_control_de_flujo.html" rel="next">
-<link href="../notebooks/06_input.html" rel="prev">
+<link href="../notebooks/14_ds_traversing.html" rel="next">
+<link href="../notebooks/12_diccionarios.html" rel="prev">
 <link href="../figuras/python1.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -111,6 +111,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../estilos/code-blocks.css">
 </head>
@@ -286,7 +315,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/07_archivos.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Gestión de archivos.</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/13_ds_casting.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Conversión entre estructuras de datos.</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -390,7 +419,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/07_archivos.html" class="sidebar-item-text sidebar-link active">
+  <a href="../notebooks/07_archivos.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Gestión de archivos.</span></span></a>
   </div>
 </li>
@@ -403,19 +432,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/09_listas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estructura de datos: listas</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estructura de datos: listas.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/10_tuplas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Estructura de datos: tuplas.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/11_conjuntos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Estructura de datos: conjuntos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/12_diccionarios.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Estructura de datos: diccionarios.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/13_ds_casting.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Conversión entre estructuras de datos.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/14_ds_traversing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Recorriendo las estructuras de datos.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/15_funciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Funciones: introducción.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/17_excepciones.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Gestión de errores y excepciones.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Gestión de errores y excepciones.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/23_import.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Importando bibliotecas.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Importando bibliotecas.</span></span></a>
   </div>
 </li>
     </ul>
@@ -428,15 +493,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#la-función-open." id="toc-la-función-open." class="nav-link active" data-scroll-target="#la-función-open."><span class="header-section-number">7.1</span> La función <code>open()</code>.</a></li>
-  <li><a href="#abrir-un-archivo-para-lectura." id="toc-abrir-un-archivo-para-lectura." class="nav-link" data-scroll-target="#abrir-un-archivo-para-lectura."><span class="header-section-number">7.2</span> Abrir un archivo para lectura.</a></li>
-  <li><a href="#leer-una-línea-del-archivo." id="toc-leer-una-línea-del-archivo." class="nav-link" data-scroll-target="#leer-una-línea-del-archivo."><span class="header-section-number">7.3</span> Leer una línea del archivo.</a></li>
-  <li><a href="#cerrar-un-archivo." id="toc-cerrar-un-archivo." class="nav-link" data-scroll-target="#cerrar-un-archivo."><span class="header-section-number">7.4</span> Cerrar un archivo.</a></li>
-  <li><a href="#leer-todas-las-líneas-del-archivo." id="toc-leer-todas-las-líneas-del-archivo." class="nav-link" data-scroll-target="#leer-todas-las-líneas-del-archivo."><span class="header-section-number">7.5</span> Leer todas las líneas del archivo.</a></li>
-  <li><a href="#abrir-un-archivo-para-escritura." id="toc-abrir-un-archivo-para-escritura." class="nav-link" data-scroll-target="#abrir-un-archivo-para-escritura."><span class="header-section-number">7.6</span> Abrir un archivo para escritura.</a></li>
-  <li><a href="#abrir-un-archivo-para-agregar-información-al-final." id="toc-abrir-un-archivo-para-agregar-información-al-final." class="nav-link" data-scroll-target="#abrir-un-archivo-para-agregar-información-al-final."><span class="header-section-number">7.7</span> Abrir un archivo para agregar información al final.</a></li>
-  <li><a href="#abrir-un-archivo-para-insertar-información-en-cualquier-lugar." id="toc-abrir-un-archivo-para-insertar-información-en-cualquier-lugar." class="nav-link" data-scroll-target="#abrir-un-archivo-para-insertar-información-en-cualquier-lugar."><span class="header-section-number">7.8</span> Abrir un archivo para insertar información en cualquier lugar.</a></li>
-  <li><a href="#gestores-de-contexto." id="toc-gestores-de-contexto." class="nav-link" data-scroll-target="#gestores-de-contexto."><span class="header-section-number">7.9</span> Gestores de contexto.</a></li>
+  <li><a href="#transformación-entre-colecciones" id="toc-transformación-entre-colecciones" class="nav-link active" data-scroll-target="#transformación-entre-colecciones"><span class="header-section-number">13.1</span> Transformación entre colecciones</a>
+  <ul class="collapse">
+  <li><a href="#listas-to-tuplas" id="toc-listas-to-tuplas" class="nav-link" data-scroll-target="#listas-to-tuplas"><span class="header-section-number">13.1.1</span> listas <span class="math inline">\(\to\)</span> tuplas</a></li>
+  <li><a href="#listas-to-conjuntos" id="toc-listas-to-conjuntos" class="nav-link" data-scroll-target="#listas-to-conjuntos"><span class="header-section-number">13.1.2</span> listas <span class="math inline">\(\to\)</span> conjuntos</a></li>
+  <li><a href="#listas-to-diccionarios" id="toc-listas-to-diccionarios" class="nav-link" data-scroll-target="#listas-to-diccionarios"><span class="header-section-number">13.1.3</span> listas <span class="math inline">\(\to\)</span> diccionarios</a></li>
+  <li><a href="#tuplas-to-listas" id="toc-tuplas-to-listas" class="nav-link" data-scroll-target="#tuplas-to-listas"><span class="header-section-number">13.1.4</span> tuplas <span class="math inline">\(\to\)</span> listas</a></li>
+  <li><a href="#tuplas-to-conjuntos" id="toc-tuplas-to-conjuntos" class="nav-link" data-scroll-target="#tuplas-to-conjuntos"><span class="header-section-number">13.1.5</span> tuplas <span class="math inline">\(\to\)</span> conjuntos</a></li>
+  <li><a href="#tuplas-to-diccionarios" id="toc-tuplas-to-diccionarios" class="nav-link" data-scroll-target="#tuplas-to-diccionarios"><span class="header-section-number">13.1.6</span> tuplas <span class="math inline">\(\to\)</span> diccionarios</a></li>
+  <li><a href="#conjunto-to-lista-y-tupla" id="toc-conjunto-to-lista-y-tupla" class="nav-link" data-scroll-target="#conjunto-to-lista-y-tupla"><span class="header-section-number">13.1.7</span> conjunto <span class="math inline">\(\to\)</span> lista y tupla</a></li>
+  <li><a href="#conjuntos-to-diccionarios" id="toc-conjuntos-to-diccionarios" class="nav-link" data-scroll-target="#conjuntos-to-diccionarios"><span class="header-section-number">13.1.8</span> conjuntos <span class="math inline">\(\to\)</span> diccionarios</a></li>
+  <li><a href="#diccionarios-to-listas-tuplas-y-conjuntos" id="toc-diccionarios-to-listas-tuplas-y-conjuntos" class="nav-link" data-scroll-target="#diccionarios-to-listas-tuplas-y-conjuntos"><span class="header-section-number">13.1.9</span> diccionarios <span class="math inline">\(\to\)</span> listas, tuplas y conjuntos</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -446,7 +514,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Gestión de archivos.</span></h1>
+<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Conversión entre estructuras de datos.</span></h1>
 </div>
 
 
@@ -463,247 +531,195 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><strong>Objetivo.</strong> Revisar la forma básica de gestionar archivos.</p>
-<section id="la-función-open." class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="la-función-open."><span class="header-section-number">7.1</span> La función <code>open()</code>.</h2>
-<p>La función incorporada para gestionar archivos es <code>open()</code>. Esta función toma dos parámetros: el nombre del archivo y el modo. Existen cuatro diferentes modos:</p>
-<ul>
-<li><code>"r"</code> - Read - Default value. Abre el archivo para lectura. Se produce un error si el archvio no existe.</li>
-<li><code>"a"</code> - Append - Abre el archivo para agregar información. Si el archivo no existe, lo crea.</li>
-<li><code>"w"</code> - Write - Abre el archivo para escritura. Si el archivo no existe, lo crea. Si el archivo existe, lo sobreescribe.</li>
-<li><code>"x"</code> - Create - Crea el archivo, regresa un error si el archivo existe.</li>
-</ul>
-<p>Adicionalmente se puede especificar si el archivo se abre en modo texto o binario:</p>
-<ul>
-<li><code>"t"</code> - Text - Valor por omisión.</li>
-<li><code>"b"</code> - Binary</li>
-</ul>
-</section>
-<section id="abrir-un-archivo-para-lectura." class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="abrir-un-archivo-para-lectura."><span class="header-section-number">7.2</span> Abrir un archivo para lectura.</h2>
-<div id="cell-3" class="cell" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatos.txt'</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="cell-4" class="cell" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(f))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Objetivo.</strong> Describir cómo se pueden realizar conversiones entre estructuras de datos.</p>
+<section id="transformación-entre-colecciones" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="transformación-entre-colecciones"><span class="header-section-number">13.1</span> Transformación entre colecciones</h2>
+<p>Es posible convertir una estructura de datos en otra. Veamos varios ejemplos:</p>
+<section id="listas-to-tuplas" class="level3" data-number="13.1.1">
+<h3 data-number="13.1.1" class="anchored" data-anchor-id="listas-to-tuplas"><span class="header-section-number">13.1.1</span> listas <span class="math inline">\(\to\)</span> tuplas</h3>
+<div id="cell-3" class="cell" data-tags="[]" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>lista <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>] <span class="co"># Definición de una lista</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>tupla_l <span class="op">=</span> <span class="bu">tuple</span>(lista)  <span class="co"># Conversión a tupla</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lista, <span class="bu">type</span>(lista), <span class="bu">id</span>(lista))</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupla_l, <span class="bu">type</span>(tupla_l), <span class="bu">id</span>(tupla_l))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;_io.TextIOWrapper name='gatos.txt' mode='r' encoding='cp1252'&gt;
-&lt;class '_io.TextIOWrapper'&gt;</code></pre>
+<pre><code>['a', 'b', 'c'] &lt;class 'list'&gt; 1226050069440
+('a', 'b', 'c') &lt;class 'tuple'&gt; 1226049867136</code></pre>
 </div>
 </div>
-<p>En este ejemplo <code>f</code> es un descriptor del archivo que se acaba de abrir y contiene información como el nombre del archivo, el modo en que se abrió y la codificación. El tipo es <code>_io.TextIOWrapper</code>.</p>
 </section>
-<section id="leer-una-línea-del-archivo." class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="leer-una-línea-del-archivo."><span class="header-section-number">7.3</span> Leer una línea del archivo.</h2>
-<p>Para obtener información del archivo existen varios métodos, particularmente en <code>readline()</code> que lee una línea del archivo y avanza a la siguiente.</p>
-<div id="cell-7" class="cell" data-execution_count="11">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>f.readline()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
-<pre><code>'     Persa       2.3\n'</code></pre>
-</div>
-</div>
-<div id="cell-8" class="cell" data-execution_count="12">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>f.readline()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="12">
-<pre><code>'    Sphynx       3.5\n'</code></pre>
-</div>
-</div>
-<div id="cell-9" class="cell" data-execution_count="13">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>l1 <span class="op">=</span> f.readline() <span class="co"># se puede almacenar lo que se lee en una variable</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(l1)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="listas-to-conjuntos" class="level3" data-number="13.1.2">
+<h3 data-number="13.1.2" class="anchored" data-anchor-id="listas-to-conjuntos"><span class="header-section-number">13.1.2</span> listas <span class="math inline">\(\to\)</span> conjuntos</h3>
+<div id="cell-5" class="cell" data-tags="[]" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>lista <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'a'</span>] <span class="co"># Definición de una lista</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>conj_l <span class="op">=</span> <span class="bu">set</span>(lista)          <span class="co"># Conversión a conjunto</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lista, <span class="bu">type</span>(lista), <span class="bu">id</span>(lista))</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(conj_l, <span class="bu">type</span>(conj_l), <span class="bu">id</span>(conj_l))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>   Ragdoll       5.4
-</code></pre>
+<pre><code>['a', 'b', 'c', 'a'] &lt;class 'list'&gt; 1226050069056
+{'b', 'a', 'c'} &lt;class 'set'&gt; 1226050028256</code></pre>
 </div>
 </div>
-<div id="cell-10" class="cell" data-execution_count="14">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>f.readline()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
-<pre><code>'    SiamÃ©s       2.5'</code></pre>
-</div>
-</div>
-<div id="cell-11" class="cell" data-execution_count="15">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>f.readline()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="15">
-<pre><code>''</code></pre>
-</div>
-</div>
+<p>Observa que en esta transformación el conjunto elimina los elementos repetidos.</p>
 </section>
-<section id="cerrar-un-archivo." class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="cerrar-un-archivo."><span class="header-section-number">7.4</span> Cerrar un archivo.</h2>
-<p>Siempre que se abra un archivo, ya sea para lectura o escritura, es importante cerrarlo cuando ya no se esté usando.</p>
-<p>Para cerrar un archivo se usa el método <code>close()</code>:</p>
-<div id="cell-13" class="cell" data-execution_count="16">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>f.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="leer-todas-las-líneas-del-archivo." class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="leer-todas-las-líneas-del-archivo."><span class="header-section-number">7.5</span> Leer todas las líneas del archivo.</h2>
-<p>También es posible leer todo el contenido del archivo de un solo paso con la función <code>readlines()</code>.</p>
-<div id="cell-15" class="cell" data-execution_count="17">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatos.txt'</span>)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>lines <span class="op">=</span> f.readlines()</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lines)</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>f.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="listas-to-diccionarios" class="level3" data-number="13.1.3">
+<h3 data-number="13.1.3" class="anchored" data-anchor-id="listas-to-diccionarios"><span class="header-section-number">13.1.3</span> listas <span class="math inline">\(\to\)</span> diccionarios</h3>
+<div id="cell-8" class="cell" data-tags="[]" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>key_l <span class="op">=</span> [<span class="st">'a'</span>,<span class="st">'b'</span>,<span class="st">'c'</span>,<span class="st">'d'</span>, <span class="st">'e'</span>] <span class="co"># Lista de claves</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>val_l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]        <span class="co"># Lista de valores</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>dicc <span class="op">=</span> <span class="bu">dict</span>(<span class="bu">zip</span>(key_l, val_l)) <span class="co"># Construcción de un diccionario</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(key_l)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(val_l)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dicc, <span class="bu">type</span>(dicc), <span class="bu">id</span>(dicc))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>['     Persa       2.3\n', '    Sphynx       3.5\n', '   Ragdoll       5.4\n', '    SiamÃ©s       2.5']</code></pre>
+<pre><code>['a', 'b', 'c', 'd', 'e']
+[1, 2, 3, 4, 5]
+{'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5} &lt;class 'dict'&gt; 1226050079104</code></pre>
 </div>
 </div>
 </section>
-<section id="abrir-un-archivo-para-escritura." class="level2" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="abrir-un-archivo-para-escritura."><span class="header-section-number">7.6</span> Abrir un archivo para escritura.</h2>
-<p>Si queremos abrir un archivo para escritura usamos el modo <code>w</code>.</p>
-<p>Primero vamos a abrir un archivo y leer su información:</p>
-<div id="cell-17" class="cell" data-execution_count="45">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>f1 <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatos.txt'</span>,<span class="st">'r'</span>)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>lineas <span class="op">=</span> f1.readlines()</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lineas)</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>f1.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="tuplas-to-listas" class="level3" data-number="13.1.4">
+<h3 data-number="13.1.4" class="anchored" data-anchor-id="tuplas-to-listas"><span class="header-section-number">13.1.4</span> tuplas <span class="math inline">\(\to\)</span> listas</h3>
+<div id="cell-10" class="cell" data-tags="[]" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>tupla <span class="op">=</span> (<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)     <span class="co"># Definición de una tupla</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>lista_t <span class="op">=</span> <span class="bu">list</span>(tupla) <span class="co"># Conversión a lista</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupla, <span class="bu">type</span>(tupla), <span class="bu">id</span>(tupla))</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lista_t, <span class="bu">type</span>(lista_t), <span class="bu">id</span>(lista_t))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>['     Persa       2.3\n', '    Sphynx       3.5\n', '   Ragdoll       5.4\n', '    SiamÃ©s       2.5']</code></pre>
-</div>
-</div>
-<p>Ahora abrimos un segundo archivo para escribir información en él:</p>
-<div id="cell-19" class="cell" data-execution_count="46">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>f2 <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatitos.txt'</span>,<span class="st">'w'</span>)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>f2.writelines(lineas)</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>f2.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Revisa que se haya generado el archivo <code>gatitos.txt</code> en tu directorio de trabajo y checa que tenga el mismo contenido que el archivo <code>gatos.txt</code>. Con el siguiente código abrimos el archivo creado y vemos su contenido:</p>
-<div id="cell-21" class="cell" data-execution_count="48">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>f2 <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatitos.txt'</span>,<span class="st">'r'</span>)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f2.readlines())</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>f2.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>['     Persa       2.3\n', '    Sphynx       3.5\n', '   Ragdoll       5.4\n', '    SiamÃ©s       2.5']</code></pre>
+<pre><code>(1, 2, 3, 4) &lt;class 'tuple'&gt; 1226049799968
+[1, 2, 3, 4] &lt;class 'list'&gt; 1226050079488</code></pre>
 </div>
 </div>
 </section>
-<section id="abrir-un-archivo-para-agregar-información-al-final." class="level2" data-number="7.7">
-<h2 data-number="7.7" class="anchored" data-anchor-id="abrir-un-archivo-para-agregar-información-al-final."><span class="header-section-number">7.7</span> Abrir un archivo para agregar información al final.</h2>
-<p>Si ya existe un archivo, es posible agregarle información como sigue:</p>
-<div id="cell-23" class="cell" data-execution_count="49">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Abrimos un archivo para insertar información.</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>f3 <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatitos.txt'</span>, <span class="st">'a'</span>)</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Esta es la información que se va a agregar</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>linea_nueva <span class="op">=</span> <span class="st">"</span><span class="ch">\n</span><span class="sc">{:&gt;10s}{:&gt;10.1f}</span><span class="ch">\n</span><span class="st">"</span>.<span class="bu">format</span>(<span class="st">"Eléctrico"</span>, <span class="fl">3.7</span>)</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Se escribe la información.</span></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> f3.write(linea_nueva)</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Cerramos el archivo</span></span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>f3.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Revisa el nuevo contenido del archivo <code>gatitos.txt</code> en tu directorio de trabajo. La nueva información debió escribirse al final del archivo. De igual manera podemos verificar el contenido con el siguiente código:</p>
-<div id="cell-25" class="cell" data-execution_count="50">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>f3 <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatitos.txt'</span>,<span class="st">'r'</span>)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f3.readlines())</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>f3.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="tuplas-to-conjuntos" class="level3" data-number="13.1.5">
+<h3 data-number="13.1.5" class="anchored" data-anchor-id="tuplas-to-conjuntos"><span class="header-section-number">13.1.5</span> tuplas <span class="math inline">\(\to\)</span> conjuntos</h3>
+<div id="cell-12" class="cell" data-tags="[]" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>tupla <span class="op">=</span> (<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">2</span>) <span class="co"># Definición de una tupla</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>conj_t <span class="op">=</span> <span class="bu">set</span>(tupla) <span class="co"># Conversión a conjunto</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupla, <span class="bu">type</span>(tupla), <span class="bu">id</span>(tupla))</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(conj_t, <span class="bu">type</span>(conj_t), <span class="bu">id</span>(conj_t))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>['     Persa       2.3\n', '    Sphynx       3.5\n', '   Ragdoll       5.4\n', '    SiamÃ©s       2.5\n', ' Eléctrico       3.7\n']</code></pre>
+<pre><code>(1, 2, 3, 1, 2) &lt;class 'tuple'&gt; 1226049806848
+{1, 2, 3} &lt;class 'set'&gt; 1226050029824</code></pre>
 </div>
 </div>
-<p>Observa que el archivo ya contiene la nueva información.</p>
+<p>Observa que en esta transformación el conjunto elimina los elementos repetidos.</p>
 </section>
-<section id="abrir-un-archivo-para-insertar-información-en-cualquier-lugar." class="level2" data-number="7.8">
-<h2 data-number="7.8" class="anchored" data-anchor-id="abrir-un-archivo-para-insertar-información-en-cualquier-lugar."><span class="header-section-number">7.8</span> Abrir un archivo para insertar información en cualquier lugar.</h2>
-<div id="cell-27" class="cell" data-execution_count="52">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Abrimos el archivo en modo 'r+'</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>f4 <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatitos.txt'</span>, <span class="st">"r+"</span>)</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Leemos el contenido del archivo</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>contenido <span class="op">=</span> f4.readlines()</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculamos la mitad del archivo (aprox), debe ser un entero</span></span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>indice <span class="op">=</span> <span class="bu">len</span>(contenido) <span class="op">//</span> <span class="dv">2</span></span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Generamos nueva información</span></span>
-<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>linea_nueva <span class="op">=</span> <span class="st">"</span><span class="sc">{:&gt;10s}{:&gt;10.1f}</span><span class="ch">\n</span><span class="st">"</span>.<span class="bu">format</span>(<span class="st">"Birmano"</span>, <span class="fl">3.2</span>)</span>
-<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Agregamos la información a la mitad del archivo</span></span>
-<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>contenido.insert(indice, linea_nueva)</span>
-<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Regresamos al inicio del archivo</span></span>
-<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>f4.seek(<span class="dv">0</span>)</span>
-<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Escribimos todas las líneas del archivo.</span></span>
-<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>f4.writelines(contenido)</span>
-<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>f4.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Revisa el nuevo contenido del archivo <code>gatitos.txt</code> en tu directorio de trabajo. La nueva información debió escribirse a la mitad del archivo aproximadamente.</p>
-<p>Usamos el siguiente código para checar el archivo con la nueva información:</p>
-<div id="cell-29" class="cell" data-execution_count="54">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>f4 <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatitos.txt'</span>,<span class="st">'r'</span>)</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f4.readlines())</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>f4.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="tuplas-to-diccionarios" class="level3" data-number="13.1.6">
+<h3 data-number="13.1.6" class="anchored" data-anchor-id="tuplas-to-diccionarios"><span class="header-section-number">13.1.6</span> tuplas <span class="math inline">\(\to\)</span> diccionarios</h3>
+<div id="cell-15" class="cell" data-tags="[]" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>key_t <span class="op">=</span> (<span class="st">'a'</span>,<span class="st">'b'</span>,<span class="st">'c'</span>,<span class="st">'d'</span>, <span class="st">'e'</span>) <span class="co"># Una tupla de claves</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>val_t <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)        <span class="co"># Una tupla de valores</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>dicc <span class="op">=</span> <span class="bu">dict</span>(<span class="bu">zip</span>(key_t, val_t)) <span class="co"># Construcción de un diccionario</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(key_t)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(val_t)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dicc, <span class="bu">type</span>(dicc), <span class="bu">id</span>(dicc))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>['     Persa       2.3\n', '    Sphynx       3.5\n', '   Birmano       3.2\n', '   Birmano       3.2\n', '   Ragdoll       5.4\n', '    SiamÃ©s       2.5\n', ' Eléctrico       3.7\n']</code></pre>
+<pre><code>('a', 'b', 'c', 'd', 'e')
+(1, 2, 3, 4, 5)
+{'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5} &lt;class 'dict'&gt; 1226050087424</code></pre>
 </div>
 </div>
 </section>
-<section id="gestores-de-contexto." class="level2" data-number="7.9">
-<h2 data-number="7.9" class="anchored" data-anchor-id="gestores-de-contexto."><span class="header-section-number">7.9</span> Gestores de contexto.</h2>
-<p>Los <strong>gestores de contexto</strong> en Python son una manera de gestionar recursos de forma eficiente y segura.</p>
-<p>Se utilizan con la palabra clave <code>with</code>, que garantiza que ciertos recursos se inicialicen y liberen correctamente, incluso si ocurre una excepción.</p>
-<p>Estos recursos pueden incluir archivos, conexiones de red, bloqueos de threads, etc.</p>
-<p>Por ejemplo:</p>
-<div id="cell-31" class="cell" data-execution_count="55">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'contexto_ejemplo'</span>, <span class="st">'w'</span>) <span class="im">as</span> archivo_abierto:</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    archivo_abierto.write(<span class="st">'En este ejemplo, todo se realiza con un gestor de contexto.'</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Lo que realiza la operación anterior es:</p>
-<ol type="1">
-<li>Abre el archivo <code>contexto_ejemplo</code>.</li>
-<li>Escribe algo en el archivo,</li>
-<li>Cierra el archivo. Si ocurre algún error mientras se escribe en el archivo, entonces se intenta cerrar el archivo.</li>
-</ol>
-<p>El código es equivalente a:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>archivo_abierto <span class="op">=</span> <span class="bu">open</span>(<span class="st">'contexto_ejemplo'</span>, <span class="st">'w'</span>)</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    archivo_abierto.write(<span class="st">'En este ... contexto!'</span>)</span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="cf">finally</span>:</span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    archivo_abierto.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
+<section id="conjunto-to-lista-y-tupla" class="level3" data-number="13.1.7">
+<h3 data-number="13.1.7" class="anchored" data-anchor-id="conjunto-to-lista-y-tupla"><span class="header-section-number">13.1.7</span> conjunto <span class="math inline">\(\to\)</span> lista y tupla</h3>
+<div id="cell-17" class="cell" data-tags="[]" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>conj <span class="op">=</span> {<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="st">'a'</span>,<span class="st">'b'</span>,<span class="st">'c'</span>} <span class="co"># Definición de un conjunto</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>lista_s <span class="op">=</span> <span class="bu">list</span>(conj)       <span class="co"># Conversión a lista</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>tupla_s <span class="op">=</span> <span class="bu">tuple</span>(conj)      <span class="co"># Conversińo a tupla</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(conj, <span class="bu">type</span>(conj), <span class="bu">id</span>(conj))</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lista_s, <span class="bu">type</span>(lista_s), <span class="bu">id</span>(lista_s))</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupla_s, <span class="bu">type</span>(tupla_s), <span class="bu">id</span>(tupla_s))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{1, 2, 3, 'b', 'a', 'c'} &lt;class 'set'&gt; 1226050028928
+[1, 2, 3, 'b', 'a', 'c'] &lt;class 'list'&gt; 1226050076992
+(1, 2, 3, 'b', 'a', 'c') &lt;class 'tuple'&gt; 1226008573312</code></pre>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>Esta forma de abrir un archivo, manipular su información y cerrarlo, usando un gestor de contexto (<code>with</code>), es la más recomendada.</p>
+</section>
+<section id="conjuntos-to-diccionarios" class="level3" data-number="13.1.8">
+<h3 data-number="13.1.8" class="anchored" data-anchor-id="conjuntos-to-diccionarios"><span class="header-section-number">13.1.8</span> conjuntos <span class="math inline">\(\to\)</span> diccionarios</h3>
+<div id="cell-19" class="cell" data-tags="[]" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>conj1 <span class="op">=</span> {<span class="st">'a'</span>,<span class="st">'b'</span>,<span class="st">'c'</span>} <span class="co"># Definición de un conjunto</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>conj2 <span class="op">=</span> {<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>}       <span class="co"># Definición de otro conjunto</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>dicc <span class="op">=</span> <span class="bu">dict</span>(<span class="bu">zip</span>(conj1, conj2)) <span class="co"># Construcción de un diccionario</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(conj1)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(conj2)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dicc, <span class="bu">type</span>(dicc), <span class="bu">id</span>(dicc))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'b', 'a', 'c'}
+{1, 2, 3}
+{'b': 1, 'a': 2, 'c': 3} &lt;class 'dict'&gt; 1226050091648</code></pre>
 </div>
 </div>
-<p>Es posible implemetar nuestros propios gestores de contexto. Para ello se requiere un conocimiento más profundo de Programación Orientada a Objetos.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+</section>
+<section id="diccionarios-to-listas-tuplas-y-conjuntos" class="level3" data-number="13.1.9">
+<h3 data-number="13.1.9" class="anchored" data-anchor-id="diccionarios-to-listas-tuplas-y-conjuntos"><span class="header-section-number">13.1.9</span> diccionarios <span class="math inline">\(\to\)</span> listas, tuplas y conjuntos</h3>
+<div id="cell-21" class="cell" data-tags="[]" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>dicc <span class="op">=</span> {<span class="st">'x'</span>:<span class="dv">3</span>, <span class="st">'y'</span>:<span class="dv">4</span>, <span class="st">'z'</span>:<span class="dv">5</span>} <span class="co"># Definición de un diccionario</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Nota</span>Nota.
+<p>Conversión directa:</p>
+<div id="cell-23" class="cell" data-tags="[]" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>lista <span class="op">=</span> <span class="bu">list</span>(dicc)   <span class="co"># Conversión a lista</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>tupla <span class="op">=</span> <span class="bu">tuple</span>(dicc)  <span class="co"># Conversión a tupla</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>conj <span class="op">=</span> <span class="bu">set</span>(dicc)     <span class="co"># Conversión a conjunto</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dicc, <span class="bu">type</span>(dicc), <span class="bu">id</span>(dicc))</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lista, <span class="bu">type</span>(lista), <span class="bu">id</span>(lista))</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupla, <span class="bu">type</span>(tupla), <span class="bu">id</span>(tupla))</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(conj, <span class="bu">type</span>(conj), <span class="bu">id</span>(conj))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'x': 3, 'y': 4, 'z': 5} &lt;class 'dict'&gt; 1226050082688
+['x', 'y', 'z'] &lt;class 'list'&gt; 1226050111232
+('x', 'y', 'z') &lt;class 'tuple'&gt; 1226050004928
+{'x', 'y', 'z'} &lt;class 'set'&gt; 1226050029376</code></pre>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>En el ejemplo anterior se usó la construcción <code>try:</code> … <code>finally:</code> que se usa para gestionar errores. Esto se revisará en detalle en la <a href="17_excepciones.html" class="quarto-xref"><span>Capítulo 10</span></a>.</p>
+<p>Conversión desde las claves:</p>
+<div id="cell-25" class="cell" data-tags="[]" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>lista <span class="op">=</span> <span class="bu">list</span>(dicc.keys())  <span class="co"># Conversión a lista</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>tupla <span class="op">=</span> <span class="bu">tuple</span>(dicc.keys()) <span class="co"># Conversión a tupla</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>conj <span class="op">=</span> <span class="bu">set</span>(dicc.keys())    <span class="co"># Conversión a conjunto</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dicc, <span class="bu">type</span>(dicc), <span class="bu">id</span>(dicc))</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lista, <span class="bu">type</span>(lista), <span class="bu">id</span>(lista))</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupla, <span class="bu">type</span>(tupla), <span class="bu">id</span>(tupla))</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(conj, <span class="bu">type</span>(conj), <span class="bu">id</span>(conj))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'x': 3, 'y': 4, 'z': 5} &lt;class 'dict'&gt; 1226050082688
+['x', 'y', 'z'] &lt;class 'list'&gt; 1226050113088
+('x', 'y', 'z') &lt;class 'tuple'&gt; 1226050080640
+{'x', 'y', 'z'} &lt;class 'set'&gt; 1226050030496</code></pre>
 </div>
 </div>
-<p>El propósito de un gestor de contexto es asegurarse de que las acciones de “entrada” y “salida” de un contexto se manejen adecuadamente. El contexto se refiere a cualquier bloque de código que necesita realizar alguna configuración al inicio (como abrir un archivo o adquirir un recurso) y luego limpiar al final (como cerrar el archivo o liberar el recurso).</p>
-<p><strong>Ventajas de los gestores de contexto.</strong></p>
-<ol type="1">
-<li><strong>Código más limpio</strong>: No tienes que preocuparte por cerrar recursos manualmente.</li>
-<li><strong>Manejo seguro de excepciones</strong>: Incluso si ocurre una excepción dentro del bloque <code>with</code>, el recurso se libera correctamente.</li>
-<li><strong>Legibilidad</strong>: El código es más claro en cuanto a cuándo comienza y termina el uso de un recurso.</li>
-</ol>
-<p><strong>¿Cómo funcionan?</strong></p>
-<p>Los gestores de contexto implementan los métodos especiales <code>__enter__</code> y <code>__exit__</code>: - <strong><code>__enter__()</code></strong>: Este método es llamado al inicio del bloque <code>with</code>. Se utiliza para establecer el recurso o la configuración inicial. - <strong><code>__exit__(exc_type, exc_value, traceback)</code></strong>: Este método es llamado al final del bloque <code>with</code>, independientemente de si se produjo una excepción. Se utiliza para liberar o limpiar el recurso.</p>
+<p>Conversión desde las valores:</p>
+<div id="cell-27" class="cell" data-tags="[]" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>lista <span class="op">=</span> <span class="bu">list</span>(dicc.values())  <span class="co"># Conversión a lista</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>tupla <span class="op">=</span> <span class="bu">tuple</span>(dicc.values()) <span class="co"># Conversión a tupla</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>conj <span class="op">=</span> <span class="bu">set</span>(dicc.values())    <span class="co"># Conversión a conjunto</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dicc, <span class="bu">type</span>(dicc), <span class="bu">id</span>(dicc))</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lista, <span class="bu">type</span>(lista), <span class="bu">id</span>(lista))</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupla, <span class="bu">type</span>(tupla), <span class="bu">id</span>(tupla))</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(conj, <span class="bu">type</span>(conj), <span class="bu">id</span>(conj))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'x': 3, 'y': 4, 'z': 5} &lt;class 'dict'&gt; 1226050082688
+[3, 4, 5] &lt;class 'list'&gt; 1226050116224
+(3, 4, 5) &lt;class 'tuple'&gt; 1226050006784
+{3, 4, 5} &lt;class 'set'&gt; 1226050031392</code></pre>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1122,13 +1138,13 @@ Tip
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../notebooks/06_input.html" class="pagination-link" aria-label="Entrada estándar.">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Entrada estándar.</span></span>
+      <a href="../notebooks/12_diccionarios.html" class="pagination-link" aria-label="Estructura de datos: diccionarios.">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Estructura de datos: diccionarios.</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../notebooks/08_control_de_flujo.html" class="pagination-link" aria-label="Control de flujo.">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Control de flujo.</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../notebooks/14_ds_traversing.html" class="pagination-link" aria-label="Recorriendo las estructuras de datos.">
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Recorriendo las estructuras de datos.</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Gestión de archivos. – Notas de Python</title>
+<title>15&nbsp; Funciones: introducción. – Notas de Python</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../notebooks/08_control_de_flujo.html" rel="next">
-<link href="../notebooks/06_input.html" rel="prev">
+<link href="../notebooks/17_excepciones.html" rel="next">
+<link href="../notebooks/14_ds_traversing.html" rel="prev">
 <link href="../figuras/python1.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -111,6 +111,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../estilos/code-blocks.css">
 </head>
@@ -286,7 +315,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/07_archivos.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Gestión de archivos.</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/15_funciones.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Funciones: introducción.</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -390,7 +419,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/07_archivos.html" class="sidebar-item-text sidebar-link active">
+  <a href="../notebooks/07_archivos.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Gestión de archivos.</span></span></a>
   </div>
 </li>
@@ -403,19 +432,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/09_listas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estructura de datos: listas</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estructura de datos: listas.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/10_tuplas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Estructura de datos: tuplas.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/11_conjuntos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Estructura de datos: conjuntos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/12_diccionarios.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Estructura de datos: diccionarios.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/13_ds_casting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Conversión entre estructuras de datos.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/14_ds_traversing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Recorriendo las estructuras de datos.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/15_funciones.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Funciones: introducción.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/17_excepciones.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Gestión de errores y excepciones.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Gestión de errores y excepciones.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/23_import.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Importando bibliotecas.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Importando bibliotecas.</span></span></a>
   </div>
 </li>
     </ul>
@@ -428,15 +493,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#la-función-open." id="toc-la-función-open." class="nav-link active" data-scroll-target="#la-función-open."><span class="header-section-number">7.1</span> La función <code>open()</code>.</a></li>
-  <li><a href="#abrir-un-archivo-para-lectura." id="toc-abrir-un-archivo-para-lectura." class="nav-link" data-scroll-target="#abrir-un-archivo-para-lectura."><span class="header-section-number">7.2</span> Abrir un archivo para lectura.</a></li>
-  <li><a href="#leer-una-línea-del-archivo." id="toc-leer-una-línea-del-archivo." class="nav-link" data-scroll-target="#leer-una-línea-del-archivo."><span class="header-section-number">7.3</span> Leer una línea del archivo.</a></li>
-  <li><a href="#cerrar-un-archivo." id="toc-cerrar-un-archivo." class="nav-link" data-scroll-target="#cerrar-un-archivo."><span class="header-section-number">7.4</span> Cerrar un archivo.</a></li>
-  <li><a href="#leer-todas-las-líneas-del-archivo." id="toc-leer-todas-las-líneas-del-archivo." class="nav-link" data-scroll-target="#leer-todas-las-líneas-del-archivo."><span class="header-section-number">7.5</span> Leer todas las líneas del archivo.</a></li>
-  <li><a href="#abrir-un-archivo-para-escritura." id="toc-abrir-un-archivo-para-escritura." class="nav-link" data-scroll-target="#abrir-un-archivo-para-escritura."><span class="header-section-number">7.6</span> Abrir un archivo para escritura.</a></li>
-  <li><a href="#abrir-un-archivo-para-agregar-información-al-final." id="toc-abrir-un-archivo-para-agregar-información-al-final." class="nav-link" data-scroll-target="#abrir-un-archivo-para-agregar-información-al-final."><span class="header-section-number">7.7</span> Abrir un archivo para agregar información al final.</a></li>
-  <li><a href="#abrir-un-archivo-para-insertar-información-en-cualquier-lugar." id="toc-abrir-un-archivo-para-insertar-información-en-cualquier-lugar." class="nav-link" data-scroll-target="#abrir-un-archivo-para-insertar-información-en-cualquier-lugar."><span class="header-section-number">7.8</span> Abrir un archivo para insertar información en cualquier lugar.</a></li>
-  <li><a href="#gestores-de-contexto." id="toc-gestores-de-contexto." class="nav-link" data-scroll-target="#gestores-de-contexto."><span class="header-section-number">7.9</span> Gestores de contexto.</a></li>
+  <li><a href="#definición-de-funciones" id="toc-definición-de-funciones" class="nav-link active" data-scroll-target="#definición-de-funciones"><span class="header-section-number">16</span> Definición de funciones</a>
+  <ul class="collapse">
+  <li><a href="#ejemplo-1." id="toc-ejemplo-1." class="nav-link" data-scroll-target="#ejemplo-1."><span class="header-section-number">16.1</span> Ejemplo 1.</a></li>
+  <li><a href="#ejemplo-2." id="toc-ejemplo-2." class="nav-link" data-scroll-target="#ejemplo-2."><span class="header-section-number">16.2</span> Ejemplo 2.</a></li>
+  <li><a href="#ejemplo-3." id="toc-ejemplo-3." class="nav-link" data-scroll-target="#ejemplo-3."><span class="header-section-number">16.3</span> Ejemplo 3.</a></li>
+  <li><a href="#ejemplo-4." id="toc-ejemplo-4." class="nav-link" data-scroll-target="#ejemplo-4."><span class="header-section-number">16.4</span> Ejemplo 4.</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -446,7 +509,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Gestión de archivos.</span></h1>
+<h1 class="title"><span id="sec-funciones_intro" class="quarto-section-identifier"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Funciones: introducción.</span></span></h1>
 </div>
 
 
@@ -463,245 +526,177 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><strong>Objetivo.</strong> Revisar la forma básica de gestionar archivos.</p>
-<section id="la-función-open." class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="la-función-open."><span class="header-section-number">7.1</span> La función <code>open()</code>.</h2>
-<p>La función incorporada para gestionar archivos es <code>open()</code>. Esta función toma dos parámetros: el nombre del archivo y el modo. Existen cuatro diferentes modos:</p>
+<p><strong>Objetivo.</strong> Hacer una descripción básica de las funciones y su uso mediante algunos ejemplos.</p>
+<section id="definición-de-funciones" class="level1" data-number="16">
+<h1 data-number="16"><span class="header-section-number">16</span> Definición de funciones</h1>
 <ul>
-<li><code>"r"</code> - Read - Default value. Abre el archivo para lectura. Se produce un error si el archvio no existe.</li>
-<li><code>"a"</code> - Append - Abre el archivo para agregar información. Si el archivo no existe, lo crea.</li>
-<li><code>"w"</code> - Write - Abre el archivo para escritura. Si el archivo no existe, lo crea. Si el archivo existe, lo sobreescribe.</li>
-<li><code>"x"</code> - Create - Crea el archivo, regresa un error si el archivo existe.</li>
+<li><p>Las funciones son la primera forma de estructurar un programa de manera modular y hacer que sea más fácil de entender, mantener y reutilizar.</p></li>
+<li><p>Esto nos lleva al paradigma de programación estructurada, junto con las construcciones de control de flujo.</p></li>
+<li><p>Las funciones en Python son bloques de código reutilizables que realizan una tarea específica.</p></li>
+<li><p>Las funciones pueden requerir parámetros de entrada, realizar operaciones y devolver un valor de salida.</p></li>
+<li><p>La sintáxis es la siguiente:</p></li>
 </ul>
-<p>Adicionalmente se puede especificar si el archivo se abre en modo texto o binario:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> nombre_de_la_función(parm1, parm2, ...):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    bloque_de_código</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> resultado</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Una vez definida la función, es posible ejecutarla (hacer una llamada a la función) como sigue:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>nombre_de_la_función(arg1, arg2, ...)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Si existe la declaración <code>return</code> dentro de la función, entonces regresa un resultado el cual puede ser asignado a una variable como sigue:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>variable <span class="op">=</span> nombre_de_la_función(arg1, arg2, ...)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Observa que: * Cuando se define la función, se definen los <strong>parámetros</strong> que recibirá, en este caso <code>param1</code>, <code>param2</code>, <code>...</code> * Cuando se ejecuta la función, se pasan los valores <code>arg1</code>, <code>arg2</code>, <code>...</code>, los cuales son los <strong>argumentos</strong> de la ejecución y serán sustituidos en los parámetros de la función. * El bloque de código de la función y el <code>return</code> deben tener una sangría. La definición de la función termina cuando termina la sangría.</p>
+<p>Veamos un ejemplo simple:</p>
+<div id="cell-2" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> imprimir_saludo():</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    saludo <span class="op">=</span> <span class="st">"Hola mundo desde la función 'imprimir_saludo()'"</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <ul>
-<li><code>"t"</code> - Text - Valor por omisión.</li>
-<li><code>"b"</code> - Binary</li>
+<li><p>La función anterior lleva por nombre <code>imprimir_saludo</code>, no requiere de párametros y en el bloque de código solo se define una cadena de nombre <code>saludo</code>.</p></li>
+<li><p>Esta función al ejecutarse no proporcionará ningún resultado debido a que no tiene la declaración <code>return</code>, es decir no regresa ningún valor.</p></li>
 </ul>
+<p>Veamos:</p>
+<div id="cell-4" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>imprimir_saludo()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Si intentamos asignar la función a un variable obtendremos lo siguiente:</p>
+<div id="cell-6" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>hola <span class="op">=</span> imprimir_saludo()</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hola)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Observa que la variable <code>hola</code> no está definida y no contiene ningún valor (<code>None</code>).</p>
+<p>Modifiquemos la función como sigue:</p>
+<div id="cell-8" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> imprimir_saludo():</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"Hola mundo desde la función 'imprimir_saludo()'"</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Ahora la función no contiene bloque de código y solo tiene un <code>return</code> y lo que regresa es una cadena. Veamos lo que produce esta función:</p>
+<div id="cell-10" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>imprimir_saludo()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>En esta versión, el resultado de ejecutar la función es la cadena que se regresa. Podemos asignarla a una varible e imprimirla como sigue:</p>
+<div id="cell-12" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>hola <span class="op">=</span> imprimir_saludo()</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hola)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Ahora la variable <code>hola</code> ya está definida con la cadena que regresa la función.</p>
+<p>Veamos otros ejemplos de funciones.</p>
+<section id="ejemplo-1." class="level2 alert alert-success" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="ejemplo-1."><span class="header-section-number">16.1</span> Ejemplo 1.</h2>
+<p>Escribir una función que calcule y regrese el cuadrado de un número con las siguientes características: * el número lo recibe como parámetro; * el nombre de la función debe ser <code>squared</code>.</p>
 </section>
-<section id="abrir-un-archivo-para-lectura." class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="abrir-un-archivo-para-lectura."><span class="header-section-number">7.2</span> Abrir un archivo para lectura.</h2>
-<div id="cell-3" class="cell" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatos.txt'</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-15" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> squared(numero):         <span class="co"># Se recibe como parámetro el 'numero'</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    cuadrado <span class="op">=</span> numero <span class="op">**</span> <span class="dv">2</span>   <span class="co"># Se calcula el cuadrado del 'numero'</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> cuadrado          <span class="co"># Se regresa el resultado</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-4" class="cell" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(f))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;_io.TextIOWrapper name='gatos.txt' mode='r' encoding='cp1252'&gt;
-&lt;class '_io.TextIOWrapper'&gt;</code></pre>
+<div id="cell-16" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Se ejecuta la función con el argumento 2</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>squared(<span class="dv">2</span>) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<div id="cell-17" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Se ejecuta la función con el argumento 3 y el resultado se almacena </span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># en la variable 'resultado'</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> squared(<span class="dv">3</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(resultado)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>En este ejemplo <code>f</code> es un descriptor del archivo que se acaba de abrir y contiene información como el nombre del archivo, el modo en que se abrió y la codificación. El tipo es <code>_io.TextIOWrapper</code>.</p>
+<section id="ejemplo-2." class="level2 alert alert-success" data-number="16.2">
+<h2 data-number="16.2" class="anchored" data-anchor-id="ejemplo-2."><span class="header-section-number">16.2</span> Ejemplo 2.</h2>
+<p>Escribir una función que calcule el promedio de dos números. * Los dos números se reciben como parámetros. * La función regresa el valor del promedio.</p>
 </section>
-<section id="leer-una-línea-del-archivo." class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="leer-una-línea-del-archivo."><span class="header-section-number">7.3</span> Leer una línea del archivo.</h2>
-<p>Para obtener información del archivo existen varios métodos, particularmente en <code>readline()</code> que lee una línea del archivo y avanza a la siguiente.</p>
-<div id="cell-7" class="cell" data-execution_count="11">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>f.readline()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
-<pre><code>'     Persa       2.3\n'</code></pre>
+<div id="cell-19" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> promedio(a, b):       <span class="co"># Se reciben dos argumentos 'a' y 'b'</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    prom <span class="op">=</span> (a <span class="op">+</span> b) <span class="op">/</span> <span class="fl">2.0</span>  <span class="co"># Se calcula el promedio </span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> prom           <span class="co"># Se regresa el valor del promedio</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<div id="cell-20" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>promedio(<span class="dv">5</span>, <span class="dv">6</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-8" class="cell" data-execution_count="12">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>f.readline()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="12">
-<pre><code>'    Sphynx       3.5\n'</code></pre>
-</div>
-</div>
-<div id="cell-9" class="cell" data-execution_count="13">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>l1 <span class="op">=</span> f.readline() <span class="co"># se puede almacenar lo que se lee en una variable</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(l1)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   Ragdoll       5.4
-</code></pre>
-</div>
-</div>
-<div id="cell-10" class="cell" data-execution_count="14">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>f.readline()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
-<pre><code>'    SiamÃ©s       2.5'</code></pre>
-</div>
-</div>
-<div id="cell-11" class="cell" data-execution_count="15">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>f.readline()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="15">
-<pre><code>''</code></pre>
-</div>
-</div>
+<section id="ejemplo-3." class="level2 alert alert-success" data-number="16.3">
+<h2 data-number="16.3" class="anchored" data-anchor-id="ejemplo-3."><span class="header-section-number">16.3</span> Ejemplo 3.</h2>
+<p>Escribir una función que calcule el promedio de una secuencia de números que recibe como parámetros.</p>
 </section>
-<section id="cerrar-un-archivo." class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="cerrar-un-archivo."><span class="header-section-number">7.4</span> Cerrar un archivo.</h2>
-<p>Siempre que se abra un archivo, ya sea para lectura o escritura, es importante cerrarlo cuando ya no se esté usando.</p>
-<p>Para cerrar un archivo se usa el método <code>close()</code>:</p>
-<div id="cell-13" class="cell" data-execution_count="16">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>f.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Dada la secuencia de números <span class="math inline">\(x_1, x_2, \dots, x_N\)</span>, la fórmula para calcular el promedio es:</p>
+<p><span class="math display">\[
+\bar{X} = \frac{\sum_{i=1}^{N} x_i}{N}
+\]</span></p>
+<p>Esta fórmula tiene dos partes: 1. La suma de todos los números de la secuencia: <span class="math inline">\(\sum_{i=1}^{N} x_i\)</span>. Esto requiere de definir una variable para almacenar la suma y recorrer la secuencia para sumar cada elemento. El siguiente pseudocódigo muestra estas acciones: <span class="math display">\[
+\begin{array}{lcr}
+\mbox{suma} \leftarrow 0 \\
+\mbox{FOR} \;\; i = 1, \; N \\
+\;\;\;\; \mbox{suma} \leftarrow \mbox{suma} + x_i  \\
+\end{array}
+\]</span> 2. Un vez que se tiene la suma, se debe dividir entre el número total de elementos de la secuencia para obtener el promedio.</p>
+<p><span class="math display">\[
+\mbox{promedio} = \frac{\mbox{suma}}{N}
+\]</span></p>
+<p>En Python, se podría implementar como sigue:</p>
+<div id="cell-22" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> prom_sec(secuencia):  <span class="co"># Se recibe la 'secuencia' como parámetro</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    suma <span class="op">=</span> <span class="dv">0</span>              <span class="co"># Inicializamos la variable 'suma'</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> xi <span class="kw">in</span> secuencia:  <span class="co"># Se realiza el ciclo para recorrer la 'secuencia'</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>        suma <span class="op">+=</span> xi        <span class="co"># Sumamos los elementos de la secuencia</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    N <span class="op">=</span> <span class="bu">len</span>(secuencia)    <span class="co"># Obtenemos N usando la función len()</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    prom <span class="op">=</span> suma <span class="op">/</span> N       <span class="co"># Dividimos entre el total de números</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> prom           <span class="co"># Regresamos el valor del promedio</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<p>En Python se tienen varios tipos de secuencias como listas, tuplas, conjuntos, etcétera.</p>
+<p>Probemos la función con una lista:</p>
+<div id="cell-24" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>prom_sec([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>])</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Ahora con una tupla:</p>
+<div id="cell-26" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>prom_sec((<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Generamos una secuencia con la función <code>range()</code>:</p>
+<div id="cell-28" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>prom_sec(<span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">6</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Con un conjunto:</p>
+<div id="cell-30" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>prom_sec({<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>})</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="ejemplo-4." class="level2 alert alert-success" data-number="16.4">
+<h2 data-number="16.4" class="anchored" data-anchor-id="ejemplo-4."><span class="header-section-number">16.4</span> Ejemplo 4.</h2>
+<p>Los números de Fibonacci, denotados con <span class="math inline">\(F_n\)</span> forman una secuencia tal que cada número es la suma de dos números precedentes e inicia con el 0 y el 1. Matemáticamente se escribe como:</p>
+<p><span class="math display">\[
+\begin{eqnarray}
+F_0 &amp; = &amp; 0 \\
+F_1 &amp; = &amp; 1 \\
+F_n &amp; = &amp; F_{n − 1} + F_{n − 2} \;\;\; \text{para} \; n &gt; 1.
+\end{eqnarray}
+\]</span> La secuencia es entonces: 0 , 1 , 1 , 2 , 3 , 5 , 8 , 13 , 21 , 34 , 55 , 89 , 144 , <span class="math inline">\(\ldots\)</span></p>
 </section>
-<section id="leer-todas-las-líneas-del-archivo." class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="leer-todas-las-líneas-del-archivo."><span class="header-section-number">7.5</span> Leer todas las líneas del archivo.</h2>
-<p>También es posible leer todo el contenido del archivo de un solo paso con la función <code>readlines()</code>.</p>
-<div id="cell-15" class="cell" data-execution_count="17">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatos.txt'</span>)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>lines <span class="op">=</span> f.readlines()</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lines)</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>f.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>['     Persa       2.3\n', '    Sphynx       3.5\n', '   Ragdoll       5.4\n', '    SiamÃ©s       2.5']</code></pre>
+<div id="cell-32" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># La siguiente función calcula la secuencia de Fibonacci</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fib(n):         <span class="co"># Se recibe 'n' como parámetro</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    a, b <span class="op">=</span> <span class="dv">0</span>, <span class="dv">1</span>     <span class="co"># Se inicializan 'a' y 'b'</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> a <span class="op">&lt;</span> n:    <span class="co"># Se inicia el ciclo 'while'</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(a, end<span class="op">=</span><span class="st">','</span>)  <span class="co"># Se imprime el número de Fibonacci 'a'</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>        a, b <span class="op">=</span> b, a<span class="op">+</span>b      <span class="co"># Se actualizan 'a' y 'b'</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<p>Observa que esta función no regresa ningún valor, solo imprime en pantalla un valor conforme lo calcula.</p>
+<div id="cell-34" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>fib(<span class="dv">150</span>) <span class="co"># ejecutamos la función fib con el argumento 150</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-<section id="abrir-un-archivo-para-escritura." class="level2" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="abrir-un-archivo-para-escritura."><span class="header-section-number">7.6</span> Abrir un archivo para escritura.</h2>
-<p>Si queremos abrir un archivo para escritura usamos el modo <code>w</code>.</p>
-<p>Primero vamos a abrir un archivo y leer su información:</p>
-<div id="cell-17" class="cell" data-execution_count="45">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>f1 <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatos.txt'</span>,<span class="st">'r'</span>)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>lineas <span class="op">=</span> f1.readlines()</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lineas)</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>f1.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>['     Persa       2.3\n', '    Sphynx       3.5\n', '   Ragdoll       5.4\n', '    SiamÃ©s       2.5']</code></pre>
+<p>Le podemos poner otro nombre a la función</p>
+<div id="cell-36" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>Fibonacci <span class="op">=</span> fib</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<p>Ejecutar la función usando el nuevo nombre:</p>
+<div id="cell-38" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>Fibonacci(<span class="dv">400</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Ahora abrimos un segundo archivo para escribir información en él:</p>
-<div id="cell-19" class="cell" data-execution_count="46">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>f2 <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatitos.txt'</span>,<span class="st">'w'</span>)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>f2.writelines(lineas)</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>f2.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Podemos ver el tipo de la función:</p>
+<div id="cell-40" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(fib))</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(Fibonacci))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Revisa que se haya generado el archivo <code>gatitos.txt</code> en tu directorio de trabajo y checa que tenga el mismo contenido que el archivo <code>gatos.txt</code>. Con el siguiente código abrimos el archivo creado y vemos su contenido:</p>
-<div id="cell-21" class="cell" data-execution_count="48">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>f2 <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatitos.txt'</span>,<span class="st">'r'</span>)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f2.readlines())</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>f2.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>['     Persa       2.3\n', '    Sphynx       3.5\n', '   Ragdoll       5.4\n', '    SiamÃ©s       2.5']</code></pre>
+<p>Incluso podemos ver el identificador en memoria de la función:</p>
+<div id="cell-42" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(fib))</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(Fibonacci))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</div>
-</section>
-<section id="abrir-un-archivo-para-agregar-información-al-final." class="level2" data-number="7.7">
-<h2 data-number="7.7" class="anchored" data-anchor-id="abrir-un-archivo-para-agregar-información-al-final."><span class="header-section-number">7.7</span> Abrir un archivo para agregar información al final.</h2>
-<p>Si ya existe un archivo, es posible agregarle información como sigue:</p>
-<div id="cell-23" class="cell" data-execution_count="49">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Abrimos un archivo para insertar información.</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>f3 <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatitos.txt'</span>, <span class="st">'a'</span>)</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Esta es la información que se va a agregar</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>linea_nueva <span class="op">=</span> <span class="st">"</span><span class="ch">\n</span><span class="sc">{:&gt;10s}{:&gt;10.1f}</span><span class="ch">\n</span><span class="st">"</span>.<span class="bu">format</span>(<span class="st">"Eléctrico"</span>, <span class="fl">3.7</span>)</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Se escribe la información.</span></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> f3.write(linea_nueva)</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Cerramos el archivo</span></span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>f3.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Revisa el nuevo contenido del archivo <code>gatitos.txt</code> en tu directorio de trabajo. La nueva información debió escribirse al final del archivo. De igual manera podemos verificar el contenido con el siguiente código:</p>
-<div id="cell-25" class="cell" data-execution_count="50">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>f3 <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatitos.txt'</span>,<span class="st">'r'</span>)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f3.readlines())</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>f3.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>['     Persa       2.3\n', '    Sphynx       3.5\n', '   Ragdoll       5.4\n', '    SiamÃ©s       2.5\n', ' Eléctrico       3.7\n']</code></pre>
-</div>
-</div>
-<p>Observa que el archivo ya contiene la nueva información.</p>
-</section>
-<section id="abrir-un-archivo-para-insertar-información-en-cualquier-lugar." class="level2" data-number="7.8">
-<h2 data-number="7.8" class="anchored" data-anchor-id="abrir-un-archivo-para-insertar-información-en-cualquier-lugar."><span class="header-section-number">7.8</span> Abrir un archivo para insertar información en cualquier lugar.</h2>
-<div id="cell-27" class="cell" data-execution_count="52">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Abrimos el archivo en modo 'r+'</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>f4 <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatitos.txt'</span>, <span class="st">"r+"</span>)</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Leemos el contenido del archivo</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>contenido <span class="op">=</span> f4.readlines()</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculamos la mitad del archivo (aprox), debe ser un entero</span></span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>indice <span class="op">=</span> <span class="bu">len</span>(contenido) <span class="op">//</span> <span class="dv">2</span></span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Generamos nueva información</span></span>
-<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>linea_nueva <span class="op">=</span> <span class="st">"</span><span class="sc">{:&gt;10s}{:&gt;10.1f}</span><span class="ch">\n</span><span class="st">"</span>.<span class="bu">format</span>(<span class="st">"Birmano"</span>, <span class="fl">3.2</span>)</span>
-<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Agregamos la información a la mitad del archivo</span></span>
-<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>contenido.insert(indice, linea_nueva)</span>
-<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Regresamos al inicio del archivo</span></span>
-<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>f4.seek(<span class="dv">0</span>)</span>
-<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Escribimos todas las líneas del archivo.</span></span>
-<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>f4.writelines(contenido)</span>
-<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>f4.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Revisa el nuevo contenido del archivo <code>gatitos.txt</code> en tu directorio de trabajo. La nueva información debió escribirse a la mitad del archivo aproximadamente.</p>
-<p>Usamos el siguiente código para checar el archivo con la nueva información:</p>
-<div id="cell-29" class="cell" data-execution_count="54">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>f4 <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatitos.txt'</span>,<span class="st">'r'</span>)</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f4.readlines())</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>f4.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>['     Persa       2.3\n', '    Sphynx       3.5\n', '   Birmano       3.2\n', '   Birmano       3.2\n', '   Ragdoll       5.4\n', '    SiamÃ©s       2.5\n', ' Eléctrico       3.7\n']</code></pre>
-</div>
-</div>
-</section>
-<section id="gestores-de-contexto." class="level2" data-number="7.9">
-<h2 data-number="7.9" class="anchored" data-anchor-id="gestores-de-contexto."><span class="header-section-number">7.9</span> Gestores de contexto.</h2>
-<p>Los <strong>gestores de contexto</strong> en Python son una manera de gestionar recursos de forma eficiente y segura.</p>
-<p>Se utilizan con la palabra clave <code>with</code>, que garantiza que ciertos recursos se inicialicen y liberen correctamente, incluso si ocurre una excepción.</p>
-<p>Estos recursos pueden incluir archivos, conexiones de red, bloqueos de threads, etc.</p>
-<p>Por ejemplo:</p>
-<div id="cell-31" class="cell" data-execution_count="55">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'contexto_ejemplo'</span>, <span class="st">'w'</span>) <span class="im">as</span> archivo_abierto:</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    archivo_abierto.write(<span class="st">'En este ejemplo, todo se realiza con un gestor de contexto.'</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Lo que realiza la operación anterior es:</p>
-<ol type="1">
-<li>Abre el archivo <code>contexto_ejemplo</code>.</li>
-<li>Escribe algo en el archivo,</li>
-<li>Cierra el archivo. Si ocurre algún error mientras se escribe en el archivo, entonces se intenta cerrar el archivo.</li>
-</ol>
-<p>El código es equivalente a:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>archivo_abierto <span class="op">=</span> <span class="bu">open</span>(<span class="st">'contexto_ejemplo'</span>, <span class="st">'w'</span>)</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    archivo_abierto.write(<span class="st">'En este ... contexto!'</span>)</span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="cf">finally</span>:</span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    archivo_abierto.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Esta forma de abrir un archivo, manipular su información y cerrarlo, usando un gestor de contexto (<code>with</code>), es la más recomendada.</p>
-</div>
-</div>
-<p>Es posible implemetar nuestros propios gestores de contexto. Para ello se requiere un conocimiento más profundo de Programación Orientada a Objetos.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Nota</span>Nota.
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>En el ejemplo anterior se usó la construcción <code>try:</code> … <code>finally:</code> que se usa para gestionar errores. Esto se revisará en detalle en la <a href="17_excepciones.html" class="quarto-xref"><span>Capítulo 10</span></a>.</p>
-</div>
-</div>
-<p>El propósito de un gestor de contexto es asegurarse de que las acciones de “entrada” y “salida” de un contexto se manejen adecuadamente. El contexto se refiere a cualquier bloque de código que necesita realizar alguna configuración al inicio (como abrir un archivo o adquirir un recurso) y luego limpiar al final (como cerrar el archivo o liberar el recurso).</p>
-<p><strong>Ventajas de los gestores de contexto.</strong></p>
-<ol type="1">
-<li><strong>Código más limpio</strong>: No tienes que preocuparte por cerrar recursos manualmente.</li>
-<li><strong>Manejo seguro de excepciones</strong>: Incluso si ocurre una excepción dentro del bloque <code>with</code>, el recurso se libera correctamente.</li>
-<li><strong>Legibilidad</strong>: El código es más claro en cuanto a cuándo comienza y termina el uso de un recurso.</li>
-</ol>
-<p><strong>¿Cómo funcionan?</strong></p>
-<p>Los gestores de contexto implementan los métodos especiales <code>__enter__</code> y <code>__exit__</code>: - <strong><code>__enter__()</code></strong>: Este método es llamado al inicio del bloque <code>with</code>. Se utiliza para establecer el recurso o la configuración inicial. - <strong><code>__exit__(exc_type, exc_value, traceback)</code></strong>: Este método es llamado al final del bloque <code>with</code>, independientemente de si se produjo una excepción. Se utiliza para liberar o limpiar el recurso.</p>
+<p>Observamos que se puede ejecutar la función <code>fib()</code> a través de <code>Fibonacci()</code> y que ambos nombres hacen referencia a la misma función.</p>
 
 
 </section>
@@ -1122,13 +1117,13 @@ Tip
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../notebooks/06_input.html" class="pagination-link" aria-label="Entrada estándar.">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Entrada estándar.</span></span>
+      <a href="../notebooks/14_ds_traversing.html" class="pagination-link" aria-label="Recorriendo las estructuras de datos.">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Recorriendo las estructuras de datos.</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../notebooks/08_control_de_flujo.html" class="pagination-link" aria-label="Control de flujo.">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Control de flujo.</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../notebooks/17_excepciones.html" class="pagination-link" aria-label="Gestión de errores y excepciones.">
+        <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Gestión de errores y excepciones.</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

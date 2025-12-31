@@ -34,6 +34,12 @@ book:
     - notebooks/07_archivos.ipynb
     - notebooks/08_control_de_flujo.ipynb
     - notebooks/09_listas.ipynb
+    - notebooks/10_tuplas.ipynb
+    - notebooks/11_conjuntos.ipynb
+    - notebooks/12_diccionarios.ipynb
+    - notebooks/13_ds_casting.ipynb
+    - notebooks/14_ds_traversing.ipynb
+    - notebooks/15_funciones.ipynb
     - notebooks/17_excepciones.ipynb
     - notebooks/23_import.ipynb
 #    - glossary.qmd
