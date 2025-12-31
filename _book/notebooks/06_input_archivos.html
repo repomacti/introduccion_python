@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Luis Miguel De la Cruz Salas">
 
-<title>Notas de Python</title>
+<title>6&nbsp; Entrada estándar. – Notas de Python</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,33 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./notebooks/01_variables_objetos.html" rel="next">
-<link href="./figuras/python1.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-d9d7ed2c14390fa05efde32fc7ffca7f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../notebooks/07_control_de_flujo.html" rel="next">
+<link href="../notebooks/05_cadenas.html" rel="prev">
+<link href="../figuras/python1.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-d9d7ed2c14390fa05efde32fc7ffca7f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -77,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="estilos/code-blocks.css">
+<link rel="stylesheet" href="../estilos/code-blocks.css">
 </head>
 
 <body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -251,7 +286,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Python básico</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/06_input_archivos.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Entrada estándar.</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -265,12 +300,12 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./figuras/python1.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
-      <img src="./figuras/python1.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../figuras/python1.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../figuras/python1.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Notas de Python</a> 
+      <a href="../">Notas de Python</a> 
         <div class="sidebar-tools-main tools-wide">
     <div class="dropdown">
       <a href="" title="Compartir" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Compartir"><i class="bi bi-share"></i></a>
@@ -313,38 +348,68 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python básico</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/01_variables_objetos.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/01_variables_objetos.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Variables y objetos.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/02_tipos_basicos.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/02_tipos_basicos.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tipos de datos básicos.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/03_operadores.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/03_operadores.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operadores.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/16_excepciones.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Gestión de errores y excepciones.</span></span></a>
+  <a href="../notebooks/04_expresiones_declaraciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Expresiones y declaraciones.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/23_import.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Importando bibliotecas.</span></span></a>
+  <a href="../notebooks/05_cadenas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Cadenas.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/06_input_archivos.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Entrada estándar.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/07_control_de_flujo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Control de flujo.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/08_listas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Estructura de datos: listas</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/16_excepciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Gestión de errores y excepciones.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/23_import.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Importando bibliotecas.</span></span></a>
   </div>
 </li>
     </ul>
@@ -357,14 +422,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#python-básico" id="toc-python-básico" class="nav-link active" data-scroll-target="#python-básico">Python básico</a>
+  <li><a href="#entrada-estándar-con-input" id="toc-entrada-estándar-con-input" class="nav-link active" data-scroll-target="#entrada-estándar-con-input"><span class="header-section-number">6.1</span> Entrada estándar con <code>input()</code></a>
   <ul class="collapse">
-  <li><a href="#descripción" id="toc-descripción" class="nav-link" data-scroll-target="#descripción">Descripción</a></li>
-  <li><a href="#qué-aprenderás" id="toc-qué-aprenderás" class="nav-link" data-scroll-target="#qué-aprenderás">¿Qué aprenderás?</a></li>
-  <li><a href="#a-quién-está-dirigido" id="toc-a-quién-está-dirigido" class="nav-link" data-scroll-target="#a-quién-está-dirigido">¿A quién está dirigido?</a></li>
-  <li><a href="#objetivo." id="toc-objetivo." class="nav-link" data-scroll-target="#objetivo.">Objetivo.</a></li>
-  <li><a href="#temario" id="toc-temario" class="nav-link" data-scroll-target="#temario">Temario</a></li>
-  <li><a href="#licencia" id="toc-licencia" class="nav-link" data-scroll-target="#licencia">Licencia</a></li>
+  <li><a href="#ejemplo." id="toc-ejemplo." class="nav-link" data-scroll-target="#ejemplo."><span class="header-section-number">6.1.1</span> Ejemplo.</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -375,34 +435,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Notas de Python</h1>
-<p class="subtitle lead">Ejemplos y aplicaciones.</p>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Entrada estándar.</span></h1>
 </div>
 
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Autor/a</div>
-  <div class="quarto-title-meta-heading">Afiliación</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">Luis Miguel De la Cruz Salas </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Instituto de Geofísica, UNAM
-          </p>
-      </div>
-  </div>
 
 <div class="quarto-title-meta">
 
-      
-    <div>
-    <div class="quarto-title-meta-heading">Fecha de publicación</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">30 de diciembre de 2025</p>
-    </div>
-  </div>
+    
   
     
   </div>
@@ -412,41 +452,160 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p><strong>Objetivo.</strong> Revisar el uso de la función <code>input()</code> para la entrada estándar.</p>
+<section id="entrada-estándar-con-input" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="entrada-estándar-con-input"><span class="header-section-number">6.1</span> Entrada estándar con <code>input()</code></h2>
+<p>En Python es posible que el usuario proporcione información a un código durante su ejecución, para que, con base en esta información, realice una acción.</p>
+<p>Para ello se usa la función <code>input()</code>. Por ejemplo:</p>
+<div id="cell-2" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cuando se ejecuta esta celda, se espera a que el usuario </span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># teclee la información y luego &lt;enter&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">input</span>(<span class="st">"Escribe tu nombre:"</span>) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Escribe tu nombre: Lola</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>'Lola'</code></pre>
+</div>
+</div>
+<p><strong>Observaciones.</strong></p>
+<ul>
+<li>La cadena entre los paréntesis proporciona información para saber lo que se debe teclear. Esta cadena se conoce como <em>prompt</em>.</li>
+<li>Esta cadena se imprime cuando se ejecuta la función <code>input()</code> y luego se espera a que teclees alguna información.</li>
+<li>Cuando se teclea <code>&lt;enter&gt;</code> la función <code>input()</code> lee la información proporcionada.</li>
+<li><code>input()</code> lee toda la información y la almacena una cadena (<code>str</code>).</li>
+</ul>
+<p>La información que se teclea se puede almacenar en una variable:</p>
+<div id="cell-4" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>numero <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Teclea un número entero:'</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Teclea un número entero: 13</code></pre>
+</div>
+</div>
+<p>Posteriormente, se puede ver el contenido y el tipo de la variable <code>numero</code>:</p>
+<div id="cell-6" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero, <span class="bu">type</span>(numero)) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>13 &lt;class 'str'&gt;</code></pre>
+</div>
+</div>
+<p>Observa que el tipo de la variable es <code>str</code>. Entonces, si queremos usar el valor de un número para realizar un cálculo, lo debemos convertir al tipo numérico requerido. Por ejemplo:</p>
+<div id="cell-8" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>numero <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">'Teclea un número entero:'</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Teclea un número entero: 13</code></pre>
+</div>
+</div>
+<div id="cell-9" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Checamos el contenido y el tipo</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero, <span class="bu">type</span>(numero)) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>13 &lt;class 'int'&gt;</code></pre>
+</div>
+</div>
+<p>Observa que ahora el tipo corresponde a un entero debido a que hicimos la conversión (<em>casting</em>) con la función <code>int()</code>.</p>
+<p>También podemos convertir a tiplo flotante:</p>
+<div id="cell-11" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>numero_f <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">'Teclea un número flotante:'</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Teclea un número flotante: 3.1416</code></pre>
+</div>
+</div>
+<div id="cell-12" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero_f, <span class="bu">type</span>(numero_f)) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>3.1416 &lt;class 'float'&gt;</code></pre>
+</div>
+</div>
+<p>.</p>
+<section id="ejemplo." class="level3 alert alert-block alert-success" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="ejemplo."><span class="header-section-number">6.1.1</span> Ejemplo.</h3>
+<p>Calcular el área de un triángulo cuyos datos de la base y la altura son proporcionados por el usuario.</p>
+</section>
+<p><strong>Primer intento</strong>.</p>
+<div id="cell-15" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>base <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Escribe la base del triángulo:'</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>altura <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Escribe la altura del triángulo:'</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>Area <span class="op">=</span> base <span class="op">*</span> altura <span class="op">/</span> <span class="dv">2</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Escribe la base del triángulo: 5
+Escribe la altura del triángulo: 10</code></pre>
+</div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[10]</span><span class="ansi-green-fg">, line 4</span>
+<span class="ansi-green-fg">      1</span> base = <span style="color:rgb(0,135,0)">input</span>(<span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">Escribe la base del triángulo:</span><span class="ansi-yellow-fg">'</span>)
+<span class="ansi-green-fg">      2</span> altura = <span style="color:rgb(0,135,0)">input</span>(<span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">Escribe la altura del triángulo:</span><span class="ansi-yellow-fg">'</span>)
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">4</span> Area = <span class="ansi-yellow-bg">base</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">altura</span> / <span class="ansi-green-fg">2</span>
 
-<section id="python-básico" class="level1 unnumbered">
-<h1 class="unnumbered">Python básico</h1><p><img src="figuras/python1.png" title="Notas de Python" class="quarto-cover-image nolightbox img-fluid"></p>
-<section id="descripción" class="level2">
-<h2 class="anchored" data-anchor-id="descripción">Descripción</h2>
-<p>Python es uno de los lenguajes de programación más demandados en la industria tecnológica actual. Su versatilidad y potencia lo hacen ideal para una amplia variedad de aplicaciones, desde el desarrollo de aplicaciones web hasta el análisis de datos y la inteligencia artificial. Aprender Python no solo mejorará tus habilidades técnicas, sino que también te abrirá puertas a nuevas oportunidades profesionales. Creado por Guido van Rossum en 1991, Python es un lenguaje de programación de alto nivel, interpretado, de propósito general y con una sintaxis muy clara y legible, además de ser portable entre diferentes sistemas operativos. Este curso está diseñado para proporcionarte una base inicial sobre la cual serás capaz de desarrollar algoritmos sencillos y entenderás muchos de los códigos que son usados en diferentes áreas de la ciencia y la tecnología.</p>
-</section>
-<section id="qué-aprenderás" class="level2">
-<h2 class="anchored" data-anchor-id="qué-aprenderás">¿Qué aprenderás?</h2>
-<p>Fundamentos de Python: Comenzaremos con los conceptos básicos, incluyendo variables, tipos de datos y estructuras de control como ciclos y condicionales. Estructuras de Datos: Aprenderás a trabajar con listas, tuplas, diccionarios y conjuntos, herramientas esenciales para manejar y organizar datos.</p>
-</section>
-<section id="a-quién-está-dirigido" class="level2">
-<h2 class="anchored" data-anchor-id="a-quién-está-dirigido">¿A quién está dirigido?</h2>
-<p>Principiantes: No se requiere experiencia previa en programación. Programadores de otros lenguajes: Aquellos que deseen aprender Python para ampliar su conjunto de habilidades. Profesionales y estudiantes: Personas que buscan utilizar Python en campos como la ciencia de datos, el análisis de datos, la automatización y el desarrollo web.</p>
-</section>
-<section id="objetivo." class="level2">
-<h2 class="anchored" data-anchor-id="objetivo.">Objetivo.</h2>
-<p>Capacitar a los participantes en el uso de las herramientas básicas del lenguaje de programación Python.</p>
-</section>
-<section id="temario" class="level2">
-<h2 class="anchored" data-anchor-id="temario">Temario</h2>
-<ol type="1">
-<li>Introducción Encuadre y presentación del curso. Visita guiada a la plataforma MACTI.<br>
-¿Cómo registrarse? Ambiente de Moodle. Ambiente de JupyterLab. Breve introducción al manejo de versiones. Comandos básicos. Git y Github. Quiz 1.</li>
-<li>Herramientas básicas de Python. Variables y objetos. Tipos básicos y sus operadores. Tipos numéricos. Tipos lógicos. Operadores aritméticos Operadores relacionales Operaciones lógicas. Conversión entre tipos. Expresiones y declaraciones. Quiz 2. Proyecto: parte 1. Cadenas Entrada y salida estándar: input, print Control de flujo: while if, elif, else for break, continue, else, pass. Quiz 3. Estructura de datos: Listas Tuplas Conjuntos Diccionarios. Recorriendo las secuencias. Un primer vistazo a las funciones. Importando bibliotecas (math, random, statistics). Quiz 4. Proyecto: parte 2.</li>
-</ol>
-</section>
-<section id="licencia" class="level2">
-<h2 class="anchored" data-anchor-id="licencia">Licencia</h2>
-<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
-<a property="dct:title" rel="cc:attributionURL" href="https://github.com/repomacti/introduccion_python">Introducción a Python</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://gmc.geofisica.unam.mx/luiggi">Luis Miguel de la Cruz Salas</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a>
-</p>
+<span class="ansi-red-fg">TypeError</span>: can't multiply sequence by non-int of type 'str'</pre>
+</div>
+</div>
+</div>
+<p>Como puedes observar, hay un error de tipo <code>TypeError</code>: dado que la función <code>input()</code> transforma lo que lee en <code>str</code>, entonces no es posible multiplicar dos cadenas.</p>
+<p>Por lo tanto debemos realizar una conversión antes de usar la información obtenida por <code>input()</code>:</p>
+<p><strong>Segundo intento</strong>.</p>
+<div id="cell-17" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>base <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">'Escribe la base del triángulo:'</span>))</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>altura <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">'Escribe la altura del triángulo:'</span>))</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>area <span class="op">=</span> base <span class="op">*</span> altura <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"El área del triángulo de base </span><span class="sc">{</span>base<span class="sc">}</span><span class="ss"> y altura </span><span class="sc">{</span>altura<span class="sc">}</span><span class="ss"> es </span><span class="sc">{</span>area<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Escribe la base del triángulo: 5
+Escribe la altura del triángulo: 10</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El área del triángulo de base 5 y altura 10 es 25.0</code></pre>
+</div>
+</div>
+<p>Observa que aunque los datos de la base y la altura se transforman a tipo <code>int</code> el resultado del cálculo del área es de tipo flotante.</p>
+<p>Sin embargo, se obtiene un error de tipo <code>ValueError</code>, como el que se muestra a continnuación, cuando se dan datos de tipo flotante por ejemplo <code>base = 3.5</code> y <code>altura = 2.3</code>.</p>
+<pre><code>---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+Cell In[13], line 1
+----&gt; 1 base = int(input('Escribe la base del triángulo:'))
+      2 altura = int(input('Escribe la altura del triángulo:'))
+      3 area = base * altura / 2
+
+ValueError: invalid literal for int() with base 10: '3.5'</code></pre>
+<p>Entonces, una implementación más robusta sería la siguiente:</p>
+<p><strong>Tercer intento</strong>.</p>
+<div id="cell-19" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>base <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">'Escribe la base del triángulo:'</span>))</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>altura <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">'Escribe la altura del triángulo:'</span>))</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>area <span class="op">=</span> base <span class="op">*</span> altura <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"El área del triángulo de base </span><span class="sc">{</span>base<span class="sc">}</span><span class="ss"> y altura </span><span class="sc">{</span>altura<span class="sc">}</span><span class="ss"> es </span><span class="sc">{</span>area<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Escribe la base del triángulo: 3.5
+Escribe la altura del triángulo: 2.5</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El área del triángulo de base 3.5 y altura 2.5 es 4.375</code></pre>
+</div>
+</div>
+<p><strong>Cuarto intento</strong>.</p>
+<p>En esta versión solo cambiaremos la manera en que imprimimos la salida usando la función <code>str.format()</code>:</p>
+<div id="cell-21" class="cell" data-execution_count="15">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>base <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">'Escribe la base del triángulo:'</span>))</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>altura <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">'Escribe la altura del triángulo:'</span>))</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>area <span class="op">=</span> base <span class="op">*</span> altura <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"El área del triángulo de base </span><span class="sc">{b:^10.3f}</span><span class="st"> y altura </span><span class="sc">{a:^10.3f}</span><span class="st"> es </span><span class="sc">{area:^10.3f}</span><span class="st">"</span>.<span class="bu">format</span>(b <span class="op">=</span> base, a <span class="op">=</span> altura, area <span class="op">=</span> area))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Escribe la base del triángulo: 3.5
+Escribe la altura del triángulo: 2.5</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El área del triángulo de base   3.500    y altura   2.500    es   4.375   </code></pre>
+</div>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -865,10 +1024,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../notebooks/05_cadenas.html" class="pagination-link" aria-label="Cadenas.">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Cadenas.</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./notebooks/01_variables_objetos.html" class="pagination-link" aria-label="Variables y objetos.">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Variables y objetos.</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../notebooks/07_control_de_flujo.html" class="pagination-link" aria-label="Control de flujo.">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Control de flujo.</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

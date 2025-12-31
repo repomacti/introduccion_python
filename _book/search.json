@@ -134,7 +134,7 @@
     "href": "notebooks/01_variables_objetos.html#sec-varios_nombres",
     "title": "1  Variables y objetos.",
     "section": "1.6 Definición de varios nombres a la vez.",
-    "text": "1.6 Definición de varios nombres a la vez.\nLa siguiente declaración genera tres nombres para el mismo valor 25.\n\nx = y = z = 25\n\nprint(x, type(x), id(x))\nprint(y, type(y), id(y))\nprint(z, type(z), id(z))\n\nObserva que se creó el objeto 25 de tipo &lt;class 'int'&gt; y los nombres x, y y z son nombres diferentes para el mismo objeto, lo cual se verifica observando que el identificador de cada variable es el mismo.\nHagamos ahora lo siguiente:\n\ny = 2.7182\n\nprint(x, type(x), id(x))\nprint(y, type(y), id(y))\nprint(z, type(z), id(z))\n\n25 &lt;class 'int'&gt; 140730842949288\n2.7182 &lt;class 'float'&gt; 2124422132432\n25 &lt;class 'int'&gt; 140730842949288\n\n\nObserva que la variable y es de tipo flotante cuyo valor es 2.7182.\nPodemos eliminar el nombre x con la función del():\n\ndel(x)\n\nAhora ya no es posible hacer referencia al objeto 25 usando el nombre x. Si intentamos imprimir x se generará un error indicando lo anterior:\n\nprint(x)\n\n\n---------------------------------------------------------------------------\nNameError                                 Traceback (most recent call last)\nCell In[46], line 1\n----&gt; 1 print(x)\n\nNameError: name 'x' is not defined\n\n\n\n\n\n\n\n\n\nNotaNota.\n\n\n\nObserva que Python nos proporciona mucha información acerca del error. En este caso el error es de tipo NameError. Más información al respecto la puedes encontrar en el Capítulo 3.\n\n\nSin embargo, aún es posible hacer referencia al objeto 25 usando el nombre z:\n\nprint(z, type(z), id(z))\n\n25 &lt;class 'int'&gt; 140730842949288\n\n\nEl objeto 25 será eliminado de la memoria cuando ya no exista un nombre que haga referencia a él. Entonces, si eliminamos z se elimina también el objeto 25 pues ya no habrá ningún nombre que haga referencia a él:\n\ndel(z)\n\nAhora si intentamos imprimir el contenido de la variable z obtendremos un error:\n\nprint(z, type(z), id(z))\n\n\n---------------------------------------------------------------------------\nNameError                                 Traceback (most recent call last)\nCell In[49], line 2\n      1 # Esto dará un error\n----&gt; 2 print(z, type(z), id(z))\n\nNameError: name 'z' is not defined",
+    "text": "1.6 Definición de varios nombres a la vez.\nLa siguiente declaración genera tres nombres para el mismo valor 25.\n\nx = y = z = 25\n\nprint(x, type(x), id(x))\nprint(y, type(y), id(y))\nprint(z, type(z), id(z))\n\nObserva que se creó el objeto 25 de tipo &lt;class 'int'&gt; y los nombres x, y y z son nombres diferentes para el mismo objeto, lo cual se verifica observando que el identificador de cada variable es el mismo.\nHagamos ahora lo siguiente:\n\ny = 2.7182\n\nprint(x, type(x), id(x))\nprint(y, type(y), id(y))\nprint(z, type(z), id(z))\n\n25 &lt;class 'int'&gt; 140730842949288\n2.7182 &lt;class 'float'&gt; 2124422132432\n25 &lt;class 'int'&gt; 140730842949288\n\n\nObserva que la variable y es de tipo flotante cuyo valor es 2.7182.\nPodemos eliminar el nombre x con la función del():\n\ndel(x)\n\nAhora ya no es posible hacer referencia al objeto 25 usando el nombre x. Si intentamos imprimir x se generará un error indicando lo anterior:\n\nprint(x)\n\n\n---------------------------------------------------------------------------\nNameError                                 Traceback (most recent call last)\nCell In[46], line 1\n----&gt; 1 print(x)\n\nNameError: name 'x' is not defined\n\n\n\n\n\n\n\n\n\nNotaNota.\n\n\n\nObserva que Python nos proporciona mucha información acerca del error. En este caso el error es de tipo NameError. Más información al respecto la puedes encontrar en el ?sec-errores_excepciones.\n\n\nSin embargo, aún es posible hacer referencia al objeto 25 usando el nombre z:\n\nprint(z, type(z), id(z))\n\n25 &lt;class 'int'&gt; 140730842949288\n\n\nEl objeto 25 será eliminado de la memoria cuando ya no exista un nombre que haga referencia a él. Entonces, si eliminamos z se elimina también el objeto 25 pues ya no habrá ningún nombre que haga referencia a él:\n\ndel(z)\n\nAhora si intentamos imprimir el contenido de la variable z obtendremos un error:\n\nprint(z, type(z), id(z))\n\n\n---------------------------------------------------------------------------\nNameError                                 Traceback (most recent call last)\nCell In[49], line 2\n      1 # Esto dará un error\n----&gt; 2 print(z, type(z), id(z))\n\nNameError: name 'z' is not defined",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Variables y objetos.</span>"
     ]
@@ -154,7 +154,7 @@
     "href": "notebooks/01_variables_objetos.html#sec-unicode",
     "title": "1  Variables y objetos.",
     "section": "1.8 Caracteres Unicode",
-    "text": "1.8 Caracteres Unicode\nUnicode es un estándar para la codificación de caracteres, que permite el tratamiento informático, la transmisión y visualización de textos de muchos idiomas y disciplinas técnicas. Unicode intenta tener universalidad, uniformidad y unicidad.\nUnicode define tres formas de codificación bajo el nombre UTF (Unicode Transformation Format): UTF8, UTF16, UTF32. Véase https://es.wikipedia.org/wiki/Unicode para más información.\nEn Python se utiliza la codificación unicode, podemos saber el tipo de codificación como sigue:\n\n# Importamos el módulo sys\nimport sys\n\n# Imprimimos el tipo de codificación\nsys.stdout.encoding \n\n'UTF-8'\n\n\n\n\n\n\n\n\nNotaNota.\n\n\n\nEn la celda anterior estamos usando import. Esta declaración importa las bibliotecas que se requieran para realizar alguna tarea. En este caso se importa sys que contiene módulos, funciones y variables para acceder a información del sistema. Una explicación detallada de cómo funciona import la puedes encontrar en la Sección 4.2.\n\n\nLa compatibilidad con UTF-8 en Python significa que se puede leer, escribir y manipular archivos de datos provenientes de fuentes diversas como archivos binarios, bases de datos, APIs web, entre muchas otras; estas fuentes pueden contener texto en diferentes idiomas y codificaciones.\nA continuación se muestran algunos ejemplos de nombres de variables que contienen caracteres unicode:\n\n# Acentos y caracteres de idiomas en el nombre de variables\nMéxico = \"en el ombligo de la luna\"\nespañol = \"lengua romance\"\nfrançais = \"langues romanes\"\nΕλληνικά = \"Griego\"\nРусский = \"Ruso\"\n\n# Símbolos matemáticos\n𝜋 = 3.1416\nℏ = 6.626e-34\n\nEstas variables se pueden usar como cualquier otra, por ejemplo podemos imprimir su contenido, determinar su tipo y su identificador en memoria, y las podemos usar en operaciones:\n\nprint(México, type(México), id(México))\nprint(𝜋, type(𝜋), id(𝜋))\nprint(2 * 𝜋)\n\nen el ombligo de la luna &lt;class 'str'&gt; 2124429492432\n3.1416 &lt;class 'float'&gt; 2124422130800\n6.2832\n\n\nTambién es posible imprimir el caracter unicode y su valor como sigue:\n\n# Imprimimos el valor de la variable Ελληνικά\nprint(\"Ελληνικά = \", Ελληνικά)\n\nΕλληνικά =  Griego\n\n\nLos códigos Unicode de cada caracter se pueden dar en decimal o hexadecimal, por ejemplo para el símbolo \\(\\pi\\) se tiene el código decimal 120587 y hexadecimal 0x1D70B. La función chr() convierte el código unicode en el caracter correspondiente:\n\n# Código hexadecimal del caracter 𝜋\nchr(0x1D70B)\n\n'𝜋'\n\n\n\n# Código decimal del caracter 𝜋\nchr(120587)\n\n'𝜋'\n\n\nLa función ord() obtiene el código Unicode de un caracter y lo regresa en decimal:\n\nord(\"𝜋\")\n\n120587\n\n\nTambién es posible obtener más información de los códigos unicode como sigue:\n\n# Importamos el módulo unicodedata\nimport unicodedata \n\nprint(\"       Símbolo:\", \"𝜋\")\nprint(\"Código decimal:\", ord(\"𝜋\"))\nprint(\"     Categoría:\", unicodedata.category(\"𝜋\"))\nprint(\"Nombre oficial:\", unicodedata.name(\"𝜋\"))\n\n       Símbolo: 𝜋\nCódigo decimal: 120587\n     Categoría: Ll\nNombre oficial: MATHEMATICAL ITALIC SMALL PI\n\n\nPara más información véase: https://docs.python.org/3/howto/unicode.html\nTambién en los siguientes dos enlaces se pueden obtener los códigos UTF8 de diferentes caracteres especiales:\n\nHTML Entities\nUnicode 17.0 Character Code Charts",
+    "text": "1.8 Caracteres Unicode\nUnicode es un estándar para la codificación de caracteres, que permite el tratamiento informático, la transmisión y visualización de textos de muchos idiomas y disciplinas técnicas. Unicode intenta tener universalidad, uniformidad y unicidad.\nUnicode define tres formas de codificación bajo el nombre UTF (Unicode Transformation Format): UTF8, UTF16, UTF32. Véase https://es.wikipedia.org/wiki/Unicode para más información.\nEn Python se utiliza la codificación unicode, podemos saber el tipo de codificación como sigue:\n\n# Importamos el módulo sys\nimport sys\n\n# Imprimimos el tipo de codificación\nsys.stdout.encoding \n\n'UTF-8'\n\n\n\n\n\n\n\n\nNotaNota.\n\n\n\nEn la celda anterior estamos usando import. Esta declaración importa las bibliotecas que se requieran para realizar alguna tarea. En este caso se importa sys que contiene módulos, funciones y variables para acceder a información del sistema. Una explicación detallada de cómo funciona import la puedes encontrar en la Sección 5.2.\n\n\nLa compatibilidad con UTF-8 en Python significa que se puede leer, escribir y manipular archivos de datos provenientes de fuentes diversas como archivos binarios, bases de datos, APIs web, entre muchas otras; estas fuentes pueden contener texto en diferentes idiomas y codificaciones.\nA continuación se muestran algunos ejemplos de nombres de variables que contienen caracteres unicode:\n\n# Acentos y caracteres de idiomas en el nombre de variables\nMéxico = \"en el ombligo de la luna\"\nespañol = \"lengua romance\"\nfrançais = \"langues romanes\"\nΕλληνικά = \"Griego\"\nРусский = \"Ruso\"\n\n# Símbolos matemáticos\n𝜋 = 3.1416\nℏ = 6.626e-34\n\nEstas variables se pueden usar como cualquier otra, por ejemplo podemos imprimir su contenido, determinar su tipo y su identificador en memoria, y las podemos usar en operaciones:\n\nprint(México, type(México), id(México))\nprint(𝜋, type(𝜋), id(𝜋))\nprint(2 * 𝜋)\n\nen el ombligo de la luna &lt;class 'str'&gt; 2124429492432\n3.1416 &lt;class 'float'&gt; 2124422130800\n6.2832\n\n\nTambién es posible imprimir el caracter unicode y su valor como sigue:\n\n# Imprimimos el valor de la variable Ελληνικά\nprint(\"Ελληνικά = \", Ελληνικά)\n\nΕλληνικά =  Griego\n\n\nLos códigos Unicode de cada caracter se pueden dar en decimal o hexadecimal, por ejemplo para el símbolo \\(\\pi\\) se tiene el código decimal 120587 y hexadecimal 0x1D70B. La función chr() convierte el código unicode en el caracter correspondiente:\n\n# Código hexadecimal del caracter 𝜋\nchr(0x1D70B)\n\n'𝜋'\n\n\n\n# Código decimal del caracter 𝜋\nchr(120587)\n\n'𝜋'\n\n\nLa función ord() obtiene el código Unicode de un caracter y lo regresa en decimal:\n\nord(\"𝜋\")\n\n120587\n\n\nTambién es posible obtener más información de los códigos unicode como sigue:\n\n# Importamos el módulo unicodedata\nimport unicodedata \n\nprint(\"       Símbolo:\", \"𝜋\")\nprint(\"Código decimal:\", ord(\"𝜋\"))\nprint(\"     Categoría:\", unicodedata.category(\"𝜋\"))\nprint(\"Nombre oficial:\", unicodedata.name(\"𝜋\"))\n\n       Símbolo: 𝜋\nCódigo decimal: 120587\n     Categoría: Ll\nNombre oficial: MATHEMATICAL ITALIC SMALL PI\n\n\nPara más información véase: https://docs.python.org/3/howto/unicode.html\nTambién en los siguientes dos enlaces se pueden obtener los códigos UTF8 de diferentes caracteres especiales:\n\nHTML Entities\nUnicode 17.0 Character Code Charts",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Variables y objetos.</span>"
     ]
@@ -184,7 +184,7 @@
     "href": "notebooks/02_tipos_basicos.html#introducción",
     "title": "2  Tipos de datos básicos.",
     "section": "",
-    "text": "Tipo de dato\nEjemplo\n\n\n\n\nNúmerico\n13, 3.1416, 1+5j\n\n\nLógico\nTrue, False\n\n\nCadena\n\"Frida\", \"Diego\"",
+    "text": "Tipo de dato\nEjemplo\n\n\n\n\nNumérico\n13, 3.1416, 1+5j\n\n\nLógico\nTrue, False\n\n\nCadena\n\"Frida\", \"Diego\"",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tipos de datos básicos.</span>"
     ]
@@ -242,31 +242,31 @@
   {
     "objectID": "notebooks/16_excepciones.html",
     "href": "notebooks/16_excepciones.html",
-    "title": "4  Gestión de errores y excepciones.",
+    "title": "10  Gestión de errores y excepciones.",
     "section": "",
-    "text": "5 Tipos de errores:\nObjetivo. Revisar la forma de gestionar errores y excepciones\nEn Python existen dos tipos de errores por los cuales un programa se detiene y no continua con su ejecución normal.",
+    "text": "11 Tipos de errores:\nObjetivo. Revisar la forma de gestionar errores y excepciones\nEn Python existen dos tipos de errores por los cuales un programa se detiene y no continua con su ejecución normal.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Gestión de errores y excepciones.</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Gestión de errores y excepciones.</span>"
     ]
   },
   {
     "objectID": "notebooks/16_excepciones.html#errores-de-sintaxis.",
     "href": "notebooks/16_excepciones.html#errores-de-sintaxis.",
-    "title": "4  Gestión de errores y excepciones.",
-    "section": "5.1 Errores de sintaxis.",
-    "text": "5.1 Errores de sintaxis.\nOcurren cuando no se escriben correctamente las expresiones y declaraciones como lo especifica la interfaz de Python.\nPor ejemplo:\n\n# Escribimos a propósito 'printf' que es un nombre incorrecto.\nprintf('Hola mundo!')\n\n\nObserva que el tipo de error se imprime cuando éste ocurre.\nEn el caso anterior el error fue de tipo NameError, por lo que hay que revisar que todo esté correctamente escrito.",
+    "title": "10  Gestión de errores y excepciones.",
+    "section": "11.1 Errores de sintaxis.",
+    "text": "11.1 Errores de sintaxis.\nOcurren cuando no se escriben correctamente las expresiones y declaraciones como lo especifica la interfaz de Python.\nPor ejemplo:\n\n# Escribimos a propósito 'printf' que es un nombre incorrecto.\nprintf('Hola mundo!')\n\n\nObserva que el tipo de error se imprime cuando éste ocurre.\nEn el caso anterior el error fue de tipo NameError, por lo que hay que revisar que todo esté correctamente escrito.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Gestión de errores y excepciones.</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Gestión de errores y excepciones.</span>"
     ]
   },
   {
     "objectID": "notebooks/16_excepciones.html#errores-provocados-por-excepciones.",
     "href": "notebooks/16_excepciones.html#errores-provocados-por-excepciones.",
-    "title": "4  Gestión de errores y excepciones.",
-    "section": "5.2 Errores provocados por excepciones.",
-    "text": "5.2 Errores provocados por excepciones.\nSon errores lógicos que detienen la ejecución de un programa aún cuando la sintaxis sea la correcta.\nPor ejemplo:\n\ndef raizCuadrada(numero):\n    numero = float(numero)\n    print(\"La raíz cuadrada del número {} es {}\".format(numero, numero ** 0.5))\n\n\n# Ejemplo correcto que se ejecuta sin problemas.\nraizCuadrada(2)\n\n\n# Ejemplo correcto, se calcula la raíz cuadrada de -1.\n# El resultado es un número complejo. En este caso Python\n# se encarga de realizar las conversiones necesarias.\nraizCuadrada(-1)\n\n\n# Ejemplo incorrecto. No es posible calcular la raíz cuadrada\n# de un número complejo, es una operación no definida.\nraizCuadrada(1+1j)\n\nEn el ejemplo anterior se produce un error de tipo TypeError, es decir hay incompatibilidad con los tipos de datos que se están manipulando.\n\n# Ejemplo incorrecto. No se puede calcular la raíz cuadrada\n# de una cadena.\nraizCuadrada(\"hola\")\n\nEn el ejemplo anterior se produce un error de tipo ValueError, es decir es decir hay un problema con el contenido del objeto.",
+    "title": "10  Gestión de errores y excepciones.",
+    "section": "11.2 Errores provocados por excepciones.",
+    "text": "11.2 Errores provocados por excepciones.\nSon errores lógicos que detienen la ejecución de un programa aún cuando la sintaxis sea la correcta.\nPor ejemplo:\n\ndef raizCuadrada(numero):\n    numero = float(numero)\n    print(\"La raíz cuadrada del número {} es {}\".format(numero, numero ** 0.5))\n\n\n# Ejemplo correcto que se ejecuta sin problemas.\nraizCuadrada(2)\n\n\n# Ejemplo correcto, se calcula la raíz cuadrada de -1.\n# El resultado es un número complejo. En este caso Python\n# se encarga de realizar las conversiones necesarias.\nraizCuadrada(-1)\n\n\n# Ejemplo incorrecto. No es posible calcular la raíz cuadrada\n# de un número complejo, es una operación no definida.\nraizCuadrada(1+1j)\n\nEn el ejemplo anterior se produce un error de tipo TypeError, es decir hay incompatibilidad con los tipos de datos que se están manipulando.\n\n# Ejemplo incorrecto. No se puede calcular la raíz cuadrada\n# de una cadena.\nraizCuadrada(\"hola\")\n\nEn el ejemplo anterior se produce un error de tipo ValueError, es decir es decir hay un problema con el contenido del objeto.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Gestión de errores y excepciones.</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Gestión de errores y excepciones.</span>"
     ]
   },
   {
@@ -547,6 +547,756 @@
     "text": "3.2 Precedencia.\nLa aplicación de los operadores tiene cierta precedencia que está definida en cada implementación del lenguaje de programación. La siguiente tabla muestra el orden en que se aplicarán los operadores.\n\n\n\nNivel\nCategoría\nOperadores\n\n\n\n\n7\nexponenciación\n**\n\n\n6\nmultiplicación\n*,/,//,%\n\n\n5\nadición\n+,-\n\n\n4\nrelacional\n==,!=,&lt;=,&gt;=,&gt;,&lt;\n\n\n3\nlógicos\nnot\n\n\n2\nlógicos\nand\n\n\n1\nlógicos\nor\n\n\n\nComo se puede ver, siempre se aplican primero los operadores aritméticos (niveles 7, 6, y 5), luego los relacionales (nivel 4) y finalmente los lógicos (3, 2 y 1).\nMás acerca de este tema se puede ver aquí: Operator precedence.\nA continuación se muestran ejemplos de operaciones aritméticas en donde se resalta esta precedencia:\n\n# Precedencia de operaciones: primero se realiza la multiplicación\n1 + 2 * 3 + 4\n\n11\n\n\n\n# Es posible usar paréntesis para modificar la precedencia: primero la suma\n(1 + 2) * (3 + 4)\n\n21\n\n\n\n# Primero se realiza la exponenciación\n3**2/2\n\n4.5",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Operadores.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/04_expresiones_declaraciones.html",
+    "href": "notebooks/04_expresiones_declaraciones.html",
+    "title": "4  Expresiones y declaraciones.",
+    "section": "",
+    "text": "4.1 Expresiones\nObjetivo. Explicar el concepto de expresiones y declaraciones.\nEn matemáticas se define una expresión como una colección de símbolos que juntos representan una cantidad, por ejemplo:\nEn Python una expresión está compuesta por una combinación válida de valores, variables, operadores, funciones y métodos, que se puede evaluar y da como resultado al menos un valor.\nLas expresiones pueden ser simples o complejas, pero en general, representan un valor único, por ejemplo:\n2**32\n\n4294967296\nPara más información sobre expresiones véase The Python language reference: Expressions y  Python expressions  .\nVeamos algunos ejemplos:\nExpresiones simples\n23 \n\n23\n5 + 3\n\n8\na = 5\na ** 2\n\n25\nExpresión que ejecuta una función\nlen('Hola mundo') \n\n10\nExpresiones usando operadores\n# Otros ejemplos\nx = 1\ny = x + 2\nz = y ** 3\ncompara =  7 == 2 * 2 * 2\n\nprint(x)\nprint(y)\nprint(z)\nprint(compara)\n\n1\n3\n27\nFalse\nExpresiones más complicadas\n# Se combinan varias operaciones matemáticas\nb = 2.14\nc = 0.1 + 4j\n\n(3.141592 * c + b) / a\n\n(0.4908318400000001+2.5132736j)\nObserva que en todos los ejemplos anteriores se produce al menos un valor como resultado de la ejecución de cada expresión.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Expresiones y declaraciones.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/04_expresiones_declaraciones.html#expresiones",
+    "href": "notebooks/04_expresiones_declaraciones.html#expresiones",
+    "title": "4  Expresiones y declaraciones.",
+    "section": "",
+    "text": "El perímetro de una circunferencia está dado por la expresión 2\\(\\pi r\\).\n\n\n\n\n\n\n\n\nTip\n\n\n\nEn esencia, una expresión es cualquier cosa que al ser evaluada produce un resultado.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Expresiones y declaraciones.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/04_expresiones_declaraciones.html#declaraciones",
+    "href": "notebooks/04_expresiones_declaraciones.html#declaraciones",
+    "title": "4  Expresiones y declaraciones.",
+    "section": "4.2 Declaraciones",
+    "text": "4.2 Declaraciones\nUna declaración (statement) se puede pensar como el elemento autónomo más corto de un lenguaje de programación. Un programa se forma de una secuencia que contiene una o más declaraciones. Una declaración contiene componentes internos, que pueden ser otras declaraciones y varias expresiones.\n\n\n\n\n\n\nTip\n\n\n\nEn términos simples, una declaración es una instrucción que realiza una acción.\n\n\nPuede ser una asignación de valor a una variable, una llamada a una función, una estructura de control de flujo (como un ciclo o una condición), una definición de función, etc.\nMás información se puede encontrar en los siguientes enlaces:\n\nSimple statements.\nCompound statements.\nPython statements (wikipedia).\n\nVeamos algunos ejemplos:\nDeclaración que hace una asignación\n\nx = 0\n\nDeclaración usando un condicional\n\nif x &lt; 0:\n    pass\n\nDeclaración que realiza un ciclo\n\nfor i in range(0,5):\n    pass\n\nDeclaración de una función\n\ndef mult(a, b):\n    return a * b\n\nObserva en todos los ejemplos anteriores se realizan acciones que no necesariamente se producen resultados.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Expresiones y declaraciones.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/04_expresiones_declaraciones.html#construcción-de-algoritmos",
+    "href": "notebooks/04_expresiones_declaraciones.html#construcción-de-algoritmos",
+    "title": "4  Expresiones y declaraciones.",
+    "section": "4.3 Construcción de algoritmos",
+    "text": "4.3 Construcción de algoritmos\nUn código que implementa un algoritmo estará compuesto de un conjunto de declaraciones y de expresiones que juntas resuelven un problema o realizan alguna acción más compleja. Por ejemplo:\n\nx = 10               # Declaración de asignación\ny = 20               # Declaración de asignación\nresultado = x + y    # Declaración de asignación, donde `x + y` es una expresión\nif resultado &gt; 20:   # Declaración de control de flujo, donde `resultado &gt; 20` es una expresión\n    print(\"El resultado es mayor que 20\")  # Declaración que llama a la función `print`\n\nEl resultado es mayor que 20",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Expresiones y declaraciones.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/05_cadenas.html",
+    "href": "notebooks/05_cadenas.html",
+    "title": "5  Cadenas.",
+    "section": "",
+    "text": "5.1 Definición de cadenas.\nObjetivo. Explicar el tipo de dato básico cadena (str) y como se usa en diferentes contextos.\nEn Python, una cadena (string) es una secuencia de caracteres utilizada para representar texto.\nLas cadenas se pueden crear utilizando:\nSon inmutables, lo que significa que no se pueden cambiar una vez que se han creado. Sin embargo, se pueden crear nuevas cadenas basadas en operaciones realizadas en las cadenas originales.\nVeamos algunos ejemplos.\nsimples = 'Hay pocas cosas tan ensordecedoras como el silencio'\nprint(simples)\n\nHay pocas cosas tan ensordecedoras como el silencio\ndobles = \"Hay pocas cosas tan ensordecedoras como el silencio\"\nprint(dobles)\n\nHay pocas cosas tan ensordecedoras como el silencio\ntriples1 = '''Hay pocas cosas tan ensordecedoras como el silencio'''\nprint(triples1)\n\ntriples2 = \"\"\"Hay pocas cosas tan ensordecedoras como el silencio\"\"\"\nprint(triples2)\n\nHay pocas cosas tan ensordecedoras como el silencio\nHay pocas cosas tan ensordecedoras como el silencio\nprint(type(simples), type(dobles), type(triples1), type(triples2), sep=\"\\n\")\n\n&lt;class 'str'&gt;\n&lt;class 'str'&gt;\n&lt;class 'str'&gt;\n&lt;class 'str'&gt;\nObserva que el tipo de dato es str.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Cadenas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/05_cadenas.html#definición-de-cadenas.",
+    "href": "notebooks/05_cadenas.html#definición-de-cadenas.",
+    "title": "5  Cadenas.",
+    "section": "",
+    "text": "comillas simples: '),\ncomillas dobles: \") o\ncomillas triples: \"\"\" o '''.\n\n\n\n\nDefinición de una cadena usando comillas simples ':\n\n\n\nDefinición de una cadena usando comillas dobles \":\n\n\n\nDefinición de una cadena usando comillas triples \"\"\" y ''':",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Cadenas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/05_cadenas.html#caracteres-especiales.",
+    "href": "notebooks/05_cadenas.html#caracteres-especiales.",
+    "title": "5  Cadenas.",
+    "section": "5.2 Caracteres especiales.",
+    "text": "5.2 Caracteres especiales.\n\nLas cadenas pueden contener caracteres especiales como cambio de línea, tabulador, entre otros.\nPara que estos caracteres se puedan representar se requiere del caracter de escape \\.\nAlgunos de estos caracteres se muestran en la siguiente tabla:\n\n\n\n\nSecuencia de escape\nSignificado\n\n\n\n\n\\\nDiagonal invertida para ignorar el cambio de línea\n\n\n\\\\\nDiagonal invertida (\\)\n\n\n\\'\nComilla simple (')\n\n\n\\\"\nComilla doble (\")\n\n\n\\n\nCambio de línea (ASCII Linefeed LF)\n\n\n\\t\nTabulador (ASCII Sangría horizontal TAB)\n\n\n\nLa documentación completa se puede encontrar en el siguiente enlace: Escape sequences.\n\n5.2.1 Ejemplo 1.\n\nDefinir e imprimir las siguientes cadenas:\n\nEnjoy the moments now, because they don't last forever\nPython \"pythonico\"\n\n\n\n\n# 1.A. Forma 1. Usamos el caracter de escape\npoema = 'Enjoy the moments now, because they don\\'t last forever'\nprint(poema)\n\nEnjoy the moments now, because they don't last forever\n\n\n\n# 1.A. Forma 2. Definimos la cadena con \" \"\npoema = \"Enjoy the moments now, because they don't last forever\"\nprint(poema)\n\nEnjoy the moments now, because they don't last forever\n\n\nObserva que es posible imprimir ' sin usar el caracter \\ si la cadena se define con \" y viceversa, como se muestra a continuación:\n\n# 1.B. La cadena puede tener \" dentro de ' ... '\ntitulo = 'Python \"pythonico\"'\nprint(titulo)\n\nPython \"pythonico\"\n\n\n\n#1.B. Usando el caracter de escape\ntitulo = \"Python \\\"pythonico\\\"\"\nprint(titulo)\n\nPython \"pythonico\"\n\n\n.\n\n5.2.2 Ejemplo 2.\nDefinir e imprimir el siguiente texto:\nDesde muy niño\ntuve que \"interrumpir\" 'mi' educación\npara ir a la escuela\n\n\n# Forma 1. \nqueja = \"Desde muy niño \\ntuve que \\\"interrumpir\\\" 'mi' educación \\npara ir a la escuela\"\nprint(queja)\n\nDesde muy niño \ntuve que \"interrumpir\" 'mi' educación \npara ir a la escuela\n\n\nEn esta primera forma definimos la cadena usando comillas dobles. Para imprimir las dobles comillas usamos el caracter de escape \\\". De igual manera, para indicar el cambio de línea usamos \\n. Para imprimir las comillas simples (') no es necesario realizar nada especial dado que la cadena se define usando dobles comillas \".\n\n#  Forma 2. Una cadena larga la definimos con triples comillas simples.\nqueja = '''\nDesde muy niño\ntuve que \"interrumpir\" 'mi' educación\npara ir a la escuela\n'''\nprint(queja)\n\n\nDesde muy niño\ntuve que \"interrumpir\" 'mi' educación\npara ir a la escuela\n\n\n\nObserva que en el ejemplo anterior la cadena contiene comillas dobles y simples (\" y '), pero no hay necesidad de usar el caracter de escape para imprimirlas; de igual manera no fue necesario indicar los cambios de línea, estos se toman de manera implícita. Lo anterior fue posible por el uso de las triples comillas para definir la cadena.\n\n#  Forma 3. Una cadena larga la definimos con triples comillas dobles.\nqueja = \"\"\"\nDesde muy niño\ntuve que \"interrumpir\" 'mi' educación\npara ir a la escuela\n\"\"\"\nprint(queja)\n\n\nDesde muy niño\ntuve que \"interrumpir\" 'mi' educación\npara ir a la escuela\n\n\n\n.\n\n5.2.3 Ejemplo 3.\nDefinir e imprimir el siguiente texto:\n\nEl siguiente es un ejemplo de función:\n--------------------------------------\ndef funcion(N):\n        suma = 0\n        for i in range(N):\n                 suma += 1\n        return suma\n\nUna manera directa es mediante el uso de triples comillas dobles:\n\ncodigo = \"\"\"\nEl siguiente es un ejemplo de función:\n--------------------------------------\ndef funcion(N):\n\\tsuma = 0\n\\tfor i in range(N):\n\\t\\tsuma += 1 \n\\treturn suma\n\"\"\"\nprint(codigo)\n\n\nEl siguiente es un ejemplo de función:\n--------------------------------------\ndef funcion(N):\n    suma = 0\n    for i in range(N):\n        suma += 1 \n    return suma\n\n\n\nObserva que cuando el texto es largo y de varias líneas, conviene usar triples comillas. Para agregar la sangría al principio de algunas líneas usamos el tabulador \\t.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Cadenas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/05_cadenas.html#métodos-aplicables-sobre-las-cadenas",
+    "href": "notebooks/05_cadenas.html#métodos-aplicables-sobre-las-cadenas",
+    "title": "5  Cadenas.",
+    "section": "5.4 Métodos aplicables sobre las cadenas",
+    "text": "5.4 Métodos aplicables sobre las cadenas\nLas cadenas son objetos de la clase &lt;class 'str'&gt; y tienen definidos atributos y métodos. Véase Common string operations para más información.\nRecuerda que la lista de métodos de un objeto se puede obtener si ponemos el nombre del objeto más un punto (.) y luego tecleamos tabulador (↹), obtendremos algo similar a la imagen mostrada en la Figura 5.1.\n\n\n\n\n\n\nFigura 5.1: Métodos y atributos de un objeto de tipo str.\n\n\n\nVeamos algunos ejemplos de los métodos de las cadenas.\n\n# Imprimimos la cadena original\nprint(ejemplo)\n\nMurciélago\n\n\n\n# Centramos la cadena en 20 espacios\nprint(ejemplo.center(20))\n\n     Murciélago     \n\n\n\n# Centramos la cadena en 20 espacios y usamos '-' en los espacios restantes\nprint(ejemplo.center(20,'-')) \n\n-----Murciélago-----\n\n\n\n# Convertimos todos los caracteres a mayúsculas\nprint(ejemplo.upper())\n\nMURCIÉLAGO\n\n\n\n# Encontrar un caracter dentro de la cadena, \n# nos dá el índice (solo de la primera aparición):\nprint(ejemplo.find('é'))\n\n5\n\n\n\n# Cuando el caracter no está en la cadena, regresa un -1\nprint(ejemplo.find('e'))\n\n-1\n\n\n\n# Cuenta el número de aparciones de un caracter dentro de la cadena\nprint(ejemplo.count('g'))\n\n1\n\n\n\n# Pregunta si la cadena se puede imprimir\nprint(ejemplo.isprintable())\n\nTrue\n\n\n\n# Reemplazamos un caracter o conjunto de caracteres por otro.\nprint(ejemplo.replace('é', 'e'))\n\nMurcielago",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Cadenas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/05_cadenas.html#funciones-y-operadores-sobre-cadenas.",
+    "href": "notebooks/05_cadenas.html#funciones-y-operadores-sobre-cadenas.",
+    "title": "5  Cadenas.",
+    "section": "5.5 Funciones y operadores sobre cadenas.",
+    "text": "5.5 Funciones y operadores sobre cadenas.\nVeamos algunas funciones incorporadas y operadores que se pueden aplicar sobre las cadenas.\n\n# Definimos una cadena\ncadena = 'anita lava la tina'\nprint(cadena)\n\nanita lava la tina\n\n\n\nFunción len() para obtener la longitud de la cadena.\n\n\nprint(len(cadena))\n\n18\n\n\n\nFunciones max() y min() para obtener el máximo y mínimo de acuerdo con su código unicode.\n\n\nprint(min(cadena)) # El mínimo es el espacio en blanco\nprint(max(cadena))\n\n \nv\n\n\n\nFunción sorted() regresa una lista de elementos de la cadena ordenados, de acuerdo con su código unicode.\n\n\nprint(sorted(cadena))\n\n[' ', ' ', ' ', 'a', 'a', 'a', 'a', 'a', 'a', 'i', 'i', 'l', 'l', 'n', 'n', 't', 't', 'v']\n\n\n\nOperador == para comparar cadenas\n\n\ncadena_reversa = cadena[::-1] # construimos la cadena en reversa\nprint('original  : ', cadena)\nprint('invertida : ', cadena_reversa)\nprint('¿Las cadenas son iguales? ', cadena == cadena_reversa)\n\noriginal  :  anita lava la tina\ninvertida :  anit al aval atina\n¿Las cadenas son iguales?  False\n\n\nPara checar que el contenido de cadena es un palíndromo tendríamos que eliminar los espacios cuando hacemos la comparación de la cadena original con la cadena en reversa:\n\n# Eliminamos los espacios\ncadena_original_sin_esp = cadena.replace(' ','')\ncadena_reversa_sin_esp = cadena_reversa.replace(' ','')\n\n# Imprimimos las cadenas\nprint('original sin espacios: \"', cadena_original_sin_esp, '\"', sep='')\nprint('en reversa sin espacios: \"', cadena_reversa_sin_esp, '\"', sep='')\n\n# Verificamos si es palíndromo o no\nprint('¿Es palíndromo? :', cadena_original_sin_esp == cadena_reversa_sin_esp)\n\noriginal sin espacios: \"anitalavalatina\"\nen reversa sin espacios: \"anitalavalatina\"\n¿Es palíndromo? : True\n\n\nEl siguiente es el mismo algoritmo, pero con un código más reducido (pythonico):\n\nprint('¿\"', cadena, '\" es palíndromo? ', cadena.replace(' ','') == cadena[::-1].replace(' ',''), sep='')\n\n¿\"anita lava la tina\" es palíndromo? True\n\n\n\n# Usamos el caracter \\ para escribir una \n# sola instrucción en varias líneas\nprint('¿\"', cadena, '\" es palíndromo? ', \\\n      cadena.replace(' ','') == cadena[::-1].replace(' ',''), \\\n      sep='')\n\n¿\"anita lava la tina\" es palíndromo? True\n\n\n\nOperador in para saber si un elemento está en la cadena.\n\n\nprint('v' in cadena)\n\nTrue\n\n\n\nOperador + para concatenar cadenas.\n\n\npalabra = 'Palíndromo : '\nprint(palabra + cadena)\n\nPalíndromo : anita lava la tina\n\n\n\nOperador * para repetir la cadena.\n\n\n# Repetimos la cadena 'oh yeah ' 5 veces\nexpresion = 'oh yeah ' * 5\nprint(expresion)\n\noh yeah oh yeah oh yeah oh yeah oh yeah",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Cadenas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/05_cadenas.html#construcción-de-cadenas",
+    "href": "notebooks/05_cadenas.html#construcción-de-cadenas",
+    "title": "5  Cadenas.",
+    "section": "5.6 Construcción de cadenas",
+    "text": "5.6 Construcción de cadenas\nExisten varias maneras de construir cadenas, a continuación se revisan algunos ejemplos.\n\n5.6.1 Usando operaciones básicas.\nLos operadores: + y * están definidos para las cadenas.\nVeamos el siguiente ejemplo:\n\nfrase1 = \"Somos aquello en lo que creemos\"\nfrase2 = \"aún sin darnos cuenta\"\n\n# Concatenación de cadenas\nfrase_total = frase1 + ', ' + frase2 + '.'\n\nprint(frase_total)\n\nSomos aquello en lo que creemos, aún sin darnos cuenta.\n\n\nEn el siguiente ejemplo creamos una cadena de 60 guiones - usando el operador *:\n\nprint('-' * 60)\n\n------------------------------------------------------------\n\n\nEscribimos la frase_total centrada en 60 espacios y entre dos líneas:\n\nprint('-' * 60)\nprint(frase_total.center(60))\nprint('-' * 60)\n\n------------------------------------------------------------\n  Somos aquello en lo que creemos, aún sin darnos cuenta.   \n------------------------------------------------------------\n\n\nPodemos agregar al autor de la frase:\n\nprint('-' * 60)\nprint(frase_total.center(60))\nprint(\"Carlos Monsivais\".rjust(60))\nprint('-' * 60)\n\n------------------------------------------------------------\n  Somos aquello en lo que creemos, aún sin darnos cuenta.   \n                                            Carlos Monsivais\n------------------------------------------------------------\n\n\nObserva que aplicamos el método rjust() para justificar a la derecha, y lo hicimos directamente en el momento de la creación de la cadena \"Carlos Monsivais\" (al vuelo).\n\n\n5.6.2 Concatenación y casting\nVamos a crear la siguiente cadena: Pedro Páramo tiene 15 años y pesa 70.5 kg.\nUsaremos el operador + y contruiremos la cadena usando algunas variables; convertiremos algunas variables a tipo str:\n\n# Definimos las siguientes variables\nedad = 15\nnombre = 'Pedro'\napellido = 'Páramo'\npeso = 70.5\n\n# Construimos la cadena usando el operador '+' y la función 'str()' \ndatos = nombre + apellido + 'tiene' + str(15) + 'años y pesa' + str(70.5) + 'kg'\n\nprint(datos)\n\nPedroPáramotiene15años y pesa70.5kg\n\n\nPara agregar espacios es necesario hacerlo de manera explícita como sigue:\n\ndatos = nombre + ' ' + apellido + ' tiene ' + str(15) + ' años y pesa ' + str(70.5) + ' kg'\nprint(datos)\n\nPedro Páramo tiene 15 años y pesa 70.5 kg\n\n\n\n\n5.6.3 Método str.format()\nEste método permite sustituir variables en los lugares indicados por {}:\n\ndatos = '{} {} tiene {} años y pesa {} kg'.format(nombre, apellido, edad, peso)\nprint(datos)\n\nPedro Páramo tiene 15 años y pesa 70.5 kg\n\n\nObserva que aplicamos el método format() a la cadena en construcción.\n\n\n5.6.4 Cadenas formateadas (f-string, formatted string literals)\nEste tipo de cadenas permite sustituir variables en los lugares indicados:\n\ndatos = f'{nombre} {apellido} tiene {edad} años y pesa {peso} kg'\nprint(datos)\n\nPedro Páramo tiene 15 años y pesa 70.5 kg\n\n\nObserva que agregamos una f al principio de la definición de la cadena para indicar que se trata de una cadena formateada.\n\n\n5.6.5 Cadenas usando el método str.join()\nDada una cadena que funciona como separador, este método recibe una estructura de datos que contiene las cadenas que se van a unir y que estarán separados por la cadena inicial:\n\ndatos = \" \".join([nombre, apellido, 'tiene', str(15), 'años y pesa', str(70.5), 'kg'])\nprint(datos)\n\nPedro Páramo tiene 15 años y pesa 70.5 kg\n\n\nEn el ejemplo anterior la cadena inicial es un espacio \" \" y junta todos los elementos que se dan entre corchetes []. El uso de corchetes construye una lista, que es un tipo de dato que se describe en la Capítulo 7.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Cadenas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/05_cadenas.html#formato-de-la-salida.",
+    "href": "notebooks/05_cadenas.html#formato-de-la-salida.",
+    "title": "5  Cadenas.",
+    "section": "5.7 Formato de la salida.",
+    "text": "5.7 Formato de la salida.\nEs posible utilizar algunos modificadores en la definición de una cadena para que se imprima con un cierto formato. Esto aplica para cadenas formateadas y para el método format. Veamos algunos ejemplos.\n\n5.7.1 Texto.\n\n# Impresión del nombre en 30 espacios de texto\nsdef = f'{nombre:30s}'  # Alineación a la izq. por omisión\nsder = f'{nombre:&gt;30s}' # Alineación a la der.\nsizq = f'{nombre:&lt;30s}' # Alineación a la izq.\nscen = f'{nombre:^30s}' # Centrada\n\n\nprint(sdef)\nprint(sder)\nprint(sizq)\nprint(scen)\n\nPedro                         \n                         Pedro\nPedro                         \n            Pedro             \n\n\nAhora agregamos las cadenas ---| y |--- para delimitar los 30 espacios.\n\n# Impresión del nombre en 30 espacios de texto\nsdef = f'---|{nombre:30s}|---'  # Alineación a la izq. por omisión\nsder = f'---|{nombre:&gt;30s}|---' # Alineación a la der.\nsizq = f'---|{nombre:&lt;30s}|---' # Alineación a la izq.\nscen = f'---|{nombre:^30s}|---' # Centrada\n\nprint(sdef)\nprint(sder)\nprint(sizq)\nprint(scen)\n\n---|Pedro                         |---\n---|                         Pedro|---\n---|Pedro                         |---\n---|            Pedro             |---\n\n\n\n\n\n\n\n\nNotaNota.\n\n\n\nObserva que en el ejemplo anterior se usó una s al final del número 30, esto es para indicar que la variable nombre es de tipo cadena. Para enteros en base diez se usa una d y para flotantes una f. Estas terminaciones no son necesarias aunque es conveniente agregarlas para hacer el código más claro y que no haya errores de formato.\nMás información la puedes consultar en:  Format Specification Mini-Language \n\n\n\n\n5.7.2 Enteros\nPara números enteros podemos definir el número de espacios y alinear la salida:\n\n# Este es un formato de número entero que usa _ para separar los miles\nn1 = 5_521_345_678\nn2 = 7_712_932_143\nn3 = 8_123_535_098\n\nidef = f'---|{n1:15d}|---'  # alineación a la der. por omisión\nicen = f'---|{n1:^15d}|---' # centrado\niizq = f'---|{n2:&lt;15d}|---' # alineación a la izq.\nider = f'---|{n3:&gt;15d}|---' # alineación a la der.\n\nprint(idef, icen, iizq, ider, sep='\\n')\n\n---|     5521345678|---\n---|  5521345678   |---\n---|7712932143     |---\n---|     8123535098|---\n\n\nTambién es posible usar , como separador de los miles en la salida, veamos:\n\nidef = f'---|{n1:15,d}|---'  # alineación a la der. por omisión\nicen = f'---|{n1:^15,d}|---' # centrado\niizq = f'---|{n2:&lt;15,d}|---' # alineación a la izq.\nider = f'---|{n3:&gt;15,d}|---' # alineación a la der.\n\nprint(idef, icen, iizq, ider, sep='\\n')\n\n---|  5,521,345,678|---\n---| 5,521,345,678 |---\n---|7,712,932,143  |---\n---|  8,123,535,098|---\n\n\nY se puede completar con 0’s los espacios en blanco:\n\nidef = f'---|{n1:015,d}|---'  # alineación a la der. por omisión\nicen = f'---|{n1:^015,d}|---' # centrado\niizq = f'---|{n2:&lt;015,d}|---' # alineación a la izq.\nider = f'---|{n3:&gt;015,d}|---' # alineación a la der.\n\nprint(idef, icen, iizq, ider, sep='\\n')\n\n---|005,521,345,678|---\n---|05,521,345,6780|---\n---|7,712,932,14300|---\n---|008,123,535,098|---\n\n\nSe puede generar la salida de un entero en las bases decimal, hexadecimal, octal o binaria usando d, x, o y b respectivamente.\n\nejemplo = 16\nprint(f'int: {ejemplo:d}')\nprint(f'hex: {ejemplo:x}')\nprint(f'oct: {ejemplo:o}')\nprint(f'bin: {ejemplo:b}')\n\nint: 16\nhex: 10\noct: 20\nbin: 10000\n\n\n\n\n5.7.3 Flotantes\nEn el caso de números flotantes se puede definir el número de decimales en la salida:\n\n# Valor aproximado de pi\npi = 3 + 1/7\n\n# Cadena con 5 decimales de pi:\nspi = f'{pi:.5f}'\n\nprint('El valor de PI es aproximadamente', spi) \n\nEl valor de PI es aproximadamente 3.14286\n\n\nY también es posible definir el número total de espacios que incluyen la parte entera, el punto decimal y el número de decimales:\n\nnumero_flotante_grande = 213.2131255345435643\n\n# Cadena con 15 espacios totales y 3 decimales\nsnumero = f'{numero_flotante_grande:15.3f}'\n\nprint(f'---|{snumero}|---')\n\n---|        213.213|---\n\n\nAl igual que las cadenas y los enteros, también se puede usar una alineación en la salida y rellenar con ceros los espacios en blanco:\n\nsnum_cen = f'{numero_flotante_grande:^015.3f}'\nsnum_izq = f'{numero_flotante_grande:&lt;015.3f}'\nsnum_der = f'{numero_flotante_grande:&gt;015.3f}'\n\nprint(snum_cen)\nprint(snum_izq)\nprint(snum_der)\n\n0000213.2130000\n213.21300000000\n00000000213.213\n\n\n\n\n5.7.4 Usando el método format()\nUsando el método str.format(), también podemos formatear la salida. Aplica exactamente lo mismo que con las f-string. Por ejemplo:\n\n# Definimos dos números enteros\nvotos_a_favor = 42_572_654   \nvotos_en_contra = 43_132_495 \n\n# Realizamos algunas operaciones\ntotal_de_votos = votos_a_favor + votos_en_contra\nporcentaje = votos_a_favor / total_de_votos\n\n# Revisamos el contenido y tipo de los números\nprint(votos_a_favor, type(votos_a_favor))\nprint(votos_en_contra, type(votos_en_contra))\nprint(total_de_votos, type(total_de_votos))\nprint(porcentaje, type(porcentaje))\n\n# Realizamos la impresión usando un formato\nprint('{:^20d} votos a favor ({:^10.2%})'.format(votos_a_favor, porcentaje))\n\n42572654 &lt;class 'int'&gt;\n43132495 &lt;class 'int'&gt;\n85705149 &lt;class 'int'&gt;\n0.496733912684756 &lt;class 'float'&gt;\n      42572654       votos a favor (  49.67%  )\n\n\nObserva que se imprime votos_a_favor en 20 espacios y alineado al centro. También se imprime porcentaje, que es un número flotante, usando 10 espacios que incluyen el punto, dos decimales y el símbolo %. El uso de % convierte el número flotante en un porcentaje (multiplica por 100) automáticamente e imprime el símbolo.\nSe pueden usar números para identificar los argumentos de str.format():\n\nej1 = '{0} y {1}'.format('el huevo', 'la gallina')\nej2 = '{1} y {0:^20s}'.format('el huevo', 'la gallina')\n\nprint(ej1)\nprint(ej2)\n\nel huevo y la gallina\nla gallina y       el huevo      \n\n\nSe le puede dar nombre a los argumentos para que sea más fácil entender la salida\n\nej3 = \"Look {sujeto}, there's an {objeto} up in the sky\".format(sujeto='mummy', objeto='aeroplane')\n\nprint(ej3)\n\nLook mummy, there's an aeroplane up in the sky\n\n\nUsar un nombre en los argumentos de str.format() permite ponerlos en cualquier orden:\n\nej4 = \"Look {sujeto}, there's an {objeto} up in the sky\".format(objeto='aeroplane', sujeto='mummy')\n\nprint(ej4)\n\nLook mummy, there's an aeroplane up in the sky\n\n\nSe pueden combinar números con nombres de argumento:\n\nej5 = 'El {0}, el {1}, y el {otro}.'.format('Bueno', 'Malo', otro='Feo')\n\nprint(ej5)\n\nEl Bueno, el Malo, y el Feo.\n\n\nOtro ejemplo de alineación (la declaración for la revisaremos en la Capítulo 6:\n\nfor x in range(1, 11):\n    print('{0:2d} {1:3d} {2:4d}'.format(x, x*x, x*x*x))\n\n 1   1    1\n 2   4    8\n 3   9   27\n 4  16   64\n 5  25  125\n 6  36  216\n 7  49  343\n 8  64  512\n 9  81  729\n10 100 1000\n\n\nPara más información véase  Format String Syntax \n\n\n5.7.5 Método antiguo para formateo de la salida.\nSe puede seguir usando la forma antigua para formatearla salida, la cual es heredada del lengueaje C.\n\nviejo = 'El valor aproximado de pi es %10.6f.' % pi\n\nprint(viejo)\n\nEl valor aproximado de pi es   3.142857.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Cadenas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/05_cadenas.html#inmutabilidad-de-las-cadenas",
+    "href": "notebooks/05_cadenas.html#inmutabilidad-de-las-cadenas",
+    "title": "5  Cadenas.",
+    "section": "5.8 Inmutabilidad de las cadenas",
+    "text": "5.8 Inmutabilidad de las cadenas\nLos elementos de las cadenas no se pueden modificar:\n\n# Intentamos modificar el elemento 5 de la cadena\nejemplo[5] = \"e\"\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[112], line 2\n      1 # Intentamos modificar el elemento 5 de la cadena\n----&gt; 2 ejemplo[5] = \"e\"\n\nTypeError: 'int' object does not support item assignment\n\n\n\n\ncadena='''\neste es un \ntexto muy\nlargo\n'''\n\n\nprint(cadena)\n\n\neste es un \ntexto muy\nlargo\n\n\n\n\nprint(type(cadena))\n\n&lt;class 'str'&gt;\n\n\n\nlen(cadena)\n\n29\n\n\n\ncadena[0] # El primer elemento es un cambio de línea\n\n'\\n'\n\n\n\ncadena[-1] # El último elemento es un cambio de línea\n\n'\\n'\n\n\n\nprint(cadena[6])\n\ne\n\n\n\ncadena[6] = 'h'\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[89], line 1\n----&gt; 1 cadena[6] = 'h'\n\nTypeError: 'str' object does not support item assignment",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Cadenas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/05_cadenas.html#indexación-de-las-cadenas.",
+    "href": "notebooks/05_cadenas.html#indexación-de-las-cadenas.",
+    "title": "5  Cadenas.",
+    "section": "5.3 Indexación de las cadenas.",
+    "text": "5.3 Indexación de las cadenas.\nLa indexación permite acceder a diferentes elementos o rangos de elementos de una cadena.\n\nLos elementos de una cadena de N elementos, se numeran empezando en 0 y terminando en N-1, el cual representa el último elemento de la cadena.\nTambién se pueden usar índices negativos donde -1 representa el último elemento y -N el primer elemento.\n\nVeamos el siguiente ejemplo:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nejemplo\n=\nM\nu\nr\nc\ni\né\nl\na\ng\no\n\n\níndice positivo\n\\(\\rightarrow\\)\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n\n\níndice negativo\n\\(\\rightarrow\\)\n-10\n-9\n-8\n-7\n-6\n-5\n-4\n-3\n-2\n-1\n\n\n\n\nLa cadena tiene N = 10 elementos.\nSus índices positivos van de 0 a 9.\nSus índices negativos van de -1 a -10.\n\nAhora veamos algunos ejemplos de acceso a ciertos elementos de la cadena.\n\n# Definimos la cadena\nejemplo = 'Murciélago'\nprint(ejemplo)\nprint(type(ejemplo))\n\nMurciélago\n&lt;class 'str'&gt;\n\n\n\n# Primer elemento de la cadena\nprint(ejemplo[0]) \n\nM\n\n\n\n# Elemento en la posición 5\nprint(ejemplo[5]) \n\né\n\n\n\n# Elemento en la posición 9 (en este caso es el último)\nprint(ejemplo[9]) \n\no\n\n\n\n# Último elemento de la cadena\nprint(ejemplo[-1]) \n\no\n\n\n\n# Elemento en la posición -6 o equivalentemente en la posición 4\nprint(ejemplo[-6]) \nprint(ejemplo[4])\n\ni\ni\n\n\n\n# Elemento en la posición -10, el primero en este caso\nprint(ejemplo[-10]) \n\nM\n\n\n\n5.3.1 Acceso a porciones de las cadenas (slicing)\nSe puede obtener una subcadena a partir de la cadena original, para ello usamos el siguiente formato: str[Start:End:Stride]\nStart :Índice del primer caracter para formar la subcadena. Se incluye el elemento con este índice.\nEnd : Índice que indica el caracter final de la subcadena. No se incluye el elemento con este índice.\nStride: Salto entre elementos.\nSi queremos obtener la subcadena urcié de la cadena original Murciélago podemos hacerlo como sigue:\n\ncon índices positivos:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nejemplo\n=\nM\nu\nr\nc\ni\né\nl\na\ng\no\n\n\níndice positivo\n\\(\\rightarrow\\)\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n\n\nejemplo[1:6]\n=\n\nu\nr\nc\ni\né\n\n\n\n\n\n\n\n\ncon índices negativos:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nejemplo\n=\nM\nu\nr\nc\ni\né\nl\na\ng\no\n\n\níndice negativo\n\\(\\rightarrow\\)\n-10\n-9\n-8\n-7\n-6\n-5\n-4\n-3\n-2\n-1\n\n\nejemplo[-9:-4]\n=\n\nu\nr\nc\ni\né\n\n\n\n\n\n\n\nVeamos los siguientes ejemplos\n\nprint(ejemplo[1:6])\n\nurcié\n\n\n\nprint(ejemplo[-9:-4])\n\nurcié\n\n\n\nprint(ejemplo[:]) # Cadena completa\n\nMurciélago\n\n\n\nprint(ejemplo[0:5]) # Elementos del 0 al 4 \n\nMurci\n\n\n\nprint(ejemplo[::2]) # Todos los elementos, con saltos de 2\n\nMrilg\n\n\n\nprint(ejemplo[1:8:2]) # Los elementos de 1 a 7, con saltos de 2\n\nucéa\n\n\n\nprint(ejemplo[::-1]) # La cadena en reversa\n\nogaléicruM",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Cadenas.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_listas.html",
+    "href": "notebooks/08_listas.html",
+    "title": "9  Estructura de datos: listas",
+    "section": "",
+    "text": "10 Introducción\nObjetivo. Describir la estructura de datos list mediante la exposición de ejemplos.\nHay cuatro tipos de estructuras de datos, también conocidas como colecciones. Cuando se selecciona un tipo de colección, es importante conocer sus propiedades para incrementar la eficiencia y/o la seguridad de los datos. La siguiente tabla resume estos cuatro tipos:",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_listas.html#ejemplo-1.",
+    "href": "notebooks/08_listas.html#ejemplo-1.",
+    "title": "9  Estructura de datos: listas",
+    "section": "11.1 Ejemplo 1.",
+    "text": "11.1 Ejemplo 1.\nVamos a crear las siguientes listas:\n\ngatos : Razas de gatos.\norigen : Origen de cada raza de gatos.\npelo_largo: Si tienen pelo largo o no.\npelo_corto: Si tienen pelo corto o no.\npeso_minimo: El peso mínimo que pueden tener.\npeso_maximo: El peso máximo que pueden tener.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_listas.html#len-determina-la-longitud-de-la-lista.",
+    "href": "notebooks/08_listas.html#len-determina-la-longitud-de-la-lista.",
+    "title": "9  Estructura de datos: listas",
+    "section": "15.1 len(): determina la longitud de la lista.",
+    "text": "15.1 len(): determina la longitud de la lista.\n\nlen(gatos)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_listas.html#max-determina-el-máximo-elemento-de-la-lista.",
+    "href": "notebooks/08_listas.html#max-determina-el-máximo-elemento-de-la-lista.",
+    "title": "9  Estructura de datos: listas",
+    "section": "15.2 max(): determina el máximo elemento de la lista.",
+    "text": "15.2 max(): determina el máximo elemento de la lista.\n\nmax(peso_maximo)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_listas.html#min-determina-el-mínimo-elemento-de-la-lista.",
+    "href": "notebooks/08_listas.html#min-determina-el-mínimo-elemento-de-la-lista.",
+    "title": "9  Estructura de datos: listas",
+    "section": "15.3 min(): determina el mínimo elemento de la lista.",
+    "text": "15.3 min(): determina el mínimo elemento de la lista.\n\nmin(peso_maximo)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_listas.html#any-revisa-si-algún-elemento-es-true.",
+    "href": "notebooks/08_listas.html#any-revisa-si-algún-elemento-es-true.",
+    "title": "9  Estructura de datos: listas",
+    "section": "15.4 any(): revisa si ALGÚN elemento es True.",
+    "text": "15.4 any(): revisa si ALGÚN elemento es True.\n\nany(pelo_largo)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_listas.html#all-revisa-si-todos-los-elementos-son-true.",
+    "href": "notebooks/08_listas.html#all-revisa-si-todos-los-elementos-son-true.",
+    "title": "9  Estructura de datos: listas",
+    "section": "15.5 all(): revisa si TODOS los elementos son True.",
+    "text": "15.5 all(): revisa si TODOS los elementos son True.\n\nall(pelo_corto)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_listas.html#sorted-ordena-los-elementos-de-la-lista.",
+    "href": "notebooks/08_listas.html#sorted-ordena-los-elementos-de-la-lista.",
+    "title": "9  Estructura de datos: listas",
+    "section": "15.6 sorted(): ordena los elementos de la lista.",
+    "text": "15.6 sorted(): ordena los elementos de la lista.\n\nprint(peso_maximo) # Lista original antes del ordenamiento\nsorted(peso_maximo) \n\nLa función sorted() genera una nueva lista ordenada, pero no modifica la lista original. Si se imprime la lista peso_maximo veremos que no ha cambiado:\n\nprint(peso_maximo)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_listas.html#sum-suma-los-elementos-de-la-lista.",
+    "href": "notebooks/08_listas.html#sum-suma-los-elementos-de-la-lista.",
+    "title": "9  Estructura de datos: listas",
+    "section": "15.7 sum(): suma los elementos de la lista.",
+    "text": "15.7 sum(): suma los elementos de la lista.\n\n# El operador suma debe estar definido para el tipo de los elementos de la lista\nsum(peso_maximo)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_listas.html#enumerate-enumera-los-elementos-de-una-lista.",
+    "href": "notebooks/08_listas.html#enumerate-enumera-los-elementos-de-una-lista.",
+    "title": "9  Estructura de datos: listas",
+    "section": "15.8 enumerate(): enumera los elementos de una lista.",
+    "text": "15.8 enumerate(): enumera los elementos de una lista.\nGenera tuplas del tipo (i, elemento).\n\nlist(enumerate(origen)) \n\nObserva que para el caso de enumerate() el resultado se debe convertir a un tipo que se pueda desplegar, en este caso se convierte a una lista usando list().",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_listas.html#zip-agrupa-los-elementos-de-dos-listas.",
+    "href": "notebooks/08_listas.html#zip-agrupa-los-elementos-de-dos-listas.",
+    "title": "9  Estructura de datos: listas",
+    "section": "15.9 zip(): agrupa los elementos de dos listas.",
+    "text": "15.9 zip(): agrupa los elementos de dos listas.\nGenera tuplas del tipo (gatos[i], origen[i]).\n\nlist(zip(gatos, origen)) \n\nObserva que para el caso de zip() el resultado se debe convertir a un tipo que se pueda desplegar, en este caso se convierte a una lista usando list().",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_listas.html#concatena-listas.",
+    "href": "notebooks/08_listas.html#concatena-listas.",
+    "title": "9  Estructura de datos: listas",
+    "section": "16.1 +: concatena listas.",
+    "text": "16.1 +: concatena listas.\n\ngatos + peso_maximo # Concatenación de dos listas",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_listas.html#replica-listas.",
+    "href": "notebooks/08_listas.html#replica-listas.",
+    "title": "9  Estructura de datos: listas",
+    "section": "16.2 *: replica listas.",
+    "text": "16.2 *: replica listas.\n\norigen * 2 # Duplicación de la lista",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_listas.html#in-revisa-si-un-elemento-está-en-la-lista.",
+    "href": "notebooks/08_listas.html#in-revisa-si-un-elemento-está-en-la-lista.",
+    "title": "9  Estructura de datos: listas",
+    "section": "16.3 in: revisa si un elemento está en la lista.",
+    "text": "16.3 in: revisa si un elemento está en la lista.\n\n'Siamés' in gatos # ¿Está el elemento `Siamés` en la lista gatos?",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_listas.html#agregar-elementos-a-la-lista.",
+    "href": "notebooks/08_listas.html#agregar-elementos-a-la-lista.",
+    "title": "9  Estructura de datos: listas",
+    "section": "17.1 Agregar elementos a la lista.",
+    "text": "17.1 Agregar elementos a la lista.\n\ngatos.append('Siberiano') # Se agrega un elemento al final de la lista\n\n\nprint(gatos)\n\n\ngatos.append('Persa') # Se agrega otro elemento al final de la lista, repetido\n\n\nprint(gatos)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_listas.html#eliminar-elementos-de-la-lista.",
+    "href": "notebooks/08_listas.html#eliminar-elementos-de-la-lista.",
+    "title": "9  Estructura de datos: listas",
+    "section": "17.2 Eliminar elementos de la lista.",
+    "text": "17.2 Eliminar elementos de la lista.\n\ngatos.remove('Persa') \n\n\nprint(gatos) \n\nObserva que solo se elimina el primer elemento Persa que encuentra.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_listas.html#insertar-elementos-en-la-lista.",
+    "href": "notebooks/08_listas.html#insertar-elementos-en-la-lista.",
+    "title": "9  Estructura de datos: listas",
+    "section": "17.3 Insertar elementos en la lista.",
+    "text": "17.3 Insertar elementos en la lista.\nPodemos insertar un elemento en un lugar específico de la lista:\n\ngatos.insert(0,'Persa')\n\n\nprint(gatos)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_listas.html#extraer-el-último-elemento-de-la-lista.",
+    "href": "notebooks/08_listas.html#extraer-el-último-elemento-de-la-lista.",
+    "title": "9  Estructura de datos: listas",
+    "section": "17.4 Extraer el último elemento de la lista.",
+    "text": "17.4 Extraer el último elemento de la lista.\nTambién es posible extraer el último elemento de la lista\n\ngatos.pop() \n\n\nprint(gatos)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_listas.html#ordenar-la-lista.",
+    "href": "notebooks/08_listas.html#ordenar-la-lista.",
+    "title": "9  Estructura de datos: listas",
+    "section": "17.5 Ordenar la lista.",
+    "text": "17.5 Ordenar la lista.\n\ngatos.sort() \n\n\nprint(gatos)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_listas.html#la-lista-con-los-elementos-en-reversa.",
+    "href": "notebooks/08_listas.html#la-lista-con-los-elementos-en-reversa.",
+    "title": "9  Estructura de datos: listas",
+    "section": "17.6 La lista con los elementos en reversa.",
+    "text": "17.6 La lista con los elementos en reversa.\n\ngatos.reverse() \n\n\nprint(gatos)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_listas.html#concatenar-dos-listas.",
+    "href": "notebooks/08_listas.html#concatenar-dos-listas.",
+    "title": "9  Estructura de datos: listas",
+    "section": "17.7 Concatenar dos listas.",
+    "text": "17.7 Concatenar dos listas.\n\npelo_corto.extend(pelo_largo) \n\n\nprint(pelo_corto)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_listas.html#contar-los-elementos-de-un-tipo.",
+    "href": "notebooks/08_listas.html#contar-los-elementos-de-un-tipo.",
+    "title": "9  Estructura de datos: listas",
+    "section": "17.8 Contar los elementos de un tipo.",
+    "text": "17.8 Contar los elementos de un tipo.\n\npelo_corto.count(False) # Contar los elementos que tengan el valor 'False'\n\n\npelo_corto.count(True) # Contar los elementos que tengan el valor 'True'",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_listas.html#ejemplo-2.",
+    "href": "notebooks/08_listas.html#ejemplo-2.",
+    "title": "9  Estructura de datos: listas",
+    "section": "17.9 Ejemplo 2.",
+    "text": "17.9 Ejemplo 2.\nConsidera la lista original peso_minimo = [2.3, 3.5, 5.4, 2.5]. El nombre fue eliminado en un ejemplo anterior. Vamos a recuperar la lista a través del nombre p_min que aún existe:",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_listas.html#copiando-con",
+    "href": "notebooks/08_listas.html#copiando-con",
+    "title": "9  Estructura de datos: listas",
+    "section": "18.1 Copiando con [:]",
+    "text": "18.1 Copiando con [:]\nPara crear una nueva lista copiando todos los elementos podemos hacer lo siguiente:\n\ngatitos = gatos[:]\n\n\nprint(type(gatitos))\nprint(id(gatitos))\nprint(gatitos)\n\nprint(type(gatos))\nprint(id(gatos))\nprint(gatos)\n\nObserva que el identificador en memoria de cada lista es diferente por lo que se trata de listas diferentes.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_listas.html#copiando-con-el-método-copy",
+    "href": "notebooks/08_listas.html#copiando-con-el-método-copy",
+    "title": "9  Estructura de datos: listas",
+    "section": "18.2 Copiando con el método copy()",
+    "text": "18.2 Copiando con el método copy()\nLa clase &lt;class 'list'&gt; contiene un método llamado copy() que efectivamente realiza una copia de la lista:\n\ngatitos = gatos.copy()\n\n\nprint(type(gatitos))\nprint(id(gatitos))\nprint(gatitos)\n\nprint(type(gatos))\nprint(id(gatos))\nprint(gatos)\n\nObserva que el identificador en memoria de cada lista es diferente por lo que se trata de listas diferentes.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_listas.html#copiando-con-el-constructor",
+    "href": "notebooks/08_listas.html#copiando-con-el-constructor",
+    "title": "9  Estructura de datos: listas",
+    "section": "18.3 Copiando con el constructor",
+    "text": "18.3 Copiando con el constructor\nLa función list() transforma un objeto iterable en una lista. La podemos usar para copiar una lista como sigue:\n\ngatitos = list(gatos)\n\n\nprint(type(gatitos))\nprint(id(gatitos))\nprint(gatitos)\n\nprint(type(gatos))\nprint(id(gatos))\nprint(gatos)\n\nObserva que el identificador en memoria de cada lista es diferente por lo que se trata de listas diferentes.\n\nNota.\nLo que sucede en este último caso, es que se ejecuta el constructor de la clase &lt;class 'list'&gt;, el cual recibe un objeto iterable (lista, tupla, diccionario, entre otros), copia todos los elementos de ese iterable y los pone en una lista que se almacena en un espacio en memoria diferente al iterable original. Esto lo realiza el constructor de la clase list y es una característica de la Programación Orientada a Objetos.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_listas.html#copiando-con-la-biblioteca-copy",
+    "href": "notebooks/08_listas.html#copiando-con-la-biblioteca-copy",
+    "title": "9  Estructura de datos: listas",
+    "section": "18.4 Copiando con la biblioteca copy",
+    "text": "18.4 Copiando con la biblioteca copy\nLa biblioteca copy de Python ofrece herramientas para copiado de objetos. Veamos un ejemplo:\n\n# Importamos la biblioteca copy\nimport copy\n\n# Usamos la función copy()\ngatitos = copy.copy(gatos)\n\n\nprint(type(gatitos))\nprint(id(gatitos))\nprint(gatitos)\n\nprint(type(gatos))\nprint(id(gatos))\nprint(gatos)\n\nObserva que el identificador en memoria de cada lista es diferente por lo que se trata de listas diferentes.\nMás información sobre el uso de esta biblioteca se puede ver en Shallow and deep copy operations.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructura de datos: listas</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/07_control_de_flujo.html",
+    "href": "notebooks/07_control_de_flujo.html",
+    "title": "8  Control de flujo.",
+    "section": "",
+    "text": "9 while\nObjetivo. Revisar las declaraciones para control de flujo de un código y mostrar ejemplos de su uso.\nEn Python existen declaraciones que permiten controlar el flujo de un programa para realizar acciones complejas. Entre estas declaraciones tenemos las siguientes:\nJunto con estas declaraciones generalmente se utilizan las siguientes operaciones lógicas cuyo resultado puede ser True o False:\nSe utiliza para repetir un conjunto de instrucciones mientras una expresión sea verdadera:\n# Inicializamos a en 0\na = 0 \n\n# Vemos las condiciones antes del ciclo while\nprint(\"Antes del while: a = {}, ¿a &lt; 5? = {}\".format(a, a &lt; 5)) \n\nwhile a &lt; 5: # Mientras 'a' sea menor que 5 realiza lo siguiente:\n    a += 1   # Incrementamos el valor de 'a' en 1\n    print(\"a = {}, ¿a &lt; 5? = {}\".format(a, a &lt; 5)) # Revisamos las condiciones\n    \nprint('Finaliza while')  # Instrucción fuera del bloque while\nObservaciones.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/07_control_de_flujo.html#ejemplo-1.",
+    "href": "notebooks/07_control_de_flujo.html#ejemplo-1.",
+    "title": "8  Control de flujo.",
+    "section": "9.1 Ejemplo 1.",
+    "text": "9.1 Ejemplo 1.\nImprimir el valor de una variable a que inicia en 0 y que se va incrementando en 1 hasta que se cumple que a &lt; 5.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/07_control_de_flujo.html#ejemplo-2.",
+    "href": "notebooks/07_control_de_flujo.html#ejemplo-2.",
+    "title": "8  Control de flujo.",
+    "section": "10.1 Ejemplo 2.",
+    "text": "10.1 Ejemplo 2.\nEn los siguientes ejemplos de while el código dentro del bloque está alineado correctamente.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/07_control_de_flujo.html#ejemplo-3.",
+    "href": "notebooks/07_control_de_flujo.html#ejemplo-3.",
+    "title": "8  Control de flujo.",
+    "section": "10.2 Ejemplo 3.",
+    "text": "10.2 Ejemplo 3.\nEn los siguientes ejemplos de while la líneas de código del bloque están incorrectamente alineadas, de tal manera que al ejecutarlos obtendrás un error como el siguiente:\nIndentationError: unexpected indent\ny te indicará el lugar donde la alineación no es correcta.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/07_control_de_flujo.html#función-range",
+    "href": "notebooks/07_control_de_flujo.html#función-range",
+    "title": "8  Control de flujo.",
+    "section": "11.1 Función range",
+    "text": "11.1 Función range\nUna secuencia que es muy usada en conjunto con el ciclo for es la que se genera con la función range(). Esta función genera una secuencia iterable con un inicio, un final y un salto:\nrange(start, stop, step)\nLa secuencia iniciará en start y terminará en stop-1 en pasos de step.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/07_control_de_flujo.html#ejemplo-4.",
+    "href": "notebooks/07_control_de_flujo.html#ejemplo-4.",
+    "title": "8  Control de flujo.",
+    "section": "11.2 Ejemplo 4.",
+    "text": "11.2 Ejemplo 4.\nUsando un ciclo for y secuencias range():\n\nImprime los números del 1 al 20 .\nImprime los número impares del 1 al 19.\nImprime la secuencia de números: 20, 19, ..., 1.\nImprime la secuencia de números: -5, -3, -1, 1, 3,",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/07_control_de_flujo.html#ejemplo-5.",
+    "href": "notebooks/07_control_de_flujo.html#ejemplo-5.",
+    "title": "8  Control de flujo.",
+    "section": "12.1 Ejemplo 5.",
+    "text": "12.1 Ejemplo 5.\nImplementa un código que imprima los número impares en el rango (-N, N), donde N es un valor entero positivo que es ingresado por el usuario.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/07_control_de_flujo.html#ejemplo-6.",
+    "href": "notebooks/07_control_de_flujo.html#ejemplo-6.",
+    "title": "8  Control de flujo.",
+    "section": "13.1 Ejemplo 6.",
+    "text": "13.1 Ejemplo 6.\n\nConsidera el siguiente código:\nN = 5\nfor n in range(-N, N+1, 1):\n    print(f\"\\nChecando el número {n} ...\")\n    np = abs(n)\n    if n % 2:\n        print(f\"{n} es impar\")\n        for i in range(-np, np+1):\n            print(f\"{i}\", end=\",\")\n    else:\n        print(f\"{n} es par\")\n        for i in range(-np, np+1):\n            print(f\"{i}\", end=\",\")\n    print(\"\\nTerminando el chequeo\")\n En el código anterior se tienen los siguientes bloques de código:\n\nNivel cero sangría:\n\nN = 5\nfor n in range(-N, N+1, 1): \n\nNivel uno: 4 espacios, bloque del ciclo for\n\n    print(f\"\\nChecando el número {n} ...\")\n    np = abs(n)\n    if n % 2:\n        ...\n    else:\n        ...\n    print(\"\\nTerminando el chequeo\")\n\nNivel dos: 8 espacios, bloque del condicional if ... else ...\n\n        print(f\"{n} es impar\")\n        for i in range(-np, np+1):\n        ...\n        print(f\"{n} es par\")\n        for i in range(-np, np+1):\n        ...\n\nNivel tres: 12 espacios, bloques de dos ciclos for\n\n            print(f\"{i}\", end=\",\")\n            ...\n            print(f\"{i}\", end=\",\")\n En la siguiente celda escribimos el código anterior respetando todos los espacios y sangrías. Observa el resultado y trata de explicar lo que hace.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/07_control_de_flujo.html#break",
+    "href": "notebooks/07_control_de_flujo.html#break",
+    "title": "8  Control de flujo.",
+    "section": "15.1 break",
+    "text": "15.1 break\n\n# Recorremos una cadena\nfor letra in \"Hola mundo Pythonico\":\n    print(f\"letra: {letra}\")\n    if letra == \"u\":   # Si la letra es la 'u'\n        break          # entonces se termina el ciclo\n\nSe puede agregar un else alineado con el for. El código dentro del else será ejecutado cuando no se alcanzó a ejecutar la condición break.\nEn el ejemplo que sigue, prueba primero con la letra u y luego con r.\n\nc = input(\"Caracter a buscar: \")\n\nfor letra in \"Hola mundo Pythonico\":\n    print(f\"letra: {letra}\")\n    if letra == c:\n        print(f\"Letra '{c}' encontrada\")\n        break\nelse: # Se ejecuta cuando el ciclo termina sin llegar al break\n    print(f\"No encontré la letra: '{c}'\")",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/07_control_de_flujo.html#continue",
+    "href": "notebooks/07_control_de_flujo.html#continue",
+    "title": "8  Control de flujo.",
+    "section": "15.2 continue",
+    "text": "15.2 continue\nEsta declaración indica al código que no termine las instrucciones que siguen en el ciclo y que se salte a la siguiente iteración.\nPor ejemplo, podemos imprimir cuándo un número es par como sigue:\n\nfor n in range(0, 11):\n    if n % 2:  # Cuando n % 2 es diferente de cero, el número es impar\n        continue # no se hace nada, termina esta iteración y se pasa al siguiente número\n    print(f\"Número par {n}\") # Se ejecuta solo cuando el número es par",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/07_control_de_flujo.html#pass",
+    "href": "notebooks/07_control_de_flujo.html#pass",
+    "title": "8  Control de flujo.",
+    "section": "15.3 pass",
+    "text": "15.3 pass\nEsta declaración no hace nada. Se usa principalmente para cuestiones de desarrollo de código a un nivel abstracto. Por ejemplo si aún no tenemos claro que se va a realizar dentro de un ciclo o de una función, podemos simplemente poner esta declaración y dejar la implemetación para más adelante:\n\ni = 0\n\n# Aún no sabemos el código que debemos implementar\nwhile i &lt; 10:\n    print(\"Aquí va el código del while\")\n    i = 11 # Para que solo se haga una vez el ciclo\n    pass\n\n\n# La siguiente función debe calcular la secuencia de Fibonacci\ndef fib(n):\n    print(\"Aquí va el código de la función: n = {}\".format(n))\n    pass\n\n# En este punto del programa requiero el uso de la función fib(n):\nfib(100000) # \n\n\nNota.\nObserva que en el último ejemplo estamos usando la declaración de una función usando def; más ejemplos sobre funciones los puedes encontrar en 14_funciones.ipynb.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/06_input_archivos.html",
+    "href": "notebooks/06_input_archivos.html",
+    "title": "6  Entrada estándar.",
+    "section": "",
+    "text": "6.1 Entrada estándar con input()\nObjetivo. Revisar el uso de la función input() para la entrada estándar.\nEn Python es posible que el usuario proporcione información a un código durante su ejecución, para que, con base en esta información, realice una acción.\nPara ello se usa la función input(). Por ejemplo:\n# Cuando se ejecuta esta celda, se espera a que el usuario \n# teclee la información y luego &lt;enter&gt;\ninput(\"Escribe tu nombre:\") \n\nEscribe tu nombre: Lola\n\n\n'Lola'\nObservaciones.\nLa información que se teclea se puede almacenar en una variable:\nnumero = input('Teclea un número entero:')\n\nTeclea un número entero: 13\nPosteriormente, se puede ver el contenido y el tipo de la variable numero:\nprint(numero, type(numero)) \n\n13 &lt;class 'str'&gt;\nObserva que el tipo de la variable es str. Entonces, si queremos usar el valor de un número para realizar un cálculo, lo debemos convertir al tipo numérico requerido. Por ejemplo:\nnumero = int(input('Teclea un número entero:'))\n\nTeclea un número entero: 13\n# Checamos el contenido y el tipo\nprint(numero, type(numero)) \n\n13 &lt;class 'int'&gt;\nObserva que ahora el tipo corresponde a un entero debido a que hicimos la conversión (casting) con la función int().\nTambién podemos convertir a tiplo flotante:\nnumero_f = float(input('Teclea un número flotante:'))\n\nTeclea un número flotante: 3.1416\nprint(numero_f, type(numero_f)) \n\n3.1416 &lt;class 'float'&gt;\n.\nPrimer intento.\nbase = input('Escribe la base del triángulo:')\naltura = input('Escribe la altura del triángulo:')\n\nArea = base * altura / 2\n\nEscribe la base del triángulo: 5\nEscribe la altura del triángulo: 10\n\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[10], line 4\n      1 base = input('Escribe la base del triángulo:')\n      2 altura = input('Escribe la altura del triángulo:')\n----&gt; 4 Area = base * altura / 2\n\nTypeError: can't multiply sequence by non-int of type 'str'\nComo puedes observar, hay un error de tipo TypeError: dado que la función input() transforma lo que lee en str, entonces no es posible multiplicar dos cadenas.\nPor lo tanto debemos realizar una conversión antes de usar la información obtenida por input():\nSegundo intento.\nbase = int(input('Escribe la base del triángulo:'))\naltura = int(input('Escribe la altura del triángulo:'))\narea = base * altura / 2\n\nprint(f\"El área del triángulo de base {base} y altura {altura} es {area}\")\n\nEscribe la base del triángulo: 5\nEscribe la altura del triángulo: 10\n\n\nEl área del triángulo de base 5 y altura 10 es 25.0\nObserva que aunque los datos de la base y la altura se transforman a tipo int el resultado del cálculo del área es de tipo flotante.\nSin embargo, se obtiene un error de tipo ValueError, como el que se muestra a continnuación, cuando se dan datos de tipo flotante por ejemplo base = 3.5 y altura = 2.3.\nEntonces, una implementación más robusta sería la siguiente:\nTercer intento.\nbase = float(input('Escribe la base del triángulo:'))\naltura = float(input('Escribe la altura del triángulo:'))\narea = base * altura / 2\n\nprint(f\"El área del triángulo de base {base} y altura {altura} es {area}\")\n\nEscribe la base del triángulo: 3.5\nEscribe la altura del triángulo: 2.5\n\n\nEl área del triángulo de base 3.5 y altura 2.5 es 4.375\nCuarto intento.\nEn esta versión solo cambiaremos la manera en que imprimimos la salida usando la función str.format():\nbase = float(input('Escribe la base del triángulo:'))\naltura = float(input('Escribe la altura del triángulo:'))\narea = base * altura / 2\n\nprint(\"El área del triángulo de base {b:^10.3f} y altura {a:^10.3f} es {area:^10.3f}\".format(b = base, a = altura, area = area))\n\nEscribe la base del triángulo: 3.5\nEscribe la altura del triángulo: 2.5\n\n\nEl área del triángulo de base   3.500    y altura   2.500    es   4.375",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Entrada estándar.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/06_input_archivos.html#entrada-estándar-con-input",
+    "href": "notebooks/06_input_archivos.html#entrada-estándar-con-input",
+    "title": "6  Entrada estándar.",
+    "section": "",
+    "text": "La cadena entre los paréntesis proporciona información para saber lo que se debe teclear. Esta cadena se conoce como prompt.\nEsta cadena se imprime cuando se ejecuta la función input() y luego se espera a que teclees alguna información.\nCuando se teclea &lt;enter&gt; la función input() lee la información proporcionada.\ninput() lee toda la información y la almacena una cadena (str).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n6.1.1 Ejemplo.\nCalcular el área de un triángulo cuyos datos de la base y la altura son proporcionados por el usuario.\n\n\n\n\n\n\n\n\n\n---------------------------------------------------------------------------\nValueError                                Traceback (most recent call last)\nCell In[13], line 1\n----&gt; 1 base = int(input('Escribe la base del triángulo:'))\n      2 altura = int(input('Escribe la altura del triángulo:'))\n      3 area = base * altura / 2\n\nValueError: invalid literal for int() with base 10: '3.5'",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Entrada estándar.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/06_input_archivos.html#gestión-de-archivos",
+    "href": "notebooks/06_input_archivos.html#gestión-de-archivos",
+    "title": "6  Entrada estándar.",
+    "section": "6.2 Gestión de archivos",
+    "text": "6.2 Gestión de archivos\nLa función incorporada para gestionar archivos es open(). Esta función toma dos parámetros: el nombre del archivo y el modo. Existen cuatro diferentes modos:\n\n\"r\" - Read - Default value. Abre el archivo para lectura. Se produce un error si el archvio no existe.\n\"a\" - Append - Abre el archivo para agregar información. Si el archivo no existe, lo crea.\n\"w\" - Write - Abre el archivo para escritura. Si el archivo no existe, lo crea. Si el archivo existe, lo sobreescribe.\n\"x\" - Create - Crea el archivo, regresa un error si el archivo existe.\n\nAdicionalmente se puede especificar si el archivo se abre en modo texto o binario:\n\n\"t\" - Text - Valor por omisión.\n\"b\" - Binary\n\n\n6.2.1 Abrir un archivo para lectura.\n\nf = open('gatos.txt')\n\n\nprint(f)\nprint(type(f))\n\n\n\n6.2.2 Leer una línea del archivo.\n\nf.readline()\n\n\nf.readline()\n\n\nl1 = f.readline()\nprint(l1)\n\n\nf.readline()\n\n\nf.readline()\n\n\n\n6.2.3 Cerrar un archivo.\nSiempre que se abra un archivo, ya sea para lectura o escritura, es importante cerrarlo cuando ya no se esté usando.\nPara cerrar un archivo se usa el método close():\n\nf.close()\n\n\n\n6.2.4 Leer todas las líneas del archivo.\n\nf = open('gatos.txt')\nlines = f.readlines()\nprint(lines)\nf.close()\n\n\n\n6.2.5 Abrir un archivo para escritura.\n\n# Primero abrimos un archivo y leemos su información\nf1 = open('gatos.txt','r')\nlineas = f1.readlines()\nprint(lineas)\nf1.close()\n\n\n# Ahora abrimos otro archivo para escribir información\nf2 = open('gatitos.txt','w')\nf2.writelines(lineas)\n\n\nf2.close()\n\nRevisa que se haya generado el archivo gatitos.txt en tu directorio de trabajo.\n\n\n6.2.6 Abrir un archivo para agregar información.\n\n# Abrimos un archivo para insertar información.\nf3 = open('gatitos.txt', 'a')\n\n# Esta es la información que se va a agregar\nlinea_nueva = \"\\n{:&gt;10s}{:&gt;10.1f}\".format(\"Eléctrico\", 3.7)\n\n# Se escribe la información.\nf3.write(linea_nueva)\n\nf3.close()\n\nRevisa el nuevo contenido del archivo gatitos.txt en tu directorio de trabajo. La nueva información debió escribirse al final del archivo.\n\n# Abrimos un archivo para insertar información.\nfile = open('gatitos.txt', \"r+\")\n\n# Leemos el contenido del archivo\ncontenido = file.readlines()\n\n# Calculamos la mitad del archivo (aprox), debe ser un entero\nindice = len(contenido) // 2\n\n# Generamos nueva información\nlinea_nueva = \"{:&gt;10s}{:&gt;10.1f}\\n\".format(\"Birmano\", 3.2)\n\n# Agregamos la información a la mitad del archivo\ncontenido.insert(indice, linea_nueva)\n\n# Regresamos al inicio del archivo\nfile.seek(0)\n\n# Escribimos todas las líneas del archivo.\nfile.writelines(contenido)\n\nfile.close()\n\nRevisa el nuevo contenido del archivo gatitos.txt en tu directorio de trabajo. La nueva información debió escribirse a la mitad del archivo aproximadamente.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Entrada estándar.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/07_archivos.html",
+    "href": "notebooks/07_archivos.html",
+    "title": "7  Gestión de archivos.",
+    "section": "",
+    "text": "7.1 La función open().\nObjetivo. Revisar la forma básica de gestionar archivos.\nLa función incorporada para gestionar archivos es open(). Esta función toma dos parámetros: el nombre del archivo y el modo. Existen cuatro diferentes modos:\nAdicionalmente se puede especificar si el archivo se abre en modo texto o binario:",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Gestión de archivos.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/07_archivos.html#la-función-open.",
+    "href": "notebooks/07_archivos.html#la-función-open.",
+    "title": "7  Gestión de archivos.",
+    "section": "",
+    "text": "\"r\" - Read - Default value. Abre el archivo para lectura. Se produce un error si el archvio no existe.\n\"a\" - Append - Abre el archivo para agregar información. Si el archivo no existe, lo crea.\n\"w\" - Write - Abre el archivo para escritura. Si el archivo no existe, lo crea. Si el archivo existe, lo sobreescribe.\n\"x\" - Create - Crea el archivo, regresa un error si el archivo existe.\n\n\n\n\"t\" - Text - Valor por omisión.\n\"b\" - Binary",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Gestión de archivos.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/07_archivos.html#abrir-un-archivo-para-lectura.",
+    "href": "notebooks/07_archivos.html#abrir-un-archivo-para-lectura.",
+    "title": "7  Gestión de archivos.",
+    "section": "7.2 Abrir un archivo para lectura.",
+    "text": "7.2 Abrir un archivo para lectura.\n\nf = open('gatos.txt')\n\n\nprint(f)\nprint(type(f))\n\n&lt;_io.TextIOWrapper name='gatos.txt' mode='r' encoding='cp1252'&gt;\n&lt;class '_io.TextIOWrapper'&gt;\n\n\nEn este ejemplo f es un descriptor del archivo que se acaba de abrir y contiene información como el nombre del archivo, el modo en que se abrió y la codificación. El tipo es _io.TextIOWrapper.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Gestión de archivos.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/07_archivos.html#leer-una-línea-del-archivo.",
+    "href": "notebooks/07_archivos.html#leer-una-línea-del-archivo.",
+    "title": "7  Gestión de archivos.",
+    "section": "7.3 Leer una línea del archivo.",
+    "text": "7.3 Leer una línea del archivo.\nPara obtener información del archivo existen varios métodos, particularmente en readline() que lee una línea del archivo y avanza a la siguiente.\n\nf.readline()\n\n'     Persa       2.3\\n'\n\n\n\nf.readline()\n\n'    Sphynx       3.5\\n'\n\n\n\nl1 = f.readline() # se puede almacenar lo que se lee en una variable\nprint(l1)\n\n   Ragdoll       5.4\n\n\n\n\nf.readline()\n\n'    SiamÃ©s       2.5'\n\n\n\nf.readline()\n\n''",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Gestión de archivos.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/07_archivos.html#cerrar-un-archivo.",
+    "href": "notebooks/07_archivos.html#cerrar-un-archivo.",
+    "title": "7  Gestión de archivos.",
+    "section": "7.4 Cerrar un archivo.",
+    "text": "7.4 Cerrar un archivo.\nSiempre que se abra un archivo, ya sea para lectura o escritura, es importante cerrarlo cuando ya no se esté usando.\nPara cerrar un archivo se usa el método close():\n\nf.close()",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Gestión de archivos.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/07_archivos.html#leer-todas-las-líneas-del-archivo.",
+    "href": "notebooks/07_archivos.html#leer-todas-las-líneas-del-archivo.",
+    "title": "7  Gestión de archivos.",
+    "section": "7.5 Leer todas las líneas del archivo.",
+    "text": "7.5 Leer todas las líneas del archivo.\nTambién es posible leer todo el contenido del archivo de un solo paso con la función readlines().\n\nf = open('gatos.txt')\nlines = f.readlines()\nprint(lines)\nf.close()\n\n['     Persa       2.3\\n', '    Sphynx       3.5\\n', '   Ragdoll       5.4\\n', '    SiamÃ©s       2.5']",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Gestión de archivos.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/07_archivos.html#abrir-un-archivo-para-escritura.",
+    "href": "notebooks/07_archivos.html#abrir-un-archivo-para-escritura.",
+    "title": "7  Gestión de archivos.",
+    "section": "7.6 Abrir un archivo para escritura.",
+    "text": "7.6 Abrir un archivo para escritura.\nSi queremos abrir un archivo para escritura usamos el modo w.\nPrimero vamos a abrir un archivo y leer su información:\n\nf1 = open('gatos.txt','r')\nlineas = f1.readlines()\nprint(lineas)\nf1.close()\n\n['     Persa       2.3\\n', '    Sphynx       3.5\\n', '   Ragdoll       5.4\\n', '    SiamÃ©s       2.5']\n\n\nAhora abrimos un segundo archivo para escribir información en él:\n\nf2 = open('gatitos.txt','w')\nf2.writelines(lineas)\nf2.close()\n\nRevisa que se haya generado el archivo gatitos.txt en tu directorio de trabajo y checa que tenga el mismo contenido que el archivo gatos.txt. Con el siguiente código abrimos el archivo creado y vemos su contenido:\n\nf2 = open('gatitos.txt','r')\nprint(f2.readlines())\nf2.close()\n\n['     Persa       2.3\\n', '    Sphynx       3.5\\n', '   Ragdoll       5.4\\n', '    SiamÃ©s       2.5']",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Gestión de archivos.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/07_archivos.html#abrir-un-archivo-para-agregar-información-al-final.",
+    "href": "notebooks/07_archivos.html#abrir-un-archivo-para-agregar-información-al-final.",
+    "title": "7  Gestión de archivos.",
+    "section": "7.7 Abrir un archivo para agregar información al final.",
+    "text": "7.7 Abrir un archivo para agregar información al final.\nSi ya existe un archivo, es posible agregarle información como sigue:\n\n# Abrimos un archivo para insertar información.\nf3 = open('gatitos.txt', 'a')\n\n# Esta es la información que se va a agregar\nlinea_nueva = \"\\n{:&gt;10s}{:&gt;10.1f}\\n\".format(\"Eléctrico\", 3.7)\n\n# Se escribe la información.\nn = f3.write(linea_nueva)\n\n# Cerramos el archivo\nf3.close()\n\nRevisa el nuevo contenido del archivo gatitos.txt en tu directorio de trabajo. La nueva información debió escribirse al final del archivo. De igual manera podemos verificar el contenido con el siguiente código:\n\nf3 = open('gatitos.txt','r')\nprint(f3.readlines())\nf3.close()\n\n['     Persa       2.3\\n', '    Sphynx       3.5\\n', '   Ragdoll       5.4\\n', '    SiamÃ©s       2.5\\n', ' Eléctrico       3.7\\n']\n\n\nObserva que el archivo ya contiene la nueva información.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Gestión de archivos.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/07_archivos.html#abrir-un-archivo-para-insertar-información-en-cualquier-lugar.",
+    "href": "notebooks/07_archivos.html#abrir-un-archivo-para-insertar-información-en-cualquier-lugar.",
+    "title": "7  Gestión de archivos.",
+    "section": "7.8 Abrir un archivo para insertar información en cualquier lugar.",
+    "text": "7.8 Abrir un archivo para insertar información en cualquier lugar.\n\n# Abrimos el archivo en modo 'r+'\nf4 = open('gatitos.txt', \"r+\")\n\n# Leemos el contenido del archivo\ncontenido = f4.readlines()\n\n# Calculamos la mitad del archivo (aprox), debe ser un entero\nindice = len(contenido) // 2\n\n# Generamos nueva información\nlinea_nueva = \"{:&gt;10s}{:&gt;10.1f}\\n\".format(\"Birmano\", 3.2)\n\n# Agregamos la información a la mitad del archivo\ncontenido.insert(indice, linea_nueva)\n\n# Regresamos al inicio del archivo\nf4.seek(0)\n\n# Escribimos todas las líneas del archivo.\nf4.writelines(contenido)\n\nf4.close()\n\nRevisa el nuevo contenido del archivo gatitos.txt en tu directorio de trabajo. La nueva información debió escribirse a la mitad del archivo aproximadamente.\nUsamos el siguiente código para checar el archivo con la nueva información:\n\nf4 = open('gatitos.txt','r')\nprint(f4.readlines())\nf4.close()\n\n['     Persa       2.3\\n', '    Sphynx       3.5\\n', '   Birmano       3.2\\n', '   Birmano       3.2\\n', '   Ragdoll       5.4\\n', '    SiamÃ©s       2.5\\n', ' Eléctrico       3.7\\n']",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Gestión de archivos.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/07_archivos.html#gestores-de-contexto.",
+    "href": "notebooks/07_archivos.html#gestores-de-contexto.",
+    "title": "7  Gestión de archivos.",
+    "section": "7.9 Gestores de contexto.",
+    "text": "7.9 Gestores de contexto.\nLos gestores de contexto en Python son una manera de gestionar recursos de forma eficiente y segura.\nSe utilizan con la palabra clave with, que garantiza que ciertos recursos se inicialicen y liberen correctamente, incluso si ocurre una excepción.\nEstos recursos pueden incluir archivos, conexiones de red, bloqueos de threads, etc.\nPor ejemplo:\n\nwith open('contexto_ejemplo', 'w') as archivo_abierto:\n    archivo_abierto.write('En este ejemplo, todo se realiza con un gestor de contexto.')\n\nLo que realiza la operación anterior es:\n\nAbre el archivo contexto_ejemplo.\nEscribe algo en el archivo,\nCierra el archivo. Si ocurre algún error mientras se escribe en el archivo, entonces se intenta cerrar el archivo.\n\nEl código es equivalente a:\narchivo_abierto = open('contexto_ejemplo', 'w')\ntry:\n    archivo_abierto.write('En este ... contexto!')\nfinally:\n    archivo_abierto.close()\n\n\n\n\n\n\nTip\n\n\n\nEsta forma de abrir un archivo, manipular su información y cerrarlo, usando un gestor de contexto (with), es la más recomendada.\n\n\nEs posible implemetar nuestros propios gestores de contexto. Para ello se requiere un conocimiento más profundo de Programación Orientada a Objetos.\n\n\n\n\n\n\nNotaNota.\n\n\n\nEn el ejemplo anterior se usó la construcción try: … finally: que se usa para gestionar errores. Esto se revisará en detalle en la ?sec-errores_excepciones.\n\n\nEl propósito de un gestor de contexto es asegurarse de que las acciones de “entrada” y “salida” de un contexto se manejen adecuadamente. El contexto se refiere a cualquier bloque de código que necesita realizar alguna configuración al inicio (como abrir un archivo o adquirir un recurso) y luego limpiar al final (como cerrar el archivo o liberar el recurso).\nVentajas de los gestores de contexto.\n\nCódigo más limpio: No tienes que preocuparte por cerrar recursos manualmente.\nManejo seguro de excepciones: Incluso si ocurre una excepción dentro del bloque with, el recurso se libera correctamente.\nLegibilidad: El código es más claro en cuanto a cuándo comienza y termina el uso de un recurso.\n\n¿Cómo funcionan?\nLos gestores de contexto implementan los métodos especiales __enter__ y __exit__: - __enter__(): Este método es llamado al inicio del bloque with. Se utiliza para establecer el recurso o la configuración inicial. - __exit__(exc_type, exc_value, traceback): Este método es llamado al final del bloque with, independientemente de si se produjo una excepción. Se utiliza para liberar o limpiar el recurso.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Gestión de archivos.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_control_de_flujo.html",
+    "href": "notebooks/08_control_de_flujo.html",
+    "title": "8  Control de flujo.",
+    "section": "",
+    "text": "9 while\nObjetivo. Revisar las declaraciones para control de flujo de un código y mostrar ejemplos de su uso.\nEn Python existen declaraciones que permiten controlar el flujo de un programa para realizar acciones complejas. Entre estas declaraciones tenemos las siguientes:\nJunto con estas declaraciones generalmente se utilizan las siguientes operaciones lógicas cuyo resultado puede ser True o False:\nSe utiliza para repetir un conjunto de instrucciones mientras una expresión sea verdadera:\n# Inicializamos a en 0\na = 0 \n\n# Vemos las condiciones antes del ciclo while\nprint(\"Antes del while: a = {}, ¿a &lt; 5? = {}\".format(a, a &lt; 5)) \n\nwhile a &lt; 5: # Mientras 'a' sea menor que 5 realiza lo siguiente:\n    a += 1   # Incrementamos el valor de 'a' en 1\n    print(\"a = {}, ¿a &lt; 5? = {}\".format(a, a &lt; 5)) # Revisamos las condiciones\n    \nprint('Finaliza while')  # Instrucción fuera del bloque while\nObservaciones.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_control_de_flujo.html#ejemplo-1.",
+    "href": "notebooks/08_control_de_flujo.html#ejemplo-1.",
+    "title": "8  Control de flujo.",
+    "section": "9.1 Ejemplo 1.",
+    "text": "9.1 Ejemplo 1.\nImprimir el valor de una variable a que inicia en 0 y que se va incrementando en 1 hasta que se cumple que a &lt; 5.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_control_de_flujo.html#ejemplo-2.",
+    "href": "notebooks/08_control_de_flujo.html#ejemplo-2.",
+    "title": "8  Control de flujo.",
+    "section": "10.1 Ejemplo 2.",
+    "text": "10.1 Ejemplo 2.\nEn los siguientes ejemplos de while el código dentro del bloque está alineado correctamente.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_control_de_flujo.html#ejemplo-3.",
+    "href": "notebooks/08_control_de_flujo.html#ejemplo-3.",
+    "title": "8  Control de flujo.",
+    "section": "10.2 Ejemplo 3.",
+    "text": "10.2 Ejemplo 3.\nEn los siguientes ejemplos de while la líneas de código del bloque están incorrectamente alineadas, de tal manera que al ejecutarlos obtendrás un error como el siguiente:\nIndentationError: unexpected indent\ny te indicará el lugar donde la alineación no es correcta.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_control_de_flujo.html#función-range",
+    "href": "notebooks/08_control_de_flujo.html#función-range",
+    "title": "8  Control de flujo.",
+    "section": "11.1 Función range",
+    "text": "11.1 Función range\nUna secuencia que es muy usada en conjunto con el ciclo for es la que se genera con la función range(). Esta función genera una secuencia iterable con un inicio, un final y un salto:\nrange(start, stop, step)\nLa secuencia iniciará en start y terminará en stop-1 en pasos de step.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_control_de_flujo.html#ejemplo-4.",
+    "href": "notebooks/08_control_de_flujo.html#ejemplo-4.",
+    "title": "8  Control de flujo.",
+    "section": "11.2 Ejemplo 4.",
+    "text": "11.2 Ejemplo 4.\nUsando un ciclo for y secuencias range():\n\nImprime los números del 1 al 20 .\nImprime los número impares del 1 al 19.\nImprime la secuencia de números: 20, 19, ..., 1.\nImprime la secuencia de números: -5, -3, -1, 1, 3,",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_control_de_flujo.html#ejemplo-5.",
+    "href": "notebooks/08_control_de_flujo.html#ejemplo-5.",
+    "title": "8  Control de flujo.",
+    "section": "12.1 Ejemplo 5.",
+    "text": "12.1 Ejemplo 5.\nImplementa un código que imprima los número impares en el rango (-N, N), donde N es un valor entero positivo que es ingresado por el usuario.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_control_de_flujo.html#ejemplo-6.",
+    "href": "notebooks/08_control_de_flujo.html#ejemplo-6.",
+    "title": "8  Control de flujo.",
+    "section": "13.1 Ejemplo 6.",
+    "text": "13.1 Ejemplo 6.\n\nConsidera el siguiente código:\nN = 5\nfor n in range(-N, N+1, 1):\n    print(f\"\\nChecando el número {n} ...\")\n    np = abs(n)\n    if n % 2:\n        print(f\"{n} es impar\")\n        for i in range(-np, np+1):\n            print(f\"{i}\", end=\",\")\n    else:\n        print(f\"{n} es par\")\n        for i in range(-np, np+1):\n            print(f\"{i}\", end=\",\")\n    print(\"\\nTerminando el chequeo\")\n En el código anterior se tienen los siguientes bloques de código:\n\nNivel cero sangría:\n\nN = 5\nfor n in range(-N, N+1, 1): \n\nNivel uno: 4 espacios, bloque del ciclo for\n\n    print(f\"\\nChecando el número {n} ...\")\n    np = abs(n)\n    if n % 2:\n        ...\n    else:\n        ...\n    print(\"\\nTerminando el chequeo\")\n\nNivel dos: 8 espacios, bloque del condicional if ... else ...\n\n        print(f\"{n} es impar\")\n        for i in range(-np, np+1):\n        ...\n        print(f\"{n} es par\")\n        for i in range(-np, np+1):\n        ...\n\nNivel tres: 12 espacios, bloques de dos ciclos for\n\n            print(f\"{i}\", end=\",\")\n            ...\n            print(f\"{i}\", end=\",\")\n En la siguiente celda escribimos el código anterior respetando todos los espacios y sangrías. Observa el resultado y trata de explicar lo que hace.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_control_de_flujo.html#break",
+    "href": "notebooks/08_control_de_flujo.html#break",
+    "title": "8  Control de flujo.",
+    "section": "15.1 break",
+    "text": "15.1 break\n\n# Recorremos una cadena\nfor letra in \"Hola mundo Pythonico\":\n    print(f\"letra: {letra}\")\n    if letra == \"u\":   # Si la letra es la 'u'\n        break          # entonces se termina el ciclo\n\nSe puede agregar un else alineado con el for. El código dentro del else será ejecutado cuando no se alcanzó a ejecutar la condición break.\nEn el ejemplo que sigue, prueba primero con la letra u y luego con r.\n\nc = input(\"Caracter a buscar: \")\n\nfor letra in \"Hola mundo Pythonico\":\n    print(f\"letra: {letra}\")\n    if letra == c:\n        print(f\"Letra '{c}' encontrada\")\n        break\nelse: # Se ejecuta cuando el ciclo termina sin llegar al break\n    print(f\"No encontré la letra: '{c}'\")",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_control_de_flujo.html#continue",
+    "href": "notebooks/08_control_de_flujo.html#continue",
+    "title": "8  Control de flujo.",
+    "section": "15.2 continue",
+    "text": "15.2 continue\nEsta declaración indica al código que no termine las instrucciones que siguen en el ciclo y que se salte a la siguiente iteración.\nPor ejemplo, podemos imprimir cuándo un número es par como sigue:\n\nfor n in range(0, 11):\n    if n % 2:  # Cuando n % 2 es diferente de cero, el número es impar\n        continue # no se hace nada, termina esta iteración y se pasa al siguiente número\n    print(f\"Número par {n}\") # Se ejecuta solo cuando el número es par",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/08_control_de_flujo.html#pass",
+    "href": "notebooks/08_control_de_flujo.html#pass",
+    "title": "8  Control de flujo.",
+    "section": "15.3 pass",
+    "text": "15.3 pass\nEsta declaración no hace nada. Se usa principalmente para cuestiones de desarrollo de código a un nivel abstracto. Por ejemplo si aún no tenemos claro que se va a realizar dentro de un ciclo o de una función, podemos simplemente poner esta declaración y dejar la implemetación para más adelante:\n\ni = 0\n\n# Aún no sabemos el código que debemos implementar\nwhile i &lt; 10:\n    print(\"Aquí va el código del while\")\n    i = 11 # Para que solo se haga una vez el ciclo\n    pass\n\n\n# La siguiente función debe calcular la secuencia de Fibonacci\ndef fib(n):\n    print(\"Aquí va el código de la función: n = {}\".format(n))\n    pass\n\n# En este punto del programa requiero el uso de la función fib(n):\nfib(100000) # \n\n\nNota.\nObserva que en el último ejemplo estamos usando la declaración de una función usando def; más ejemplos sobre funciones los puedes encontrar en 14_funciones.ipynb.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Control de flujo.</span>"
     ]
   }
 ]

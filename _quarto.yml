@@ -28,7 +28,13 @@ book:
     - notebooks/01_variables_objetos.ipynb
     - notebooks/02_tipos_basicos.ipynb
     - notebooks/03_operadores.ipynb
-    - notebooks/16_excepciones.ipynb
+    - notebooks/04_expresiones_declaraciones.ipynb
+    - notebooks/05_cadenas.ipynb
+    - notebooks/06_input.ipynb
+    - notebooks/07_archivos.ipynb
+    - notebooks/08_control_de_flujo.ipynb
+    - notebooks/09_listas.ipynb
+    - notebooks/17_excepciones.ipynb
     - notebooks/23_import.ipynb
 #    - glossary.qmd
 #    - 5-appendices/A-instalacion.ipynb
