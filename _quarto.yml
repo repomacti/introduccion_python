@@ -5,8 +5,8 @@ crossref:
   custom:
     - key: exm
       kind: float
-      reference-prefix: Ejemplo
-      caption-prefix: Ejemplo
+      reference-prefix: Ejem.
+      caption-prefix: Ejem. 
 #  sec-prefix: sección    # (default is "Section")
 #  fig-prefix: figure     # (default is "Figure")
 #  tbl-prefix: tableau    # (default is "Table")
@@ -45,6 +45,7 @@ book:
     - part: part1.qmd
       chapters:
         - lecciones/leccion_01.ipynb
+        - lecciones/leccion_02.ipynb
   appendices:
     - notebooks/01_variables_objetos.ipynb
     - notebooks/02_tipos_basicos.ipynb
