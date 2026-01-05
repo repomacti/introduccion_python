@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>16&nbsp; Gestión de errores y excepciones. – Notas de Python</title>
+<title>Apéndice Q — Gestión de errores y excepciones. – Notas de Python</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../notebooks/23_import.html" rel="next">
-<link href="../notebooks/15_funciones.html" rel="prev">
+<link href="../notebooks/18_comprehensions.html" rel="next">
+<link href="../notebooks/16_lambda_expressions.html" rel="prev">
 <link href="../figuras/python1.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -286,7 +286,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/17_excepciones.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Gestión de errores y excepciones.</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/01_variables_objetos.html">Apéndices</a></li><li class="breadcrumb-item"><a href="../notebooks/17_excepciones.html"><span class="chapter-number">Q</span>&nbsp; <span class="chapter-title">Gestión de errores y excepciones.</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -352,108 +352,172 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Python básico</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../part1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Primera parte ...</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lecciones/leccion_01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción a Python</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Apéndices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/01_variables_objetos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Variables y objetos.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Variables y objetos.</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/02_tipos_basicos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tipos de datos básicos.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Tipos de datos básicos.</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/03_operadores.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operadores.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Operadores.</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/04_expresiones_declaraciones.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Expresiones y declaraciones.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Expresiones y declaraciones.</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/05_cadenas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Cadenas.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Cadenas.</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/06_input.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Entrada estándar.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Entrada estándar.</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/07_archivos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Gestión de archivos.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos.</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/08_control_de_flujo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Control de flujo.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">H</span>&nbsp; <span class="chapter-title">Control de flujo.</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/09_listas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estructura de datos: listas.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Listas.</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/10_tuplas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Estructura de datos: tuplas.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Tuplas.</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/11_conjuntos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Estructura de datos: conjuntos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Conjuntos.</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/12_diccionarios.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Estructura de datos: diccionarios.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Diccionarios.</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/13_ds_casting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Conversión entre estructuras de datos.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">Conversión entre estructuras de datos.</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/14_ds_traversing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Recorriendo las estructuras de datos.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">N</span>&nbsp; <span class="chapter-title">Recorriendo las estructuras de datos.</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/15_funciones.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Funciones: introducción.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">O</span>&nbsp; <span class="chapter-title">Funciones: introducción.</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/16_lambda_expressions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">P</span>&nbsp; <span class="chapter-title">Funciones lambda.</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/17_excepciones.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Gestión de errores y excepciones.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">Q</span>&nbsp; <span class="chapter-title">Gestión de errores y excepciones.</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/18_comprehensions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">R</span>&nbsp; <span class="chapter-title">Estructuras de datos concisas.</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/19_iterables_map_filter_reduce.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">S</span>&nbsp; <span class="chapter-title">Iterables, Mapeo, Filtros y Reducciones.</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/20_decoradores.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">T</span>&nbsp; <span class="chapter-title">Decoradores.</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/21_iteradores_generadores.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">U</span>&nbsp; <span class="chapter-title">Iteradores y Generadores.</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/22_funciones_y_docstring.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">V</span>&nbsp; <span class="chapter-title">Funciones: nivel avanzado.</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/23_import.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Importando bibliotecas.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">W</span>&nbsp; <span class="chapter-title">Importando bibliotecas.</span></span></a>
   </div>
 </li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -464,18 +528,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#tipos-de-errores" id="toc-tipos-de-errores" class="nav-link active" data-scroll-target="#tipos-de-errores"><span class="header-section-number">17</span> Tipos de errores:</a>
+  <li><a href="#tipos-de-errores" id="toc-tipos-de-errores" class="nav-link active" data-scroll-target="#tipos-de-errores"><span class="header-section-number">Q.1</span> Tipos de errores:</a>
   <ul class="collapse">
-  <li><a href="#errores-de-sintaxis." id="toc-errores-de-sintaxis." class="nav-link" data-scroll-target="#errores-de-sintaxis."><span class="header-section-number">17.1</span> Errores de sintaxis.</a></li>
-  <li><a href="#errores-provocados-por-excepciones." id="toc-errores-provocados-por-excepciones." class="nav-link" data-scroll-target="#errores-provocados-por-excepciones."><span class="header-section-number">17.2</span> Errores provocados por excepciones.</a></li>
+  <li><a href="#errores-de-sintaxis." id="toc-errores-de-sintaxis." class="nav-link" data-scroll-target="#errores-de-sintaxis."><span class="header-section-number">Q.1.1</span> Errores de sintaxis.</a></li>
+  <li><a href="#errores-provocados-por-excepciones." id="toc-errores-provocados-por-excepciones." class="nav-link" data-scroll-target="#errores-provocados-por-excepciones."><span class="header-section-number">Q.1.2</span> Errores provocados por excepciones.</a></li>
   </ul></li>
-  <li><a href="#gestión-de-excepciones-con-try-except-finally" id="toc-gestión-de-excepciones-con-try-except-finally" class="nav-link" data-scroll-target="#gestión-de-excepciones-con-try-except-finally"><span class="header-section-number">18</span> Gestión de excepciones con: <code>try</code>, <code>except</code>, <code>finally</code></a>
+  <li><a href="#gestión-de-excepciones-con-try-except-finally" id="toc-gestión-de-excepciones-con-try-except-finally" class="nav-link" data-scroll-target="#gestión-de-excepciones-con-try-except-finally"><span class="header-section-number">Q.2</span> Gestión de excepciones con: <code>try</code>, <code>except</code>, <code>finally</code></a>
   <ul class="collapse">
-  <li><a href="#gestión-general-de-las-excepciones" id="toc-gestión-general-de-las-excepciones" class="nav-link" data-scroll-target="#gestión-general-de-las-excepciones"><span class="header-section-number">18.0.1</span> Gestión general de las excepciones</a></li>
-  <li><a href="#gestión-de-las-excepciones-por-su-tipo." id="toc-gestión-de-las-excepciones-por-su-tipo." class="nav-link" data-scroll-target="#gestión-de-las-excepciones-por-su-tipo."><span class="header-section-number">18.0.2</span> Gestión de las excepciones por su tipo.</a></li>
-  <li><a href="#información-del-error" id="toc-información-del-error" class="nav-link" data-scroll-target="#información-del-error"><span class="header-section-number">18.0.3</span> Información del error</a></li>
-  <li><a href="#finally" id="toc-finally" class="nav-link" data-scroll-target="#finally"><span class="header-section-number">18.0.4</span> <code>finally</code></a></li>
-  <li><a href="#lanzar-excepciones-controladas." id="toc-lanzar-excepciones-controladas." class="nav-link" data-scroll-target="#lanzar-excepciones-controladas."><span class="header-section-number">18.0.5</span> Lanzar excepciones controladas.</a></li>
+  <li><a href="#gestión-general-de-las-excepciones" id="toc-gestión-general-de-las-excepciones" class="nav-link" data-scroll-target="#gestión-general-de-las-excepciones"><span class="header-section-number">Q.2.1</span> Gestión general de las excepciones</a></li>
+  <li><a href="#gestión-de-las-excepciones-por-su-tipo." id="toc-gestión-de-las-excepciones-por-su-tipo." class="nav-link" data-scroll-target="#gestión-de-las-excepciones-por-su-tipo."><span class="header-section-number">Q.2.2</span> Gestión de las excepciones por su tipo.</a></li>
+  <li><a href="#información-del-error" id="toc-información-del-error" class="nav-link" data-scroll-target="#información-del-error"><span class="header-section-number">Q.2.3</span> Información del error</a></li>
+  <li><a href="#finally" id="toc-finally" class="nav-link" data-scroll-target="#finally"><span class="header-section-number">Q.2.4</span> <code>finally</code></a></li>
+  <li><a href="#lanzar-excepciones-controladas." id="toc-lanzar-excepciones-controladas." class="nav-link" data-scroll-target="#lanzar-excepciones-controladas."><span class="header-section-number">Q.2.5</span> Lanzar excepciones controladas.</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -484,9 +548,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/01_variables_objetos.html">Apéndices</a></li><li class="breadcrumb-item"><a href="../notebooks/17_excepciones.html"><span class="chapter-number">Q</span>&nbsp; <span class="chapter-title">Gestión de errores y excepciones.</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-errores_excepciones" class="quarto-section-identifier"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Gestión de errores y excepciones.</span></span></h1>
+<h1 class="title"><span id="sec-errores_excepciones" class="quarto-section-identifier">Apéndice Q — Gestión de errores y excepciones.</span></h1>
 </div>
 
 
@@ -504,59 +568,110 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p><strong>Objetivo.</strong> Revisar la forma de gestionar errores y excepciones</p>
-<section id="tipos-de-errores" class="level1" data-number="17">
-<h1 data-number="17"><span class="header-section-number">17</span> Tipos de errores:</h1>
+<section id="tipos-de-errores" class="level2" data-number="Q.1">
+<h2 data-number="Q.1" class="anchored" data-anchor-id="tipos-de-errores"><span class="header-section-number">Q.1</span> Tipos de errores:</h2>
 <p>En Python existen dos tipos de errores por los cuales un programa se detiene y no continua con su ejecución normal.</p>
-<section id="errores-de-sintaxis." class="level2" data-number="17.1">
-<h2 data-number="17.1" class="anchored" data-anchor-id="errores-de-sintaxis."><span class="header-section-number">17.1</span> Errores de sintaxis.</h2>
-<p>Ocurren cuando no se escriben correctamente las expresiones y declaraciones como lo especifica la interfaz de Python.</p>
+<section id="errores-de-sintaxis." class="level3" data-number="Q.1.1">
+<h3 data-number="Q.1.1" class="anchored" data-anchor-id="errores-de-sintaxis."><span class="header-section-number">Q.1.1</span> Errores de sintaxis.</h3>
+<p>Ocurren cuando no se escriben correctamente las expresiones y declaraciones como lo especifica la sintaxis de Python.</p>
 <p>Por ejemplo:</p>
-<div id="cell-2" class="cell">
+<div id="cell-2" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Escribimos a propósito 'printf' que es un nombre incorrecto.</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>printf(<span class="st">'Hola mundo!'</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[2]</span><span class="ansi-green-fg">, line 2</span>
+<span class="ansi-green-fg">      1</span> <span style="font-style:italic;color:rgb(95,135,135)"># Escribimos a propósito 'printf' que es un nombre incorrecto.</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">2</span> <span class="ansi-yellow-bg">printf</span>(<span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">Hola mundo!</span><span class="ansi-yellow-fg">'</span>)
+
+<span class="ansi-red-fg">NameError</span>: name 'printf' is not defined</pre>
+</div>
+</div>
 </div>
 <ul>
 <li>Observa que el tipo de error se imprime cuando éste ocurre.</li>
 <li>En el caso anterior el error fue de tipo <code>NameError</code>, por lo que hay que revisar que todo esté correctamente escrito.</li>
 </ul>
 </section>
-<section id="errores-provocados-por-excepciones." class="level2" data-number="17.2">
-<h2 data-number="17.2" class="anchored" data-anchor-id="errores-provocados-por-excepciones."><span class="header-section-number">17.2</span> Errores provocados por excepciones.</h2>
+<section id="errores-provocados-por-excepciones." class="level3" data-number="Q.1.2">
+<h3 data-number="Q.1.2" class="anchored" data-anchor-id="errores-provocados-por-excepciones."><span class="header-section-number">Q.1.2</span> Errores provocados por excepciones.</h3>
 <p>Son errores lógicos que detienen la ejecución de un programa aún cuando la sintaxis sea la correcta.</p>
 <p>Por ejemplo:</p>
-<div id="cell-5" class="cell">
+<div id="cell-5" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> raizCuadrada(numero):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    numero <span class="op">=</span> <span class="bu">float</span>(numero)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"La raíz cuadrada del número </span><span class="sc">{}</span><span class="st"> es </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(numero, numero <span class="op">**</span> <span class="fl">0.5</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-6" class="cell">
+<div id="cell-6" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejemplo correcto que se ejecuta sin problemas.</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="dv">2</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>La raíz cuadrada del número 2.0 es 1.4142135623730951</code></pre>
 </div>
-<div id="cell-7" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejemplo correcto, se calcula la raíz cuadrada de -1.</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># El resultado es un número complejo. En este caso Python</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># se encarga de realizar las conversiones necesarias.</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-8" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejemplo incorrecto. No es posible calcular la raíz cuadrada</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># de un número complejo, es una operación no definida.</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="dv">1</span><span class="op">+</span><span class="ot">1j</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-7" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejemplo correcto, se calcula la raíz cuadrada de -1.</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># El resultado es un número complejo. En este caso Python</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># se encarga de realizar las conversiones necesarias.</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>La raíz cuadrada del número -1.0 es (6.123233995736766e-17+1j)</code></pre>
+</div>
+</div>
+<div id="cell-8" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejemplo incorrecto. No es posible calcular la raíz cuadrada</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># de un número complejo, es una operación no definida.</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="dv">1</span><span class="op">+</span><span class="ot">1j</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[6]</span><span class="ansi-green-fg">, line 3</span>
+<span class="ansi-green-fg">      1</span> <span style="font-style:italic;color:rgb(95,135,135)"># Ejemplo incorrecto. No es posible calcular la raíz cuadrada</span>
+<span class="ansi-green-fg">      2</span> <span style="font-style:italic;color:rgb(95,135,135)"># de un número complejo, es una operación no definida.</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">3</span> <span class="ansi-yellow-bg">raizCuadrada</span><span class="ansi-yellow-bg">(</span><span class="ansi-green-fg ansi-yellow-bg">1</span><span class="ansi-yellow-bg">+</span><span class="ansi-green-fg ansi-yellow-bg">1</span><span class="ansi-yellow-bg">j</span><span class="ansi-yellow-bg">)</span>
+
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[3]</span><span class="ansi-green-fg">, line 2</span>, in <span class="ansi-cyan-fg">raizCuadrada</span><span class="ansi-blue-fg">(numero)</span>
+<span class="ansi-green-fg">      1</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span><span style="color:rgb(188,188,188)"> </span><span class="ansi-blue-fg">raizCuadrada</span>(numero):
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">2</span>     numero = <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">float</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">numero</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">      3</span>     <span style="color:rgb(0,135,0)">print</span>(<span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">La raíz cuadrada del número </span><span style="font-weight:bold;color:rgb(175,95,135)">{}</span><span class="ansi-yellow-fg"> es </span><span style="font-weight:bold;color:rgb(175,95,135)">{}</span><span class="ansi-yellow-fg">"</span>.format(numero, numero ** <span class="ansi-green-fg">0.5</span>))
+
+<span class="ansi-red-fg">TypeError</span>: float() argument must be a string or a real number, not 'complex'</pre>
+</div>
+</div>
 </div>
 <p>En el ejemplo anterior se produce un error de tipo <code>TypeError</code>, es decir hay incompatibilidad con los tipos de datos que se están manipulando.</p>
-<div id="cell-10" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejemplo incorrecto. No se puede calcular la raíz cuadrada</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># de una cadena.</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="st">"hola"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-10" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejemplo incorrecto. No se puede calcular la raíz cuadrada</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># de una cadena.</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="st">"hola"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[7]</span><span class="ansi-green-fg">, line 3</span>
+<span class="ansi-green-fg">      1</span> <span style="font-style:italic;color:rgb(95,135,135)"># Ejemplo incorrecto. No se puede calcular la raíz cuadrada</span>
+<span class="ansi-green-fg">      2</span> <span style="font-style:italic;color:rgb(95,135,135)"># de una cadena.</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">3</span> <span class="ansi-yellow-bg">raizCuadrada</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-fg ansi-yellow-bg">hola</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-bg">)</span>
+
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[3]</span><span class="ansi-green-fg">, line 2</span>, in <span class="ansi-cyan-fg">raizCuadrada</span><span class="ansi-blue-fg">(numero)</span>
+<span class="ansi-green-fg">      1</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span><span style="color:rgb(188,188,188)"> </span><span class="ansi-blue-fg">raizCuadrada</span>(numero):
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">2</span>     numero = <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">float</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">numero</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">      3</span>     <span style="color:rgb(0,135,0)">print</span>(<span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">La raíz cuadrada del número </span><span style="font-weight:bold;color:rgb(175,95,135)">{}</span><span class="ansi-yellow-fg"> es </span><span style="font-weight:bold;color:rgb(175,95,135)">{}</span><span class="ansi-yellow-fg">"</span>.format(numero, numero ** <span class="ansi-green-fg">0.5</span>))
+
+<span class="ansi-red-fg">ValueError</span>: could not convert string to float: 'hola'</pre>
+</div>
+</div>
 </div>
 <p>En el ejemplo anterior se produce un error de tipo <code>ValueError</code>, es decir es decir hay un problema con el contenido del objeto.</p>
 </section>
 </section>
-<section id="gestión-de-excepciones-con-try-except-finally" class="level1" data-number="18">
-<h1 data-number="18"><span class="header-section-number">18</span> Gestión de excepciones con: <code>try</code>, <code>except</code>, <code>finally</code></h1>
+<section id="gestión-de-excepciones-con-try-except-finally" class="level2" data-number="Q.2">
+<h2 data-number="Q.2" class="anchored" data-anchor-id="gestión-de-excepciones-con-try-except-finally"><span class="header-section-number">Q.2</span> Gestión de excepciones con: <code>try</code>, <code>except</code>, <code>finally</code></h2>
 <p>Los errores que se pueden manejar son aquellos errores lógicos como los presentados anteriormente en donde es posible “predecir” el tipo de error que puede ocurrir de acuerdo con la implementación que estamos realizando.</p>
-<p>Todas las excepciones en Python son objetos de una clase que se derivan de la clase principal <a href="https://docs.python.org/3/library/exceptions.html#BaseException">BaseExcepcion</a>. Más detalles se pueden consultar <a href="http://docs.python.org/3/library/exceptions.html">aquí</a>.</p>
+<p>Todas las excepciones en Python son objetos de una clase que se derivan de la clase principal <a href="https://docs.python.org/3/library/exceptions.html#BaseException" target="_blank" rel="noopener">BaseExcepcion</a>. Más detalles se pueden consultar <a href="http://docs.python.org/3/library/exceptions.html" target="_blank" rel="noopener">aquí</a>.</p>
 <p>Las excepciones se pueden capturar y manejar adecuadamente. Para ello se tienen las siguientes herramientas:</p>
 <ul>
 <li><code>try</code></li>
@@ -567,208 +682,121 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Cuando se identifica una sección de código susceptible de errores, ésta puede ser delimitada con la expresión <code>try</code>. Cualquier excepción que ocurra dentro de esta sección de código podrá ser capturada y gestionada.</p>
 <p>La expresión <code>except</code> es la encargada de gestionar las excepciones que se capturan. Si se utiliza sin mayor información, ésta ejecutará el código que contiene para todas las excepciones que ocurran.</p>
 <p>En el ejemplo de la función <code>raizCuadrada()</code> podemos manejar las excepciones como sigue:</p>
-<div id="cell-13" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> raizCuadrada(numero):</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Función que calcula la raíz cuadrada de un número.</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">    ----------</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">    numero: int o float</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">        Valor al que se le desea calcular la raíz cuadrada.</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Intenta realizar el cálculo que está dentro de try</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>        numero <span class="op">=</span> <span class="bu">float</span>(numero)</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"La raíz cuadrada del número </span><span class="sc">{</span>numero<span class="sc">}</span><span class="ss"> es </span><span class="sc">{</span>numero<span class="op">**</span><span class="fl">0.5</span><span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Si ocurre una excepción se captura aquí</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>        <span class="co"># No se hace nada con la excepción (por el momento)</span></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Gracias por usar Python!.'</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-13" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> raizCuadrada(numero):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Función que calcula la raíz cuadrada de un número.</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">    ----------</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">    numero: int o float</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">        Valor al que se le desea calcular la raíz cuadrada.</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Intenta realizar el cálculo que está dentro de try</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>        numero <span class="op">=</span> <span class="bu">float</span>(numero)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"La raíz cuadrada del número </span><span class="sc">{</span>numero<span class="sc">}</span><span class="ss"> es </span><span class="sc">{</span>numero<span class="op">**</span><span class="fl">0.5</span><span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Si ocurre una excepción se captura aquí</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>        <span class="co"># No se hace nada con la excepción (por el momento)</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Gracias por usar Python!."</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Usando la nueva versión de la función <code>raizCuadrada()</code> intentemos ejecutarla con los siguientes ejemplos:</p>
-<div id="cell-15" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="dv">1</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-15" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="dv">1</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>La raíz cuadrada del número 1.0 es 1.0
+Gracias por usar Python!.</code></pre>
 </div>
-<div id="cell-16" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-17" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="dv">1</span><span class="op">+</span><span class="ot">1j</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-16" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>La raíz cuadrada del número -1.0 es (6.123233995736766e-17+1j)
+Gracias por usar Python!.</code></pre>
 </div>
-<div id="cell-18" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="st">"hola"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-17" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="dv">1</span><span class="op">+</span><span class="ot">1j</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Gracias por usar Python!.</code></pre>
+</div>
+</div>
+<div id="cell-18" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="st">"hola"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Gracias por usar Python!.</code></pre>
+</div>
 </div>
 <p>Observa que aún con argumentos erróneos no se genera ningún mensaje de error. Esto se debe a que la cláusula <code>except</code> captura todas las posibles excepciones, pero no hace nada.</p>
-<section id="gestión-general-de-las-excepciones" class="level3" data-number="18.0.1">
-<h3 data-number="18.0.1" class="anchored" data-anchor-id="gestión-general-de-las-excepciones"><span class="header-section-number">18.0.1</span> Gestión general de las excepciones</h3>
+<section id="gestión-general-de-las-excepciones" class="level3" data-number="Q.2.1">
+<h3 data-number="Q.2.1" class="anchored" data-anchor-id="gestión-general-de-las-excepciones"><span class="header-section-number">Q.2.1</span> Gestión general de las excepciones</h3>
 <p>Ya que sabemos como capturar las excepciones, veamos cómo pueden ser tratadas para dar retroalimentación al usuario.</p>
-<div id="cell-21" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> raizCuadrada(numero):</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Función que calcula la raíz cuadrada de un número.</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">    ----------</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">    numero: int o float</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">        Valor al que se le desea calcular la raíz cuadrada.</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Variable Booleana para manejar las excepciones.</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    ocurre_error <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Intenta realizar el cálculo que está dentro de try    </span></span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>        numero <span class="op">=</span> <span class="bu">float</span>(numero)</span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"La raíz cuadrada del número </span><span class="sc">{}</span><span class="st"> es </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(numero, numero <span class="op">**</span> <span class="fl">0.5</span>))</span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Si ocurre una excepción se captura en el except</span></span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>        ocurre_error <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Cuando ocurre un error se hace lo siguiente:</span></span>
-<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ocurre_error:</span>
-<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Cuidado, hubo una falla en el programa, no se pudo realizar el cálculo"</span>)</span>
-<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Gracias por usar Python!.'</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-21" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> raizCuadrada(numero):</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Función que calcula la raíz cuadrada de un número.</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co">    ----------</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co">    numero: int o float</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="co">        Valor al que se le desea calcular la raíz cuadrada.</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Variable Booleana para manejar las excepciones.</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    ocurre_error <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Intenta realizar el cálculo que está dentro de try    </span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>        numero <span class="op">=</span> <span class="bu">float</span>(numero)</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"La raíz cuadrada del número </span><span class="sc">{}</span><span class="st"> es </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(numero, numero <span class="op">**</span> <span class="fl">0.5</span>))</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Si ocurre una excepción se captura en el except</span></span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>        ocurre_error <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Cuando ocurre un error se hace lo siguiente:</span></span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ocurre_error:</span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Cuidado, hubo una falla en el programa, no se pudo realizar el cálculo"</span>)</span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Gracias por usar Python!."</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-22" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="dv">1</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-22" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="dv">1</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>La raíz cuadrada del número 1.0 es 1.0
+Gracias por usar Python!.</code></pre>
 </div>
-<div id="cell-23" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-24" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="dv">1</span><span class="op">+</span><span class="ot">1j</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-23" class="cell" data-execution_count="15">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>La raíz cuadrada del número -1.0 es (6.123233995736766e-17+1j)
+Gracias por usar Python!.</code></pre>
 </div>
-<div id="cell-25" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="st">"hola"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-24" class="cell" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="dv">1</span><span class="op">+</span><span class="ot">1j</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Cuidado, hubo una falla en el programa, no se pudo realizar el cálculo</code></pre>
+</div>
+</div>
+<div id="cell-25" class="cell" data-execution_count="17">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="st">"hola"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Cuidado, hubo una falla en el programa, no se pudo realizar el cálculo</code></pre>
+</div>
 </div>
 <p>Observa que ahora se avisa al usuario que hubo un error al ejecutar la función por lo que el cálculo no se realizó. Sin embargo hace falta más información.</p>
 </section>
-<section id="gestión-de-las-excepciones-por-su-tipo." class="level3" data-number="18.0.2">
-<h3 data-number="18.0.2" class="anchored" data-anchor-id="gestión-de-las-excepciones-por-su-tipo."><span class="header-section-number">18.0.2</span> Gestión de las excepciones por su tipo.</h3>
+<section id="gestión-de-las-excepciones-por-su-tipo." class="level3" data-number="Q.2.2">
+<h3 data-number="Q.2.2" class="anchored" data-anchor-id="gestión-de-las-excepciones-por-su-tipo."><span class="header-section-number">Q.2.2</span> Gestión de las excepciones por su tipo.</h3>
 <p>La expresión <code>except</code> puede ser utilizada de forma tal que ejecute código dependiendo del tipo de error que ocurra. En este caso sabemos que pueden ocurrir dos tipos de errores: <code>TypeError</code> y <code>ValueError</code>. Entonces la nueva versión de la función <code>raizCuadrada()</code> es como sigue:</p>
-<div id="cell-28" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> raizCuadrada(numero):</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Función que calcula la raíz cuadrada de un número.</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co">    ----------</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co">    numero: int o float</span></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co">        Valor al que se le desea calcular la raíz cuadrada.</span></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Variable Booleana para manejar las excepciones.</span></span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>    ocurre_error <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Intenta realizar el cálculo que está dentro de try</span></span>
-<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
-<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>        numero <span class="op">=</span> <span class="bu">float</span>(numero)</span>
-<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"La raíz cuadrada del número </span><span class="sc">{}</span><span class="st"> es </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(numero, numero <span class="op">**</span> <span class="fl">0.5</span>))</span>
-<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># En esta sección se trata la excepción de tipo TypeError</span></span>
-<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">TypeError</span>:</span>
-<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>        ocurre_error <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Ocurrió un error de tipo: TypeError. </span><span class="ch">\n</span><span class="st"> Verifique que los tipos sean compatibles."</span>)</span>
-<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># En esta sección se trata la excepción de tipo ValueError</span></span>
-<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">ValueError</span>:</span>
-<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>        ocurre_error <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Ocurrió un error de tipo ValueError. </span><span class="ch">\n</span><span class="st"> Verifique el contenido de los argumentos."</span>)</span>
-<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># En esta sección se tratan todas las otras posible excepciones</span></span>
-<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
-<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a>        ocurre_error <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Ocurrió algo misterioso"</span>)</span>
-<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Cuando ocurre un error se hace lo siguiente:</span></span>
-<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ocurre_error:</span>
-<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Hubo una falla en el programa, no se pudo realizar el cálculo"</span>)</span>
-<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Gracias por usar Python!.'</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="cell-29" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="dv">1</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="cell-30" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="cell-31" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="dv">1</span><span class="op">+</span><span class="ot">4j</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="cell-32" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="st">"hola"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Observa que ya se da mayor información sobre el tipo de error que ocurrió y el usuario puede saber que hacer para corregir los errores.</p>
-<p>Todos los tipos de errores que existen en Python se pueden consultar en <a href="https://docs.python.org/3/library/exceptions.html#concrete-exceptions"> Concrete exceptions </a>.</p>
-</section>
-<section id="información-del-error" class="level3" data-number="18.0.3">
-<h3 data-number="18.0.3" class="anchored" data-anchor-id="información-del-error"><span class="header-section-number">18.0.3</span> Información del error</h3>
-<p>Se puede capturar toda la información del error para pasarla al usuario. Esto se hace como sigue:</p>
-<div id="cell-35" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> raizCuadrada(numero): </span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Función que calcula la raíz cuadrada de un número.</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters</span></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co">    ----------</span></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co">    numero: int o float</span></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="co">        Valor al que se le desea calcular la raíz cuadrada.</span></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Variable Booleana para manejar las excepciones.</span></span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    ocurre_error <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Intenta realizar el cálculo que está dentro de try</span></span>
-<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
-<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>        numero <span class="op">=</span> <span class="bu">float</span>(numero)</span>
-<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"La raíz cuadrada del número </span><span class="sc">{}</span><span class="st"> es </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(numero, numero <span class="op">**</span> <span class="fl">0.5</span>))</span>
-<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># En esta sección se trata la excepción de tipo TypeError y se obtienen los detalles  </span></span>
-<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">TypeError</span> <span class="im">as</span> info:</span>
-<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>        ocurre_error <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Ocurrió un error (TypeError):</span><span class="ch">\n</span><span class="st">"</span>, info)</span>
-<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># En esta sección se trata la excepción de tipo ValueError y se obtienen los detalles  </span></span>
-<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">ValueError</span> <span class="im">as</span> info:</span>
-<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>        ocurre_error <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Ocurrió un error (ValueError):</span><span class="ch">\n</span><span class="st">"</span>, info)</span>
-<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># En esta sección se tratan todas las otras posible excepciones</span></span>
-<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
-<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a>        ocurre_error <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Ocurrió algo misterioso"</span>)</span>
-<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Cuando ocurre un error se hace lo siguiente:</span></span>
-<span id="cb22-35"><a href="#cb22-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ocurre_error:</span>
-<span id="cb22-36"><a href="#cb22-36" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Hubo una falla en el programa, no se pudo realizar el cálculo"</span>)</span>
-<span id="cb22-37"><a href="#cb22-37" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb22-38"><a href="#cb22-38" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Gracias por usar Python!.'</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="cell-36" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="dv">1</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="cell-37" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="cell-38" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="dv">1</span><span class="op">+</span><span class="ot">4j</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="cell-39" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="st">"hola"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Observa que ahora además de conocer el tipo de error, también se muestra toda la información del error para que el usuario tome las acciones pertinentes.</p>
-</section>
-<section id="finally" class="level3" data-number="18.0.4">
-<h3 data-number="18.0.4" class="anchored" data-anchor-id="finally"><span class="header-section-number">18.0.4</span> <code>finally</code></h3>
-<p>Esta sección se ejecuta siempre, sin importar si hubo una excepción o no.</p>
-<div id="cell-42" class="cell">
+<div id="cell-28" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> raizCuadrada(numero):</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Función que calcula la raíz cuadrada de un número.</span></span>
@@ -776,7 +804,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters</span></span>
 <span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="co">    ----------</span></span>
 <span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="co">    numero: int o float</span></span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="co">    Valor al que se le desea calcular la raíz cuadrada.</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="co">        Valor al que se le desea calcular la raíz cuadrada.</span></span>
 <span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
 <span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
 <span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Variable Booleana para manejar las excepciones.</span></span>
@@ -787,92 +815,309 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>        numero <span class="op">=</span> <span class="bu">float</span>(numero)</span>
 <span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"La raíz cuadrada del número </span><span class="sc">{}</span><span class="st"> es </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(numero, numero <span class="op">**</span> <span class="fl">0.5</span>))</span>
 <span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># En esta sección se trata la excepción de tipo TypeError y se obtienen los detalles  </span></span>
-<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">TypeError</span> <span class="im">as</span> info:</span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># En esta sección se trata la excepción de tipo TypeError</span></span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">TypeError</span>:</span>
 <span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>        ocurre_error <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Ocurrió un error (TypeError):</span><span class="ch">\n</span><span class="st">"</span>, info)</span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Ocurrió un error de tipo: TypeError. </span><span class="ch">\n</span><span class="st"> Verifique que los tipos sean compatibles."</span>)</span>
 <span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># En esta sección se trata la excepción de tipo ValueError y se obtienen los detalles  </span></span>
-<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">ValueError</span> <span class="im">as</span> info:</span>
+<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># En esta sección se trata la excepción de tipo ValueError</span></span>
+<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">ValueError</span>:</span>
 <span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a>        ocurre_error <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb27-27"><a href="#cb27-27" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Ocurrió un error (ValueError):</span><span class="ch">\n</span><span class="st">"</span>, info)</span>
+<span id="cb27-27"><a href="#cb27-27" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Ocurrió un error de tipo ValueError. </span><span class="ch">\n</span><span class="st"> Verifique el contenido de los argumentos."</span>)</span>
 <span id="cb27-28"><a href="#cb27-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-29"><a href="#cb27-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># En esta sección se tratan todas las otras posible excepciones</span></span>
 <span id="cb27-30"><a href="#cb27-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
 <span id="cb27-31"><a href="#cb27-31" aria-hidden="true" tabindex="-1"></a>        ocurre_error <span class="op">=</span> <span class="va">True</span></span>
 <span id="cb27-32"><a href="#cb27-32" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Ocurrió algo misterioso"</span>)</span>
-<span id="cb27-33"><a href="#cb27-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-33"><a href="#cb27-33" aria-hidden="true" tabindex="-1"></a>        </span>
 <span id="cb27-34"><a href="#cb27-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Cuando ocurre un error se hace lo siguiente:</span></span>
-<span id="cb27-35"><a href="#cb27-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">finally</span>:</span>
-<span id="cb27-36"><a href="#cb27-36" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> ocurre_error:</span>
-<span id="cb27-37"><a href="#cb27-37" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Hubo una falla en el programa, no se pudo realizar el cálculo"</span>)</span>
-<span id="cb27-38"><a href="#cb27-38" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb27-39"><a href="#cb27-39" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">'Gracias por usar Python!.'</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb27-35"><a href="#cb27-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ocurre_error:</span>
+<span id="cb27-36"><a href="#cb27-36" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Hubo una falla en el programa, no se pudo realizar el cálculo"</span>)</span>
+<span id="cb27-37"><a href="#cb27-37" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb27-38"><a href="#cb27-38" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Gracias por usar Python!."</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-43" class="cell">
+<div id="cell-29" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="dv">1</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>La raíz cuadrada del número 1.0 es 1.0
+Gracias por usar Python!.</code></pre>
 </div>
-<div id="cell-44" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-45" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="dv">1</span><span class="op">+</span><span class="ot">4j</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-30" class="cell" data-execution_count="21">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>La raíz cuadrada del número -1.0 es (6.123233995736766e-17+1j)
+Gracias por usar Python!.</code></pre>
 </div>
-<div id="cell-46" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="st">"hola"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-31" class="cell" data-execution_count="22">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="dv">1</span><span class="op">+</span><span class="ot">4j</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Ocurrió un error de tipo: TypeError. 
+ Verifique que los tipos sean compatibles.
+Hubo una falla en el programa, no se pudo realizar el cálculo</code></pre>
+</div>
+</div>
+<div id="cell-32" class="cell" data-execution_count="23">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="st">"hola"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Ocurrió un error de tipo ValueError. 
+ Verifique el contenido de los argumentos.
+Hubo una falla en el programa, no se pudo realizar el cálculo</code></pre>
+</div>
+</div>
+<p>Observa que ya se da mayor información sobre el tipo de error que ocurrió y el usuario puede saber que hacer para corregir los errores.</p>
+<p>Todos los tipos de errores que existen en Python se pueden consultar en <a href="https://docs.python.org/3/library/exceptions.html#concrete-exceptions" target="_blank" rel="noopener"> Concrete exceptions </a>.</p>
+</section>
+<section id="información-del-error" class="level3" data-number="Q.2.3">
+<h3 data-number="Q.2.3" class="anchored" data-anchor-id="información-del-error"><span class="header-section-number">Q.2.3</span> Información del error</h3>
+<p>Se puede capturar toda la información del error para pasarla al usuario. Esto se hace como sigue:</p>
+<div id="cell-35" class="cell" data-execution_count="24">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> raizCuadrada(numero): </span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Función que calcula la raíz cuadrada de un número.</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="co">    ----------</span></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="co">    numero: int o float</span></span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a><span class="co">        Valor al que se le desea calcular la raíz cuadrada.</span></span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Variable Booleana para manejar las excepciones.</span></span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>    ocurre_error <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Intenta realizar el cálculo que está dentro de try</span></span>
+<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a>        numero <span class="op">=</span> <span class="bu">float</span>(numero)</span>
+<span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"La raíz cuadrada del número </span><span class="sc">{}</span><span class="st"> es </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(numero, numero <span class="op">**</span> <span class="fl">0.5</span>))</span>
+<span id="cb36-18"><a href="#cb36-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-19"><a href="#cb36-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># En esta sección se trata la excepción de tipo TypeError y se obtienen los detalles  </span></span>
+<span id="cb36-20"><a href="#cb36-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">TypeError</span> <span class="im">as</span> info:</span>
+<span id="cb36-21"><a href="#cb36-21" aria-hidden="true" tabindex="-1"></a>        ocurre_error <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb36-22"><a href="#cb36-22" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Ocurrió un error (TypeError):</span><span class="ch">\n</span><span class="st">"</span>, info)</span>
+<span id="cb36-23"><a href="#cb36-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-24"><a href="#cb36-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># En esta sección se trata la excepción de tipo ValueError y se obtienen los detalles  </span></span>
+<span id="cb36-25"><a href="#cb36-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">ValueError</span> <span class="im">as</span> info:</span>
+<span id="cb36-26"><a href="#cb36-26" aria-hidden="true" tabindex="-1"></a>        ocurre_error <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb36-27"><a href="#cb36-27" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Ocurrió un error (ValueError):</span><span class="ch">\n</span><span class="st">"</span>, info)</span>
+<span id="cb36-28"><a href="#cb36-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-29"><a href="#cb36-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># En esta sección se tratan todas las otras posible excepciones</span></span>
+<span id="cb36-30"><a href="#cb36-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
+<span id="cb36-31"><a href="#cb36-31" aria-hidden="true" tabindex="-1"></a>        ocurre_error <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb36-32"><a href="#cb36-32" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Ocurrió algo misterioso"</span>)</span>
+<span id="cb36-33"><a href="#cb36-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-34"><a href="#cb36-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Cuando ocurre un error se hace lo siguiente:</span></span>
+<span id="cb36-35"><a href="#cb36-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ocurre_error:</span>
+<span id="cb36-36"><a href="#cb36-36" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Hubo una falla en el programa, no se pudo realizar el cálculo"</span>)</span>
+<span id="cb36-37"><a href="#cb36-37" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb36-38"><a href="#cb36-38" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Gracias por usar Python!."</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-36" class="cell" data-execution_count="25">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="dv">1</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>La raíz cuadrada del número 1.0 es 1.0
+Gracias por usar Python!.</code></pre>
+</div>
+</div>
+<div id="cell-37" class="cell" data-execution_count="26">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>La raíz cuadrada del número -1.0 es (6.123233995736766e-17+1j)
+Gracias por usar Python!.</code></pre>
+</div>
+</div>
+<div id="cell-38" class="cell" data-execution_count="27">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="dv">1</span><span class="op">+</span><span class="ot">4j</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Ocurrió un error (TypeError):
+ float() argument must be a string or a real number, not 'complex'
+Hubo una falla en el programa, no se pudo realizar el cálculo</code></pre>
+</div>
+</div>
+<div id="cell-39" class="cell" data-execution_count="28">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="st">"hola"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Ocurrió un error (ValueError):
+ could not convert string to float: 'hola'
+Hubo una falla en el programa, no se pudo realizar el cálculo</code></pre>
+</div>
+</div>
+<p>Observa que ahora además de conocer el tipo de error, también se muestra toda la información del error para que el usuario tome las acciones pertinentes.</p>
+</section>
+<section id="finally" class="level3" data-number="Q.2.4">
+<h3 data-number="Q.2.4" class="anchored" data-anchor-id="finally"><span class="header-section-number">Q.2.4</span> <code>finally</code></h3>
+<p>Esta sección se ejecuta siempre, sin importar si hubo una excepción o no.</p>
+<div id="cell-42" class="cell" data-execution_count="34">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> raizCuadrada(numero):</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Función que calcula la raíz cuadrada de un número.</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="co">    ----------</span></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a><span class="co">    numero: int o float</span></span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a><span class="co">    Valor al que se le desea calcular la raíz cuadrada.</span></span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Variable Booleana para manejar las excepciones.</span></span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a>    ocurre_error <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Intenta realizar el cálculo que está dentro de try</span></span>
+<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a>        numero <span class="op">=</span> <span class="bu">float</span>(numero)</span>
+<span id="cb45-17"><a href="#cb45-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"La raíz cuadrada del número </span><span class="sc">{}</span><span class="st"> es </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(numero, numero <span class="op">**</span> <span class="fl">0.5</span>))</span>
+<span id="cb45-18"><a href="#cb45-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-19"><a href="#cb45-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># En esta sección se trata la excepción de tipo TypeError y se obtienen los detalles  </span></span>
+<span id="cb45-20"><a href="#cb45-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">TypeError</span> <span class="im">as</span> info:</span>
+<span id="cb45-21"><a href="#cb45-21" aria-hidden="true" tabindex="-1"></a>        ocurre_error <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb45-22"><a href="#cb45-22" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Ocurrió un error (TypeError):</span><span class="ch">\n</span><span class="st">"</span>, info)</span>
+<span id="cb45-23"><a href="#cb45-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-24"><a href="#cb45-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># En esta sección se trata la excepción de tipo ValueError y se obtienen los detalles  </span></span>
+<span id="cb45-25"><a href="#cb45-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">ValueError</span> <span class="im">as</span> info:</span>
+<span id="cb45-26"><a href="#cb45-26" aria-hidden="true" tabindex="-1"></a>        ocurre_error <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb45-27"><a href="#cb45-27" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Ocurrió un error (ValueError):</span><span class="ch">\n</span><span class="st">"</span>, info)</span>
+<span id="cb45-28"><a href="#cb45-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-29"><a href="#cb45-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># En esta sección se tratan todas las otras posible excepciones</span></span>
+<span id="cb45-30"><a href="#cb45-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
+<span id="cb45-31"><a href="#cb45-31" aria-hidden="true" tabindex="-1"></a>        ocurre_error <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb45-32"><a href="#cb45-32" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Ocurrió algo misterioso"</span>)</span>
+<span id="cb45-33"><a href="#cb45-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-34"><a href="#cb45-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Cuando ocurre un error se hace lo siguiente:</span></span>
+<span id="cb45-35"><a href="#cb45-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">finally</span>:</span>
+<span id="cb45-36"><a href="#cb45-36" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> ocurre_error:</span>
+<span id="cb45-37"><a href="#cb45-37" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Hubo una falla en el programa, no se pudo realizar el cálculo"</span>)</span>
+<span id="cb45-38"><a href="#cb45-38" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb45-39"><a href="#cb45-39" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Gracias por usar Python!."</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-43" class="cell" data-execution_count="35">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="dv">1</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>La raíz cuadrada del número 1.0 es 1.0
+Gracias por usar Python!.</code></pre>
+</div>
+</div>
+<div id="cell-44" class="cell" data-execution_count="36">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>La raíz cuadrada del número -1.0 es (6.123233995736766e-17+1j)
+Gracias por usar Python!.</code></pre>
+</div>
+</div>
+<div id="cell-45" class="cell" data-execution_count="37">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="dv">1</span><span class="op">+</span><span class="ot">4j</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Ocurrió un error (TypeError):
+ float() argument must be a string or a real number, not 'complex'
+Hubo una falla en el programa, no se pudo realizar el cálculo</code></pre>
+</div>
+</div>
+<div id="cell-46" class="cell" data-execution_count="38">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="st">"hola"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Ocurrió un error (ValueError):
+ could not convert string to float: 'hola'
+Hubo una falla en el programa, no se pudo realizar el cálculo</code></pre>
+</div>
 </div>
 </section>
-<section id="lanzar-excepciones-controladas." class="level3" data-number="18.0.5">
-<h3 data-number="18.0.5" class="anchored" data-anchor-id="lanzar-excepciones-controladas."><span class="header-section-number">18.0.5</span> Lanzar excepciones controladas.</h3>
-<p>Es posible presentar toda la información que genera la excepción y agregarle notas para el usuario. Para agregar notas usamos le método <code>add_note()</code> y para lanzar la excepción una vez controlada usamos <code>raise</code>. La siguiente versión de la función <code>raizCuadrada()</code> tiene al final una cláusula <code>else</code>, la cual se ejecuta cuando no ocurre ninguna excepción. En este caso, dentro del <code>try</code> realizamo el cálculo de la raíz cuadrada y en el <code>else</code> hacemos la impresión del resultado.</p>
-<div id="cell-48" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> raizCuadrada(numero):</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Función que calcula la raíz cuadrada de un número.</span></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters</span></span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="co">    ----------</span></span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="co">    numero: int o float</span></span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="co">        Valor al que se le desea calcular la raíz cuadrada.</span></span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Intenta realizar el cálculo que está dentro de try</span></span>
-<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
-<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>        numero_cuadrado <span class="op">=</span> <span class="bu">float</span>(numero) <span class="op">**</span> <span class="fl">0.5</span></span>
-<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># En esta sección se trata la excepción de tipo TypeError y se obtienen los detalles  </span></span>
-<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">TypeError</span> <span class="im">as</span> info:</span>
-<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>        info.add_note(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">"-"</span><span class="op">*</span><span class="dv">20</span>)</span>
-<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>        info.add_note(<span class="ss">f"raizCuadrada</span><span class="sc">{</span>numero<span class="sc">}</span><span class="ss">: Para calcular una raíz cuadrada, el argumento 'numero' debe ser compatible con un int o un float"</span>)</span>
-<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a>        info.add_note(<span class="st">"-"</span><span class="op">*</span><span class="dv">20</span>)</span>
-<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="co"># Lanzamos la excepción con toda la información</span></span>
-<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># En esta sección se trata la excepción de tipo ValueError y se obtienen los detalles  </span></span>
-<span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">ValueError</span> <span class="im">as</span> info:</span>
-<span id="cb32-25"><a href="#cb32-25" aria-hidden="true" tabindex="-1"></a>        info.add_note(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">"-"</span><span class="op">*</span><span class="dv">20</span>)</span>
-<span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a>        info.add_note(<span class="ss">f"raizCuadrada('</span><span class="sc">{</span>numero<span class="sc">}</span><span class="ss">'): Para calcular una raíz cuadrada, el valor del argumento 'numero' debe ser compatible con un int o un float"</span>)</span>
-<span id="cb32-27"><a href="#cb32-27" aria-hidden="true" tabindex="-1"></a>        info.add_note(<span class="st">"-"</span><span class="op">*</span><span class="dv">20</span>)</span>
-<span id="cb32-28"><a href="#cb32-28" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="co"># Lanzamos la excepción con toda la información</span></span>
-<span id="cb32-29"><a href="#cb32-29" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb32-30"><a href="#cb32-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># En esta sección se tratan todas las otras posible excepciones</span></span>
-<span id="cb32-31"><a href="#cb32-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
-<span id="cb32-32"><a href="#cb32-32" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Ocurrió algo misterioso"</span>)</span>
-<span id="cb32-33"><a href="#cb32-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-34"><a href="#cb32-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb32-35"><a href="#cb32-35" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"La raíz cuadrada del número </span><span class="sc">{}</span><span class="st"> es </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(numero, numero_cuadrado))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="lanzar-excepciones-controladas." class="level3" data-number="Q.2.5">
+<h3 data-number="Q.2.5" class="anchored" data-anchor-id="lanzar-excepciones-controladas."><span class="header-section-number">Q.2.5</span> Lanzar excepciones controladas.</h3>
+<p>Es posible presentar toda la información que genera la excepción y agregarle notas para el usuario. Para agregar notas usamos el método <code>add_note()</code> y para lanzar la excepción una vez controlada usamos <code>raise</code>. La siguiente versión de la función <code>raizCuadrada()</code> tiene al final una cláusula <code>else</code>, la cual se ejecuta cuando no ocurre ninguna excepción. En este caso, dentro del <code>try</code> realizamo el cálculo de la raíz cuadrada y en el <code>else</code> hacemos la impresión del resultado.</p>
+<div id="cell-48" class="cell" data-execution_count="39">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> raizCuadrada(numero):</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Función que calcula la raíz cuadrada de un número.</span></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters</span></span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a><span class="co">    ----------</span></span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a><span class="co">    numero: int o float</span></span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a><span class="co">        Valor al que se le desea calcular la raíz cuadrada.</span></span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Intenta realizar el cálculo que está dentro de try</span></span>
+<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a>        numero_cuadrado <span class="op">=</span> <span class="bu">float</span>(numero) <span class="op">**</span> <span class="fl">0.5</span></span>
+<span id="cb54-15"><a href="#cb54-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-16"><a href="#cb54-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># En esta sección se trata la excepción de tipo TypeError y se obtienen los detalles  </span></span>
+<span id="cb54-17"><a href="#cb54-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">TypeError</span> <span class="im">as</span> info:</span>
+<span id="cb54-18"><a href="#cb54-18" aria-hidden="true" tabindex="-1"></a>        info.add_note(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">"-"</span><span class="op">*</span><span class="dv">20</span>)</span>
+<span id="cb54-19"><a href="#cb54-19" aria-hidden="true" tabindex="-1"></a>        info.add_note(<span class="ss">f"raizCuadrada</span><span class="sc">{</span>numero<span class="sc">}</span><span class="ss">: Para calcular una raíz cuadrada, el argumento 'numero' debe ser compatible con un int o un float"</span>)</span>
+<span id="cb54-20"><a href="#cb54-20" aria-hidden="true" tabindex="-1"></a>        info.add_note(<span class="st">"-"</span><span class="op">*</span><span class="dv">20</span>)</span>
+<span id="cb54-21"><a href="#cb54-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="co"># Lanzamos la excepción con toda la información</span></span>
+<span id="cb54-22"><a href="#cb54-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-23"><a href="#cb54-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># En esta sección se trata la excepción de tipo ValueError y se obtienen los detalles  </span></span>
+<span id="cb54-24"><a href="#cb54-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">ValueError</span> <span class="im">as</span> info:</span>
+<span id="cb54-25"><a href="#cb54-25" aria-hidden="true" tabindex="-1"></a>        info.add_note(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">"-"</span><span class="op">*</span><span class="dv">20</span>)</span>
+<span id="cb54-26"><a href="#cb54-26" aria-hidden="true" tabindex="-1"></a>        info.add_note(<span class="ss">f"raizCuadrada('</span><span class="sc">{</span>numero<span class="sc">}</span><span class="ss">'): Para calcular una raíz cuadrada, el valor del argumento 'numero' debe ser compatible con un int o un float"</span>)</span>
+<span id="cb54-27"><a href="#cb54-27" aria-hidden="true" tabindex="-1"></a>        info.add_note(<span class="st">"-"</span><span class="op">*</span><span class="dv">20</span>)</span>
+<span id="cb54-28"><a href="#cb54-28" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="co"># Lanzamos la excepción con toda la información</span></span>
+<span id="cb54-29"><a href="#cb54-29" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb54-30"><a href="#cb54-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># En esta sección se tratan todas las otras posible excepciones</span></span>
+<span id="cb54-31"><a href="#cb54-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
+<span id="cb54-32"><a href="#cb54-32" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Ocurrió algo misterioso"</span>)</span>
+<span id="cb54-33"><a href="#cb54-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-34"><a href="#cb54-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb54-35"><a href="#cb54-35" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"La raíz cuadrada del número </span><span class="sc">{}</span><span class="st"> es </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(numero, numero_cuadrado))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-49" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="dv">1</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-49" class="cell" data-execution_count="40">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="dv">1</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>La raíz cuadrada del número 1 es 1.0</code></pre>
 </div>
-<div id="cell-50" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-51" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="dv">1</span><span class="op">+</span><span class="ot">4j</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-50" class="cell" data-execution_count="41">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>La raíz cuadrada del número -1 es (6.123233995736766e-17+1j)</code></pre>
 </div>
-<div id="cell-52" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="st">"hola"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-51" class="cell" data-execution_count="42">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="dv">1</span><span class="op">+</span><span class="ot">4j</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[42]</span><span class="ansi-green-fg">, line 1</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> <span class="ansi-yellow-bg">raizCuadrada</span><span class="ansi-yellow-bg">(</span><span class="ansi-green-fg ansi-yellow-bg">1</span><span class="ansi-yellow-bg">+</span><span class="ansi-green-fg ansi-yellow-bg">4</span><span class="ansi-yellow-bg">j</span><span class="ansi-yellow-bg">)</span>
+
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[39]</span><span class="ansi-green-fg">, line 14</span>, in <span class="ansi-cyan-fg">raizCuadrada</span><span class="ansi-blue-fg">(numero)</span>
+<span class="ansi-green-fg">     12</span> <span style="font-style:italic;color:rgb(95,135,135)"># Intenta realizar el cálculo que está dentro de try</span>
+<span class="ansi-green-fg">     13</span> <span style="font-weight:bold;color:rgb(0,135,0)">try</span>:
+<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">14</span>     numero_cuadrado = <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">float</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">numero</span><span class="ansi-yellow-bg">)</span> ** <span class="ansi-green-fg">0.5</span>
+<span class="ansi-green-fg">     16</span> <span style="font-style:italic;color:rgb(95,135,135)"># En esta sección se trata la excepción de tipo TypeError y se obtienen los detalles  </span>
+<span class="ansi-green-fg">     17</span> <span style="font-weight:bold;color:rgb(0,135,0)">except</span> <span style="font-weight:bold;color:rgb(215,95,95)">TypeError</span> <span style="font-weight:bold;color:rgb(0,135,0)">as</span> info:
+
+<span class="ansi-red-fg">TypeError</span>: float() argument must be a string or a real number, not 'complex'
+
+--------------------
+raizCuadrada(1+4j): Para calcular una raíz cuadrada, el argumento 'numero' debe ser compatible con un int o un float
+--------------------</pre>
+</div>
+</div>
+</div>
+<div id="cell-52" class="cell" data-execution_count="43">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>raizCuadrada(<span class="st">"hola"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[43]</span><span class="ansi-green-fg">, line 1</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> <span class="ansi-yellow-bg">raizCuadrada</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-fg ansi-yellow-bg">hola</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-bg">)</span>
+
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[39]</span><span class="ansi-green-fg">, line 14</span>, in <span class="ansi-cyan-fg">raizCuadrada</span><span class="ansi-blue-fg">(numero)</span>
+<span class="ansi-green-fg">     12</span> <span style="font-style:italic;color:rgb(95,135,135)"># Intenta realizar el cálculo que está dentro de try</span>
+<span class="ansi-green-fg">     13</span> <span style="font-weight:bold;color:rgb(0,135,0)">try</span>:
+<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">14</span>     numero_cuadrado = <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">float</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">numero</span><span class="ansi-yellow-bg">)</span> ** <span class="ansi-green-fg">0.5</span>
+<span class="ansi-green-fg">     16</span> <span style="font-style:italic;color:rgb(95,135,135)"># En esta sección se trata la excepción de tipo TypeError y se obtienen los detalles  </span>
+<span class="ansi-green-fg">     17</span> <span style="font-weight:bold;color:rgb(0,135,0)">except</span> <span style="font-weight:bold;color:rgb(215,95,95)">TypeError</span> <span style="font-weight:bold;color:rgb(0,135,0)">as</span> info:
+
+<span class="ansi-red-fg">ValueError</span>: could not convert string to float: 'hola'
+
+--------------------
+raizCuadrada('hola'): Para calcular una raíz cuadrada, el valor del argumento 'numero' debe ser compatible con un int o un float
+--------------------</pre>
+</div>
+</div>
 </div>
 
 
@@ -1295,13 +1540,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../notebooks/15_funciones.html" class="pagination-link" aria-label="Funciones: introducción.">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Funciones: introducción.</span></span>
+      <a href="../notebooks/16_lambda_expressions.html" class="pagination-link" aria-label="Funciones lambda.">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">P</span>&nbsp; <span class="chapter-title">Funciones lambda.</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../notebooks/23_import.html" class="pagination-link" aria-label="Importando bibliotecas.">
-        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Importando bibliotecas.</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../notebooks/18_comprehensions.html" class="pagination-link" aria-label="Estructuras de datos concisas.">
+        <span class="nav-page-text"><span class="chapter-number">R</span>&nbsp; <span class="chapter-title">Estructuras de datos concisas.</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

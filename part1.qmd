@@ -1,0 +1,22 @@
+# Introducción
+
+La programación es el arte de escribir instrucciones precisas para decirle a una computadora lo que deseas que haga por ti.
+Cuando escribes buenas instrucciones, puedes lograr mucho en poco tiempo, por ejemplo:
+
+* Automatizar tareas repetitivas.
+* Analizar grandes cantidades  de datos.
+* Construir, evaluar y mejorar modelos matemáticos para representar procesos cotidianos y/o fenómenos naturales.
+* Generar aplicaciones de utilidad.
+* Entre muchas otras ...
+
+::: {.callout-tip}
+## Recomendaciones para aprender un nuevo lenguaje.
+
+* Escribe los códigos y ejecútalos sin miedo al éxito.
+* Los errores son inevitables, tómate tu tiempo para entenderlos y corregirlos.
+* Practica mucho, realiza muchso los ejercicios incluyendo los que se proponen en este texto y busca algunos otros en la Internet.
+* Utiliza eficazmente herramientas de IA (chatbots, ChatGPT, GitHub copilot, etc.) para apoyar tu aprendizaje.
+
+:::
+
+Usando Python es fácil introducirte al mundo de la programación, el cual podría parecer muy complicado. Por supuesto, como todo en esta vida, Python tiene sus ventajas y sus limitaciones, los cuales notarás conforme vayas avanzando en el aprendizaje de este lenguaje. 

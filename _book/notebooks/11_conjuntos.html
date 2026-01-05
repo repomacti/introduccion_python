@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>11&nbsp; Estructura de datos: conjuntos – Notas de Python</title>
+<title>Apéndice K — Conjuntos. – Notas de Python</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../notebooks/15_funciones.html" rel="next">
+<link href="../notebooks/12_diccionarios.html" rel="next">
 <link href="../notebooks/10_tuplas.html" rel="prev">
 <link href="../figuras/python1.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -286,7 +286,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/11_conjuntos.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Estructura de datos: conjuntos</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/01_variables_objetos.html">Apéndices</a></li><li class="breadcrumb-item"><a href="../notebooks/11_conjuntos.html"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Conjuntos.</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -352,90 +352,172 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Python básico</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../part1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Primera parte ...</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lecciones/leccion_01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción a Python</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Apéndices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/01_variables_objetos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Variables y objetos.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Variables y objetos.</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/02_tipos_basicos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tipos de datos básicos.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Tipos de datos básicos.</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/03_operadores.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operadores.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Operadores.</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/04_expresiones_declaraciones.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Expresiones y declaraciones.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Expresiones y declaraciones.</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/05_cadenas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Cadenas.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Cadenas.</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/06_input.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Entrada estándar.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Entrada estándar.</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/07_archivos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Gestión de archivos.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos.</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/08_control_de_flujo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Control de flujo.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">H</span>&nbsp; <span class="chapter-title">Control de flujo.</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/09_listas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estructura de datos: listas.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Listas.</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/10_tuplas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Estructura de datos: tuplas.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Tuplas.</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/11_conjuntos.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Estructura de datos: conjuntos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Conjuntos.</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/12_diccionarios.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Diccionarios.</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/13_ds_casting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">Conversión entre estructuras de datos.</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/14_ds_traversing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">N</span>&nbsp; <span class="chapter-title">Recorriendo las estructuras de datos.</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/15_funciones.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Funciones: introducción.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">O</span>&nbsp; <span class="chapter-title">Funciones: introducción.</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/16_lambda_expressions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">P</span>&nbsp; <span class="chapter-title">Funciones lambda.</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/17_excepciones.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Gestión de errores y excepciones.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">Q</span>&nbsp; <span class="chapter-title">Gestión de errores y excepciones.</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/18_comprehensions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">R</span>&nbsp; <span class="chapter-title">Estructuras de datos concisas.</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/19_iterables_map_filter_reduce.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">S</span>&nbsp; <span class="chapter-title">Iterables, Mapeo, Filtros y Reducciones.</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/20_decoradores.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">T</span>&nbsp; <span class="chapter-title">Decoradores.</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/21_iteradores_generadores.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">U</span>&nbsp; <span class="chapter-title">Iteradores y Generadores.</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/22_funciones_y_docstring.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">V</span>&nbsp; <span class="chapter-title">Funciones: nivel avanzado.</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/23_import.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Importando bibliotecas.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">W</span>&nbsp; <span class="chapter-title">Importando bibliotecas.</span></span></a>
   </div>
 </li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -446,25 +528,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción"><span class="header-section-number">11.1</span> Introducción</a></li>
-  <li><a href="#conjuntos" id="toc-conjuntos" class="nav-link" data-scroll-target="#conjuntos"><span class="header-section-number">12</span> Conjuntos</a>
+  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción"><span class="header-section-number">K.1</span> Introducción</a></li>
+  <li><a href="#conjuntos" id="toc-conjuntos" class="nav-link" data-scroll-target="#conjuntos"><span class="header-section-number">L</span> Conjuntos</a>
   <ul class="collapse">
-  <li><a href="#ejemplo." id="toc-ejemplo." class="nav-link" data-scroll-target="#ejemplo."><span class="header-section-number">12.1</span> Ejemplo.</a></li>
-  <li><a href="#funciones-incorporadas-que-operan-sobre-conjuntos." id="toc-funciones-incorporadas-que-operan-sobre-conjuntos." class="nav-link" data-scroll-target="#funciones-incorporadas-que-operan-sobre-conjuntos."><span class="header-section-number">12.2</span> Funciones incorporadas que operan sobre conjuntos.</a></li>
-  <li><a href="#métodos-de-los-conjuntos." id="toc-métodos-de-los-conjuntos." class="nav-link" data-scroll-target="#métodos-de-los-conjuntos."><span class="header-section-number">12.3</span> Métodos de los conjuntos.</a></li>
-  <li><a href="#ejemplo.-1" id="toc-ejemplo.-1" class="nav-link" data-scroll-target="#ejemplo.-1"><span class="header-section-number">12.4</span> Ejemplo.</a></li>
-  <li><a href="#operadores-sobre-conjuntos" id="toc-operadores-sobre-conjuntos" class="nav-link" data-scroll-target="#operadores-sobre-conjuntos"><span class="header-section-number">12.5</span> Operadores sobre conjuntos</a>
+  <li><a href="#ejemplo." id="toc-ejemplo." class="nav-link" data-scroll-target="#ejemplo."><span class="header-section-number">L.1</span> Ejemplo.</a></li>
+  <li><a href="#funciones-incorporadas-que-operan-sobre-conjuntos." id="toc-funciones-incorporadas-que-operan-sobre-conjuntos." class="nav-link" data-scroll-target="#funciones-incorporadas-que-operan-sobre-conjuntos."><span class="header-section-number">L.2</span> Funciones incorporadas que operan sobre conjuntos.</a></li>
+  <li><a href="#métodos-de-los-conjuntos." id="toc-métodos-de-los-conjuntos." class="nav-link" data-scroll-target="#métodos-de-los-conjuntos."><span class="header-section-number">L.3</span> Métodos de los conjuntos.</a></li>
+  <li><a href="#ejemplo.-1" id="toc-ejemplo.-1" class="nav-link" data-scroll-target="#ejemplo.-1"><span class="header-section-number">L.4</span> Ejemplo.</a></li>
+  <li><a href="#operadores-sobre-conjuntos" id="toc-operadores-sobre-conjuntos" class="nav-link" data-scroll-target="#operadores-sobre-conjuntos"><span class="header-section-number">L.5</span> Operadores sobre conjuntos</a>
   <ul class="collapse">
-  <li><a href="#in-revisar-si-un-elemento-está-en-el-conjunto." id="toc-in-revisar-si-un-elemento-está-en-el-conjunto." class="nav-link" data-scroll-target="#in-revisar-si-un-elemento-está-en-el-conjunto."><span class="header-section-number">12.5.1</span> <code>in</code>: revisar si un elemento está en el conjunto.</a></li>
-  <li><a href="#elementos-en-a-pero-no-en-b." id="toc-elementos-en-a-pero-no-en-b." class="nav-link" data-scroll-target="#elementos-en-a-pero-no-en-b."><span class="header-section-number">12.5.2</span> <code>-</code>: elementos en A, pero no en B.</a></li>
-  <li><a href="#elementos-en-a-o-en-b-o-en-ambos." id="toc-elementos-en-a-o-en-b-o-en-ambos." class="nav-link" data-scroll-target="#elementos-en-a-o-en-b-o-en-ambos."><span class="header-section-number">12.5.3</span> <code>|</code>: elementos en A o en B o en ambos.</a></li>
-  <li><a href="#elementos-en-ambos-conjuntos." id="toc-elementos-en-ambos-conjuntos." class="nav-link" data-scroll-target="#elementos-en-ambos-conjuntos."><span class="header-section-number">12.5.4</span> <code>&amp;</code>: elementos en ambos conjuntos.</a></li>
-  <li><a href="#elementos-en-a-o-en-b-pero-no-en-ambos." id="toc-elementos-en-a-o-en-b-pero-no-en-ambos." class="nav-link" data-scroll-target="#elementos-en-a-o-en-b-pero-no-en-ambos."><span class="header-section-number">12.5.5</span> <code>^</code> : elementos en A o en B, pero no en ambos.</a></li>
+  <li><a href="#in-revisar-si-un-elemento-está-en-el-conjunto." id="toc-in-revisar-si-un-elemento-está-en-el-conjunto." class="nav-link" data-scroll-target="#in-revisar-si-un-elemento-está-en-el-conjunto."><span class="header-section-number">L.5.1</span> <code>in</code>: revisar si un elemento está en el conjunto.</a></li>
+  <li><a href="#elementos-en-a-pero-no-en-b." id="toc-elementos-en-a-pero-no-en-b." class="nav-link" data-scroll-target="#elementos-en-a-pero-no-en-b."><span class="header-section-number">L.5.2</span> <code>-</code>: elementos en A, pero no en B.</a></li>
+  <li><a href="#elementos-en-a-o-en-b-o-en-ambos." id="toc-elementos-en-a-o-en-b-o-en-ambos." class="nav-link" data-scroll-target="#elementos-en-a-o-en-b-o-en-ambos."><span class="header-section-number">L.5.3</span> <code>|</code>: elementos en A o en B o en ambos.</a></li>
+  <li><a href="#elementos-en-ambos-conjuntos." id="toc-elementos-en-ambos-conjuntos." class="nav-link" data-scroll-target="#elementos-en-ambos-conjuntos."><span class="header-section-number">L.5.4</span> <code>&amp;</code>: elementos en ambos conjuntos.</a></li>
+  <li><a href="#elementos-en-a-o-en-b-pero-no-en-ambos." id="toc-elementos-en-a-o-en-b-pero-no-en-ambos." class="nav-link" data-scroll-target="#elementos-en-a-o-en-b-pero-no-en-ambos."><span class="header-section-number">L.5.5</span> <code>^</code> : elementos en A o en B, pero no en ambos.</a></li>
   </ul></li>
-  <li><a href="#copiando-conjuntos" id="toc-copiando-conjuntos" class="nav-link" data-scroll-target="#copiando-conjuntos"><span class="header-section-number">12.6</span> Copiando conjuntos</a>
+  <li><a href="#copiando-conjuntos" id="toc-copiando-conjuntos" class="nav-link" data-scroll-target="#copiando-conjuntos"><span class="header-section-number">L.6</span> Copiando conjuntos</a>
   <ul class="collapse">
-  <li><a href="#copiando-con-el-método-copy" id="toc-copiando-con-el-método-copy" class="nav-link" data-scroll-target="#copiando-con-el-método-copy"><span class="header-section-number">12.6.1</span> Copiando con el método <code>copy()</code></a></li>
-  <li><a href="#copiando-con-la-biblioteca-copy" id="toc-copiando-con-la-biblioteca-copy" class="nav-link" data-scroll-target="#copiando-con-la-biblioteca-copy"><span class="header-section-number">12.6.2</span> Copiando con la biblioteca <code>copy()</code></a></li>
+  <li><a href="#copiando-con-el-método-copy" id="toc-copiando-con-el-método-copy" class="nav-link" data-scroll-target="#copiando-con-el-método-copy"><span class="header-section-number">L.6.1</span> Copiando con el método <code>copy()</code></a></li>
+  <li><a href="#copiando-con-la-biblioteca-copy" id="toc-copiando-con-la-biblioteca-copy" class="nav-link" data-scroll-target="#copiando-con-la-biblioteca-copy"><span class="header-section-number">L.6.2</span> Copiando con la biblioteca <code>copy()</code></a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -474,9 +556,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/01_variables_objetos.html">Apéndices</a></li><li class="breadcrumb-item"><a href="../notebooks/11_conjuntos.html"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Conjuntos.</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Estructura de datos: conjuntos</span></h1>
+<h1 class="title">Apéndice K — Conjuntos.</h1>
 </div>
 
 
@@ -494,8 +576,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p><strong>Objetivo.</strong> Describir la estructura de datos <code>set</code> mediante la exposición de ejemplos.</p>
-<section id="introducción" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="introducción"><span class="header-section-number">11.1</span> Introducción</h2>
+<section id="introducción" class="level2" data-number="K.1">
+<h2 data-number="K.1" class="anchored" data-anchor-id="introducción"><span class="header-section-number">K.1</span> Introducción</h2>
 <p>Recordemos los cuatro tipos de <em>colecciones</em> que se tienen en Python:</p>
 <table class="caption-top table">
 <thead>
@@ -539,16 +621,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 </section>
-<section id="conjuntos" class="level1" data-number="12">
-<h1 data-number="12"><span class="header-section-number">12</span> Conjuntos</h1>
+<section id="conjuntos" class="level1" data-number="L">
+<h1 data-number="L"><span class="header-section-number">L</span> Conjuntos</h1>
 <ul>
 <li>Consisten en una secuencia <strong>NO ordenada</strong> y <strong>mutable</strong>.</li>
 <li><strong>NO</strong> permite miembros duplicados.</li>
 <li>Los elementos de los conjuntos <strong>NO</strong> se pueden indexar.</li>
 <li>Los conjuntos se definen usando llaves (<code>{}</code>) y comas (<code>,</code>) para separar sus elementos.</li>
 </ul>
-<section id="ejemplo." class="level2 alert alert-success" data-number="12.1">
-<h2 data-number="12.1" class="anchored" data-anchor-id="ejemplo."><span class="header-section-number">12.1</span> Ejemplo.</h2>
+<section id="ejemplo." class="level2 alert alert-success" data-number="L.1">
+<h2 data-number="L.1" class="anchored" data-anchor-id="ejemplo."><span class="header-section-number">L.1</span> Ejemplo.</h2>
 <p>Construiremos los siguientes conjuntos:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>c1 <span class="op">=</span> {<span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">8</span>, <span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">20</span>}</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>c2 <span class="op">=</span> {<span class="st">'z'</span>, <span class="st">'x'</span>, <span class="st">'g'</span>, <span class="st">'a'</span>, <span class="st">'k'</span>, <span class="st">'x'</span>}</span>
@@ -570,8 +652,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Observa que los conjuntos <code>c1</code> y <code>c2</code> contienen en su definición elementos repetidos, pero posteriormente cuando se usa o se imprime el conjunto, ya no presenta elementos repetidos.</p>
-<section id="funciones-incorporadas-que-operan-sobre-conjuntos." class="level2" data-number="12.2">
-<h2 data-number="12.2" class="anchored" data-anchor-id="funciones-incorporadas-que-operan-sobre-conjuntos."><span class="header-section-number">12.2</span> Funciones incorporadas que operan sobre conjuntos.</h2>
+<section id="funciones-incorporadas-que-operan-sobre-conjuntos." class="level2" data-number="L.2">
+<h2 data-number="L.2" class="anchored" data-anchor-id="funciones-incorporadas-que-operan-sobre-conjuntos."><span class="header-section-number">L.2</span> Funciones incorporadas que operan sobre conjuntos.</h2>
 <p>Prácticamente todas las funciones incorporadas que se aplican a las listas y tuplas, se pueden aplicar a los conjuntos, por ejemplo:</p>
 <div id="cell-8" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(c1))</span>
@@ -604,8 +686,8 @@ True
 </div>
 </div>
 </section>
-<section id="métodos-de-los-conjuntos." class="level2" data-number="12.3">
-<h2 data-number="12.3" class="anchored" data-anchor-id="métodos-de-los-conjuntos."><span class="header-section-number">12.3</span> Métodos de los conjuntos.</h2>
+<section id="métodos-de-los-conjuntos." class="level2" data-number="L.3">
+<h2 data-number="L.3" class="anchored" data-anchor-id="métodos-de-los-conjuntos."><span class="header-section-number">L.3</span> Métodos de los conjuntos.</h2>
 <p>En términos de Programación Orientada a Objetos, la clase <code>&lt;class 'set'&gt;</code> define una serie de métodos que se pueden aplicar sobre los objetos del tipo <code>set</code>. Veamos algunos ejemplos:</p>
 <div id="cell-12" class="cell" data-tags="[]" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(c1)  <span class="co"># Conjunto original</span></span>
@@ -652,8 +734,8 @@ set() &lt;class 'set'&gt; 1934565229280</code></pre>
 </div>
 <p>Observa que el identificador no ha cambiado, solo se eliminaron todos los elementos.</p>
 </section>
-<section id="ejemplo.-1" class="level2 alert alert-success" data-number="12.4">
-<h2 data-number="12.4" class="anchored" data-anchor-id="ejemplo.-1"><span class="header-section-number">12.4</span> Ejemplo.</h2>
+<section id="ejemplo.-1" class="level2 alert alert-success" data-number="L.4">
+<h2 data-number="L.4" class="anchored" data-anchor-id="ejemplo.-1"><span class="header-section-number">L.4</span> Ejemplo.</h2>
 <p>Escribe un algoritmo que, usando el operador <code>in</code>, verifique si un elemento está en un conjunto. Si el elemento está en el conjunto entonces eliminarlo con el métodos <code>set.remove()</code> e imprimir un mensaje de que dicho elemento ha sido removido. Si el elemento no está en el conjunto, entonces imprimir un mensaje avisando que no se encontró el elemento.</p>
 <p>Hacer una prueba con el siguiente conjunto: <code>test = {1,2,3,'a','b','c'}</code>.</p>
 </section>
@@ -682,8 +764,8 @@ El elemento '-8' no está en el conjunto
 Resultado final: {1, 2, 3, 'b', 'a', 'c'}</code></pre>
 </div>
 </div>
-<section id="operadores-sobre-conjuntos" class="level2" data-number="12.5">
-<h2 data-number="12.5" class="anchored" data-anchor-id="operadores-sobre-conjuntos"><span class="header-section-number">12.5</span> Operadores sobre conjuntos</h2>
+<section id="operadores-sobre-conjuntos" class="level2" data-number="L.5">
+<h2 data-number="L.5" class="anchored" data-anchor-id="operadores-sobre-conjuntos"><span class="header-section-number">L.5</span> Operadores sobre conjuntos</h2>
 <p>Se pueden realizar las operaciones de conjuntos definidas en matemáticas en los objetos de tipo <code>set</code>.</p>
 <div id="cell-23" class="cell" data-tags="[]" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Definimos dos conjuntos</span></span>
@@ -696,8 +778,8 @@ Resultado final: {1, 2, 3, 'b', 'a', 'c'}</code></pre>
 {'Mesa', 'Silla', 'Casa'}</code></pre>
 </div>
 </div>
-<section id="in-revisar-si-un-elemento-está-en-el-conjunto." class="level3" data-number="12.5.1">
-<h3 data-number="12.5.1" class="anchored" data-anchor-id="in-revisar-si-un-elemento-está-en-el-conjunto."><span class="header-section-number">12.5.1</span> <code>in</code>: revisar si un elemento está en el conjunto.</h3>
+<section id="in-revisar-si-un-elemento-está-en-el-conjunto." class="level3" data-number="L.5.1">
+<h3 data-number="L.5.1" class="anchored" data-anchor-id="in-revisar-si-un-elemento-está-en-el-conjunto."><span class="header-section-number">L.5.1</span> <code>in</code>: revisar si un elemento está en el conjunto.</h3>
 <div id="cell-25" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">'Taza'</span> <span class="kw">in</span> A</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
@@ -705,8 +787,8 @@ Resultado final: {1, 2, 3, 'b', 'a', 'c'}</code></pre>
 </div>
 </div>
 </section>
-<section id="elementos-en-a-pero-no-en-b." class="level3" data-number="12.5.2">
-<h3 data-number="12.5.2" class="anchored" data-anchor-id="elementos-en-a-pero-no-en-b."><span class="header-section-number">12.5.2</span> <code>-</code>: elementos en A, pero no en B.</h3>
+<section id="elementos-en-a-pero-no-en-b." class="level3" data-number="L.5.2">
+<h3 data-number="L.5.2" class="anchored" data-anchor-id="elementos-en-a-pero-no-en-b."><span class="header-section-number">L.5.2</span> <code>-</code>: elementos en A, pero no en B.</h3>
 <div id="cell-27" class="cell" data-tags="[]" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">-</span> B </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
@@ -714,8 +796,8 @@ Resultado final: {1, 2, 3, 'b', 'a', 'c'}</code></pre>
 </div>
 </div>
 </section>
-<section id="elementos-en-a-o-en-b-o-en-ambos." class="level3" data-number="12.5.3">
-<h3 data-number="12.5.3" class="anchored" data-anchor-id="elementos-en-a-o-en-b-o-en-ambos."><span class="header-section-number">12.5.3</span> <code>|</code>: elementos en A o en B o en ambos.</h3>
+<section id="elementos-en-a-o-en-b-o-en-ambos." class="level3" data-number="L.5.3">
+<h3 data-number="L.5.3" class="anchored" data-anchor-id="elementos-en-a-o-en-b-o-en-ambos."><span class="header-section-number">L.5.3</span> <code>|</code>: elementos en A o en B o en ambos.</h3>
 <div id="cell-29" class="cell" data-tags="[]" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">|</span> B </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
@@ -723,8 +805,8 @@ Resultado final: {1, 2, 3, 'b', 'a', 'c'}</code></pre>
 </div>
 </div>
 </section>
-<section id="elementos-en-ambos-conjuntos." class="level3" data-number="12.5.4">
-<h3 data-number="12.5.4" class="anchored" data-anchor-id="elementos-en-ambos-conjuntos."><span class="header-section-number">12.5.4</span> <code>&amp;</code>: elementos en ambos conjuntos.</h3>
+<section id="elementos-en-ambos-conjuntos." class="level3" data-number="L.5.4">
+<h3 data-number="L.5.4" class="anchored" data-anchor-id="elementos-en-ambos-conjuntos."><span class="header-section-number">L.5.4</span> <code>&amp;</code>: elementos en ambos conjuntos.</h3>
 <div id="cell-31" class="cell" data-tags="[]" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">&amp;</span> B </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
@@ -732,8 +814,8 @@ Resultado final: {1, 2, 3, 'b', 'a', 'c'}</code></pre>
 </div>
 </div>
 </section>
-<section id="elementos-en-a-o-en-b-pero-no-en-ambos." class="level3" data-number="12.5.5">
-<h3 data-number="12.5.5" class="anchored" data-anchor-id="elementos-en-a-o-en-b-pero-no-en-ambos."><span class="header-section-number">12.5.5</span> <code>^</code> : elementos en A o en B, pero no en ambos.</h3>
+<section id="elementos-en-a-o-en-b-pero-no-en-ambos." class="level3" data-number="L.5.5">
+<h3 data-number="L.5.5" class="anchored" data-anchor-id="elementos-en-a-o-en-b-pero-no-en-ambos."><span class="header-section-number">L.5.5</span> <code>^</code> : elementos en A o en B, pero no en ambos.</h3>
 <div id="cell-33" class="cell" data-tags="[]" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">^</span> B </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
@@ -742,11 +824,11 @@ Resultado final: {1, 2, 3, 'b', 'a', 'c'}</code></pre>
 </div>
 </section>
 </section>
-<section id="copiando-conjuntos" class="level2" data-number="12.6">
-<h2 data-number="12.6" class="anchored" data-anchor-id="copiando-conjuntos"><span class="header-section-number">12.6</span> Copiando conjuntos</h2>
+<section id="copiando-conjuntos" class="level2" data-number="L.6">
+<h2 data-number="L.6" class="anchored" data-anchor-id="copiando-conjuntos"><span class="header-section-number">L.6</span> Copiando conjuntos</h2>
 <p>Para crear un nuevo conjunto a partir de otro, usamos operaciones similares que para las listas:</p>
-<section id="copiando-con-el-método-copy" class="level3" data-number="12.6.1">
-<h3 data-number="12.6.1" class="anchored" data-anchor-id="copiando-con-el-método-copy"><span class="header-section-number">12.6.1</span> Copiando con el método <code>copy()</code></h3>
+<section id="copiando-con-el-método-copy" class="level3" data-number="L.6.1">
+<h3 data-number="L.6.1" class="anchored" data-anchor-id="copiando-con-el-método-copy"><span class="header-section-number">L.6.1</span> Copiando con el método <code>copy()</code></h3>
 <div id="cell-36" class="cell" data-tags="[]" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>c4 <span class="op">=</span> c2.copy()</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -758,8 +840,8 @@ Resultado final: {1, 2, 3, 'b', 'a', 'c'}</code></pre>
 </div>
 </div>
 </section>
-<section id="copiando-con-la-biblioteca-copy" class="level3" data-number="12.6.2">
-<h3 data-number="12.6.2" class="anchored" data-anchor-id="copiando-con-la-biblioteca-copy"><span class="header-section-number">12.6.2</span> Copiando con la biblioteca <code>copy()</code></h3>
+<section id="copiando-con-la-biblioteca-copy" class="level3" data-number="L.6.2">
+<h3 data-number="L.6.2" class="anchored" data-anchor-id="copiando-con-la-biblioteca-copy"><span class="header-section-number">L.6.2</span> Copiando con la biblioteca <code>copy()</code></h3>
 <div id="cell-38" class="cell" data-tags="[]" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> copy</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>c5 <span class="op">=</span> copy.copy(c2)</span>
@@ -1193,13 +1275,13 @@ Resultado final: {1, 2, 3, 'b', 'a', 'c'}</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../notebooks/10_tuplas.html" class="pagination-link" aria-label="Estructura de datos: tuplas.">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Estructura de datos: tuplas.</span></span>
+      <a href="../notebooks/10_tuplas.html" class="pagination-link" aria-label="Tuplas.">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Tuplas.</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../notebooks/15_funciones.html" class="pagination-link" aria-label="Funciones: introducción.">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Funciones: introducción.</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../notebooks/12_diccionarios.html" class="pagination-link" aria-label="Diccionarios.">
+        <span class="nav-page-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Diccionarios.</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

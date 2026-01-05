@@ -2,12 +2,29 @@ project:
   type: book
 
 crossref:
-  sec-prefix: sección    # (default is "Section")
+  custom:
+    - key: exm
+      kind: float
+      reference-prefix: Ejemplo
+      caption-prefix: Ejemplo
+#  sec-prefix: sección    # (default is "Section")
 #  fig-prefix: figure     # (default is "Figure")
 #  tbl-prefix: tableau    # (default is "Table")
 
 lang: es
 
+extensions:
+  iconify:
+    set: "octicon"
+    size: "1.25em"
+    width: "1em"
+    height: "1em"
+    flip: "horizontal"
+    rotate: "0deg"
+    inline: true
+    mode: "svg"
+    style: "color: #b22222;"
+      
 book:
   title: "Notas de Python"
   subtitle: "Ejemplos y aplicaciones."
@@ -25,6 +42,10 @@ book:
   date: today
   chapters:
     - index.qmd
+    - part: part1.qmd
+      chapters:
+        - lecciones/leccion_01.ipynb
+  appendices:
     - notebooks/01_variables_objetos.ipynb
     - notebooks/02_tipos_basicos.ipynb
     - notebooks/03_operadores.ipynb
@@ -40,7 +61,13 @@ book:
     - notebooks/13_ds_casting.ipynb
     - notebooks/14_ds_traversing.ipynb
     - notebooks/15_funciones.ipynb
+    - notebooks/16_lambda_expressions.ipynb
     - notebooks/17_excepciones.ipynb
+    - notebooks/18_comprehensions.ipynb
+    - notebooks/19_iterables_map_filter_reduce.ipynb
+    - notebooks/20_decoradores.ipynb
+    - notebooks/21_iteradores_generadores.ipynb
+    - notebooks/22_funciones_y_docstring.ipynb
     - notebooks/23_import.ipynb
 #    - glossary.qmd
 #    - 5-appendices/A-instalacion.ipynb
