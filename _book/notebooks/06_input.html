@@ -83,6 +83,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-d9d7ed2c14390fa05efde32fc7ffca7f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -528,10 +529,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#entrada-estándar-con-input" id="toc-entrada-estándar-con-input" class="nav-link active" data-scroll-target="#entrada-estándar-con-input"><span class="header-section-number">F.1</span> Entrada estándar con <code>input()</code></a>
-  <ul class="collapse">
-  <li><a href="#ejemplo." id="toc-ejemplo." class="nav-link" data-scroll-target="#ejemplo."><span class="header-section-number">F.1.1</span> Ejemplo.</a></li>
-  </ul></li>
+  <li><a href="#entrada-estándar-con-input." id="toc-entrada-estándar-con-input." class="nav-link active" data-scroll-target="#entrada-estándar-con-input."><span class="header-section-number">F.1</span> Entrada estándar con <code>input()</code>.</a></li>
   </ul>
 </nav>
     </div>
@@ -541,7 +539,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/01_variables_objetos.html">Apéndices</a></li><li class="breadcrumb-item"><a href="../notebooks/06_input.html"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Entrada estándar.</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Apéndice F — Entrada estándar.</h1>
+<h1 class="title"><span id="sec-f-entrada-estandar" class="quarto-section-identifier">Apéndice F — Entrada estándar.</span></h1>
 </div>
 
 
@@ -559,8 +557,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p><strong>Objetivo.</strong> Revisar el uso de la función <code>input()</code> para la entrada estándar.</p>
-<section id="entrada-estándar-con-input" class="level2" data-number="F.1">
-<h2 data-number="F.1" class="anchored" data-anchor-id="entrada-estándar-con-input"><span class="header-section-number">F.1</span> Entrada estándar con <code>input()</code></h2>
+<section id="entrada-estándar-con-input." class="level2" data-number="F.1">
+<h2 data-number="F.1" class="anchored" data-anchor-id="entrada-estándar-con-input."><span class="header-section-number">F.1</span> Entrada estándar con <code>input()</code>.</h2>
 <p>En Python es posible que el usuario proporcione información a un código durante su ejecución, para que, con base en esta información, realice una acción.</p>
 <p>Para ello se usa la función <code>input()</code>. Por ejemplo:</p>
 <div id="cell-2" class="cell" data-execution_count="1">
@@ -624,10 +622,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo." class="level3 alert alert-block alert-success" data-number="F.1.1">
-<h3 data-number="F.1.1" class="anchored" data-anchor-id="ejemplo."><span class="header-section-number">F.1.1</span> Ejemplo.</h3>
+<div id="exm-f-1" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;F.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> Área de un triángulo.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Calcular el área de un triángulo cuyos datos de la base y la altura son proporcionados por el usuario.</p>
-</section>
+</div>
+</div>
 <p><strong>Primer intento</strong>.</p>
 <div id="cell-15" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>base <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Escribe la base del triángulo:'</span>)</span>
