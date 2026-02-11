@@ -83,6 +83,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-d9d7ed2c14390fa05efde32fc7ffca7f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -367,12 +368,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Manejo de información.</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../lecciones/leccion_02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Cadenas</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -423,7 +418,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/07_archivos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos. {#sec-g-archivos}¶</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -535,27 +530,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#introducción." id="toc-introducción." class="nav-link active" data-scroll-target="#introducción."><span class="header-section-number">L.1</span> Introducción.</a></li>
-  <li><a href="#diccionarios." id="toc-diccionarios." class="nav-link" data-scroll-target="#diccionarios."><span class="header-section-number">M</span> Diccionarios.</a>
+  <li><a href="#diccionarios." id="toc-diccionarios." class="nav-link" data-scroll-target="#diccionarios."><span class="header-section-number">L.2</span> Diccionarios.</a></li>
+  <li><a href="#indexado-mediante-la-clave" id="toc-indexado-mediante-la-clave" class="nav-link" data-scroll-target="#indexado-mediante-la-clave"><span class="header-section-number">L.3</span> Indexado mediante la clave</a></li>
+  <li><a href="#métodos-de-los-diccionarios." id="toc-métodos-de-los-diccionarios." class="nav-link" data-scroll-target="#métodos-de-los-diccionarios."><span class="header-section-number">L.4</span> Métodos de los diccionarios.</a>
   <ul class="collapse">
-  <li><a href="#ejemplo." id="toc-ejemplo." class="nav-link" data-scroll-target="#ejemplo."><span class="header-section-number">M.1</span> Ejemplo.</a></li>
-  <li><a href="#indexado-mediante-la-clave" id="toc-indexado-mediante-la-clave" class="nav-link" data-scroll-target="#indexado-mediante-la-clave"><span class="header-section-number">M.2</span> Indexado mediante la clave</a></li>
-  <li><a href="#métodos-de-los-diccionarios." id="toc-métodos-de-los-diccionarios." class="nav-link" data-scroll-target="#métodos-de-los-diccionarios."><span class="header-section-number">M.3</span> Métodos de los diccionarios.</a>
-  <ul class="collapse">
-  <li><a href="#obtener-todos-los-elementos-del-diccionario." id="toc-obtener-todos-los-elementos-del-diccionario." class="nav-link" data-scroll-target="#obtener-todos-los-elementos-del-diccionario."><span class="header-section-number">M.3.1</span> Obtener todos los elementos del diccionario.</a></li>
-  <li><a href="#obtener-todas-las-claves-de-los-elementos-del-diccionario." id="toc-obtener-todas-las-claves-de-los-elementos-del-diccionario." class="nav-link" data-scroll-target="#obtener-todas-las-claves-de-los-elementos-del-diccionario."><span class="header-section-number">M.3.2</span> Obtener todas las claves de los elementos del diccionario.</a></li>
-  <li><a href="#obtener-todos-los-valores-de-los-elementos-del-diccionario." id="toc-obtener-todos-los-valores-de-los-elementos-del-diccionario." class="nav-link" data-scroll-target="#obtener-todos-los-valores-de-los-elementos-del-diccionario."><span class="header-section-number">M.3.3</span> Obtener todos los valores de los elementos del diccionario.</a></li>
-  <li><a href="#obtener-el-valor-de-un-elemento" id="toc-obtener-el-valor-de-un-elemento" class="nav-link" data-scroll-target="#obtener-el-valor-de-un-elemento"><span class="header-section-number">M.3.4</span> Obtener el valor de un elemento:</a></li>
-  <li><a href="#agregar-un-diccionario-en-otro." id="toc-agregar-un-diccionario-en-otro." class="nav-link" data-scroll-target="#agregar-un-diccionario-en-otro."><span class="header-section-number">M.3.5</span> Agregar un diccionario en otro.</a></li>
-  <li><a href="#extraer-el-último-elemento-del-diccionario." id="toc-extraer-el-último-elemento-del-diccionario." class="nav-link" data-scroll-target="#extraer-el-último-elemento-del-diccionario."><span class="header-section-number">M.3.6</span> Extraer el último elemento del diccionario.</a></li>
-  <li><a href="#extraer-el-elemento-de-una-cierta-clave." id="toc-extraer-el-elemento-de-una-cierta-clave." class="nav-link" data-scroll-target="#extraer-el-elemento-de-una-cierta-clave."><span class="header-section-number">M.3.7</span> Extraer el elemento de una cierta clave.</a></li>
-  <li><a href="#eliminar-todos-los-elementos-del-diccionario." id="toc-eliminar-todos-los-elementos-del-diccionario." class="nav-link" data-scroll-target="#eliminar-todos-los-elementos-del-diccionario."><span class="header-section-number">M.3.8</span> Eliminar todos los elementos del diccionario.</a></li>
+  <li><a href="#obtener-todos-los-elementos-del-diccionario." id="toc-obtener-todos-los-elementos-del-diccionario." class="nav-link" data-scroll-target="#obtener-todos-los-elementos-del-diccionario."><span class="header-section-number">L.4.1</span> Obtener todos los elementos del diccionario.</a></li>
+  <li><a href="#obtener-todas-las-claves-de-los-elementos-del-diccionario." id="toc-obtener-todas-las-claves-de-los-elementos-del-diccionario." class="nav-link" data-scroll-target="#obtener-todas-las-claves-de-los-elementos-del-diccionario."><span class="header-section-number">L.4.2</span> Obtener todas las claves de los elementos del diccionario.</a></li>
+  <li><a href="#obtener-todos-los-valores-de-los-elementos-del-diccionario." id="toc-obtener-todos-los-valores-de-los-elementos-del-diccionario." class="nav-link" data-scroll-target="#obtener-todos-los-valores-de-los-elementos-del-diccionario."><span class="header-section-number">L.4.3</span> Obtener todos los valores de los elementos del diccionario.</a></li>
+  <li><a href="#obtener-el-valor-de-un-elemento" id="toc-obtener-el-valor-de-un-elemento" class="nav-link" data-scroll-target="#obtener-el-valor-de-un-elemento"><span class="header-section-number">L.4.4</span> Obtener el valor de un elemento:</a></li>
+  <li><a href="#agregar-un-diccionario-en-otro." id="toc-agregar-un-diccionario-en-otro." class="nav-link" data-scroll-target="#agregar-un-diccionario-en-otro."><span class="header-section-number">L.4.5</span> Agregar un diccionario en otro.</a></li>
+  <li><a href="#extraer-el-último-elemento-del-diccionario." id="toc-extraer-el-último-elemento-del-diccionario." class="nav-link" data-scroll-target="#extraer-el-último-elemento-del-diccionario."><span class="header-section-number">L.4.6</span> Extraer el último elemento del diccionario.</a></li>
+  <li><a href="#extraer-el-elemento-de-una-cierta-clave." id="toc-extraer-el-elemento-de-una-cierta-clave." class="nav-link" data-scroll-target="#extraer-el-elemento-de-una-cierta-clave."><span class="header-section-number">L.4.7</span> Extraer el elemento de una cierta clave.</a></li>
+  <li><a href="#eliminar-todos-los-elementos-del-diccionario." id="toc-eliminar-todos-los-elementos-del-diccionario." class="nav-link" data-scroll-target="#eliminar-todos-los-elementos-del-diccionario."><span class="header-section-number">L.4.8</span> Eliminar todos los elementos del diccionario.</a></li>
   </ul></li>
-  <li><a href="#operaciones-y-funciones-sobre-diccionarios." id="toc-operaciones-y-funciones-sobre-diccionarios." class="nav-link" data-scroll-target="#operaciones-y-funciones-sobre-diccionarios."><span class="header-section-number">M.4</span> Operaciones y funciones sobre diccionarios.</a></li>
-  <li><a href="#copiando-diccionarios" id="toc-copiando-diccionarios" class="nav-link" data-scroll-target="#copiando-diccionarios"><span class="header-section-number">M.5</span> Copiando diccionarios</a>
+  <li><a href="#operaciones-y-funciones-sobre-diccionarios." id="toc-operaciones-y-funciones-sobre-diccionarios." class="nav-link" data-scroll-target="#operaciones-y-funciones-sobre-diccionarios."><span class="header-section-number">L.5</span> Operaciones y funciones sobre diccionarios.</a></li>
+  <li><a href="#copiando-diccionarios" id="toc-copiando-diccionarios" class="nav-link" data-scroll-target="#copiando-diccionarios"><span class="header-section-number">L.6</span> Copiando diccionarios</a>
   <ul class="collapse">
-  <li><a href="#copiando-con-el-método-copy" id="toc-copiando-con-el-método-copy" class="nav-link" data-scroll-target="#copiando-con-el-método-copy"><span class="header-section-number">M.5.1</span> Copiando con el método <code>copy()</code></a></li>
-  <li><a href="#copiando-con-la-biblioteca-copy" id="toc-copiando-con-la-biblioteca-copy" class="nav-link" data-scroll-target="#copiando-con-la-biblioteca-copy"><span class="header-section-number">M.5.2</span> Copiando con la biblioteca <code>copy()</code></a></li>
-  </ul></li>
+  <li><a href="#copiando-con-el-método-copy" id="toc-copiando-con-el-método-copy" class="nav-link" data-scroll-target="#copiando-con-el-método-copy"><span class="header-section-number">L.6.1</span> Copiando con el método <code>copy()</code></a></li>
+  <li><a href="#copiando-con-la-biblioteca-copy" id="toc-copiando-con-la-biblioteca-copy" class="nav-link" data-scroll-target="#copiando-con-la-biblioteca-copy"><span class="header-section-number">L.6.2</span> Copiando con la biblioteca <code>copy()</code></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -566,7 +558,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/01_variables_objetos.html">Apéndices</a></li><li class="breadcrumb-item"><a href="../notebooks/12_diccionarios.html"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Diccionarios.</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Apéndice L — Diccionarios.</h1>
+<h1 class="title"><span id="sec-l-tuplas" class="quarto-section-identifier">Apéndice L — Diccionarios.</span></h1>
 </div>
 
 
@@ -629,8 +621,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 </section>
-<section id="diccionarios." class="level1" data-number="M">
-<h1 data-number="M"><span class="header-section-number">M</span> Diccionarios.</h1>
+<section id="diccionarios." class="level2" data-number="L.2">
+<h2 data-number="L.2" class="anchored" data-anchor-id="diccionarios."><span class="header-section-number">L.2</span> Diccionarios.</h2>
 <ul>
 <li>Consisten en una secuencia <strong>NO ordenada</strong> y <strong>mutable</strong>.</li>
 <li><strong>NO</strong> permite miembros duplicados.</li>
@@ -638,27 +630,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Los elementos de los diccionarios se pueden indexar a través de las claves.</li>
 <li>Los diccionarios se definen usando llaves (<code>{}</code>) y dos puntos (<code>:</code>) para separar la clave del valor y comas (<code>,</code>) para separar sus elementos.</li>
 </ul>
-<section id="ejemplo." class="level2 alert alert-success" data-number="M.1">
-<h2 data-number="M.1" class="anchored" data-anchor-id="ejemplo."><span class="header-section-number">M.1</span> Ejemplo.</h2>
+<div id="exm-l-1" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;L.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> Creación de diccionarios.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Un diccionario se puede crear de tres maneras diferentes:</p>
 <ol type="1">
 <li>Dando los pares <code>key:value</code> separados por <code>,</code>:</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>d1 <span class="op">=</span> {<span class="st">'Luis'</span>:<span class="dv">20</span>, <span class="st">'Miguel'</span>:<span class="dv">25</span>, <span class="st">'Pedro'</span>:<span class="dv">31</span>, <span class="st">'Pablo'</span>:<span class="dv">12</span>}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>d1 = {'Luis':20, 'Miguel':25, 'Pedro':31, 'Pablo':12}</code></pre>
 <ol start="2" type="1">
 <li>Usando el constructor <code>dict()</code> y dando los pares <code>key = value</code> separados por <code>,</code>:</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>d2 <span class="op">=</span> <span class="bu">dict</span>(Luis<span class="op">=</span><span class="dv">20</span>, Miguel<span class="op">=</span><span class="dv">25</span>, Pedro<span class="op">=</span><span class="dv">31</span>, Pablo<span class="op">=</span><span class="dv">12</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>d2 = dict(Luis=20, Miguel=25, Pedro=31, Pablo=12)</code></pre>
 <ol start="3" type="1">
 <li>Usando el constructor <code>dict()</code> y dando una lista de tuplas <code>(key, value)</code> separadas por <code>,</code>:</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>d3 <span class="op">=</span> <span class="bu">dict</span>([(<span class="st">'Luis'</span>, <span class="dv">20</span>), </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>           (<span class="st">'Miguel'</span>, <span class="dv">25</span>), </span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>           (<span class="st">'Pedro'</span>, <span class="dv">31</span>), </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>           (<span class="st">'Pablo'</span>, <span class="dv">12</span>)])</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>d3 = dict([('Luis', 20), 
+           ('Miguel', 25), 
+           ('Pedro', 31), 
+           ('Pablo', 12)])</code></pre>
 <p>Los tres diccionarios así creados, <code>d1</code>, <code>d2</code> y <code>d3</code>, son equivalentes y contienen la misma información. Crear estos diccionarios.</p>
-</section>
-<div id="cell-4" class="cell" data-tags="[]" data-execution_count="1">
+</div>
+</div>
+<p>Creación de los diccionarios:</p>
+<div id="cell-5" class="cell" data-tags="[]" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>d1 <span class="op">=</span> {<span class="st">'Luis'</span>:<span class="dv">20</span>, <span class="st">'Miguel'</span>:<span class="dv">25</span>, <span class="st">'Pedro'</span>:<span class="dv">31</span>, <span class="st">'Pablo'</span>:<span class="dv">12</span>}</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>d2 <span class="op">=</span> <span class="bu">dict</span>(Luis<span class="op">=</span><span class="dv">20</span>, Miguel<span class="op">=</span><span class="dv">25</span>, Pedro<span class="op">=</span><span class="dv">31</span>, Pablo<span class="op">=</span><span class="dv">12</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>d3 <span class="op">=</span> <span class="bu">dict</span>([(<span class="st">'Luis'</span>, <span class="dv">20</span>), </span>
@@ -666,7 +668,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>           (<span class="st">'Pedro'</span>, <span class="dv">31</span>), </span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>           (<span class="st">'Pablo'</span>, <span class="dv">12</span>)])</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-5" class="cell" data-tags="[]" data-execution_count="2">
+<div id="cell-6" class="cell" data-tags="[]" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d2)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d3)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -677,7 +679,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Los tres diccionarios son objetos diferentes:</p>
-<div id="cell-7" class="cell" data-execution_count="3">
+<div id="cell-8" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(d1), <span class="bu">id</span>(d1))</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(d2), <span class="bu">id</span>(d2))</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(d3), <span class="bu">id</span>(d3))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -687,10 +689,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 &lt;class 'dict'&gt; 2051985576128</code></pre>
 </div>
 </div>
-<section id="indexado-mediante-la-clave" class="level2" data-number="M.2">
-<h2 data-number="M.2" class="anchored" data-anchor-id="indexado-mediante-la-clave"><span class="header-section-number">M.2</span> Indexado mediante la clave</h2>
+</section>
+<section id="indexado-mediante-la-clave" class="level2" data-number="L.3">
+<h2 data-number="L.3" class="anchored" data-anchor-id="indexado-mediante-la-clave"><span class="header-section-number">L.3</span> Indexado mediante la clave</h2>
 <p>Los diccionarios se pueden indexar usando las claves de los elementos, por ejemplo:</p>
-<div id="cell-9" class="cell" data-tags="[]" data-execution_count="4">
+<div id="cell-10" class="cell" data-tags="[]" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1[<span class="st">'Luis'</span>])</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1[<span class="st">'Pedro'</span>])</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -699,7 +702,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Se puede modificar un valor de un cierto elemento:</p>
-<div id="cell-11" class="cell" data-tags="[]" data-execution_count="5">
+<div id="cell-12" class="cell" data-tags="[]" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>d1[<span class="st">'Luis'</span>] <span class="op">=</span> <span class="dv">53</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -709,7 +712,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Cuando el elemento con la clave que se proporciona no existe, entonces se agrega un nuevo elemento:</p>
-<div id="cell-13" class="cell" data-execution_count="6">
+<div id="cell-14" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>d1[<span class="st">'fulano'</span>] <span class="op">=</span> <span class="dv">15</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -717,48 +720,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="métodos-de-los-diccionarios." class="level2" data-number="M.3">
-<h2 data-number="M.3" class="anchored" data-anchor-id="métodos-de-los-diccionarios."><span class="header-section-number">M.3</span> Métodos de los diccionarios.</h2>
+<section id="métodos-de-los-diccionarios." class="level2" data-number="L.4">
+<h2 data-number="L.4" class="anchored" data-anchor-id="métodos-de-los-diccionarios."><span class="header-section-number">L.4</span> Métodos de los diccionarios.</h2>
 <p>En términos de Programación Orientada a Objetos, la clase <code>&lt;class 'dict'&gt;</code> define una serie de métodos que se pueden aplicar sobre los objetos del tipo <code>dict</code>. Veamos algunos ejemplos:</p>
-<section id="obtener-todos-los-elementos-del-diccionario." class="level3" data-number="M.3.1">
-<h3 data-number="M.3.1" class="anchored" data-anchor-id="obtener-todos-los-elementos-del-diccionario."><span class="header-section-number">M.3.1</span> Obtener todos los elementos del diccionario.</h3>
-<div id="cell-16" class="cell" data-execution_count="7">
+<section id="obtener-todos-los-elementos-del-diccionario." class="level3" data-number="L.4.1">
+<h3 data-number="L.4.1" class="anchored" data-anchor-id="obtener-todos-los-elementos-del-diccionario."><span class="header-section-number">L.4.1</span> Obtener todos los elementos del diccionario.</h3>
+<div id="cell-17" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>d1.items() </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>dict_items([('Luis', 53), ('Miguel', 25), ('Pedro', 31), ('Pablo', 12), ('fulano', 15)])</code></pre>
 </div>
 </div>
 </section>
-<section id="obtener-todas-las-claves-de-los-elementos-del-diccionario." class="level3" data-number="M.3.2">
-<h3 data-number="M.3.2" class="anchored" data-anchor-id="obtener-todas-las-claves-de-los-elementos-del-diccionario."><span class="header-section-number">M.3.2</span> Obtener todas las claves de los elementos del diccionario.</h3>
-<div id="cell-18" class="cell" data-execution_count="8">
+<section id="obtener-todas-las-claves-de-los-elementos-del-diccionario." class="level3" data-number="L.4.2">
+<h3 data-number="L.4.2" class="anchored" data-anchor-id="obtener-todas-las-claves-de-los-elementos-del-diccionario."><span class="header-section-number">L.4.2</span> Obtener todas las claves de los elementos del diccionario.</h3>
+<div id="cell-19" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>d1.keys() </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>dict_keys(['Luis', 'Miguel', 'Pedro', 'Pablo', 'fulano'])</code></pre>
 </div>
 </div>
 </section>
-<section id="obtener-todos-los-valores-de-los-elementos-del-diccionario." class="level3" data-number="M.3.3">
-<h3 data-number="M.3.3" class="anchored" data-anchor-id="obtener-todos-los-valores-de-los-elementos-del-diccionario."><span class="header-section-number">M.3.3</span> Obtener todos los valores de los elementos del diccionario.</h3>
-<div id="cell-20" class="cell" data-execution_count="9">
+<section id="obtener-todos-los-valores-de-los-elementos-del-diccionario." class="level3" data-number="L.4.3">
+<h3 data-number="L.4.3" class="anchored" data-anchor-id="obtener-todos-los-valores-de-los-elementos-del-diccionario."><span class="header-section-number">L.4.3</span> Obtener todos los valores de los elementos del diccionario.</h3>
+<div id="cell-21" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>d1.values() </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>dict_values([53, 25, 31, 12, 15])</code></pre>
 </div>
 </div>
 </section>
-<section id="obtener-el-valor-de-un-elemento" class="level3" data-number="M.3.4">
-<h3 data-number="M.3.4" class="anchored" data-anchor-id="obtener-el-valor-de-un-elemento"><span class="header-section-number">M.3.4</span> Obtener el valor de un elemento:</h3>
-<div id="cell-22" class="cell" data-execution_count="10">
+<section id="obtener-el-valor-de-un-elemento" class="level3" data-number="L.4.4">
+<h3 data-number="L.4.4" class="anchored" data-anchor-id="obtener-el-valor-de-un-elemento"><span class="header-section-number">L.4.4</span> Obtener el valor de un elemento:</h3>
+<div id="cell-23" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>d1.get(<span class="st">'Luis'</span>) <span class="co"># Valor del elemento cuya clave es `'Luis'`.</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>53</code></pre>
 </div>
 </div>
 </section>
-<section id="agregar-un-diccionario-en-otro." class="level3" data-number="M.3.5">
-<h3 data-number="M.3.5" class="anchored" data-anchor-id="agregar-un-diccionario-en-otro."><span class="header-section-number">M.3.5</span> Agregar un diccionario en otro.</h3>
-<div id="cell-24" class="cell" data-tags="[]" data-execution_count="11">
+<section id="agregar-un-diccionario-en-otro." class="level3" data-number="L.4.5">
+<h3 data-number="L.4.5" class="anchored" data-anchor-id="agregar-un-diccionario-en-otro."><span class="header-section-number">L.4.5</span> Agregar un diccionario en otro.</h3>
+<div id="cell-25" class="cell" data-tags="[]" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>d4 <span class="op">=</span> {<span class="st">'Azul'</span>:<span class="dv">35</span>, <span class="st">'Cereza'</span>:<span class="dv">45</span>}</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>d1.update(d4) <span class="co"># Agregamos el diccionario d4 al diccionario d1</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -767,7 +770,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Si los elementos ya existen, solo se actualizan los valores.</p>
-<div id="cell-26" class="cell" data-tags="[]" data-execution_count="12">
+<div id="cell-27" class="cell" data-tags="[]" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>d5 <span class="op">=</span> {<span class="st">'Luis'</span>:<span class="dv">512</span>, <span class="st">'fulano'</span>:<span class="dv">10</span>}</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>d1.update(d5)</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -776,9 +779,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="extraer-el-último-elemento-del-diccionario." class="level3" data-number="M.3.6">
-<h3 data-number="M.3.6" class="anchored" data-anchor-id="extraer-el-último-elemento-del-diccionario."><span class="header-section-number">M.3.6</span> Extraer el último elemento del diccionario.</h3>
-<div id="cell-28" class="cell" data-execution_count="13">
+<section id="extraer-el-último-elemento-del-diccionario." class="level3" data-number="L.4.6">
+<h3 data-number="L.4.6" class="anchored" data-anchor-id="extraer-el-último-elemento-del-diccionario."><span class="header-section-number">L.4.6</span> Extraer el último elemento del diccionario.</h3>
+<div id="cell-29" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1.popitem()) </span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -787,9 +790,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="extraer-el-elemento-de-una-cierta-clave." class="level3" data-number="M.3.7">
-<h3 data-number="M.3.7" class="anchored" data-anchor-id="extraer-el-elemento-de-una-cierta-clave."><span class="header-section-number">M.3.7</span> Extraer el elemento de una cierta clave.</h3>
-<div id="cell-30" class="cell" data-execution_count="14">
+<section id="extraer-el-elemento-de-una-cierta-clave." class="level3" data-number="L.4.7">
+<h3 data-number="L.4.7" class="anchored" data-anchor-id="extraer-el-elemento-de-una-cierta-clave."><span class="header-section-number">L.4.7</span> Extraer el elemento de una cierta clave.</h3>
+<div id="cell-31" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1.pop(<span class="st">'Miguel'</span>)) <span class="co"># Elemento de clave `'Miguel'`.</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -798,9 +801,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="eliminar-todos-los-elementos-del-diccionario." class="level3" data-number="M.3.8">
-<h3 data-number="M.3.8" class="anchored" data-anchor-id="eliminar-todos-los-elementos-del-diccionario."><span class="header-section-number">M.3.8</span> Eliminar todos los elementos del diccionario.</h3>
-<div id="cell-32" class="cell" data-execution_count="15">
+<section id="eliminar-todos-los-elementos-del-diccionario." class="level3" data-number="L.4.8">
+<h3 data-number="L.4.8" class="anchored" data-anchor-id="eliminar-todos-los-elementos-del-diccionario."><span class="header-section-number">L.4.8</span> Eliminar todos los elementos del diccionario.</h3>
+<div id="cell-33" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1, <span class="bu">id</span>(d1)) <span class="co"># Antes de eliminar los elementos</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>d1.clear() <span class="co"># elimina todos los elementos del diccionario</span></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1, <span class="bu">id</span>(d1)) <span class="co"># Después de eliminar los elementos</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -811,12 +814,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="operaciones-y-funciones-sobre-diccionarios." class="level2" data-number="M.4">
-<h2 data-number="M.4" class="anchored" data-anchor-id="operaciones-y-funciones-sobre-diccionarios."><span class="header-section-number">M.4</span> Operaciones y funciones sobre diccionarios.</h2>
+<section id="operaciones-y-funciones-sobre-diccionarios." class="level2" data-number="L.5">
+<h2 data-number="L.5" class="anchored" data-anchor-id="operaciones-y-funciones-sobre-diccionarios."><span class="header-section-number">L.5</span> Operaciones y funciones sobre diccionarios.</h2>
 <ul>
 <li>Imprimimos el diccionario <code>d2</code>.</li>
 </ul>
-<div id="cell-34" class="cell" data-execution_count="16">
+<div id="cell-35" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d2)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{'Luis': 20, 'Miguel': 25, 'Pedro': 31, 'Pablo': 12}</code></pre>
@@ -825,21 +828,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Es posible usar las características de los diccionarios para imprimir la salida.</li>
 </ul>
-<div id="cell-36" class="cell" data-execution_count="17">
+<div id="cell-37" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Usando la clave y cadenas formateadas</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Luis:</span><span class="sc">{</span>d2[<span class="st">'Luis'</span>]<span class="sc">}</span><span class="ss">, Miguel:</span><span class="sc">{</span>d2[<span class="st">'Miguel'</span>]<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Luis:20, Miguel:25</code></pre>
 </div>
 </div>
-<div id="cell-37" class="cell" data-execution_count="18">
+<div id="cell-38" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Usando la clave, el método str.format() y pasando el diccionario como argumento</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Luis:</span><span class="sc">{d[Luis]}</span><span class="st">, Miguel:</span><span class="sc">{d[Miguel]}</span><span class="st">"</span>.<span class="bu">format</span>(d <span class="op">=</span> d2))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Luis:20, Miguel:25</code></pre>
 </div>
 </div>
-<div id="cell-38" class="cell" data-execution_count="19">
+<div id="cell-39" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Una forma más clara y concisa:</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Luis:</span><span class="sc">{Luis}</span><span class="st">, Miguel:</span><span class="sc">{Miguel}</span><span class="st">"</span>.<span class="bu">format</span>(<span class="op">**</span>d2))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -849,7 +852,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>¿Existe el elemento <code>'Miguel'</code> en el diccionario?</li>
 </ul>
-<div id="cell-40" class="cell" data-tags="[]" data-execution_count="20">
+<div id="cell-41" class="cell" data-tags="[]" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co">'Miguel'</span> <span class="kw">in</span> d2</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>True</code></pre>
@@ -858,7 +861,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>¿Existe el valor <code>25</code> en los valores del diccionario?</li>
 </ul>
-<div id="cell-42" class="cell" data-tags="[]" data-execution_count="21">
+<div id="cell-43" class="cell" data-tags="[]" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="dv">25</span> <span class="kw">in</span> d2.values()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>True</code></pre>
@@ -867,7 +870,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>¿Existe la clave <code>'Luis'</code> en las claves del diccionario?</li>
 </ul>
-<div id="cell-44" class="cell" data-tags="[]" data-execution_count="22">
+<div id="cell-45" class="cell" data-tags="[]" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co">'Luis'</span> <span class="kw">in</span> d2.keys()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>True</code></pre>
@@ -876,7 +879,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Algunas funciones comunes:</li>
 </ul>
-<div id="cell-46" class="cell" data-execution_count="23">
+<div id="cell-47" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(d2))</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">max</span>(d2))</span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">min</span>(d2))</span>
@@ -899,7 +902,7 @@ True
 <ul>
 <li>Eliminar el elemento <code>'Miguel':25</code></li>
 </ul>
-<div id="cell-48" class="cell" data-execution_count="24">
+<div id="cell-49" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> d2[<span class="st">'Miguel'</span>] </span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d2)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -907,18 +910,18 @@ True
 </div>
 </div>
 </section>
-<section id="copiando-diccionarios" class="level2" data-number="M.5">
-<h2 data-number="M.5" class="anchored" data-anchor-id="copiando-diccionarios"><span class="header-section-number">M.5</span> Copiando diccionarios</h2>
-<div id="cell-50" class="cell" data-tags="[]" data-execution_count="25">
+<section id="copiando-diccionarios" class="level2" data-number="L.6">
+<h2 data-number="L.6" class="anchored" data-anchor-id="copiando-diccionarios"><span class="header-section-number">L.6</span> Copiando diccionarios</h2>
+<div id="cell-51" class="cell" data-tags="[]" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Imprimimos el contenido del diccionario</span></span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d3)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{'Luis': 20, 'Miguel': 25, 'Pedro': 31, 'Pablo': 12}</code></pre>
 </div>
 </div>
-<section id="copiando-con-el-método-copy" class="level3" data-number="M.5.1">
-<h3 data-number="M.5.1" class="anchored" data-anchor-id="copiando-con-el-método-copy"><span class="header-section-number">M.5.1</span> Copiando con el método <code>copy()</code></h3>
-<div id="cell-52" class="cell" data-tags="[]" data-execution_count="26">
+<section id="copiando-con-el-método-copy" class="level3" data-number="L.6.1">
+<h3 data-number="L.6.1" class="anchored" data-anchor-id="copiando-con-el-método-copy"><span class="header-section-number">L.6.1</span> Copiando con el método <code>copy()</code></h3>
+<div id="cell-53" class="cell" data-tags="[]" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>d3_copia <span class="op">=</span> d3.copy()</span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d3, <span class="bu">type</span>(d3), <span class="bu">id</span>(d3))</span>
@@ -929,9 +932,9 @@ True
 </div>
 </div>
 </section>
-<section id="copiando-con-la-biblioteca-copy" class="level3" data-number="M.5.2">
-<h3 data-number="M.5.2" class="anchored" data-anchor-id="copiando-con-la-biblioteca-copy"><span class="header-section-number">M.5.2</span> Copiando con la biblioteca <code>copy()</code></h3>
-<div id="cell-54" class="cell" data-tags="[]" data-execution_count="27">
+<section id="copiando-con-la-biblioteca-copy" class="level3" data-number="L.6.2">
+<h3 data-number="L.6.2" class="anchored" data-anchor-id="copiando-con-la-biblioteca-copy"><span class="header-section-number">L.6.2</span> Copiando con la biblioteca <code>copy()</code></h3>
+<div id="cell-55" class="cell" data-tags="[]" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> copy</span>
 <span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>d3_copia <span class="op">=</span> copy.copy(d3)</span>
 <span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -944,7 +947,6 @@ True
 </div>
 
 
-</section>
 </section>
 </section>
 

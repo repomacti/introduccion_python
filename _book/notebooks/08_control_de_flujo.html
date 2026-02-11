@@ -83,6 +83,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-d9d7ed2c14390fa05efde32fc7ffca7f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -417,7 +418,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/07_archivos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos. {#sec-g-archivos}¶</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -531,34 +532,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#declaraciones-de-control-de-flujo." id="toc-declaraciones-de-control-de-flujo." class="nav-link active" data-scroll-target="#declaraciones-de-control-de-flujo."><span class="header-section-number">H.1</span> Declaraciones de control de flujo.</a></li>
   <li><a href="#while" id="toc-while" class="nav-link" data-scroll-target="#while"><span class="header-section-number">H.2</span> <code>while</code></a>
   <ul class="collapse">
-  <li><a href="#sec-ejemplo_cf_1" id="toc-sec-ejemplo_cf_1" class="nav-link" data-scroll-target="#sec-ejemplo_cf_1"><span class="header-section-number">H.2.1</span> Ejemplo.</a></li>
-  <li><a href="#reglas-de-la-sangría" id="toc-reglas-de-la-sangría" class="nav-link" data-scroll-target="#reglas-de-la-sangría"><span class="header-section-number">H.2.2</span> Reglas de la sangría</a></li>
-  <li><a href="#ejemplo." id="toc-ejemplo." class="nav-link" data-scroll-target="#ejemplo."><span class="header-section-number">H.2.3</span> Ejemplo.</a></li>
-  <li><a href="#ejemplo.-1" id="toc-ejemplo.-1" class="nav-link" data-scroll-target="#ejemplo.-1"><span class="header-section-number">H.2.4</span> Ejemplo.</a></li>
+  <li><a href="#reglas-de-la-sangría" id="toc-reglas-de-la-sangría" class="nav-link" data-scroll-target="#reglas-de-la-sangría"><span class="header-section-number">H.2.1</span> Reglas de la sangría</a></li>
   </ul></li>
   <li><a href="#for" id="toc-for" class="nav-link" data-scroll-target="#for"><span class="header-section-number">H.3</span> <code>for</code></a>
   <ul class="collapse">
   <li><a href="#función-range" id="toc-función-range" class="nav-link" data-scroll-target="#función-range"><span class="header-section-number">H.3.1</span> Función range</a></li>
-  <li><a href="#ejemplo.-2" id="toc-ejemplo.-2" class="nav-link" data-scroll-target="#ejemplo.-2"><span class="header-section-number">H.3.2</span> Ejemplo.</a></li>
   </ul></li>
-  <li><a href="#if-elif-else" id="toc-if-elif-else" class="nav-link" data-scroll-target="#if-elif-else"><span class="header-section-number">H.4</span> <code>if</code>, <code>elif</code>, <code>else</code></a>
-  <ul class="collapse">
-  <li><a href="#ejemplo.-3" id="toc-ejemplo.-3" class="nav-link" data-scroll-target="#ejemplo.-3"><span class="header-section-number">H.4.1</span> Ejemplo.</a></li>
-  </ul></li>
-  <li><a href="#sangría-en-varios-bloques-de-código" id="toc-sangría-en-varios-bloques-de-código" class="nav-link" data-scroll-target="#sangría-en-varios-bloques-de-código"><span class="header-section-number">H.5</span> Sangría en varios bloques de código</a>
-  <ul class="collapse">
-  <li><a href="#ejemplo.-4" id="toc-ejemplo.-4" class="nav-link" data-scroll-target="#ejemplo.-4"><span class="header-section-number">H.5.1</span> Ejemplo.</a></li>
-  </ul></li>
-  <li><a href="#operador-ternario" id="toc-operador-ternario" class="nav-link" data-scroll-target="#operador-ternario"><span class="header-section-number">H.6</span> Operador ternario</a>
-  <ul class="collapse">
-  <li><a href="#ejemplo.-5" id="toc-ejemplo.-5" class="nav-link" data-scroll-target="#ejemplo.-5"><span class="header-section-number">H.6.1</span> Ejemplo.</a></li>
-  </ul></li>
-  <li><a href="#break-continue-else-pass" id="toc-break-continue-else-pass" class="nav-link" data-scroll-target="#break-continue-else-pass"><span class="header-section-number">H.7</span> break, continue, else, pass</a>
-  <ul class="collapse">
-  <li><a href="#ejemplo-break." id="toc-ejemplo-break." class="nav-link" data-scroll-target="#ejemplo-break."><span class="header-section-number">H.7.1</span> Ejemplo <code>break</code>.</a></li>
-  <li><a href="#ejemplo-continue." id="toc-ejemplo-continue." class="nav-link" data-scroll-target="#ejemplo-continue."><span class="header-section-number">H.7.2</span> Ejemplo <code>continue</code>.</a></li>
-  <li><a href="#ejemplo-pass." id="toc-ejemplo-pass." class="nav-link" data-scroll-target="#ejemplo-pass."><span class="header-section-number">H.7.3</span> Ejemplo <code>pass</code>.</a></li>
-  </ul></li>
+  <li><a href="#if-elif-else" id="toc-if-elif-else" class="nav-link" data-scroll-target="#if-elif-else"><span class="header-section-number">H.4</span> <code>if</code>, <code>elif</code>, <code>else</code></a></li>
+  <li><a href="#sangría-en-varios-bloques-de-código" id="toc-sangría-en-varios-bloques-de-código" class="nav-link" data-scroll-target="#sangría-en-varios-bloques-de-código"><span class="header-section-number">H.5</span> Sangría en varios bloques de código</a></li>
+  <li><a href="#operador-ternario" id="toc-operador-ternario" class="nav-link" data-scroll-target="#operador-ternario"><span class="header-section-number">H.6</span> Operador ternario</a></li>
+  <li><a href="#break-continue-else-pass" id="toc-break-continue-else-pass" class="nav-link" data-scroll-target="#break-continue-else-pass"><span class="header-section-number">H.7</span> break, continue, else, pass</a></li>
   <li><a href="#match-desde-la-versión-3.10" id="toc-match-desde-la-versión-3.10" class="nav-link" data-scroll-target="#match-desde-la-versión-3.10"><span class="header-section-number">H.8</span> <code>match</code> (desde la versión 3.10)</a></li>
   </ul>
 </nav>
@@ -653,11 +636,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Se utiliza para repetir un conjunto de instrucciones mientras una expresión sea verdadera:</p>
 <pre><code>while expresión:
     código ...</code></pre>
-<section id="sec-ejemplo_cf_1" class="level3 alert alert-block alert-success" data-number="H.2.1">
-<h3 data-number="H.2.1" class="anchored" data-anchor-id="sec-ejemplo_cf_1"><span class="header-section-number">H.2.1</span> Ejemplo.</h3>
+<div id="exm-h-1" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;H.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> Repetir hasta cumplir una condición 1.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Imprimir el valor de una variable <code>a</code> que inicia en <code>0</code> y que se va incrementando en <code>1</code> hasta que se cumple que <code>a &lt; 5</code>.</p>
-</section>
-<div id="cell-4" class="cell" data-execution_count="29">
+</div>
+</div>
+<div id="cell-4" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Inicializamos a en 0</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">0</span> </span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -686,21 +678,29 @@ Finaliza while</code></pre>
 <li>Observa que dentro del ciclo se encuentra la instrucción <code>a += 1</code> que va incrementando el valor de <code>a</code> en cada iteración.</li>
 <li>También hay una instrucción para imprimir el resultado de cada iteración.</li>
 </ul>
-<section id="reglas-de-la-sangría" class="level3" data-number="H.2.2">
-<h3 data-number="H.2.2" class="anchored" data-anchor-id="reglas-de-la-sangría"><span class="header-section-number">H.2.2</span> Reglas de la sangría</h3>
+<section id="reglas-de-la-sangría" class="level3" data-number="H.2.1">
+<h3 data-number="H.2.1" class="anchored" data-anchor-id="reglas-de-la-sangría"><span class="header-section-number">H.2.1</span> Reglas de la sangría</h3>
 <ul>
-<li>Como puedes observar en el <a href="#sec-ejemplo_cf_1" class="quarto-xref">Ejemplo&nbsp;<span>H.2.1</span></a>, el código debajo de la instrucción <code>while</code> tiene una sangría (<em>indentation</em>): las líneas de código están recorridas hacia la derecha. Este espacio en blanco debe ser al menos de uno, pero pueden ser más.</li>
+<li>Como puedes observar en el <a href="#exm-h-1" class="quarto-xref">Ejemplo&nbsp;<span>H.1</span></a>, el código debajo de la instrucción <code>while</code> tiene una sangría (<em>indentation</em>): las líneas de código están recorridas hacia la derecha. Este espacio en blanco debe ser al menos de uno, pero pueden ser más.</li>
 <li>Por omisión, en JupyterLab (y algunos otros editores), se usan 4 espacios en blanco para cada línea de código dentro del bloque.</li>
 <li>El número de espacios en blanco se debe mantener durante todo el bloque de código.</li>
 <li>Cuando termina la sangría, es decir cuando las líneas de código ya no tienen ningún espacio en blanco al inicio, se cierra el bloque de código, en este caso el <code>while</code>.</li>
 <li>Las reglas de la sangría son iguales en otras declaraciones como <code>for</code>, <code>if ... elif ... else</code>, <code>match</code>, entre otras.</li>
 <li>El uso de una sangría para organizar los bloques de código hace que los programas en Python sean más claros.</li>
 </ul>
-</section>
-<section id="ejemplo." class="level3 alert alert-block alert-success" data-number="H.2.3">
-<h3 data-number="H.2.3" class="anchored" data-anchor-id="ejemplo."><span class="header-section-number">H.2.3</span> Ejemplo.</h3>
+<div id="exm-h-2" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;H.2: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> Repetir hasta cumplir una condición 2.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>En los siguientes ejemplos de <code>while</code> el código dentro del bloque está alineado correctamente.</p>
-</section>
+</div>
+</div>
 <div id="cell-7" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> a <span class="op">&lt;</span> <span class="dv">5</span>: </span>
@@ -728,12 +728,21 @@ a = 4</code></pre>
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo.-1" class="level3 alert alert-block alert-success" data-number="H.2.4">
-<h3 data-number="H.2.4" class="anchored" data-anchor-id="ejemplo.-1"><span class="header-section-number">H.2.4</span> Ejemplo.</h3>
+<div id="exm-h-3" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;H.3: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> Sangría errónea.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>En los siguientes ejemplos de <code>while</code> la líneas de código del bloque están incorrectamente alineadas, de tal manera que al ejecutarlos obtendrás un error como el siguiente:</p>
 <p><code>IndentationError: unexpected indent</code></p>
 <p>y te indicará el lugar donde la alineación no es correcta.</p>
-</section>
+</div>
+</div>
 <div id="cell-11" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> a <span class="op">&lt;</span> <span class="dv">5</span>: </span>
@@ -764,6 +773,7 @@ a = 4</code></pre>
 </div>
 </div>
 </div>
+</section>
 </section>
 <section id="for" class="level2" data-number="H.3">
 <h2 data-number="H.3" class="anchored" data-anchor-id="for"><span class="header-section-number">H.3</span> <code>for</code></h2>
@@ -800,9 +810,16 @@ a = 4</code></pre>
 <p>Una secuencia que es muy usada en conjunto con el ciclo <code>for</code> es la que se genera con la función <code>range()</code>. Esta función genera una secuencia iterable con un inicio, un final y un salto, su forma es la siguiente:</p>
 <pre><code>range(start, stop, step)</code></pre>
 <p>La secuencia iniciará en <code>start</code> y terminará en <code>stop-1</code> en pasos de tamaño <code>step</code>.</p>
-</section>
-<section id="ejemplo.-2" class="level3 alert alert-block alert-success" data-number="H.3.2">
-<h3 data-number="H.3.2" class="anchored" data-anchor-id="ejemplo.-2"><span class="header-section-number">H.3.2</span> Ejemplo.</h3>
+<div id="exm-h-4" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;H.4: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> Repetir un número de veces.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Usando un ciclo <code>for</code> y secuencias <code>range()</code> realiza lo siguiente:</p>
 <ol type="1">
 <li>Imprime los números del 1 al 20 .</li>
@@ -810,7 +827,8 @@ a = 4</code></pre>
 <li>Imprime la secuencia de números: <code>20, 19, ..., 1</code>.</li>
 <li>Imprime la secuencia de números: <code>-5, -3, -1, 1, 3,</code></li>
 </ol>
-</section>
+</div>
+</div>
 <div id="cell-18" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1.</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">21</span>): <span class="co"># Por omisión step = 1</span></span>
@@ -846,6 +864,7 @@ a = 4</code></pre>
 </div>
 </div>
 <p>Observa que en el ejemplo anterior no se imprime el <code>5</code>.</p>
+</section>
 </section>
 <section id="if-elif-else" class="level2" data-number="H.4">
 <h2 data-number="H.4" class="anchored" data-anchor-id="if-elif-else"><span class="header-section-number">H.4</span> <code>if</code>, <code>elif</code>, <code>else</code></h2>
@@ -903,11 +922,20 @@ else:
 </div>
 </div>
 <p>Cambia los valores de <code>a</code> y <code>b</code> de manera similar que en el ejemplo anterior y observa el resultado.</p>
-<section id="ejemplo.-3" class="level3 alert alert-block alert-success" data-number="H.4.1">
-<h3 data-number="H.4.1" class="anchored" data-anchor-id="ejemplo.-3"><span class="header-section-number">H.4.1</span> Ejemplo.</h3>
+<div id="exm-h-5" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;H.5: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> Impares.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Implementa un código que imprima los número <strong>impares</strong> en el rango <code>(-N, N)</code>, donde <code>N</code> es un valor entero positivo que es ingresado por el usuario.</p>
-</section>
-<div id="cell-31" class="cell" data-execution_count="14">
+</div>
+</div>
+<div id="cell-31" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Se obtiene el valor de N</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"N ="</span>))</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -916,10 +944,10 @@ else:
 <span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">%</span> <span class="dv">2</span>: <span class="co"># Se cumple cuando la operación módulo genera un residuo diferente de cero (n = impar)</span></span>
 <span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(n, end <span class="op">=</span> <span class="st">", "</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdin">
-<pre><code>N = 10</code></pre>
+<pre><code>N = 5</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>-9, -7, -5, -3, -1, 1, 3, 5, 7, 9, </code></pre>
+<pre><code>-5, -3, -1, 1, 3, 5, </code></pre>
 </div>
 </div>
 </section>
@@ -932,23 +960,32 @@ else:
 <li>Es necesario mantener alineadas las instrucciones que pertenecen a cada bloque de código, de otra manera obtendrás resultados inesperados o incluso errores.</li>
 <li>Se pueden anidar tantos bloques de código como se requieran, solo se debe de ser muy consistente para definir la terminación de cada bloque de código. Veamos el siguiente ejemplo:</li>
 </ul>
-<section id="ejemplo.-4" class="level3 alert alert-block alert-success" data-number="H.5.1">
-<h3 data-number="H.5.1" class="anchored" data-anchor-id="ejemplo.-4"><span class="header-section-number">H.5.1</span> Ejemplo.</h3>
+<div id="exm-h-6" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;H.6: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> Sangrías anidadas.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Considera el siguiente código:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span>N, N<span class="op">+</span><span class="dv">1</span>, <span class="dv">1</span>):</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Checando el número </span><span class="sc">{</span>n<span class="sc">}</span><span class="ss"> ..."</span>)</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    np <span class="op">=</span> <span class="bu">abs</span>(n)</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">%</span> <span class="dv">2</span>:</span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>n<span class="sc">}</span><span class="ss"> es impar"</span>)</span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span>np, np<span class="op">+</span><span class="dv">1</span>):</span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>, end<span class="op">=</span><span class="st">","</span>)</span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>n<span class="sc">}</span><span class="ss"> es par"</span>)</span>
-<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span>np, np<span class="op">+</span><span class="dv">1</span>):</span>
-<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>, end<span class="op">=</span><span class="st">","</span>)</span>
-<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Terminando el chequeo"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
+<pre><code>N = 5
+for n in range(-N, N+1, 1):
+    print(f"\nChecando el número {n} ...")
+    np = abs(n)
+    if n % 2:
+        print(f"{n} es impar")
+        for i in range(-np, np+1):
+            print(f"{i}", end=",")
+    else:
+        print(f"{n} es par")
+        for i in range(-np, np+1):
+            print(f"{i}", end=",")
+    print("\nTerminando el chequeo")</code></pre>
+</div>
+</div>
 <p>En el código anterior se tienen los siguientes bloques de código:</p>
 <ol type="1">
 <li>Nivel cero sangría:</li>
@@ -981,7 +1018,7 @@ else:
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>            ...</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>, end<span class="op">=</span><span class="st">","</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br> En la siguiente celda escribimos el código anterior respetando todos los espacios y sangrías. Observa el resultado y trata de explicar lo que hace.</p>
-<div id="cell-35" class="cell" data-execution_count="15">
+<div id="cell-35" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span>N, N<span class="op">+</span><span class="dv">1</span>, <span class="dv">1</span>):</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Checando el número </span><span class="sc">{</span>n<span class="sc">}</span><span class="ss"> ..."</span>)</span>
@@ -1059,11 +1096,20 @@ Terminando el chequeo</code></pre>
 <p>Este operador permite evaluar una expresión lógica y generar un valor para un resultado <code>True</code> y otro diferente para un resultado <code>False</code>; todo esto se logra en una sola línea de código como sigue:</p>
 <pre><code>resultado = valor1 if expresion else valor2</code></pre>
 <p>En este código la variable <code>resultado</code> tendrá el valor <code>valor1</code> si la <code>expresion</code> es verdadera o el <code>valor2</code> si la expresión es falsa.</p>
-<section id="ejemplo.-5" class="level3 alert alert-block alert-success" data-number="H.6.1">
-<h3 data-number="H.6.1" class="anchored" data-anchor-id="ejemplo.-5"><span class="header-section-number">H.6.1</span> Ejemplo.</h3>
+<div id="exm-h-7" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;H.7: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> Operador ternario.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Verificar si el valor de la variable <code>c</code> es mayor que <code>5</code>.</p>
-</section>
-<div id="cell-38" class="cell" data-execution_count="30">
+</div>
+</div>
+<div id="cell-38" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Inicializamos c</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1086,7 +1132,7 @@ r = 0</code></pre>
 </div>
 <p>En la celda anterior modifica el valor de <code>c</code> a <code>6</code> y ve lo que sucede.</p>
 <p>Podemos probar para varios valores de <code>c</code> usando un ciclo <code>for</code> como se muestra a continuación:</p>
-<div id="cell-40" class="cell" data-execution_count="17">
+<div id="cell-40" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> c <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">10</span>):</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    r <span class="op">=</span> c <span class="cf">if</span> c <span class="op">&gt;</span> <span class="dv">5</span> <span class="cf">else</span> <span class="dv">0</span></span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"c = </span><span class="sc">{</span>c<span class="sc">}</span><span class="ss">,"</span>, <span class="ss">f"¿c &gt; 5? = </span><span class="sc">{</span>c <span class="op">&gt;</span> <span class="dv">5</span><span class="sc">}</span><span class="ss">,"</span>, <span class="ss">f"r = </span><span class="sc">{</span>r<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1113,11 +1159,20 @@ c = 9, ¿c &gt; 5? = True, r = 9</code></pre>
 <li><code>pass</code>: no hacer nada y continuar.</li>
 </ul>
 <p>Veamos algunos ejemplos.</p>
-<section id="ejemplo-break." class="level3 alert alert-block alert-success" data-number="H.7.1">
-<h3 data-number="H.7.1" class="anchored" data-anchor-id="ejemplo-break."><span class="header-section-number">H.7.1</span> Ejemplo <code>break</code>.</h3>
+<div id="exm-h-8" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;H.8: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> <code>break</code>.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Recorrer una cadena para encontrar una letra; una vez encontrada terminar el proceso.</p>
-</section>
-<div id="cell-42" class="cell" data-execution_count="18">
+</div>
+</div>
+<div id="cell-42" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Recorremos una cadena</span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> letra <span class="kw">in</span> <span class="st">"Hola mundo Pythonico"</span>:</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"letra: </span><span class="sc">{</span>letra<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -1135,7 +1190,7 @@ letra: u</code></pre>
 </div>
 <p>Se puede agregar un <code>else</code> alineado con el <code>for</code>. El código dentro del <code>else</code> será ejecutado cuando no se alcanzó a ejecutar la condición <code>break</code>.</p>
 <p>En el ejemplo que sigue, prueba primero con la letra <code>u</code> y luego con <code>r</code>.</p>
-<div id="cell-44" class="cell" data-execution_count="31">
+<div id="cell-44" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Caracter a buscar: "</span>)</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> letra <span class="kw">in</span> <span class="st">"Hola mundo Pythonico"</span>:</span>
@@ -1160,11 +1215,20 @@ Letra 'u' encontrada</code></pre>
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo-continue." class="level3 alert alert-block alert-success" data-number="H.7.2">
-<h3 data-number="H.7.2" class="anchored" data-anchor-id="ejemplo-continue."><span class="header-section-number">H.7.2</span> Ejemplo <code>continue</code>.</h3>
+<div id="exm-h-9" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;H.9: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> <code>continue</code>.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Imprimir cuándo un número es par entre los números <code>0</code> a <code>11</code>.</p>
-</section>
-<div id="cell-47" class="cell" data-execution_count="21">
+</div>
+</div>
+<div id="cell-47" class="cell" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">11</span>):</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">%</span> <span class="dv">2</span>:  <span class="co"># Cuando n % 2 es diferente de cero, el número es impar</span></span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span> <span class="co"># no se hace nada, termina esta iteración y se pasa al siguiente número</span></span>
@@ -1179,11 +1243,20 @@ Número par 10</code></pre>
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo-pass." class="level3 alert alert-block alert-success" data-number="H.7.3">
-<h3 data-number="H.7.3" class="anchored" data-anchor-id="ejemplo-pass."><span class="header-section-number">H.7.3</span> Ejemplo <code>pass</code>.</h3>
+<div id="exm-h-10" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;H.10: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> <code>pass</code>.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Esta declaración no hace nada y generalmente se usa principalmente para cuestiones de desarrollo de código a un nivel abstracto. Por ejemplo si aún no tenemos claro que se va a realizar dentro de un ciclo o de una función, podemos simplemente poner esta declaración y dejar la implemetación para más adelante.</p>
-</section>
-<div id="cell-50" class="cell" data-execution_count="32">
+</div>
+</div>
+<div id="cell-50" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Aún no sabemos el código que debemos implementar</span></span>
@@ -1195,7 +1268,7 @@ Número par 10</code></pre>
 <pre><code>Aquí va el código del while</code></pre>
 </div>
 </div>
-<div id="cell-51" class="cell" data-execution_count="33">
+<div id="cell-51" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># La siguiente función debe calcular la secuencia de Fibonacci</span></span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fib(n):</span>
 <span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Aquí va el código de la función: n = </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(n))</span>
@@ -1225,7 +1298,7 @@ Número par 10</code></pre>
 <h2 data-number="H.8" class="anchored" data-anchor-id="match-desde-la-versión-3.10"><span class="header-section-number">H.8</span> <code>match</code> (desde la versión 3.10)</h2>
 <p>Esta declaración es parte de Python a partir de la versión 3.10. Permite buscar coincidencias de patrones de una manera similar a la instrucción <strong>switch-case</strong> de otros lenguajes de programación (C/C++, Java).</p>
 <p>Veamos algunos ejemplos:</p>
-<div id="cell-54" class="cell" data-execution_count="25">
+<div id="cell-54" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Teclea 1 o 0 por favor"</span>))</span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="cf">match</span> x:</span>
@@ -1237,13 +1310,13 @@ Número par 10</code></pre>
 <span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Tecleaste algo diferente"</span>)</span>
 <span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>        </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdin">
-<pre><code>Teclea 1 o 0 por favor 1</code></pre>
+<pre><code>Teclea 1 o 0 por favor 5</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Tecleaste el número entero uno</code></pre>
+<pre><code>Tecleaste algo diferente</code></pre>
 </div>
 </div>
-<div id="cell-55" class="cell" data-execution_count="26">
+<div id="cell-55" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Modifica los valores de la siguiente tupla y observa el resultado</span></span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>point <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">0</span>)</span>
 <span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1262,7 +1335,7 @@ Número par 10</code></pre>
 <pre><code>Origen (0, 0)</code></pre>
 </div>
 </div>
-<div id="cell-56" class="cell" data-execution_count="27">
+<div id="cell-56" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="cf">match</span> x:</span>
 <span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">case</span> x <span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">0</span>:</span>
@@ -1277,7 +1350,7 @@ Número par 10</code></pre>
 <pre><code>Número negativo</code></pre>
 </div>
 </div>
-<div id="cell-57" class="cell" data-execution_count="28">
+<div id="cell-57" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>status <span class="op">=</span> <span class="dv">400</span></span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="cf">match</span> status:</span>
 <span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">case</span> <span class="dv">400</span>:</span>
@@ -1713,8 +1786,8 @@ Número par 10</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../notebooks/07_archivos.html" class="pagination-link" aria-label="Gestión de archivos.">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos.</span></span>
+      <a href="../notebooks/07_archivos.html" class="pagination-link" aria-label="Gestión de archivos. {#sec-g-archivos}¶">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos. {#sec-g-archivos}¶</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

@@ -83,6 +83,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-d9d7ed2c14390fa05efde32fc7ffca7f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -396,12 +397,6 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Manejo de información.</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../lecciones/leccion_02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Cadenas</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -452,7 +447,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/07_archivos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos. {#sec-g-archivos}¶</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -563,22 +558,11 @@ window.Quarto = {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#argumentos-por-omisión." id="toc-argumentos-por-omisión." class="nav-link active" data-scroll-target="#argumentos-por-omisión."><span class="header-section-number">V.1</span> Argumentos por omisión.</a>
-  <ul class="collapse">
-  <li><a href="#ejemplo." id="toc-ejemplo." class="nav-link" data-scroll-target="#ejemplo."><span class="header-section-number">V.1.1</span> Ejemplo.</a></li>
-  </ul></li>
+  <li><a href="#argumentos-por-omisión." id="toc-argumentos-por-omisión." class="nav-link active" data-scroll-target="#argumentos-por-omisión."><span class="header-section-number">V.1</span> Argumentos por omisión.</a></li>
   <li><a href="#argumentos-posicionales-y-con-nombre." id="toc-argumentos-posicionales-y-con-nombre." class="nav-link" data-scroll-target="#argumentos-posicionales-y-con-nombre."><span class="header-section-number">V.2</span> Argumentos posicionales y con nombre.</a></li>
   <li><a href="#número-variable-de-parámetros" id="toc-número-variable-de-parámetros" class="nav-link" data-scroll-target="#número-variable-de-parámetros"><span class="header-section-number">V.3</span> Número variable de parámetros</a></li>
-  <li><a href="#funciones-como-parámetros-de-otras-funciones." id="toc-funciones-como-parámetros-de-otras-funciones." class="nav-link" data-scroll-target="#funciones-como-parámetros-de-otras-funciones."><span class="header-section-number">V.4</span> Funciones como parámetros de otras funciones.</a>
-  <ul class="collapse">
-  <li><a href="#ejemplo.-integración-numérica." id="toc-ejemplo.-integración-numérica." class="nav-link" data-scroll-target="#ejemplo.-integración-numérica."><span class="header-section-number">V.4.1</span> Ejemplo. Integración numérica.</a></li>
-  </ul></li>
-  <li><a href="#funciones-que-regresan-otra-función." id="toc-funciones-que-regresan-otra-función." class="nav-link" data-scroll-target="#funciones-que-regresan-otra-función."><span class="header-section-number">V.5</span> Funciones que regresan otra función.</a>
-  <ul class="collapse">
-  <li><a href="#ejemplo.-polinomios-de-segundo-grado." id="toc-ejemplo.-polinomios-de-segundo-grado." class="nav-link" data-scroll-target="#ejemplo.-polinomios-de-segundo-grado."><span class="header-section-number">V.5.1</span> Ejemplo. Polinomios de segundo grado.</a></li>
-  <li><a href="#ejemplo.-gráfica-de-polinomios" id="toc-ejemplo.-gráfica-de-polinomios" class="nav-link" data-scroll-target="#ejemplo.-gráfica-de-polinomios"><span class="header-section-number">V.5.2</span> Ejemplo. Gráfica de polinomios</a></li>
-  <li><a href="#ejemplo.-polinomios-de-cualquier-grado." id="toc-ejemplo.-polinomios-de-cualquier-grado." class="nav-link" data-scroll-target="#ejemplo.-polinomios-de-cualquier-grado."><span class="header-section-number">V.5.3</span> Ejemplo. Polinomios de cualquier grado.</a></li>
-  </ul></li>
+  <li><a href="#funciones-como-parámetros-de-otras-funciones." id="toc-funciones-como-parámetros-de-otras-funciones." class="nav-link" data-scroll-target="#funciones-como-parámetros-de-otras-funciones."><span class="header-section-number">V.4</span> Funciones como parámetros de otras funciones.</a></li>
+  <li><a href="#funciones-que-regresan-otra-función." id="toc-funciones-que-regresan-otra-función." class="nav-link" data-scroll-target="#funciones-que-regresan-otra-función."><span class="header-section-number">V.5</span> Funciones que regresan otra función.</a></li>
   <li><a href="#ámbitos" id="toc-ámbitos" class="nav-link" data-scroll-target="#ámbitos"><span class="header-section-number">V.6</span> Ámbitos</a>
   <ul class="collapse">
   <li><a href="#local" id="toc-local" class="nav-link" data-scroll-target="#local"><span class="header-section-number">V.6.1</span> Local</a></li>
@@ -596,7 +580,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/01_variables_objetos.html">Apéndices</a></li><li class="breadcrumb-item"><a href="../notebooks/22_funciones_y_docstring.html"><span class="chapter-number">V</span>&nbsp; <span class="chapter-title">Funciones: nivel avanzado.</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Apéndice V — Funciones: nivel avanzado.</h1>
+<h1 class="title"><span id="sec-v-funciones-avanzado" class="quarto-section-identifier">Apéndice V — Funciones: nivel avanzado.</span></h1>
 </div>
 
 
@@ -617,8 +601,16 @@ window.Quarto = {
 <section id="argumentos-por-omisión." class="level2" data-number="V.1">
 <h2 data-number="V.1" class="anchored" data-anchor-id="argumentos-por-omisión."><span class="header-section-number">V.1</span> Argumentos por omisión.</h2>
 <p>Los parámetros de una función pueden tener valores (argumentos) por omisión, es decir, si no se da un valor para uno de los parámetros, entonces se toma el valor definido por omisión. Esto crea una función que se puede llamar con menos argumentos de los que está definida inicialmente.</p>
-<section id="ejemplo." class="level3 alert alert-success" data-number="V.1.1">
-<h3 data-number="V.1.1" class="anchored" data-anchor-id="ejemplo."><span class="header-section-number">V.1.1</span> Ejemplo.</h3>
+<div id="exm-v-1" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;V.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> Tiro vertical.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>El tiro vertical hacia arriba se calcula usando la siguiente fórmula:</p>
 <p><span class="math display">\[
 \begin{eqnarray}
@@ -628,7 +620,8 @@ window.Quarto = {
 \]</span></p>
 <p>donde <span class="math inline">\(t\)</span> es el tiempo que ha pasado desde el lanzamiento inicial, <span class="math inline">\(g = 9.81 \text{ [m/s}^2\text{]}\)</span> es la aceleración de la gravedad, <span class="math inline">\(v_0\)</span> es la velocidad inicial y <span class="math inline">\(v_f\)</span> es la velocidad del objeto al tiempo <span class="math inline">\(t\)</span>.</p>
 <p>Escribir la función <code>tiroVertical(t, v0)</code>, que recibe como parámetros el tiempo <code>t</code> y la velocidad inicial <code>v0</code>, esta última con un valor por omisión de <span class="math inline">\(20 \text{ [m/s]}\)</span>.</p>
-</section>
+</div>
+</div>
 <div id="cell-3" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> tiroVertical(t, v0 <span class="op">=</span> <span class="dv">20</span>):  <span class="co"># Valor por omisión para v0</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    g <span class="op">=</span> <span class="fl">9.81</span>                    <span class="co"># Aceleración de la gravedad [m/s^2]</span></span>
@@ -922,10 +915,19 @@ Resultado: -1</code></pre>
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo.-integración-numérica." class="level3 alert alert-success" data-number="V.4.1">
-<h3 data-number="V.4.1" class="anchored" data-anchor-id="ejemplo.-integración-numérica."><span class="header-section-number">V.4.1</span> Ejemplo. Integración numérica.</h3>
+<div id="exm-v-2" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;V.2: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> Integración.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>En este ejemplo el objetivo es crear un función que reciba como argumentos la funcióm matemática a integrar, los límites de integración y el número de puntos para realizar la integración. Debe regresar como resultado un número que es la aproximación de la integral.</p>
-</section>
+</div>
+</div>
 <div id="cell-43" class="cell" data-execution_count="32">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
 <span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1009,14 +1011,23 @@ funcionHijo2(): n = 36</code></pre>
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo.-polinomios-de-segundo-grado." class="level3 alert alert-success" data-number="V.5.1">
-<h3 data-number="V.5.1" class="anchored" data-anchor-id="ejemplo.-polinomios-de-segundo-grado."><span class="header-section-number">V.5.1</span> Ejemplo. Polinomios de segundo grado.</h3>
+<div id="exm-v-3" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;V.3: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> Polinomios.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Implementar una fábrica de polinomios de segundo grado:</p>
 <p><span class="math display">\[
 p(x) = a x^2 + b x + c
 \]</span></p>
 <p>Verificar el funcionamiento para los polinomios: * <span class="math inline">\(p_1(x) = 2x^2 + 3x - 1\)</span>. * <span class="math inline">\(p_2(x) = -x^2 + 2x + 1\)</span>.</p>
-</section>
+</div>
+</div>
 <div id="cell-53" class="cell" data-execution_count="39">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> polinomio(a, b, c):</span>
 <span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
@@ -1056,10 +1067,19 @@ x =   1      p1(x) =   4     p2(x) =   2</code></pre>
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo.-gráfica-de-polinomios" class="level3 alert alert-success" data-number="V.5.2">
-<h3 data-number="V.5.2" class="anchored" data-anchor-id="ejemplo.-gráfica-de-polinomios"><span class="header-section-number">V.5.2</span> Ejemplo. Gráfica de polinomios</h3>
+<div id="exm-v-4" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;V.4: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> Gráfica de polinomios
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Graficar polinomios de segundo grado generados en el ejemplo anterior en el intervalo <span class="math inline">\([-10, 10]\)</span>.</p>
-</section>
+</div>
+</div>
 <div id="cell-58" class="cell" data-execution_count="42">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> []</span>
 <span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>p1_v <span class="op">=</span> []</span>
@@ -1083,15 +1103,24 @@ x =   1      p1(x) =   4     p2(x) =   2</code></pre>
 </div>
 </div>
 </div>
-<section id="ejemplo.-polinomios-de-cualquier-grado." class="level3 alert alert-success" data-number="V.5.3">
-<h3 data-number="V.5.3" class="anchored" data-anchor-id="ejemplo.-polinomios-de-cualquier-grado."><span class="header-section-number">V.5.3</span> Ejemplo. Polinomios de cualquier grado.</h3>
+<div id="exm-v-5" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;V.5: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> Polinomios de cualquier grado.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Implementar una fábrica de polinomios de cualquier grado:</p>
 <p><span class="math display">\[
 \sum\limits_{k=0}^{n} a_k x^k = a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0
 \]</span></p>
 <p>Probar con los siguientes polinomios: * <span class="math inline">\(p_0(x) = 5\)</span> * <span class="math inline">\(p_1(x) = 4 x + 2\)</span> * <span class="math inline">\(p_2(x) = x^2 + 2x - 1\)</span> * <span class="math inline">\(p_3(x) = x^3 - x^2 + 3x\)</span></p>
 <p>Graficar los polinomios como en el ejemplo 9.</p>
-</section>
+</div>
+</div>
 <div id="cell-60" class="cell" data-execution_count="49">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> polFactory(<span class="op">*</span>coeficientes):</span>
 <span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>

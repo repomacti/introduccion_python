@@ -83,6 +83,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-d9d7ed2c14390fa05efde32fc7ffca7f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -367,12 +368,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Manejo de información.</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../lecciones/leccion_02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Cadenas</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -423,7 +418,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/07_archivos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos. {#sec-g-archivos}¶</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -534,17 +529,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#sec-a-programacion-funcional" id="toc-sec-a-programacion-funcional" class="nav-link active" data-scroll-target="#sec-a-programacion-funcional"><span class="header-section-number">P.1</span> Programación funcional.</a></li>
+  <li><a href="#sec-p-programacion-funcional" id="toc-sec-p-programacion-funcional" class="nav-link active" data-scroll-target="#sec-p-programacion-funcional"><span class="header-section-number">P.1</span> Programación funcional.</a></li>
   <li><a href="#lambda-expressions" id="toc-lambda-expressions" class="nav-link" data-scroll-target="#lambda-expressions"><span class="header-section-number">P.2</span> Lambda expressions</a>
   <ul class="collapse">
   <li><a href="#definición." id="toc-definición." class="nav-link" data-scroll-target="#definición."><span class="header-section-number">P.2.1</span> Definición.</a></li>
-  <li><a href="#ejemplo." id="toc-ejemplo." class="nav-link" data-scroll-target="#ejemplo."><span class="header-section-number">P.2.2</span> Ejemplo.</a></li>
-  <li><a href="#ejemplo.-1" id="toc-ejemplo.-1" class="nav-link" data-scroll-target="#ejemplo.-1"><span class="header-section-number">P.2.3</span> Ejemplo.</a></li>
-  <li><a href="#ejemplo.-2" id="toc-ejemplo.-2" class="nav-link" data-scroll-target="#ejemplo.-2"><span class="header-section-number">P.2.4</span> Ejemplo.</a></li>
-  <li><a href="#ejemplo.-3" id="toc-ejemplo.-3" class="nav-link" data-scroll-target="#ejemplo.-3"><span class="header-section-number">P.2.5</span> Ejemplo.</a></li>
-  <li><a href="#ejemplo.-4" id="toc-ejemplo.-4" class="nav-link" data-scroll-target="#ejemplo.-4"><span class="header-section-number">P.2.6</span> Ejemplo.</a></li>
-  <li><a href="#ejemplo.-5" id="toc-ejemplo.-5" class="nav-link" data-scroll-target="#ejemplo.-5"><span class="header-section-number">P.2.7</span> Ejemplo.</a></li>
-  <li><a href="#ejemplo.-6" id="toc-ejemplo.-6" class="nav-link" data-scroll-target="#ejemplo.-6"><span class="header-section-number">P.2.8</span> Ejemplo.</a></li>
   </ul></li>
   <li><a href="#funciones-puras-e-impuras" id="toc-funciones-puras-e-impuras" class="nav-link" data-scroll-target="#funciones-puras-e-impuras"><span class="header-section-number">P.3</span> Funciones puras e impuras</a></li>
   </ul>
@@ -556,7 +544,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/01_variables_objetos.html">Apéndices</a></li><li class="breadcrumb-item"><a href="../notebooks/16_lambda_expressions.html"><span class="chapter-number">P</span>&nbsp; <span class="chapter-title">Funciones lambda.</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Apéndice P — Funciones lambda.</h1>
+<h1 class="title"><span id="sec-p-lambda" class="quarto-section-identifier">Apéndice P — Funciones lambda.</span></h1>
 </div>
 
 
@@ -574,8 +562,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p><strong>Objetivo.</strong> Describir el funcionamiento de la expresión <code>lambda</code>.</p>
-<section id="sec-a-programacion-funcional" class="level2" data-number="P.1">
-<h2 data-number="P.1" class="anchored" data-anchor-id="sec-a-programacion-funcional"><span class="header-section-number">P.1</span> Programación funcional.</h2>
+<section id="sec-p-programacion-funcional" class="level2" data-number="P.1">
+<h2 data-number="P.1" class="anchored" data-anchor-id="sec-p-programacion-funcional"><span class="header-section-number">P.1</span> Programación funcional.</h2>
 <ul>
 <li><p>Es un paradigma de programación basado en el uso de funciones, entendiendo el concepto de función según su definición matemática.<br></p></li>
 <li><p>Tiene sus raíces en el cálculo lambda (un sistema formal desarrollado en los años 1930 para investigar la definición de función, la aplicación de las funciones y la recursión).</p></li>
@@ -644,11 +632,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>La expresión, <code>expression</code>, es cualquiera que sea válida en Python.<br></li>
 </ol>
 <p>Se puede asignar la función a una variable para darle un nombre.</p>
-</section>
-<section id="ejemplo." class="level3 alert alert-success" data-number="P.2.2">
-<h3 data-number="P.2.2" class="anchored" data-anchor-id="ejemplo."><span class="header-section-number">P.2.2</span> Ejemplo.</h3>
+<div id="exm-p-1" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;P.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> Un número al cuadrado.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Función anónima para el cálculo del cuadrado de un número.</p>
-</section>
+</div>
+</div>
 <div id="cell-13" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Se crea una función anónima</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">lambda</span> n: n<span class="op">**</span><span class="dv">2</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -669,10 +665,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo.-1" class="level3 alert alert-success" data-number="P.2.3">
-<h3 data-number="P.2.3" class="anchored" data-anchor-id="ejemplo.-1"><span class="header-section-number">P.2.3</span> Ejemplo.</h3>
+<div id="exm-p-2" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;P.2: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> Un número al cubo.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Escribir una función lambda para calcular el cubo de un número usando la función lambda que calcula el cuadrado.</p>
-</section>
+</div>
+</div>
 <div id="cell-19" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Construimos la función cubo() usando la función cuadrado()</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>cubo <span class="op">=</span> <span class="kw">lambda</span> n: cuadrado(n) <span class="op">*</span> n</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -684,10 +689,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo.-2" class="level3 alert alert-success" data-number="P.2.4">
-<h3 data-number="P.2.4" class="anchored" data-anchor-id="ejemplo.-2"><span class="header-section-number">P.2.4</span> Ejemplo.</h3>
+<div id="exm-p-3" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;P.3: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> Un número a una potencia.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Construir una función que genere funciones para elevar un número <code>a</code> a una potencia <code>n</code>.</p>
-</section>
+</div>
+</div>
 <p>Este ejemplo nos permite mostrar que es posible combinar la definición de funciones normales de Python con las funciones lambda.</p>
 <div id="cell-23" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> potencia(n):</span>
@@ -707,10 +721,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo.-3" class="level3 alert alert-success" data-number="P.2.5">
-<h3 data-number="P.2.5" class="anchored" data-anchor-id="ejemplo.-3"><span class="header-section-number">P.2.5</span> Ejemplo.</h3>
+<div id="exm-p-4" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;P.4: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> Multiplicar dos números.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Escribir una función lambda para multiplicar dos números.</p>
-</section>
+</div>
+</div>
 <p>En este ejemplo vemos como una función lambda puede recibir más de un argumento.</p>
 <div id="cell-28" class="cell" data-execution_count="32">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>mult <span class="op">=</span> <span class="kw">lambda</span> a, b: a <span class="op">*</span> b</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -722,10 +745,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo.-4" class="level3 alert alert-success" data-number="P.2.6">
-<h3 data-number="P.2.6" class="anchored" data-anchor-id="ejemplo.-4"><span class="header-section-number">P.2.6</span> Ejemplo.</h3>
+<div id="exm-p-5" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;P.5: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> Números pares.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Checar si un número es par.</p>
-</section>
+</div>
+</div>
 <p>En este ejemplo usamos el operador ternario para probar una condición.</p>
 <div id="cell-32" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>esPar <span class="op">=</span> <span class="kw">lambda</span> n: <span class="va">False</span> <span class="cf">if</span> n <span class="op">%</span> <span class="dv">2</span> <span class="cf">else</span> <span class="va">True</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -739,10 +771,19 @@ False</code></pre>
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo.-5" class="level3 alert alert-success" data-number="P.2.7">
-<h3 data-number="P.2.7" class="anchored" data-anchor-id="ejemplo.-5"><span class="header-section-number">P.2.7</span> Ejemplo.</h3>
+<div id="exm-p-6" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;P.6: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> Primer y último elemento.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Obtener el primer y último elemento de una secuencia, la cual puede ser una cadena, una lista o una tupla.</p>
-</section>
+</div>
+</div>
 <div id="cell-36" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>firstLast<span class="op">=</span> <span class="kw">lambda</span> s: (s[<span class="dv">0</span>], s[<span class="op">-</span><span class="dv">1</span>])</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -768,11 +809,20 @@ False</code></pre>
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo.-6" class="level3 alert alert-success" data-number="P.2.8">
-<h3 data-number="P.2.8" class="anchored" data-anchor-id="ejemplo.-6"><span class="header-section-number">P.2.8</span> Ejemplo.</h3>
+<div id="exm-p-7" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;P.7: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> Una secuencia en reversa.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Escribir en reversa una secuencia que puede ser una cadena, una lista o una tupla.</p>
-</section>
-<div id="cell-42" class="cell" data-execution_count="21">
+</div>
+</div>
+<div id="cell-42" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="st">'Pythonico'</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>reversa <span class="op">=</span> <span class="kw">lambda</span> l: l[::<span class="op">-</span><span class="dv">1</span>]</span>
@@ -784,6 +834,7 @@ False</code></pre>
 ocinohtyP</code></pre>
 </div>
 </div>
+</section>
 </section>
 <section id="funciones-puras-e-impuras" class="level2" data-number="P.3">
 <h2 data-number="P.3" class="anchored" data-anchor-id="funciones-puras-e-impuras"><span class="header-section-number">P.3</span> Funciones puras e impuras</h2>

@@ -83,6 +83,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-d9d7ed2c14390fa05efde32fc7ffca7f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -396,12 +397,6 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Manejo de información.</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../lecciones/leccion_02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Cadenas</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -452,7 +447,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/07_archivos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos. {#sec-g-archivos}¶</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -563,13 +558,7 @@ window.Quarto = {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#definición-de-funciones" id="toc-definición-de-funciones" class="nav-link active" data-scroll-target="#definición-de-funciones"><span class="header-section-number">P</span> Definición de funciones</a>
-  <ul class="collapse">
-  <li><a href="#ejemplo." id="toc-ejemplo." class="nav-link" data-scroll-target="#ejemplo."><span class="header-section-number">P.1</span> Ejemplo.</a></li>
-  <li><a href="#ejemplo.-1" id="toc-ejemplo.-1" class="nav-link" data-scroll-target="#ejemplo.-1"><span class="header-section-number">P.2</span> Ejemplo.</a></li>
-  <li><a href="#ejemplo.-2" id="toc-ejemplo.-2" class="nav-link" data-scroll-target="#ejemplo.-2"><span class="header-section-number">P.3</span> Ejemplo.</a></li>
-  <li><a href="#ejemplo.-3" id="toc-ejemplo.-3" class="nav-link" data-scroll-target="#ejemplo.-3"><span class="header-section-number">P.4</span> Ejemplo.</a></li>
-  </ul></li>
+  <li><a href="#definición-de-funciones" id="toc-definición-de-funciones" class="nav-link active" data-scroll-target="#definición-de-funciones"><span class="header-section-number">O.1</span> Definición de funciones</a></li>
   </ul>
 </nav>
     </div>
@@ -579,7 +568,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/01_variables_objetos.html">Apéndices</a></li><li class="breadcrumb-item"><a href="../notebooks/15_funciones.html"><span class="chapter-number">O</span>&nbsp; <span class="chapter-title">Funciones: introducción.</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-funciones_intro" class="quarto-section-identifier">Apéndice O — Funciones: introducción.</span></h1>
+<h1 class="title"><span id="sec-o-funciones-intro" class="quarto-section-identifier">Apéndice O — Funciones: introducción.</span></h1>
 </div>
 
 
@@ -597,8 +586,8 @@ window.Quarto = {
 
 
 <p><strong>Objetivo.</strong> Hacer una descripción básica de las funciones y su uso mediante algunos ejemplos.</p>
-<section id="definición-de-funciones" class="level1" data-number="P">
-<h1 data-number="P"><span class="header-section-number">P</span> Definición de funciones</h1>
+<section id="definición-de-funciones" class="level2" data-number="O.1">
+<h2 data-number="O.1" class="anchored" data-anchor-id="definición-de-funciones"><span class="header-section-number">O.1</span> Definición de funciones</h2>
 <ul>
 <li><p>Las funciones son la primera forma de estructurar un programa de manera modular y hacer que sea más fácil de entender, mantener y reutilizar.</p></li>
 <li><p>Esto nos lleva al paradigma de programación estructurada, junto con las construcciones de control de flujo.</p></li>
@@ -663,14 +652,23 @@ window.Quarto = {
 </div>
 <p>Ahora la variable <code>hola</code> ya está definida con la cadena que regresa la función.</p>
 <p>Veamos otros ejemplos de funciones.</p>
-<section id="ejemplo." class="level2 alert alert-success" data-number="P.1">
-<h2 data-number="P.1" class="anchored" data-anchor-id="ejemplo."><span class="header-section-number">P.1</span> Ejemplo.</h2>
+<div id="exm-o-1" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;O.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> Función para calcular el cuadrado de un número.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Escribir una función que calcule y regrese el cuadrado de un número con las siguientes características:</p>
 <ul>
 <li>el número lo recibe como parámetro;</li>
 <li>el nombre de la función debe ser <code>squared</code>.</li>
 </ul>
-</section>
+</div>
+</div>
 <div id="cell-15" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> squared(numero):         <span class="co"># Se recibe como parámetro el 'numero'</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    cuadrado <span class="op">=</span> numero <span class="op">**</span> <span class="dv">2</span>   <span class="co"># Se calcula el cuadrado del 'numero'</span></span>
@@ -693,14 +691,23 @@ window.Quarto = {
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo.-1" class="level2 alert alert-success" data-number="P.2">
-<h2 data-number="P.2" class="anchored" data-anchor-id="ejemplo.-1"><span class="header-section-number">P.2</span> Ejemplo.</h2>
+<div id="exm-o-2" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;O.2: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> Función para calcular el promedio de dos números.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Escribir una función que calcule el promedio de dos números.</p>
 <ul>
 <li>Los dos números se reciben como parámetros.</li>
 <li>La función regresa el valor del promedio.</li>
 </ul>
-</section>
+</div>
+</div>
 <div id="cell-20" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> promedio(a, b):       <span class="co"># Se reciben dos argumentos 'a' y 'b'</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    prom <span class="op">=</span> (a <span class="op">+</span> b) <span class="op">/</span> <span class="fl">2.0</span>  <span class="co"># Se calcula el promedio </span></span>
@@ -713,10 +720,19 @@ window.Quarto = {
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo.-2" class="level2 alert alert-success" data-number="P.3">
-<h2 data-number="P.3" class="anchored" data-anchor-id="ejemplo.-2"><span class="header-section-number">P.3</span> Ejemplo.</h2>
+<div id="exm-o-2" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;O.3: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> Función para calcular el promedio de varios números.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Escribir una función que calcule el promedio de una secuencia de números que recibe como parámetro.</p>
-</section>
+</div>
+</div>
 <p>Dada la secuencia de números <span class="math inline">\(x_1, x_2, \dots, x_N\)</span>, la fórmula para calcular el promedio es:</p>
 <p><span class="math display">\[
 \bar{X} = \frac{\sum_{i=1}^{N} x_i}{N}
@@ -775,8 +791,16 @@ window.Quarto = {
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo.-3" class="level2 alert alert-success" data-number="P.4">
-<h2 data-number="P.4" class="anchored" data-anchor-id="ejemplo.-3"><span class="header-section-number">P.4</span> Ejemplo.</h2>
+<div id="exm-o-3" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;O.4: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> Números de Fibonacci.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Los números de Fibonacci, denotados con <span class="math inline">\(F_n\)</span>, forman una secuencia tal que cada número es la suma de dos números precedentes e inicia con el 0 y el 1. Matemáticamente se escribe como:</p>
 <p><span class="math display">\[
 \begin{eqnarray}
@@ -785,7 +809,8 @@ F_1 &amp; = &amp; 1 \\
 F_n &amp; = &amp; F_{n − 1} + F_{n − 2} \;\;\; \text{para} \; n &gt; 1.
 \end{eqnarray}
 \]</span> La secuencia es entonces: 0 , 1 , 1 , 2 , 3 , 5 , 8 , 13 , 21 , 34 , 55 , 89 , 144 , <span class="math inline">\(\ldots\)</span></p>
-</section>
+</div>
+</div>
 <div id="cell-35" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># La siguiente función calcula la secuencia de Fibonacci</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fib(n):         <span class="co"># Se recibe 'n' como parámetro</span></span>

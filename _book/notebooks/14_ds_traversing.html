@@ -83,6 +83,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-d9d7ed2c14390fa05efde32fc7ffca7f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -367,12 +368,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Manejo de información.</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../lecciones/leccion_02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Cadenas</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -423,7 +418,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/07_archivos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos. {#sec-g-archivos}¶</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -535,13 +530,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#iterables" id="toc-iterables" class="nav-link active" data-scroll-target="#iterables"><span class="header-section-number">N.1</span> Iterables</a></li>
-  <li><a href="#ejemplo." id="toc-ejemplo." class="nav-link" data-scroll-target="#ejemplo."><span class="header-section-number">N.2</span> Ejemplo.</a></li>
-  <li><a href="#recorriendo-secuencias-de-una-forma-típica." id="toc-recorriendo-secuencias-de-una-forma-típica." class="nav-link" data-scroll-target="#recorriendo-secuencias-de-una-forma-típica."><span class="header-section-number">N.3</span> Recorriendo secuencias de una forma típica.</a></li>
-  <li><a href="#función-zip" id="toc-función-zip" class="nav-link" data-scroll-target="#función-zip"><span class="header-section-number">N.4</span> Función <code>zip</code></a></li>
-  <li><a href="#conversión-de-zip-a-list-tuple-set-dict" id="toc-conversión-de-zip-a-list-tuple-set-dict" class="nav-link" data-scroll-target="#conversión-de-zip-a-list-tuple-set-dict"><span class="header-section-number">N.5</span> Conversión de <code>zip</code> a <code>list</code>, <code>tuple</code>, <code>set</code>, <code>dict</code></a></li>
-  <li><a href="#función-enumerate" id="toc-función-enumerate" class="nav-link" data-scroll-target="#función-enumerate"><span class="header-section-number">N.6</span> Función <code>enumerate</code></a></li>
-  <li><a href="#conversión-de-enumerate-a-list-tuple-set-dict" id="toc-conversión-de-enumerate-a-list-tuple-set-dict" class="nav-link" data-scroll-target="#conversión-de-enumerate-a-list-tuple-set-dict"><span class="header-section-number">N.7</span> Conversión de <code>enumerate</code> a <code>list</code>, <code>tuple</code>, <code>set</code>, <code>dict</code></a></li>
-  <li><a href="#conversión-de-range-a-list-tuple-set" id="toc-conversión-de-range-a-list-tuple-set" class="nav-link" data-scroll-target="#conversión-de-range-a-list-tuple-set"><span class="header-section-number">N.8</span> Conversión de <code>range</code> a <code>list</code>, <code>tuple</code>, <code>set</code></a></li>
+  <li><a href="#recorriendo-secuencias-de-una-forma-típica." id="toc-recorriendo-secuencias-de-una-forma-típica." class="nav-link" data-scroll-target="#recorriendo-secuencias-de-una-forma-típica."><span class="header-section-number">N.2</span> Recorriendo secuencias de una forma típica.</a></li>
+  <li><a href="#función-zip" id="toc-función-zip" class="nav-link" data-scroll-target="#función-zip"><span class="header-section-number">N.3</span> Función <code>zip</code></a></li>
+  <li><a href="#conversión-de-zip-a-list-tuple-set-dict" id="toc-conversión-de-zip-a-list-tuple-set-dict" class="nav-link" data-scroll-target="#conversión-de-zip-a-list-tuple-set-dict"><span class="header-section-number">N.4</span> Conversión de <code>zip</code> a <code>list</code>, <code>tuple</code>, <code>set</code>, <code>dict</code></a></li>
+  <li><a href="#función-enumerate" id="toc-función-enumerate" class="nav-link" data-scroll-target="#función-enumerate"><span class="header-section-number">N.5</span> Función <code>enumerate</code></a></li>
+  <li><a href="#conversión-de-enumerate-a-list-tuple-set-dict" id="toc-conversión-de-enumerate-a-list-tuple-set-dict" class="nav-link" data-scroll-target="#conversión-de-enumerate-a-list-tuple-set-dict"><span class="header-section-number">N.6</span> Conversión de <code>enumerate</code> a <code>list</code>, <code>tuple</code>, <code>set</code>, <code>dict</code></a></li>
+  <li><a href="#conversión-de-range-a-list-tuple-set" id="toc-conversión-de-range-a-list-tuple-set" class="nav-link" data-scroll-target="#conversión-de-range-a-list-tuple-set"><span class="header-section-number">N.7</span> Conversión de <code>range</code> a <code>list</code>, <code>tuple</code>, <code>set</code></a></li>
   </ul>
 </nav>
     </div>
@@ -551,7 +545,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/01_variables_objetos.html">Apéndices</a></li><li class="breadcrumb-item"><a href="../notebooks/14_ds_traversing.html"><span class="chapter-number">N</span>&nbsp; <span class="chapter-title">Recorriendo las estructuras de datos.</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Apéndice N — Recorriendo las estructuras de datos.</h1>
+<h1 class="title"><span id="sec-n-traversing" class="quarto-section-identifier">Apéndice N — Recorriendo las estructuras de datos.</span></h1>
 </div>
 
 
@@ -577,14 +571,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Estos objetos se pueden recorrer usando ciclos <code>for</code> . <br></li>
 <li>A estos objetos se les conoce también como <strong>iterables</strong> (objetos iterables, secuencias iterables, contenedores iterables, conjunto iterable).</li>
 </ul>
-</section>
-<section id="ejemplo." class="level2 alert alert-success" data-number="N.2">
-<h2 data-number="N.2" class="anchored" data-anchor-id="ejemplo."><span class="header-section-number">N.2</span> Ejemplo.</h2>
+<div id="exm-n-1" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;N.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> Creación de estructuras de datos.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
 <li>Crear una cadena, una lista, una tupla, un diccionario, un conjunto y leer el archivo <code>mi_archivo.txt</code>.</li>
 <li>Posteriormente recorrer cada uno de estos iterables usando un ciclo <code>for</code>:</li>
 </ul>
-</section>
+</div>
+</div>
 <ul>
 <li>Creamos los iterables.</li>
 </ul>
@@ -702,8 +704,9 @@ Pythonico
 Primermundista</code></pre>
 </div>
 </div>
-<section id="recorriendo-secuencias-de-una-forma-típica." class="level2" data-number="N.3">
-<h2 data-number="N.3" class="anchored" data-anchor-id="recorriendo-secuencias-de-una-forma-típica."><span class="header-section-number">N.3</span> Recorriendo secuencias de una forma típica.</h2>
+</section>
+<section id="recorriendo-secuencias-de-una-forma-típica." class="level2" data-number="N.2">
+<h2 data-number="N.2" class="anchored" data-anchor-id="recorriendo-secuencias-de-una-forma-típica."><span class="header-section-number">N.2</span> Recorriendo secuencias de una forma típica.</h2>
 <p>Considera las siguientes dos listas de la misma longitud.</p>
 <div id="cell-24" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>gatos <span class="op">=</span> [<span class="st">'Persa'</span>, <span class="st">'Sphynx'</span>, <span class="st">'Ragdoll'</span>,<span class="st">'Siamés'</span>]</span>
@@ -730,8 +733,8 @@ Primermundista</code></pre>
 </div>
 <p>La anterior es una manera típica en cómo se recorren arreglos en otros lenguajes de programación. Python ofrece otras maneras que se muestran a continuación.</p>
 </section>
-<section id="función-zip" class="level2" data-number="N.4">
-<h2 data-number="N.4" class="anchored" data-anchor-id="función-zip"><span class="header-section-number">N.4</span> Función <code>zip</code></h2>
+<section id="función-zip" class="level2" data-number="N.3">
+<h2 data-number="N.3" class="anchored" data-anchor-id="función-zip"><span class="header-section-number">N.3</span> Función <code>zip</code></h2>
 <p>La función <code>zip(s1, s2, ...)</code> permite combinar dos o más secuencias en una sola, genera tuplas con los elementos de las secuencias.</p>
 <div id="cell-29" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combinamos las listas en una sola secuencia</span></span>
@@ -760,8 +763,8 @@ La raza Siamés proviene de Tailandia</code></pre>
 </div>
 </div>
 </section>
-<section id="conversión-de-zip-a-list-tuple-set-dict" class="level2" data-number="N.5">
-<h2 data-number="N.5" class="anchored" data-anchor-id="conversión-de-zip-a-list-tuple-set-dict"><span class="header-section-number">N.5</span> Conversión de <code>zip</code> a <code>list</code>, <code>tuple</code>, <code>set</code>, <code>dict</code></h2>
+<section id="conversión-de-zip-a-list-tuple-set-dict" class="level2" data-number="N.4">
+<h2 data-number="N.4" class="anchored" data-anchor-id="conversión-de-zip-a-list-tuple-set-dict"><span class="header-section-number">N.4</span> Conversión de <code>zip</code> a <code>list</code>, <code>tuple</code>, <code>set</code>, <code>dict</code></h2>
 <p>Estrictamente <code>zip</code> es una clase que define un tipo dentro de Python, por lo que es posible convertir del tipo <code>zip</code> a alguna otra secuencia básica de datos de Python.</p>
 <div id="cell-32" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> <span class="bu">zip</span>(gatos, origen)</span>
@@ -790,8 +793,8 @@ La raza Siamés proviene de Tailandia</code></pre>
 </div>
 </div>
 </section>
-<section id="función-enumerate" class="level2" data-number="N.6">
-<h2 data-number="N.6" class="anchored" data-anchor-id="función-enumerate"><span class="header-section-number">N.6</span> Función <code>enumerate</code></h2>
+<section id="función-enumerate" class="level2" data-number="N.5">
+<h2 data-number="N.5" class="anchored" data-anchor-id="función-enumerate"><span class="header-section-number">N.5</span> Función <code>enumerate</code></h2>
 <p>Permite enumerar los elementos de una secuencia. Genera tuplas con el número del elemento y el elemento de la secuencia.</p>
 <p>Por ejemplo:</p>
 <div id="cell-35" class="cell" data-execution_count="18">
@@ -834,8 +837,8 @@ La raza Siamés proviene de Tailandia</code></pre>
 </div>
 </div>
 </section>
-<section id="conversión-de-enumerate-a-list-tuple-set-dict" class="level2" data-number="N.7">
-<h2 data-number="N.7" class="anchored" data-anchor-id="conversión-de-enumerate-a-list-tuple-set-dict"><span class="header-section-number">N.7</span> Conversión de <code>enumerate</code> a <code>list</code>, <code>tuple</code>, <code>set</code>, <code>dict</code></h2>
+<section id="conversión-de-enumerate-a-list-tuple-set-dict" class="level2" data-number="N.6">
+<h2 data-number="N.6" class="anchored" data-anchor-id="conversión-de-enumerate-a-list-tuple-set-dict"><span class="header-section-number">N.6</span> Conversión de <code>enumerate</code> a <code>list</code>, <code>tuple</code>, <code>set</code>, <code>dict</code></h2>
 <p>Estrictamente <code>enumerate</code> es una clase que define un tipo dentro de Python, por lo que es posible convertir del tipo <code>enumerate</code> a alguna otra secuencia básica de datos de Python:</p>
 <div id="cell-40" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>e <span class="op">=</span> <span class="bu">enumerate</span>(gatos)</span>
@@ -864,8 +867,8 @@ La raza Siamés proviene de Tailandia</code></pre>
 </div>
 </div>
 </section>
-<section id="conversión-de-range-a-list-tuple-set" class="level2" data-number="N.8">
-<h2 data-number="N.8" class="anchored" data-anchor-id="conversión-de-range-a-list-tuple-set"><span class="header-section-number">N.8</span> Conversión de <code>range</code> a <code>list</code>, <code>tuple</code>, <code>set</code></h2>
+<section id="conversión-de-range-a-list-tuple-set" class="level2" data-number="N.7">
+<h2 data-number="N.7" class="anchored" data-anchor-id="conversión-de-range-a-list-tuple-set"><span class="header-section-number">N.7</span> Conversión de <code>range</code> a <code>list</code>, <code>tuple</code>, <code>set</code></h2>
 <p>Estrictamente <code>range</code> es una clase que define un tipo dentro de Python, por lo que es posible convertir del tipo <code>range</code> a alguna otra secuencia básica de datos de Python:</p>
 <div id="cell-43" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="bu">len</span>(gatos) <span class="co"># Longitud de la lista gatos</span></span>

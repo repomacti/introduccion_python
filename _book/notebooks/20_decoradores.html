@@ -83,6 +83,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-d9d7ed2c14390fa05efde32fc7ffca7f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -367,12 +368,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Manejo de información.</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../lecciones/leccion_02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Cadenas</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -423,7 +418,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/07_archivos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos. {#sec-g-archivos}¶</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -534,19 +529,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#definición." id="toc-definición." class="nav-link active" data-scroll-target="#definición."><span class="header-section-number">T.1</span> Definición.</a>
-  <ul class="collapse">
-  <li><a href="#sec-decorador_ejemplo1" id="toc-sec-decorador_ejemplo1" class="nav-link" data-scroll-target="#sec-decorador_ejemplo1"><span class="header-section-number">T.1.1</span> Ejemplo.</a></li>
-  <li><a href="#ejemplo." id="toc-ejemplo." class="nav-link" data-scroll-target="#ejemplo."><span class="header-section-number">T.1.2</span> Ejemplo.</a></li>
-  <li><a href="#ejemplo.-1" id="toc-ejemplo.-1" class="nav-link" data-scroll-target="#ejemplo.-1"><span class="header-section-number">T.1.3</span> Ejemplo.</a></li>
-  <li><a href="#ejemplo.-2" id="toc-ejemplo.-2" class="nav-link" data-scroll-target="#ejemplo.-2"><span class="header-section-number">T.1.4</span> Ejemplo.</a></li>
-  <li><a href="#ejemplo.-3" id="toc-ejemplo.-3" class="nav-link" data-scroll-target="#ejemplo.-3"><span class="header-section-number">T.1.5</span> Ejemplo.</a></li>
-  <li><a href="#ejemplo.-4" id="toc-ejemplo.-4" class="nav-link" data-scroll-target="#ejemplo.-4"><span class="header-section-number">T.1.6</span> Ejemplo.</a></li>
-  <li><a href="#ejemplo.-5" id="toc-ejemplo.-5" class="nav-link" data-scroll-target="#ejemplo.-5"><span class="header-section-number">T.1.7</span> Ejemplo.</a></li>
-  <li><a href="#ejemplo.-6" id="toc-ejemplo.-6" class="nav-link" data-scroll-target="#ejemplo.-6"><span class="header-section-number">T.1.8</span> Ejemplo.</a></li>
-  <li><a href="#ejemplo.-7" id="toc-ejemplo.-7" class="nav-link" data-scroll-target="#ejemplo.-7"><span class="header-section-number">T.1.9</span> Ejemplo.</a></li>
-  <li><a href="#ejemplo.-8" id="toc-ejemplo.-8" class="nav-link" data-scroll-target="#ejemplo.-8"><span class="header-section-number">T.1.10</span> Ejemplo.</a></li>
-  </ul></li>
+  <li><a href="#definición." id="toc-definición." class="nav-link active" data-scroll-target="#definición."><span class="header-section-number">T.1</span> Definición.</a></li>
   </ul>
 </nav>
     </div>
@@ -556,7 +539,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/01_variables_objetos.html">Apéndices</a></li><li class="breadcrumb-item"><a href="../notebooks/20_decoradores.html"><span class="chapter-number">T</span>&nbsp; <span class="chapter-title">Decoradores.</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Apéndice T — Decoradores.</h1>
+<h1 class="title"><span id="sec-t-decoradores" class="quarto-section-identifier">Apéndice T — Decoradores.</span></h1>
 </div>
 
 
@@ -585,15 +568,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 <li>Los decoradores son herramientas bonitas y útiles de Python. <br></li>
 </ul>
-<section id="sec-decorador_ejemplo1" class="level3 alert alert-success" data-number="T.1.1">
-<h3 data-number="T.1.1" class="anchored" data-anchor-id="sec-decorador_ejemplo1"><span class="header-section-number">T.1.1</span> Ejemplo.</h3>
+<div id="exm-t-1" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;T.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>La función <code>print_hello()</code> imprime <code>Hola mundo pythonico</code>.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_hello():</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'</span><span class="sc">{:^30}</span><span class="st">'</span>.<span class="bu">format</span>(<span class="st">'Hola mundo pythonico'</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Crear un decorador que agregue colores al mensaje.</li>
 </ul>
-</section>
+</div>
+</div>
 <div id="cell-3" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_hello():</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'</span><span class="sc">{:^30}</span><span class="st">'</span>.<span class="bu">format</span>(<span class="st">'Hola mundo pythonico'</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -642,15 +634,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo." class="level3 alert alert-success" data-number="T.1.2">
-<h3 data-number="T.1.2" class="anchored" data-anchor-id="ejemplo."><span class="header-section-number">T.1.2</span> Ejemplo.</h3>
+<div id="exm-t-2" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;T.2: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>La función <code>print_message(m)</code> imprime el mensaje que recibe como parámetro.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_message(m):</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'</span><span class="sc">{:^30}</span><span class="st">'</span>.<span class="bu">format</span>(m))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>def print_message(m):
+    print('{:^30}'.format(m))</code></pre>
 <ul>
-<li>Modificar el decorador creado en el <a href="#sec-decorador_ejemplo1" class="quarto-xref">ejemplo&nbsp;<span>T.1.1</span></a> para que se pueda recibir el parámetro <code>m</code>.</li>
+<li>Modificar el decorador creado en el <a href="#exm-t-1" class="quarto-xref">ejemplo&nbsp;<span>T.1</span></a> para que se pueda recibir el parámetro <code>m</code>.</li>
 </ul>
-</section>
+</div>
+</div>
 <div id="cell-9" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Decorador</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> decorador2(f):</span>
@@ -703,10 +704,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo.-1" class="level3 alert alert-success" data-number="T.1.3">
-<h3 data-number="T.1.3" class="anchored" data-anchor-id="ejemplo.-1"><span class="header-section-number">T.1.3</span> Ejemplo.</h3>
+<div id="exm-t-3" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;T.3: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Decorar las funciones <code>sin()</code> y <code>cos()</code> de la biblioteca <code>math</code>.</p>
-</section>
+</div>
+</div>
 <div id="cell-15" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> decorador3(f):</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -779,10 +789,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo.-2" class="level3 alert alert-success" data-number="T.1.4">
-<h3 data-number="T.1.4" class="anchored" data-anchor-id="ejemplo.-2"><span class="header-section-number">T.1.4</span> Ejemplo.</h3>
+<div id="exm-t-4" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;T.4: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Decorar funciones con un número variable de argumentos.</p>
-</section>
+</div>
+</div>
 <div id="cell-21" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> decorador4(f):</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    </span>
@@ -854,10 +873,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo.-3" class="level3 alert alert-success" data-number="T.1.5">
-<h3 data-number="T.1.5" class="anchored" data-anchor-id="ejemplo.-3"><span class="header-section-number">T.1.5</span> Ejemplo.</h3>
+<div id="exm-t-5" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;T.5: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Crear un decorador que calcule el tiempo de ejecución de una función.</p>
-</section>
+</div>
+</div>
 <div id="cell-26" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -891,10 +919,19 @@ Elapsed time: 0.0001438999897800386
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo.-4" class="level3 alert alert-success" data-number="T.1.6">
-<h3 data-number="T.1.6" class="anchored" data-anchor-id="ejemplo.-4"><span class="header-section-number">T.1.6</span> Ejemplo.</h3>
+<div id="exm-t-6" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;T.6: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Detener la ejecución por un tiempo antes que una función sea ejecutada.</p>
-</section>
+</div>
+</div>
 <div id="cell-31" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> time <span class="im">import</span> sleep</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -918,10 +955,19 @@ Elapsed time: 0.0001438999897800386
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo.-5" class="level3 alert alert-success" data-number="T.1.7">
-<h3 data-number="T.1.7" class="anchored" data-anchor-id="ejemplo.-5"><span class="header-section-number">T.1.7</span> Ejemplo.</h3>
+<div id="exm-t-7" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;T.7: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Crear un decorador que cheque que el argumento de una función sea un entero positivo y posteriormente que ejecute una función para calcular el factorial de dicho número.</p>
-</section>
+</div>
+</div>
 <div id="cell-35" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> checaArgumento(f):</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> checador(x):</span>
@@ -973,10 +1019,19 @@ Elapsed time: 0.0001438999897800386
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo.-6" class="level3 alert alert-success" data-number="T.1.8">
-<h3 data-number="T.1.8" class="anchored" data-anchor-id="ejemplo.-6"><span class="header-section-number">T.1.8</span> Ejemplo.</h3>
+<div id="exm-t-8" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;T.8: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Contar el número de llamadas de una función.</p>
-</section>
+</div>
+</div>
 <div id="cell-41" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> contadorDeLlamadas(func):</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    </span>
@@ -1022,10 +1077,19 @@ Llamadas a multp1 = 3</code></pre>
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo.-7" class="level3 alert alert-success" data-number="T.1.9">
-<h3 data-number="T.1.9" class="anchored" data-anchor-id="ejemplo.-7"><span class="header-section-number">T.1.9</span> Ejemplo.</h3>
+<div id="exm-t-9" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;T.9: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Decorar una función con diferentes saludos.</p>
-</section>
+</div>
+</div>
 <div id="cell-47" class="cell" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> buenasTardes(func):</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> saludo(x):</span>
@@ -1057,10 +1121,19 @@ Hola, buenos días, son las 8 am</code></pre>
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo.-8" class="level3 alert alert-success" data-number="T.1.10">
-<h3 data-number="T.1.10" class="anchored" data-anchor-id="ejemplo.-8"><span class="header-section-number">T.1.10</span> Ejemplo.</h3>
+<div id="exm-t-10" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;T.10: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>El ejemplo anterior se puede realizar como sigue:</p>
-</section>
+</div>
+</div>
 <div id="cell-51" class="cell" data-execution_count="31">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> saludo(expr):</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    </span>

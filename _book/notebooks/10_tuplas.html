@@ -83,6 +83,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-d9d7ed2c14390fa05efde32fc7ffca7f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -417,7 +418,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/07_archivos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos. {#sec-g-archivos}¶</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -530,14 +531,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#introducción." id="toc-introducción." class="nav-link active" data-scroll-target="#introducción."><span class="header-section-number">J.1</span> Introducción.</a></li>
   <li><a href="#tuplas." id="toc-tuplas." class="nav-link" data-scroll-target="#tuplas."><span class="header-section-number">J.2</span> Tuplas.</a></li>
-  <li><a href="#ejemplo." id="toc-ejemplo." class="nav-link" data-scroll-target="#ejemplo."><span class="header-section-number">J.3</span> Ejemplo.</a></li>
-  <li><a href="#tuplas-de-un-solo-elemento." id="toc-tuplas-de-un-solo-elemento." class="nav-link" data-scroll-target="#tuplas-de-un-solo-elemento."><span class="header-section-number">J.4</span> Tuplas de un solo elemento.</a></li>
-  <li><a href="#indexado." id="toc-indexado." class="nav-link" data-scroll-target="#indexado."><span class="header-section-number">J.5</span> Indexado.</a></li>
-  <li><a href="#inmutabilidad." id="toc-inmutabilidad." class="nav-link" data-scroll-target="#inmutabilidad."><span class="header-section-number">J.6</span> Inmutabilidad.</a></li>
-  <li><a href="#funciones-incorporadas-que-operan-sobre-las-tuplas." id="toc-funciones-incorporadas-que-operan-sobre-las-tuplas." class="nav-link" data-scroll-target="#funciones-incorporadas-que-operan-sobre-las-tuplas."><span class="header-section-number">J.7</span> Funciones incorporadas que operan sobre las tuplas.</a></li>
-  <li><a href="#operadores-sobre-tuplas." id="toc-operadores-sobre-tuplas." class="nav-link" data-scroll-target="#operadores-sobre-tuplas."><span class="header-section-number">J.8</span> Operadores sobre tuplas.</a></li>
-  <li><a href="#métodos-de-las-listas." id="toc-métodos-de-las-listas." class="nav-link" data-scroll-target="#métodos-de-las-listas."><span class="header-section-number">J.9</span> Métodos de las listas.</a></li>
-  <li><a href="#copiando-tuplas" id="toc-copiando-tuplas" class="nav-link" data-scroll-target="#copiando-tuplas"><span class="header-section-number">J.10</span> ¿Copiando tuplas?</a></li>
+  <li><a href="#tuplas-de-un-solo-elemento." id="toc-tuplas-de-un-solo-elemento." class="nav-link" data-scroll-target="#tuplas-de-un-solo-elemento."><span class="header-section-number">J.3</span> Tuplas de un solo elemento.</a></li>
+  <li><a href="#indexado." id="toc-indexado." class="nav-link" data-scroll-target="#indexado."><span class="header-section-number">J.4</span> Indexado.</a></li>
+  <li><a href="#inmutabilidad." id="toc-inmutabilidad." class="nav-link" data-scroll-target="#inmutabilidad."><span class="header-section-number">J.5</span> Inmutabilidad.</a></li>
+  <li><a href="#funciones-incorporadas-que-operan-sobre-las-tuplas." id="toc-funciones-incorporadas-que-operan-sobre-las-tuplas." class="nav-link" data-scroll-target="#funciones-incorporadas-que-operan-sobre-las-tuplas."><span class="header-section-number">J.6</span> Funciones incorporadas que operan sobre las tuplas.</a></li>
+  <li><a href="#operadores-sobre-tuplas." id="toc-operadores-sobre-tuplas." class="nav-link" data-scroll-target="#operadores-sobre-tuplas."><span class="header-section-number">J.7</span> Operadores sobre tuplas.</a></li>
+  <li><a href="#métodos-de-las-listas." id="toc-métodos-de-las-listas." class="nav-link" data-scroll-target="#métodos-de-las-listas."><span class="header-section-number">J.8</span> Métodos de las listas.</a></li>
+  <li><a href="#copiando-tuplas" id="toc-copiando-tuplas" class="nav-link" data-scroll-target="#copiando-tuplas"><span class="header-section-number">J.9</span> ¿Copiando tuplas?</a></li>
   </ul>
 </nav>
     </div>
@@ -547,7 +547,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/01_variables_objetos.html">Apéndices</a></li><li class="breadcrumb-item"><a href="../notebooks/10_tuplas.html"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Tuplas.</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-listas" class="quarto-section-identifier">Apéndice J — Tuplas.</span></h1>
+<h1 class="title"><span id="sec-j-tuplas" class="quarto-section-identifier">Apéndice J — Tuplas.</span></h1>
 </div>
 
 
@@ -621,20 +621,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Las tuplas pueden tener elementos <strong>duplicados</strong>, es decir, <strong>elementos del mismo tipo y con el mismo contenido</strong>.</li>
 <li>Las tuplas se definen usando paréntesis (<code>()</code>) y comas (<code>,</code>) para separar sus elementos.</li>
 </ul>
-</section>
-<section id="ejemplo." class="level2 alert alert-success" data-number="J.3">
-<h2 data-number="J.3" class="anchored" data-anchor-id="ejemplo."><span class="header-section-number">J.3</span> Ejemplo.</h2>
+<div id="exm-j-1" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;J.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> Creación de tuplas.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Construiremos las siguientes tuplas:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>t1 <span class="op">=</span> (<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'b'</span>, <span class="st">'d'</span>, <span class="st">'e'</span>, <span class="st">'f'</span>, <span class="st">'z'</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>t2 <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>t3 <span class="op">=</span> (<span class="st">'gatos'</span>, [<span class="st">'Persa'</span>, <span class="st">'Sphynx'</span>], [<span class="fl">2.3</span>, <span class="dv">3</span>,<span class="dv">5</span>])</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<div id="cell-4" class="cell" data-tags="[]" data-execution_count="1">
+<pre><code>t1 = ('a', 'b', 'c', 'b', 'd', 'e', 'f', 'z')
+t2 = (1, 2, 3, 4, 5, 6, 7, 8)
+t3 = ('gatos', ['Persa', 'Sphynx'], [2.3, 3,5])</code></pre>
+</div>
+</div>
+<p>Creamos las tuplas:</p>
+<div id="cell-5" class="cell" data-tags="[]" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>t1 <span class="op">=</span> (<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'b'</span>, <span class="st">'d'</span>, <span class="st">'e'</span>, <span class="st">'f'</span>, <span class="st">'z'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>t2 <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>t3 <span class="op">=</span> (<span class="st">'gatos'</span>, [<span class="st">'Persa'</span>, <span class="st">'Sphynx'</span>], (<span class="fl">2.3</span>, <span class="fl">3.5</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-5" class="cell" data-execution_count="2">
+<div id="cell-6" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(t1), t1)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(t2), t2)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(t3), t3)     </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -649,10 +658,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Las tuplas pueden tener elementos repetidos como en <code>t1</code>.</li>
 <li>La tupla <code>t3</code> contiene tres elementos, cada uno de distinto tipo: <code>str</code>, <code>list</code> y <code>tuple</code>.</li>
 </ul>
-<section id="tuplas-de-un-solo-elemento." class="level2" data-number="J.4">
-<h2 data-number="J.4" class="anchored" data-anchor-id="tuplas-de-un-solo-elemento."><span class="header-section-number">J.4</span> Tuplas de un solo elemento.</h2>
+</section>
+<section id="tuplas-de-un-solo-elemento." class="level2" data-number="J.3">
+<h2 data-number="J.3" class="anchored" data-anchor-id="tuplas-de-un-solo-elemento."><span class="header-section-number">J.3</span> Tuplas de un solo elemento.</h2>
 <p>Si deseamos una tupla de un solo elemento debemos realizar lo siguiente:</p>
-<div id="cell-8" class="cell" data-tags="[]" data-execution_count="3">
+<div id="cell-9" class="cell" data-tags="[]" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tupla_un_elemento <span class="op">=</span> (<span class="dv">1</span>,)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupla_un_elemento, <span class="bu">type</span>(tupla_un_elemento))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -660,7 +670,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>La siguiente expresión no construye una tupla, si no un entero:</p>
-<div id="cell-10" class="cell" data-tags="[]" data-execution_count="4">
+<div id="cell-11" class="cell" data-tags="[]" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>tupla_un_elemento <span class="op">=</span> (<span class="dv">1</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupla_un_elemento, <span class="bu">type</span>(tupla_un_elemento))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -668,41 +678,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="indexado." class="level2" data-number="J.5">
-<h2 data-number="J.5" class="anchored" data-anchor-id="indexado."><span class="header-section-number">J.5</span> Indexado.</h2>
-<p>El indexado de las tuplas es similar al de las cadenas (veáse <span class="quarto-unresolved-ref">?sec-indexacion_cadenas</span>). Por ejemplo, usando la tupla <code>t1</code>:</p>
-<div id="cell-12" class="cell" data-tags="[]" data-execution_count="10">
+<section id="indexado." class="level2" data-number="J.4">
+<h2 data-number="J.4" class="anchored" data-anchor-id="indexado."><span class="header-section-number">J.4</span> Indexado.</h2>
+<p>El indexado de las tuplas es similar al de las cadenas (veáse <a href="05_cadenas.html#sec-e-indexacion-cadenas" class="quarto-xref"><span>Sección E.3</span></a>). Por ejemplo, usando la tupla <code>t1</code>:</p>
+<div id="cell-13" class="cell" data-tags="[]" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(t1)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>('a', 'b', 'c', 'b', 'd', 'e', 'f', 'z')</code></pre>
 </div>
 </div>
-<div id="cell-13" class="cell" data-tags="[]" data-execution_count="11">
+<div id="cell-14" class="cell" data-tags="[]" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>t1[<span class="dv">0</span>]  <span class="co"># Primer elemento</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>'a'</code></pre>
 </div>
 </div>
-<div id="cell-14" class="cell" data-tags="[]" data-execution_count="12">
+<div id="cell-15" class="cell" data-tags="[]" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>t1[<span class="op">-</span><span class="dv">1</span>] <span class="co"># Último elemento</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>'z'</code></pre>
 </div>
 </div>
-<div id="cell-15" class="cell" data-tags="[]" data-execution_count="13">
+<div id="cell-16" class="cell" data-tags="[]" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>t1[<span class="dv">2</span>:<span class="dv">5</span>] <span class="co"># Todos los elementos, desde el 2 hasta el 4</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>('c', 'b', 'd')</code></pre>
 </div>
 </div>
-<div id="cell-16" class="cell" data-tags="[]" data-execution_count="14">
+<div id="cell-17" class="cell" data-tags="[]" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>t1[::<span class="op">-</span><span class="dv">1</span>] <span class="co"># Todos los elementos en reversa</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>('z', 'f', 'e', 'd', 'b', 'c', 'b', 'a')</code></pre>
 </div>
 </div>
 <p>Usando el indexado, podemos ver el contenido y tipo de los elementos, por ejemplo:</p>
-<div id="cell-18" class="cell" data-execution_count="15">
+<div id="cell-19" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(t3[<span class="dv">0</span>]), t3[<span class="dv">0</span>]) <span class="co"># Elemento 1</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(t3[<span class="dv">1</span>]), t3[<span class="dv">1</span>]) <span class="co"># Elemento 2</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(t3[<span class="dv">2</span>]), t3[<span class="dv">2</span>]) <span class="co"># Elemento 3</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -717,7 +727,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>La lista contiene cadenas, mientras que la tupla contiene flotantes.</li>
 <li>Podemos acceder a los elementos individuales de la lista y la tupla como sigue:</li>
 </ul>
-<div id="cell-20" class="cell" data-execution_count="16">
+<div id="cell-21" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Primer elemento de la lista t3[1]</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(t3[<span class="dv">1</span>][<span class="dv">0</span>]), t3[<span class="dv">1</span>][<span class="dv">0</span>], )</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -730,10 +740,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Las tuplas son usadas, entre otras cosas, en funciones para regresar valores o enviar argumentos. Más acerca de funciones se describe en <a href="15_funciones.html" class="quarto-xref"><span>Apéndice O</span></a>.</p>
 </section>
-<section id="inmutabilidad." class="level2" data-number="J.6">
-<h2 data-number="J.6" class="anchored" data-anchor-id="inmutabilidad."><span class="header-section-number">J.6</span> Inmutabilidad.</h2>
+<section id="inmutabilidad." class="level2" data-number="J.5">
+<h2 data-number="J.5" class="anchored" data-anchor-id="inmutabilidad."><span class="header-section-number">J.5</span> Inmutabilidad.</h2>
 <p>Los elementos de las tuplas no se pueden modificar. Por ejemplo, si intentamos modificar el elemento tres de la tupla <code>t1</code> obtendremos un error:</p>
-<div id="cell-23" class="cell" data-tags="[]" data-execution_count="17">
+<div id="cell-24" class="cell" data-tags="[]" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>t1[<span class="dv">2</span>] <span class="op">=</span> <span class="st">'h'</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
@@ -747,10 +757,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="funciones-incorporadas-que-operan-sobre-las-tuplas." class="level2" data-number="J.7">
-<h2 data-number="J.7" class="anchored" data-anchor-id="funciones-incorporadas-que-operan-sobre-las-tuplas."><span class="header-section-number">J.7</span> Funciones incorporadas que operan sobre las tuplas.</h2>
+<section id="funciones-incorporadas-que-operan-sobre-las-tuplas." class="level2" data-number="J.6">
+<h2 data-number="J.6" class="anchored" data-anchor-id="funciones-incorporadas-que-operan-sobre-las-tuplas."><span class="header-section-number">J.6</span> Funciones incorporadas que operan sobre las tuplas.</h2>
 <p>Prácticamente todas las funciones incorporadas que se aplican a las listas, se pueden aplicar a las tuplas, por ejemplo:</p>
-<div id="cell-25" class="cell" data-execution_count="18">
+<div id="cell-26" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(t1))</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">max</span>(t1))</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">min</span>(t1))</span>
@@ -768,7 +778,7 @@ True
 36</code></pre>
 </div>
 </div>
-<div id="cell-26" class="cell" data-execution_count="20">
+<div id="cell-27" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Enumera los elementos de una tupla regresando tuplas (i, elemento)</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="bu">tuple</span>(<span class="bu">enumerate</span>(t1)) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
@@ -782,7 +792,7 @@ True
  (7, 'z'))</code></pre>
 </div>
 </div>
-<div id="cell-27" class="cell" data-execution_count="21">
+<div id="cell-28" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Agrupa los elementos de dos tuplas regresando tuplas: (t1[i], t2[i])</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="bu">tuple</span>(<span class="bu">zip</span>(t1, t2)) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
@@ -798,30 +808,30 @@ True
 </div>
 <p>Observa que para el caso de <code>enumerate</code> y <code>zip</code> el resultado se debe convertir a un tipo que se pueda desplegar. Podemos elegir convertir a una lista o a una tupla para desplegar el resultado.</p>
 <p>Se pueden agrupar dos tuplas con <code>zip</code> aunque sean de distinto tamaño:</p>
-<div id="cell-29" class="cell" data-execution_count="22">
+<div id="cell-30" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="bu">tuple</span>(<span class="bu">zip</span>(t3, t2))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>(('gatos', 1), (['Persa', 'Sphynx'], 2), ((2.3, 3.5), 3))</code></pre>
 </div>
 </div>
 <p>Se puede agrupar una tupla y una lista:</p>
-<div id="cell-31" class="cell" data-execution_count="23">
+<div id="cell-32" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="bu">tuple</span>(<span class="bu">zip</span>((<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>),[<span class="st">'a'</span>,<span class="st">'b'</span>,<span class="st">'c'</span>,<span class="st">'d'</span>,<span class="st">'e'</span>]))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <pre><code>((1, 'a'), (2, 'b'), (3, 'c'), (4, 'd'), (5, 'e'))</code></pre>
 </div>
 </div>
 </section>
-<section id="operadores-sobre-tuplas." class="level2" data-number="J.8">
-<h2 data-number="J.8" class="anchored" data-anchor-id="operadores-sobre-tuplas."><span class="header-section-number">J.8</span> Operadores sobre tuplas.</h2>
+<section id="operadores-sobre-tuplas." class="level2" data-number="J.7">
+<h2 data-number="J.7" class="anchored" data-anchor-id="operadores-sobre-tuplas."><span class="header-section-number">J.7</span> Operadores sobre tuplas.</h2>
 <p>Se pueden usar los operadores <code>+</code>, <code>*</code> e <code>in</code> sobre las tuplas.</p>
-<div id="cell-33" class="cell" data-execution_count="24">
+<div id="cell-34" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>t1 <span class="op">+</span> t2</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="24">
 <pre><code>('a', 'b', 'c', 'b', 'd', 'e', 'f', 'z', 1, 2, 3, 4, 5, 6, 7, 8)</code></pre>
 </div>
 </div>
-<div id="cell-34" class="cell" data-execution_count="25">
+<div id="cell-35" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>t3 <span class="op">*</span> <span class="dv">2</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
 <pre><code>('gatos',
@@ -832,45 +842,45 @@ True
  (2.3, 3.5))</code></pre>
 </div>
 </div>
-<div id="cell-35" class="cell" data-execution_count="26">
+<div id="cell-36" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co">'Persa'</span> <span class="kw">in</span> t3</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="26">
 <pre><code>False</code></pre>
 </div>
 </div>
-<div id="cell-36" class="cell" data-execution_count="27">
+<div id="cell-37" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">'Persa'</span> <span class="kw">in</span> t3[<span class="dv">1</span>]</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="27">
 <pre><code>True</code></pre>
 </div>
 </div>
 </section>
-<section id="métodos-de-las-listas." class="level2" data-number="J.9">
-<h2 data-number="J.9" class="anchored" data-anchor-id="métodos-de-las-listas."><span class="header-section-number">J.9</span> Métodos de las listas.</h2>
+<section id="métodos-de-las-listas." class="level2" data-number="J.8">
+<h2 data-number="J.8" class="anchored" data-anchor-id="métodos-de-las-listas."><span class="header-section-number">J.8</span> Métodos de las listas.</h2>
 <p>La clase <code>&lt;class 'tuple'&gt;</code> define dos métodos que se pueden aplicar sobre los objetos del tipo <code>tuple</code>:</p>
 <ul>
 <li><code>tuple.index(o)</code>: regresa el índice donde está el objeto <code>o</code> dentro de la tupla</li>
 <li><code>tuple.count(o)</code>: cuenta las veces que aparece el objeto <code>o</code> en la tupla.</li>
 </ul>
 <p>Por ejemplo:</p>
-<div id="cell-38" class="cell" data-tags="[]" data-execution_count="28">
+<div id="cell-39" class="cell" data-tags="[]" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>t1.index(<span class="st">'z'</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="28">
 <pre><code>7</code></pre>
 </div>
 </div>
-<div id="cell-39" class="cell" data-tags="[]" data-execution_count="29">
+<div id="cell-40" class="cell" data-tags="[]" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>t1.count(<span class="st">'b'</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="29">
 <pre><code>2</code></pre>
 </div>
 </div>
 </section>
-<section id="copiando-tuplas" class="level2" data-number="J.10">
-<h2 data-number="J.10" class="anchored" data-anchor-id="copiando-tuplas"><span class="header-section-number">J.10</span> ¿Copiando tuplas?</h2>
+<section id="copiando-tuplas" class="level2" data-number="J.9">
+<h2 data-number="J.9" class="anchored" data-anchor-id="copiando-tuplas"><span class="header-section-number">J.9</span> ¿Copiando tuplas?</h2>
 <p>No es posible crear una copia de una tupla en otra. Lo que se recomienda es transformar la tupla en otra estructura de datos compatible (por ejemplo <code>list</code> o <code>set</code>).</p>
 <p>Si intentamos realizar una copia obtendremos el mismo objeto:</p>
-<div id="cell-41" class="cell" data-execution_count="30">
+<div id="cell-42" class="cell" data-execution_count="30">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># nueva tupla</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>t1 <span class="op">=</span>(<span class="dv">1</span>,<span class="dv">3</span>) </span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -881,7 +891,7 @@ True
 <span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> copy</span>
 <span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>t3 <span class="op">=</span> copy.copy(t1)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-42" class="cell" data-execution_count="31">
+<div id="cell-43" class="cell" data-execution_count="31">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(t1, <span class="bu">type</span>(t1), <span class="bu">id</span>(t1))</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(t2, <span class="bu">type</span>(t2), <span class="bu">id</span>(t2))</span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(t3, <span class="bu">type</span>(t3), <span class="bu">id</span>(t3))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>

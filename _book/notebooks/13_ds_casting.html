@@ -396,12 +396,6 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Manejo de información.</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../lecciones/leccion_02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Cadenas</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -452,7 +446,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/07_archivos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos. {#sec-g-archivos}¶</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -584,7 +578,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/01_variables_objetos.html">Apéndices</a></li><li class="breadcrumb-item"><a href="../notebooks/13_ds_casting.html"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">Conversión entre estructuras de datos.</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Apéndice M — Conversión entre estructuras de datos.</h1>
+<h1 class="title"><span id="sec-m-conversion" class="quarto-section-identifier">Apéndice M — Conversión entre estructuras de datos.</span></h1>
 </div>
 
 
@@ -614,8 +608,8 @@ window.Quarto = {
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lista, <span class="bu">type</span>(lista), <span class="bu">id</span>(lista))</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupla_l, <span class="bu">type</span>(tupla_l), <span class="bu">id</span>(tupla_l))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>['a', 'b', 'c'] &lt;class 'list'&gt; 1226050069440
-('a', 'b', 'c') &lt;class 'tuple'&gt; 1226049867136</code></pre>
+<pre><code>['a', 'b', 'c'] &lt;class 'list'&gt; 2428044211840
+('a', 'b', 'c') &lt;class 'tuple'&gt; 2428044323520</code></pre>
 </div>
 </div>
 </section>
@@ -628,8 +622,8 @@ window.Quarto = {
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lista, <span class="bu">type</span>(lista), <span class="bu">id</span>(lista))</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(conj_l, <span class="bu">type</span>(conj_l), <span class="bu">id</span>(conj_l))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>['a', 'b', 'c', 'a'] &lt;class 'list'&gt; 1226050069056
-{'b', 'a', 'c'} &lt;class 'set'&gt; 1226050028256</code></pre>
+<pre><code>['a', 'b', 'c', 'a'] &lt;class 'list'&gt; 2428044403136
+{'c', 'b', 'a'} &lt;class 'set'&gt; 2428044362688</code></pre>
 </div>
 </div>
 <p>Observa que en esta transformación el conjunto elimina los elementos repetidos.</p>

@@ -83,6 +83,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-d9d7ed2c14390fa05efde32fc7ffca7f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -396,12 +397,6 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Manejo de información.</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../lecciones/leccion_02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Cadenas</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -452,7 +447,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/07_archivos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos. {#sec-g-archivos}¶</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -565,11 +560,7 @@ window.Quarto = {
   <ul>
   <li><a href="#iteradores." id="toc-iteradores." class="nav-link active" data-scroll-target="#iteradores."><span class="header-section-number">U.1</span> Iteradores.</a></li>
   <li><a href="#generadores." id="toc-generadores." class="nav-link" data-scroll-target="#generadores."><span class="header-section-number">U.2</span> Generadores.</a></li>
-  <li><a href="#yield" id="toc-yield" class="nav-link" data-scroll-target="#yield"><span class="header-section-number">U.3</span> Yield</a>
-  <ul class="collapse">
-  <li><a href="#ejemplo." id="toc-ejemplo." class="nav-link" data-scroll-target="#ejemplo."><span class="header-section-number">U.3.1</span> Ejemplo.</a></li>
-  <li><a href="#ejemplo.-1" id="toc-ejemplo.-1" class="nav-link" data-scroll-target="#ejemplo.-1"><span class="header-section-number">U.3.2</span> Ejemplo.</a></li>
-  </ul></li>
+  <li><a href="#yield" id="toc-yield" class="nav-link" data-scroll-target="#yield"><span class="header-section-number">U.3</span> Yield</a></li>
   </ul>
 </nav>
     </div>
@@ -579,7 +570,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/01_variables_objetos.html">Apéndices</a></li><li class="breadcrumb-item"><a href="../notebooks/21_iteradores_generadores.html"><span class="chapter-number">U</span>&nbsp; <span class="chapter-title">Iteradores y Generadores.</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Apéndice U — Iteradores y Generadores.</h1>
+<h1 class="title"><span id="sec-u-iter-gen" class="quarto-section-identifier">Apéndice U — Iteradores y Generadores.</span></h1>
 </div>
 
 
@@ -821,10 +812,19 @@ yield 3 :  Tercera ejecución de la función generadora: 35</code></pre>
 </div>
 </div>
 <p>Se recomienda usar <code>yield</code> cuando se desea iterar sobre una secuencia, pero no se quiere almacenar toda la secuencia en memoria.</p>
-<section id="ejemplo." class="level3 alert alert-success" data-number="U.3.1">
-<h3 data-number="U.3.1" class="anchored" data-anchor-id="ejemplo."><span class="header-section-number">U.3.1</span> Ejemplo.</h3>
+<div id="exm-u-1" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;U.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon>.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Crear una función generadora que genere los cuadrados del 1 al <span class="math inline">\(\infty\)</span>.</p>
-</section>
+</div>
+</div>
 <div id="cell-29" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Función generadora que genera el cuadrado de un número</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cuadradoSiguiente():</span>
@@ -852,10 +852,19 @@ yield 3 :  Tercera ejecución de la función generadora: 35</code></pre>
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo.-1" class="level3 alert alert-success" data-number="U.3.2">
-<h3 data-number="U.3.2" class="anchored" data-anchor-id="ejemplo.-1"><span class="header-section-number">U.3.2</span> Ejemplo.</h3>
+<div id="exm-u-2" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;U.2: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Crear un generador de los números de Fibonacci.</p>
-</section>
+</div>
+</div>
 <div id="cell-32" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Función generadora</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fib(limite):</span>

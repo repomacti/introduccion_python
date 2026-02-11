@@ -83,6 +83,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-d9d7ed2c14390fa05efde32fc7ffca7f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -396,12 +397,6 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Manejo de información.</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../lecciones/leccion_02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Cadenas</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -452,7 +447,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/07_archivos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos. {#sec-g-archivos}¶</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -563,37 +558,11 @@ window.Quarto = {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#iterables" id="toc-iterables" class="nav-link active" data-scroll-target="#iterables"><span class="header-section-number">S.1</span> Iterables</a>
-  <ul class="collapse">
-  <li><a href="#ejemplo." id="toc-ejemplo." class="nav-link" data-scroll-target="#ejemplo."><span class="header-section-number">S.1.1</span> Ejemplo.</a></li>
-  </ul></li>
-  <li><a href="#mapeo." id="toc-mapeo." class="nav-link" data-scroll-target="#mapeo."><span class="header-section-number">S.2</span> Mapeo.</a>
-  <ul class="collapse">
-  <li><a href="#ejemplo.-1" id="toc-ejemplo.-1" class="nav-link" data-scroll-target="#ejemplo.-1"><span class="header-section-number">S.2.1</span> Ejemplo.</a></li>
-  <li><a href="#ejemplo.-2" id="toc-ejemplo.-2" class="nav-link" data-scroll-target="#ejemplo.-2"><span class="header-section-number">S.2.2</span> Ejemplo.</a></li>
-  <li><a href="#ejemplo.-3" id="toc-ejemplo.-3" class="nav-link" data-scroll-target="#ejemplo.-3"><span class="header-section-number">S.2.3</span> Ejemplo.</a></li>
-  </ul></li>
-  <li><a href="#filtrado." id="toc-filtrado." class="nav-link" data-scroll-target="#filtrado."><span class="header-section-number">S.3</span> Filtrado.</a>
-  <ul class="collapse">
-  <li><a href="#ejemplo.-4" id="toc-ejemplo.-4" class="nav-link" data-scroll-target="#ejemplo.-4"><span class="header-section-number">S.3.1</span> Ejemplo.</a></li>
-  <li><a href="#ejemplo.-5" id="toc-ejemplo.-5" class="nav-link" data-scroll-target="#ejemplo.-5"><span class="header-section-number">S.3.2</span> Ejemplo.</a></li>
-  <li><a href="#ejemplo.-6" id="toc-ejemplo.-6" class="nav-link" data-scroll-target="#ejemplo.-6"><span class="header-section-number">S.3.3</span> Ejemplo.</a></li>
-  </ul></li>
-  <li><a href="#reducción." id="toc-reducción." class="nav-link" data-scroll-target="#reducción."><span class="header-section-number">S.4</span> Reducción.</a>
-  <ul class="collapse">
-  <li><a href="#ejemplo.-7" id="toc-ejemplo.-7" class="nav-link" data-scroll-target="#ejemplo.-7"><span class="header-section-number">S.4.1</span> Ejemplo.</a></li>
-  <li><a href="#ejemplo.-8" id="toc-ejemplo.-8" class="nav-link" data-scroll-target="#ejemplo.-8"><span class="header-section-number">S.4.2</span> Ejemplo.</a></li>
-  <li><a href="#ejemplo.-9" id="toc-ejemplo.-9" class="nav-link" data-scroll-target="#ejemplo.-9"><span class="header-section-number">S.4.3</span> Ejemplo.</a></li>
-  </ul></li>
-  <li><a href="#ejemplos-adicionales." id="toc-ejemplos-adicionales." class="nav-link" data-scroll-target="#ejemplos-adicionales."><span class="header-section-number">S.5</span> Ejemplos adicionales.</a>
-  <ul class="collapse">
-  <li><a href="#ejemplo.-recursión." id="toc-ejemplo.-recursión." class="nav-link" data-scroll-target="#ejemplo.-recursión."><span class="header-section-number">S.5.1</span> Ejemplo. Recursión.</a></li>
-  <li><a href="#ejemplo.-10" id="toc-ejemplo.-10" class="nav-link" data-scroll-target="#ejemplo.-10"><span class="header-section-number">S.5.2</span> Ejemplo.</a></li>
-  <li><a href="#ejemplo.-11" id="toc-ejemplo.-11" class="nav-link" data-scroll-target="#ejemplo.-11"><span class="header-section-number">S.5.3</span> Ejemplo.</a></li>
-  <li><a href="#ejemplo.-12" id="toc-ejemplo.-12" class="nav-link" data-scroll-target="#ejemplo.-12"><span class="header-section-number">S.5.4</span> Ejemplo.</a></li>
-  <li><a href="#ejemplo.-13" id="toc-ejemplo.-13" class="nav-link" data-scroll-target="#ejemplo.-13"><span class="header-section-number">S.5.5</span> Ejemplo.</a></li>
-  <li><a href="#ejemplo.-14" id="toc-ejemplo.-14" class="nav-link" data-scroll-target="#ejemplo.-14"><span class="header-section-number">S.5.6</span> Ejemplo.</a></li>
-  </ul></li>
+  <li><a href="#iterables" id="toc-iterables" class="nav-link active" data-scroll-target="#iterables"><span class="header-section-number">S.1</span> Iterables</a></li>
+  <li><a href="#mapeo." id="toc-mapeo." class="nav-link" data-scroll-target="#mapeo."><span class="header-section-number">S.2</span> Mapeo.</a></li>
+  <li><a href="#filtrado." id="toc-filtrado." class="nav-link" data-scroll-target="#filtrado."><span class="header-section-number">S.3</span> Filtrado.</a></li>
+  <li><a href="#reducción." id="toc-reducción." class="nav-link" data-scroll-target="#reducción."><span class="header-section-number">S.4</span> Reducción.</a></li>
+  <li><a href="#ejemplos-adicionales." id="toc-ejemplos-adicionales." class="nav-link" data-scroll-target="#ejemplos-adicionales."><span class="header-section-number">S.5</span> Ejemplos adicionales.</a></li>
   </ul>
 </nav>
     </div>
@@ -603,7 +572,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/01_variables_objetos.html">Apéndices</a></li><li class="breadcrumb-item"><a href="../notebooks/19_iterables_map_filter_reduce.html"><span class="chapter-number">S</span>&nbsp; <span class="chapter-title">Iterables, Mapeo, Filtros y Reducciones.</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Apéndice S — Iterables, Mapeo, Filtros y Reducciones.</h1>
+<h1 class="title"><span id="sec-s-iter-map-fil-red" class="quarto-section-identifier">Apéndice S — Iterables, Mapeo, Filtros y Reducciones.</span></h1>
 </div>
 
 
@@ -628,10 +597,19 @@ window.Quarto = {
 <li>Estos objetos se pueden recorrer usando ciclos <code>for ... in ...</code>.</li>
 <li>A estos objetos se les conoce también como <strong>iterables</strong> (objetos iterables, secuencias iterables, contenedores iterables, conjunto iterable, entre otros).</li>
 </ul>
-<section id="ejemplo." class="level3 alert alert-success" data-number="S.1.1">
-<h3 data-number="S.1.1" class="anchored" data-anchor-id="ejemplo."><span class="header-section-number">S.1.1</span> Ejemplo.</h3>
+<div id="exm-s-1" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;S.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Crear una cadena, una lista, una tupla, un diccionario, un conjunto y leer un archivo; posteriormente recorrer cada uno de estos iterables usando un ciclo <code>for</code>:</p>
-</section>
+</div>
+</div>
 <div id="cell-3" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mi_cadena <span class="op">=</span> <span class="st">"pythonico"</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>mi_lista <span class="op">=</span> [<span class="st">'p'</span>,<span class="st">'y'</span>,<span class="st">'t'</span>,<span class="st">'h'</span>,<span class="st">'o'</span>,<span class="st">'n'</span>,<span class="st">'i'</span>,<span class="st">'c'</span>,<span class="st">'o'</span>]</span>
@@ -726,8 +704,16 @@ t_{n-1}
 \right]
 \]</span></p>
 <p>En Python existe la función para realizar este tipo de mapeo que se llama <code>map(function, sequence)</code> cuyo primer parámetro es una función la cual se va a aplicar a una secuencia, que es el segundo parámetro. El resultado será una nueva secuencia con los elementos obtenidos de aplicar la función a cada elemento de la secuencia de entrada.</p>
-<section id="ejemplo.-1" class="level3 alert alert-success" data-number="S.2.1">
-<h3 data-number="S.2.1" class="anchored" data-anchor-id="ejemplo.-1"><span class="header-section-number">S.2.1</span> Ejemplo.</h3>
+<div id="exm-s-2" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;S.2: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Crear el siguiente mapeo con una lista, una tupla y un conjunto <span class="math display">\[
 f(x) = x^2
 \]</span> <span class="math display">\[
@@ -757,7 +743,8 @@ f(x) = x^2
 \end{matrix}
 \right]
 \]</span></p>
-</section>
+</div>
+</div>
 <div id="cell-7" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Primero definimos la función</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> square(x):</span>
@@ -812,10 +799,19 @@ Resultado [0, 1, 4, 9, 16]</code></pre>
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo.-2" class="level3 alert alert-success" data-number="S.2.2">
-<h3 data-number="S.2.2" class="anchored" data-anchor-id="ejemplo.-2"><span class="header-section-number">S.2.2</span> Ejemplo.</h3>
+<div id="exm-s-3" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;S.3: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Crear un mapeo para convertir grados Fahrenheit a Celsius y viceversa:</p>
-</section>
+</div>
+</div>
 <p>Primer definimos las funciones de conversión:</p>
 <div id="cell-12" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> toFahrenheit(T):</span>
@@ -903,14 +899,23 @@ Grados centígrados (conversión): [0.0, 22.5, 40.0, 100.0]</code></pre>
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo.-3" class="level3 alert alert-success" data-number="S.2.3">
-<h3 data-number="S.2.3" class="anchored" data-anchor-id="ejemplo.-3"><span class="header-section-number">S.2.3</span> Ejemplo.</h3>
+<div id="exm-s-4" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;S.4: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Crear un mapeo para sumar los elementos de tres listas que contienen números enteros.</p>
 <ul>
 <li>Primero usando una función definida con <code>def</code>.</li>
 <li>Segundo usando una función lambda.</li>
 </ul>
-</section>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -997,10 +1002,19 @@ s_1 \\ s_2 \\ s_3 \\ s_4 \\ s_{n-1}
 \right]
 \]</span></p>
 <p>En Python existe la función <code>filter(function, sequence)</code> para realizar un filtrado cuyo primer parámetro es una función la cual se va a aplicar a una secuencia, que es el segundo parámetro. La función debe regresar un objeto de tipo Booleano: <code>True</code> o <code>False</code>. El resultado será una nueva secuencia con los elementos obtenidos de aplicar la función a cada elemento de la secuencia de entrada.</p>
-<section id="ejemplo.-4" class="level3 alert alert-success" data-number="S.3.1">
-<h3 data-number="S.3.1" class="anchored" data-anchor-id="ejemplo.-4"><span class="header-section-number">S.3.1</span> Ejemplo.</h3>
+<div id="exm-s-5" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;S.5: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Usando la función <code>filter()</code>, encontrar los números pares en una lista.</p>
-</section>
+</div>
+</div>
 <div id="cell-34" class="cell" data-execution_count="38">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> esPar(n):</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
@@ -1050,10 +1064,19 @@ False</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> n: <span class="va">False</span> <span class="cf">if</span> n<span class="op">%</span><span class="dv">2</span> <span class="cf">else</span> <span class="va">True</span>, numeros)))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>.</p>
-<section id="ejemplo.-5" class="level3 alert alert-success" data-number="S.3.2">
-<h3 data-number="S.3.2" class="anchored" data-anchor-id="ejemplo.-5"><span class="header-section-number">S.3.2</span> Ejemplo.</h3>
+<div id="exm-s-6" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;S.6: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Encontrar los números pares en una lista que contiene elementos de muchos tipos.</p>
-</section>
+</div>
+</div>
 <p><strong>Paso 1.</strong> Creamos la lista.</p>
 <div id="cell-44" class="cell" data-execution_count="47">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creamos la lista</span></span>
@@ -1120,10 +1143,19 @@ False</code></pre>
 </div>
 <p>Sin embargo, la solución anterior es un poco complicada de leer y entender.</p>
 <p>.</p>
-<section id="ejemplo.-6" class="level3 alert alert-success" data-number="S.3.3">
-<h3 data-number="S.3.3" class="anchored" data-anchor-id="ejemplo.-6"><span class="header-section-number">S.3.3</span> Ejemplo.</h3>
+<div id="exm-s-7" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;S.7: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Encontrar los números primos en el conjunto <span class="math inline">\(\{2, \dots, 50\}\)</span>.</p>
-</section>
+</div>
+</div>
 <div id="cell-58" class="cell" data-execution_count="56">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> noPrimo():</span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
@@ -1184,12 +1216,21 @@ Números primos en el rango [2, 50]
 [\underbrace{\underbrace{\underbrace{s_1, s_2}_{a = f(s_1,s_2)}, s_3}_{b = f(a,s_3)}, s_4}_{c = f(b,s_4)}] \qquad \Longrightarrow \qquad \underbrace{f(\underbrace{f(\underbrace{f(s_1,s_2)}_{a}, s_3)}_{b}, s_4)}_{c}
 \]</span></p>
 <p>En Python existe la función <code>reduce(function, sequence)</code> cuyo primer parámetro es una función la cual se va a aplicar a una secuencia, que es el segundo parámetro. La función debe regresar un objeto que es el resultado de la reducción.</p>
-<section id="ejemplo.-7" class="level3 alert alert-success" data-number="S.4.1">
-<h3 data-number="S.4.1" class="anchored" data-anchor-id="ejemplo.-7"><span class="header-section-number">S.4.1</span> Ejemplo.</h3>
+<div id="exm-s-8" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;S.8: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Calcular la siguiente serie:</p>
 <p><span class="math inline">\(1 + 2 + \dots + n = \sum\limits_{i=1}^{n} i = \dfrac{n(n+1)}{2}\)</span></p>
 <p>Si <span class="math inline">\(n = 4\)</span> entonces 1+2+3+4 = 10</p>
-</section>
+</div>
+</div>
 <div id="cell-64" class="cell" data-execution_count="58">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># La función reduce() debe importarse del módulo functools</span></span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> functools <span class="im">import</span> <span class="bu">reduce</span> </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1223,11 +1264,20 @@ Números primos en el rango [2, 50]
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo.-8" class="level3 alert alert-success" data-number="S.4.2">
-<h3 data-number="S.4.2" class="anchored" data-anchor-id="ejemplo.-8"><span class="header-section-number">S.4.2</span> Ejemplo.</h3>
+<div id="exm-s-9" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;S.9: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Calcular la siguiente serie:</p>
 <p>$1 + + + = _{i=1}^{n} = $</p>
-</section>
+</div>
+</div>
 <div id="cell-69" class="cell" data-execution_count="61">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>numeros <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>]</span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> <span class="bu">reduce</span>(<span class="kw">lambda</span> x, y: <span class="dv">1</span><span class="op">/</span>x <span class="op">+</span> <span class="dv">1</span><span class="op">/</span>y, numeros)</span>
@@ -1237,10 +1287,19 @@ Números primos en el rango [2, 50]
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo.-9" class="level3 alert alert-success" data-number="S.4.3">
-<h3 data-number="S.4.3" class="anchored" data-anchor-id="ejemplo.-9"><span class="header-section-number">S.4.3</span> Ejemplo.</h3>
+<div id="exm-s-10" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;S.10: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Calcular el máximo de una lista de números.</p>
-</section>
+</div>
+</div>
 <div id="cell-72" class="cell" data-execution_count="62">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>numeros <span class="op">=</span> [<span class="dv">23</span>,<span class="dv">5</span>,<span class="dv">23</span>,<span class="dv">56</span>,<span class="dv">87</span>,<span class="dv">98</span>,<span class="dv">23</span>]</span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>maximo <span class="op">=</span> <span class="bu">reduce</span>(<span class="kw">lambda</span> a,b: a <span class="cf">if</span> (a <span class="op">&gt;</span> b) <span class="cf">else</span> b, numeros)</span>
@@ -1252,15 +1311,24 @@ Números primos en el rango [2, 50]
 </section>
 <section id="ejemplos-adicionales." class="level2" data-number="S.5">
 <h2 data-number="S.5" class="anchored" data-anchor-id="ejemplos-adicionales."><span class="header-section-number">S.5</span> Ejemplos adicionales.</h2>
-<section id="ejemplo.-recursión." class="level3 alert alert-success" data-number="S.5.1">
-<h3 data-number="S.5.1" class="anchored" data-anchor-id="ejemplo.-recursión."><span class="header-section-number">S.5.1</span> Ejemplo. Recursión.</h3>
+<div id="exm-s-11" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;S.11: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> Recursión.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Calcular el factorial de un número.</p>
 <p>El factorial de un número <span class="math inline">\(n\)</span> se define como el producto de todos los números enteros positivos desde n hasta 1. Matemáticamente, se puede expresar como:</p>
 <p><span class="math display">\[
 n! = n \times (n−1)!
 \]</span></p>
 <p>Observa que para calcular el factorial de <span class="math inline">\(n\)</span>, primero debes calcular el factorial de <span class="math inline">\(n-1\)</span>. El factorial de <span class="math inline">\(0! = 1\)</span>.</p>
-</section>
+</div>
+</div>
 <ul>
 <li><p>La recursión es un concepto en programación donde una función se llama a sí misma para resolver un problema.</p></li>
 <li><p>Una función recursiva divide un problema en subproblemas más pequeños y sencillos, resolviéndolos de manera repetida hasta llegar a una condición base: un caso simple que la función puede resolver sin más llamadas recursivas.</p></li>
@@ -1325,10 +1393,19 @@ n! = n \times (n−1)!
 <li><p>La recursión puede ser elegante y fácil de entender para problemas que se pueden dividir de manera similar (como el factorial).</p></li>
 <li><p>Sin embargo, no siempre es la solución más eficiente, ya que una recursión profunda consume más memoria por las llamadas acumuladas en la pila de ejecución. Esto puede llevar a un desbordamiento de la memoria si no se maneja adecuadamente o si no hay un caso base claro.</p></li>
 </ul>
-<section id="ejemplo.-10" class="level3 alert alert-success" data-number="S.5.2">
-<h3 data-number="S.5.2" class="anchored" data-anchor-id="ejemplo.-10"><span class="header-section-number">S.5.2</span> Ejemplo.</h3>
+<div id="exm-s-12" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;S.12: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Contar el número de caracteres de un texto sin tomar en cuenta los espacios en blanco, combinando <code>reduce()</code>, <code>map( )</code> y <code>lambda</code>.</p>
-</section>
+</div>
+</div>
 <p><strong>Paso 1</strong>. Definimos un texto.</p>
 <div id="cell-89" class="cell" data-execution_count="70">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>texto <span class="op">=</span> <span class="st">'Hola Mundo Pythónico!'</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1420,10 +1497,19 @@ n! = n \times (n−1)!
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo.-11" class="level3 alert alert-success" data-number="S.5.3">
-<h3 data-number="S.5.3" class="anchored" data-anchor-id="ejemplo.-11"><span class="header-section-number">S.5.3</span> Ejemplo.</h3>
+<div id="exm-s-13" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;S.13: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Encontrar todos los números pares de una lista combinando <code>filter()</code> con <code>lambda</code>.</p>
-</section>
+</div>
+</div>
 <div id="cell-111" class="cell" data-execution_count="84">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb93"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lista de números</span></span>
 <span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a>nums <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">23</span>, <span class="dv">31</span>, <span class="dv">35</span>, <span class="dv">36</span>, <span class="dv">47</span>, <span class="dv">50</span>, <span class="dv">77</span>, <span class="dv">93</span>]</span>
@@ -1437,10 +1523,19 @@ n! = n \times (n−1)!
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo.-12" class="level3 alert alert-success" data-number="S.5.4">
-<h3 data-number="S.5.4" class="anchored" data-anchor-id="ejemplo.-12"><span class="header-section-number">S.5.4</span> Ejemplo.</h3>
+<div id="exm-s-14" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;S.14: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Encontrar todos los números primos en el conjunto <span class="math inline">\(\{2, \dots, 50\}\)</span> combinando combinando <code>filter()</code> con <code>lambda</code>.</p>
-</section>
+</div>
+</div>
 <div id="cell-114" class="cell" data-execution_count="86">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb95"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lista de números de 2 a 50</span></span>
 <span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a>nums <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">2</span>, <span class="dv">51</span>)) </span>
@@ -1455,24 +1550,33 @@ n! = n \times (n−1)!
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo.-13" class="level3 alert alert-success" data-number="S.5.5">
-<h3 data-number="S.5.5" class="anchored" data-anchor-id="ejemplo.-13"><span class="header-section-number">S.5.5</span> Ejemplo.</h3>
+<div id="exm-s-15" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;S.15: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>La siguiente función es impura porque modifica la <code>lista</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb97"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cuadradosImpuros(lista):</span>
-<span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, v <span class="kw">in</span> <span class="bu">enumerate</span>(lista):</span>
-<span id="cb97-3"><a href="#cb97-3" aria-hidden="true" tabindex="-1"></a>        lista[i] <span class="op">=</span> v <span class="op">**</span> <span class="dv">2</span></span>
-<span id="cb97-4"><a href="#cb97-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> lista</span>
-<span id="cb97-5"><a href="#cb97-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb97-6"><a href="#cb97-6" aria-hidden="true" tabindex="-1"></a>numeros_originales <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">5</span>))</span>
-<span id="cb97-7"><a href="#cb97-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numeros_originales)</span>
-<span id="cb97-8"><a href="#cb97-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cuadradosImpuros(numeros_originales))</span>
-<span id="cb97-9"><a href="#cb97-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numeros_originales)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>def cuadradosImpuros(lista):
+    for i, v in enumerate(lista):
+        lista[i] = v ** 2
+    return lista
+
+numeros_originales = list(range(5))
+print(numeros_originales)
+print(cuadradosImpuros(numeros_originales))
+print(numeros_originales)</code></pre>
 <p>La salida del código anterior es el siguiente:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb98"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
-<span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">16</span>]</span>
-<span id="cb98-3"><a href="#cb98-3" aria-hidden="true" tabindex="-1"></a>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">16</span>]</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>[0, 1, 2, 3, 4]
+[0, 1, 4, 9, 16]
+[0, 1, 4, 9, 16]</code></pre>
 <p>Escribe una versión pura de la función <code>cuadradosImpuros(lista)</code> usando <code>map()</code> y <code>lambda</code>.</p>
-</section>
+</div>
+</div>
 <div id="cell-117" class="cell" data-execution_count="87">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb99"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a>numeros_originales <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">5</span>))</span>
 <span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numeros_originales)</span>
@@ -1485,10 +1589,19 @@ n! = n \times (n−1)!
 </div>
 </div>
 <p>.</p>
-<section id="ejemplo.-14" class="level3 alert alert-success" data-number="S.5.6">
-<h3 data-number="S.5.6" class="anchored" data-anchor-id="ejemplo.-14"><span class="header-section-number">S.5.6</span> Ejemplo.</h3>
+<div id="exm-s-16" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;S.16: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Convertir el siguiente diccionario que contiene valores de grados Fahrenheit <code>{'t1':32.0, 't2':72.5, 't3':104.0, 't4':212.0}</code> a otro diccionario que contenga los correspondientes valores en grados Celsius.</p>
-</section>
+</div>
+</div>
 <div id="cell-120" class="cell" data-execution_count="88">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb101"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Diccionario con grados Farenheit</span></span>
 <span id="cb101-2"><a href="#cb101-2" aria-hidden="true" tabindex="-1"></a>fahrenheit_dict <span class="op">=</span> {<span class="st">'t1'</span>:<span class="fl">32.0</span>, <span class="st">'t2'</span>:<span class="fl">72.5</span>, <span class="st">'t3'</span>:<span class="fl">104.0</span>, <span class="st">'t4'</span>:<span class="fl">212.0</span>}</span>
