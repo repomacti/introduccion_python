@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -75,14 +75,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-d9d7ed2c14390fa05efde32fc7ffca7f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-2bd815e1407f73cb4f4a1b49bf6eb128.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-b4ef5ea2be5239162038c25e44211418.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-2bd815e1407f73cb4f4a1b49bf6eb128.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -885,7 +885,7 @@ IMC : 4393371568</code></pre>
 <section id="sec-l1-composicion-de-funciones" class="level3" data-number="1.2.1">
 <h3 data-number="1.2.1" class="anchored" data-anchor-id="sec-l1-composicion-de-funciones"><span class="header-section-number">1.2.1</span> Composición de funciones.</h3>
 <p>El uso de funciones anidadas o composición como en el código <code>print(type(peso))</code> es muy común en Python. La <a href="#fig-l1-figuras_objetos_python" class="quarto-xref">figura&nbsp;<span>1.1</span></a> muestra lo que sucede cuando se combinan varias funciones en una sola declaración. Este estilo de programación nos lleva a lo que se conoce como programación funcional, que se explica con más detalle en la <a href="../notebooks/16_lambda_expressions.html#sec-p-programacion-funcional" class="quarto-xref">sección&nbsp;<span>P.1</span></a>.</p>
-<div id="fig-l1-figuras_objetos_python" class="quarto-float quarto-figure quarto-figure-left anchored" alt="Concatenación de funciones en Python" data-fig-align="left">
+<div id="fig-l1-figuras_objetos_python" class="quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left" alt="Concatenación de funciones en Python">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-l1-figuras_objetos_python-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figuras/funciones_objetos_python.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:80.0%" alt="Concatenación de funciones en Python">
@@ -931,7 +931,7 @@ A = P (1 + \dfrac{r}{n})^{nt}
 </ul>
 </div>
 </div>
-<p>Lo primero para realizar este cálculo es definir las variables:</p>
+<p>Lo primero que debemos hacer es definir las variables:</p>
 <div id="49d82496-9a7e-4425-bbb2-ea78ce5a93de" class="cell" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> <span class="dv">2</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">12</span></span>
@@ -971,7 +971,7 @@ Tip&nbsp;1.2
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Observa el uso de paréntesis en la implementación de la fórmula. Este uso de paréntesis es importante para generar el resultado correcto. Algunas veces se pueden omitir los paréntesis, pero se debe tener claro el nivel de precedencia de los operadores, revisa la <span class="quarto-unresolved-ref">?sec-a-precedencia</span> para más información al respecto.</p>
+<p>Observa el uso de paréntesis en la implementación de la fórmula. Este uso de paréntesis es importante para generar el resultado correcto. Algunas veces se pueden omitir los paréntesis, pero se debe tener claro el nivel de precedencia de los operadores, revisa la <a href="../notebooks/03_operadores.html#sec-c-precedencia" class="quarto-xref">sección&nbsp;<span>C.2</span></a> para más información al respecto.</p>
 </div>
 </div>
 </section>
@@ -1108,7 +1108,7 @@ Tip&nbsp;1.3
 </div>
 </div>
 <p>Obtenemos el número real original.</p>
-<p>Para los número complejos también tenenmos varios métodos:</p>
+<p>Para los números complejos también tenenmos varios métodos:</p>
 <div id="38636fd0-4fb3-4b6f-9f0d-60ba901e19ad" class="cell" data-execution_count="69">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>complejo.conjugate()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="69">
@@ -1131,7 +1131,7 @@ Tip&nbsp;1.3
 </section>
 <section id="interacción-entre-objetos." class="level3" data-number="1.4.2">
 <h3 data-number="1.4.2" class="anchored" data-anchor-id="interacción-entre-objetos."><span class="header-section-number">1.4.2</span> Interacción entre objetos.</h3>
-<p>En este estilo de programación orientado a objetos, es posible tener una intereacción entre objetos que es similar a la explicada en la composición de función <a href="#sec-l1-composicion-de-funciones" class="quarto-xref">sección&nbsp;<span>1.2.1</span></a>.</p>
+<p>En este estilo de programación orientado a objetos, es posible tener una interacción entre objetos que es similar a la explicada en la composición de funciones <a href="#sec-l1-composicion-de-funciones" class="quarto-xref">sección&nbsp;<span>1.2.1</span></a>.</p>
 <p>Por ejemplo, aplicamos el método <code>as_integer_ratio()</code> al objeto <code>real</code> y su resultado se almacena en <code>ratio</code>:&nbsp;</p>
 <div id="9af510bb-46d7-4c9c-9d99-370f8ce86df8" class="cell" data-execution_count="73">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>ratio <span class="op">=</span> real.as_integer_ratio()</span>
@@ -1155,7 +1155,7 @@ Tip&nbsp;1.3
 </div>
 </div>
 <p>El estilo de programación anterior se explica en la <a href="#fig-l1-metodos_objetos_python" class="quarto-xref">figura&nbsp;<span>1.2</span></a>.</p>
-<div id="fig-l1-metodos_objetos_python" class="quarto-float quarto-figure quarto-figure-left anchored" alt="Interacción entre los objetos" data-fig-align="left">
+<div id="fig-l1-metodos_objetos_python" class="quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left" alt="Interacción entre los objetos">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-l1-metodos_objetos_python-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figuras/objetos_python.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:80.0%" alt="Interacción entre los objetos">
