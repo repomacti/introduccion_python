@@ -447,7 +447,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/07_archivos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos. {#sec-g-archivos}¶</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -617,20 +617,20 @@ Ejemplo&nbsp;1.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 </div>
 </div>
 <p>En Python es posible definir una variable (un nombre) para almacenar un valor. Por ejemplo, definamos una variable para almacenar el peso de una persona:</p>
-<div id="851130ed-79f7-4e0c-b6be-3360d0093e6b" class="cell" data-execution_count="14">
+<div id="851130ed-79f7-4e0c-b6be-3360d0093e6b" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>peso <span class="op">=</span> <span class="fl">85.0</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Para imprimir el contenido de una variable podemos usar la función <code>print()</code> como sigue:</p>
-<div id="2d459383-2494-4963-be1f-ae6df24cbd8d" class="cell" data-execution_count="15">
+<div id="2d459383-2494-4963-be1f-ae6df24cbd8d" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(peso)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>85.0</code></pre>
 </div>
 </div>
 <p>También podemos saber de qué tipo es la variable <code>peso</code> con la función <code>type()</code>:</p>
-<div id="de65481a-e4a8-4ea9-9be0-0ee229dee9d3" class="cell" data-execution_count="16">
+<div id="de65481a-e4a8-4ea9-9be0-0ee229dee9d3" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(peso)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="16">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>float</code></pre>
 </div>
 </div>
@@ -645,11 +645,11 @@ Tip&nbsp;1.1
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Como puedes ver, al ejecutar la celda con el código <code>type(peso)</code> se imprime el tipo de la variable. Esto funciona de esta manera porque estamos en un ambiente interactivo (Jupyter Notebook), sin embargo conviene siempre agregar la función <code>print()</code> para que la impresión del resultado funcione en cualquier tipo de ambiente. Es decir, el código más funcional sería: <code>print(type(peso))</code>. En lo que sigue usaremos <code>print()</code> para imprimir el resultado de una declaración.</p>
+<p>Como puedes ver, al ejecutar la celda con el código <code>type(peso)</code> se imprime el tipo de la variable. Esto funcionará siempre y cuando nuestro ambiente de trabajo sea interactivo, por ejemplo en <a href="https://jupyterlab.readthedocs.io/en/latest/">Jupyter Lab</a> donde se pueden crear y ejecutar <a href="https://jupyterlab.readthedocs.io/en/4.4.x/user/notebook.html">Jupyter Notebooks</a>. Sin embargo conviene siempre agregar la función <code>print()</code> para que la impresión del resultado funcione en cualquier tipo de ambiente. Es decir, un código más funcional sería: <code>print(type(peso))</code>. En lo que sigue usaremos <code>print()</code> para imprimir el resultado de una declaración.</p>
 </div>
 </div>
 <p>Definamos ahora una variable para almacenar la estatura de una persona, imprimamos el contenido de la variable y su tipo:</p>
-<div id="e0aafb03-cf91-4022-a1cb-83d2426cc444" class="cell" data-execution_count="17">
+<div id="e0aafb03-cf91-4022-a1cb-83d2426cc444" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Escribimos las tres instrucciones en una sola celda:</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>estatura <span class="op">=</span> <span class="fl">1.88</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(estatura)</span>
@@ -667,7 +667,7 @@ Tip&nbsp;1.1
 <li>Nota que usando <code>print</code> antes de <code>type</code> obtenemos un poco más de información que solo usando <code>type</code>.&nbsp;En esta última declaración estamos concatenando dos funciones, esto lo explicamos con detalle en la <a href="#sec-l1-composicion-de-funciones" class="quarto-xref">sección&nbsp;<span>1.2.1</span></a>.</li>
 </ul>
 <p>La función <code>print()</code> puede recibir más de un argumento, por ejemplo:</p>
-<div id="11e180a3-4f66-4cb4-8780-31a407c7863d" class="cell" data-execution_count="18">
+<div id="11e180a3-4f66-4cb4-8780-31a407c7863d" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Peso ="</span>, peso)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Estatura ="</span>, estatura)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -676,7 +676,7 @@ Estatura = 1.88</code></pre>
 </div>
 </div>
 <p>Observa que el primer argumento en ambas líneas son textos los cuales se definen usando comillas <code>"..."</code>. El segundo argumento son las variables antes definidas <code>peso</code> y <code>estatura</code>. Podemos proporcionar más argumentos a la función <code>print()</code> por ejemplo:&nbsp;</p>
-<div id="38c842ca-5d38-4c33-8cc3-cb28d978de34" class="cell" data-execution_count="19">
+<div id="38c842ca-5d38-4c33-8cc3-cb28d978de34" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ahora agregamos las unidades</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Peso ="</span>, peso, <span class="st">"[kg]"</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Estatura ="</span>, estatura, <span class="st">"[m]"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -691,13 +691,13 @@ Estatura = 1.88 [m]</code></pre>
 \text{IMC} = \dfrac{\text{peso [kg]}}{(\text{estatura [m])}^2}
 \]</span></p>
 <p>En Python esta operación se realiza como sigue:</p>
-<div id="a29124e2-307a-4e61-a196-74c5ad361f07" class="cell" data-execution_count="20">
+<div id="a29124e2-307a-4e61-a196-74c5ad361f07" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular el IMC</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>IMC <span class="op">=</span> peso <span class="op">/</span> estatura<span class="op">**</span><span class="dv">2</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Hemos usado dos operadores: <code>/</code> para división y <code>**</code> para calcular una potencia. Hablaremos más de estos operadores en la <a href="#sec-l1-operadores-aritmeticos" class="quarto-xref">sección&nbsp;<span>1.3</span></a>.</p>
 <p>Para saber cuál fue el resultado de nuestro cálculo hagamos lo siguiente:</p>
-<div id="88168f22-9581-4989-a2bb-350e26676427" class="cell" data-execution_count="21">
+<div id="88168f22-9581-4989-a2bb-350e26676427" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"IMC ="</span>, IMC)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(IMC))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -706,13 +706,13 @@ Estatura = 1.88 [m]</code></pre>
 </div>
 </div>
 <p>Definamos ahora variables para la edad, el nombre y el estado civil:</p>
-<div id="1a58437a-0df0-444b-840b-1a3d8bfbe63a" class="cell" data-execution_count="22">
+<div id="1a58437a-0df0-444b-840b-1a3d8bfbe63a" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>edad <span class="op">=</span> <span class="dv">78</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>nombre <span class="op">=</span> <span class="st">"Brian May"</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>casado <span class="op">=</span> <span class="va">True</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Y ahora imprimimos la información de estas nuevas variables:</p>
-<div id="44ac9128-2aa4-4eca-b014-2d9c83c2daa2" class="cell" data-execution_count="23">
+<div id="44ac9128-2aa4-4eca-b014-2d9c83c2daa2" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Edad ="</span>, edad, <span class="bu">type</span>(edad))</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Nombre ="</span>, nombre, <span class="bu">type</span>(nombre))</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Casado ="</span>, casado, <span class="bu">type</span>(casado))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -724,16 +724,16 @@ Casado = True &lt;class 'bool'&gt;</code></pre>
 </div>
 <p>Observa en la celda anterior que en cada línea de código agregamos una cadena, la variable y el resultado de la función <code>type()</code> como argumentos de la función <code>print()</code>. En cada caso el tipo de variable es distinto: <code>int</code>, <code>str</code> y <code>bool</code>. Estos tres son tipos básicos en Python.&nbsp;</p>
 <p>En la siguiente celda obtenemos el <strong>contenido</strong> de todas las variables definidas hasta el momento:</p>
-<div id="c940b07e-b355-4b09-a615-dea07c9fea5e" class="cell" data-execution_count="24">
+<div id="c940b07e-b355-4b09-a615-dea07c9fea5e" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Nombre ="</span>, nombre)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Edad ="</span>, edad)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Edad ="</span>, edad, <span class="st">"años"</span>)</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Casado ="</span>, casado)</span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Peso ="</span>, peso, <span class="st">"[kg]"</span>)</span>
 <span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Estatura ="</span>, estatura, <span class="st">"[m]"</span>)</span>
 <span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"IMC ="</span>, IMC)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Nombre = Brian May
-Edad = 78
+Edad = 78 años
 Casado = True
 Peso = 85.0 [kg]
 Estatura = 1.88 [m]
@@ -783,7 +783,7 @@ c = 12 + 5j
 &lt;class 'complex'&gt;</code></pre>
 </div>
 </div>
-<p>Para fortalecer tus conocimientos acerca de variables y tipos básicos revisa los apéndices <a href="../notebooks/01_variables_objetos.html" class="quarto-xref"><span>A</span></a> y <span class="quarto-unresolved-ref">?sec-a-tipos-basicos</span>.</p>
+<p>Para fortalecer tus conocimientos acerca de variables y tipos básicos revisa los apéndices <a href="../notebooks/01_variables_objetos.html" class="quarto-xref"><span>A</span></a> y <a href="../notebooks/02_tipos_basicos.html" class="quarto-xref"><span>B</span></a>.</p>
 </section>
 <section id="sec-l1-funciones-incorporadas" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="sec-l1-funciones-incorporadas"><span class="header-section-number">1.2</span> Funciones incorporadas.</h2>
@@ -884,14 +884,14 @@ IMC : 4393371568</code></pre>
 </table>
 <section id="sec-l1-composicion-de-funciones" class="level3" data-number="1.2.1">
 <h3 data-number="1.2.1" class="anchored" data-anchor-id="sec-l1-composicion-de-funciones"><span class="header-section-number">1.2.1</span> Composición de funciones.</h3>
-<p>El uso de funciones anidadas o composición como en el código <code>print(type(peso))</code> es muy común en Python. La <a href="#fig-l1-figuras_objetos_python" class="quarto-xref">figura&nbsp;<span>1.1</span></a> muestra lo que sucede cuando se combinan varias funciones en una sola declaración. Este estilo de programación nos lleva a lo que se conoce como programación funcional, que se explica con más detalle en la <a href="../notebooks/16_lambda_expressions.html#sec-a-programacion-funcional" class="quarto-xref">sección&nbsp;<span>P.1</span></a>.</p>
-<div id="fig-l1-figuras_objetos_python" class="quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left" alt="Concatenación de funciones en Python">
+<p>El uso de funciones anidadas o composición como en el código <code>print(type(peso))</code> es muy común en Python. La <a href="#fig-l1-figuras_objetos_python" class="quarto-xref">figura&nbsp;<span>1.1</span></a> muestra lo que sucede cuando se combinan varias funciones en una sola declaración. Este estilo de programación nos lleva a lo que se conoce como programación funcional, que se explica con más detalle en la <a href="../notebooks/16_lambda_expressions.html#sec-p-programacion-funcional" class="quarto-xref">sección&nbsp;<span>P.1</span></a>.</p>
+<div id="fig-l1-figuras_objetos_python" class="quarto-float quarto-figure quarto-figure-left anchored" alt="Concatenación de funciones en Python" data-fig-align="left">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-l1-figuras_objetos_python-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figuras/funciones_objetos_python.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:80.0%" alt="Concatenación de funciones en Python">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-l1-figuras_objetos_python-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;1.1: Estilo de programación funcional en Python. La función <code>f(a,b,c)</code> recibe tres argumentos y genera como resultado el objeto <code>o1</code>. Este objeto es posteriormente usado como argumento de la función <code>g()</code> la cual produce como resultado el objeto <code>o2</code>. Estas dos operaciones se pueden escribir en una sola línea como <code>g(f(a,b,c))</code>. De esta manera se construye el objeto <code>o1</code> al vuelo sin requerir de una variable y es usado inmediatamente por la función <code>g()</code> como su argumento para generar el resultado esperado, en este caso el objeto <code>o2</code>. Como ejemplo de este construcción en Python se muestra el código <code>print(type(a))</code>. Se pueden anidar tantas funciones como se requiera. En la <a href="../notebooks/01_variables_objetos.html#sec-a-objetos-nombres" class="quarto-xref">sección&nbsp;<span>A.5</span></a> se explica un poco acerca de objetos y nombres de variables.
+Figura&nbsp;1.1: Estilo de programación funcional en Python. La función <code>f(a,b,c)</code> recibe tres argumentos y genera como resultado el objeto <code>o1</code>. Este objeto es posteriormente usado como argumento de la función <code>g()</code> la cual produce como resultado el objeto <code>o2</code>. Estas dos operaciones se pueden escribir en una sola línea como <code>g(f(a,b,c))</code>. De esta manera se construye el objeto <code>o1</code> al vuelo sin requerir de una variable y es usado inmediatamente por la función <code>g()</code> como su argumento para generar el resultado esperado, en este caso el objeto <code>o2</code>. Como ejemplo de este tipo de construcción en Python se muestra el código <code>print(type(a))</code>. Se pueden anidar tantas funciones como se requiera. En la <a href="../notebooks/01_variables_objetos.html#sec-a-objetos-nombres" class="quarto-xref">sección&nbsp;<span>A.5</span></a> se explica un poco acerca de objetos y nombres de variables.
 </figcaption>
 </figure>
 </div>
@@ -899,7 +899,7 @@ Figura&nbsp;1.1: Estilo de programación funcional en Python. La función <code>
 </section>
 <section id="sec-l1-operadores-aritmeticos" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="sec-l1-operadores-aritmeticos"><span class="header-section-number">1.3</span> Operadores aritméticos.</h2>
-<p>En el <a href="#exm-l1-ej1" class="quarto-xref">ejemplo&nbsp;<span>1.1</span></a> usamos los operadores: <code>/</code> y <code>**</code> para calcular el IMC. Para los tipos numéricos básicos que acabamos de revisar, existen más operaciones aritméticas que se pueden aplicar sobre ellos. Estas operaciones están organizadas como se describe en la <span class="quarto-unresolved-ref">?sec-a-operadores-aritmeticos</span>. A continuación veremos un ejemplo más interesante del uso de estos operadores.</p>
+<p>En el <a href="#exm-l1-ej1" class="quarto-xref">ejemplo&nbsp;<span>1.1</span></a> usamos los operadores: <code>/</code> y <code>**</code> para calcular el IMC. Para los tipos numéricos básicos que acabamos de revisar, existen más operaciones aritméticas que se pueden aplicar sobre ellos. Estas operaciones están organizadas como se describe en la <a href="../notebooks/03_operadores.html#sec-c-operadores-aritmeticos" class="quarto-xref">sección&nbsp;<span>C.1</span></a>. A continuación veremos un ejemplo más interesante del uso de estos operadores.</p>
 <div id="exm-ej1" class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1155,7 +1155,7 @@ Tip&nbsp;1.3
 </div>
 </div>
 <p>El estilo de programación anterior se explica en la <a href="#fig-l1-metodos_objetos_python" class="quarto-xref">figura&nbsp;<span>1.2</span></a>.</p>
-<div id="fig-l1-metodos_objetos_python" class="quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left" alt="Interacción entre los objetos">
+<div id="fig-l1-metodos_objetos_python" class="quarto-float quarto-figure quarto-figure-left anchored" alt="Interacción entre los objetos" data-fig-align="left">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-l1-metodos_objetos_python-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figuras/objetos_python.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:80.0%" alt="Interacción entre los objetos">
