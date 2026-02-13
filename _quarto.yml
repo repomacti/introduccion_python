@@ -45,7 +45,7 @@ book:
     - part: part1.qmd
       chapters:
         - lecciones/leccion_01.ipynb
-#        - lecciones/leccion_02.ipynb
+        - lecciones/leccion_02.ipynb
   appendices:
     - notebooks/01_variables_objetos.ipynb
     - notebooks/02_tipos_basicos.ipynb

@@ -137,12 +137,12 @@
   {
     "objectID": "lecciones/leccion_02.html",
     "href": "lecciones/leccion_02.html",
-    "title": "2  Cadenas",
+    "title": "2  Textos: entradas y salidas.",
     "section": "",
-    "text": "2.0.1 Ejemplo 1.\nEn Python, una cadena (string) es una secuencia de caracteres utilizada para representar texto. Las cadenas se pueden crear utilizando:\nEs posible agregar caracteres especiales usando el caracter de escape \\, por ejemplo si deseamos un cambio de línea en la cadena anterior hacemos lo siguiente:\nOtro ejemplo:\nLa documentación completa de caracteres especiales se puede encontrar en el siguiente enlace: Escape sequences.\nEscribe el siguiente código y ejecútalo:",
+    "text": "2.1 Cadenas\nLa información en forma de texto es muy importante para muchos procesos y actividades cotidianas. Desde almacenar información personal hasta desplegar textos en formatos elegantes y vistosos. En esta sección se muestra cómo usar las cadenas para almacenar textos, darles formato, recibir información desde el teclado y enviar el contenido a archivos. Adicionalmente, en el Apéndice E encontrarás más detalles sobre este tema.\nEn Python, una cadena (string) es una secuencia de caracteres utilizada para representar texto. Las cadenas se pueden crear utilizando:\nPor ejemplo:\nfrase1 = \"O ya no entiendo lo que está pasando o ya pasó lo que estaba yo entendiendo\"\nfrase2 = 'O ya no entiendo lo que está pasando o ya pasó lo que estaba yo entendiendo'\nfrase3 = \"\"\"O ya no entiendo lo que está pasando o ya pasó lo que estaba yo entendiendo\"\"\"\nfrase4 = '''O ya no entiendo lo que está pasando o ya pasó lo que estaba yo entendiendo'''\nTodas las variables antes definidas son de tipo cadena y contienen lo mismo (pero son variables distintas):\nprint(frase1, frase2, frase3, frase4, sep=\"\\n\")\n\nO ya no entiendo lo que está pasando o ya pasó lo que estaba yo entendiendo\nO ya no entiendo lo que está pasando o ya pasó lo que estaba yo entendiendo\nO ya no entiendo lo que está pasando o ya pasó lo que estaba yo entendiendo\nO ya no entiendo lo que está pasando o ya pasó lo que estaba yo entendiendo\nprint(type(frase1), type(frase2), type(frase3), type(frase4), sep=\"\\n\")\n\n&lt;class 'str'&gt;\n&lt;class 'str'&gt;\n&lt;class 'str'&gt;\n&lt;class 'str'&gt;\nEs posible agregar caracteres especiales usando el caracter de escape \\, por ejemplo si deseamos un cambio de línea en la cadena anterior hacemos lo siguiente:\nfrase1 = \"O ya no entiendo lo que está pasando \\no ya pasó lo que estaba yo entendiendo\"\n\nprint(frase1)\n\nO ya no entiendo lo que está pasando \no ya pasó lo que estaba yo entendiendo\nOtro ejemplo:\nfrase1 = \"Life is like a box of chocolates. \\n\\tYou never know what you\\'re gonna get.\"\n\nprint(frase1)\n\nLife is like a box of chocolates. \n    You never know what you're gonna get.\nLa documentación completa de caracteres especiales se puede encontrar en el siguiente enlace: Escape sequences.\nejemplo = 'Chiripitifláutico'\n\nprint(ejemplo)\nprint(type(ejemplo))\n\nChiripitifláutico\n&lt;class 'str'&gt;\nObserva que la variable ejemplo es de tipo str.\n# 1. elemento 0\nejemplo[0]\n\n'C'\n# 2. elemento final, índices positivo y negativo\nejemplo[-1]\n\n'o'\n# 3. elemento 5, índices positivo y negativo\nejemplo[5]\n\n'p'\n# 4. subcadena 'pitifláu'\nejemplo[5:13]\n\n'pitifláu'\n# 5. pares\nejemplo[::2]\n\n'Ciiiiluio'\n# 6. impares\nejemplo[1::2]\n\n'hrptfátc'\n# 7. pares de 2 a 12\nejemplo[2:13:2]\n\n'iiiilu'\n# 7. impares de 2 a 12\nejemplo[3:13:2]\n\n'rptfá'\n# 8. pares, toda la cadena, en reversa\nejemplo[::2][::-1]\n\n'oiuliiiiC'\n# 1. Triples comillas\ncadena = \"\"\"Desde muy niño\ntuve que \"interrumpir\" 'mi' educación\npara ir a la escuela\"\"\"\n\nprint(cadena)\n\nDesde muy niño\ntuve que \"interrumpir\" 'mi' educación\npara ir a la escuela\n# 2. Dobles comillas\ncadena = \"Desde muy niño\\ntuve que \\\"interrumpir\\\" 'mi' educación\\npara ir a la escuela\"\"\"\n\nprint(cadena)\n\nDesde muy niño\ntuve que \"interrumpir\" 'mi' educación\npara ir a la escuela\nRecordemos cómo es la cadena para realizar el punto 3.\n# 3.\n# Encontrar el índice del primer cambio de línea.\ncadena.find('\\n')\n\n14\n# str[Start:End:Stride]\n# Obtener la primera línea sin el cambio de línea usando slicing.\nlinea1 = cadena[0:14]\n\n# Imprimir la línea\nprint(linea1)\n\nDesde muy niño\n# 4. contar las letras 'r'\ncadena.count('r')\n\n5\n# 5. linea1, centrada, fill with *\nlinea1.center(50, '*')\n\n'******************Desde muy niño******************'\n# 6. extraer 'interrumpir'\n\n# Calcular la longitud de la palabra \"interrumpir\"\nprint(len(\"interrumpir\"))\n\n11\n# Encontrar el índice de las primeras comillas dobles\ncadena.find('\"')\n\n24\n# Extraer la palabra usando slicing con los índices calculados\ncadena[25:25+11]\n\n'interrumpir'\n# 7. extraer 'interrumpir' y transformar a mayúsculas\n# Realizar todo en una sola línea\ncadena[cadena.find('\"')+1:cadena.find('\"')+12].upper()\n\n'INTERRUMPIR'\n# 1. longitud de 'cadena'\nlen(cadena)\n\n73\n# 2. max y min de 'cadena'\nmax(cadena)\n\n'ó'\nmin(cadena)\n\n'\\n'\n# 3. Verificar: 'ir', 'qué', 'cuando', 'la', usando el operador 'in'\n'ir' in cadena\n\nTrue\nprint(cadena)\n\nDesde muy niño\ntuve que \"interrumpir\" 'mi' educación\npara ir a la escuela\n# Paso a paso\n\n# Índice del primer cambio de línea\nfin_1 = cadena.find('\\n')\n\n# Índice del segundo cambio de línea\nfin_2 = cadena.find('\\n', fin_1+1)\n\n# Imprimir los índices\nprint(fin_1, fin_2)\n\n14 52\n# Obtener las líneas usando slicing y los índices\nlinea1 = cadena[0:fin_1]\nlinea2 = cadena[fin_1+1:fin_2]\nlinea3 = cadena[fin_2+1:]\n\nprint(linea1)\nprint(linea2)\nprint(linea3)\n\nDesde muy niño\ntuve que \"interrumpir\" 'mi' educación\npara ir a la escuela\n# Checar los códigos Unicode de los caracteres\nprint(chr(0x2192), chr(0x1F63E), chr(0x1F639), chr(0x00B7))\n\n→ 😾 😹 ·\n# Repetir un caracter muchas veces\nprint(50 * chr(0x00B7))\n\n··················································\n# Primera línea\nprint(8*chr(0x2192), chr(0x1F63E).center(30), 8*chr(0x2190))\n\n# Imprimir las tres líneas centradas rellenando espacios con .\nprint(linea1.center(50, chr(0x00B7)))\nprint(linea2.center(50, chr(0x00B7)) )\nprint(linea3.center(50, chr(0x00B7)) )\n\n# Segunda línea\nprint(chr(0x1F639).rjust(48))\n\n→→→→→→→→               😾                ←←←←←←←←\n··················Desde muy niño··················\n······tuve que \"interrumpir\" 'mi' educación·······\n···············para ir a la escuela···············\n                                               😹\n¿Qué pasa con el siguiente código?",
     "crumbs": [
       "Introducción",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Cadenas</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Textos: entradas y salidas.</span>"
     ]
   },
   {
@@ -203,56 +203,56 @@
   {
     "objectID": "lecciones/leccion_02.html#ejemplo-5.",
     "href": "lecciones/leccion_02.html#ejemplo-5.",
-    "title": "2  Cadenas",
-    "section": "2.6 Ejemplo 5.",
-    "text": "2.6 Ejemplo 5.\nImprimir el texto de cadena, definida en el ejemplo 4, como sigue (el número total de caracteres por cada línea es de 50):\n▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾\n..................Desde muy niño..................\n......tuve que \"interrumpir\" 'mi' educación.......\n...............para ir a la escuela...............\n▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴\nHint. Checa los caracteres Unicode aquí: https://www.compart.com/en/unicode/html",
+    "title": "2  Textos: entradas y salidas.",
+    "section": "2.2 Ejemplo 5.",
+    "text": "2.2 Ejemplo 5.\nImprimir el texto de la variable cadena, definida en el ejemplo 4, como sigue:\n→→→→→→→→               😾                ←←←←←←←←\n··················Desde muy niño··················\n······tuve que \"interrumpir\" 'mi' educación·······\n···············para ir a la escuela···············\n                                               😹\nEl número total de caracteres de las tres líneas intermedias es de 50.\nHint. Checa los caracteres Unicode aquí: https://www.compart.com/en/unicode/html",
     "crumbs": [
       "Introducción",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Cadenas</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Textos: entradas y salidas.</span>"
     ]
   },
   {
     "objectID": "lecciones/leccion_02.html#formato-de-salida.",
     "href": "lecciones/leccion_02.html#formato-de-salida.",
-    "title": "2  Cadenas",
-    "section": "2.7 Formato de salida.",
-    "text": "2.7 Formato de salida.\n\n2.7.1 Método str.format()\nEste método permite sustituir variables en los lugares indicados por {}:\n\nnombre = \"Hedy\"\napellido = \"Lamarr\"\nedad = 111\npeso = 55.5\n\ndatos = '{} {} cumpliría {} años en 2025'.format(nombre, apellido, edad)\nprint(datos)\n\n\n\n2.7.2 Cadenas formateadas (f-string, formatted string literals)\nEste tipo de cadenas permite sustituir variables en los lugares indicados, por ejemplo:\n\ndatos = f'{nombre} {apellido} cumpliría {edad} años en 2025'\nprint(datos)",
+    "title": "2  Textos: entradas y salidas.",
+    "section": "2.2 Formato de salida.",
+    "text": "2.2 Formato de salida.\n\n2.2.1 Método str.format()\nEste método permite sustituir variables en los lugares indicados por {}:\n\n# Definimos algunas variables\nnombre = \"Hedy\"\napellido = \"Lamarr\"\nedad = 111\npeso = 55.5\n\n# Definimos unz cadena usando las variables anteriores.\ndatos = '{} {} cumpliría {} años en 2025'.format(nombre, apellido, edad)\nprint(datos)\n\nHedy Lamarr cumpliría 111 años en 2025\n\n\n\n\n2.2.2 Cadenas formateadas (f-string, formatted string literals)\nEste tipo de cadenas permite sustituir variables en los lugares indicados, por ejemplo:\n\ndatos = f'{nombre} {apellido} cumpliría {edad} años en 2025'\nprint(datos)\n\nHedy Lamarr cumpliría 111 años en 2025\n\n\n\n\n\n\n\n\nEjemplo 2.6:  Texto formateado.\n\n\n\nGenerar la siguiente salida:\n――――――――――――――――――――――――――――――――――――――――――――――――――\n                 Datos personales                 \n――――――――――――――――――――――――――――――――――――――――――――――――――\n         Nombre: Armand Gustav Duplantis\n           Edad: 24\n         Casado: 0\n           Peso: 61.00\n       Estatura:  1.81\n  IMC (métrico): 18.62\n   IMC (inglés): 18.62\n――――――――――――――――――――――――――――――――――――――――――――――――――\n\nUsando el método str.format()\nUsando f-string.\n\nNota. El número total de caracteres en cada línea es de 50.\n\n\n\n# Paso a paso\n\n# Definir las variables\nnombre = \"Armand Gustav Duplantis\"\ncasado = False\nedad = 24\npeso = 61 # kg\nestatura = 1.81 # m\n\n# Calcular IMC con el sistema métrico\nIMC_metrico = peso / estatura**2\n\n# Convertir a libras y pulgadas\npeso_lb = peso * 2.20462\nestatura_in = estatura * 39.3701\n\n# Calcular el IMC con el sistema inglés\nIMC_ingles = peso_lb / estatura_in**2 * 703\n\n\n# Revisar el código Unicode de la línea continua\nprint(chr(0x2015))\n\n―\n\n\n\n# 1. Usando str.format()\nprint(50 * chr(0x2015))\nprint(\"Datos personales\".center(50))\nprint(50 * chr(0x2015))\nprint(\"{:&gt;15s}: {:&lt;}\".format(\"Nombre\", nombre ))\nprint(\"{:&gt;15s}: {:&lt;}\".format(\"Edad\", edad))\nprint(\"{:&gt;15s}: {:&lt;}\".format(\"Casado\", casado))\nprint(\"{:&gt;15s}: {:&gt;5.2f}\".format(\"Peso\", peso))\nprint(\"{:&gt;15s}: {:&gt;5.2f}\".format(\"Estatura\", estatura))\nprint(\"{:&gt;15s}: {:&gt;5.2f}\".format(\"IMC (métrico)\", IMC_metrico))\nprint(\"{:&gt;15s}: {:&gt;5.2f}\".format(\"IMC (inglés)\", IMC_ingles))\nprint(50 * chr(0x2015))\n\n――――――――――――――――――――――――――――――――――――――――――――――――――\n                 Datos personales                 \n――――――――――――――――――――――――――――――――――――――――――――――――――\n         Nombre: Armand Gustav Duplantis\n           Edad: 24\n         Casado: 0\n           Peso: 61.00\n       Estatura:  1.81\n  IMC (métrico): 18.62\n   IMC (inglés): 18.62\n――――――――――――――――――――――――――――――――――――――――――――――――――\n\n\n\n# 2. Usando f-string\n\n# Definir las cadenas necesarias\nsnombre = \"Nombre\"\nsedad = \"Edad\"\nscasado = \"Casado\"\nspeso = \"Peso\"\nsestatura = \"Estatura\"\nsIMC_m = \"IMC (métrico)\"\nsIMC_i = \"IMC (inglés)\"\n\n\n# Imprimir\nprint(50 * chr(0x2015))\nprint(\"Datos personales\".center(50))\nprint(50 * chr(0x2015))\nprint(f\"{snombre:&gt;15s}: {nombre:&lt;}\")\nprint(f\"{sedad:&gt;15s}: {edad:&lt;}\")\nprint(f\"{scasado:&gt;15s}: {casado:&lt;}\")\nprint(f\"{speso:&gt;15s}: {peso:&gt;5.2f}\")\nprint(f\"{sestatura:&gt;15s}: {estatura:&gt;5.2f}\")\nprint(f\"{sIMC_m:&gt;15s}: {IMC_metrico:&gt;5.2f}\")\nprint(f\"{sIMC_i:&gt;15s}: {IMC_ingles:&gt;5.2f}\")\nprint(50 * chr(0x2015))\n\n――――――――――――――――――――――――――――――――――――――――――――――――――\n                 Datos personales                 \n――――――――――――――――――――――――――――――――――――――――――――――――――\n         Nombre: Armand Gustav Duplantis\n           Edad: 24\n         Casado: 0\n           Peso: 61.00\n       Estatura:  1.81\n  IMC (métrico): 18.62\n   IMC (inglés): 18.62\n――――――――――――――――――――――――――――――――――――――――――――――――――\n\n\n\n# Otra opción usando str.format()\nformato1 = \"{:&gt;15s}: {:&lt;}\"\nformato2 = \"{:&gt;15s}: {:&gt;5.2f}\"\nlinea = 50 * chr(0x2015)\n\nprint(linea)\nprint(\"Datos personales\".center(50))\nprint(linea)\nprint(formato1.format(\"Nombre\", nombre))\nprint(formato1.format(\"Edad\", edad))\nprint(formato1.format(\"Casado\", casado))\nprint(formato2.format(\"Peso\", peso))\nprint(formato2.format(\"Estatura\", estatura))\nprint(formato2.format(\"IMC (métrico)\", IMC_metrico))\nprint(formato2.format(\"IMC (inglés)\", IMC_ingles))\nprint(linea)\n\n――――――――――――――――――――――――――――――――――――――――――――――――――\n                 Datos personales                 \n――――――――――――――――――――――――――――――――――――――――――――――――――\n         Nombre: Armand Gustav Duplantis\n           Edad: 24\n         Casado: 0\n           Peso: 61.00\n       Estatura:  1.81\n  IMC (métrico): 18.62\n   IMC (inglés): 18.62\n――――――――――――――――――――――――――――――――――――――――――――――――――",
     "crumbs": [
       "Introducción",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Cadenas</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Textos: entradas y salidas.</span>"
     ]
   },
   {
     "objectID": "lecciones/leccion_02.html#ejemplo-6.",
     "href": "lecciones/leccion_02.html#ejemplo-6.",
-    "title": "2  Cadenas",
-    "section": "2.8 Ejemplo 6.",
-    "text": "2.8 Ejemplo 6.\nGenerar la siguiente salida:\n――――――――――――――――――――――――――――――――――――――――――――――――――\n                 Datos personales                 \n――――――――――――――――――――――――――――――――――――――――――――――――――\n         Nombre: Armand Gustav Duplantis\n           Edad: 24\n         Casado: 0\n           Peso: 61.00\n       Estatura:  1.81\n  IMC (métrico): 18.62\n   IMC (inglés): 18.62\n――――――――――――――――――――――――――――――――――――――――――――――――――\n\nUsando el método str.format()\nUsando f-string.\n\nNota. El número total de caracteres es de 50.",
+    "title": "2  Textos: entradas y salidas.",
+    "section": "2.3 Ejemplo 6.",
+    "text": "2.3 Ejemplo 6.\nGenerar la siguiente salida:\n――――――――――――――――――――――――――――――――――――――――――――――――――\n                 Datos personales                 \n――――――――――――――――――――――――――――――――――――――――――――――――――\n         Nombre: Armand Gustav Duplantis\n           Edad: 24\n         Casado: 0\n           Peso: 61.00\n       Estatura:  1.81\n  IMC (métrico): 18.62\n   IMC (inglés): 18.62\n――――――――――――――――――――――――――――――――――――――――――――――――――\n\nUsando el método str.format()\nUsando f-string.\n\nNota. El número total de caracteres es de 50.",
     "crumbs": [
       "Introducción",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Cadenas</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Textos: entradas y salidas.</span>"
     ]
   },
   {
     "objectID": "lecciones/leccion_02.html#ejemplo-7.",
     "href": "lecciones/leccion_02.html#ejemplo-7.",
-    "title": "2  Cadenas",
-    "section": "3.1 Ejemplo 7.",
-    "text": "3.1 Ejemplo 7.\nEscribe un código que solicite al usuario su nombre, su edad, su peso y su estatura. Con esa información el código deberá calcular el índice de masa corporal y generar una salida como la siguiente:\nEscribe tu nombre: Luis Miguel\nEscribe tu edad: 25\nEscribe tu peso: 80\nEscribe tu estatura: 1.75\n\nHola Luis Miguel (25), tu índice de masa corporal es 26.122",
+    "title": "2  Textos: entradas y salidas.",
+    "section": "2.4 Ejemplo 7.",
+    "text": "2.4 Ejemplo 7.\nEscribe un código que solicite al usuario su nombre, su edad, su peso y su estatura. Con esa información el código deberá calcular el índice de masa corporal y generar una salida como la siguiente:\nEscribe tu nombre: Luis Miguel\nEscribe tu edad: 25\nEscribe tu peso: 80\nEscribe tu estatura: 1.75\n\nHola Luis Miguel (25), tu índice de masa corporal es 26.122",
     "crumbs": [
       "Introducción",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Cadenas</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Textos: entradas y salidas.</span>"
     ]
   },
   {
     "objectID": "lecciones/leccion_02.html#ejemplo-8.",
     "href": "lecciones/leccion_02.html#ejemplo-8.",
-    "title": "2  Cadenas",
-    "section": "4.1 Ejemplo 8.",
-    "text": "4.1 Ejemplo 8.\nEscribe un código que haga lo siguiente: * abrir el archivo personal_data.csv para lectura, * leer el encabezado del archivo, * leer los datos de los primeros 5 renglones, * calcular el IMC con los datos obtenidos. * comparar con la información del IMC del archivo.\nLos datos en el archivo, separados por coma, son los siguientes:\n\nPa=Paciente\nS=Sexo\nE=Edad\nPe=Peso\nA=Altura\nIMC=Índice de masa corporal\nDi=Diabetes\nH=Hipertensión\nDe=Depresión\nTS=Trastorno del sueño\nTA=Trastorno de la alimentación",
+    "title": "2  Textos: entradas y salidas.",
+    "section": "2.6 Ejemplo 8.",
+    "text": "2.6 Ejemplo 8.\nEscribe un código que haga lo siguiente: * abrir el archivo personal_data.csv para lectura, * leer el encabezado del archivo, * leer los datos de los primeros 5 renglones, * calcular el IMC con los datos obtenidos. * comparar con la información del IMC del archivo.\nLos datos en el archivo, separados por coma, son los siguientes:\n\nPa=Paciente\nS=Sexo\nE=Edad\nPe=Peso\nA=Altura\nIMC=Índice de masa corporal\nDi=Diabetes\nH=Hipertensión\nDe=Depresión\nTS=Trastorno del sueño\nTA=Trastorno de la alimentación",
     "crumbs": [
       "Introducción",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Cadenas</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Textos: entradas y salidas.</span>"
     ]
   },
   {
@@ -2145,6 +2145,72 @@
     "crumbs": [
       "Apéndices",
       "<span class='chapter-number'>R</span>  <span class='chapter-title'>Estructuras de datos concisas.</span>"
+    ]
+  },
+  {
+    "objectID": "lecciones/leccion_02.html#cadenas",
+    "href": "lecciones/leccion_02.html#cadenas",
+    "title": "2  Textos: entradas y salidas.",
+    "section": "",
+    "text": "comillas simples ',\ncomillas dobles \" o\ncomillas triples \"\"\" o '''.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEjemplo 2.1:  Definición de una cadena.\n\n\n\nEscribe el siguiente código y ejecútalo:\nejemplo = 'Chiripitifláutico'\n\nprint(ejemplo)\nprint(type(ejemplo))\n\nChiripitifláutico: Algo muy bueno, de gran calidad (coloquial).\n\n\n\n\n\n\n\n\n\n\nEjemplo 2.2:  Indexación y slicing.\n\n\n\nLa cadena definida en el Ejemplo 2.1 tiene N = 17 elementos que se ven como sigue\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nC\nh\ni\nr\ni\np\ni\nt\ni\nf\nl\ná\nu\nt\ni\nc\no\n\n\n\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n\n\n\n-17\n-16\n-15\n-14\n-13\n-12\n-11\n-10\n-9\n-8\n-7\n-6\n-5\n-4\n-3\n-2\n-1\n\n\n\n\nSus índices positivos van de 0 a 16 y sus índices negativos van de -1 a -17.\nSe puede acceder a los diferentes elementos de la cadena cómo se explica en la Sección E.3 y también es posible obtener una subcadena a partir de la cadena original usando la construcción: str[Start:End:Stride]\nEn los siguientes ejercicios, accederemos a los siguientes elementos de la cadena ejemplo definida antes:\n\nElemento 0.\nElemento final con índice positivo y negativo.\nElemento 5 con índice positivo y negativo.\nObtener la subcadena pitifláu.\nTodos los elementos pares.\nTodos los elementos impares.\nLos elementos pares e impares de 2 a 12.\nLos elementos pares de toda la cadena en reversa.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEjemplo 2.3:  Métodos.\n\n\n\nA las cadenas les podemos aplicar métodos, veamos algunos ejemplos\nDefinir el siguiente texto y almacenarlo en la variable cadena:\nDesde muy niño\ntuve que \"interrumpir\" 'mi' educación\npara ir a la escuela\n\nCon triples comillas.\nCon dobles comillas.\nExtraer la primera línea del texto, sin el cambio de línea y asignarla a la variable linea1.\nContar el número total de letras r en el texto.\nImprimir linea1 centrada en 50 espacios, rellenando los espacios con el caracter *.\nExtraer la palabra interrumpir del texto.\nExtraer la palabra interrumpir del texto y luego convertir todas las letras a mayúsculas.\n\n\n\n\n\n\n\n\n\ncadena\n=\nDesde muy niño\\n\n\n\n\n\ntuve que \"interrumpir\" 'mi' educación\\n\n\n\n\n\npara ir a la escuela\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEjemplo 2.4:  Funciones y operadores.\n\n\n\nA las cadenas también les podemos aplicar funciones y operadores para transformarlas. Veamos algunos ejemplos\nUsando la variable cadena definida en el ejemplo 3, realizar lo siguiente:\n\nDeterminar la longitud total de cadena.\nCalcular el máximo y mínimo de cadena.\nVerificar si las palabras ir, qué, cuando y la están en cadena.\n\n\n\n\n\n\n\n\n\n\n\n\n\nEjemplo 2.5:  Caracteres unicode.\n\n\n\nImprimir el texto de la variable cadena, definida en el ejemplo 4, como sigue:\n→→→→→→→→               😾                ←←←←←←←←\n··················Desde muy niño··················\n······tuve que \"interrumpir\" 'mi' educación·······\n···············para ir a la escuela···············\n                                               😹\nEl número total de caracteres de las tres líneas intermedias es de 50.\nHint. Checa los caracteres Unicode aquí: https://www.compart.com/en/unicode/html",
+    "crumbs": [
+      "Introducción",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Textos: entradas y salidas.</span>"
+    ]
+  },
+  {
+    "objectID": "lecciones/leccion_02.html#ejemplo-2.-indexación-y-slicing.",
+    "href": "lecciones/leccion_02.html#ejemplo-2.-indexación-y-slicing.",
+    "title": "2  Textos: entradas y salidas.",
+    "section": "2.2 Ejemplo 2. Indexación y slicing.",
+    "text": "2.2 Ejemplo 2. Indexación y slicing.\nLa siguiente cadena tiene N = 10 elementos.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nejemplo\n=\nC\nh\ni\nr\ni\np\ni\nt\ni\nf\nl\ná\nu\nt\ni\nc\no\n\n\níndice positivo\n\\(\\rightarrow\\)\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n\n\níndice negativo\n\\(\\rightarrow\\)\n-17\n-16\n-15\n-14\n-13\n-12\n-11\n-10\n-9\n-8\n-7\n-6\n-5\n-4\n-3\n-2\n-1\n\n\n\n\nSus índices positivos van de 0 a 16.\nSus índices negativos van de -1 a -17.\n\nSe puede obtener una subcadena a partir de la cadena original, para ello usamos lo siguiente: str[Start:End:Stride]\nAcceder a los sigientes elementos de la cadena definida en el ejemplo 1:\n\nElemento 0.\nElemento final con índice positivo y negativo.\nElemento 5 con índice positivo y negativo.\nObtener la subcadena pitifláu.\nTodos los elementos pares.\nTodos los elementos impares.\nLos elementos pares e impares de 2 a 7.\nLos elementos pares de toda la cadena en reversa.",
+    "crumbs": [
+      "Introducción",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Textos: entradas y salidas.</span>"
+    ]
+  },
+  {
+    "objectID": "lecciones/leccion_02.html#ejemplo-3.-métodos.",
+    "href": "lecciones/leccion_02.html#ejemplo-3.-métodos.",
+    "title": "2  Textos: entradas y salidas.",
+    "section": "2.2 Ejemplo 3. Métodos.",
+    "text": "2.2 Ejemplo 3. Métodos.\nA las cadenas les podemos aplicar métodos, veamos algunos ejemplos\nDefinir el siguiente texto y almacenarlo en la variable cadena:\nDesde muy niño\ntuve que \"interrumpir\" 'mi' educación\npara ir a la escuela\n\nCon triples comillas.\nCon dobles comillas.\nExtraer la primera línea del texto, sin el cambio de línea y asignarla a la variable linea1.\nContar el número total de letras r en el texto.\nImprimir linea1 centrada en 50 espacios, rellenando los espacios con el caracter *.\nExtraer la palabra interrumpir del texto.\nExtraer la palabra interrumpir del texto y luego convertir todas las letras a mayúsculas.",
+    "crumbs": [
+      "Introducción",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Textos: entradas y salidas.</span>"
+    ]
+  },
+  {
+    "objectID": "lecciones/leccion_02.html#ejemplo-4.-funciones-y-operadores.",
+    "href": "lecciones/leccion_02.html#ejemplo-4.-funciones-y-operadores.",
+    "title": "2  Textos: entradas y salidas.",
+    "section": "2.2 Ejemplo 4. Funciones y operadores.",
+    "text": "2.2 Ejemplo 4. Funciones y operadores.\nA las cadenas también les podemos aplicar funciones y operadores para transformarlas. Veamos algunos ejemplos\nUsando la variable cadena definida en el ejemplo 3, realizar lo siguiente:\n\nDeterminar la longitud total de cadena.\nCalcular el máximo y mínimo de cadena.\nVerificar si las palabras ir, qué, cuando y la están en cadena.",
+    "crumbs": [
+      "Introducción",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Textos: entradas y salidas.</span>"
+    ]
+  },
+  {
+    "objectID": "lecciones/leccion_02.html#entrada-estándar.",
+    "href": "lecciones/leccion_02.html#entrada-estándar.",
+    "title": "2  Textos: entradas y salidas.",
+    "section": "2.3 Entrada estándar.",
+    "text": "2.3 Entrada estándar.\nEn Python es posible proporcionar información a un código mediante la función incorporada input(). Por ejemplo:\n\ninput(\"Teclea un número:\")\n\nObservaciones. * La cadena entre los paréntesis proporciona información para saber lo que se debe teclear. Esta cadena se conoce como prompt. * Esta cadena se imprime cuando se ejecuta la función input() y luego se espera a que teclees alguna información. * Cuando se teclea &lt;enter&gt; la función input() lee la información proporcionada. * Input lee toda la información en formato de cadena (str). * La información que se teclea se puede almacenar en una variable.\n\nnumero = input(\"Teclea un número:\")\nprint(\"El número que tecleaste fue:\", numero)",
+    "crumbs": [
+      "Introducción",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Textos: entradas y salidas.</span>"
+    ]
+  },
+  {
+    "objectID": "lecciones/leccion_02.html#gestión-de-archivos.",
+    "href": "lecciones/leccion_02.html#gestión-de-archivos.",
+    "title": "2  Textos: entradas y salidas.",
+    "section": "2.5 Gestión de archivos.",
+    "text": "2.5 Gestión de archivos.\nLa función incorporada para gestionar archivos es open(). Esta función toma dos parámetros: el nombre del archivo y el modo. Existen cuatro diferentes modos:\n\n\"r\" - Read - Default value. Abre el archivo para lectura. Se produce un error si el archvio no existe.\n\"a\" - Append - Abre el archivo para agregar información. Si el archivo no existe, lo crea.\n\"w\" - Write - Abre el archivo para escritura. Si el archivo no existe, lo crea. Si el archivo existe, lo sobreescribe.\n\"x\" - Create - Crea el archivo, regresa un error si el archivo existe.\n\nAdicionalmente se puede especificar si el archivo se abre en modo texto o binario:\n\n\"t\" - Text - Valor por omisión.\n\"b\" - Binary",
+    "crumbs": [
+      "Introducción",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Textos: entradas y salidas.</span>"
     ]
   }
 ]
