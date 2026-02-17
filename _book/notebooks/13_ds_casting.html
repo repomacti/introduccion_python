@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.7.29">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,19 +70,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../figuras/python1.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-2bd815e1407f73cb4f4a1b49bf6eb128.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-b4ef5ea2be5239162038c25e44211418.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-2bd815e1407f73cb4f4a1b49bf6eb128.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-34770792551fcc0a225bb41cc0b711f4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-884f5b940f2dbcec26d3a5af1406dd5d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-34770792551fcc0a225bb41cc0b711f4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -97,7 +96,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No se han encontrado resultados",
+    "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
     "search-copy-link-title": "Copiar el enlace en la búsqueda",
     "search-hide-matches-text": "Ocultar resultados adicionales",
@@ -125,7 +124,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -298,7 +297,6 @@ window.Quarto = {
       toggleColorMode(toAlternate);
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
     };
     // Switch to dark mode if need be
     if (hasAlternateSentinel()) {
@@ -330,8 +328,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../figuras/python1.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
-      <img src="../figuras/python1.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      <img src="../figuras/python1.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Notas de Python</a> 
@@ -393,7 +390,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lecciones/leccion_01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Manejo de información.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Primeros pasos.</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lecciones/leccion_02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Manejo de texto.</span></span></a>
   </div>
 </li>
       </ul>
@@ -446,7 +449,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/07_archivos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos. {#sec-g-archivos}¶</span></span></a>
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos.</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -602,11 +605,11 @@ window.Quarto = {
 <section id="listas-to-tuplas" class="level3" data-number="M.1.1">
 <h3 data-number="M.1.1" class="anchored" data-anchor-id="listas-to-tuplas"><span class="header-section-number">M.1.1</span> listas <span class="math inline">\(\to\)</span> tuplas</h3>
 <div id="cell-3" class="cell" data-tags="[]" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>lista <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>] <span class="co"># Definición de una lista</span></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>lista <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>] <span class="co"># Definición de una lista</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>tupla_l <span class="op">=</span> <span class="bu">tuple</span>(lista)  <span class="co"># Conversión a tupla</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lista, <span class="bu">type</span>(lista), <span class="bu">id</span>(lista))</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupla_l, <span class="bu">type</span>(tupla_l), <span class="bu">id</span>(tupla_l))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupla_l, <span class="bu">type</span>(tupla_l), <span class="bu">id</span>(tupla_l))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>['a', 'b', 'c'] &lt;class 'list'&gt; 2428044211840
 ('a', 'b', 'c') &lt;class 'tuple'&gt; 2428044323520</code></pre>
@@ -616,11 +619,11 @@ window.Quarto = {
 <section id="listas-to-conjuntos" class="level3" data-number="M.1.2">
 <h3 data-number="M.1.2" class="anchored" data-anchor-id="listas-to-conjuntos"><span class="header-section-number">M.1.2</span> listas <span class="math inline">\(\to\)</span> conjuntos</h3>
 <div id="cell-5" class="cell" data-tags="[]" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>lista <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'a'</span>] <span class="co"># Definición de una lista</span></span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>lista <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'a'</span>] <span class="co"># Definición de una lista</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>conj_l <span class="op">=</span> <span class="bu">set</span>(lista)          <span class="co"># Conversión a conjunto</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lista, <span class="bu">type</span>(lista), <span class="bu">id</span>(lista))</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(conj_l, <span class="bu">type</span>(conj_l), <span class="bu">id</span>(conj_l))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(conj_l, <span class="bu">type</span>(conj_l), <span class="bu">id</span>(conj_l))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>['a', 'b', 'c', 'a'] &lt;class 'list'&gt; 2428044403136
 {'c', 'b', 'a'} &lt;class 'set'&gt; 2428044362688</code></pre>
@@ -631,13 +634,13 @@ window.Quarto = {
 <section id="listas-to-diccionarios" class="level3" data-number="M.1.3">
 <h3 data-number="M.1.3" class="anchored" data-anchor-id="listas-to-diccionarios"><span class="header-section-number">M.1.3</span> listas <span class="math inline">\(\to\)</span> diccionarios</h3>
 <div id="cell-8" class="cell" data-tags="[]" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>key_l <span class="op">=</span> [<span class="st">'a'</span>,<span class="st">'b'</span>,<span class="st">'c'</span>,<span class="st">'d'</span>, <span class="st">'e'</span>] <span class="co"># Lista de claves</span></span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>key_l <span class="op">=</span> [<span class="st">'a'</span>,<span class="st">'b'</span>,<span class="st">'c'</span>,<span class="st">'d'</span>, <span class="st">'e'</span>] <span class="co"># Lista de claves</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>val_l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]        <span class="co"># Lista de valores</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>dicc <span class="op">=</span> <span class="bu">dict</span>(<span class="bu">zip</span>(key_l, val_l)) <span class="co"># Construcción de un diccionario</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(key_l)</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(val_l)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dicc, <span class="bu">type</span>(dicc), <span class="bu">id</span>(dicc))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dicc, <span class="bu">type</span>(dicc), <span class="bu">id</span>(dicc))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>['a', 'b', 'c', 'd', 'e']
 [1, 2, 3, 4, 5]
@@ -648,11 +651,11 @@ window.Quarto = {
 <section id="tuplas-to-listas" class="level3" data-number="M.1.4">
 <h3 data-number="M.1.4" class="anchored" data-anchor-id="tuplas-to-listas"><span class="header-section-number">M.1.4</span> tuplas <span class="math inline">\(\to\)</span> listas</h3>
 <div id="cell-10" class="cell" data-tags="[]" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>tupla <span class="op">=</span> (<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)     <span class="co"># Definición de una tupla</span></span>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>tupla <span class="op">=</span> (<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)     <span class="co"># Definición de una tupla</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>lista_t <span class="op">=</span> <span class="bu">list</span>(tupla) <span class="co"># Conversión a lista</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupla, <span class="bu">type</span>(tupla), <span class="bu">id</span>(tupla))</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lista_t, <span class="bu">type</span>(lista_t), <span class="bu">id</span>(lista_t))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lista_t, <span class="bu">type</span>(lista_t), <span class="bu">id</span>(lista_t))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>(1, 2, 3, 4) &lt;class 'tuple'&gt; 1226049799968
 [1, 2, 3, 4] &lt;class 'list'&gt; 1226050079488</code></pre>
@@ -662,11 +665,11 @@ window.Quarto = {
 <section id="tuplas-to-conjuntos" class="level3" data-number="M.1.5">
 <h3 data-number="M.1.5" class="anchored" data-anchor-id="tuplas-to-conjuntos"><span class="header-section-number">M.1.5</span> tuplas <span class="math inline">\(\to\)</span> conjuntos</h3>
 <div id="cell-12" class="cell" data-tags="[]" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>tupla <span class="op">=</span> (<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">2</span>) <span class="co"># Definición de una tupla</span></span>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>tupla <span class="op">=</span> (<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">2</span>) <span class="co"># Definición de una tupla</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>conj_t <span class="op">=</span> <span class="bu">set</span>(tupla) <span class="co"># Conversión a conjunto</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupla, <span class="bu">type</span>(tupla), <span class="bu">id</span>(tupla))</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(conj_t, <span class="bu">type</span>(conj_t), <span class="bu">id</span>(conj_t))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(conj_t, <span class="bu">type</span>(conj_t), <span class="bu">id</span>(conj_t))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>(1, 2, 3, 1, 2) &lt;class 'tuple'&gt; 1226049806848
 {1, 2, 3} &lt;class 'set'&gt; 1226050029824</code></pre>
@@ -677,13 +680,13 @@ window.Quarto = {
 <section id="tuplas-to-diccionarios" class="level3" data-number="M.1.6">
 <h3 data-number="M.1.6" class="anchored" data-anchor-id="tuplas-to-diccionarios"><span class="header-section-number">M.1.6</span> tuplas <span class="math inline">\(\to\)</span> diccionarios</h3>
 <div id="cell-15" class="cell" data-tags="[]" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>key_t <span class="op">=</span> (<span class="st">'a'</span>,<span class="st">'b'</span>,<span class="st">'c'</span>,<span class="st">'d'</span>, <span class="st">'e'</span>) <span class="co"># Una tupla de claves</span></span>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>key_t <span class="op">=</span> (<span class="st">'a'</span>,<span class="st">'b'</span>,<span class="st">'c'</span>,<span class="st">'d'</span>, <span class="st">'e'</span>) <span class="co"># Una tupla de claves</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>val_t <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)        <span class="co"># Una tupla de valores</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>dicc <span class="op">=</span> <span class="bu">dict</span>(<span class="bu">zip</span>(key_t, val_t)) <span class="co"># Construcción de un diccionario</span></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(key_t)</span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(val_t)</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dicc, <span class="bu">type</span>(dicc), <span class="bu">id</span>(dicc))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dicc, <span class="bu">type</span>(dicc), <span class="bu">id</span>(dicc))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>('a', 'b', 'c', 'd', 'e')
 (1, 2, 3, 4, 5)
@@ -694,13 +697,13 @@ window.Quarto = {
 <section id="conjunto-to-lista-y-tupla" class="level3" data-number="M.1.7">
 <h3 data-number="M.1.7" class="anchored" data-anchor-id="conjunto-to-lista-y-tupla"><span class="header-section-number">M.1.7</span> conjunto <span class="math inline">\(\to\)</span> lista y tupla</h3>
 <div id="cell-17" class="cell" data-tags="[]" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>conj <span class="op">=</span> {<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="st">'a'</span>,<span class="st">'b'</span>,<span class="st">'c'</span>} <span class="co"># Definición de un conjunto</span></span>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>conj <span class="op">=</span> {<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="st">'a'</span>,<span class="st">'b'</span>,<span class="st">'c'</span>} <span class="co"># Definición de un conjunto</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>lista_s <span class="op">=</span> <span class="bu">list</span>(conj)       <span class="co"># Conversión a lista</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>tupla_s <span class="op">=</span> <span class="bu">tuple</span>(conj)      <span class="co"># Conversińo a tupla</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(conj, <span class="bu">type</span>(conj), <span class="bu">id</span>(conj))</span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lista_s, <span class="bu">type</span>(lista_s), <span class="bu">id</span>(lista_s))</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupla_s, <span class="bu">type</span>(tupla_s), <span class="bu">id</span>(tupla_s))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupla_s, <span class="bu">type</span>(tupla_s), <span class="bu">id</span>(tupla_s))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{1, 2, 3, 'b', 'a', 'c'} &lt;class 'set'&gt; 1226050028928
 [1, 2, 3, 'b', 'a', 'c'] &lt;class 'list'&gt; 1226050076992
@@ -711,13 +714,13 @@ window.Quarto = {
 <section id="conjuntos-to-diccionarios" class="level3" data-number="M.1.8">
 <h3 data-number="M.1.8" class="anchored" data-anchor-id="conjuntos-to-diccionarios"><span class="header-section-number">M.1.8</span> conjuntos <span class="math inline">\(\to\)</span> diccionarios</h3>
 <div id="cell-19" class="cell" data-tags="[]" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>conj1 <span class="op">=</span> {<span class="st">'a'</span>,<span class="st">'b'</span>,<span class="st">'c'</span>} <span class="co"># Definición de un conjunto</span></span>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>conj1 <span class="op">=</span> {<span class="st">'a'</span>,<span class="st">'b'</span>,<span class="st">'c'</span>} <span class="co"># Definición de un conjunto</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>conj2 <span class="op">=</span> {<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>}       <span class="co"># Definición de otro conjunto</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>dicc <span class="op">=</span> <span class="bu">dict</span>(<span class="bu">zip</span>(conj1, conj2)) <span class="co"># Construcción de un diccionario</span></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(conj1)</span>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(conj2)</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dicc, <span class="bu">type</span>(dicc), <span class="bu">id</span>(dicc))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dicc, <span class="bu">type</span>(dicc), <span class="bu">id</span>(dicc))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{'b', 'a', 'c'}
 {1, 2, 3}
@@ -728,18 +731,18 @@ window.Quarto = {
 <section id="diccionarios-to-listas-tuplas-y-conjuntos" class="level3" data-number="M.1.9">
 <h3 data-number="M.1.9" class="anchored" data-anchor-id="diccionarios-to-listas-tuplas-y-conjuntos"><span class="header-section-number">M.1.9</span> diccionarios <span class="math inline">\(\to\)</span> listas, tuplas y conjuntos</h3>
 <div id="cell-21" class="cell" data-tags="[]" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>dicc <span class="op">=</span> {<span class="st">'x'</span>:<span class="dv">3</span>, <span class="st">'y'</span>:<span class="dv">4</span>, <span class="st">'z'</span>:<span class="dv">5</span>} <span class="co"># Definición de un diccionario</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>dicc <span class="op">=</span> {<span class="st">'x'</span>:<span class="dv">3</span>, <span class="st">'y'</span>:<span class="dv">4</span>, <span class="st">'z'</span>:<span class="dv">5</span>} <span class="co"># Definición de un diccionario</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Conversión directa:</p>
 <div id="cell-23" class="cell" data-tags="[]" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>lista <span class="op">=</span> <span class="bu">list</span>(dicc)   <span class="co"># Conversión a lista</span></span>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>lista <span class="op">=</span> <span class="bu">list</span>(dicc)   <span class="co"># Conversión a lista</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>tupla <span class="op">=</span> <span class="bu">tuple</span>(dicc)  <span class="co"># Conversión a tupla</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>conj <span class="op">=</span> <span class="bu">set</span>(dicc)     <span class="co"># Conversión a conjunto</span></span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dicc, <span class="bu">type</span>(dicc), <span class="bu">id</span>(dicc))</span>
 <span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lista, <span class="bu">type</span>(lista), <span class="bu">id</span>(lista))</span>
 <span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupla, <span class="bu">type</span>(tupla), <span class="bu">id</span>(tupla))</span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(conj, <span class="bu">type</span>(conj), <span class="bu">id</span>(conj))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(conj, <span class="bu">type</span>(conj), <span class="bu">id</span>(conj))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{'x': 3, 'y': 4, 'z': 5} &lt;class 'dict'&gt; 1226050082688
 ['x', 'y', 'z'] &lt;class 'list'&gt; 1226050111232
@@ -749,14 +752,14 @@ window.Quarto = {
 </div>
 <p>Conversión desde las claves:</p>
 <div id="cell-25" class="cell" data-tags="[]" data-execution_count="11">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>lista <span class="op">=</span> <span class="bu">list</span>(dicc.keys())  <span class="co"># Conversión a lista</span></span>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>lista <span class="op">=</span> <span class="bu">list</span>(dicc.keys())  <span class="co"># Conversión a lista</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>tupla <span class="op">=</span> <span class="bu">tuple</span>(dicc.keys()) <span class="co"># Conversión a tupla</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>conj <span class="op">=</span> <span class="bu">set</span>(dicc.keys())    <span class="co"># Conversión a conjunto</span></span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dicc, <span class="bu">type</span>(dicc), <span class="bu">id</span>(dicc))</span>
 <span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lista, <span class="bu">type</span>(lista), <span class="bu">id</span>(lista))</span>
 <span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupla, <span class="bu">type</span>(tupla), <span class="bu">id</span>(tupla))</span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(conj, <span class="bu">type</span>(conj), <span class="bu">id</span>(conj))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(conj, <span class="bu">type</span>(conj), <span class="bu">id</span>(conj))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{'x': 3, 'y': 4, 'z': 5} &lt;class 'dict'&gt; 1226050082688
 ['x', 'y', 'z'] &lt;class 'list'&gt; 1226050113088
@@ -766,14 +769,14 @@ window.Quarto = {
 </div>
 <p>Conversión desde las valores:</p>
 <div id="cell-27" class="cell" data-tags="[]" data-execution_count="12">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>lista <span class="op">=</span> <span class="bu">list</span>(dicc.values())  <span class="co"># Conversión a lista</span></span>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>lista <span class="op">=</span> <span class="bu">list</span>(dicc.values())  <span class="co"># Conversión a lista</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>tupla <span class="op">=</span> <span class="bu">tuple</span>(dicc.values()) <span class="co"># Conversión a tupla</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>conj <span class="op">=</span> <span class="bu">set</span>(dicc.values())    <span class="co"># Conversión a conjunto</span></span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dicc, <span class="bu">type</span>(dicc), <span class="bu">id</span>(dicc))</span>
 <span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lista, <span class="bu">type</span>(lista), <span class="bu">id</span>(lista))</span>
 <span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupla, <span class="bu">type</span>(tupla), <span class="bu">id</span>(tupla))</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(conj, <span class="bu">type</span>(conj), <span class="bu">id</span>(conj))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(conj, <span class="bu">type</span>(conj), <span class="bu">id</span>(conj))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{'x': 3, 'y': 4, 'z': 5} &lt;class 'dict'&gt; 1226050082688
 [3, 4, 5] &lt;class 'list'&gt; 1226050116224
@@ -851,14 +854,13 @@ window.Quarto = {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

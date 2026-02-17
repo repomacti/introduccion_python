@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.7.29">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,19 +70,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../figuras/python1.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-2bd815e1407f73cb4f4a1b49bf6eb128.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-b4ef5ea2be5239162038c25e44211418.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-2bd815e1407f73cb4f4a1b49bf6eb128.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-34770792551fcc0a225bb41cc0b711f4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-884f5b940f2dbcec26d3a5af1406dd5d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-34770792551fcc0a225bb41cc0b711f4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -98,7 +97,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No se han encontrado resultados",
+    "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
     "search-copy-link-title": "Copiar el enlace en la búsqueda",
     "search-hide-matches-text": "Ocultar resultados adicionales",
@@ -270,7 +269,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       toggleColorMode(toAlternate);
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
     };
     // Switch to dark mode if need be
     if (hasAlternateSentinel()) {
@@ -302,8 +300,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../figuras/python1.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
-      <img src="../figuras/python1.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      <img src="../figuras/python1.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Notas de Python</a> 
@@ -365,7 +362,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lecciones/leccion_01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Manejo de información.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Primeros pasos.</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lecciones/leccion_02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Manejo de texto.</span></span></a>
   </div>
 </li>
       </ul>
@@ -418,7 +421,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/07_archivos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos. {#sec-g-archivos}¶</span></span></a>
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos.</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -661,17 +664,17 @@ Ejemplo&nbsp;L.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 </div>
 <p>Creación de los diccionarios:</p>
 <div id="cell-5" class="cell" data-tags="[]" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>d1 <span class="op">=</span> {<span class="st">'Luis'</span>:<span class="dv">20</span>, <span class="st">'Miguel'</span>:<span class="dv">25</span>, <span class="st">'Pedro'</span>:<span class="dv">31</span>, <span class="st">'Pablo'</span>:<span class="dv">12</span>}</span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>d1 <span class="op">=</span> {<span class="st">'Luis'</span>:<span class="dv">20</span>, <span class="st">'Miguel'</span>:<span class="dv">25</span>, <span class="st">'Pedro'</span>:<span class="dv">31</span>, <span class="st">'Pablo'</span>:<span class="dv">12</span>}</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>d2 <span class="op">=</span> <span class="bu">dict</span>(Luis<span class="op">=</span><span class="dv">20</span>, Miguel<span class="op">=</span><span class="dv">25</span>, Pedro<span class="op">=</span><span class="dv">31</span>, Pablo<span class="op">=</span><span class="dv">12</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>d3 <span class="op">=</span> <span class="bu">dict</span>([(<span class="st">'Luis'</span>, <span class="dv">20</span>), </span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>           (<span class="st">'Miguel'</span>, <span class="dv">25</span>), </span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>           (<span class="st">'Pedro'</span>, <span class="dv">31</span>), </span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>           (<span class="st">'Pablo'</span>, <span class="dv">12</span>)])</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>           (<span class="st">'Pablo'</span>, <span class="dv">12</span>)])</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="cell-6" class="cell" data-tags="[]" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1)</span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d2)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d3)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d3)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{'Luis': 20, 'Miguel': 25, 'Pedro': 31, 'Pablo': 12}
 {'Luis': 20, 'Miguel': 25, 'Pedro': 31, 'Pablo': 12}
@@ -680,9 +683,9 @@ Ejemplo&nbsp;L.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 </div>
 <p>Los tres diccionarios son objetos diferentes:</p>
 <div id="cell-8" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(d1), <span class="bu">id</span>(d1))</span>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(d1), <span class="bu">id</span>(d1))</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(d2), <span class="bu">id</span>(d2))</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(d3), <span class="bu">id</span>(d3))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(d3), <span class="bu">id</span>(d3))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'dict'&gt; 2051985577088
 &lt;class 'dict'&gt; 2051985576256
@@ -694,8 +697,8 @@ Ejemplo&nbsp;L.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 <h2 data-number="L.3" class="anchored" data-anchor-id="indexado-mediante-la-clave"><span class="header-section-number">L.3</span> Indexado mediante la clave</h2>
 <p>Los diccionarios se pueden indexar usando las claves de los elementos, por ejemplo:</p>
 <div id="cell-10" class="cell" data-tags="[]" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1[<span class="st">'Luis'</span>])</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1[<span class="st">'Pedro'</span>])</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1[<span class="st">'Luis'</span>])</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1[<span class="st">'Pedro'</span>])</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>20
 31</code></pre>
@@ -703,9 +706,9 @@ Ejemplo&nbsp;L.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 </div>
 <p>Se puede modificar un valor de un cierto elemento:</p>
 <div id="cell-12" class="cell" data-tags="[]" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1)</span>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>d1[<span class="st">'Luis'</span>] <span class="op">=</span> <span class="dv">53</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{'Luis': 20, 'Miguel': 25, 'Pedro': 31, 'Pablo': 12}
 {'Luis': 53, 'Miguel': 25, 'Pedro': 31, 'Pablo': 12}</code></pre>
@@ -713,8 +716,8 @@ Ejemplo&nbsp;L.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 </div>
 <p>Cuando el elemento con la clave que se proporciona no existe, entonces se agrega un nuevo elemento:</p>
 <div id="cell-14" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>d1[<span class="st">'fulano'</span>] <span class="op">=</span> <span class="dv">15</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>d1[<span class="st">'fulano'</span>] <span class="op">=</span> <span class="dv">15</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{'Luis': 53, 'Miguel': 25, 'Pedro': 31, 'Pablo': 12, 'fulano': 15}</code></pre>
 </div>
@@ -726,7 +729,7 @@ Ejemplo&nbsp;L.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 <section id="obtener-todos-los-elementos-del-diccionario." class="level3" data-number="L.4.1">
 <h3 data-number="L.4.1" class="anchored" data-anchor-id="obtener-todos-los-elementos-del-diccionario."><span class="header-section-number">L.4.1</span> Obtener todos los elementos del diccionario.</h3>
 <div id="cell-17" class="cell" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>d1.items() </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>d1.items() </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>dict_items([('Luis', 53), ('Miguel', 25), ('Pedro', 31), ('Pablo', 12), ('fulano', 15)])</code></pre>
 </div>
@@ -735,7 +738,7 @@ Ejemplo&nbsp;L.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 <section id="obtener-todas-las-claves-de-los-elementos-del-diccionario." class="level3" data-number="L.4.2">
 <h3 data-number="L.4.2" class="anchored" data-anchor-id="obtener-todas-las-claves-de-los-elementos-del-diccionario."><span class="header-section-number">L.4.2</span> Obtener todas las claves de los elementos del diccionario.</h3>
 <div id="cell-19" class="cell" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>d1.keys() </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>d1.keys() </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>dict_keys(['Luis', 'Miguel', 'Pedro', 'Pablo', 'fulano'])</code></pre>
 </div>
@@ -744,7 +747,7 @@ Ejemplo&nbsp;L.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 <section id="obtener-todos-los-valores-de-los-elementos-del-diccionario." class="level3" data-number="L.4.3">
 <h3 data-number="L.4.3" class="anchored" data-anchor-id="obtener-todos-los-valores-de-los-elementos-del-diccionario."><span class="header-section-number">L.4.3</span> Obtener todos los valores de los elementos del diccionario.</h3>
 <div id="cell-21" class="cell" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>d1.values() </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>d1.values() </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>dict_values([53, 25, 31, 12, 15])</code></pre>
 </div>
@@ -753,7 +756,7 @@ Ejemplo&nbsp;L.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 <section id="obtener-el-valor-de-un-elemento" class="level3" data-number="L.4.4">
 <h3 data-number="L.4.4" class="anchored" data-anchor-id="obtener-el-valor-de-un-elemento"><span class="header-section-number">L.4.4</span> Obtener el valor de un elemento:</h3>
 <div id="cell-23" class="cell" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>d1.get(<span class="st">'Luis'</span>) <span class="co"># Valor del elemento cuya clave es `'Luis'`.</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>d1.get(<span class="st">'Luis'</span>) <span class="co"># Valor del elemento cuya clave es `'Luis'`.</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>53</code></pre>
 </div>
@@ -762,18 +765,18 @@ Ejemplo&nbsp;L.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 <section id="agregar-un-diccionario-en-otro." class="level3" data-number="L.4.5">
 <h3 data-number="L.4.5" class="anchored" data-anchor-id="agregar-un-diccionario-en-otro."><span class="header-section-number">L.4.5</span> Agregar un diccionario en otro.</h3>
 <div id="cell-25" class="cell" data-tags="[]" data-execution_count="11">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>d4 <span class="op">=</span> {<span class="st">'Azul'</span>:<span class="dv">35</span>, <span class="st">'Cereza'</span>:<span class="dv">45</span>}</span>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>d4 <span class="op">=</span> {<span class="st">'Azul'</span>:<span class="dv">35</span>, <span class="st">'Cereza'</span>:<span class="dv">45</span>}</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>d1.update(d4) <span class="co"># Agregamos el diccionario d4 al diccionario d1</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{'Luis': 53, 'Miguel': 25, 'Pedro': 31, 'Pablo': 12, 'fulano': 15, 'Azul': 35, 'Cereza': 45}</code></pre>
 </div>
 </div>
 <p>Si los elementos ya existen, solo se actualizan los valores.</p>
 <div id="cell-27" class="cell" data-tags="[]" data-execution_count="12">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>d5 <span class="op">=</span> {<span class="st">'Luis'</span>:<span class="dv">512</span>, <span class="st">'fulano'</span>:<span class="dv">10</span>}</span>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>d5 <span class="op">=</span> {<span class="st">'Luis'</span>:<span class="dv">512</span>, <span class="st">'fulano'</span>:<span class="dv">10</span>}</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>d1.update(d5)</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{'Luis': 512, 'Miguel': 25, 'Pedro': 31, 'Pablo': 12, 'fulano': 10, 'Azul': 35, 'Cereza': 45}</code></pre>
 </div>
@@ -782,8 +785,8 @@ Ejemplo&nbsp;L.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 <section id="extraer-el-último-elemento-del-diccionario." class="level3" data-number="L.4.6">
 <h3 data-number="L.4.6" class="anchored" data-anchor-id="extraer-el-último-elemento-del-diccionario."><span class="header-section-number">L.4.6</span> Extraer el último elemento del diccionario.</h3>
 <div id="cell-29" class="cell" data-execution_count="13">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1.popitem()) </span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1.popitem()) </span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>('Cereza', 45)
 {'Luis': 512, 'Miguel': 25, 'Pedro': 31, 'Pablo': 12, 'fulano': 10, 'Azul': 35}</code></pre>
@@ -793,8 +796,8 @@ Ejemplo&nbsp;L.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 <section id="extraer-el-elemento-de-una-cierta-clave." class="level3" data-number="L.4.7">
 <h3 data-number="L.4.7" class="anchored" data-anchor-id="extraer-el-elemento-de-una-cierta-clave."><span class="header-section-number">L.4.7</span> Extraer el elemento de una cierta clave.</h3>
 <div id="cell-31" class="cell" data-execution_count="14">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1.pop(<span class="st">'Miguel'</span>)) <span class="co"># Elemento de clave `'Miguel'`.</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1.pop(<span class="st">'Miguel'</span>)) <span class="co"># Elemento de clave `'Miguel'`.</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>25
 {'Luis': 512, 'Pedro': 31, 'Pablo': 12, 'fulano': 10, 'Azul': 35}</code></pre>
@@ -804,9 +807,9 @@ Ejemplo&nbsp;L.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 <section id="eliminar-todos-los-elementos-del-diccionario." class="level3" data-number="L.4.8">
 <h3 data-number="L.4.8" class="anchored" data-anchor-id="eliminar-todos-los-elementos-del-diccionario."><span class="header-section-number">L.4.8</span> Eliminar todos los elementos del diccionario.</h3>
 <div id="cell-33" class="cell" data-execution_count="15">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1, <span class="bu">id</span>(d1)) <span class="co"># Antes de eliminar los elementos</span></span>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1, <span class="bu">id</span>(d1)) <span class="co"># Antes de eliminar los elementos</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>d1.clear() <span class="co"># elimina todos los elementos del diccionario</span></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1, <span class="bu">id</span>(d1)) <span class="co"># Después de eliminar los elementos</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d1, <span class="bu">id</span>(d1)) <span class="co"># Después de eliminar los elementos</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{'Luis': 512, 'Pedro': 31, 'Pablo': 12, 'fulano': 10, 'Azul': 35} 2051985577088
 {} 2051985577088</code></pre>
@@ -820,7 +823,7 @@ Ejemplo&nbsp;L.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 <li>Imprimimos el diccionario <code>d2</code>.</li>
 </ul>
 <div id="cell-35" class="cell" data-execution_count="16">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d2)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d2)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{'Luis': 20, 'Miguel': 25, 'Pedro': 31, 'Pablo': 12}</code></pre>
 </div>
@@ -829,22 +832,22 @@ Ejemplo&nbsp;L.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 <li>Es posible usar las características de los diccionarios para imprimir la salida.</li>
 </ul>
 <div id="cell-37" class="cell" data-execution_count="17">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Usando la clave y cadenas formateadas</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Luis:</span><span class="sc">{</span>d2[<span class="st">'Luis'</span>]<span class="sc">}</span><span class="ss">, Miguel:</span><span class="sc">{</span>d2[<span class="st">'Miguel'</span>]<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Usando la clave y cadenas formateadas</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Luis:</span><span class="sc">{</span>d2[<span class="st">'Luis'</span>]<span class="sc">}</span><span class="ss">, Miguel:</span><span class="sc">{</span>d2[<span class="st">'Miguel'</span>]<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Luis:20, Miguel:25</code></pre>
 </div>
 </div>
 <div id="cell-38" class="cell" data-execution_count="18">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Usando la clave, el método str.format() y pasando el diccionario como argumento</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Luis:</span><span class="sc">{d[Luis]}</span><span class="st">, Miguel:</span><span class="sc">{d[Miguel]}</span><span class="st">"</span>.<span class="bu">format</span>(d <span class="op">=</span> d2))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Usando la clave, el método str.format() y pasando el diccionario como argumento</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Luis:</span><span class="sc">{d[Luis]}</span><span class="st">, Miguel:</span><span class="sc">{d[Miguel]}</span><span class="st">"</span>.<span class="bu">format</span>(d <span class="op">=</span> d2))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Luis:20, Miguel:25</code></pre>
 </div>
 </div>
 <div id="cell-39" class="cell" data-execution_count="19">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Una forma más clara y concisa:</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Luis:</span><span class="sc">{Luis}</span><span class="st">, Miguel:</span><span class="sc">{Miguel}</span><span class="st">"</span>.<span class="bu">format</span>(<span class="op">**</span>d2))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Una forma más clara y concisa:</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Luis:</span><span class="sc">{Luis}</span><span class="st">, Miguel:</span><span class="sc">{Miguel}</span><span class="st">"</span>.<span class="bu">format</span>(<span class="op">**</span>d2))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Luis:20, Miguel:25</code></pre>
 </div>
@@ -853,7 +856,7 @@ Ejemplo&nbsp;L.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 <li>¿Existe el elemento <code>'Miguel'</code> en el diccionario?</li>
 </ul>
 <div id="cell-41" class="cell" data-tags="[]" data-execution_count="20">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co">'Miguel'</span> <span class="kw">in</span> d2</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co">'Miguel'</span> <span class="kw">in</span> d2</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>True</code></pre>
 </div>
@@ -862,7 +865,7 @@ Ejemplo&nbsp;L.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 <li>¿Existe el valor <code>25</code> en los valores del diccionario?</li>
 </ul>
 <div id="cell-43" class="cell" data-tags="[]" data-execution_count="21">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="dv">25</span> <span class="kw">in</span> d2.values()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="dv">25</span> <span class="kw">in</span> d2.values()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>True</code></pre>
 </div>
@@ -871,7 +874,7 @@ Ejemplo&nbsp;L.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 <li>¿Existe la clave <code>'Luis'</code> en las claves del diccionario?</li>
 </ul>
 <div id="cell-45" class="cell" data-tags="[]" data-execution_count="22">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co">'Luis'</span> <span class="kw">in</span> d2.keys()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co">'Luis'</span> <span class="kw">in</span> d2.keys()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>True</code></pre>
 </div>
@@ -880,7 +883,7 @@ Ejemplo&nbsp;L.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 <li>Algunas funciones comunes:</li>
 </ul>
 <div id="cell-47" class="cell" data-execution_count="23">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(d2))</span>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(d2))</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">max</span>(d2))</span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">min</span>(d2))</span>
 <span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">all</span>(d2))</span>
@@ -888,7 +891,7 @@ Ejemplo&nbsp;L.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 <span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">sorted</span>(d2))</span>
 <span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Suma de los valores del diccionario</span></span>
-<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">sum</span>(<span class="bu">list</span>(d2.values())))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">sum</span>(<span class="bu">list</span>(d2.values())))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>4
 Pedro
@@ -903,8 +906,8 @@ True
 <li>Eliminar el elemento <code>'Miguel':25</code></li>
 </ul>
 <div id="cell-49" class="cell" data-execution_count="24">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> d2[<span class="st">'Miguel'</span>] </span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d2)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> d2[<span class="st">'Miguel'</span>] </span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d2)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{'Luis': 20, 'Pedro': 31, 'Pablo': 12}</code></pre>
 </div>
@@ -913,8 +916,8 @@ True
 <section id="copiando-diccionarios" class="level2" data-number="L.6">
 <h2 data-number="L.6" class="anchored" data-anchor-id="copiando-diccionarios"><span class="header-section-number">L.6</span> Copiando diccionarios</h2>
 <div id="cell-51" class="cell" data-tags="[]" data-execution_count="25">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Imprimimos el contenido del diccionario</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d3)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Imprimimos el contenido del diccionario</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d3)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{'Luis': 20, 'Miguel': 25, 'Pedro': 31, 'Pablo': 12}</code></pre>
 </div>
@@ -922,10 +925,10 @@ True
 <section id="copiando-con-el-método-copy" class="level3" data-number="L.6.1">
 <h3 data-number="L.6.1" class="anchored" data-anchor-id="copiando-con-el-método-copy"><span class="header-section-number">L.6.1</span> Copiando con el método <code>copy()</code></h3>
 <div id="cell-53" class="cell" data-tags="[]" data-execution_count="26">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>d3_copia <span class="op">=</span> d3.copy()</span>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>d3_copia <span class="op">=</span> d3.copy()</span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d3, <span class="bu">type</span>(d3), <span class="bu">id</span>(d3))</span>
-<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d3_copia, <span class="bu">type</span>(d3_copia), <span class="bu">id</span>(d3_copia))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d3_copia, <span class="bu">type</span>(d3_copia), <span class="bu">id</span>(d3_copia))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{'Luis': 20, 'Miguel': 25, 'Pedro': 31, 'Pablo': 12} &lt;class 'dict'&gt; 2051985576128
 {'Luis': 20, 'Miguel': 25, 'Pedro': 31, 'Pablo': 12} &lt;class 'dict'&gt; 2051985589056</code></pre>
@@ -935,11 +938,11 @@ True
 <section id="copiando-con-la-biblioteca-copy" class="level3" data-number="L.6.2">
 <h3 data-number="L.6.2" class="anchored" data-anchor-id="copiando-con-la-biblioteca-copy"><span class="header-section-number">L.6.2</span> Copiando con la biblioteca <code>copy()</code></h3>
 <div id="cell-55" class="cell" data-tags="[]" data-execution_count="27">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> copy</span>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> copy</span>
 <span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>d3_copia <span class="op">=</span> copy.copy(d3)</span>
 <span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d3, <span class="bu">type</span>(d3), <span class="bu">id</span>(d3))</span>
-<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d3_copia, <span class="bu">type</span>(d3_copia), <span class="bu">id</span>(d3_copia))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d3_copia, <span class="bu">type</span>(d3_copia), <span class="bu">id</span>(d3_copia))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{'Luis': 20, 'Miguel': 25, 'Pedro': 31, 'Pablo': 12} &lt;class 'dict'&gt; 2051985576128
 {'Luis': 20, 'Miguel': 25, 'Pedro': 31, 'Pablo': 12} &lt;class 'dict'&gt; 2051985587584</code></pre>
@@ -1015,14 +1018,13 @@ True
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
