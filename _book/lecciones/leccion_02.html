@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Textos: entradas y salidas. – Notas de Python</title>
+<title>2&nbsp; Manejo de texto. – Notas de Python</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -287,7 +287,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../part1.html">Introducción</a></li><li class="breadcrumb-item"><a href="../lecciones/leccion_02.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Textos: entradas y salidas.</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../part1.html">Introducción</a></li><li class="breadcrumb-item"><a href="../lecciones/leccion_02.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Manejo de texto.</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -365,13 +365,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lecciones/leccion_01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Manejo de información.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Primeros pasos.</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lecciones/leccion_02.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Textos: entradas y salidas.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Manejo de texto.</span></span></a>
   </div>
 </li>
       </ul>
@@ -424,7 +424,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/07_archivos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos. {#sec-g-archivos}¶</span></span></a>
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Gestión de archivos.</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -542,9 +542,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#cadenas-formateadas-f-string-formatted-string-literals" id="toc-cadenas-formateadas-f-string-formatted-string-literals" class="nav-link" data-scroll-target="#cadenas-formateadas-f-string-formatted-string-literals"><span class="header-section-number">2.2.2</span> Cadenas formateadas (<em>f-string</em>, <em>formatted string literals</em>)</a></li>
   </ul></li>
   <li><a href="#entrada-estándar." id="toc-entrada-estándar." class="nav-link" data-scroll-target="#entrada-estándar."><span class="header-section-number">2.3</span> Entrada estándar.</a></li>
-  <li><a href="#ejemplo-7." id="toc-ejemplo-7." class="nav-link" data-scroll-target="#ejemplo-7."><span class="header-section-number">2.4</span> Ejemplo 7.</a></li>
-  <li><a href="#gestión-de-archivos." id="toc-gestión-de-archivos." class="nav-link" data-scroll-target="#gestión-de-archivos."><span class="header-section-number">2.5</span> Gestión de archivos.</a></li>
-  <li><a href="#ejemplo-8." id="toc-ejemplo-8." class="nav-link" data-scroll-target="#ejemplo-8."><span class="header-section-number">2.6</span> Ejemplo 8.</a></li>
+  <li><a href="#gestión-de-archivos." id="toc-gestión-de-archivos." class="nav-link" data-scroll-target="#gestión-de-archivos."><span class="header-section-number">2.4</span> Gestión de archivos.</a></li>
+  <li><a href="#proyecto." id="toc-proyecto." class="nav-link" data-scroll-target="#proyecto."><span class="header-section-number">2.5</span> Proyecto.</a>
+  <ul class="collapse">
+  <li><a href="#paso-1.-función-generadora-de-nombres." id="toc-paso-1.-función-generadora-de-nombres." class="nav-link" data-scroll-target="#paso-1.-función-generadora-de-nombres."><span class="header-section-number">2.5.1</span> Paso 1. Función generadora de nombres.</a></li>
+  <li><a href="#paso-2.-lectura-de-archivo." id="toc-paso-2.-lectura-de-archivo." class="nav-link" data-scroll-target="#paso-2.-lectura-de-archivo."><span class="header-section-number">2.5.2</span> Paso 2. Lectura de archivo.</a></li>
+  <li><a href="#paso-3.-procesamiento-del-encabezado." id="toc-paso-3.-procesamiento-del-encabezado." class="nav-link" data-scroll-target="#paso-3.-procesamiento-del-encabezado."><span class="header-section-number">2.5.3</span> Paso 3. Procesamiento del encabezado.</a></li>
+  <li><a href="#paso-4.-procesamiento-de-las-líneas-del-archivo." id="toc-paso-4.-procesamiento-de-las-líneas-del-archivo." class="nav-link" data-scroll-target="#paso-4.-procesamiento-de-las-líneas-del-archivo."><span class="header-section-number">2.5.4</span> Paso 4. Procesamiento de las líneas del archivo.</a></li>
+  <li><a href="#paso-5.-despliegue-de-la-información." id="toc-paso-5.-despliegue-de-la-información." class="nav-link" data-scroll-target="#paso-5.-despliegue-de-la-información."><span class="header-section-number">2.5.5</span> Paso 5. Despliegue de la información.</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -552,9 +558,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../part1.html">Introducción</a></li><li class="breadcrumb-item"><a href="../lecciones/leccion_02.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Textos: entradas y salidas.</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../part1.html">Introducción</a></li><li class="breadcrumb-item"><a href="../lecciones/leccion_02.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Manejo de texto.</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Textos: entradas y salidas.</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Manejo de texto.</span></h1>
 </div>
 
 
@@ -606,7 +612,7 @@ O ya no entiendo lo que está pasando o ya pasó lo que estaba yo entendiendo</c
 &lt;class 'str'&gt;</code></pre>
 </div>
 </div>
-<p>Es posible agregar caracteres especiales usando el caracter de escape <code>\</code>, por ejemplo si deseamos un cambio de línea en la cadena anterior hacemos lo siguiente:</p>
+<p>Es posible agregar caracteres especiales usando el caracter de escape <code>\</code>, por ejemplo si deseamos un cambio de línea en la cadena anterior agregamos <code>\n</code> donde se desee hacer el cambio de línea:</p>
 <div id="1b1566ee-f795-4fa4-acd2-8c6799e332cd" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>frase1 <span class="op">=</span> <span class="st">"O ya no entiendo lo que está pasando </span><span class="ch">\n</span><span class="st">o ya pasó lo que estaba yo entendiendo"</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -626,7 +632,7 @@ o ya pasó lo que estaba yo entendiendo</code></pre>
     You never know what you're gonna get.</code></pre>
 </div>
 </div>
-<p>La documentación completa de caracteres especiales se puede encontrar en el siguiente enlace: <a href="https://docs.python.org/es/3/reference/lexical_analysis.html#escape-sequences">Escape sequences</a>.</p>
+<p>El el código anterior agregamos <code>\n\t</code> que representan un cambio de línea seguido de un tabulador. La documentación completa de caracteres especiales se puede encontrar en el siguiente enlace: <a href="https://docs.python.org/es/3/reference/lexical_analysis.html#escape-sequences">Escape sequences</a>.</p>
 <div id="exm-l2-1" class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -754,7 +760,7 @@ Ejemplo&nbsp;2.2: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 </table>
 <p>Sus índices positivos van de <code>0</code> a <code>16</code> y sus índices negativos van de <code>-1</code> a <code>-17</code>.</p>
 <p>Se puede acceder a los diferentes elementos de la cadena cómo se explica en la <a href="../notebooks/05_cadenas.html#sec-e-indexacion-cadenas" class="quarto-xref"><span>Sección E.3</span></a> y también es posible obtener una subcadena a partir de la cadena original usando la construcción: <strong><code>str[Start:End:Stride]</code></strong></p>
-<p>En los siguientes ejercicios, accederemos a los siguientes elementos de la cadena <code>ejemplo</code> definida antes:</p>
+<p>En los siguientes ejercicios, accederemos a diferentes elementos de la cadena <code>ejemplo</code>:</p>
 <ol type="1">
 <li>Elemento <code>0</code>.</li>
 <li>Elemento final con índice positivo y negativo.</li>
@@ -796,35 +802,35 @@ Ejemplo&nbsp;2.2: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 </div>
 </div>
 <div id="e3fc15c0-fc4d-4d6f-a180-bd007c7c130e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-19cc08715783dfab&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}}" data-execution_count="14">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. pares</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Elementos pares</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>ejemplo[::<span class="dv">2</span>]</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>'Ciiiiluio'</code></pre>
 </div>
 </div>
 <div id="2fe6c60e-bee5-4fd4-98d0-9e5fe518d777" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-4f20575af68209a7&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}}" data-execution_count="15">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. impares</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. Elementos impares</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>ejemplo[<span class="dv">1</span>::<span class="dv">2</span>]</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>'hrptfátc'</code></pre>
 </div>
 </div>
 <div id="e3334fab-2387-44ab-9e7b-883b36fcc522" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-0f67ab6b228ce6fa&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}}" data-execution_count="16">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 7. pares de 2 a 12</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 7. Elementos pares de 2 a 12</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>ejemplo[<span class="dv">2</span>:<span class="dv">13</span>:<span class="dv">2</span>]</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>'iiiilu'</code></pre>
 </div>
 </div>
 <div id="801ba9e1-8ab2-4173-93aa-5af91ac34951" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-4a4a43e810fe0d96&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}}" data-execution_count="17">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 7. impares de 2 a 12</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 7. Elementos impares de 2 a 12</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>ejemplo[<span class="dv">3</span>:<span class="dv">13</span>:<span class="dv">2</span>]</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>'rptfá'</code></pre>
 </div>
 </div>
 <div id="fbfacd0a-5bbd-4a56-9f7a-07fe12198311" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-5a3b5eb70a62cd36&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}}" data-execution_count="18">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 8. pares, toda la cadena, en reversa</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 8. Elementos pares, toda la cadena, en reversa</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>ejemplo[::<span class="dv">2</span>][::<span class="op">-</span><span class="dv">1</span>]</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>'oiuliiiiC'</code></pre>
@@ -1091,7 +1097,7 @@ para ir a la escuela</code></pre>
 <span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(linea2.center(<span class="dv">50</span>, <span class="bu">chr</span>(<span class="bn">0x00B7</span>)) )</span>
 <span id="cb71-7"><a href="#cb71-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(linea3.center(<span class="dv">50</span>, <span class="bu">chr</span>(<span class="bn">0x00B7</span>)) )</span>
 <span id="cb71-8"><a href="#cb71-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb71-9"><a href="#cb71-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Segunda línea</span></span>
+<span id="cb71-9"><a href="#cb71-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Última línea</span></span>
 <span id="cb71-10"><a href="#cb71-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">chr</span>(<span class="bn">0x1F639</span>).rjust(<span class="dv">48</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>→→→→→→→→               😾                ←←←←←←←←
@@ -1132,7 +1138,7 @@ para ir a la escuela</code></pre>
 <pre><code>Hedy Lamarr cumpliría 111 años en 2025</code></pre>
 </div>
 </div>
-<div id="exm-l2-5" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div id="exm-l2-6" class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -1290,17 +1296,36 @@ Ejemplo&nbsp;2.6: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 <section id="entrada-estándar." class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="entrada-estándar."><span class="header-section-number">2.3</span> Entrada estándar.</h2>
 <p>En Python es posible proporcionar información a un código mediante la función incorporada <code>input()</code>. Por ejemplo:</p>
-<div id="6acb1e8d-e77a-4289-a918-0e55026ad517" class="cell">
+<div id="6acb1e8d-e77a-4289-a918-0e55026ad517" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="bu">input</span>(<span class="st">"Teclea un número:"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Teclea un número: 5</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>'5'</code></pre>
+</div>
 </div>
 <p><strong>Observaciones.</strong> * La cadena entre los paréntesis proporciona información para saber lo que se debe teclear. Esta cadena se conoce como <em>prompt</em>. * Esta cadena se imprime cuando se ejecuta la función <code>input()</code> y luego se espera a que teclees alguna información. * Cuando se teclea <code>&lt;enter&gt;</code> la función <code>input()</code> lee la información proporcionada. * Input lee toda la información en formato de cadena (<code>str</code>). * La información que se teclea se puede almacenar en una variable.</p>
-<div id="3b0eb901-4269-4377-a0c0-fc1289c138ff" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb89"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a>numero <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Teclea un número:"</span>)</span>
-<span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"El número que tecleaste fue:"</span>, numero)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="3b0eb901-4269-4377-a0c0-fc1289c138ff" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb91"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a>numero <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Teclea un número:"</span>)</span>
+<span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"El número que tecleaste fue:"</span>, numero)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Teclea un número: 5</code></pre>
 </div>
-</section>
-<section id="ejemplo-7." class="level2 alert alert-block alert-success" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="ejemplo-7."><span class="header-section-number">2.4</span> Ejemplo 7.</h2>
+<div class="cell-output cell-output-stdout">
+<pre><code>El número que tecleaste fue: 5</code></pre>
+</div>
+</div>
+<div id="exm-l2-7" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;2.7: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> Entrada de datos y cálculo con esos datos.
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Escribe un código que solicite al usuario su nombre, su edad, su peso y su estatura. Con esa información el código deberá calcular el índice de masa corporal y generar una salida como la siguiente:</p>
 <pre><code>Escribe tu nombre: Luis Miguel
 Escribe tu edad: 25
@@ -1308,22 +1333,61 @@ Escribe tu peso: 80
 Escribe tu estatura: 1.75
 
 Hola Luis Miguel (25), tu índice de masa corporal es 26.122</code></pre>
-<p><br></p>
-</section>
-<p>¿Qué pasa con el siguiente código?</p>
-<div id="831403cf-8169-4dc8-b4f1-0c47e57f5e4e" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb91"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a>nombre <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Escribe tu nombre:'</span>)</span>
-<span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a>edad <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Escribe tu edad:'</span>)</span>
-<span id="cb91-3"><a href="#cb91-3" aria-hidden="true" tabindex="-1"></a>peso <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Escribe tu peso:'</span>)</span>
-<span id="cb91-4"><a href="#cb91-4" aria-hidden="true" tabindex="-1"></a>estatura <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Escribe tu estatura:'</span>)</span>
-<span id="cb91-5"><a href="#cb91-5" aria-hidden="true" tabindex="-1"></a>imc <span class="op">=</span> peso <span class="op">/</span> estatura<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb91-6"><a href="#cb91-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Hola </span><span class="sc">{</span>nombre<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>edad<span class="sc">}</span><span class="ss">), tu índice de masa corporal es </span><span class="sc">{</span>imc<span class="sc">:6.3f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<section id="gestión-de-archivos." class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="gestión-de-archivos."><span class="header-section-number">2.5</span> Gestión de archivos.</h2>
+</div>
+<p>¿Qué pasa con el siguiente código?</p>
+<div id="831403cf-8169-4dc8-b4f1-0c47e57f5e4e" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb95"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a>nombre <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Escribe tu nombre:'</span>)</span>
+<span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a>edad <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Escribe tu edad:'</span>)</span>
+<span id="cb95-3"><a href="#cb95-3" aria-hidden="true" tabindex="-1"></a>peso <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Escribe tu peso:'</span>)</span>
+<span id="cb95-4"><a href="#cb95-4" aria-hidden="true" tabindex="-1"></a>estatura <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Escribe tu estatura:'</span>)</span>
+<span id="cb95-5"><a href="#cb95-5" aria-hidden="true" tabindex="-1"></a>imc <span class="op">=</span> peso <span class="op">/</span> estatura<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb95-6"><a href="#cb95-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Hola </span><span class="sc">{</span>nombre<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>edad<span class="sc">}</span><span class="ss">), tu índice de masa corporal es </span><span class="sc">{</span>imc<span class="sc">:6.3f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Escribe tu nombre: Luis
+Escribe tu edad: 25
+Escribe tu peso: 80
+Escribe tu estatura: 1.75</code></pre>
+</div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[4]</span><span class="ansi-green-fg">, line 5</span>
+<span class="ansi-green-fg">      3</span> peso = <span style="color:rgb(0,135,0)">input</span>(<span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">Escribe tu peso:</span><span class="ansi-yellow-fg">'</span>)
+<span class="ansi-green-fg">      4</span> estatura = <span style="color:rgb(0,135,0)">input</span>(<span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">Escribe tu estatura:</span><span class="ansi-yellow-fg">'</span>)
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">5</span> imc = peso / <span class="ansi-yellow-bg">estatura</span><span class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">*</span><span class="ansi-green-fg ansi-yellow-bg">2</span>
+<span class="ansi-green-fg">      6</span> <span style="color:rgb(0,135,0)">print</span>(<span class="ansi-yellow-fg">f</span><span class="ansi-yellow-fg">"</span><span style="font-weight:bold;color:rgb(175,95,0)">\n</span><span class="ansi-yellow-fg">Hola </span><span style="font-weight:bold;color:rgb(175,95,135)">{</span>nombre<span style="font-weight:bold;color:rgb(175,95,135)">}</span><span class="ansi-yellow-fg"> (</span><span style="font-weight:bold;color:rgb(175,95,135)">{</span>edad<span style="font-weight:bold;color:rgb(175,95,135)">}</span><span class="ansi-yellow-fg">), tu índice de masa corporal es </span><span style="font-weight:bold;color:rgb(175,95,135)">{</span>imc<span style="font-weight:bold;color:rgb(175,95,135)">:</span><span class="ansi-yellow-fg">6.3f</span><span style="font-weight:bold;color:rgb(175,95,135)">}</span><span class="ansi-yellow-fg">"</span>)
+
+<span class="ansi-red-fg">TypeError</span>: unsupported operand type(s) for ** or pow(): 'str' and 'int'</pre>
+</div>
+</div>
+</div>
+<p>El código anterior genera un error de tipo <code>TypeError</code> y se debe a que se está intentando realizar una operación no compatible con una cadena y un entero. Para que el código funcione, se deben convertir los números que se usan en operaciones en los tipos numéricos correspondientes. En este ejemplo se debe hacer lo siguiente:</p>
+<div id="71446073-5e03-4886-97a2-9ff960f5949c" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb97"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a>nombre <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Escribe tu nombre:'</span>)</span>
+<span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a>edad <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">'Escribe tu edad:'</span>))</span>
+<span id="cb97-3"><a href="#cb97-3" aria-hidden="true" tabindex="-1"></a>peso <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">'Escribe tu peso:'</span>))</span>
+<span id="cb97-4"><a href="#cb97-4" aria-hidden="true" tabindex="-1"></a>estatura <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">'Escribe tu estatura:'</span>))</span>
+<span id="cb97-5"><a href="#cb97-5" aria-hidden="true" tabindex="-1"></a>imc <span class="op">=</span> peso <span class="op">/</span> estatura<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb97-6"><a href="#cb97-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Hola </span><span class="sc">{</span>nombre<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>edad<span class="sc">}</span><span class="ss">), tu índice de masa corporal es </span><span class="sc">{</span>imc<span class="sc">:6.3f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Escribe tu nombre: Luis
+Escribe tu edad: 25
+Escribe tu peso: 80
+Escribe tu estatura: 1.75</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Hola Luis (25), tu índice de masa corporal es 26.122</code></pre>
+</div>
+</div>
+</section>
+<section id="gestión-de-archivos." class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="gestión-de-archivos."><span class="header-section-number">2.4</span> Gestión de archivos.</h2>
 <p>La función incorporada para gestionar archivos es <code>open()</code>. Esta función toma dos parámetros: el nombre del archivo y el modo. Existen cuatro diferentes modos:</p>
 <ul>
-<li><code>"r"</code> - Read - Default value. Abre el archivo para lectura. Se produce un error si el archvio no existe.</li>
+<li><code>"r"</code> - Read - Abre el archivo para lectura. Se produce un error si el archvio no existe. Valor por omisión.</li>
 <li><code>"a"</code> - Append - Abre el archivo para agregar información. Si el archivo no existe, lo crea.</li>
 <li><code>"w"</code> - Write - Abre el archivo para escritura. Si el archivo no existe, lo crea. Si el archivo existe, lo sobreescribe.</li>
 <li><code>"x"</code> - Create - Crea el archivo, regresa un error si el archivo existe.</li>
@@ -1333,94 +1397,408 @@ Hola Luis Miguel (25), tu índice de masa corporal es 26.122</code></pre>
 <li><code>"t"</code> - Text - Valor por omisión.</li>
 <li><code>"b"</code> - Binary</li>
 </ul>
+<div id="exm-l2-7" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;2.8: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> Abrir un archivo y leer la información.
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>El archivo <code>personal_data.csv</code> contiene la siguiente información:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 10%">
+<col style="width: 5%">
+<col style="width: 15%">
+<col style="width: 10%">
+<col style="width: 5%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Id</th>
+<th>S</th>
+<th>E</th>
+<th>Pe</th>
+<th>A</th>
+<th>IMC</th>
+<th>Di</th>
+<th>H</th>
+<th>De</th>
+<th>TS</th>
+<th>TA</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td>Sexo</td>
+<td>Edad</td>
+<td>Peso</td>
+<td>Altura</td>
+<td>Índice de masa corporal</td>
+<td>Diabetes</td>
+<td>Hipertensión</td>
+<td>Depresión</td>
+<td>Trastorno del sueño</td>
+<td>Trastorno de la alimentación</td>
+</tr>
+</tbody>
+</table>
+<p>Los datos en el archivo están separados por coma (CSV, <em>Comma-Separated Values</em>).</p>
+<p>Escribe un código que haga lo siguiente:</p>
+<ol type="1">
+<li>Abrir el archivo <code>personal_data.csv</code> para lectura.</li>
+<li>Leer el encabezado del archivo.</li>
+<li>Leer los datos de los primeros 5 renglones.</li>
+<li>Calcular el IMC con los datos obtenidos del primer renglón.</li>
+<li>Comparar con la información del IMC del archivo.</li>
+</ol>
+</div>
+</div>
+<div id="2e725a8f-6070-41fe-8e2f-517ae3f851b2" class="cell" data-execution_count="77">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb100"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Abrir el archivo en modo lectura</span></span>
+<span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="bu">open</span>(<span class="st">"personal_data.csv"</span>, <span class="st">"r"</span>)</span>
+<span id="cb100-3"><a href="#cb100-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb100-4"><a href="#cb100-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Leemos el encabezado</span></span>
+<span id="cb100-5"><a href="#cb100-5" aria-hidden="true" tabindex="-1"></a>encabezado <span class="op">=</span> f.readline()</span>
+<span id="cb100-6"><a href="#cb100-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb100-7"><a href="#cb100-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Leemos las primeras 5 líneas del archivo</span></span>
+<span id="cb100-8"><a href="#cb100-8" aria-hidden="true" tabindex="-1"></a>renglon_1 <span class="op">=</span> f.readline()</span>
+<span id="cb100-9"><a href="#cb100-9" aria-hidden="true" tabindex="-1"></a>renglon_2 <span class="op">=</span> f.readline()</span>
+<span id="cb100-10"><a href="#cb100-10" aria-hidden="true" tabindex="-1"></a>renglon_3 <span class="op">=</span> f.readline()</span>
+<span id="cb100-11"><a href="#cb100-11" aria-hidden="true" tabindex="-1"></a>renglon_4 <span class="op">=</span> f.readline()</span>
+<span id="cb100-12"><a href="#cb100-12" aria-hidden="true" tabindex="-1"></a>renglon_5 <span class="op">=</span> f.readline()</span>
+<span id="cb100-13"><a href="#cb100-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb100-14"><a href="#cb100-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Imprimimos información obtenida.</span></span>
+<span id="cb100-15"><a href="#cb100-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(encabezado, renglon_1, renglon_2, renglon_3, renglon_4, renglon_5)</span>
+<span id="cb100-16"><a href="#cb100-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb100-17"><a href="#cb100-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Cerrar el archivo</span></span>
+<span id="cb100-18"><a href="#cb100-18" aria-hidden="true" tabindex="-1"></a>f.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Id,S,E,Pe,A,IMC,Di,H,De,TS,TA
+ 1,h,35,75,1.7,25.95,Si,Si,No,No,Si
+ 2,m,57,88,1.59,34.81,No,Si,No,No,No
+ 3,h,40,81,1.66,29.39,No,No,No,Si,No
+ 4,h,46,73,1.66,26.49,No,No,No,Si,Si
+ 5,m,67,97,1.68,34.37,No,No,Si,Si,No
+</code></pre>
+</div>
+</div>
+<div id="38542b2c-180f-453a-a5a3-3445b635be70" class="cell" data-execution_count="78">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb102"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Separamos las líneas por las comas</span></span>
+<span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a>encabezado <span class="op">=</span> encabezado.split(sep<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb102-3"><a href="#cb102-3" aria-hidden="true" tabindex="-1"></a>renglon_1 <span class="op">=</span> renglon_1.split(sep<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb102-4"><a href="#cb102-4" aria-hidden="true" tabindex="-1"></a>renglon_2 <span class="op">=</span> renglon_2.split(sep<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb102-5"><a href="#cb102-5" aria-hidden="true" tabindex="-1"></a>renglon_3 <span class="op">=</span> renglon_3.split(sep<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb102-6"><a href="#cb102-6" aria-hidden="true" tabindex="-1"></a>renglon_4 <span class="op">=</span> renglon_4.split(sep<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb102-7"><a href="#cb102-7" aria-hidden="true" tabindex="-1"></a>renglon_5 <span class="op">=</span> renglon_5.split(sep<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb102-8"><a href="#cb102-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb102-9"><a href="#cb102-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(encabezado, renglon_1, renglon_2, renglon_3, renglon_4, renglon_5, sep<span class="op">=</span><span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['Id', 'S', 'E', 'Pe', 'A', 'IMC', 'Di', 'H', 'De', 'TS', 'TA\n']
+['1', 'h', '35', '75', '1.7', '25.95', 'Si', 'Si', 'No', 'No', 'Si\n']
+['2', 'm', '57', '88', '1.59', '34.81', 'No', 'Si', 'No', 'No', 'No\n']
+['3', 'h', '40', '81', '1.66', '29.39', 'No', 'No', 'No', 'Si', 'No\n']
+['4', 'h', '46', '73', '1.66', '26.49', 'No', 'No', 'No', 'Si', 'Si\n']
+['5', 'm', '67', '97', '1.68', '34.37', 'No', 'No', 'Si', 'Si', 'No\n']</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Nota.
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En el código anterior se utilizó el método <code>str.split()</code> para separar cada cadena en subcadenas; este método almacena el resultado en una lista. La lista se puede indexar de la misma forma en que se indexan las cadenas, véase la sección <a href="../notebooks/05_cadenas.html#sec-e-indexacion-cadenas" class="quarto-xref"><span>Sección E.3</span></a> para más información.</p>
+<p>El tema de listas se puede revisar con detalle en el <a href="../notebooks/09_listas.html" class="quarto-xref"><span>Apéndice I</span></a>.</p>
+</div>
+</div>
+<div id="0572f0d0-868e-459d-91a0-3fb2d403422f" class="cell" data-execution_count="79">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb104"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtenemos los datos del peso, estatura e imc usando indexación de las listas</span></span>
+<span id="cb104-2"><a href="#cb104-2" aria-hidden="true" tabindex="-1"></a>peso <span class="op">=</span> renglon_1[<span class="dv">3</span>]</span>
+<span id="cb104-3"><a href="#cb104-3" aria-hidden="true" tabindex="-1"></a>estatura <span class="op">=</span> renglon_1[<span class="dv">4</span>]</span>
+<span id="cb104-4"><a href="#cb104-4" aria-hidden="true" tabindex="-1"></a>imc_db <span class="op">=</span> renglon_1[<span class="dv">5</span>]</span>
+<span id="cb104-5"><a href="#cb104-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-6"><a href="#cb104-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(peso, estatura, imc_db)</span>
+<span id="cb104-7"><a href="#cb104-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(peso), <span class="bu">type</span>(estatura), <span class="bu">type</span>(imc_db))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>75 1.7 25.95
+&lt;class 'str'&gt; &lt;class 'str'&gt; &lt;class 'str'&gt;</code></pre>
+</div>
+</div>
+<div id="d0fd02d0-b8de-499a-abc1-e10b6fc7909c" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-608e637b9a1e46ef&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}}" data-execution_count="80">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb106"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Calculamos el IMC (debemos convertir a flotantes antes de hacer el cálculo)</span></span>
+<span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a>IMC <span class="op">=</span> <span class="bu">float</span>(peso) <span class="op">/</span> <span class="bu">float</span>(estatura)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb106-3"><a href="#cb106-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(IMC)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>25.95155709342561</code></pre>
+</div>
+</div>
+<div id="6582735d-1b70-4742-9e92-a53a9da5f2ad" class="cell" data-execution_count="83">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb108"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Comparamos el cálculo con los datos del archivo</span></span>
+<span id="cb108-2"><a href="#cb108-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"IMC DB = </span><span class="sc">{</span><span class="bu">float</span>(imc_db)<span class="sc">:5.5f}</span><span class="ss"> </span><span class="ch">\t</span><span class="ss"> IMC = </span><span class="sc">{</span>IMC<span class="sc">:5.5f}</span><span class="ss">"</span>)</span>
+<span id="cb108-3"><a href="#cb108-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb108-4"><a href="#cb108-4" aria-hidden="true" tabindex="-1"></a>iguales <span class="op">=</span> <span class="bu">float</span>(imc_db) <span class="op">==</span> IMC</span>
+<span id="cb108-5"><a href="#cb108-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"¿Son iguales? </span><span class="sc">{</span>iguales<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>IMC DB = 25.95000    IMC = 25.95156
+¿Son iguales? False</code></pre>
+</div>
+</div>
+<div id="de4d4823-573c-4eea-8c1a-5ece62bc8670" class="cell" data-execution_count="84">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb110"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Una forma más adecuada de comparar números flotantes</span></span>
+<span id="cb110-2"><a href="#cb110-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> isclose</span>
+<span id="cb110-3"><a href="#cb110-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb110-4"><a href="#cb110-4" aria-hidden="true" tabindex="-1"></a>iguales <span class="op">=</span> isclose(<span class="bu">float</span>(imc_db), IMC, rel_tol<span class="op">=</span><span class="fl">1e-4</span>)</span>
+<span id="cb110-5"><a href="#cb110-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb110-6"><a href="#cb110-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"¿Son iguales? </span><span class="sc">{</span>iguales<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>¿Son iguales? True</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Nota.
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Más información sobre archivos la puedes revisar en el <a href="../notebooks/07_archivos.html" class="quarto-xref"><span>Apéndice G</span></a>.</p>
+</div>
+</div>
 </section>
-<section id="ejemplo-8." class="level2 alert alert-block alert-success" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="ejemplo-8."><span class="header-section-number">2.6</span> Ejemplo 8.</h2>
-<p>Escribe un código que haga lo siguiente: * abrir el archivo <code>personal_data.csv</code> para lectura, * leer el encabezado del archivo, * leer los datos de los primeros 5 renglones, * calcular el IMC con los datos obtenidos. * comparar con la información del IMC del archivo.</p>
-<p>Los datos en el archivo, separados por coma, son los siguientes:</p>
-<ul>
-<li>Pa=Paciente</li>
-<li>S=Sexo</li>
-<li>E=Edad</li>
-<li>Pe=Peso</li>
-<li>A=Altura</li>
-<li>IMC=Índice de masa corporal</li>
-<li>Di=Diabetes</li>
-<li>H=Hipertensión</li>
-<li>De=Depresión</li>
-<li>TS=Trastorno del sueño</li>
-<li>TA=Trastorno de la alimentación</li>
-</ul>
+<section id="proyecto." class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="proyecto."><span class="header-section-number">2.5</span> Proyecto.</h2>
+<div id="exm-l1-ej1" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo&nbsp;2.9: <iconify-icon role="img" inline="" icon="vscode-icons:file-type-light-mypy" style="color: #b22222;;font-size: 1.25em;" aria-label="Icon file-type-light-mypy from vscode-icons Iconify.design set." title="Icon file-type-light-mypy from vscode-icons Iconify.design set." flip="horizontal" rotate="0deg" mode="svg"></iconify-icon> Índice de masa corporal.
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Usando la información del archivo <code>personal_data.csv</code> generar lo siguiente: …</p>
+</div>
+</div>
+<section id="paso-1.-función-generadora-de-nombres." class="level3" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="paso-1.-función-generadora-de-nombres."><span class="header-section-number">2.5.1</span> Paso 1. Función generadora de nombres.</h3>
+<div id="88e458d0-5595-44cd-935b-102a951e85f8" class="cell" data-execution_count="99">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb112"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb112-2"><a href="#cb112-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-3"><a href="#cb112-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> genera_nombre(sexo):</span>
+<span id="cb112-4"><a href="#cb112-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Definimos listas de nombres y apellidos</span></span>
+<span id="cb112-5"><a href="#cb112-5" aria-hidden="true" tabindex="-1"></a>    nombres_mas <span class="op">=</span>  [<span class="st">"Juan"</span>, <span class="st">"Carlos"</span>, <span class="st">"Luis"</span>, <span class="st">"Gabriel"</span>, </span>
+<span id="cb112-6"><a href="#cb112-6" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Pedro"</span>, <span class="st">"Gustavo"</span>, <span class="st">"Samuel"</span>, <span class="st">"Noé"</span>]</span>
+<span id="cb112-7"><a href="#cb112-7" aria-hidden="true" tabindex="-1"></a>    nombres_fem <span class="op">=</span>  [<span class="st">"Ana"</span>,  <span class="st">"María"</span>, <span class="st">"Juana"</span>, <span class="st">"Luisa"</span>, </span>
+<span id="cb112-8"><a href="#cb112-8" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Angélica"</span>, <span class="st">"Mónica"</span>, <span class="st">"Diana"</span>, <span class="st">"Julia"</span> ]</span>
+<span id="cb112-9"><a href="#cb112-9" aria-hidden="true" tabindex="-1"></a>    apellidos <span class="op">=</span> [<span class="st">"Gómez"</span>, <span class="st">"Pérez"</span>, <span class="st">"López"</span>, <span class="st">"García"</span>, <span class="st">"Sánchez"</span>, </span>
+<span id="cb112-10"><a href="#cb112-10" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"Vázquez"</span>, <span class="st">"Barrios"</span>, <span class="st">"Soler"</span>, <span class="st">"Márquez"</span>, <span class="st">"Villoro"</span>]</span>
+<span id="cb112-11"><a href="#cb112-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-12"><a href="#cb112-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> sexo <span class="op">==</span> <span class="st">"h"</span>:</span>
+<span id="cb112-13"><a href="#cb112-13" aria-hidden="true" tabindex="-1"></a>        nombre <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>random<span class="sc">.</span>choice(nombres_mas)<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb112-14"><a href="#cb112-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> sexo <span class="op">==</span> <span class="st">"m"</span>:</span>
+<span id="cb112-15"><a href="#cb112-15" aria-hidden="true" tabindex="-1"></a>        nombre <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>random<span class="sc">.</span>choice(nombres_fem)<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb112-16"><a href="#cb112-16" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb112-17"><a href="#cb112-17" aria-hidden="true" tabindex="-1"></a>    apellido <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>random<span class="sc">.</span>choice(apellidos)<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb112-18"><a href="#cb112-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-19"><a href="#cb112-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (nombre, apellido)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="aa92c119-4083-41b7-ae13-37c8a4d3f6d3" class="cell" data-execution_count="100">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb113"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a>genera_nombre(<span class="st">'h'</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="100">
+<pre><code>('Luis', 'López')</code></pre>
+</div>
+</div>
+<div id="963cdac2-b8b3-407b-a9b4-7de9947e031a" class="cell" data-execution_count="101">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb115"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a>genera_nombre(<span class="st">'m'</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="101">
+<pre><code>('Diana', 'Márquez')</code></pre>
+</div>
+</div>
 </section>
-<div id="2e725a8f-6070-41fe-8e2f-517ae3f851b2" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb92"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Abrir el archivo</span></span>
-<span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="bu">open</span>(<span class="st">"personal_data.csv"</span>, <span class="st">"r"</span>)</span>
-<span id="cb92-3"><a href="#cb92-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb92-4"><a href="#cb92-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Leer las primeras líneas del archivo</span></span>
-<span id="cb92-5"><a href="#cb92-5" aria-hidden="true" tabindex="-1"></a>encabezado <span class="op">=</span> f.readline()</span>
-<span id="cb92-6"><a href="#cb92-6" aria-hidden="true" tabindex="-1"></a>renglon_1 <span class="op">=</span> f.readline()</span>
-<span id="cb92-7"><a href="#cb92-7" aria-hidden="true" tabindex="-1"></a>renglon_2 <span class="op">=</span> f.readline()</span>
-<span id="cb92-8"><a href="#cb92-8" aria-hidden="true" tabindex="-1"></a>renglon_3 <span class="op">=</span> f.readline()</span>
-<span id="cb92-9"><a href="#cb92-9" aria-hidden="true" tabindex="-1"></a>renglon_4 <span class="op">=</span> f.readline()</span>
-<span id="cb92-10"><a href="#cb92-10" aria-hidden="true" tabindex="-1"></a>renglon_5 <span class="op">=</span> f.readline()</span>
-<span id="cb92-11"><a href="#cb92-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb92-12"><a href="#cb92-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(encabezado, renglon_1, renglon_2, renglon_3, renglon_4, renglon_5)</span>
-<span id="cb92-13"><a href="#cb92-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb92-14"><a href="#cb92-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Cerrar el archivo</span></span>
-<span id="cb92-15"><a href="#cb92-15" aria-hidden="true" tabindex="-1"></a>f.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="paso-2.-lectura-de-archivo." class="level3" data-number="2.5.2">
+<h3 data-number="2.5.2" class="anchored" data-anchor-id="paso-2.-lectura-de-archivo."><span class="header-section-number">2.5.2</span> Paso 2. Lectura de archivo.</h3>
+<div id="8e96aa61-47ed-43b6-9501-f9690e21962b" class="cell" data-execution_count="102">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb117"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"personal_data.csv"</span>, <span class="st">"r"</span>) <span class="im">as</span> f:</span>
+<span id="cb117-2"><a href="#cb117-2" aria-hidden="true" tabindex="-1"></a>    lineas <span class="op">=</span> f.readlines()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="38542b2c-180f-453a-a5a3-3445b635be70" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb93"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Separamos las líneas por las comas</span></span>
-<span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a>encabezado <span class="op">=</span> encabezado.split(sep<span class="op">=</span><span class="st">','</span>)</span>
-<span id="cb93-3"><a href="#cb93-3" aria-hidden="true" tabindex="-1"></a>renglon_1 <span class="op">=</span> renglon_1.split(sep<span class="op">=</span><span class="st">','</span>)</span>
-<span id="cb93-4"><a href="#cb93-4" aria-hidden="true" tabindex="-1"></a>renglon_2 <span class="op">=</span> renglon_2.split(sep<span class="op">=</span><span class="st">','</span>)</span>
-<span id="cb93-5"><a href="#cb93-5" aria-hidden="true" tabindex="-1"></a>renglon_3 <span class="op">=</span> renglon_3.split(sep<span class="op">=</span><span class="st">','</span>)</span>
-<span id="cb93-6"><a href="#cb93-6" aria-hidden="true" tabindex="-1"></a>renglon_4 <span class="op">=</span> renglon_4.split(sep<span class="op">=</span><span class="st">','</span>)</span>
-<span id="cb93-7"><a href="#cb93-7" aria-hidden="true" tabindex="-1"></a>renglon_5 <span class="op">=</span> renglon_5.split(sep<span class="op">=</span><span class="st">','</span>)</span>
-<span id="cb93-8"><a href="#cb93-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb93-9"><a href="#cb93-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(encabezado, renglon_1, renglon_2, renglon_3, renglon_4, renglon_5, sep<span class="op">=</span><span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="paso-3.-procesamiento-del-encabezado." class="level3" data-number="2.5.3">
+<h3 data-number="2.5.3" class="anchored" data-anchor-id="paso-3.-procesamiento-del-encabezado."><span class="header-section-number">2.5.3</span> Paso 3. Procesamiento del encabezado.</h3>
+<div id="8e054280-4480-450e-bfaf-e9b66aa86c9f" class="cell" data-execution_count="103">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb118"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Línea de encabezado</span></span>
+<span id="cb118-2"><a href="#cb118-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lineas[<span class="dv">0</span>])</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Id,S,E,Pe,A,IMC,Di,H,De,TS,TA
+</code></pre>
 </div>
-<div class="alert alert-block alert-info">
-<p><strong>NOTA</strong>.</p>
-<p>En el código anterior se utilizó el método <code>str.split()</code> para separar cada cadena en subcadenas; este método almacena el resultado en una lista. La lista se puede indexar de la misma forma en que se indexan las cadenas, véase la sección <strong>Indexación y slicing</strong> de esta notebook.</p>
-<p>El tema de listas se puede revisar con detalle en las notebooks <a href="./leccion_04.ipynb"><strong>leccion_04.ipynb</strong></a> y <a href="../notebooks/08_listas.ipynb"><strong>08_listas.ipynb</strong></a>.</p>
 </div>
-<div id="0572f0d0-868e-459d-91a0-3fb2d403422f" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb94"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtenemos los datos del peso, estatura e imc usando indexación de las listas</span></span>
-<span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a>peso <span class="op">=</span> renglon_1[<span class="dv">3</span>]</span>
-<span id="cb94-3"><a href="#cb94-3" aria-hidden="true" tabindex="-1"></a>estatura <span class="op">=</span> renglon_1[<span class="dv">4</span>]</span>
-<span id="cb94-4"><a href="#cb94-4" aria-hidden="true" tabindex="-1"></a>imc_db <span class="op">=</span> renglon_1[<span class="dv">5</span>]</span>
-<span id="cb94-5"><a href="#cb94-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb94-6"><a href="#cb94-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(peso, estatura, imc_db)</span>
-<span id="cb94-7"><a href="#cb94-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(peso), <span class="bu">type</span>(estatura), <span class="bu">type</span>(imc_db))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="81b37136-67da-4fdb-a163-efb03dffd0de" class="cell" data-execution_count="108">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb120"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Línea de encabezado separada y almacenada en una lista</span></span>
+<span id="cb120-2"><a href="#cb120-2" aria-hidden="true" tabindex="-1"></a>encabezado <span class="op">=</span> lineas[<span class="dv">0</span>].split(<span class="st">","</span>)</span>
+<span id="cb120-3"><a href="#cb120-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(encabezado)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['Id', 'S', 'E', 'Pe', 'A', 'IMC', 'Di', 'H', 'De', 'TS', 'TA\n']</code></pre>
 </div>
-<div id="d0fd02d0-b8de-499a-abc1-e10b6fc7909c" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-608e637b9a1e46ef&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}}">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb95"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculamos el IMC</span></span>
-<span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a>IMC <span class="op">=</span> <span class="bu">float</span>(peso) <span class="op">/</span> <span class="bu">float</span>(estatura)<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb95-3"><a href="#cb95-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(IMC)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="6582735d-1b70-4742-9e92-a53a9da5f2ad" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb96"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"IMC DB = </span><span class="sc">{</span><span class="bu">float</span>(imc_db)<span class="sc">:5.5f}</span><span class="ss"> </span><span class="ch">\t</span><span class="ss"> IMC = </span><span class="sc">{</span>IMC<span class="sc">:5.5f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="57333fe9-5952-484d-8950-d6c37210c3be" class="cell" data-execution_count="109">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb122"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Insertamos la columna de nombre</span></span>
+<span id="cb122-2"><a href="#cb122-2" aria-hidden="true" tabindex="-1"></a>encabezado.insert(<span class="dv">1</span>, <span class="st">"Nom"</span>)</span>
+<span id="cb122-3"><a href="#cb122-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(encabezado)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['Id', 'Nom', 'S', 'E', 'Pe', 'A', 'IMC', 'Di', 'H', 'De', 'TS', 'TA\n']</code></pre>
 </div>
-<div id="ff7e0eb7-c28e-4d32-bd9d-dfd88a0a0b0b" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb97"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a>iguales <span class="op">=</span> <span class="bu">float</span>(imc_db) <span class="op">==</span> IMC</span>
-<span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb97-3"><a href="#cb97-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"¿Son iguales? </span><span class="sc">{</span>iguales<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="de4d4823-573c-4eea-8c1a-5ece62bc8670" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb98"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Una forma de comparar números flotantes</span></span>
-<span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> isclose</span>
-<span id="cb98-3"><a href="#cb98-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb98-4"><a href="#cb98-4" aria-hidden="true" tabindex="-1"></a>iguales <span class="op">=</span> isclose(<span class="bu">float</span>(imc_db), IMC, rel_tol<span class="op">=</span><span class="fl">1e-4</span>)</span>
-<span id="cb98-5"><a href="#cb98-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb98-6"><a href="#cb98-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"¿Son iguales? </span><span class="sc">{</span>iguales<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="984f76b7-218a-4e98-82c8-00d1c74fdeca" class="cell" data-execution_count="110">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb124"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Insertamos la columna de apellido</span></span>
+<span id="cb124-2"><a href="#cb124-2" aria-hidden="true" tabindex="-1"></a>encabezado.insert(<span class="dv">2</span>, <span class="st">"Ape"</span>)</span>
+<span id="cb124-3"><a href="#cb124-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(encabezado)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['Id', 'Nom', 'Ape', 'S', 'E', 'Pe', 'A', 'IMC', 'Di', 'H', 'De', 'TS', 'TA\n']</code></pre>
 </div>
-<div class="alert alert-block alert-info">
-<p><strong>NOTA</strong>.</p>
-<p>Para completar y reforzar tu aprendizaje, revisa las notebooks <a href="../notebooks/06_input_archivos.ipynb"><strong>06_input_archivos.ipynb</strong></a>.</p>
+</div>
+<div id="6de01905-52ab-484e-8535-85287d95c8ac" class="cell" data-execution_count="111">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb126"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Eliminamos el cambio de línea en el último elemento de la lista</span></span>
+<span id="cb126-2"><a href="#cb126-2" aria-hidden="true" tabindex="-1"></a>encabezado[<span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> encabezado[<span class="op">-</span><span class="dv">1</span>][:<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb126-3"><a href="#cb126-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(encabezado)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['Id', 'Nom', 'Ape', 'S', 'E', 'Pe', 'A', 'IMC', 'Di', 'H', 'De', 'TS', 'TA']</code></pre>
+</div>
+</div>
+</section>
+<section id="paso-4.-procesamiento-de-las-líneas-del-archivo." class="level3" data-number="2.5.4">
+<h3 data-number="2.5.4" class="anchored" data-anchor-id="paso-4.-procesamiento-de-las-líneas-del-archivo."><span class="header-section-number">2.5.4</span> Paso 4. Procesamiento de las líneas del archivo.</h3>
+<div id="84c19189-7769-43d0-afd5-9ab65be6aea6" class="cell" data-execution_count="112">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb128"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Función que revisa si una cadena puede transformarse a número flotante</span></span>
+<span id="cb128-2"><a href="#cb128-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> es_numero(dato):</span>
+<span id="cb128-3"><a href="#cb128-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb128-4"><a href="#cb128-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">float</span>(dato)</span>
+<span id="cb128-5"><a href="#cb128-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb128-6"><a href="#cb128-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">ValueError</span>:</span>
+<span id="cb128-7"><a href="#cb128-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="f8f55eaa-5658-4961-9ecf-6a4270a73ec6" class="cell" data-execution_count="140">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb129"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> proc_linea(linea, silent<span class="op">=</span><span class="va">True</span>):</span>
+<span id="cb129-2"><a href="#cb129-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Separación en una lista</span></span>
+<span id="cb129-3"><a href="#cb129-3" aria-hidden="true" tabindex="-1"></a>    linea <span class="op">=</span> l.split(<span class="st">","</span>)</span>
+<span id="cb129-4"><a href="#cb129-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-5"><a href="#cb129-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Generamos el nombre y apellido</span></span>
+<span id="cb129-6"><a href="#cb129-6" aria-hidden="true" tabindex="-1"></a>    nombre, apellido <span class="op">=</span> genera_nombre(linea[<span class="dv">1</span>])</span>
+<span id="cb129-7"><a href="#cb129-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-8"><a href="#cb129-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Insertamos nombre y apellido en la lista</span></span>
+<span id="cb129-9"><a href="#cb129-9" aria-hidden="true" tabindex="-1"></a>    linea.insert(<span class="dv">1</span>, nombre)</span>
+<span id="cb129-10"><a href="#cb129-10" aria-hidden="true" tabindex="-1"></a>    linea.insert(<span class="dv">2</span>, apellido)</span>
+<span id="cb129-11"><a href="#cb129-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-12"><a href="#cb129-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convertimos a número los elementos correspondientes de la lista.</span></span>
+<span id="cb129-13"><a href="#cb129-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, v <span class="kw">in</span> <span class="bu">enumerate</span>(linea):</span>
+<span id="cb129-14"><a href="#cb129-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> es_numero(v):</span>
+<span id="cb129-15"><a href="#cb129-15" aria-hidden="true" tabindex="-1"></a>            linea[i] <span class="op">=</span> <span class="bu">float</span>(v)</span>
+<span id="cb129-16"><a href="#cb129-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-17"><a href="#cb129-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Eliminamos el cambio de línea del último elemento.</span></span>
+<span id="cb129-18"><a href="#cb129-18" aria-hidden="true" tabindex="-1"></a>    linea[<span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> linea[<span class="op">-</span><span class="dv">1</span>][:<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb129-19"><a href="#cb129-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-20"><a href="#cb129-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Revisamos el resultado final</span></span>
+<span id="cb129-21"><a href="#cb129-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> silent:</span>
+<span id="cb129-22"><a href="#cb129-22" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(linea)</span>
+<span id="cb129-23"><a href="#cb129-23" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb129-24"><a href="#cb129-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> linea</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="05e3e9b8-e8cd-4439-b059-f19bc7190cba" class="cell" data-execution_count="141">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb130"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb130-1"><a href="#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ciclo por las primeras cinco líneas (sin el encabezado)</span></span>
+<span id="cb130-2"><a href="#cb130-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> l <span class="kw">in</span> lineas[<span class="dv">1</span>:<span class="dv">6</span>]:</span>
+<span id="cb130-3"><a href="#cb130-3" aria-hidden="true" tabindex="-1"></a>    proc_linea(l, <span class="va">False</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1.0, 'Carlos', 'López', 'h', 35.0, 75.0, 1.7, 25.95, 'Si', 'Si', 'No', 'No', 'Si']
+[2.0, 'Diana', 'Pérez', 'm', 57.0, 88.0, 1.59, 34.81, 'No', 'Si', 'No', 'No', 'No']
+[3.0, 'Samuel', 'Villoro', 'h', 40.0, 81.0, 1.66, 29.39, 'No', 'No', 'No', 'Si', 'No']
+[4.0, 'Gustavo', 'Sánchez', 'h', 46.0, 73.0, 1.66, 26.49, 'No', 'No', 'No', 'Si', 'Si']
+[5.0, 'Angélica', 'García', 'm', 67.0, 97.0, 1.68, 34.37, 'No', 'No', 'Si', 'Si', 'No']</code></pre>
+</div>
+</div>
+<div id="bc91b3c3-1c7e-4e07-b2ba-86ad04d2c2a4" class="cell" data-execution_count="142">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb132"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb132-1"><a href="#cb132-1" aria-hidden="true" tabindex="-1"></a>Id <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Id del paciente: "</span>))</span>
+<span id="cb132-2"><a href="#cb132-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lineas[Id])</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Id del paciente:  4</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>4,h,46,73,1.66,26.49,No,No,No,Si,Si
+</code></pre>
+</div>
+</div>
+</section>
+<section id="paso-5.-despliegue-de-la-información." class="level3" data-number="2.5.5">
+<h3 data-number="2.5.5" class="anchored" data-anchor-id="paso-5.-despliegue-de-la-información."><span class="header-section-number">2.5.5</span> Paso 5. Despliegue de la información.</h3>
+<div id="bb54ac21-eeb7-431d-95d0-33e529c5d7fd" class="cell" data-execution_count="145">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb135"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb135-1"><a href="#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> imprime_info(linea):</span>
+<span id="cb135-2"><a href="#cb135-2" aria-hidden="true" tabindex="-1"></a>    proc_linea(linea, <span class="va">False</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="e04e8516-0088-4b39-9e23-e52e5a37a632" class="cell" data-execution_count="146">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb136"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb136-1"><a href="#cb136-1" aria-hidden="true" tabindex="-1"></a>imprime_info(lineas[<span class="dv">3</span>])</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[5.0, 'Ana', 'Pérez', 'm', 67.0, 97.0, 1.68, 34.37, 'No', 'No', 'Si', 'Si', 'No']</code></pre>
+</div>
+</div>
+<div id="4346e663-209d-432f-81e0-31a93bdf51ed" class="cell" data-execution_count="147">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb138"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> imprime_info(linea):</span>
+<span id="cb138-2"><a href="#cb138-2" aria-hidden="true" tabindex="-1"></a>    l <span class="op">=</span> proc_linea(linea)</span>
+<span id="cb138-3"><a href="#cb138-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb138-4"><a href="#cb138-4" aria-hidden="true" tabindex="-1"></a>    formato1 <span class="op">=</span> <span class="st">"</span><span class="sc">{:&gt;15s}</span><span class="st">: </span><span class="sc">{:&lt;}</span><span class="st">"</span></span>
+<span id="cb138-5"><a href="#cb138-5" aria-hidden="true" tabindex="-1"></a>    formato2 <span class="op">=</span> <span class="st">"</span><span class="sc">{:&gt;15s}</span><span class="st">: </span><span class="sc">{:&gt;5.2f}</span><span class="st">"</span></span>
+<span id="cb138-6"><a href="#cb138-6" aria-hidden="true" tabindex="-1"></a>    linea <span class="op">=</span> <span class="dv">50</span> <span class="op">*</span> <span class="bu">chr</span>(<span class="bn">0x2015</span>)</span>
+<span id="cb138-7"><a href="#cb138-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb138-8"><a href="#cb138-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(linea)</span>
+<span id="cb138-9"><a href="#cb138-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Datos personales"</span>.center(<span class="dv">50</span>))</span>
+<span id="cb138-10"><a href="#cb138-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(linea)</span>
+<span id="cb138-11"><a href="#cb138-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(formato1.<span class="bu">format</span>(<span class="st">"Nombre"</span>, l[<span class="dv">1</span>]))</span>
+<span id="cb138-12"><a href="#cb138-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(formato1.<span class="bu">format</span>(<span class="st">"Apellido"</span>, l[<span class="dv">2</span>]))</span>
+<span id="cb138-13"><a href="#cb138-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(formato1.<span class="bu">format</span>(<span class="st">"Edad"</span>, l[<span class="dv">4</span>]))</span>
+<span id="cb138-14"><a href="#cb138-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(formato2.<span class="bu">format</span>(<span class="st">"Peso"</span>, l[<span class="dv">5</span>]))</span>
+<span id="cb138-15"><a href="#cb138-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(formato2.<span class="bu">format</span>(<span class="st">"Estatura"</span>, l[<span class="dv">6</span>]))</span>
+<span id="cb138-16"><a href="#cb138-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(formato2.<span class="bu">format</span>(<span class="st">"IMC"</span>, l[<span class="dv">7</span>]))</span>
+<span id="cb138-17"><a href="#cb138-17" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(linea)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="b0430cd3-d74e-4c29-8d2f-23dd2e298618" class="cell" data-execution_count="148">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb139"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb139-1"><a href="#cb139-1" aria-hidden="true" tabindex="-1"></a>Id <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Id del paciente: "</span>))</span>
+<span id="cb139-2"><a href="#cb139-2" aria-hidden="true" tabindex="-1"></a>imprime_info(lineas[Id])</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Id del paciente:  3</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>――――――――――――――――――――――――――――――――――――――――――――――――――
+                 Datos personales                 
+――――――――――――――――――――――――――――――――――――――――――――――――――
+         Nombre: Ana
+       Apellido: Sánchez
+           Edad: 67.0
+           Peso: 97.00
+       Estatura:  1.68
+            IMC: 34.37
+――――――――――――――――――――――――――――――――――――――――――――――――――</code></pre>
+</div>
 </div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1838,8 +2216,8 @@ Hola Luis Miguel (25), tu índice de masa corporal es 26.122</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../lecciones/leccion_01.html" class="pagination-link" aria-label="Manejo de información.">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Manejo de información.</span></span>
+      <a href="../lecciones/leccion_01.html" class="pagination-link" aria-label="Primeros pasos.">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Primeros pasos.</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
