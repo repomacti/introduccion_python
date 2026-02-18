@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.29">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,18 +70,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../figuras/python1.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-34770792551fcc0a225bb41cc0b711f4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-884f5b940f2dbcec26d3a5af1406dd5d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-34770792551fcc0a225bb41cc0b711f4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-2bd815e1407f73cb4f4a1b49bf6eb128.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-b4ef5ea2be5239162038c25e44211418.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-2bd815e1407f73cb4f4a1b49bf6eb128.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -96,7 +97,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "Sin resultados",
+    "search-no-results-text": "No se han encontrado resultados",
     "search-matching-documents-text": "documentos encontrados",
     "search-copy-link-title": "Copiar el enlace en la búsqueda",
     "search-hide-matches-text": "Ocultar resultados adicionales",
@@ -268,6 +269,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       toggleColorMode(toAlternate);
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
     };
     // Switch to dark mode if need be
     if (hasAlternateSentinel()) {
@@ -299,7 +301,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../figuras/python1.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../figuras/python1.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../figuras/python1.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Notas de Python</a> 
@@ -539,7 +542,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#abrir-un-archivo-para-escritura." id="toc-abrir-un-archivo-para-escritura." class="nav-link" data-scroll-target="#abrir-un-archivo-para-escritura."><span class="header-section-number">G.6</span> Abrir un archivo para escritura.</a></li>
   <li><a href="#abrir-un-archivo-para-agregar-información-al-final." id="toc-abrir-un-archivo-para-agregar-información-al-final." class="nav-link" data-scroll-target="#abrir-un-archivo-para-agregar-información-al-final."><span class="header-section-number">G.7</span> Abrir un archivo para agregar información al final.</a></li>
   <li><a href="#abrir-un-archivo-para-insertar-información-en-cualquier-lugar." id="toc-abrir-un-archivo-para-insertar-información-en-cualquier-lugar." class="nav-link" data-scroll-target="#abrir-un-archivo-para-insertar-información-en-cualquier-lugar."><span class="header-section-number">G.8</span> Abrir un archivo para insertar información en cualquier lugar.</a></li>
-  <li><a href="#gestores-de-contexto." id="toc-gestores-de-contexto." class="nav-link" data-scroll-target="#gestores-de-contexto."><span class="header-section-number">G.9</span> Gestores de contexto.</a></li>
+  <li><a href="#sec-g-gestos-contexto" id="toc-sec-g-gestos-contexto" class="nav-link" data-scroll-target="#sec-g-gestos-contexto"><span class="header-section-number">G.9</span> Gestores de contexto.</a></li>
   </ul>
 </nav>
     </div>
@@ -585,11 +588,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="abrir-un-archivo-para-lectura." class="level2" data-number="G.2">
 <h2 data-number="G.2" class="anchored" data-anchor-id="abrir-un-archivo-para-lectura."><span class="header-section-number">G.2</span> Abrir un archivo para lectura.</h2>
 <div id="cell-3" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatos.txt'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatos.txt'</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-4" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(f))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(f))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;_io.TextIOWrapper name='gatos.txt' mode='r' encoding='cp1252'&gt;
 &lt;class '_io.TextIOWrapper'&gt;</code></pre>
@@ -601,33 +604,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="G.3" class="anchored" data-anchor-id="leer-una-línea-del-archivo."><span class="header-section-number">G.3</span> Leer una línea del archivo.</h2>
 <p>Para obtener información del archivo existen varios métodos, particularmente en <code>readline()</code> que lee una línea del archivo y avanza a la siguiente.</p>
 <div id="cell-7" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>f.readline()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>f.readline()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>'     Persa       2.3\n'</code></pre>
 </div>
 </div>
 <div id="cell-8" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>f.readline()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>f.readline()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>'    Sphynx       3.5\n'</code></pre>
 </div>
 </div>
 <div id="cell-9" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>l1 <span class="op">=</span> f.readline() <span class="co"># se puede almacenar lo que se lee en una variable</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(l1)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>l1 <span class="op">=</span> f.readline() <span class="co"># se puede almacenar lo que se lee en una variable</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(l1)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Ragdoll       5.4
 </code></pre>
 </div>
 </div>
 <div id="cell-10" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>f.readline()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>f.readline()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>'    SiamÃ©s       2.5'</code></pre>
 </div>
 </div>
 <div id="cell-11" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>f.readline()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>f.readline()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>''</code></pre>
 </div>
@@ -638,17 +641,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Siempre que se abra un archivo, ya sea para lectura o escritura, es importante cerrarlo cuando ya no se esté usando.</p>
 <p>Para cerrar un archivo se usa el método <code>close()</code>:</p>
 <div id="cell-13" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>f.close()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>f.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="leer-todas-las-líneas-del-archivo." class="level2" data-number="G.5">
 <h2 data-number="G.5" class="anchored" data-anchor-id="leer-todas-las-líneas-del-archivo."><span class="header-section-number">G.5</span> Leer todas las líneas del archivo.</h2>
 <p>También es posible leer todo el contenido del archivo de un solo paso con la función <code>readlines()</code>.</p>
 <div id="cell-15" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatos.txt'</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatos.txt'</span>)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>lines <span class="op">=</span> f.readlines()</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lines)</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>f.close()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>f.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>['     Persa       2.3\n', '    Sphynx       3.5\n', '   Ragdoll       5.4\n', '    SiamÃ©s       2.5']</code></pre>
 </div>
@@ -659,25 +662,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Si queremos abrir un archivo para escritura usamos el modo <code>w</code>.</p>
 <p>Primero vamos a abrir un archivo y leer su información:</p>
 <div id="cell-17" class="cell" data-execution_count="45">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>f1 <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatos.txt'</span>,<span class="st">'r'</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>f1 <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatos.txt'</span>,<span class="st">'r'</span>)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>lineas <span class="op">=</span> f1.readlines()</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lineas)</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>f1.close()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>f1.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>['     Persa       2.3\n', '    Sphynx       3.5\n', '   Ragdoll       5.4\n', '    SiamÃ©s       2.5']</code></pre>
 </div>
 </div>
 <p>Ahora abrimos un segundo archivo para escribir información en él:</p>
 <div id="cell-19" class="cell" data-execution_count="46">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>f2 <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatitos.txt'</span>,<span class="st">'w'</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>f2 <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatitos.txt'</span>,<span class="st">'w'</span>)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>f2.writelines(lineas)</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>f2.close()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>f2.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Revisa que se haya generado el archivo <code>gatitos.txt</code> en tu directorio de trabajo y checa que tenga el mismo contenido que el archivo <code>gatos.txt</code>. Con el siguiente código abrimos el archivo creado y vemos su contenido:</p>
 <div id="cell-21" class="cell" data-execution_count="48">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>f2 <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatitos.txt'</span>,<span class="st">'r'</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>f2 <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatitos.txt'</span>,<span class="st">'r'</span>)</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f2.readlines())</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>f2.close()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>f2.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>['     Persa       2.3\n', '    Sphynx       3.5\n', '   Ragdoll       5.4\n', '    SiamÃ©s       2.5']</code></pre>
 </div>
@@ -687,7 +690,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="G.7" class="anchored" data-anchor-id="abrir-un-archivo-para-agregar-información-al-final."><span class="header-section-number">G.7</span> Abrir un archivo para agregar información al final.</h2>
 <p>Si ya existe un archivo, es posible agregarle información como sigue:</p>
 <div id="cell-23" class="cell" data-execution_count="49">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Abrimos un archivo para insertar información.</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Abrimos un archivo para insertar información.</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>f3 <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatitos.txt'</span>, <span class="st">'a'</span>)</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Esta es la información que se va a agregar</span></span>
@@ -697,13 +700,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> f3.write(linea_nueva)</span>
 <span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Cerramos el archivo</span></span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>f3.close()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>f3.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Revisa el nuevo contenido del archivo <code>gatitos.txt</code> en tu directorio de trabajo. La nueva información debió escribirse al final del archivo. De igual manera podemos verificar el contenido con el siguiente código:</p>
 <div id="cell-25" class="cell" data-execution_count="50">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>f3 <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatitos.txt'</span>,<span class="st">'r'</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>f3 <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatitos.txt'</span>,<span class="st">'r'</span>)</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f3.readlines())</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>f3.close()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>f3.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>['     Persa       2.3\n', '    Sphynx       3.5\n', '   Ragdoll       5.4\n', '    SiamÃ©s       2.5\n', ' Eléctrico       3.7\n']</code></pre>
 </div>
@@ -713,7 +716,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="abrir-un-archivo-para-insertar-información-en-cualquier-lugar." class="level2" data-number="G.8">
 <h2 data-number="G.8" class="anchored" data-anchor-id="abrir-un-archivo-para-insertar-información-en-cualquier-lugar."><span class="header-section-number">G.8</span> Abrir un archivo para insertar información en cualquier lugar.</h2>
 <div id="cell-27" class="cell" data-execution_count="52">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Abrimos el archivo en modo 'r+'</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Abrimos el archivo en modo 'r+'</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>f4 <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatitos.txt'</span>, <span class="st">"r+"</span>)</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Leemos el contenido del archivo</span></span>
@@ -734,28 +737,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Escribimos todas las líneas del archivo.</span></span>
 <span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>f4.writelines(contenido)</span>
 <span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>f4.close()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>f4.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Revisa el nuevo contenido del archivo <code>gatitos.txt</code> en tu directorio de trabajo. La nueva información debió escribirse a la mitad del archivo aproximadamente.</p>
 <p>Usamos el siguiente código para checar el archivo con la nueva información:</p>
 <div id="cell-29" class="cell" data-execution_count="54">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>f4 <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatitos.txt'</span>,<span class="st">'r'</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>f4 <span class="op">=</span> <span class="bu">open</span>(<span class="st">'gatitos.txt'</span>,<span class="st">'r'</span>)</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f4.readlines())</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>f4.close()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>f4.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>['     Persa       2.3\n', '    Sphynx       3.5\n', '   Birmano       3.2\n', '   Birmano       3.2\n', '   Ragdoll       5.4\n', '    SiamÃ©s       2.5\n', ' Eléctrico       3.7\n']</code></pre>
 </div>
 </div>
 </section>
-<section id="gestores-de-contexto." class="level2" data-number="G.9">
-<h2 data-number="G.9" class="anchored" data-anchor-id="gestores-de-contexto."><span class="header-section-number">G.9</span> Gestores de contexto.</h2>
+<section id="sec-g-gestos-contexto" class="level2" data-number="G.9">
+<h2 data-number="G.9" class="anchored" data-anchor-id="sec-g-gestos-contexto"><span class="header-section-number">G.9</span> Gestores de contexto.</h2>
 <p>Los <strong>gestores de contexto</strong> en Python son una manera de gestionar recursos de forma eficiente y segura.</p>
 <p>Se utilizan con la palabra clave <code>with</code>, que garantiza que ciertos recursos se inicialicen y liberen correctamente, incluso si ocurre una excepción.</p>
 <p>Estos recursos pueden incluir archivos, conexiones de red, bloqueos de threads, etc.</p>
 <p>Por ejemplo:</p>
 <div id="cell-31" class="cell" data-execution_count="55">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'contexto_ejemplo'</span>, <span class="st">'w'</span>) <span class="im">as</span> archivo_abierto:</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    archivo_abierto.write(<span class="st">'En este ejemplo, todo se realiza con un gestor de contexto.'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'contexto_ejemplo'</span>, <span class="st">'w'</span>) <span class="im">as</span> archivo_abierto:</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    archivo_abierto.write(<span class="st">'En este ejemplo, todo se realiza con un gestor de contexto.'</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Lo que realiza la operación anterior es:</p>
 <ol type="1">
@@ -764,11 +767,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Cierra el archivo. Si ocurre algún error mientras se escribe en el archivo, entonces se intenta cerrar el archivo.</li>
 </ol>
 <p>El código es equivalente a:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>archivo_abierto <span class="op">=</span> <span class="bu">open</span>(<span class="st">'contexto_ejemplo'</span>, <span class="st">'w'</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>archivo_abierto <span class="op">=</span> <span class="bu">open</span>(<span class="st">'contexto_ejemplo'</span>, <span class="st">'w'</span>)</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    archivo_abierto.write(<span class="st">'En este ... contexto!'</span>)</span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="cf">finally</span>:</span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    archivo_abierto.close()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    archivo_abierto.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -789,11 +792,11 @@ Tip
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Nota.
+<span class="screen-reader-only">Nota</span>Nota.
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>En el ejemplo anterior se usó la construcción <code>try:</code> … <code>finally:</code> que se usa para gestionar errores. Esto se revisa en detalle en el <span class="quarto-unresolved-ref">?sec-q-errores-excepciones</span>.</p>
+<p>En el ejemplo anterior se usó la construcción <code>try:</code> … <code>finally:</code> que se usa para gestionar errores. Esto se revisa en detalle en el <a href="17_excepciones.html" class="quarto-xref"><span>Apéndice Q</span></a>.</p>
 </div>
 </div>
 <p>El propósito de un gestor de contexto es asegurarse de que las acciones de “entrada” y “salida” de un contexto se manejen adecuadamente. El contexto se refiere a cualquier bloque de código que necesita realizar alguna configuración al inicio (como abrir un archivo o adquirir un recurso) y luego limpiar al final (como cerrar el archivo o liberar el recurso).</p>
@@ -874,13 +877,14 @@ Nota.
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
