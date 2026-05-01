@@ -8,6 +8,7 @@ crossref:
       kind: float
       reference-prefix: Ejem.
       caption-prefix: Ejem. 
+      latex-env: Ejem.
 #  sec-prefix: sección    # (default is "Section")
 #  fig-prefix: figure     # (default is "Figure")
 #  tbl-prefix: tableau    # (default is "Table")

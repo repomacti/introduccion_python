@@ -670,7 +670,7 @@ Tip&nbsp;1.1
 <li>La línea que aparece con un <code>#</code> al inicio es un comentario, es decir, el intérprete de Python no la ejecuta por lo que es útil solamente para documentar las acciones del código.</li>
 <li>Se imprime <code>1.88</code> que es el contenido de la variable <code>peso</code> y corresponde al código <code>print(estatura)</code>.</li>
 <li>Se imprime <code>&lt;class 'float'&gt;</code> que es el resultado del código <code>print(type(estatura))</code>.</li>
-<li>Nota que usando <code>print</code> antes de <code>type</code> obtenemos un poco más de información que solo usando <code>type</code>.&nbsp;En esta última declaración estamos concatenando dos funciones, esto lo explicamos con detalle en la <a href="#sec-l1-composicion-de-funciones" class="quarto-xref">sección&nbsp;<span class="quarto-unresolved-ref ref-noprefix">sec-l1-composicion-de-funciones</span></a>.</li>
+<li>Nota que usando <code>print</code> antes de <code>type</code> obtenemos un poco más de información que solo usando <code>type</code>.&nbsp;En esta última declaración estamos concatenando dos funciones, esto lo explicamos con detalle en la <a href="#sec-l1-composicion-de-funciones" class="quarto-xref">sección&nbsp;<span>1.2.1</span></a>.</li>
 </ul>
 <p>La función <code>print()</code> puede recibir más de un argumento, por ejemplo:</p>
 <div id="11e180a3-4f66-4cb4-8780-31a407c7863d" class="cell" data-execution_count="6">
@@ -701,7 +701,7 @@ Estatura = 1.88 [m]</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular el IMC</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>IMC <span class="op">=</span> peso <span class="op">/</span> estatura<span class="op">**</span><span class="dv">2</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Hemos usado dos operadores: <code>/</code> para división y <code>**</code> para calcular una potencia. Hablaremos más de estos operadores en la <a href="#sec-l1-operadores-aritmeticos" class="quarto-xref">sección&nbsp;<span class="quarto-unresolved-ref ref-noprefix">sec-l1-operadores-aritmeticos</span></a>.</p>
+<p>Hemos usado dos operadores: <code>/</code> para división y <code>**</code> para calcular una potencia. Hablaremos más de estos operadores en la <a href="#sec-l1-operadores-aritmeticos" class="quarto-xref">sección&nbsp;<span>1.3</span></a>.</p>
 <p>Para saber cuál fue el resultado de nuestro cálculo hagamos lo siguiente:</p>
 <div id="88168f22-9581-4989-a2bb-350e26676427" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"IMC ="</span>, IMC)</span>
@@ -789,7 +789,7 @@ c = 12 + 5j
 &lt;class 'complex'&gt;</code></pre>
 </div>
 </div>
-<p>Para fortalecer tus conocimientos acerca de variables y tipos básicos revisa los apéndices <a href="#sec-a-var-y-obj" class="quarto-xref"><span class="quarto-unresolved-ref ref-noprefix">sec-a-var-y-obj</span></a> y <a href="#sec-b-tipos-basicos" class="quarto-xref"><span class="quarto-unresolved-ref ref-noprefix">sec-b-tipos-basicos</span></a>.</p>
+<p>Para fortalecer tus conocimientos acerca de variables y tipos básicos revisa los apéndices <a href="../notebooks/01_variables_objetos.html" class="quarto-xref"><span>A</span></a> y <a href="../notebooks/02_tipos_basicos.html" class="quarto-xref"><span>B</span></a>.</p>
 </section>
 <section id="sec-l1-funciones-incorporadas" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="sec-l1-funciones-incorporadas"><span class="header-section-number">1.2</span> Funciones incorporadas.</h2>
@@ -831,7 +831,7 @@ Estatura : 4393376784
 IMC : 4393371568</code></pre>
 </div>
 </div>
-<p>Por supuesto es un poco difícil entender los números que proporciona <code>&nbsp;id()</code>, sin embargo la información es útil para conocer si dos variables están haciendo referencia a una misma locación en memoria, de ser así entonces se trata del mismo objeto pero con nombres diferentes. Para entender más al respecto revisa la <a href="#sec-a-objetos-nombres" class="quarto-xref">sección&nbsp;<span class="quarto-unresolved-ref ref-noprefix">sec-a-objetos-nombres</span></a>.</p>
+<p>Por supuesto es un poco difícil entender los números que proporciona <code>&nbsp;id()</code>, sin embargo la información es útil para conocer si dos variables están haciendo referencia a una misma locación en memoria, de ser así entonces se trata del mismo objeto pero con nombres diferentes. Para entender más al respecto revisa la <a href="../notebooks/01_variables_objetos.html#sec-a-objetos-nombres" class="quarto-xref">sección&nbsp;<span>A.5</span></a>.</p>
 <p>El siguiente esquema muestra el nombre, el valor, el tipo y el identificador de las variables definidas en la sección anterior.</p>
 <table class="caption-top table">
 <thead>
@@ -890,14 +890,14 @@ IMC : 4393371568</code></pre>
 </table>
 <section id="sec-l1-composicion-de-funciones" class="level3" data-number="1.2.1">
 <h3 data-number="1.2.1" class="anchored" data-anchor-id="sec-l1-composicion-de-funciones"><span class="header-section-number">1.2.1</span> Composición de funciones.</h3>
-<p>El uso de funciones anidadas o composición como en el código <code>print(type(peso))</code> es muy común en Python. La <a href="#fig-l1-figuras_objetos_python" class="quarto-xref">figura&nbsp;<span class="quarto-unresolved-ref ref-noprefix">fig-l1-figuras_objetos_python</span></a> muestra lo que sucede cuando se combinan varias funciones en una sola declaración. Este estilo de programación nos lleva a lo que se conoce como programación funcional, que se explica con más detalle en la <a href="#sec-p-programacion-funcional" class="quarto-xref">sección&nbsp;<span class="quarto-unresolved-ref ref-noprefix">sec-p-programacion-funcional</span></a>.</p>
+<p>El uso de funciones anidadas o composición como en el código <code>print(type(peso))</code> es muy común en Python. La <a href="#fig-l1-figuras_objetos_python" class="quarto-xref">figura&nbsp;<span>1.1</span></a> muestra lo que sucede cuando se combinan varias funciones en una sola declaración. Este estilo de programación nos lleva a lo que se conoce como programación funcional, que se explica con más detalle en la <a href="../notebooks/16_lambda_expressions.html#sec-p-programacion-funcional" class="quarto-xref">sección&nbsp;<span>P.1</span></a>.</p>
 <div id="fig-l1-figuras_objetos_python" class="quarto-float quarto-figure quarto-figure-left anchored" alt="Concatenación de funciones en Python" data-fig-align="left">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-l1-figuras_objetos_python-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figuras/funciones_objetos_python.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:80.0%" alt="Concatenación de funciones en Python">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-l1-figuras_objetos_python-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;1.1: Estilo de programación funcional en Python. La función <code>f(a,b,c)</code> recibe tres argumentos y genera como resultado el objeto <code>o1</code>. Este objeto es posteriormente usado como argumento de la función <code>g()</code> la cual produce como resultado el objeto <code>o2</code>. Estas dos operaciones se pueden escribir en una sola línea como <code>g(f(a,b,c))</code>. De esta manera se construye el objeto <code>o1</code> al vuelo sin requerir de una variable y es usado inmediatamente por la función <code>g()</code> como su argumento para generar el resultado esperado, en este caso el objeto <code>o2</code>. Como ejemplo de este tipo de construcción en Python se muestra el código <code>print(type(a))</code>. Se pueden anidar tantas funciones como se requiera. En la <a href="#sec-a-objetos-nombres" class="quarto-xref">sección&nbsp;<span class="quarto-unresolved-ref ref-noprefix">sec-a-objetos-nombres</span></a> se explica un poco acerca de objetos y nombres de variables.
+Figura&nbsp;1.1: Estilo de programación funcional en Python. La función <code>f(a,b,c)</code> recibe tres argumentos y genera como resultado el objeto <code>o1</code>. Este objeto es posteriormente usado como argumento de la función <code>g()</code> la cual produce como resultado el objeto <code>o2</code>. Estas dos operaciones se pueden escribir en una sola línea como <code>g(f(a,b,c))</code>. De esta manera se construye el objeto <code>o1</code> al vuelo sin requerir de una variable y es usado inmediatamente por la función <code>g()</code> como su argumento para generar el resultado esperado, en este caso el objeto <code>o2</code>. Como ejemplo de este tipo de construcción en Python se muestra el código <code>print(type(a))</code>. Se pueden anidar tantas funciones como se requiera. En la <a href="../notebooks/01_variables_objetos.html#sec-a-objetos-nombres" class="quarto-xref">sección&nbsp;<span>A.5</span></a> se explica un poco acerca de objetos y nombres de variables.
 </figcaption>
 </figure>
 </div>
@@ -905,7 +905,7 @@ Figura&nbsp;1.1: Estilo de programación funcional en Python. La función <code>
 </section>
 <section id="sec-l1-operadores-aritmeticos" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="sec-l1-operadores-aritmeticos"><span class="header-section-number">1.3</span> Operadores aritméticos.</h2>
-<p>En el <a href="#exm-l1-ej1" class="quarto-xref">ejemplo&nbsp;<span class="quarto-unresolved-ref ref-noprefix">exm-l1-ej1</span></a> usamos los operadores: <code>/</code> y <code>**</code> para calcular el IMC. Para los tipos numéricos básicos que acabamos de revisar, existen más operaciones aritméticas que se pueden aplicar sobre ellos. Estas operaciones están organizadas como se describe en la <a href="#sec-c-operadores-aritmeticos" class="quarto-xref">sección&nbsp;<span class="quarto-unresolved-ref ref-noprefix">sec-c-operadores-aritmeticos</span></a>. A continuación veremos un ejemplo más interesante del uso de estos operadores.</p>
+<p>En el <a href="leccion_02.html#exm-l1-ej1" class="quarto-xref">ejemplo&nbsp;<span>2.9</span></a> usamos los operadores: <code>/</code> y <code>**</code> para calcular el IMC. Para los tipos numéricos básicos que acabamos de revisar, existen más operaciones aritméticas que se pueden aplicar sobre ellos. Estas operaciones están organizadas como se describe en la <a href="../notebooks/03_operadores.html#sec-c-operadores-aritmeticos" class="quarto-xref">sección&nbsp;<span>C.1</span></a>. A continuación veremos un ejemplo más interesante del uso de estos operadores.</p>
 <div id="exm-ej1" class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -977,14 +977,14 @@ Tip&nbsp;1.2
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Observa el uso de paréntesis en la implementación de la fórmula. Este uso de paréntesis es importante para generar el resultado correcto. Algunas veces se pueden omitir los paréntesis, pero se debe tener claro el nivel de precedencia de los operadores, revisa la <a href="#sec-c-precedencia" class="quarto-xref">sección&nbsp;<span class="quarto-unresolved-ref ref-noprefix">sec-c-precedencia</span></a> para más información al respecto.</p>
+<p>Observa el uso de paréntesis en la implementación de la fórmula. Este uso de paréntesis es importante para generar el resultado correcto. Algunas veces se pueden omitir los paréntesis, pero se debe tener claro el nivel de precedencia de los operadores, revisa la <a href="../notebooks/03_operadores.html#sec-c-precedencia" class="quarto-xref">sección&nbsp;<span>C.2</span></a> para más información al respecto.</p>
 </div>
 </div>
 </section>
 <section id="sec-l1-objetos-tipado-dinamico" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="sec-l1-objetos-tipado-dinamico"><span class="header-section-number">1.4</span> Objetos y tipado dinámico.</h2>
 <p>Python es un lenguaje <em>totalmente</em> Orientado a Objetos lo que significa que todo lo que definimos será un objeto de una clase determinada. Python tiene definidas clases de las cuales es posible construir objetos.</p>
-<p>Por ejemplo, la variable <code>peso</code> definida en la <a href="#sec-l1-tipos-basicos-variables" class="quarto-xref">sección&nbsp;<span class="quarto-unresolved-ref ref-noprefix">sec-l1-tipos-basicos-variables</span></a> representa el nombre de un objeto de tipo <code>float</code>:</p>
+<p>Por ejemplo, la variable <code>peso</code> definida en la <a href="#sec-l1-tipos-basicos-variables" class="quarto-xref">sección&nbsp;<span>1.1</span></a> representa el nombre de un objeto de tipo <code>float</code>:</p>
 <div id="11687571-b1cc-4f40-906f-f48e516ca7d1" class="cell" data-execution_count="36">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(peso, <span class="bu">type</span>(peso), <span class="bu">id</span>(peso))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1137,7 +1137,7 @@ Tip&nbsp;1.3
 </section>
 <section id="interacción-entre-objetos." class="level3" data-number="1.4.2">
 <h3 data-number="1.4.2" class="anchored" data-anchor-id="interacción-entre-objetos."><span class="header-section-number">1.4.2</span> Interacción entre objetos.</h3>
-<p>En este estilo de programación orientado a objetos, es posible tener una interacción entre objetos que es similar a la explicada en la composición de funciones <a href="#sec-l1-composicion-de-funciones" class="quarto-xref">sección&nbsp;<span class="quarto-unresolved-ref ref-noprefix">sec-l1-composicion-de-funciones</span></a>.</p>
+<p>En este estilo de programación orientado a objetos, es posible tener una interacción entre objetos que es similar a la explicada en la composición de funciones <a href="#sec-l1-composicion-de-funciones" class="quarto-xref">sección&nbsp;<span>1.2.1</span></a>.</p>
 <p>Por ejemplo, aplicamos el método <code>as_integer_ratio()</code> al objeto <code>real</code> y su resultado se almacena en <code>ratio</code>:&nbsp;</p>
 <div id="9af510bb-46d7-4c9c-9d99-370f8ce86df8" class="cell" data-execution_count="73">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>ratio <span class="op">=</span> real.as_integer_ratio()</span>
@@ -1160,7 +1160,7 @@ Tip&nbsp;1.3
 <pre><code>1</code></pre>
 </div>
 </div>
-<p>El estilo de programación anterior se explica en la <a href="#fig-l1-metodos_objetos_python" class="quarto-xref">figura&nbsp;<span class="quarto-unresolved-ref ref-noprefix">fig-l1-metodos_objetos_python</span></a>.</p>
+<p>El estilo de programación anterior se explica en la <a href="#fig-l1-metodos_objetos_python" class="quarto-xref">figura&nbsp;<span>1.2</span></a>.</p>
 <div id="fig-l1-metodos_objetos_python" class="quarto-float quarto-figure quarto-figure-left anchored" alt="Interacción entre los objetos" data-fig-align="left">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-l1-metodos_objetos_python-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
