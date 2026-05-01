@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.29">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,18 +70,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../figuras/python1.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-34770792551fcc0a225bb41cc0b711f4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-884f5b940f2dbcec26d3a5af1406dd5d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-34770792551fcc0a225bb41cc0b711f4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-d9d7ed2c14390fa05efde32fc7ffca7f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-b6dcd14c692250569307130094795384.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -97,7 +98,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "Sin resultados",
+    "search-no-results-text": "No se han encontrado resultados",
     "search-matching-documents-text": "documentos encontrados",
     "search-copy-link-title": "Copiar el enlace en la búsqueda",
     "search-hide-matches-text": "Ocultar resultados adicionales",
@@ -125,7 +126,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -298,6 +299,7 @@ window.Quarto = {
       toggleColorMode(toAlternate);
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
     };
     // Switch to dark mode if need be
     if (hasAlternateSentinel()) {
@@ -329,7 +331,8 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../figuras/python1.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../figuras/python1.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../figuras/python1.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Notas de Python</a> 
@@ -626,28 +629,28 @@ Ejemplo&nbsp;V.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 </div>
 </div>
 <div id="cell-3" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> tiroVertical(t, v0 <span class="op">=</span> <span class="dv">20</span>):  <span class="co"># Valor por omisión para v0</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> tiroVertical(t, v0 <span class="op">=</span> <span class="dv">20</span>):  <span class="co"># Valor por omisión para v0</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    g <span class="op">=</span> <span class="fl">9.81</span>                    <span class="co"># Aceleración de la gravedad [m/s^2]</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> v0 <span class="op">*</span> t <span class="op">-</span> <span class="fl">0.5</span> <span class="op">*</span> g <span class="op">*</span> t<span class="op">**</span><span class="dv">2</span> <span class="co"># Posición</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    v <span class="op">=</span> v0 <span class="op">-</span> g <span class="op">*</span> t              <span class="co"># Velocidad</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (y, v)               <span class="co"># Regresa la posición [m] y la velocidad [m/s]</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (y, v)               <span class="co"># Regresa la posición [m] y la velocidad [m/s]</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-4" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pos, vel <span class="op">=</span> tiroVertical(<span class="fl">1.0</span>) <span class="co"># El valor 1.0 corresponde al primer parámetro de la función, 't'</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pos, vel <span class="op">=</span> tiroVertical(<span class="fl">1.0</span>) <span class="co"># El valor 1.0 corresponde al primer parámetro de la función, 't'</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                             <span class="co"># En este caso v0 será igual a 20.</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="sc">{:&gt;10s}</span><span class="st"> = </span><span class="sc">{:&gt;5.2f}</span><span class="st"> [m]"</span>.<span class="bu">format</span>(<span class="st">"Posición"</span>, pos))</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="sc">{:&gt;10s}</span><span class="st"> = </span><span class="sc">{:&gt;5.2f}</span><span class="st"> [m/s]"</span>.<span class="bu">format</span>(<span class="st">"Velocidad"</span>, vel))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="sc">{:&gt;10s}</span><span class="st"> = </span><span class="sc">{:&gt;5.2f}</span><span class="st"> [m/s]"</span>.<span class="bu">format</span>(<span class="st">"Velocidad"</span>, vel))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Posición = 15.09 [m]
  Velocidad = 10.19 [m/s]</code></pre>
 </div>
 </div>
 <div id="cell-5" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pos, vel <span class="op">=</span> tiroVertical(<span class="fl">1.0</span>, <span class="dv">30</span>) <span class="co"># En este caso v0 = 30</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pos, vel <span class="op">=</span> tiroVertical(<span class="fl">1.0</span>, <span class="dv">30</span>) <span class="co"># En este caso v0 = 30</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="sc">{:&gt;10s}</span><span class="st"> = </span><span class="sc">{:&gt;5.2f}</span><span class="st"> [m]"</span>.<span class="bu">format</span>(<span class="st">"Posición"</span>, pos))</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="sc">{:&gt;10s}</span><span class="st"> = </span><span class="sc">{:&gt;5.2f}</span><span class="st"> [m/s]"</span>.<span class="bu">format</span>(<span class="st">"Velocidad"</span>, vel))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="sc">{:&gt;10s}</span><span class="st"> = </span><span class="sc">{:&gt;5.2f}</span><span class="st"> [m/s]"</span>.<span class="bu">format</span>(<span class="st">"Velocidad"</span>, vel))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Posición = 25.09 [m]
  Velocidad = 20.19 [m/s]</code></pre>
@@ -656,23 +659,23 @@ Ejemplo&nbsp;V.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 <p>Una función puede tener más de un argumento por omisión. Todos los parámetros que tienen argumentos por omisión deben estar al final de la lista en la declaración de la función.</p>
 <p>Por ejemplo, una función con cinco parámetros, con los dos últimos con valores por omisión se define como sigue:</p>
 <div id="cell-7" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(a, b, c, d<span class="op">=</span><span class="dv">10</span>, e<span class="op">=</span><span class="dv">20</span>):</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a<span class="op">+</span>b<span class="op">+</span>c<span class="op">+</span>d<span class="op">+</span>e</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(a, b, c, d<span class="op">=</span><span class="dv">10</span>, e<span class="op">=</span><span class="dv">20</span>):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a<span class="op">+</span>b<span class="op">+</span>c<span class="op">+</span>d<span class="op">+</span>e</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-8" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))  <span class="co"># Se usan los dos argumentos por omisión 10 y 20</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))  <span class="co"># Se usan los dos argumentos por omisión 10 y 20</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>36</code></pre>
 </div>
 </div>
 <div id="cell-9" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)) <span class="co"># Se usa el último argumento por omisión 20</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)) <span class="co"># Se usa el último argumento por omisión 20</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>30</code></pre>
 </div>
 </div>
 <div id="cell-10" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)) <span class="co"># Se dan todos los argumentos.</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)) <span class="co"># Se dan todos los argumentos.</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>15</code></pre>
 </div>
@@ -688,23 +691,23 @@ Ejemplo&nbsp;V.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 </ol>
 <p>En este caso, el <code>*</code> indica a Python que la tupla <code>(3, 50)</code> debe desempacarse cuando se reciba en la función, de tal manera que <code>3</code> será el primer argumento y <code>5</code> el segundo.</p>
 <div id="cell-12" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Los argumentos se sustituyen en los parámetros </span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Los argumentos se sustituyen en los parámetros </span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># en el orden de acuerdo con su posición.</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>tiroVertical(<span class="dv">3</span>,<span class="dv">50</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>tiroVertical(<span class="dv">3</span>,<span class="dv">50</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>(105.85499999999999, 20.57)</code></pre>
 </div>
 </div>
 <div id="cell-13" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Se pueden pasar los argumentos empacados en una tupla</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>tiroVertical(<span class="op">*</span>(<span class="dv">3</span>,<span class="dv">50</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Se pueden pasar los argumentos empacados en una tupla</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>tiroVertical(<span class="op">*</span>(<span class="dv">3</span>,<span class="dv">50</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>(105.85499999999999, 20.57)</code></pre>
 </div>
 </div>
 <div id="cell-14" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ojo, no se puede cambiar el orden los argumentos porque se obtiene un resultado incorrecto.</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>tiroVertical(<span class="dv">50</span>,<span class="dv">3</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ojo, no se puede cambiar el orden los argumentos porque se obtiene un resultado incorrecto.</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>tiroVertical(<span class="dv">50</span>,<span class="dv">3</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>(-12112.5, -487.5)</code></pre>
 </div>
@@ -718,30 +721,30 @@ Ejemplo&nbsp;V.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 <p>Veamos los ejemplos en código:</p>
 <p>Primer recordemos que la firma de la función es <code>def tiroVertical(t, v0 = 20):</code> es decir, el primer parámetro es <code>t</code> y el segundo es <code>v0</code>.</p>
 <div id="cell-16" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Se puede usar el nombre del parámetro para determinar</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Se puede usar el nombre del parámetro para determinar</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># como se sustituyen los argumentos:</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>tiroVertical(t<span class="op">=</span><span class="dv">3</span>, v0<span class="op">=</span><span class="dv">50</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>tiroVertical(t<span class="op">=</span><span class="dv">3</span>, v0<span class="op">=</span><span class="dv">50</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>(105.85499999999999, 20.57)</code></pre>
 </div>
 </div>
 <div id="cell-17" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lo anterior es equivalente a (aquí si se puede cambiar el orden de los argumentos): </span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>tiroVertical(v0<span class="op">=</span><span class="dv">50</span>, t<span class="op">=</span><span class="dv">3</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lo anterior es equivalente a (aquí si se puede cambiar el orden de los argumentos): </span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>tiroVertical(v0<span class="op">=</span><span class="dv">50</span>, t<span class="op">=</span><span class="dv">3</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>(105.85499999999999, 20.57)</code></pre>
 </div>
 </div>
 <div id="cell-18" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Se pueden pasar los argumentos empacados en un diccionario</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>tiroVertical(<span class="op">**</span>{<span class="st">'t'</span>:<span class="dv">3</span>,<span class="st">'v0'</span>:<span class="dv">50</span>})</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Se pueden pasar los argumentos empacados en un diccionario</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>tiroVertical(<span class="op">**</span>{<span class="st">'t'</span>:<span class="dv">3</span>,<span class="st">'v0'</span>:<span class="dv">50</span>})</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>(105.85499999999999, 20.57)</code></pre>
 </div>
 </div>
 <div id="cell-19" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># También se acepta esta forma:</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>tiroVertical(<span class="op">**</span><span class="bu">dict</span>(t <span class="op">=</span> <span class="dv">3</span>,v0 <span class="op">=</span> <span class="dv">50</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># También se acepta esta forma:</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>tiroVertical(<span class="op">**</span><span class="bu">dict</span>(t <span class="op">=</span> <span class="dv">3</span>,v0 <span class="op">=</span> <span class="dv">50</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>(105.85499999999999, 20.57)</code></pre>
 </div>
@@ -756,20 +759,20 @@ Ejemplo&nbsp;V.1: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 </ul>
 <p>Por ejemplo:</p>
 <div id="cell-21" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parVar(<span class="op">*</span>args, <span class="op">**</span>kwargs):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parVar(<span class="op">*</span>args, <span class="op">**</span>kwargs):</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'args es una tupla : '</span>, args)</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'kwargs es un diccionario: '</span>, kwargs)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'kwargs es un diccionario: '</span>, kwargs)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-22" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>parVar(<span class="st">'one'</span>, <span class="st">'two'</span>,<span class="st">'three'</span>, <span class="st">'four'</span>, </span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>       a<span class="op">=</span><span class="dv">4</span>,  x<span class="op">=</span><span class="dv">1</span>, y<span class="op">=</span><span class="dv">2</span>, z<span class="op">=</span><span class="dv">3</span>, w<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>])</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>parVar(<span class="st">'one'</span>, <span class="st">'two'</span>,<span class="st">'three'</span>, <span class="st">'four'</span>, </span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>       a<span class="op">=</span><span class="dv">4</span>,  x<span class="op">=</span><span class="dv">1</span>, y<span class="op">=</span><span class="dv">2</span>, z<span class="op">=</span><span class="dv">3</span>, w<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>])</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>args es una tupla :  ('one', 'two', 'three', 'four')
 kwargs es un diccionario:  {'a': 4, 'x': 1, 'y': 2, 'z': 3, 'w': [1, 2, 2]}</code></pre>
 </div>
 </div>
 <div id="cell-23" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>parVar(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, w<span class="op">=</span><span class="dv">8</span>, y<span class="op">=</span><span class="st">'cadena'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>parVar(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, w<span class="op">=</span><span class="dv">8</span>, y<span class="op">=</span><span class="st">'cadena'</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>args es una tupla :  (1, 2, 3)
 kwargs es un diccionario:  {'w': 8, 'y': 'cadena'}</code></pre>
@@ -777,13 +780,13 @@ kwargs es un diccionario:  {'w': 8, 'y': 'cadena'}</code></pre>
 </div>
 <p>Estos argumentos los podemos desempacar y usar dentro de la función:</p>
 <div id="cell-25" class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Desempacar los parámetros posicionales y usarlos</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Desempacar los parámetros posicionales y usarlos</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parVarPos(<span class="op">*</span>args):</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> args:</span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(i)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(i)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-26" class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>parVarPos(<span class="dv">1</span>, <span class="dv">2</span>, <span class="st">'a'</span>, [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>])</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>parVarPos(<span class="dv">1</span>, <span class="dv">2</span>, <span class="st">'a'</span>, [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>])</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>1
 2
@@ -792,7 +795,7 @@ a
 </div>
 </div>
 <div id="cell-27" class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>parVarPos(<span class="fl">3.1416</span>, <span class="st">'b'</span>, <span class="dv">5</span><span class="op">+</span><span class="ot">3j</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>parVarPos(<span class="fl">3.1416</span>, <span class="st">'b'</span>, <span class="dv">5</span><span class="op">+</span><span class="ot">3j</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>3.1416
 b
@@ -800,16 +803,16 @@ b
 </div>
 </div>
 <div id="cell-28" class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Desempacar los parámetros con nombre y usarlos</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Desempacar los parámetros con nombre y usarlos</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parVarKey(<span class="op">**</span>kwargs):</span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> key, val <span class="kw">in</span> kwargs.items():</span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f" </span><span class="sc">{</span>key<span class="sc">}</span><span class="ss"> : </span><span class="sc">{</span>val<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f" </span><span class="sc">{</span>key<span class="sc">}</span><span class="ss"> : </span><span class="sc">{</span>val<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-29" class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>parVarKey(nombre <span class="op">=</span> <span class="st">'Luis'</span>, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>parVarKey(nombre <span class="op">=</span> <span class="st">'Luis'</span>, </span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>          apellido <span class="op">=</span> <span class="st">'de la Cruz'</span>, </span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>          edad <span class="op">=</span> <span class="dv">15</span>, </span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>          peso <span class="op">=</span> <span class="fl">80.5</span> )</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>          peso <span class="op">=</span> <span class="fl">80.5</span> )</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> nombre : Luis
  apellido : de la Cruz
@@ -818,12 +821,12 @@ b
 </div>
 </div>
 <div id="cell-30" class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>parVarKey(nombre <span class="op">=</span> <span class="st">'Luis'</span>, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>parVarKey(nombre <span class="op">=</span> <span class="st">'Luis'</span>, </span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>          apellido<span class="op">=</span><span class="st">'de la Cruz'</span>, </span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>          estudios<span class="op">=</span><span class="st">'primaria'</span>, </span>
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>          edad<span class="op">=</span><span class="dv">15</span>, </span>
 <span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>          peso<span class="op">=</span><span class="fl">80.5</span>, </span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>          num_cuenta <span class="op">=</span> <span class="dv">12334457</span> )</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>          num_cuenta <span class="op">=</span> <span class="dv">12334457</span> )</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> nombre : Luis
  apellido : de la Cruz
@@ -834,16 +837,16 @@ b
 </div>
 </div>
 <div id="cell-31" class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Se pueden definir los parámetros en una tupla y en un diccionario</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Se pueden definir los parámetros en una tupla y en un diccionario</span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>mi_tupla <span class="op">=</span> (<span class="fl">2.345</span>, <span class="st">"hola"</span>, <span class="fl">1e-4</span>)</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>mi_dicc <span class="op">=</span> {<span class="st">'nombre'</span>:<span class="st">'Luis'</span>, </span>
 <span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>           <span class="st">'apellido'</span>:<span class="st">'de la Cruz'</span>, </span>
 <span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>           <span class="st">'edad'</span>:<span class="dv">15</span>, </span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>           <span class="st">'peso'</span>:<span class="fl">80.5</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>           <span class="st">'peso'</span>:<span class="fl">80.5</span>}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-32" class="cell" data-execution_count="25">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Se usa el diccionario para llamar a la función</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>parVarPos(<span class="op">*</span>mi_tupla)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Se usa el diccionario para llamar a la función</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>parVarPos(<span class="op">*</span>mi_tupla)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>2.345
 hola
@@ -851,7 +854,7 @@ hola
 </div>
 </div>
 <div id="cell-33" class="cell" data-execution_count="26">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>parVarKey(<span class="op">**</span>mi_dicc)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>parVarKey(<span class="op">**</span>mi_dicc)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> nombre : Luis
  apellido : de la Cruz
@@ -864,7 +867,7 @@ hola
 <h2 data-number="V.4" class="anchored" data-anchor-id="funciones-como-parámetros-de-otras-funciones."><span class="header-section-number">V.4</span> Funciones como parámetros de otras funciones.</h2>
 <p>Las funciones pueden recibir como argumentos objetos muy complejos, incluso otras funciones. Veamos un ejemplo simple:</p>
 <div id="cell-35" class="cell" data-execution_count="27">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Un función simple</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Un función simple</span></span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> g():</span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Iniciando la función 'g()'"</span>)</span>
 <span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -872,10 +875,10 @@ hola
 <span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> func1(f):</span>
 <span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Iniciando la función 'func1()'"</span>)</span>
 <span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Ejecución de la función 'f()', nombre real '"</span> <span class="op">+</span> f.<span class="va">__name__</span> <span class="op">+</span> <span class="st">"()'"</span>)</span>
-<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>    f() <span class="co"># Se ejecuta la función que se recibió en el parámetro f</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>    f() <span class="co"># Se ejecuta la función que se recibió en el parámetro f</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-36" class="cell" data-execution_count="28">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>func1(g)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>func1(g)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Iniciando la función 'func1()'
 Ejecución de la función 'f()', nombre real 'g()'
@@ -884,7 +887,7 @@ Iniciando la función 'g()'</code></pre>
 </div>
 <p>La función que se recibe como parámetro puede tener argumentos:</p>
 <div id="cell-38" class="cell" data-execution_count="29">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Función que suma dos números</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Función que suma dos números</span></span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> suma(a, b):</span>
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
 <span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -897,10 +900,10 @@ Iniciando la función 'g()'</code></pre>
 <span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Iniciando la función 'func2()'"</span>)</span>
 <span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Operador: </span><span class="sc">{</span>f<span class="sc">.</span><span class="va">__name__</span><span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Argumentos: (</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">)"</span>)</span>
-<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Resultado: </span><span class="sc">{</span>f(a,b)<span class="sc">}</span><span class="ss">"</span>) </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Resultado: </span><span class="sc">{</span>f(a,b)<span class="sc">}</span><span class="ss">"</span>) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-39" class="cell" data-execution_count="30">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>func2(suma, <span class="dv">3</span>, <span class="dv">4</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>func2(suma, <span class="dv">3</span>, <span class="dv">4</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Iniciando la función 'func2()'
 Operador: suma
@@ -909,7 +912,7 @@ Resultado: 7</code></pre>
 </div>
 </div>
 <div id="cell-40" class="cell" data-execution_count="31">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>func2(resta, <span class="dv">6</span>, <span class="dv">7</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>func2(resta, <span class="dv">6</span>, <span class="dv">7</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Iniciando la función 'func2()'
 Operador: resta
@@ -932,7 +935,7 @@ Ejemplo&nbsp;V.2: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 </div>
 </div>
 <div id="cell-43" class="cell" data-execution_count="32">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
 <span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> integra(f, a, b, N):</span>
 <span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Se utiliza el método de Simpson para la integración.</span></span>
@@ -948,11 +951,11 @@ Ejemplo&nbsp;V.2: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 <span id="cb55-14"><a href="#cb55-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> xi <span class="kw">in</span> x:</span>
 <span id="cb55-15"><a href="#cb55-15" aria-hidden="true" tabindex="-1"></a>        resultado <span class="op">+=</span> f(xi) <span class="op">*</span> h</span>
 <span id="cb55-16"><a href="#cb55-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-17"><a href="#cb55-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> resultado</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb55-17"><a href="#cb55-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> resultado</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-44" class="cell" data-execution_count="33">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Integral de la función sin() de la biblioteca math.</span></span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Resultado :"</span>, integra(math.sin, <span class="dv">0</span>, math.pi, <span class="dv">100</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Integral de la función sin() de la biblioteca math.</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Resultado :"</span>, integra(math.sin, <span class="dv">0</span>, math.pi, <span class="dv">100</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Integral de la función 'sin()'
 Límites de integración: [0,3.141592653589793]
@@ -961,9 +964,9 @@ Resultado : 1.9998355038874436</code></pre>
 </div>
 </div>
 <div id="cell-45" class="cell" data-execution_count="34">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Integral de la función cos() de la biblioteca math.</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Integral de la función cos() de la biblioteca math.</span></span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> integra(math.cos, <span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> math.pi, <span class="fl">0.5</span> <span class="op">*</span> math.pi, <span class="dv">50</span>)</span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Resultado: </span><span class="sc">{</span>res<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Resultado: </span><span class="sc">{</span>res<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Integral de la función 'cos()'
 Límites de integración: [-1.5707963267948966,1.5707963267948966]
@@ -976,7 +979,7 @@ Resultado: 1.9993419830762613</code></pre>
 <h2 data-number="V.5" class="anchored" data-anchor-id="funciones-que-regresan-otra-función."><span class="header-section-number">V.5</span> Funciones que regresan otra función.</h2>
 <p>Como vimos antes, una función puede regresar un objeto de cualquier tipo, incluyendo una función. Veamos un ejemplo:</p>
 <div id="cell-47" class="cell" data-execution_count="35">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># La funcionPadre() regresa como resultado una función </span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># La funcionPadre() regresa como resultado una función </span></span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="co"># la cual está definida dentro de funcionPadre().</span></span>
 <span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> funcionPadre(n):</span>
 <span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -992,22 +995,22 @@ Resultado: 1.9993419830762613</code></pre>
 <span id="cb60-14"><a href="#cb60-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">==</span> <span class="dv">10</span>:</span>
 <span id="cb60-15"><a href="#cb60-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> funcionHijo1</span>
 <span id="cb60-16"><a href="#cb60-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb60-17"><a href="#cb60-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> funcionHijo2</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb60-17"><a href="#cb60-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> funcionHijo2</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-48" class="cell" data-execution_count="36">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>funcionPadre(<span class="dv">36</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>funcionPadre(<span class="dv">36</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="36">
 <pre><code>&lt;function __main__.funcionPadre.&lt;locals&gt;.funcionHijo2()&gt;</code></pre>
 </div>
 </div>
 <div id="cell-49" class="cell" data-execution_count="37">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Asignamos el resultado de la funcion_padre() a un nombre</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Asignamos el resultado de la funcion_padre() a un nombre</span></span>
 <span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>f1 <span class="op">=</span> funcionPadre(<span class="dv">10</span>)</span>
-<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>f2 <span class="op">=</span> funcionPadre(<span class="dv">36</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>f2 <span class="op">=</span> funcionPadre(<span class="dv">36</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-50" class="cell" data-execution_count="38">
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f1()) <span class="co"># Resultado de la funcionf1(), generada con la funcionPadre()</span></span>
-<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f2()) <span class="co"># Resultado de la funcionf2(), generada con la funcionPadre()</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f1()) <span class="co"># Resultado de la funcionf1(), generada con la funcionPadre()</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f2()) <span class="co"># Resultado de la funcionf2(), generada con la funcionPadre()</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>funcionHijo1(): n = 10
 funcionHijo2(): n = 36</code></pre>
@@ -1032,7 +1035,7 @@ p(x) = a x^2 + b x + c
 </div>
 </div>
 <div id="cell-53" class="cell" data-execution_count="39">
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> polinomio(a, b, c):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> polinomio(a, b, c):</span>
 <span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Esta función recibe los coeficientes del polinomio</span></span>
 <span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a><span class="co">    y regresa una función que calcula el polinomio de</span></span>
@@ -1044,24 +1047,24 @@ p(x) = a x^2 + b x + c
 <span id="cb66-10"><a href="#cb66-10" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
 <span id="cb66-11"><a href="#cb66-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> a <span class="op">*</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> b <span class="op">*</span> x <span class="op">+</span> c</span>
 <span id="cb66-12"><a href="#cb66-12" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb66-13"><a href="#cb66-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> segundoGrado</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb66-13"><a href="#cb66-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> segundoGrado</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-54" class="cell" data-execution_count="40">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="op">=</span> polinomio(<span class="dv">5</span>, <span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="op">=</span> polinomio(<span class="dv">5</span>, <span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>)</span>
 <span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p1(<span class="fl">5.6</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p1(<span class="fl">5.6</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>144.0</code></pre>
 </div>
 </div>
 <div id="cell-55" class="cell" data-execution_count="41">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dos polinomios de segundo grado</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dos polinomios de segundo grado</span></span>
 <span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>p1 <span class="op">=</span> polinomio(<span class="dv">2</span>, <span class="dv">3</span>, <span class="op">-</span><span class="dv">1</span>) <span class="co"># 2x^2 + 3x - 1</span></span>
 <span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>p2 <span class="op">=</span> polinomio(<span class="op">-</span><span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>) <span class="co"># -x^2 + 2x + 1</span></span>
 <span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluación de los polinomios en el intervalo (-2,2) con pasos de 1</span></span>
 <span id="cb69-6"><a href="#cb69-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>):</span>
-<span id="cb69-7"><a href="#cb69-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'x = </span><span class="sc">{</span>x<span class="sc">:3d}</span><span class="ss"> </span><span class="ch">\t</span><span class="ss"> p1(x) = </span><span class="sc">{</span>p1(x)<span class="sc">:3d}</span><span class="ss"> </span><span class="ch">\t</span><span class="ss"> p2(x) = </span><span class="sc">{</span>p2(x)<span class="sc">:3d}</span><span class="ss">'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb69-7"><a href="#cb69-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'x = </span><span class="sc">{</span>x<span class="sc">:3d}</span><span class="ss"> </span><span class="ch">\t</span><span class="ss"> p1(x) = </span><span class="sc">{</span>p1(x)<span class="sc">:3d}</span><span class="ss"> </span><span class="ch">\t</span><span class="ss"> p2(x) = </span><span class="sc">{</span>p2(x)<span class="sc">:3d}</span><span class="ss">'</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>x =  -2      p1(x) =   1     p2(x) =  -7
 x =  -1      p1(x) =  -2     p2(x) =  -2
@@ -1084,7 +1087,7 @@ Ejemplo&nbsp;V.4: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 </div>
 </div>
 <div id="cell-58" class="cell" data-execution_count="42">
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> []</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> []</span>
 <span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>p1_v <span class="op">=</span> []</span>
 <span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a>p2_v <span class="op">=</span> []</span>
 <span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> xi <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">11</span>):</span>
@@ -1097,7 +1100,7 @@ Ejemplo&nbsp;V.4: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 <span id="cb71-11"><a href="#cb71-11" aria-hidden="true" tabindex="-1"></a>plt.plot(x, p2_v, label<span class="op">=</span><span class="st">"$p_2(x)$"</span>)</span>
 <span id="cb71-12"><a href="#cb71-12" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
 <span id="cb71-13"><a href="#cb71-13" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">"upper center"</span>)</span>
-<span id="cb71-14"><a href="#cb71-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb71-14"><a href="#cb71-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1125,7 +1128,7 @@ Ejemplo&nbsp;V.5: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 </div>
 </div>
 <div id="cell-60" class="cell" data-execution_count="49">
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> polFactory(<span class="op">*</span>coeficientes):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> polFactory(<span class="op">*</span>coeficientes):</span>
 <span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Esta función construye y evalúa polinomios </span></span>
 <span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a><span class="co">    de cualquier grado.</span></span>
@@ -1157,21 +1160,21 @@ Ejemplo&nbsp;V.5: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 <span id="cb72-30"><a href="#cb72-30" aria-hidden="true" tabindex="-1"></a>            res <span class="op">+=</span> coef <span class="op">*</span> x <span class="op">**</span> i</span>
 <span id="cb72-31"><a href="#cb72-31" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> res</span>
 <span id="cb72-32"><a href="#cb72-32" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb72-33"><a href="#cb72-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> polinomio</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb72-33"><a href="#cb72-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> polinomio</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-61" class="cell" data-execution_count="50">
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="op">=</span> polFactory(<span class="dv">5</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="op">=</span> polFactory(<span class="dv">5</span>)</span>
 <span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>p2 <span class="op">=</span> polFactory(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)</span>
 <span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p1(<span class="fl">3.1416</span>))</span>
-<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p2(<span class="op">-</span><span class="fl">3.1416</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p2(<span class="op">-</span><span class="fl">3.1416</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>5.0
 -99.700225117184</code></pre>
 </div>
 </div>
 <div id="cell-62" class="cell" data-execution_count="51">
-<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Se generan 4 polinomios de diferente grado</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Se generan 4 polinomios de diferente grado</span></span>
 <span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>p0 <span class="op">=</span> polFactory(<span class="dv">5</span>)           <span class="co"># 5.0</span></span>
 <span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a>p1 <span class="op">=</span> polFactory(<span class="dv">2</span>, <span class="dv">4</span>)        <span class="co"># 4 x + 2</span></span>
 <span id="cb75-4"><a href="#cb75-4" aria-hidden="true" tabindex="-1"></a>p2 <span class="op">=</span> polFactory(<span class="op">-</span><span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>)    <span class="co"># x^2 + 2x - 1</span></span>
@@ -1179,7 +1182,7 @@ Ejemplo&nbsp;V.5: <iconify-icon role="img" inline="" icon="vscode-icons:file-typ
 <span id="cb75-6"><a href="#cb75-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb75-7"><a href="#cb75-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluación de los polinomios en el intervalo (-2,2) con pasos de 1</span></span>
 <span id="cb75-8"><a href="#cb75-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>):</span>
-<span id="cb75-9"><a href="#cb75-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'x = </span><span class="sc">{</span>x<span class="sc">:3d}</span><span class="ss"> </span><span class="ch">\t</span><span class="ss"> p0(x) = </span><span class="sc">{</span>p0(x)<span class="sc">:3d}</span><span class="ss"> </span><span class="ch">\t</span><span class="ss"> p1(x) = </span><span class="sc">{</span>p1(x)<span class="sc">:3d}</span><span class="ss"> </span><span class="ch">\t</span><span class="ss"> p2(x) = </span><span class="sc">{</span>p2(x)<span class="sc">:3d}</span><span class="ss"> </span><span class="ch">\t</span><span class="ss"> p3(x) = </span><span class="sc">{</span>p3(x)<span class="sc">:3d}</span><span class="ss">'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb75-9"><a href="#cb75-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'x = </span><span class="sc">{</span>x<span class="sc">:3d}</span><span class="ss"> </span><span class="ch">\t</span><span class="ss"> p0(x) = </span><span class="sc">{</span>p0(x)<span class="sc">:3d}</span><span class="ss"> </span><span class="ch">\t</span><span class="ss"> p1(x) = </span><span class="sc">{</span>p1(x)<span class="sc">:3d}</span><span class="ss"> </span><span class="ch">\t</span><span class="ss"> p2(x) = </span><span class="sc">{</span>p2(x)<span class="sc">:3d}</span><span class="ss"> </span><span class="ch">\t</span><span class="ss"> p3(x) = </span><span class="sc">{</span>p3(x)<span class="sc">:3d}</span><span class="ss">'</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>x =  -2      p0(x) =   5     p1(x) =  -6     p2(x) =  -1     p3(x) = -18
 x =  -1      p0(x) =   5     p1(x) =  -2     p2(x) =  -2     p3(x) =  -5
@@ -1188,7 +1191,7 @@ x =   1      p0(x) =   5     p1(x) =   6     p2(x) =   2     p3(x) =   3</code><
 </div>
 </div>
 <div id="cell-63" class="cell" data-execution_count="52">
-<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Graficación</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Graficación</span></span>
 <span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> []</span>
 <span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a>p0_v <span class="op">=</span> []</span>
 <span id="cb77-4"><a href="#cb77-4" aria-hidden="true" tabindex="-1"></a>p1_v <span class="op">=</span> []</span>
@@ -1209,7 +1212,7 @@ x =   1      p0(x) =   5     p1(x) =   6     p2(x) =   2     p3(x) =   3</code><
 <span id="cb77-19"><a href="#cb77-19" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.ylim(-200,200)</span></span>
 <span id="cb77-20"><a href="#cb77-20" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
 <span id="cb77-21"><a href="#cb77-21" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">"upper center"</span>, ncol<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb77-22"><a href="#cb77-22" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb77-22"><a href="#cb77-22" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1227,21 +1230,21 @@ x =   1      p0(x) =   5     p1(x) =   6     p2(x) =   2     p3(x) =   3</code><
 <h3 data-number="V.6.1" class="anchored" data-anchor-id="local"><span class="header-section-number">V.6.1</span> Local</h3>
 <p>Las funciones (y otros operadores también), crean su propio ámbito local (<em>scope</em>).</p>
 <div id="cell-66" class="cell" data-execution_count="53">
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> actualizaEdad():</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> actualizaEdad():</span>
 <span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>    edad <span class="op">=</span> <span class="dv">21</span> <span class="co"># Variable local</span></span>
 <span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Ámbito de la función 'actualizaEdad()'"</span>)</span>
 <span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"edad ="</span>, edad, <span class="st">", id(edad) ="</span>, <span class="bu">id</span>(edad))</span>
 <span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejecuto la función</span></span>
-<span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a>actualizaEdad()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a>actualizaEdad()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Ámbito de la función 'actualizaEdad()'
 edad = 21 , id(edad) = 140714900203048</code></pre>
 </div>
 </div>
 <div id="cell-67" class="cell" data-execution_count="54">
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ¿Se puede acceder al valor de 'edad' fuera de la función?</span></span>
-<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ámbito global: edad ="</span>, edad, <span class="st">", id(edad) ="</span>, <span class="bu">id</span>(edad))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ¿Se puede acceder al valor de 'edad' fuera de la función?</span></span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ámbito global: edad ="</span>, edad, <span class="st">", id(edad) ="</span>, <span class="bu">id</span>(edad))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
@@ -1261,18 +1264,18 @@ edad = 21 , id(edad) = 140714900203048</code></pre>
 <p>El ámbito global es el alcance más alto en un programa, script o módulo de Python. Este ámbito de Python contiene todos los nombres que se definen en el nivel superior de un programa o módulo.</p>
 <p>Los nombres en este ámbito son visibles desde cualquier lugar del programa.</p>
 <div id="cell-70" class="cell" data-execution_count="55">
-<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Variable creada en el ámbito global</span></span>
-<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>edad <span class="op">=</span> <span class="dv">25</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb81"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Variable creada en el ámbito global</span></span>
+<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>edad <span class="op">=</span> <span class="dv">25</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-71" class="cell" data-execution_count="56">
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ámbito global: edad ="</span>, edad, <span class="st">", id(edad) ="</span>, <span class="bu">id</span>(edad))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb82"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ámbito global: edad ="</span>, edad, <span class="st">", id(edad) ="</span>, <span class="bu">id</span>(edad))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Ámbito global: edad = 25 , id(edad) = 140714900203176</code></pre>
 </div>
 </div>
 <p>¿Qué pasa si ejectuamos nuevamente la función <code>actualizaEdad()</code>?</p>
 <div id="cell-73" class="cell" data-execution_count="57">
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>actualizaEdad()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb84"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>actualizaEdad()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Ámbito de la función 'actualizaEdad()'
 edad = 21 , id(edad) = 140714900203048</code></pre>
@@ -1281,13 +1284,13 @@ edad = 21 , id(edad) = 140714900203048</code></pre>
 <p>Observa que se usa la variable edad definida dentro de la función y es diferente a la variable <code>edad</code> definida en el ámbito global.</p>
 <p>Supongamos que deseamos incrementar el valor de la variable global <code>edad</code> dentro de la función <code>actualizaEdad()</code> como sigue:</p>
 <div id="cell-75" class="cell" data-execution_count="58">
-<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>edad <span class="op">=</span> <span class="dv">25</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb86"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>edad <span class="op">=</span> <span class="dv">25</span></span>
 <span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> actualizaEdad():</span>
 <span id="cb86-4"><a href="#cb86-4" aria-hidden="true" tabindex="-1"></a>    edad <span class="op">+=</span> <span class="dv">1</span></span>
 <span id="cb86-5"><a href="#cb86-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> edad</span>
 <span id="cb86-6"><a href="#cb86-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb86-7"><a href="#cb86-7" aria-hidden="true" tabindex="-1"></a>actualizaEdad()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb86-7"><a href="#cb86-7" aria-hidden="true" tabindex="-1"></a>actualizaEdad()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
@@ -1309,14 +1312,14 @@ edad = 21 , id(edad) = 140714900203048</code></pre>
 <p>Observa que se genera un error de tipo <code>UnboundLocalError</code> porque se está intentando acceder a un nombre que aún no está definido en el ámbito local de la función.</p>
 <p>Entonces, para hacer referencia a la variable global <code>edad</code> y modificarla dentro de la función, debes usar la declaración <code>global</code>:</p>
 <div id="cell-77" class="cell" data-execution_count="59">
-<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a>edad <span class="op">=</span> <span class="dv">25</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb87"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a>edad <span class="op">=</span> <span class="dv">25</span></span>
 <span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb87-3"><a href="#cb87-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> actualizaEdad():</span>
 <span id="cb87-4"><a href="#cb87-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> edad</span>
 <span id="cb87-5"><a href="#cb87-5" aria-hidden="true" tabindex="-1"></a>    edad <span class="op">+=</span> <span class="dv">1</span></span>
 <span id="cb87-6"><a href="#cb87-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> edad</span>
 <span id="cb87-7"><a href="#cb87-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb87-8"><a href="#cb87-8" aria-hidden="true" tabindex="-1"></a>actualizaEdad()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb87-8"><a href="#cb87-8" aria-hidden="true" tabindex="-1"></a>actualizaEdad()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="59">
 <pre><code>26</code></pre>
 </div>
@@ -1324,14 +1327,14 @@ edad = 21 , id(edad) = 140714900203048</code></pre>
 <p>Aunque lo anterior funciona correctamente, no es recomendable usar esta solución, pues puede tener efectos no deseables.</p>
 <p>Una mejor solución sería la siguiente:</p>
 <div id="cell-79" class="cell" data-execution_count="60">
-<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a>edad <span class="op">=</span> <span class="dv">25</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb89"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a>edad <span class="op">=</span> <span class="dv">25</span></span>
 <span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb89-3"><a href="#cb89-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> actualizaEdad(e):</span>
 <span id="cb89-4"><a href="#cb89-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> e <span class="op">+</span> <span class="dv">1</span></span>
 <span id="cb89-5"><a href="#cb89-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb89-6"><a href="#cb89-6" aria-hidden="true" tabindex="-1"></a>edad <span class="op">=</span> actualizaEdad(edad)</span>
 <span id="cb89-7"><a href="#cb89-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb89-8"><a href="#cb89-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(edad)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb89-8"><a href="#cb89-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(edad)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>26</code></pre>
 </div>
@@ -1341,7 +1344,7 @@ edad = 21 , id(edad) = 140714900203048</code></pre>
 <h3 data-number="V.6.3" class="anchored" data-anchor-id="enclosing-nonlocal"><span class="header-section-number">V.6.3</span> Enclosing (<em>nonlocal</em>)</h3>
 <p>El ámbito <em>enclosing</em> es un alcance especial que solo existe para funciones anidadas.</p>
 <div id="cell-81" class="cell" data-execution_count="61">
-<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> datosPersonales():</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb91"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> datosPersonales():</span>
 <span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a>    edad <span class="op">=</span> <span class="dv">25</span></span>
 <span id="cb91-3"><a href="#cb91-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb91-4"><a href="#cb91-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> actualizaEdad():</span>
@@ -1349,7 +1352,7 @@ edad = 21 , id(edad) = 140714900203048</code></pre>
 <span id="cb91-6"><a href="#cb91-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb91-7"><a href="#cb91-7" aria-hidden="true" tabindex="-1"></a>    actualizaEdad()</span>
 <span id="cb91-8"><a href="#cb91-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb91-9"><a href="#cb91-9" aria-hidden="true" tabindex="-1"></a>datosPersonales()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb91-9"><a href="#cb91-9" aria-hidden="true" tabindex="-1"></a>datosPersonales()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>25</code></pre>
 </div>
@@ -1357,7 +1360,7 @@ edad = 21 , id(edad) = 140714900203048</code></pre>
 <p>Es posible acceder a las variables definidas en el ámbito de la función <code>datosPersonales()</code> (<em>Enclosing scope</em>) desde funciones internas o anidadas como <code>actualizaEdad()</code>.</p>
 <p>Pero no es posible modificar las variables, checa el siguiente código:</p>
 <div id="cell-83" class="cell" data-execution_count="62">
-<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> datosPersonales():</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb93"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> datosPersonales():</span>
 <span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a>    edad <span class="op">=</span> <span class="dv">25</span></span>
 <span id="cb93-3"><a href="#cb93-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb93-4"><a href="#cb93-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> actualizaEdad():</span>
@@ -1368,7 +1371,7 @@ edad = 21 , id(edad) = 140714900203048</code></pre>
 <span id="cb93-9"><a href="#cb93-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb93-10"><a href="#cb93-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> edad</span>
 <span id="cb93-11"><a href="#cb93-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb93-12"><a href="#cb93-12" aria-hidden="true" tabindex="-1"></a>datosPersonales()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb93-12"><a href="#cb93-12" aria-hidden="true" tabindex="-1"></a>datosPersonales()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
@@ -1396,7 +1399,7 @@ edad = 21 , id(edad) = 140714900203048</code></pre>
 <p>Observa que se obtiene otro error de tipo <code>UnboundLocalError</code>, pues estamos intentando actualizar la variable <code>edad</code> definida en el ámbito de la función <code>datosPersonales()</code>.</p>
 <p>Para resolver este problema podemos usar la declaración <code>nonlocal</code>:</p>
 <div id="cell-85" class="cell" data-execution_count="63">
-<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> datosPersonales():</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb94"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> datosPersonales():</span>
 <span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a>    edad <span class="op">=</span> <span class="dv">25</span></span>
 <span id="cb94-3"><a href="#cb94-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb94-4"><a href="#cb94-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> actualizaEdad():</span>
@@ -1408,7 +1411,7 @@ edad = 21 , id(edad) = 140714900203048</code></pre>
 <span id="cb94-10"><a href="#cb94-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb94-11"><a href="#cb94-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> edad</span>
 <span id="cb94-12"><a href="#cb94-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb94-13"><a href="#cb94-13" aria-hidden="true" tabindex="-1"></a>datosPersonales()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb94-13"><a href="#cb94-13" aria-hidden="true" tabindex="-1"></a>datosPersonales()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="63">
 <pre><code>26</code></pre>
 </div>
@@ -1427,11 +1430,11 @@ edad = 21 , id(edad) = 140714900203048</code></pre>
 <ol type="1">
 <li>Lineal.<br> Este tipo de comentarios se llevan a cabo utilizando el símbolo especial <code>#</code>. El intérprete de Python sabrá que todo lo que sigue delante de este símbolo es un comentario y por lo tanto no se toma en cuenta en la ejecución:</li>
 </ol>
-<div class="sourceCode" id="cb96"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">10</span> <span class="co"># Este es un comentario</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb96"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">10</span> <span class="co"># Este es un comentario</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="2" type="1">
 <li>Docstrings<br> En programación, un <em>docstring</em> es una cadena de caracteres embedidas en el código fuente, similares a un comentario, para documentar un segmento de código específico. A diferencia de los comentarios tradicionales, las docstrings no se quitan del código cuando es analizado, sino que son retenidas a través de la ejecución del programa. Esto permite al programador inspeccionar esos comentarios en tiempo de ejecución, por ejemplo como un sistema de ayuda interactivo o como metadatos. En Python se utilizan las triples comillas para definir un <em>docstring</em>.</li>
 </ol>
-<div class="sourceCode" id="cb97"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> funcion(x):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb97"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> funcion(x):</span>
 <span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">'''</span></span>
 <span id="cb97-3"><a href="#cb97-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Esta es una descripción de la función ...</span></span>
 <span id="cb97-4"><a href="#cb97-4" aria-hidden="true" tabindex="-1"></a><span class="co">    '''</span></span>
@@ -1440,23 +1443,23 @@ edad = 21 , id(edad) = 140714900203048</code></pre>
 <span id="cb97-7"><a href="#cb97-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb97-8"><a href="#cb97-8" aria-hidden="true" tabindex="-1"></a><span class="co">    También de esta manera se puede definir una docstring</span></span>
 <span id="cb97-9"><a href="#cb97-9" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb97-10"><a href="#cb97-10" aria-hidden="true" tabindex="-1"></a>   </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb97-10"><a href="#cb97-10" aria-hidden="true" tabindex="-1"></a>   </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="cell-88" class="cell" data-execution_count="64">
-<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> suma(a,b):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb98"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> suma(a,b):</span>
 <span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">'''</span></span>
 <span id="cb98-3"><a href="#cb98-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Esta función calcula  la suma de los parámetros a y b. </span></span>
 <span id="cb98-4"><a href="#cb98-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Regresa el resultado de la suma</span></span>
 <span id="cb98-5"><a href="#cb98-5" aria-hidden="true" tabindex="-1"></a><span class="co">    '''</span></span>
-<span id="cb98-6"><a href="#cb98-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb98-6"><a href="#cb98-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-89" class="cell" data-execution_count="65">
-<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a>suma</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb99"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a>suma</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="65">
 <pre><code>&lt;function __main__.suma(a, b)&gt;</code></pre>
 </div>
 </div>
 <div id="cell-90" class="cell" data-execution_count="66">
-<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="co"># En numpy se usa la siguiente definición de docstrings</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb101"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="co"># En numpy se usa la siguiente definición de docstrings</span></span>
 <span id="cb101-2"><a href="#cb101-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> suma(a,b):</span>
 <span id="cb101-3"><a href="#cb101-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">'''</span></span>
 <span id="cb101-4"><a href="#cb101-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Calcula la suma de los dos parámetros a y b.</span></span>
@@ -1468,10 +1471,10 @@ edad = 21 , id(edad) = 140714900203048</code></pre>
 <span id="cb101-10"><a href="#cb101-10" aria-hidden="true" tabindex="-1"></a><span class="co">        c: int Suma del numero a y b</span></span>
 <span id="cb101-11"><a href="#cb101-11" aria-hidden="true" tabindex="-1"></a><span class="co">    '''</span></span>
 <span id="cb101-12"><a href="#cb101-12" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> a <span class="op">+</span> b</span>
-<span id="cb101-13"><a href="#cb101-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> c</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb101-13"><a href="#cb101-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> c</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-91" class="cell">
-<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a>suma</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb102"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a>suma</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Existen diferentes estilos de documentación tipo <em>docstring</em> vease por ejemplo:</p>
 <ul>
@@ -1548,13 +1551,14 @@ edad = 21 , id(edad) = 140714900203048</code></pre>
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

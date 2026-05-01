@@ -36,7 +36,7 @@ book:
 ##    background: "#F5F5F5"
     logo: figuras/python1.png
     search: true
-  cover-image: figuras/python1.png
+  cover-image: figuras/python-logo-master-v3-TM.png
   sharing: [twitter, facebook, linkedin]
   reader-mode: true
   date: today

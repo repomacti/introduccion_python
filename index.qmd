@@ -1,12 +1,12 @@
 # Python básico {.unnumbered}
 
 ## Descripción
-Python es uno de los lenguajes de programación más demandados en la industria tecnológica actual. Su versatilidad y potencia lo hacen ideal para una amplia variedad de aplicaciones, desde el desarrollo de aplicaciones web hasta el análisis de datos y la inteligencia artificial. Aprender Python no solo mejorará tus habilidades técnicas, sino que también te abrirá puertas a nuevas oportunidades profesionales. Creado por Guido van Rossum en 1991, Python es un lenguaje de programación de alto nivel, interpretado, de propósito general y con una sintaxis muy clara y legible, además de ser portable entre diferentes sistemas operativos.
-Este curso está diseñado para proporcionarte una base inicial sobre la cual serás capaz de desarrollar algoritmos sencillos y entenderás muchos de los códigos que son usados en diferentes áreas de la ciencia y la tecnología.
+Python es uno de los lenguajes de programación más demandados en la industria tecnológica actual. Su versatilidad y potencia lo hacen ideal para una amplia variedad de aplicaciones, desde el desarrollo de aplicaciones web hasta el análisis de datos y la inteligencia artificial. Aprender Python no solo mejorará tus habilidades técnicas, sino que también te abrirá puertas a nuevas oportunidades profesionales. Creado por <a href="https://es.wikipedia.org/wiki/Guido_van_Rossum" target="_blank" rel="noopener">Guido van Rossum</a> y lanzado al público en 1991, Python es un lenguaje de programación de alto nivel, interpretado, de propósito general y con una sintaxis muy clara y legible, además de ser portable entre diferentes sistemas operativos.
+Estas notas están diseñadas para proporcionarte una base inicial sobre la cual serás capaz de desarrollar algoritmos sencillos y entenderás muchos de los códigos que son usados en diferentes áreas de la ciencia y la tecnología.
 
 ## ¿Qué aprenderás?
 Fundamentos de Python: Comenzaremos con los conceptos básicos, incluyendo variables, tipos de datos y estructuras de control como ciclos y condicionales.
-Estructuras de Datos: Aprenderás a trabajar con listas, tuplas, diccionarios y conjuntos, herramientas esenciales para manejar y organizar datos.
+Estructuras de Datos: Aprenderás a trabajar con listas, tuplas, diccionarios y conjuntos, herramientas esenciales para manejar y organizar datos. Terminaremos construyendo algunas aplicaciones usando bibliotecas de alto nivel.
 
 ## ¿A quién está dirigido?
 Principiantes: No se requiere experiencia previa en programación.
@@ -16,50 +16,6 @@ Profesionales y estudiantes: Personas que buscan utilizar Python en campos como 
 ## Objetivo.
 Capacitar a los participantes en el uso de las herramientas básicas del lenguaje de programación Python.
 
-
-## Temario
-
-1. Introducción
-Encuadre y presentación del curso.
-Visita guiada a la plataforma MACTI.   
-¿Cómo registrarse?
-Ambiente de Moodle.
-Ambiente de JupyterLab.
-Breve introducción al manejo de versiones.
-Comandos básicos.
-Git y Github.
-Quiz  1.
-2. Herramientas básicas de Python. 
-Variables y objetos.
-Tipos básicos y sus operadores.
-Tipos numéricos.
-Tipos lógicos.
-Operadores aritméticos
-Operadores relacionales
-Operaciones lógicas.
-Conversión entre tipos.
-Expresiones y declaraciones.
-Quiz 2.
-Proyecto: parte 1.
-Cadenas
-Entrada y salida estándar: input,  print
-Control de flujo: 
-while
-if, elif, else
-for
-break, continue, else, pass.
-	Quiz 3.
-Estructura de datos: 
-Listas 
-Tuplas
-Conjuntos
-Diccionarios.
-Recorriendo las secuencias.
-Un primer vistazo a las funciones.
-Importando bibliotecas (math, random, statistics).
-Quiz 4.
-Proyecto: parte 2.
-
 ## Licencia
 
- <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/repomacti/introduccion_python">Introducción a Python</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://gmc.geofisica.unam.mx/luiggi">Luis Miguel de la Cruz Salas</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p> 
+<a href="https://example.com">Notas de Python</a> © 2020-2026 by <a href="https://luiggix.github.io/web/">Luis M. de la Cruz Salas</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
