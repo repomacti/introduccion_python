@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Luis Miguel De la Cruz Salas">
 
-<title>Notas de Python</title>
+<title>Introducción – Notas de Python</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./part1.html" rel="next">
+<link href="./lecciones/leccion_01.html" rel="next">
+<link href="./index.html" rel="prev">
 <link href="./figuras/python1.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -251,7 +251,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Python básico</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part1.html">Introducción</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -313,13 +313,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python básico</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./part1.html" class="sidebar-item-text sidebar-link">
+            <a href="./part1.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Introducción</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -494,21 +494,8 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Tabla de contenidos</h2>
-   
-  <ul>
-  <li><a href="#python-básico" id="toc-python-básico" class="nav-link active" data-scroll-target="#python-básico">Python básico</a>
-  <ul class="collapse">
-  <li><a href="#descripción" id="toc-descripción" class="nav-link" data-scroll-target="#descripción">Descripción</a></li>
-  <li><a href="#qué-aprenderás" id="toc-qué-aprenderás" class="nav-link" data-scroll-target="#qué-aprenderás">¿Qué aprenderás?</a></li>
-  <li><a href="#a-quién-está-dirigido" id="toc-a-quién-está-dirigido" class="nav-link" data-scroll-target="#a-quién-está-dirigido">¿A quién está dirigido?</a></li>
-  <li><a href="#objetivo." id="toc-objetivo." class="nav-link" data-scroll-target="#objetivo.">Objetivo.</a></li>
-  <li><a href="#licencia" id="toc-licencia" class="nav-link" data-scroll-target="#licencia">Licencia</a></li>
-  </ul></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -516,34 +503,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Notas de Python</h1>
-<p class="subtitle lead">Ejemplos y aplicaciones.</p>
+<h1 class="title">Introducción</h1>
 </div>
 
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Autor/a</div>
-  <div class="quarto-title-meta-heading">Afiliación</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">Luis Miguel De la Cruz Salas </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Instituto de Geofísica, UNAM
-          </p>
-      </div>
-  </div>
 
 <div class="quarto-title-meta">
 
-      
-    <div>
-    <div class="quarto-title-meta-heading">Fecha de publicación</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">30 de abril de 2026</p>
-    </div>
-  </div>
+    
   
     
   </div>
@@ -553,32 +520,35 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>La programación es el arte de escribir instrucciones precisas para decirle a una computadora lo que deseas que haga por ti. Cuando escribes buenas instrucciones, puedes lograr mucho en poco tiempo, por ejemplo:</p>
+<ul>
+<li>Automatizar tareas repetitivas.</li>
+<li>Analizar grandes cantidades de datos.</li>
+<li>Construir, evaluar y mejorar modelos matemáticos para representar procesos cotidianos y/o fenómenos naturales.</li>
+<li>Generar aplicaciones de utilidad.</li>
+<li>Entre muchas otras …</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Recomendaciones para aprender un nuevo lenguaje.
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Escribe los códigos y ejecútalos sin miedo al éxito.</li>
+<li>Los errores son inevitables, tómate tu tiempo para entenderlos y corregirlos.</li>
+<li>Practica mucho, realiza muchso los ejercicios incluyendo los que se proponen en este texto y busca algunos otros en la Internet.</li>
+<li>Utiliza eficazmente herramientas de IA (chatbots, ChatGPT, GitHub copilot, etc.) para apoyar tu aprendizaje.</li>
+</ul>
+</div>
+</div>
+<p>Usando Python es fácil introducirte al mundo de la programación, el cual podría parecer muy complicado. Por supuesto, como todo en esta vida, Python tiene sus ventajas y sus limitaciones, los cuales notarás conforme vayas avanzando en el aprendizaje de este lenguaje.</p>
 
-<section id="python-básico" class="level1 unnumbered">
-<h1 class="unnumbered">Python básico</h1><p><img src="figuras/python-logo-master-v3-TM.png" title="Notas de Python" class="quarto-cover-image nolightbox img-fluid"></p>
-<section id="descripción" class="level2">
-<h2 class="anchored" data-anchor-id="descripción">Descripción</h2>
-<p>Python es uno de los lenguajes de programación más demandados en la industria tecnológica actual. Su versatilidad y potencia lo hacen ideal para una amplia variedad de aplicaciones, desde el desarrollo de aplicaciones web hasta el análisis de datos y la inteligencia artificial. Aprender Python no solo mejorará tus habilidades técnicas, sino que también te abrirá puertas a nuevas oportunidades profesionales. Creado por <a href="https://es.wikipedia.org/wiki/Guido_van_Rossum" target="_blank" rel="noopener">Guido van Rossum</a> y lanzado al público en 1991, Python es un lenguaje de programación de alto nivel, interpretado, de propósito general y con una sintaxis muy clara y legible, además de ser portable entre diferentes sistemas operativos. Estas notas están diseñadas para proporcionarte una base inicial sobre la cual serás capaz de desarrollar algoritmos sencillos y entenderás muchos de los códigos que son usados en diferentes áreas de la ciencia y la tecnología.</p>
-</section>
-<section id="qué-aprenderás" class="level2">
-<h2 class="anchored" data-anchor-id="qué-aprenderás">¿Qué aprenderás?</h2>
-<p>Fundamentos de Python: Comenzaremos con los conceptos básicos, incluyendo variables, tipos de datos y estructuras de control como ciclos y condicionales. Estructuras de Datos: Aprenderás a trabajar con listas, tuplas, diccionarios y conjuntos, herramientas esenciales para manejar y organizar datos. Terminaremos construyendo algunas aplicaciones usando bibliotecas de alto nivel.</p>
-</section>
-<section id="a-quién-está-dirigido" class="level2">
-<h2 class="anchored" data-anchor-id="a-quién-está-dirigido">¿A quién está dirigido?</h2>
-<p>Principiantes: No se requiere experiencia previa en programación. Programadores de otros lenguajes: Aquellos que deseen aprender Python para ampliar su conjunto de habilidades. Profesionales y estudiantes: Personas que buscan utilizar Python en campos como la ciencia de datos, el análisis de datos, la automatización y el desarrollo web.</p>
-</section>
-<section id="objetivo." class="level2">
-<h2 class="anchored" data-anchor-id="objetivo.">Objetivo.</h2>
-<p>Capacitar a los participantes en el uso de las herramientas básicas del lenguaje de programación Python.</p>
-</section>
-<section id="licencia" class="level2">
-<h2 class="anchored" data-anchor-id="licencia">Licencia</h2>
-<p><a href="https://repomacti.github.io/introduccion_python">Introducción a Python</a> © 2020-2026 by <a href="https://luiggix.github.io/web/">Luis M. de la Cruz Salas</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"></p>
 
-
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -996,10 +966,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Python básico">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Python básico</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./part1.html" class="pagination-link" aria-label="Introducción">
-        <span class="nav-page-text">Introducción</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./lecciones/leccion_01.html" class="pagination-link" aria-label="Primeros pasos.">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Primeros pasos.</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
