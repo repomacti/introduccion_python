@@ -89,6 +89,6 @@ format:
     code-fold: false
     highlight-style: arrow
     css: estilos/code-blocks.css
-  pdf:
-    documentclass: scrbook
-    number-sections: true
+#  pdf:
+#    documentclass: scrbook
+#    number-sections: true

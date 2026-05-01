@@ -230,18 +230,18 @@
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
 \makeatletter
-\definecolor{QuartoInternalColor2}{rgb}{0,0,0}
-\definecolor{QuartoInternalColor1}{rgb}{0.70,0.17,0.19}
-\definecolor{QuartoInternalColor10}{rgb}{0.00,0.40,0.79}
 \definecolor{QuartoInternalColor13}{rgb}{0.60,0.00,1.00}
-\definecolor{QuartoInternalColor12}{rgb}{0.80,0.20,0.20}
+\definecolor{QuartoInternalColor2}{rgb}{0,0,0}
+\definecolor{QuartoInternalColor5}{rgb}{0.00,0.40,0.00}
+\definecolor{QuartoInternalColor10}{rgb}{0.00,0.40,0.79}
 \definecolor{QuartoInternalColor11}{rgb}{0.74,0.74,0.74}
 \definecolor{QuartoInternalColor3}{rgb}{0.15,0.56,0.56}
-\definecolor{QuartoInternalColor6}{rgb}{0.70,0.49,0.07}
-\definecolor{QuartoInternalColor9}{rgb}{0.20,0.40,0.40}
 \definecolor{QuartoInternalColor4}{rgb}{0.00,0.45,0.15}
+\definecolor{QuartoInternalColor9}{rgb}{0.20,0.40,0.40}
+\definecolor{QuartoInternalColor6}{rgb}{0.70,0.49,0.07}
+\definecolor{QuartoInternalColor12}{rgb}{0.80,0.20,0.20}
+\definecolor{QuartoInternalColor1}{rgb}{0.70,0.17,0.19}
 \definecolor{QuartoInternalColor7}{rgb}{0.60,0.20,0.00}
-\definecolor{QuartoInternalColor5}{rgb}{0.00,0.40,0.00}
 \definecolor{QuartoInternalColor8}{rgb}{0.60,0.20,0.40}
 \makeatother
 \newcounter{quartocalloutexmno}
@@ -368,7 +368,7 @@ buenas instrucciones, puedes lograr mucho en poco tiempo, por ejemplo:
   Entre muchas otras \ldots{}
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Recomendaciones para aprender un nuevo lenguaje.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Recomendaciones para aprender un nuevo lenguaje.}]
 
 \begin{itemize}
 \tightlist
@@ -406,7 +406,7 @@ números y textos.
 \section{Tipos básicos y
 variables.}\label{sec-l1-tipos-basicos-variables}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-l1-ej1}: Índice de masa corporal.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-l1-ej1}: Índice de masa corporal.}]
 
 \quartocalloutexm{exm-l1-ej1} 
 
@@ -463,7 +463,7 @@ float
 Observa que la variable \texttt{peso}es de tipo \texttt{float}, que es
 uno de los tipos de datos básicos en Python.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip \ref*{tip-l1-print_type}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip \ref*{tip-l1-print_type}}]
 
 \quartocallouttip{tip-l1-print_type} 
 
@@ -671,7 +671,7 @@ Vemos que hemos definido variables de los tipos \texttt{int},
 \texttt{float}, \texttt{str} y \texttt{bool}. Un tipo adicional que
 falta en esta lista es el tipo \texttt{complex}.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota \ref*{nte-l1-complex}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota \ref*{nte-l1-complex}}]
 
 \quartocalloutnte{nte-l1-complex} 
 
@@ -846,7 +846,7 @@ describe en la sección~\ref{sec-c-operadores-aritmeticos}. A
 continuación veremos un ejemplo más interesante del uso de estos
 operadores.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-ej1}: Cálculo del interés compuesto.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-ej1}: Cálculo del interés compuesto.}]
 
 \quartocalloutexm{exm-ej1} 
 
@@ -940,7 +940,7 @@ Ahora implementamos la fórmula del interés compuesto:
 Cantidad final A =  357375.70298225543
 \end{verbatim}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip \ref*{tip-l1-precedencia}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip \ref*{tip-l1-precedencia}}]
 
 \quartocallouttip{tip-l1-precedencia} 
 
@@ -1099,7 +1099,7 @@ True
 True
 \end{verbatim}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip \ref*{tip-l1-tipado-dinamico}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip \ref*{tip-l1-tipado-dinamico}}]
 
 \quartocallouttip{tip-l1-tipado-dinamico} 
 
@@ -1374,7 +1374,7 @@ especiales se puede encontrar en el siguiente enlace:
 \href{https://docs.python.org/es/3/reference/lexical_analysis.html\#escape-sequences}{Escape
 sequences}.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-l2-1}: Definición de una cadena.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-l2-1}: Definición de una cadena.}]
 
 \quartocalloutexm{exm-l2-1} 
 
@@ -1407,7 +1407,7 @@ Chiripitifláutico
 
 Observa que la variable \texttt{ejemplo} es de tipo \texttt{str}.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-l2-2}: Indexación y slicing.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-l2-2}: Indexación y slicing.}]
 
 \quartocalloutexm{exm-l2-2} 
 
@@ -1584,7 +1584,7 @@ cadena \texttt{ejemplo}:
 'oiuliiiiC'
 \end{verbatim}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-l2-3}: Métodos.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-l2-3}: Métodos.}]
 
 \quartocalloutexm{exm-l2-3} 
 
@@ -1764,7 +1764,7 @@ Desde muy niño
 'INTERRUMPIR'
 \end{verbatim}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-l2-4}: Funciones y operadores.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-l2-4}: Funciones y operadores.}]
 
 \quartocalloutexm{exm-l2-4} 
 
@@ -1831,7 +1831,7 @@ siguiente:
 True
 \end{verbatim}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-l2-5}: Caracteres unicode.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-l2-5}: Caracteres unicode.}]
 
 \quartocalloutexm{exm-l2-5} 
 
@@ -1992,7 +1992,7 @@ indicados, por ejemplo:
 Hedy Lamarr cumpliría 111 años en 2025
 \end{verbatim}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-l2-6}: Texto formateado.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-l2-6}: Texto formateado.}]
 
 \quartocalloutexm{exm-l2-6} 
 
@@ -2214,7 +2214,7 @@ Teclea un número: 9
 El número que tecleaste fue: 9
 \end{verbatim}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-l2-7}: Entrada de datos y cálculo con esos datos.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-l2-7}: Entrada de datos y cálculo con esos datos.}]
 
 \quartocalloutexm{exm-l2-7} 
 
@@ -2327,7 +2327,7 @@ o binario:
   \texttt{"b"} - Binary
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-l2-8}: Abrir un archivo y leer la información.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-l2-8}: Abrir un archivo y leer la información.}]
 
 \quartocalloutexm{exm-l2-8} 
 
@@ -2533,7 +2533,7 @@ IMC DB = 25.95000    IMC = 25.95156
 ¿Son iguales? True
 \end{verbatim}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota.}]
 
 Más información sobre archivos la puedes revisar en el
 Apéndice~\ref{sec-g-archivos}.
@@ -2542,7 +2542,7 @@ Apéndice~\ref{sec-g-archivos}.
 
 \section{Proyecto.}\label{proyecto.}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-l1-ej1}: Índice de masa corporal.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-l1-ej1}: Índice de masa corporal.}]
 
 \quartocalloutexm{exm-l1-ej1} 
 
@@ -3674,7 +3674,7 @@ Ahora observa el siguiente código y su resultado:
 Esta conceptualización de objetos y sus nombres es muy importante cuando
 se manejan estructuras de datos más complejas.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota.}]
 
 Usaremos el término \textbf{variable} para referirnos a los nombres de
 los \textbf{objetos}. Cuando sea conveniente usaremos el término
@@ -3752,7 +3752,7 @@ error indicando lo anterior:
 \textcolor{QuartoInternalColor2}{}\textcolor{QuartoInternalColor1}{NameError}\textcolor{QuartoInternalColor2}{: name 'x' is not defined}
 \end{Highlighting}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota.}]
 
 Observa que Python nos proporciona mucha información acerca del error.
 En este caso el error es de tipo \texttt{NameError}. Más información al
@@ -3856,7 +3856,7 @@ codificación como sigue:
 'UTF-8'
 \end{verbatim}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota.}]
 
 En la celda anterior estamos usando \texttt{import}. Esta declaración
 importa las bibliotecas que se requieran para realizar alguna tarea. En
@@ -5745,7 +5745,7 @@ En Python una \textbf{expresión} está compuesta por una combinación
 válida de valores, variables, operadores, funciones y métodos, que se
 puede evaluar y \textbf{da como resultado al menos un valor}.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}]
 
 En esencia, una \textbf{expresión es cualquier cosa que al ser evaluada
 produce un resultado}.
@@ -5866,7 +5866,7 @@ se forma de una secuencia que contiene una o más declaraciones. Una
 declaración contiene componentes internos, que pueden ser otras
 declaraciones y varias expresiones.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}]
 
 En términos simples, una \textbf{declaración} es una \textbf{instrucción
 que realiza una acción}.
@@ -6085,7 +6085,7 @@ línea \\
 La documentación completa se puede encontrar en el siguiente enlace:
 Escape sequences.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-e-1}: Definición de cadenas.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-e-1}: Definición de cadenas.}]
 
 \quartocalloutexm{exm-e-1} 
 
@@ -6161,7 +6161,7 @@ Python "pythonico"
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-e-2}: Textos largos.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-e-2}: Textos largos.}]
 
 \quartocalloutexm{exm-e-2} 
 
@@ -6243,7 +6243,7 @@ para ir a la escuela
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-e-3}: Más textos.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-e-3}: Más textos.}]
 
 \quartocalloutexm{exm-e-3} 
 
@@ -7153,7 +7153,7 @@ Ahora agregamos las cadenas \texttt{-\/-\/-\textbar{}} y
 ---|            Pedro             |---
 \end{verbatim}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota.}]
 
 Observa que en el ejemplo anterior se usó una \texttt{s} al final del
 número \texttt{30}, esto es para indicar que la variable \texttt{nombre}
@@ -7700,7 +7700,7 @@ Teclea un número flotante: 3.1416
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-f-1}: Área de un triángulo.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-f-1}: Área de un triángulo.}]
 
 \quartocalloutexm{exm-f-1} 
 
@@ -8165,7 +8165,7 @@ El código es equivalente a:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}]
 
 Esta forma de abrir un archivo, manipular su información y cerrarlo,
 usando un gestor de contexto (\texttt{with}), es la más recomendada.
@@ -8176,7 +8176,7 @@ Es posible implemetar nuestros propios gestores de contexto. Para ello
 se requiere un conocimiento más profundo de Programación Orientada a
 Objetos.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota.}]
 
 En el ejemplo anterior se usó la construcción \texttt{try:} \ldots{}
 \texttt{finally:} que se usa para gestionar errores. Esto se revisa en
@@ -8286,7 +8286,7 @@ while expresión:
     código ...
 \end{verbatim}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-h-1}: Repetir hasta cumplir una condición 1.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-h-1}: Repetir hasta cumplir una condición 1.}]
 
 \quartocalloutexm{exm-h-1} 
 
@@ -8369,7 +8369,7 @@ Finaliza while
   los programas en Python sean más claros.
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-h-2}: Repetir hasta cumplir una condición 2.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-h-2}: Repetir hasta cumplir una condición 2.}]
 
 \quartocalloutexm{exm-h-2} 
 
@@ -8414,7 +8414,7 @@ a = 4
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-h-3}: Sangría errónea.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-h-3}: Sangría errónea.}]
 
 \quartocalloutexm{exm-h-3} 
 
@@ -8537,7 +8537,7 @@ range(start, stop, step)
 La secuencia iniciará en \texttt{start} y terminará en \texttt{stop-1}
 en pasos de tamaño \texttt{step}.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-h-4}: Repetir un número de veces.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-h-4}: Repetir un número de veces.}]
 
 \quartocalloutexm{exm-h-4} 
 
@@ -8707,7 +8707,7 @@ a = 30, b = 10
 Cambia los valores de \texttt{a} y \texttt{b} de manera similar que en
 el ejemplo anterior y observa el resultado.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-h-5}: Impares.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-h-5}: Impares.}]
 
 \quartocalloutexm{exm-h-5} 
 
@@ -8764,7 +8764,7 @@ de código:
   de código. Veamos el siguiente ejemplo:
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-h-6}: Sangrías anidadas.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-h-6}: Sangrías anidadas.}]
 
 \quartocalloutexm{exm-h-6} 
 
@@ -8955,7 +8955,7 @@ En este código la variable \texttt{resultado} tendrá el valor
 \texttt{valor1} si la \texttt{expresion} es verdadera o el
 \texttt{valor2} si la expresión es falsa.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-h-7}: Operador ternario.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-h-7}: Operador ternario.}]
 
 \quartocalloutexm{exm-h-7} 
 
@@ -9037,7 +9037,7 @@ Estas son palabras clave que se pueden usar en ciclos \texttt{while} o
 
 Veamos algunos ejemplos.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-h-8}: \texttt{break}.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-h-8}: \texttt{break}.}]
 
 \quartocalloutexm{exm-h-8} 
 
@@ -9104,7 +9104,7 @@ Letra 'u' encontrada
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-h-9}: \texttt{continue}.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-h-9}: \texttt{continue}.}]
 
 \quartocalloutexm{exm-h-9} 
 
@@ -9133,7 +9133,7 @@ Número par 10
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-h-10}: \texttt{pass}.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-h-10}: \texttt{pass}.}]
 
 \quartocalloutexm{exm-h-10} 
 
@@ -9177,7 +9177,7 @@ Aquí va el código del while
 Aquí va el código de la función: n = 100000
 \end{verbatim}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota.}]
 
 Observa que en el último ejemplo estamos usando la declaración de una
 función usando \texttt{def}; más ejemplos sobre funciones los puedes
@@ -9331,7 +9331,7 @@ Dict & NO & NO & SI & NO \\
   (\texttt{,}) para separar sus elementos.
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-i-1}: Creación de listas.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-i-1}: Creación de listas.}]
 
 \quartocalloutexm{exm-i-1} 
 
@@ -10129,7 +10129,7 @@ tipo.}\label{contar-los-elementos-de-un-tipo.}
 3
 \end{verbatim}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-i-2}: Recuperando una lista.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-i-2}: Recuperando una lista.}]
 
 \quartocalloutexm{exm-i-2} 
 
@@ -10389,7 +10389,7 @@ lista. La podemos usar para copiar una lista como sigue:
 Observa que el identificador en memoria de cada lista es diferente por
 lo que se trata de listas diferentes.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota.}]
 
 Lo que sucede en este último caso, es que se ejecuta el constructor de
 la clase
@@ -10604,7 +10604,7 @@ Dict & NO & NO & SI & NO \\
   (\texttt{,}) para separar sus elementos.
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-j-1}: Creación de tuplas.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-j-1}: Creación de tuplas.}]
 
 \quartocalloutexm{exm-j-1} 
 
@@ -11065,7 +11065,7 @@ Dict & NO & NO & SI & NO \\
   (\texttt{,}) para separar sus elementos.
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-k-1}: Creación de conjuntos.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-k-1}: Creación de conjuntos.}]
 
 \quartocalloutexm{exm-k-1} 
 
@@ -11226,7 +11226,7 @@ set() <class 'set'> 1934565229280
 Observa que el identificador no ha cambiado, solo se eliminaron todos
 los elementos.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-k-2}: Verificar si un elemento está en un conjunto.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-k-2}: Verificar si un elemento está en un conjunto.}]
 
 \quartocalloutexm{exm-k-2} 
 
@@ -11442,7 +11442,7 @@ Dict & NO & NO & SI & NO \\
   separar sus elementos.
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-l-1}: Creación de diccionarios.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-l-1}: Creación de diccionarios.}]
 
 \quartocalloutexm{exm-l-1} 
 
@@ -12194,7 +12194,7 @@ Conversión desde las valores:
   iterable).
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-n-1}: Creación de estructuras de datos.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-n-1}: Creación de estructuras de datos.}]
 
 \quartocalloutexm{exm-n-1} 
 
@@ -12819,7 +12819,7 @@ regresa la función.
 
 Veamos otros ejemplos de funciones.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-o-1}: Función para calcular el cuadrado de un número.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-o-1}: Función para calcular el cuadrado de un número.}]
 
 \quartocalloutexm{exm-o-1} 
 
@@ -12870,7 +12870,7 @@ las siguientes características:
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-o-2}: Función para calcular el promedio de dos números.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-o-2}: Función para calcular el promedio de dos números.}]
 
 \quartocalloutexm{exm-o-2} 
 
@@ -12906,7 +12906,7 @@ Escribir una función que calcule el promedio de dos números.
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-o-2}: Función para calcular el promedio de varios números.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-o-2}: Función para calcular el promedio de varios números.}]
 
 \quartocalloutexm{exm-o-2} 
 
@@ -13014,7 +13014,7 @@ Con un conjunto:
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-o-3}: Números de Fibonacci.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-o-3}: Números de Fibonacci.}]
 
 \quartocalloutexm{exm-o-3} 
 
@@ -13254,7 +13254,7 @@ lambda argument_list: expression
 
 Se puede asignar la función a una variable para darle un nombre.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-p-1}: Un número al cuadrado.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-p-1}: Un número al cuadrado.}]
 
 \quartocalloutexm{exm-p-1} 
 
@@ -13296,7 +13296,7 @@ pueda ser ejecutada o podemos darle un nombre como sigue:
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-p-2}: Un número al cubo.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-p-2}: Un número al cubo.}]
 
 \quartocalloutexm{exm-p-2} 
 
@@ -13324,7 +13324,7 @@ función lambda que calcula el cuadrado.
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-p-3}: Un número a una potencia.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-p-3}: Un número a una potencia.}]
 
 \quartocalloutexm{exm-p-3} 
 
@@ -13365,7 +13365,7 @@ de funciones normales de Python con las funciones lambda.
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-p-4}: Multiplicar dos números.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-p-4}: Multiplicar dos números.}]
 
 \quartocalloutexm{exm-p-4} 
 
@@ -13394,7 +13394,7 @@ argumento.
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-p-5}: Números pares.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-p-5}: Números pares.}]
 
 \quartocalloutexm{exm-p-5} 
 
@@ -13424,7 +13424,7 @@ False
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-p-6}: Primer y último elemento.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-p-6}: Primer y último elemento.}]
 
 \quartocalloutexm{exm-p-6} 
 
@@ -13474,7 +13474,7 @@ una cadena, una lista o una tupla.
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-p-7}: Una secuencia en reversa.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-p-7}: Una secuencia en reversa.}]
 
 \quartocalloutexm{exm-p-7} 
 
@@ -14382,7 +14382,7 @@ elemento \texttt{i} de la secuencia \texttt{S}; opcionalmente, es
 posible aplicar el \texttt{predicado} antes de aplicar la
 \texttt{expresion} a cada elemento \texttt{i}.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-r-1}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-r-1}}]
 
 \quartocalloutexm{exm-r-1} 
 
@@ -14427,7 +14427,7 @@ En el ejemplo anterior se distingue lo siguiente:
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-r-2}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-r-2}}]
 
 \quartocalloutexm{exm-r-2} 
 
@@ -14453,7 +14453,7 @@ elevarlos al cuadrado y poner el resultado en una lista.
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-r-3}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-r-3}}]
 
 \quartocalloutexm{exm-r-3} 
 
@@ -14474,7 +14474,7 @@ Crear la siguiente lista:
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-r-4}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-r-4}}]
 
 \quartocalloutexm{exm-r-4} 
 
@@ -14519,7 +14519,7 @@ entre grados.
 \subsection{Anidado de listas
 concisas.}\label{anidado-de-listas-concisas.}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-r-5}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-r-5}}]
 
 \quartocalloutexm{exm-r-5} 
 
@@ -14564,7 +14564,7 @@ M = [1.0, 3.0, 5.0, 7.0, 9.0]
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-r-6}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-r-6}}]
 
 \quartocalloutexm{exm-r-6} 
 
@@ -14627,7 +14627,7 @@ operador ternario: * \texttt{1\ if\ col\ ==\ row\ else\ 0}
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-r-7}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-r-7}}]
 
 \quartocalloutexm{exm-r-7} 
 
@@ -14792,7 +14792,7 @@ que resulta es un objeto de tipo\texttt{set}.
   \textbf{opcional}.
 \end{enumerate}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-r-8}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-r-8}}]
 
 \quartocalloutexm{exm-r-8} 
 
@@ -14852,7 +14852,7 @@ minúsculas. Por ejemplo, una lista aceptable sería
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-r-9}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-r-9}}]
 
 \quartocalloutexm{exm-r-9} 
 
@@ -14942,7 +14942,7 @@ Creación de un diccionario a partir de los valores de otro diccionario:
 {key:value for (key,value) in dictonary.items() if condición}
 \end{verbatim}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-r-10}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-r-10}}]
 
 \quartocalloutexm{exm-r-10} 
 
@@ -14982,7 +14982,7 @@ Crear un diccionario a partir de un rango de enteros.
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-r-11}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-r-11}}]
 
 \quartocalloutexm{exm-r-11} 
 
@@ -15031,7 +15031,7 @@ Para crear el diccionario del ejemplo hacemos lo siguiente:
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-r-12}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-r-12}}]
 
 \quartocalloutexm{exm-r-12} 
 
@@ -15055,7 +15055,7 @@ diccionario \texttt{dicc} del ejemplo anterior:
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-r-13}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-r-13}}]
 
 \quartocalloutexm{exm-r-13} 
 
@@ -15096,7 +15096,7 @@ rango de 0 a 10 y sus valores sean el cuadrado de la clave.
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-r-14}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-r-14}}]
 
 \quartocalloutexm{exm-r-14} 
 
@@ -15142,7 +15142,7 @@ Intercambiar las claves y los valores en un diccionario.
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-r-15}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-r-15}}]
 
 \quartocalloutexm{exm-r-15} 
 
@@ -15174,7 +15174,7 @@ Celsius.
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-r-16}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-r-16}}]
 
 \quartocalloutexm{exm-r-16} 
 
@@ -15200,7 +15200,7 @@ diccionario cuyos valores sean mayores que 2.
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-r-17}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-r-17}}]
 
 \quartocalloutexm{exm-r-17} 
 
@@ -15222,7 +15222,7 @@ diccionario cuyos valores sean mayores que 2 y que además sean pares.
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-r-18}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-r-18}}]
 
 \quartocalloutexm{exm-r-18} 
 
@@ -15264,7 +15264,7 @@ divisibles por 3.
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-r-19}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-r-19}}]
 
 \quartocalloutexm{exm-r-19} 
 
@@ -15292,7 +15292,7 @@ e \texttt{impar} segun corresponda.
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-r-20}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-r-20}}]
 
 \quartocalloutexm{exm-r-20} 
 
@@ -15353,7 +15353,7 @@ por el valor de cada item de esos diccionarios.
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-r-21}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-r-21}}]
 
 \quartocalloutexm{exm-r-21} 
 
@@ -15534,7 +15534,7 @@ os.stat_result(st_mode=33206, st_ino=3377699721426515, st_dev=493337752040902943
 
 \section{Ejemplos adicionales.}\label{ejemplos-adicionales.}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-r-22}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-r-22}}]
 
 \quartocalloutexm{exm-r-22} 
 
@@ -15586,7 +15586,7 @@ Eliminar los números duplicados de la siguiente lista.
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-r-23}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-r-23}}]
 
 \quartocalloutexm{exm-r-23} 
 
@@ -15663,7 +15663,7 @@ Eliminar objetos duplicados de una lista de diccionarios.
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-r-24}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-r-24}}]
 
 \quartocalloutexm{exm-r-24} 
 
@@ -15719,7 +15719,7 @@ códigos más concisos.
   iterable, entre otros).
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-s-1}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-s-1}}]
 
 \quartocalloutexm{exm-s-1} 
 
@@ -15844,7 +15844,7 @@ parámetro. El resultado será una nueva secuencia con los elementos
 obtenidos de aplicar la función a cada elemento de la secuencia de
 entrada.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-s-2}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-s-2}}]
 
 \quartocalloutexm{exm-s-2} 
 
@@ -15947,7 +15947,7 @@ Resultado [0, 1, 4, 9, 16]
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-s-3}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-s-3}}]
 
 \quartocalloutexm{exm-s-3} 
 
@@ -15998,7 +15998,7 @@ Grados centígrados (original): [0, 22.5, 40, 100]
 Grados Farenheit (conversión): [32.0, 72.5, 104.0, 212.0]
 \end{verbatim}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota.}]
 
 Solo se puede usar el mapeo una vez, si vuelves a ejecutar la celda
 anterior el resultado del mapeo estará vacío. Para volverlo a generar
@@ -16071,7 +16071,7 @@ Grados centígrados (conversión): [0.0, 22.5, 40.0, 100.0]
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-s-4}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-s-4}}]
 
 \quartocalloutexm{exm-s-4} 
 
@@ -16088,7 +16088,7 @@ números enteros.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota.}]
 
 La función \texttt{map()} se puede aplicar a más de un conjunto
 iterable, siempre y cuando los iterables tengan la misma longitud y la
@@ -16194,7 +16194,7 @@ regresar un objeto de tipo Booleano: \texttt{True} o \texttt{False}. El
 resultado será una nueva secuencia con los elementos obtenidos de
 aplicar la función a cada elemento de la secuencia de entrada.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-s-5}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-s-5}}]
 
 \quartocalloutexm{exm-s-5} 
 
@@ -16276,7 +16276,7 @@ Usando una función anónima y el operador ternario:
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-s-6}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-s-6}}]
 
 \quartocalloutexm{exm-s-6} 
 
@@ -16400,7 +16400,7 @@ entender.
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-s-7}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-s-7}}]
 
 \quartocalloutexm{exm-s-7} 
 
@@ -16490,7 +16490,7 @@ primer parámetro es una función la cual se va a aplicar a una secuencia,
 que es el segundo parámetro. La función debe regresar un objeto que es
 el resultado de la reducción.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-s-8}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-s-8}}]
 
 \quartocalloutexm{exm-s-8} 
 
@@ -16547,7 +16547,7 @@ Si \(n = 4\) entonces 1+2+3+4 = 10
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-s-9}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-s-9}}]
 
 \quartocalloutexm{exm-s-9} 
 
@@ -16572,7 +16572,7 @@ Calcular la siguiente serie:
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-s-10}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-s-10}}]
 
 \quartocalloutexm{exm-s-10} 
 
@@ -16594,7 +16594,7 @@ Calcular el máximo de una lista de números.
 
 \section{Ejemplos adicionales.}\label{ejemplos-adicionales.-1}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-s-11}: Recursión.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-s-11}: Recursión.}]
 
 \quartocalloutexm{exm-s-11} 
 
@@ -16733,7 +16733,7 @@ Si usamos ahora el operador ternario, podemos escribir la función
   memoria si no se maneja adecuadamente o si no hay un caso base claro.
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-s-12}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-s-12}}]
 
 \quartocalloutexm{exm-s-12} 
 
@@ -16893,7 +16893,7 @@ Incluso, podemos construir una función:
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-s-13}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-s-13}}]
 
 \quartocalloutexm{exm-s-13} 
 
@@ -16920,7 +16920,7 @@ Encontrar todos los números pares de una lista combinando
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-s-14}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-s-14}}]
 
 \quartocalloutexm{exm-s-14} 
 
@@ -16948,7 +16948,7 @@ combinando combinando \texttt{filter()} con \texttt{lambda}.
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-s-15}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-s-15}}]
 
 \quartocalloutexm{exm-s-15} 
 
@@ -16996,7 +16996,7 @@ usando \texttt{map()} y \texttt{lambda}.
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-s-16}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-s-16}}]
 
 \quartocalloutexm{exm-s-16} 
 
@@ -17054,7 +17054,7 @@ función de python sin modificarla.
   Los decoradores son herramientas bonitas y útiles de Python.
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-t-1}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-t-1}}]
 
 \quartocalloutexm{exm-t-1} 
 
@@ -17134,7 +17134,7 @@ La función \texttt{print\_hello()} imprime
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-t-2}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-t-2}}]
 
 \quartocalloutexm{exm-t-2} 
 
@@ -17212,7 +17212,7 @@ def print_message(m):
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-t-3}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-t-3}}]
 
 \quartocalloutexm{exm-t-3} 
 
@@ -17290,7 +17290,7 @@ log(2.718281828459045) = 1.00000000
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-t-4}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-t-4}}]
 
 \quartocalloutexm{exm-t-4} 
 
@@ -17363,7 +17363,7 @@ choices(([0, 1, 2, 3, 4, 5, 6, 7, 8, 9],),{'k': 3}) = [2, 8, 1]
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-t-5}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-t-5}}]
 
 \quartocalloutexm{exm-t-5} 
 
@@ -17414,7 +17414,7 @@ Elapsed time: 0.0001438999897800386
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-t-6}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-t-6}}]
 
 \quartocalloutexm{exm-t-6} 
 
@@ -17453,7 +17453,7 @@ Detener la ejecución por un tiempo antes que una función sea ejecutada.
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-t-7}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-t-7}}]
 
 \quartocalloutexm{exm-t-7} 
 
@@ -17526,7 +17526,7 @@ el factorial de dicho número.
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-t-8}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-t-8}}]
 
 \quartocalloutexm{exm-t-8} 
 
@@ -17594,7 +17594,7 @@ Llamadas a multp1 = 3
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-t-9}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-t-9}}]
 
 \quartocalloutexm{exm-t-9} 
 
@@ -17641,7 +17641,7 @@ Hola, buenos días, son las 8 am
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-t-10}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-t-10}}]
 
 \quartocalloutexm{exm-t-10} 
 
@@ -18048,7 +18048,7 @@ que es iterable, es decir, se puede usar como un \textbf{iterador}.
 Se recomienda usar \texttt{yield} cuando se desea iterar sobre una
 secuencia, pero no se quiere almacenar toda la secuencia en memoria.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-u-1}: .}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-u-1}: .}]
 
 \quartocalloutexm{exm-u-1} 
 
@@ -18089,7 +18089,7 @@ Crear una función generadora que genere los cuadrados del 1 al
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-u-2}}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-u-2}}]
 
 \quartocalloutexm{exm-u-2} 
 
@@ -18154,7 +18154,7 @@ entonces se toma el valor definido por omisión. Esto crea una función
 que se puede llamar con menos argumentos de los que está definida
 inicialmente.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-v-1}: Tiro vertical.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-v-1}: Tiro vertical.}]
 
 \quartocalloutexm{exm-v-1} 
 
@@ -18638,7 +18638,7 @@ Resultado: -1
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-v-2}: Integración.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-v-2}: Integración.}]
 
 \quartocalloutexm{exm-v-2} 
 
@@ -18760,7 +18760,7 @@ funcionHijo2(): n = 36
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-v-3}: Polinomios.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-v-3}: Polinomios.}]
 
 \quartocalloutexm{exm-v-3} 
 
@@ -18826,7 +18826,7 @@ x =   1      p1(x) =   4     p2(x) =   2
 
 .
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-v-4}: Gráfica de polinomios}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-v-4}: Gráfica de polinomios}]
 
 \quartocalloutexm{exm-v-4} 
 
@@ -18856,7 +18856,7 @@ el intervalo \([-10, 10]\).
 
 \pandocbounded{\includegraphics[keepaspectratio]{notebooks/22_funciones_y_docstring_files/figure-pdf/cell-43-output-1.png}}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, left=2mm, arc=.35mm, colback=white, opacitybacktitle=0.6, title={Tip \ref*{exm-v-5}: Polinomios de cualquier grado.}, toptitle=1mm, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, colback=white, coltitle=black, leftrule=.75mm, arc=.35mm, breakable, left=2mm, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, opacitybacktitle=0.6, title={Tip \ref*{exm-v-5}: Polinomios de cualquier grado.}]
 
 \quartocalloutexm{exm-v-5} 
 
